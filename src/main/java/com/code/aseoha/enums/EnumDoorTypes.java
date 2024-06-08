@@ -79,7 +79,7 @@ public enum EnumDoorTypes implements IDoorType {
     CAPALDI (state -> {
         switch(state) {
             case CLOSED: return 0.0D;
-            case ONE: return 75.0D;
+            case ONE: return -75.0D;
             case BOTH : return -75.0D;
             default:return 0.0;
         }

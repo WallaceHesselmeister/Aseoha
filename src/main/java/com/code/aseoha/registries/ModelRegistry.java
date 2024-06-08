@@ -52,7 +52,7 @@ public class ModelRegistry {
         EnumDoorTypes.HARTNELL.setInteriorDoorModel(new TTCapsuleInteriorModel());
 
         ClientRegistry.bindTileEntityRenderer(AseohaTiles.exterior_capaldi.get(), CapaldiRender::new);
-        EnumDoorTypes.CAPALDI.setInteriorDoorModel(new ModernPoliceBoxInteriorModel());
+        EnumDoorTypes.CAPALDI.setInteriorDoorModel(new CapaldiInteriorDoor());
     }
 
 }
