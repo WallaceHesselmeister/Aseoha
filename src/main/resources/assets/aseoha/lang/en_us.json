@@ -130,5 +130,11 @@
   "exterior.tardis.bluedoctor" : "Blue Doctor Exterior",
   "exterior.tardis.hartnell112" : "1.12 Hartnell Exterior",
 
-  "console.aseoha.brackolin" : "Brackolin Console"
+  "console.aseoha.brackolin" : "Brackolin Console",
+  "tooltip.foodmachine.desc": "Right Click: Potato, RClick While Crouching: Bone Meal, RClick while Holding Alt: Carrot",
+  "tooltip.aseoha.deadlocker": "Deadlocks a TARDIS",
+  "tooltip.artronbank.desc": "Converts Experience to Artron and vice versa.",
+  "tooltip.flightbutton.desc": "Automatically disengages handbrake, closes doors, activates stabilizers, and takes off.",
+  "tooltip.eoh.desc": "Tops off the TARDIS Artron banks, but don't leave it open for too long!",
+  "tooltip.aseoha.undeadlocker": "Un Deadlocks a TARDIS"
 }

@@ -1,5 +1,6 @@
 package com.code.aseoha.block;
 
+import com.code.aseoha.entities.ModEntityTypes;
 import com.code.aseoha.items.ModItemGroup;
 import com.code.aseoha.items.ModItems;
 import net.minecraft.block.*;
@@ -22,12 +23,19 @@ import java.util.function.Supplier;
 import java.util.function.ToIntFunction;
 
 import static com.code.aseoha.aseoha.MODID;
+import static com.code.aseoha.items.ModItems.ITEMS;
 
 public class ModBlocks {
     public static ToIntFunction<BlockState> maxLightLevel = BlockState -> 15;
     public static final DeferredRegister<Block> BLOCKS
             = DeferredRegister.create(ForgeRegistries.BLOCKS, MODID);
     public static final Material IRON = (new Material.Builder(MaterialColor.METAL)).build();
+
+
+
+//    public static final RegistryObject<ModSpawnEggItem> PIGEON_SPAWN_EGG = ITEMS.register("pigeon_spawn_egg",
+//            () -> new ModSpawnEggItem(ModEntityTypes.PIGEON, 0x879995, 0x576ABC,
+//                    new Item.Properties().tab(ModItemGroup.ASEOHA_GROUP)));
 
 
 
@@ -107,6 +115,12 @@ public class ModBlocks {
     public static final RegistryObject<Block> COATRACK = registerBlock("coatrack",
             () -> new Block(AbstractBlock.Properties.of(Material.STONE).strength(1.25F, 5.25F)
                     .noCollission()));
+
+    public static RegistryObject<Block> EOH = registerBlock("eoh",
+            () -> setUpBlock(new EyeOfHarmonyBlock(AbstractBlock.Properties.of(Material.HEAVY_METAL).strength(1.25F, 5.25F).noOcclusion())));
+
+    public static RegistryObject<Block> FLIGHT_BUTTON = registerBlock("flight_button",
+            () -> setUpBlock(new FlightButton(AbstractBlock.Properties.of(Material.HEAVY_METAL).strength(1.25F, 5.25F).noOcclusion())));
 
 //    public static final RegistryObject<Block> LOOTCRATE = registerBlock("lootcrate",
 //            () -> new Block(AbstractBlock.Properties.of(Material.WOOD)
@@ -406,13 +420,12 @@ public class ModBlocks {
     }
 
     private static <T extends Block> void registerBlockItem(String name, RegistryObject<T> block) {
-        ModItems.ITEMS.register(name, () -> new BlockItem(block.get(),
+        ITEMS.register(name, () -> new BlockItem(block.get(),
                 new Item.Properties().tab(ModItemGroup.ASEOHA_GROUP)));
     }
 
     private static <T extends Block>RegistryObject<T> registerNoItemBlock(String name, Supplier<T> block){
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
-//        registerBlockItem(name, toReturn);
         return toReturn;
     }
 

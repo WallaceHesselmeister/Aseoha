@@ -2,6 +2,7 @@ package com.code.aseoha.registries;
 
 import com.code.aseoha.aseoha;
 import com.code.aseoha.block.ModBlocks;
+import com.code.aseoha.client.models.exteriors.CapaldiExterior;
 import com.code.aseoha.client.models.interiordoors.*;
 import com.code.aseoha.client.renderers.exteriors.*;
 import com.code.aseoha.enums.EnumDoorTypes;

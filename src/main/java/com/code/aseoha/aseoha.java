@@ -2,7 +2,10 @@ package com.code.aseoha;
 import com.code.aseoha.block.ModBlocks;
 import com.code.aseoha.client.renderers.console.BrackolinConsoleRender;
 import com.code.aseoha.client.renderers.console.CopperConsoleRenderer;
+import com.code.aseoha.entities.ModEntityTypes;
 import com.code.aseoha.items.ModItems;
+import com.code.aseoha.client.renderers.k9render;
+import com.code.aseoha.client.renderers.wallerender;
 import com.code.aseoha.registries.ConsolesRegistry;
 import com.code.aseoha.registries.ExteriorsRegistry;
 import com.code.aseoha.tileentities.AseohaTiles;
@@ -20,6 +23,7 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.InterModComms;
 import net.minecraftforge.fml.client.registry.ClientRegistry;
+import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
@@ -63,6 +67,8 @@ public class aseoha {
         //ConsolesRegistry.CONSOLES.register(modBus);
         ConsolesRegistry.CONSOLES.register(eventBus);
         AseohaTiles.TILES.register(modBus);
+        ModEntityTypes.register(eventBus);
+
         //ModBiomes.register(eventBus);
         // For events that happen after initialization. This is probably going to be use a lot.
 
@@ -119,6 +125,8 @@ public class aseoha {
         // do something that can only be done on the client
         LOGGER.info("Got game settings {}", event.getMinecraftSupplier().get().options);
         // do something that can only be done with blocks
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// ROUNDELS/MISC
         RenderTypeLookup.setRenderLayer(ModBlocks.FAULTLOCATOR.get(), RenderType.cutout());
         RenderTypeLookup.setRenderLayer(ModBlocks.FAULTLOCATOR_S.get(), RenderType.cutout());
         RenderTypeLookup.setRenderLayer(ModBlocks.HELLBENT_GLASS01.get(), RenderType.solid());
@@ -155,14 +163,25 @@ public class aseoha {
         RenderTypeLookup.setRenderLayer(ModBlocks.COPPER_ROUNDEL.get(), RenderType.solid());
 //        RenderTypeLookup.setRenderLayer(ModBlocks.LOOTCRATE.get(), RenderType.cutout());
 //        RenderTypeLookup.setRenderLayer(ModBlocks.LOOTCRATEX.get(), RenderType.cutout());
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// COOL BLOCKS
         RenderTypeLookup.setRenderLayer(ModBlocks.foodmachine_old.get(), RenderType.solid());
 
+        RenderTypeLookup.setRenderLayer(ModBlocks.EOH.get(), RenderType.solid());
+        RenderTypeLookup.setRenderLayer(ModBlocks.FLIGHT_BUTTON.get(), RenderType.solid());
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// CONSOLES
 
         RenderTypeLookup.setRenderLayer(ModBlocks.console_copper.get(), RenderType.translucent());
         ClientRegistry.bindTileEntityRenderer(AseohaTiles.console_copper.get(), CopperConsoleRenderer::new);
 
         RenderTypeLookup.setRenderLayer(ModBlocks.console_brackolin.get(), RenderType.translucent());
         ClientRegistry.bindTileEntityRenderer(AseohaTiles.console_brackolin.get(), BrackolinConsoleRender::new);
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// ENTITIES
+
+        RenderingRegistry.registerEntityRenderingHandler(ModEntityTypes.K9.get(), k9render::new);
+        RenderingRegistry.registerEntityRenderingHandler(ModEntityTypes.WALLE.get(), wallerender::new);
     }
 
     private void enqueueIMC(final InterModEnqueueEvent event) {
