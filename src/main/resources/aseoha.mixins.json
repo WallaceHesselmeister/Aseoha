@@ -4,13 +4,14 @@
   "compatibilityLevel": "JAVA_8",
   "refmap": "aseoha.refmap.json",
   "mixins": [
-    "SonicTardisDestinationInteractionMixin",
-    "HandbrakeMixin",
+    "ConsoleChangeMessageMixin",
     "ConsoleTextureVariants",
+    "HandbrakeMixin",
     "NameTagMixin",
-    "ConsoleChangeMessageMixin"
+    "SonicTardisDestinationInteractionMixin"
   ],
   "client": [
+    "client.VortexSkyRendererMixin"
   ],
   "injectors": {
     "defaultRequire": 1
