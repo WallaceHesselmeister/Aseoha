@@ -1,0 +1,9 @@
+{
+  "type": "tardis:spectrometer",
+  "processing_ticks": 200,
+  "download_ticks": 200,
+  "ingredient": {
+    "item": "tardis:roundel/black_terracotta_full"
+  },
+  "result": "aseoha:interiors/catherine_interior"
+}

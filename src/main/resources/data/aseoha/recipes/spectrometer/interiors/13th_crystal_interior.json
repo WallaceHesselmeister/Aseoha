@@ -1,0 +1,9 @@
+{
+	"type": "tardis:spectrometer",
+	"processing_ticks": 200,
+	"download_ticks": 200,
+	"ingredient": {
+		"item": "tardis:yellow_crystal"
+	},
+	"result": "aseoha:interiors/13th_crystal_interior"
+}

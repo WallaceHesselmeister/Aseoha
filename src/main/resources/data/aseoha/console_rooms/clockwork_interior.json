@@ -1,0 +1,10 @@
+{
+  "structure_resource_location":"aseoha:clockwork_interior",
+  "display_name":"Clockwork",
+  "x_offset":22,
+  "y_offset":13,
+  "z_offset":30,
+  "using_remote_image":false,
+  "remote_image_url":"https://imgur.com/b563wg1",
+  "image_resource_location":"aseoha:textures/gui/interior/clockwork_interior.png"
+}

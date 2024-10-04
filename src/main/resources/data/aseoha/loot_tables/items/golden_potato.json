@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:item",
+  "pools": [
+    {
+      "rolls": 1,
+      "entries": [
+      ]
+    }
+  ]
+}

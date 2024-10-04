@@ -1,0 +1,9 @@
+{
+  "type": "tardis:spectrometer",
+  "processing_ticks": 200,
+  "download_ticks": 200,
+  "ingredient": {
+    "item": "tadditions:roundelcon/nether_bricks_full"
+  },
+  "result": "aseoha:interiors/cody"
+}

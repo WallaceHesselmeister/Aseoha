@@ -1,0 +1,26 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "iDi",
+        "iSi",
+        "iCi"
+    ],
+    "key": {
+        "i": {
+            "item": "minecraft:iron_ingot"
+        },
+        "D": {
+            "item": "minecraft:dispenser"
+        },
+        "S": {
+            "item": "minecraft:stonecutter"
+        },
+        "C": {
+            "item": "minecraft:beef"
+        }
+    },
+    "result": {
+        "item": "aseoha:foodmachine_old",
+        "count": 1
+    }
+}

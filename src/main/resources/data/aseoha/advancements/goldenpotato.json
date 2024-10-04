@@ -1,0 +1,26 @@
+{
+  "display": {
+    "icon": {
+      "item": "aseoha:golden_potato"
+    },
+    "title": "Fields of Gold",
+    "description": "Obtain a Golden Potato",
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "aseoha:aseoha",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "aseoha:golden_potato"
+          }
+        ]
+      }
+    }
+  }
+}

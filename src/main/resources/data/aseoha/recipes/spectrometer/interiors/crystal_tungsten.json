@@ -1,0 +1,9 @@
+{
+  "type": "tardis:spectrometer",
+  "processing_ticks": 200,
+  "download_ticks": 200,
+  "ingredient": {
+    "item": "minecraft:yellow_stained_glass"
+  },
+  "result": "aseoha:interiors/crystal_tungsten"
+}

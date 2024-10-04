@@ -1,0 +1,13 @@
+{
+  "type": "tardis:quantiscope",
+  "repair":false,
+  "ingredients":[
+    {"item":"minecraft:egg"},
+    {"item":"tardis:circuits"},
+    {"item":"tardis:xion_crystal"},
+    {"item": "minecraft:gold_ingot"}
+  ],
+  "result":{
+    "item":"aseoha:ars_egg_old"
+  }
+}

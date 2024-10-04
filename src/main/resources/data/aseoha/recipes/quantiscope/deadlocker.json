@@ -1,0 +1,11 @@
+{
+  "type": "tardis:quantiscope",
+  "repair":false,
+  "ingredients":[
+    {"item":"minecraft:netherite_scrap"},
+    {"item":"tardis:tardis_key"}
+  ],
+  "result":{
+    "item":"aseoha:deadlocker"
+  }
+}

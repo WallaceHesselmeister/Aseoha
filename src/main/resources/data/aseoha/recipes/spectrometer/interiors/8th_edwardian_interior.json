@@ -1,0 +1,9 @@
+{
+	"type": "tardis:spectrometer",
+	"processing_ticks": 200,
+	"download_ticks": 200,
+	"ingredient": {
+		"item": "tardis:alembic"
+	},
+	"result": "aseoha:interiors/8th_edwardian_interior"
+}

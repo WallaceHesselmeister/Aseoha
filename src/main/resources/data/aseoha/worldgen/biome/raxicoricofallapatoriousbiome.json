@@ -1,0 +1,60 @@
+{
+  "surface_builder": "aseoha:raxicoricofallapatoriousbiome",
+  "depth": 0.04,
+  "scale": 0.2,
+  "temperature": 0.5,
+  "downfall": 0.7,
+  "precipitation": "rain",
+  "category": "none",
+  "player_spawn_friendly": true,
+  "effects": {
+    "sky_color": 6239231,
+    "fog_color": 9135856,
+    "water_color": 52479,
+    "water_fog_color": 2420991,
+    "grass_color": 903509,
+    "foliage_color": 1167520
+  },
+  "starts": [],
+  "spawners": {
+    "monster": [],
+    "creature": [],
+    "ambient": [],
+    "water_creature": [],
+    "water_ambient": [],
+    "misc": []
+  },
+  "spawn_costs": {},
+  "carvers": {
+    "air": [
+      "minecraft:cave",
+      "minecraft:canyon"
+    ]
+  },
+  "features": [
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [
+      "minecraft:ore_dirt",
+      "minecraft:ore_gravel",
+      "minecraft:ore_granite",
+      "minecraft:ore_diorite",
+      "minecraft:ore_andesite",
+      "minecraft:ore_coal",
+      "minecraft:ore_iron",
+      "minecraft:ore_gold",
+      "minecraft:ore_redstone",
+      "minecraft:ore_diamond",
+      "minecraft:ore_lapis"
+    ],
+    [],
+    [],
+    [
+      "minecraft:freeze_top_layer"
+    ]
+  ]
+}

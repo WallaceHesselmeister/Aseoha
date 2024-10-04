@@ -1,0 +1,44 @@
+{
+  "surface_builder": "aseoha:skarobiome",
+  "depth": 0.2,
+  "scale": 0.1,
+  "temperature": 0.8,
+  "downfall": 0.1,
+  "precipitation": "none",
+  "temperature_modifier": "none",
+  "category": "plains",
+  "player_spawn_friendly": false,
+  "effects": {
+    "sky_color": 12713984,
+    "fog_color": 10027008,
+    "water_color": 9123639,
+    "water_fog_color": 8669256,
+    "grass_color": 8388608,
+    "foliage_color": 8281883
+  },
+  "starts": [
+    "tardis:dalek_ship",
+    "tardis:crashed_structure"
+  ],
+  "spawners": {
+    "monster": [
+      {
+        "type": "tardis:dalek",
+        "weight": 85,
+        "minCount": 15,
+        "maxCount": 50
+      }
+    ]
+  },
+  "spawn_costs": {},
+  "carvers": {
+    "air": [
+      "minecraft:cave"
+    ]
+  },
+  "features": [
+    [
+      "minecraft:trees_giant_spruce"
+    ]
+  ]
+}

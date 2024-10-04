@@ -1,0 +1,70 @@
+{
+  "scale": 0.2,
+  "depth": 0.1,
+  "precipitation": "rain",
+  "temperature": 0.5,
+  "downfall": 0.5,
+  "category": "none",
+  "surface_builder": "aseoha:trenzalorebiome",
+  "spawn_costs": {},
+  "player_spawn_friendly": true,
+  "effects": {
+    "foliage_color": -6710887,
+    "grass_color": -3355444,
+    "sky_color": 2716927,
+    "fog_color": 12638463,
+    "water_color": -3355444,
+    "water_fog_color": -3355444
+  },
+  "spawners": {
+    "monster": [],
+    "creature": [],
+    "ambient": [],
+    "water_creature": [],
+    "water_ambient": [],
+    "misc": []
+  },
+  "carvers": {
+    "air": [
+      "minecraft:cave",
+      "minecraft:canyon"
+    ]
+  },
+  "features": [
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [
+      "minecraft:ore_dirt",
+      "minecraft:ore_gravel",
+      "minecraft:ore_granite",
+      "minecraft:ore_diorite",
+      "minecraft:ore_andesite",
+      "minecraft:ore_coal",
+      "minecraft:ore_iron",
+      "minecraft:ore_gold",
+      "minecraft:ore_redstone",
+      "minecraft:ore_diamond",
+      "minecraft:ore_lapis"
+    ],
+    [],
+    [
+      "minecraft:patch_grass_forest"
+    ],
+    [
+      "minecraft:forest_flower_trees",
+      "minecraft:freeze_top_layer"
+    ]
+  ],
+  "starts": [
+    "minecraft:mansion",
+    "mineshaft_mesa",
+    "minecraft:stronghold",
+    "minecraft:pillager_outpost",
+    "minecraft:buried_treasure",
+    "minecraft:village_plains"
+  ]
+}

@@ -1,0 +1,7 @@
+{
+  "parent" : "aseoha:block/structure_remove_old",
+  "textures": {
+    "3": "aseoha:block/panel/panel_roomremove",
+    "4": "aseoha:block/panel/panel_top"
+  }
+}

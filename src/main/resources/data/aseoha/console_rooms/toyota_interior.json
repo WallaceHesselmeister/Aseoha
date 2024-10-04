@@ -1,0 +1,10 @@
+{
+  "structure_resource_location":"aseoha:toyota_interior",
+  "display_name":"Toyota",
+  "x_offset":17,
+  "y_offset":10,
+  "z_offset":35,
+  "using_remote_image":false,
+  "remote_image_url":"https://cdn.discordapp.com/attachments/394431995100397573/1198168619020992512/toyota.PNG",
+  "image_resource_location":"aseoha:toyota.png"
+}

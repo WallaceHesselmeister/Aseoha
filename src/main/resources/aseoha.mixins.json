@@ -1,0 +1,35 @@
+{
+  "client": [
+    "client.BOTIRendererMixin",
+    "client.ExtRenderMixin",
+    "client.TardisSkyPropertyMixin",
+    "client.VortexSkyRendererMixin"
+  ],
+  "compatibilityLevel": "JAVA_8",
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "minVersion": "0.8",
+  "mixins": [
+    "AtriumBlockMixin",
+    "ConsoleChangeMessageMixin",
+    "ConsoleMixin",
+    "ConsoleTextureVariants",
+    "ControlMixin",
+    "ExteriorTile",
+    "HandbrakeMixin",
+    "HelperMixin",
+    "InteriorManagerMixin",
+    "KeyMixin",
+    "MonitorMixin",
+    "NameTagMixin",
+    "PlayerDataCapMixin",
+    "SonicTardisDestinationInteractionMixin",
+    "TardisBottomBlockMixin",
+    "TardisEntityMixin",
+    "TwoBlockBasicExteriorMixin"
+  ],
+  "package": "com.code.aseoha.mixin",
+  "refmap": "aseoha.refmap.json",
+  "required": true
+}
