@@ -26,7 +26,7 @@
   "carvers": {
     "air": [
       "minecraft:cave",
-      "minecraft:canyon",
+      "minecraft:canyon"
     ]
   },
   "features": [
@@ -40,7 +40,7 @@
       "minecraft:ore_coal",
       "minecraft:ore_iron",
       "minecraft:ore_gold",
-      "minecraft:ore_diamond",
+      "minecraft:ore_diamond"
     ],
     [
     ],
