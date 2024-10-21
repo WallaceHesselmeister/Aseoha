@@ -30,9 +30,9 @@ archivesBaseName = 'aseoha'
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(8) // Mojang ships Java 8 to end users, so your mod should target Java 8.
 
-//tasks.withType(ProcessResources).configureEach {
-//    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
-//}
+tasks.withType(ProcessResources).configureEach {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+}
 
 tasks.withType(JavaCompile) {
     options.compilerArgs << '-Xlint:unchecked'

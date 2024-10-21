@@ -13,14 +13,14 @@ import static com.code.aseoha.aseoha.MODID;
  */
 public class NoTadditionsItems {
 
-//    public static final DeferredRegister<Item> ITEMS =
-//            DeferredRegister.create(ForgeRegistries.ITEMS, MODID);
+    public static final DeferredRegister<Item> ITEMS =
+            DeferredRegister.create(ForgeRegistries.ITEMS, MODID);
 
-    public static final RegistryObject<unDeadLocker> UNDEADLOCKER = AseohaItems.ITEMS.register("undeadlocker",
+    public static final RegistryObject<unDeadLocker> UNDEADLOCKER = ITEMS.register("undeadlocker",
             unDeadLocker::new);
 
 
     public static void register(IEventBus eventBus){
-        AseohaItems.ITEMS.register(eventBus);
+        ITEMS.register(eventBus);
     }
 }
