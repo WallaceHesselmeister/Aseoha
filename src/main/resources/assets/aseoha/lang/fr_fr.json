@@ -364,5 +364,14 @@
   "texvar.tardis.tardis.common.normal": "Normal",
   "tooltip.aseoha.deadlocker": "Verrouille le TARDIS appairé",
   "tooltip.aseoha.undeadlocker": "Déverrouille un TARDIS",
-  "tooltip.item.info.reenabled": "Fonction réactivée par ASEOHA!"
+  "tooltip.item.info.reenabled": "Fonction réactivée par ASEOHA!",
+  "tooltip.part.upgrades/dynamic_coordinates.description": "Met à jour l'affichage de la position du TARDIS en temps réel",
+  "item.aseoha.upgrades.dynamic_coordinates": "Module d'affichage dynamique",
+  "block.aseoha.gallifrey_sand": "Sable gallifréen",
+  "block.aseoha.skaro_sand": "Sable de Skaro",
+  "item.aseoha.blue_crystal_shard": "Éclat de cristal bleu",
+  "item.aseoha.blue_crystal_pile": "Amas de cristal bleu",
+  "item.aseoha.blue_crystal_nugget": "Fragment de cristal bleu",
+  "item.aseoha.blue_crystal_ingot": "Cristal bleu",
+  "texvar.aseoha.consoles.copper.turquoise": "Turquoise"
 }
