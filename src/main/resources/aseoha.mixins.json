@@ -24,6 +24,7 @@
     "KeyMixin",
     "MonitorMixin",
     "NameTagMixin",
+    "PlayerDataCapMixin",
     "SonicTardisDestinationInteractionMixin",
     "TardisBottomBlockMixin",
     "TardisEntityMixin",
