@@ -32,6 +32,7 @@ import java.util.Objects;
 
 @SuppressWarnings("deprecation")
 public class EOH extends Block {
+    public PlayerEntity LastPlayerClick;
     public boolean getHasStar() {
         return hasStar;
     }
@@ -89,6 +90,7 @@ public class EOH extends Block {
                 if (p_225533_4_.getMainHandItem().getItem().equals(Items.NETHER_STAR)) {
                     if (tile instanceof EOHTile) {
                         ((EOHTile) tile).setHasStar(true); // STAR
+                        this.LastPlayerClick = p_225533_4_;
                         p_225533_4_.getMainHandItem().shrink(1);
                         this.hasStar = true;
                         ((EOHTile) tile).setChanged();

@@ -298,7 +298,7 @@ public abstract class ConsoleMixin extends TileEntity implements ITickableTileEn
 //
 //            this.getControl(HandbrakeControl.class).ifPresent((brake) -> brake.setFree(false)); //TODO: REMOVE this
 //
-//            this.tardisEntity.land(); //TODO: MAKE SURE THIS EXISTS: setHasLanded
+//            this.tardisEntity.land(); //TODO: setHasLanded
 //            this.tardisEntity.remove();
 //        }
 //    }
@@ -444,6 +444,10 @@ private void playAmbientNoises() {
 //        this.Aseoha$ConsoleTile = console;
 //    }
 
+    /**
+     * Use this in the Mixin to get the ConsoleTile
+     * @return ConsoleTile
+     */
     @Override
     public ConsoleTile Aseoha$GetConsole() {
         assert this.Aseoha$GetInteriorDimension() != null;

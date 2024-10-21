@@ -180,7 +180,7 @@ public class EOHTile extends TileEntity implements ITickableTileEntity {
             ((IHelpWithConsole) this.consoleTile).Aseoha$SetEOHActive(true);
             this.timer++;
         }
-        if (this.timer != 0 && this.GetStabilizers() > 2) {
+        if (this.timer != 0 && this.GetStabilizers() > 1) {
             this.timer = 0;
             this.IsOverheated = false;
             ((IHelpWithConsole) this.consoleTile).Aseoha$SetEOHOverheated(false);

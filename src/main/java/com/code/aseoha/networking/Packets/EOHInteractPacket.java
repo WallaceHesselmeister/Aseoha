@@ -44,8 +44,10 @@ public class EOHInteractPacket {
                     ConsoleTile consoleTile = (ConsoleTile) te;
                     EOH eoh = ((IHelpWithConsole) consoleTile).Aseoha$GetEOH().getBlockState().getBlock() instanceof EOH ? (EOH) ((IHelpWithConsole) consoleTile).Aseoha$GetEOH().getBlockState().getBlock() : null;
                     if (eoh != null) {
-                        if (mes.intType)
+                        if (mes.intType) {
                             eoh.setHasStar(true);
+                            eoh.LastPlayerClick.getMainHandItem().shrink(1);
+                        }
                         else ((IHelpWithConsole) consoleTile).Aseoha$GetEOH().Activate();
                         ((IHelpWithConsole) consoleTile).Aseoha$GetEOH().setChanged();
                     }

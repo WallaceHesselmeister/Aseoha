@@ -220,13 +220,12 @@ public class Atrium extends Upgrade implements INBTSerializable<CompoundNBT> {
                     || blockState.getBlock() instanceof RailBlock
                     || blockState.getBlock() instanceof FenceBlock
                     || blockState.getBlock() instanceof FenceGateBlock
-                    || blockState.getBlock() instanceof IDontBreak
                     || blockState.getBlock().getTags().contains(Tags.Blocks.COBBLESTONE.getName())
                     || blockState.getBlock().getTags().contains(Tags.Blocks.CHESTS.getName())
                     || blockState.getBlock().getTags().contains(Tags.Blocks.BARRELS.getName())
                     || blockState.getBlock().getTags().contains(Tags.Blocks.STORAGE_BLOCKS.getName())
                     || blockState.getBlock().getTags().contains(Tags.Blocks.ORES.getName()))
-                    /////////////////  This bit right here is to keep the Atrium from failing on the TARDIS Exterior blocks
+                    /////////////////  This bit right here is to keep the Atrium from failing on the TARDIS Exterior blocks but also check for block instanceof IDontBreak
                     && (pos != this.getConsole().getCurrentLocation() && !pos.equals(new BlockPos(
                     this.getConsole().getDestinationPosition().getX(),
                     this.getConsole().getDestinationPosition().getY() + 1,
@@ -236,7 +235,7 @@ public class Atrium extends Upgrade implements INBTSerializable<CompoundNBT> {
                     this.getConsole().getCurrentLocation().getX(),
                     this.getConsole().getCurrentLocation().getY() + 1,
                     this.getConsole().getCurrentLocation().getZ()))
-                    && !(blockState.getBlock() instanceof ExteriorBlock)
+                    && !(blockState.getBlock() instanceof IDontBreak)
             )) {
 //                aseoha.LOGGER.info("Current Y {}, Conflicting Atrium blockpos {}, Conflicting BlockState {}", this.getConsole().getCurrentLocation().getY()+ 1, pos, blockState);
                 return false;
