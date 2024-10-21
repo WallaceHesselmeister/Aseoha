@@ -2,6 +2,7 @@ package com.code.aseoha.block;
 
 import java.util.List;
 import java.util.Objects;
+import java.util.stream.Stream;
 
 import com.code.aseoha.misc.KeyboardHelper;
 import net.minecraft.block.AbstractBlock;
@@ -23,9 +24,14 @@ import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
+import net.minecraft.util.math.shapes.IBooleanFunction;
+import net.minecraft.util.math.shapes.ISelectionContext;
+import net.minecraft.util.math.shapes.VoxelShape;
+import net.minecraft.util.math.shapes.VoxelShapes;
 import net.minecraft.util.text.IFormattableTextComponent;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
+import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 import net.tardis.mod.blocks.MultiblockBlock;
 import net.tardis.mod.blocks.multiblock.MultiblockPatterns;
@@ -40,6 +46,15 @@ import org.jetbrains.annotations.NotNull;
 
 @SuppressWarnings("deprecation")
 public class FoodMachineBlock extends Block implements IWaterLoggable {
+VoxelShape voxel = Block.box(3, 0, 3.6999999999999997, 13, 22, 12.700000000000001);
+
+    @NotNull
+    @Override
+    public VoxelShape getShape(@NotNull BlockState state, @NotNull IBlockReader worldIn, @NotNull BlockPos pos, @NotNull ISelectionContext context){
+        return voxel.optimize();
+    }
+
+
     public FoodMachineBlock(AbstractBlock.Properties prop) {
         super(prop);
         this.registerDefaultState((BlockState)this.defaultBlockState().setValue(BlockStateProperties.WATERLOGGED, false));

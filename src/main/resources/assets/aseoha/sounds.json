@@ -11,6 +11,30 @@
       "aseoha:aseoha/distorted_land"
     ]
   },
+  "smith_takeoff": {
+    "sounds": [
+      {
+        "name": "aseoha:aseoha/smith_takeoff",
+        "stream": true
+      }
+    ]
+  },
+  "smith_flight_loop": {
+    "sounds": [
+      {
+        "name": "aseoha:aseoha/smith_flight_loop",
+        "stream": true
+      }
+    ]
+  },
+  "smith_landing": {
+    "sounds": [
+      {
+        "name": "aseoha:aseoha/smith_landing",
+        "stream": true
+      }
+    ]
+  },
   "affirmative_master": {
     "subtitle": "aseoha.k9.affirmative_master",
     "sounds": [

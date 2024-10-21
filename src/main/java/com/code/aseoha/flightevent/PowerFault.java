@@ -29,7 +29,7 @@ public class PowerFault extends FlightEvent {
         super.onMiss(tile);
         Objects.requireNonNull(tile.getLevel()).playSound(null, tile.getBlockPos(), TSounds.POWER_DOWN.get(), SoundCategory.PLAYERS, 3.0F, 1.0F);
         tile.setArtron(tile.getArtron() * 0.5F);
-        tile.getInteriorManager().setLight(0);
-        tile.getLevel().playSound(null, tile.getBlockPos(), TSounds.CANT_START.get(), SoundCategory.PLAYERS, 3.0F, 1.0F);
+        if(tile.getInteriorManager() != null)
+            tile.onPowerDown(true);
     }
 }

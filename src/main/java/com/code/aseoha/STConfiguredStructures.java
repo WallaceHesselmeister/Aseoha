@@ -26,7 +26,7 @@ public class STConfiguredStructures {
         Registry<StructureFeature<?, ?>> registry = WorldGenRegistries.CONFIGURED_STRUCTURE_FEATURE;
         Registry.register(registry, new ResourceLocation(aseoha.MODID, "road"), CONFIGURED_ROAD);
         Registry.register(registry, new ResourceLocation(aseoha.MODID, "barn_one"), CONFIGURED_BARN_ONE);
-//        Registry.register(registry, new ResourceLocation(aseoha.MODID, "citadel"), CONFIGURED_CITADEL);
+        Registry.register(registry, new ResourceLocation(aseoha.MODID, "citadel"), CONFIGURED_CITADEL);
 
         /* Ok so, this part may be hard to grasp but basically, just add your structure to this to
          * prevent any sort of crash or issue with other mod's custom ChunkGenerators. If they use

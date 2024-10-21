@@ -141,9 +141,9 @@ public class TardisSkyRenderer implements ISkyRenderHandler {
          * Which means basically nothing, they're all centered in a line on the X axis, and Z axis moves then along that line
          * Y just brings em up/down like normal
          */
-        this.renderPlanet(bb, matrix4f, 12.5F, -15, -80, 25, earth);   //3
+        this.renderPlanet(bb, matrix4f, 0, 100, -80, 25, earth);   //3
         this.renderPlanet(bb, matrix4f, 50, 15, -20, 30, mars);      //2
-        this.renderPlanet(bb, matrix4f, 0, 100, 0, 10, sun);       //1
+        this.renderPlanet(bb, matrix4f, 20, 100, 0, 10, sun);       //1
     }
 
     private void renderSky(@NotNull BufferBuilder bb, @NotNull MatrixStack ms) {

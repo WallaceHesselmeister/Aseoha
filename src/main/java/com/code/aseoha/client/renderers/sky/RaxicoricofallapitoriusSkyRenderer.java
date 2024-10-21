@@ -57,7 +57,7 @@ public class RaxicoricofallapitoriusSkyRenderer implements ISkyRenderHandler  {
         RenderSystem.defaultBlendFunc();
         RenderSystem.depthMask(false);
         matrixStack.pushPose();
-        matrixStack.mulPose(Vector3f.XN.rotation(world.getSunAngle(partialTicks)+150));
+        matrixStack.mulPose(Vector3f.ZP.rotation(world.getSunAngle(partialTicks)));
 //        matrixStack.mulPose(Vector3f.XP.rotation(world.getSunAngle(partialTicks)));
         matrixStack.translate(-10, 60, 60);
         float scale = 1.125F;

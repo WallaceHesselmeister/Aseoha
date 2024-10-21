@@ -1,10 +1,8 @@
 package com.code.aseoha.registries;
 
 import com.code.aseoha.aseoha;
-import com.code.aseoha.block.ModBlocks;
+import com.code.aseoha.block.AseohaBlocks;
 import com.code.aseoha.client.models.interiordoors.*;
-import com.code.aseoha.client.renderers.blocks.TardisCoralRenderer;
-import com.code.aseoha.client.renderers.blocks.UpsideDownEngineRenderer;
 import com.code.aseoha.client.renderers.exteriors.*;
 import com.code.aseoha.enums.EnumDoorTypes;
 import com.code.aseoha.tileentities.AseohaTiles;
@@ -24,13 +22,10 @@ public class ModelRegistry {
     public static void Register(FMLClientSetupEvent event) {
         // Render Stuff
         event.enqueueWork(() -> {
-            RenderTypeLookup.setRenderLayer(ModBlocks.EXTERIOR_CORAL.get(), RenderType.translucent());
+            RenderTypeLookup.setRenderLayer(AseohaBlocks.EXTERIOR_CORAL.get(), RenderType.translucent());
         });
 
         //ClientRegistry
-        ClientRegistry.bindTileEntityRenderer(AseohaTiles.TARDIS_CORAL.get(), TardisCoralRenderer::new);
-//        ClientRegistry.bindTileEntityRenderer(AseohaTiles.UPSIDEDOWN_ENGINE.get(), UpsideDownEngineRenderer::new);
-        //Exteriors
         ClientRegistry.bindTileEntityRenderer(AseohaTiles.EXTERIOR_CORAL.get(), CoralRenderer::new);
         EnumDoorTypes.CORAL.setInteriorDoorModel(new CoralInteriorDoor());
 

@@ -35,9 +35,10 @@ public static final TexVariant[] COPPER = {//new TexVariant[]{
             new TexVariant(new ResourceLocation("aseoha", "textures/consoles/copper.png"), "consoles.copper.normal"),
             new TexVariant(new ResourceLocation("aseoha", "textures/consoles/copper-steel.png"), "consoles.copper.steel"),
             new TexVariant(new ResourceLocation("aseoha", "textures/consoles/copper-rosegold.png"), "consoles.copper.rosegold"),
-            new TexVariant(new ResourceLocation("aseoha", "textures/consoles/copper-blue.png"), "consoles.copper.blue"),
+        new TexVariant(new ResourceLocation("aseoha", "textures/consoles/copper-blue.png"), "consoles.copper.blue"),
+        new TexVariant(new ResourceLocation("aseoha", "textures/consoles/copper-turquoise.png"), "consoles.copper.turquoise"),
             new TexVariant(new ResourceLocation("aseoha", "textures/consoles/copper-crystal.png"), "consoles.copper.crystal")};
-
+//turquoise
     public static final TexVariant[] WARDROBE = {
             new TexVariant(new ResourceLocation(aseoha.MODID,"textures/exteriors/wardrobe/acacia_exterior.png"), "wardrobe.acacia"),
             new TexVariant(new ResourceLocation(aseoha.MODID,"textures/exteriors/wardrobe/birch_exterior.png"), "wardrobe.birch"),

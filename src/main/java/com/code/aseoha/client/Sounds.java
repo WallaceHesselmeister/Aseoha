@@ -17,6 +17,15 @@ public class Sounds {
     public static final RegistryObject<SoundEvent> EMPTY = SOUNDS.register("empty", () -> {
         return setupSound("empty");
     });
+    public static final RegistryObject<SoundEvent> SMITH_TAKEOFF = SOUNDS.register("smith_takeoff", () -> {
+        return setupSound("smith_takeoff");
+    });
+    public static final RegistryObject<SoundEvent> SMITH_FLIGHT_LOOP = SOUNDS.register("smith_flight_loop", () -> {
+        return setupSound("smith_flight_loop");
+    });
+    public static final RegistryObject<SoundEvent> SMITH_LAND = SOUNDS.register("smith_land", () -> {
+        return setupSound("smith_land");
+    });
     public static final RegistryObject<SoundEvent> THROTTLE_BLAST = SOUNDS.register("throttle_blast", () -> {
         return setupSound("throttle_blast");
     });

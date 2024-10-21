@@ -15,7 +15,6 @@ import net.tardis.mod.enums.EnumDoorState;
 import net.tardis.mod.helper.WorldHelper;
 
 public class CopperConsoleModel extends AbstractConsoleEntityModel<CopperConsoleTile> {
-
     private final ModelRenderer base;
     private final ModelRenderer side;
     private final ModelRenderer bone;
@@ -37,6 +36,20 @@ public class CopperConsoleModel extends AbstractConsoleEntityModel<CopperConsole
     private final ModelRenderer bone11;
     private final ModelRenderer side2;
     private final ModelRenderer bone16;
+    private final ModelRenderer bone23_r1;
+    private final ModelRenderer bone22_r1;
+    private final ModelRenderer bone21_r1;
+    private final ModelRenderer bone23_r2;
+    private final ModelRenderer bone22_r2;
+    private final ModelRenderer bone21_r2;
+    private final ModelRenderer bone23_r3;
+    private final ModelRenderer bone22_r3;
+    private final ModelRenderer bone21_r3;
+    private final ModelRenderer bone20_r1;
+    private final ModelRenderer bone21_r4;
+    private final ModelRenderer bone20_r2;
+    private final ModelRenderer bone19_r1;
+    private final ModelRenderer bone18_r1;
     private final ModelRenderer bone17;
     private final ModelRenderer bone18;
     private final ModelRenderer bone19;
@@ -59,6 +72,7 @@ public class CopperConsoleModel extends AbstractConsoleEntityModel<CopperConsole
     private final ModelRenderer bone30;
     private final ModelRenderer side3;
     private final ModelRenderer bone31;
+    private final ModelRenderer bone31_r1;
     private final ModelRenderer telepathic;
     private final ModelRenderer telepathic_r1;
     private final ModelRenderer bone32;
@@ -69,6 +83,7 @@ public class CopperConsoleModel extends AbstractConsoleEntityModel<CopperConsole
     private final ModelRenderer bone36;
     private final ModelRenderer bone37;
     private final ModelRenderer verticallanding;
+    private final ModelRenderer verticallanding_r1;
     private final ModelRenderer bone38;
     private final ModelRenderer bone39;
     private final ModelRenderer bone40;
@@ -113,6 +128,7 @@ public class CopperConsoleModel extends AbstractConsoleEntityModel<CopperConsole
     private final ModelRenderer bone68;
     private final ModelRenderer bone69;
     private final ModelRenderer handbreak;
+    private final ModelRenderer handbreak_r1;
     private final ModelRenderer bone70;
     private final ModelRenderer bone71;
     private final ModelRenderer bone72;
@@ -447,16 +463,19 @@ public class CopperConsoleModel extends AbstractConsoleEntityModel<CopperConsole
         bone16.texOffs(79, 62).addBox(-1.1902F, -6.1F, 12.4692F, 10.0F, 1.0F, 2.0F, 0.0F, false);
         bone16.texOffs(123, 0).addBox(1.6098F, -22.3F, 10.1692F, 1.0F, 1.0F, 1.0F, 0.0F, false);
         bone16.texOffs(121, 37).addBox(1.3098F, -24.2F, 10.0692F, 2.0F, 1.0F, 1.0F, -0.1F, false);
-        bone16.texOffs(123, 0).addBox(3.4098F, -22.3F, 10.1692F, 1.0F, 1.0F, 1.0F, 0.0F, false);
         bone16.texOffs(123, 0).addBox(5.3098F, -22.3F, 10.1692F, 1.0F, 1.0F, 1.0F, 0.0F, false);
         bone16.texOffs(122, 2).addBox(4.7098F, -23.5F, 10.1692F, 1.0F, 1.0F, 1.0F, 0.0F, false);
         bone16.texOffs(122, 2).addBox(4.7098F, -25.7F, 10.1692F, 1.0F, 1.0F, 1.0F, 0.0F, false);
         bone16.texOffs(52, 62).addBox(4.7098F, -25.6F, 10.0692F, 1.0F, 3.0F, 0.0F, 0.1F, false);
         bone16.texOffs(30, 39).addBox(1.8098F, -24.7F, 10.4692F, 1.0F, 2.0F, 0.0F, 0.1F, false);
+        bone16.texOffs(30, 39).addBox(3.2098F, -24.7F, 13.6692F, 1.0F, 2.0F, 0.0F, 0.1F, false);
         bone16.texOffs(30, 39).addBox(1.8098F, -24.7F, 10.4692F, 1.0F, 2.0F, 0.0F, 0.1F, false);
         bone16.texOffs(14, 1).addBox(5.8098F, -22.25F, 9.8692F, 0.0F, 1.0F, 1.0F, -0.1F, false);
-        bone16.texOffs(14, 1).addBox(3.9098F, -22.25F, 9.8692F, 0.0F, 1.0F, 1.0F, -0.1F, false);
+        bone16.texOffs(14, 1).addBox(4.5598F, -22.25F, 9.8692F, 0.0F, 1.0F, 1.0F, -0.1F, false);
+        bone16.texOffs(123, 0).addBox(4.0598F, -22.3F, 10.1692F, 1.0F, 1.0F, 1.0F, 0.0F, false);
         bone16.texOffs(14, 1).addBox(2.1098F, -22.25F, 9.8692F, 0.0F, 1.0F, 1.0F, -0.1F, false);
+        bone16.texOffs(123, 0).addBox(2.8598F, -22.3F, 10.1692F, 1.0F, 1.0F, 1.0F, 0.0F, false);
+        bone16.texOffs(14, 1).addBox(3.3598F, -22.25F, 9.8692F, 0.0F, 1.0F, 1.0F, -0.1F, false);
         bone16.texOffs(130, 78).addBox(2.8098F, -25.7F, 10.4692F, 2.0F, 3.0F, 2.0F, 0.0F, false);
         bone16.texOffs(11, 104).addBox(1.8358F, -25.9191F, 10.4692F, 2.0F, 1.0F, 2.0F, 0.0F, false);
         bone16.texOffs(11, 104).addBox(3.7837F, -25.9191F, 10.4692F, 2.0F, 1.0F, 2.0F, 0.0F, false);
@@ -470,6 +489,90 @@ public class CopperConsoleModel extends AbstractConsoleEntityModel<CopperConsole
         bone16.texOffs(32, 126).addBox(-5.9902F, -15.65F, 2.7656F, 3.0F, 4.0F, 2.0F, 0.0F, false);
         bone16.texOffs(104, 130).addBox(9.8098F, -15.65F, 1.4192F, 2.0F, 4.0F, 2.0F, 0.0F, false);
         bone16.texOffs(126, 0).addBox(10.7F, -15.65F, 2.829F, 3.0F, 4.0F, 2.0F, 0.0F, false);
+
+        bone23_r1 = new ModelRenderer(this);
+        bone23_r1.setPos(2.3875F, -28.8495F, 10.9577F);
+        bone16.addChild(bone23_r1);
+        setRotationAngle(bone23_r1, 2.4199F, -0.7009F, -1.2691F);
+        bone23_r1.texOffs(172, 115).addBox(-0.9F, -0.5F, 0.9F, 3.0F, 1.0F, 1.0F, 0.0F, false);
+
+        bone22_r1 = new ModelRenderer(this);
+        bone22_r1.setPos(2.3875F, -28.8495F, 10.9577F);
+        bone16.addChild(bone22_r1);
+        setRotationAngle(bone22_r1, 2.1337F, -0.931F, -0.881F);
+        bone22_r1.texOffs(170, 113).addBox(-1.5F, -0.5F, -1.5F, 3.0F, 1.0F, 3.0F, 0.0F, false);
+
+        bone21_r1 = new ModelRenderer(this);
+        bone21_r1.setPos(2.3875F, -28.8495F, 10.9577F);
+        bone16.addChild(bone21_r1);
+        setRotationAngle(bone21_r1, 1.6202F, -1.0408F, -0.2718F);
+        bone21_r1.texOffs(170, 113).addBox(-1.9F, -0.5F, -2.1F, 1.0F, 1.0F, 3.0F, 0.0F, false);
+
+        bone23_r2 = new ModelRenderer(this);
+        bone23_r2.setPos(6.2927F, -28.5534F, 11.7712F);
+        bone16.addChild(bone23_r2);
+        setRotationAngle(bone23_r2, 1.4495F, 0.6462F, 0.293F);
+        bone23_r2.texOffs(172, 113).addBox(0.9F, -0.5F, -2.1F, 1.0F, 1.0F, 3.0F, 0.0F, false);
+
+        bone22_r2 = new ModelRenderer(this);
+        bone22_r2.setPos(6.2927F, -28.5534F, 11.7712F);
+        bone16.addChild(bone22_r2);
+        setRotationAngle(bone22_r2, 1.7151F, 0.6421F, 0.7308F);
+        bone22_r2.texOffs(170, 113).addBox(-1.5F, -0.5F, -1.5F, 3.0F, 1.0F, 3.0F, 0.0F, false);
+
+        bone21_r2 = new ModelRenderer(this);
+        bone21_r2.setPos(6.2927F, -28.5534F, 11.7712F);
+        bone16.addChild(bone21_r2);
+        setRotationAngle(bone21_r2, 1.947F, 0.5508F, 1.1392F);
+        bone21_r2.texOffs(172, 115).addBox(-2.1F, -0.5F, 0.9F, 3.0F, 1.0F, 1.0F, 0.0F, false);
+
+        bone23_r3 = new ModelRenderer(this);
+        bone23_r3.setPos(4.3401F, -26.822F, 10.6804F);
+        bone16.addChild(bone23_r3);
+        setRotationAngle(bone23_r3, 0.4275F, 0.1932F, 0.2556F);
+        bone23_r3.texOffs(172, 115).addBox(-2.2F, -0.5F, -1.9F, 3.0F, 1.0F, 1.0F, 0.0F, false);
+
+        bone22_r3 = new ModelRenderer(this);
+        bone22_r3.setPos(4.3401F, -26.822F, 10.6804F);
+        bone16.addChild(bone22_r3);
+        setRotationAngle(bone22_r3, 0.4842F, 0.5074F, 0.4186F);
+        bone22_r3.texOffs(170, 113).addBox(-1.5F, -0.5F, -1.5F, 3.0F, 1.0F, 3.0F, 0.0F, false);
+
+        bone21_r3 = new ModelRenderer(this);
+        bone21_r3.setPos(4.3401F, -26.822F, 10.6804F);
+        bone16.addChild(bone21_r3);
+        setRotationAngle(bone21_r3, 0.6277F, 0.8055F, 0.6505F);
+        bone21_r3.texOffs(172, 113).addBox(0.9F, -0.5F, -0.8F, 1.0F, 1.0F, 3.0F, 0.0F, false);
+
+        bone20_r1 = new ModelRenderer(this);
+        bone20_r1.setPos(4.1072F, -28.2336F, 12.3993F);
+        bone16.addChild(bone20_r1);
+        setRotationAngle(bone20_r1, 1.2139F, -0.2048F, 0.0757F);
+        bone20_r1.texOffs(170, 113).addBox(-1.5F, -0.5F, -1.5F, 3.0F, 1.0F, 3.0F, 0.0F, false);
+
+        bone21_r4 = new ModelRenderer(this);
+        bone21_r4.setPos(4.3401F, -30.5808F, 12.0485F);
+        bone16.addChild(bone21_r4);
+        setRotationAngle(bone21_r4, 1.731F, -0.4462F, 0.8694F);
+        bone21_r4.texOffs(170, 113).addBox(-1.5F, -0.5F, -1.5F, 3.0F, 1.0F, 3.0F, 0.0F, false);
+
+        bone20_r2 = new ModelRenderer(this);
+        bone20_r2.setPos(4.3401F, -30.5808F, 12.0485F);
+        bone16.addChild(bone20_r2);
+        setRotationAngle(bone20_r2, 1.5569F, -0.472F, 1.2582F);
+        bone20_r2.texOffs(170, 113).addBox(-1.9F, -0.5F, -2.2F, 1.0F, 1.0F, 3.0F, 0.0F, false);
+
+        bone19_r1 = new ModelRenderer(this);
+        bone19_r1.setPos(4.3401F, -30.5808F, 12.0485F);
+        bone16.addChild(bone19_r1);
+        setRotationAngle(bone19_r1, 1.8783F, -0.3643F, 0.4997F);
+        bone19_r1.texOffs(172, 115).addBox(-0.9F, -0.5F, 0.9F, 3.0F, 1.0F, 1.0F, 0.0F, false);
+
+        bone18_r1 = new ModelRenderer(this);
+        bone18_r1.setPos(18.65F, -2.0F, 6.5F);
+        bone16.addChild(bone18_r1);
+        setRotationAngle(bone18_r1, 0.1745F, 0.0F, 0.0F);
+        bone18_r1.texOffs(173, 115).addBox(-15.4402F, -24.7F, 10.1692F, 1.0F, 5.0F, 1.0F, 0.0F, false);
 
         bone17 = new ModelRenderer(this);
         bone17.setPos(-4.0F, -23.1F, -2.7F);
@@ -590,7 +693,7 @@ public class CopperConsoleModel extends AbstractConsoleEntityModel<CopperConsole
         bone25.setPos(5.0F, -15.5F, -11.5F);
         side2.addChild(bone25);
         setRotationAngle(bone25, -1.6581F, 0.0F, 0.0F);
-        bone25.texOffs(136, 0).addBox(4.8098F, -15.2056F, 0.7094F, 2.0F, 2.0F, 2.0F, 0.0F, false);
+        bone25.texOffs(126, 135).addBox(4.8098F, -15.2056F, 0.7094F, 2.0F, 2.0F, 2.0F, 0.0F, false);
 
         bone26 = new ModelRenderer(this);
         bone26.setPos(2.0F, -2.0F, 0.0F);
@@ -615,7 +718,7 @@ public class CopperConsoleModel extends AbstractConsoleEntityModel<CopperConsole
         bone29.setPos(0.0F, -2.0F, 0.0F);
         bone28.addChild(bone29);
         setRotationAngle(bone29, 0.0F, 0.0F, 0.4363F);
-        bone29.texOffs(35, 113).addBox(-1.2218F, -25.0011F, 0.7094F, 2.0F, 11.0F, 2.0F, 0.0F, false);
+        bone29.texOffs(74, 114).addBox(-1.2218F, -25.0011F, 0.7094F, 2.0F, 11.0F, 2.0F, 0.0F, false);
         bone29.texOffs(81, 93).addBox(-1.2218F, -25.0011F, 2.7094F, 2.0F, 2.0F, 7.0F, 0.0F, false);
 
         bone30 = new ModelRenderer(this);
@@ -635,8 +738,6 @@ public class CopperConsoleModel extends AbstractConsoleEntityModel<CopperConsole
         side3.addChild(bone31);
         bone31.texOffs(0, 80).addBox(-27.1902F, -15.15F, 5.541F, 12.0F, 3.0F, 1.0F, 0.2F, false);
         bone31.texOffs(95, 104).addBox(-24.1902F, -23.1F, 14.291F, 6.0F, 4.0F, 2.0F, 0.0F, false);
-        bone31.texOffs(137, 48).addBox(-22.0902F, -26.4F, 13.791F, 2.0F, 2.0F, 1.0F, 0.0F, false);
-        bone31.texOffs(30, 27).addBox(-21.0902F, -26.2F, 13.391F, 0.0F, 2.0F, 1.0F, -0.2F, false);
         bone31.texOffs(118, 61).addBox(-24.1902F, -20.1F, 16.291F, 6.0F, 1.0F, 2.0F, 0.0F, false);
         bone31.texOffs(118, 34).addBox(-24.1902F, -6.1F, 16.291F, 6.0F, 1.0F, 2.0F, 0.0F, false);
         bone31.texOffs(130, 78).addBox(-22.1902F, -25.6F, 14.291F, 2.0F, 3.0F, 2.0F, 0.0F, false);
@@ -646,6 +747,13 @@ public class CopperConsoleModel extends AbstractConsoleEntityModel<CopperConsole
         bone31.texOffs(125, 84).addBox(-31.0304F, -15.65F, 6.5642F, 3.0F, 4.0F, 2.0F, 0.0F, false);
         bone31.texOffs(96, 130).addBox(-15.1902F, -15.65F, 5.241F, 2.0F, 4.0F, 2.0F, 0.0F, false);
         bone31.texOffs(57, 125).addBox(-14.3902F, -15.65F, 6.5874F, 3.0F, 4.0F, 2.0F, 0.0F, false);
+
+        bone31_r1 = new ModelRenderer(this);
+        bone31_r1.setPos(29.65F, -3.25F, 5.0F);
+        bone31.addChild(bone31_r1);
+        setRotationAngle(bone31_r1, 0.0F, 0.0436F, 0.0F);
+        bone31_r1.texOffs(30, 27).addBox(-51.7402F, -24.2F, 6.891F, 0.0F, 2.0F, 1.0F, -0.2F, false);
+        bone31_r1.texOffs(137, 48).addBox(-52.7402F, -24.4F, 7.291F, 2.0F, 2.0F, 1.0F, 0.0F, false);
 
         telepathic = new ModelRenderer(this);
         telepathic.setPos(-4.0F, -12.0F, -11.0F);
@@ -692,21 +800,21 @@ public class CopperConsoleModel extends AbstractConsoleEntityModel<CopperConsole
         bone34.texOffs(63, 4).addBox(-26.0902F, 8.4955F, 4.7147F, 12.0F, 1.0F, 3.0F, 0.0F, false);
         bone34.texOffs(135, 87).addBox(-23.8902F, 7.9955F, 7.6147F, 2.0F, 1.0F, 2.0F, 0.0F, false);
         bone34.texOffs(136, 77).addBox(-23.8902F, 7.7955F, 7.6147F, 2.0F, 1.0F, 2.0F, -0.1F, false);
+        bone34.texOffs(136, 77).addBox(-21.1402F, 7.7955F, 5.3647F, 2.0F, 1.0F, 2.0F, -0.1F, false);
+        bone34.texOffs(135, 87).addBox(-21.1402F, 7.9955F, 5.3647F, 2.0F, 1.0F, 2.0F, 0.0F, false);
         bone34.texOffs(8, 1).addBox(-22.8902F, 7.6955F, 8.5147F, 0.0F, 1.0F, 1.0F, -0.1F, false);
-        bone34.texOffs(135, 87).addBox(-22.2902F, 7.9955F, 5.1147F, 2.0F, 1.0F, 2.0F, 0.0F, false);
-        bone34.texOffs(135, 18).addBox(-22.2902F, 7.7955F, 5.1147F, 2.0F, 1.0F, 2.0F, -0.1F, false);
-        bone34.texOffs(116, 71).addBox(-17.6902F, 6.9846F, 6.9049F, 1.0F, 1.0F, 1.0F, -0.3F, false);
-        bone34.texOffs(116, 71).addBox(-17.6902F, 6.9846F, 5.6049F, 1.0F, 1.0F, 1.0F, -0.3F, false);
-        bone34.texOffs(118, 65).addBox(-17.6902F, 6.9846F, 6.9049F, 1.0F, 2.0F, 1.0F, -0.4F, false);
-        bone34.texOffs(118, 65).addBox(-17.6902F, 6.9846F, 5.6049F, 1.0F, 2.0F, 1.0F, -0.4F, false);
-        bone34.texOffs(40, 103).addBox(-18.6902F, 7.9846F, 6.9049F, 2.0F, 1.0F, 1.0F, -0.3F, false);
-        bone34.texOffs(40, 103).addBox(-17.6902F, 7.9846F, 5.6049F, 2.0F, 1.0F, 1.0F, -0.3F, false);
+        bone34.texOffs(116, 71).addBox(-16.6902F, 6.9846F, 6.9049F, 1.0F, 1.0F, 1.0F, -0.3F, false);
+        bone34.texOffs(116, 71).addBox(-16.6902F, 6.9846F, 5.6049F, 1.0F, 1.0F, 1.0F, -0.3F, false);
+        bone34.texOffs(118, 65).addBox(-16.6902F, 6.9846F, 6.9049F, 1.0F, 2.0F, 1.0F, -0.4F, false);
+        bone34.texOffs(118, 65).addBox(-16.6902F, 6.9846F, 5.6049F, 1.0F, 2.0F, 1.0F, -0.4F, false);
+        bone34.texOffs(40, 103).addBox(-17.6902F, 7.9846F, 6.9049F, 2.0F, 1.0F, 1.0F, -0.3F, false);
+        bone34.texOffs(40, 103).addBox(-16.6902F, 7.9846F, 5.6049F, 2.0F, 1.0F, 1.0F, -0.3F, false);
 
         bone34_r1 = new ModelRenderer(this);
         bone34_r1.setPos(-20.8902F, 8.1955F, 6.0147F);
         bone34.addChild(bone34_r1);
         setRotationAngle(bone34_r1, 0.0F, -0.9599F, 0.0F);
-        bone34_r1.texOffs(27, 0).addBox(-0.3F, -0.5F, 0.3F, 1.0F, 1.0F, 0.0F, -0.1F, false);
+
 
         bone35 = new ModelRenderer(this);
         bone35.setPos(-1.1F, -12.1499F, -0.5857F);
@@ -740,10 +848,19 @@ public class CopperConsoleModel extends AbstractConsoleEntityModel<CopperConsole
         verticallanding.setPos(-13.6102F, -27.6163F, 7.4438F);
         bone37.addChild(verticallanding);
         setRotationAngle(verticallanding, -0.9599F, 0.0F, 0.0F);
-        verticallanding.texOffs(105, 49).addBox(-0.1563F, 0.0F, -2.95F, 1.0F, 0.0F, 0.0F, -0.2F, false);
+        verticallanding.texOffs(105, 30).addBox(-0.1563F, 0.0F, -2.95F, 1.0F, 0.0F, 0.0F, -0.2F, false);
         verticallanding.texOffs(0, 0).addBox(-0.2062F, 0.0F, -2.95F, 0.0F, 0.0F, 3.0F, -0.125F, false);
         verticallanding.texOffs(0, 0).addBox(0.1938F, 0.0F, -2.95F, 0.0F, 0.0F, 3.0F, -0.125F, false);
-        verticallanding.texOffs(105, 49).addBox(-0.8313F, 0.0F, -2.95F, 1.0F, 0.0F, 0.0F, -0.2F, false);
+        verticallanding.texOffs(105, 30).addBox(-0.8313F, 0.0F, -2.95F, 1.0F, 0.0F, 0.0F, -0.2F, false);
+
+        verticallanding_r1 = new ModelRenderer(this);
+        verticallanding_r1.setPos(38.1102F, -10.8837F, 43.0562F);
+        verticallanding.addChild(verticallanding_r1);
+        setRotationAngle(verticallanding_r1, 1.5708F, 0.0F, 0.0F);
+        verticallanding_r1.texOffs(105, 49).addBox(-37.4165F, -43.1163F, -13.5062F, 1.0F, 0.0F, 0.0F, -0.2F, false);
+        verticallanding_r1.texOffs(0, 0).addBox(-37.0664F, -43.1163F, -13.5062F, 0.0F, 0.0F, 3.0F, -0.125F, false);
+        verticallanding_r1.texOffs(105, 49).addBox(-38.0915F, -43.1163F, -13.5062F, 1.0F, 0.0F, 0.0F, -0.2F, false);
+        verticallanding_r1.texOffs(0, 0).addBox(-37.4664F, -43.1163F, -13.5062F, 0.0F, 0.0F, 3.0F, -0.125F, false);
 
         bone38 = new ModelRenderer(this);
         bone38.setPos(-9.0F, -15.5F, -11.5F);
@@ -808,6 +925,7 @@ public class CopperConsoleModel extends AbstractConsoleEntityModel<CopperConsole
         bone46 = new ModelRenderer(this);
         bone46.setPos(0.0F, 0.0F, 0.0F);
         side4.addChild(bone46);
+        bone46.texOffs(134, 4).addBox(-32.0F, -4.15F, -18.591F, 2.0F, 2.0F, 2.0F, 0.2F, false);
         bone46.texOffs(78, 51).addBox(-37.0F, -15.15F, -24.591F, 12.0F, 3.0F, 1.0F, 0.2F, false);
         bone46.texOffs(95, 104).addBox(-34.0F, -23.1F, -15.841F, 6.0F, 4.0F, 2.0F, 0.0F, false);
         bone46.texOffs(40, 99).addBox(-29.8F, -24.7F, -16.041F, 1.0F, 2.0F, 2.0F, 0.0F, false);
@@ -1143,16 +1261,25 @@ public class CopperConsoleModel extends AbstractConsoleEntityModel<CopperConsole
         handbreak.setPos(6.0335F, 28.7587F, -19.4562F);
         bone69.addChild(handbreak);
         setRotationAngle(handbreak, -0.6109F, 0.0F, 0.0F);
-        handbreak.texOffs(0, 0).addBox(-0.85F, 0.0F, -2.75F, 1.0F, 0.0F, 0.0F, -0.2F, false);
-        handbreak.texOffs(0, 0).addBox(-0.175F, 0.0F, -2.75F, 1.0F, 0.0F, 0.0F, -0.2F, false);
+        handbreak.texOffs(105, 30).addBox(-0.85F, 0.0F, -2.75F, 1.0F, 0.0F, 0.0F, -0.2F, false);
+        handbreak.texOffs(105, 30).addBox(-0.175F, 0.0F, -2.75F, 1.0F, 0.0F, 0.0F, -0.2F, false);
         handbreak.texOffs(0, 0).addBox(0.175F, 0.0F, -2.75F, 0.0F, 0.0F, 3.0F, -0.125F, false);
         handbreak.texOffs(0, 0).addBox(-0.225F, 0.0F, -2.75F, 0.0F, 0.0F, 3.0F, -0.125F, false);
+
+        handbreak_r1 = new ModelRenderer(this);
+        handbreak_r1.setPos(34.4665F, -38.2587F, -13.0438F);
+        handbreak.addChild(handbreak_r1);
+        setRotationAngle(handbreak_r1, 1.5708F, 0.0F, 0.0F);
+        handbreak_r1.texOffs(0, 0).addBox(-33.8415F, 13.2587F, -40.2062F, 0.0F, 0.0F, 3.0F, -0.125F, false);
+        handbreak_r1.texOffs(105, 49).addBox(-34.4665F, 13.2587F, -40.2062F, 1.0F, 0.0F, 0.0F, -0.2F, false);
+        handbreak_r1.texOffs(105, 49).addBox(-33.7915F, 13.2587F, -40.2062F, 1.0F, 0.0F, 0.0F, -0.2F, false);
+        handbreak_r1.texOffs(0, 0).addBox(-33.4415F, 13.2587F, -40.2062F, 0.0F, 0.0F, 3.0F, -0.125F, false);
 
         bone70 = new ModelRenderer(this);
         bone70.setPos(5.0F, -15.5F, -11.5F);
         side5.addChild(bone70);
         setRotationAngle(bone70, -1.6581F, 0.0F, 0.0F);
-        bone70.texOffs(0, 133).addBox(-8.8098F, 34.4764F, 5.056F, 2.0F, 2.0F, 2.0F, 0.0F, false);
+
 
         bone71 = new ModelRenderer(this);
         bone71.setPos(2.0F, -2.0F, 0.0F);
@@ -1171,14 +1298,14 @@ public class CopperConsoleModel extends AbstractConsoleEntityModel<CopperConsole
         bone73.setPos(-9.0F, -15.5F, -11.5F);
         side5.addChild(bone73);
         setRotationAngle(bone73, -1.6581F, 0.0F, 0.0F);
-        bone73.texOffs(132, 117).addBox(-8.8098F, 34.4764F, 5.056F, 2.0F, 2.0F, 2.0F, 0.0F, false);
+
 
         bone74 = new ModelRenderer(this);
         bone74.setPos(0.0F, -2.0F, 0.0F);
         bone73.addChild(bone74);
         setRotationAngle(bone74, 0.0F, 0.0F, 0.4363F);
-        bone74.texOffs(110, 71).addBox(7.4312F, 25.782F, 5.056F, 2.0F, 11.0F, 2.0F, 0.0F, false);
-        bone74.texOffs(90, 1).addBox(7.4312F, 25.782F, 7.056F, 2.0F, 2.0F, 7.0F, 0.0F, false);
+        bone74.texOffs(106, 111).addBox(7.4312F, 25.782F, 5.056F, 2.0F, 11.0F, 2.0F, 0.0F, false);
+        bone74.texOffs(70, 90).addBox(7.4312F, 25.782F, 7.056F, 2.0F, 2.0F, 7.0F, 0.0F, false);
 
         bone75 = new ModelRenderer(this);
         bone75.setPos(1.9634F, -11.0784F, 10.8321F);
@@ -1472,7 +1599,7 @@ public class CopperConsoleModel extends AbstractConsoleEntityModel<CopperConsole
         bone85.setPos(5.0F, -15.5F, -11.5F);
         side6.addChild(bone85);
         setRotationAngle(bone85, -1.6581F, 0.0F, 0.0F);
-        bone85.texOffs(129, 42).addBox(22.1902F, 27.9309F, 4.4833F, 2.0F, 2.0F, 2.0F, 0.0F, false);
+
 
         bone86 = new ModelRenderer(this);
         bone86.setPos(2.0F, -2.0F, 0.0F);
@@ -1491,13 +1618,13 @@ public class CopperConsoleModel extends AbstractConsoleEntityModel<CopperConsole
         bone88.setPos(-9.0F, -15.5F, -11.5F);
         side6.addChild(bone88);
         setRotationAngle(bone88, -1.6581F, 0.0F, 0.0F);
-        bone88.texOffs(26, 101).addBox(22.1902F, 27.9309F, 4.4833F, 2.0F, 2.0F, 2.0F, 0.0F, false);
+
 
         bone89 = new ModelRenderer(this);
         bone89.setPos(0.0F, -2.0F, 0.0F);
         bone88.addChild(bone89);
         setRotationAngle(bone89, 0.0F, 0.0F, 0.4363F);
-        bone89.texOffs(43, 109).addBox(32.7605F, 6.7486F, 4.4833F, 2.0F, 11.0F, 2.0F, 0.0F, false);
+        bone89.texOffs(74, 114).addBox(32.7605F, 6.7486F, 4.4833F, 2.0F, 11.0F, 2.0F, 0.0F, false);
         bone89.texOffs(85, 84).addBox(32.7605F, 6.7486F, 6.4833F, 2.0F, 2.0F, 7.0F, 0.0F, false);
 
         bone90 = new ModelRenderer(this);
@@ -1947,6 +2074,7 @@ public class CopperConsoleModel extends AbstractConsoleEntityModel<CopperConsole
         hammer.setPos(-1.35F, 1.0F, -1.5F);
         base.addChild(hammer);
         hammer.texOffs(92, 93).addBox(19.0F, -8.0F, 2.5F, 1.0F, 5.0F, 1.0F, 0.0F, false);
+        hammer.texOffs(58, 90).addBox(19.0F, -3.0F, 1.5F, 1.0F, 2.0F, 3.0F, 0.0F, false);
 
         cube_r1 = new ModelRenderer(this);
         cube_r1.setPos(19.5F, -8.5F, 3.0F);
@@ -1958,7 +2086,7 @@ public class CopperConsoleModel extends AbstractConsoleEntityModel<CopperConsole
         cube_r2.setPos(19.5F, -2.0F, 3.0F);
         hammer.addChild(cube_r2);
         setRotationAngle(cube_r2, 0.0F, 0.0F, -3.1416F);
-        cube_r2.texOffs(58, 90).addBox(-0.5F, -1.0F, -1.5F, 1.0F, 2.0F, 3.0F, 0.0F, false);
+
 
         rotor = new ModelRenderer(this);
         rotor.setPos(0.0F, 1.0F, -1.0F);
@@ -1987,7 +2115,7 @@ public class CopperConsoleModel extends AbstractConsoleEntityModel<CopperConsole
         rotorbottom.texOffs(0, 173).addBox(-2.5F, -38.8F, -1.5F, 3.0F, 4.0F, 3.0F, -0.6F, false);
         rotorbottom.texOffs(0, 173).addBox(-2.5F, -40.8F, -1.5F, 3.0F, 4.0F, 3.0F, -0.6F, false);
         rotorbottom.texOffs(0, 173).addBox(-2.5F, -42.6F, -1.5F, 3.0F, 3.0F, 3.0F, -0.5F, false);
-}
+    }
 
     @Override
     public void setupAnim(Entity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch){

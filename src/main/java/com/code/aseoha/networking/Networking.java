@@ -31,6 +31,7 @@ public class Networking {
         INSTANCE.registerMessage(iterator(), RWFPacket.class, RWFPacket::encode, RWFPacket::decode, RWFPacket::handle);
         INSTANCE.registerMessage(iterator(), RWFToggle.class, RWFToggle::encode, RWFToggle::decode, RWFToggle::handle);
         INSTANCE.registerMessage(iterator(), TardisInputMessage.class, TardisInputMessage::encode, TardisInputMessage::decode, TardisInputMessage::handle);
+        INSTANCE.registerMessage(iterator(), EOHInteractPacket.class, EOHInteractPacket::encode, EOHInteractPacket::decode, EOHInteractPacket::handle);
         //INSTANCE.registerMessage(iterator(), .class, ::encode, ::decode, ::handle);
         //DistExecutor.safeRunWhenOn(Dist.CLIENT, () ->
     }

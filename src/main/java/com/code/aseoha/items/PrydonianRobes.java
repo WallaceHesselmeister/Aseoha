@@ -1,6 +1,5 @@
 package com.code.aseoha.items;
 
-import java.util.Iterator;
 import java.util.Map;
 
 import com.code.aseoha.misc.AClientHelper;
@@ -15,7 +14,6 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.SoundEvents;
-import net.tardis.mod.itemgroups.TItemGroups;
 import net.tardis.mod.properties.Prop.Items;
 import org.jetbrains.annotations.NotNull;
 
@@ -23,7 +21,7 @@ public class PrydonianRobes extends ArmorItem {
     public static final GallifreyMaterial gallifreyMaterial = new GallifreyMaterial();
 
     public PrydonianRobes(EquipmentSlotType slot) {
-        super(gallifreyMaterial, slot, ((Item.Properties)Items.ONE.get()).tab(ModItemGroup.ASEOHA_GROUP));
+        super(gallifreyMaterial, slot, ((Item.Properties)Items.ONE.get()).tab(AseohaItemGroups.ASEOHA_GROUP));
     }
     @Override
     public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlotType slot, String type) {

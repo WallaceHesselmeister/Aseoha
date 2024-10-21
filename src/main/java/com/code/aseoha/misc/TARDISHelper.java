@@ -5,11 +5,10 @@ import com.code.aseoha.upgrades.EngineBoost;
 import com.code.aseoha.upgrades.HADS;
 import net.minecraft.command.CommandSource;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.*;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.Direction;
-import net.minecraft.util.SoundCategory;
-import net.minecraft.util.SoundEvent;
+import net.minecraft.util.*;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TextComponent;
@@ -24,6 +23,7 @@ import net.tardis.mod.enums.EnumDoorState;
 import net.tardis.mod.exterior.AbstractExterior;
 import net.tardis.mod.helper.TardisHelper;
 import net.tardis.mod.helper.TextHelper;
+import net.tardis.mod.items.KeyItem;
 import net.tardis.mod.misc.Console;
 import net.tardis.mod.sounds.TSounds;
 import net.tardis.mod.tileentities.ConsoleTile;
@@ -177,5 +177,32 @@ public class TARDISHelper {
         CompoundNBT nbt = cap.serializeNBT();
         nbt.putString("name", tname);
         cap.deserializeNBT(nbt);
+    }
+
+    public static ActionResult MakeItemKey(PlayerEntity playerIn, Hand handIn, KeyItem keyItem){
+        ItemStack stack = playerIn.getItemInHand(handIn);
+        if (stack.getItem() instanceof KeyItem) {
+            if (playerIn.isCrouching()) {
+                if (handIn == Hand.MAIN_HAND) {
+                    ItemStack offHandItem = playerIn.getOffhandItem();
+                    if (!(playerIn.getOffhandItem() == Items.AIR.getDefaultInstance() &&
+                            playerIn.getOffhandItem().getItem() instanceof BlockItem &&
+                            playerIn.getOffhandItem().getItem() instanceof BucketItem &&
+                            playerIn.getOffhandItem().getItem() instanceof PotionItem &&
+                            playerIn.getOffhandItem().getItem() instanceof SpawnEggItem &&
+                            playerIn.getOffhandItem().getItem().equals(Items.SNOWBALL) &&
+                            playerIn.getOffhandItem().getItem().equals(Items.ENDER_PEARL) &&
+                            playerIn.getOffhandItem().getItem().equals(Items.EGG)
+                    )) {
+                        if (stack.hasTag()) {
+                            keyItem.setTardis(offHandItem, keyItem.getTardis(stack));
+                            playerIn.inventory.removeItem(stack);
+                            return ActionResult.success(stack);
+                        }
+                    }
+                }
+            }
+        }
+        return ActionResult.fail(stack);
     }
 }

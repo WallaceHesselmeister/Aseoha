@@ -20,7 +20,7 @@ public class unDeadLocker extends Item {
 
 
     public unDeadLocker() {
-        super(new Properties().stacksTo(1).tab(ModItemGroup.ASEOHA_GROUP));
+        super(new Properties().stacksTo(1).tab(AseohaItemGroups.ASEOHA_GROUP));
     }
     
     public ActionResultType useOn(ItemUseContext context) {

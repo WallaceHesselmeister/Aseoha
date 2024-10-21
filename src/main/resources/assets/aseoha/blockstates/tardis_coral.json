@@ -1,7 +1,16 @@
 {
   "variants":{
-    "":{
-      "model":"tardis:block/invis"
+    "state=0":{
+      "model":"aseoha:block/coral/tardis_coral"
+    },
+    "state=1":{
+      "model":"aseoha:block/coral/tardis_coral1"
+    },
+    "state=2":{
+      "model":"aseoha:block/coral/tardis_coral2"
+    },
+    "state=3":{
+      "model":"aseoha:block/coral/tardis_coral3"
     }
   }
 }

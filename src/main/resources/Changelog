@@ -1,15 +1,21 @@
 TODO: GET BOTI TO WORK ON ALL INTERIOR DOORS!!
-TODO: SONIC WORKBENCH GUI!!!
-TODO: Coatrack?
-TODO: FINISH CLASSIC INTERIORS
-TODO: MAKE THE EOH
-TODO: SONIC PORT RENDERING FIXES
+TODO: SONIC WORKBENCH GUI?!?
+TODO: Finish Coatrack
 TODO: AZEALA LEAVES AND MOSS BLOCKS
 TODO: CHANGE SHRINK FROM INT TO BOOL
 TODO: MAKE EYE OF HARMONY MAKE EYE OF HARMONY MAKE EYE OF HARMONY MAKE EYE OF HARMONY MAKE EYE OF HARMONY MAKE EYE OF HARMONY MAKE EYE OF HARMONY MAKE EYE OF HARMONY MAKE EYE OF HARMONY MAKE EYE OF HARMONY MAKE EYE OF HARMONY MAKE EYE OF HARMONY MAKE EYE OF HARMONY MAKE EYE OF HARMONY MAKE EYE OF HARMONY MAKE EYE OF HARMONY MAKE EYE OF HARMONY MAKE EYE OF HARMONY MAKE EYE OF HARMONY MAKE EYE OF HARMONY MAKE EYE OF HARMONY MAKE EYE OF HARMONY MAKE EYE OF HARMONY MAKE EYE OF HARMONY MAKE EYE OF HARMONY MAKE EYE OF HARMONY MAKE EYE OF HARMONY MAKE EYE OF HARMONY MAKE EYE OF HARMONY MAKE EYE OF HARMONY MAKE EYE OF HARMONY MAKE EYE OF HARMONY MAKE EYE OF HARMONY MAKE EYE OF HARMONY MAKE EYE OF HARMONY MAKE EYE OF HARMONY MAKE EYE OF HARMONY MAKE EYE OF HARMONY MAKE EYE OF HARMONY MAKE EYE OF HARMONY MAKE EYE OF HARMONY MAKE EYE OF HARMONY MAKE EYE OF HARMONY MAKE EYE OF HARMONY MAKE EYE OF HARMONY MAKE EYE OF HARMONY MAKE EYE OF HARMONY MAKE EYE OF HARMONY MAKE EYE OF HARMONY MAKE EYE OF HARMONY MAKE EYE OF HARMONY MAKE EYE OF HARMONY MAKE EYE OF HARMONY MAKE EYE OF HARMONY MAKE EYE OF HARMONY MAKE EYE OF HARMONY MAKE EYE OF HARMONY
-(Model with 2 cubes like end crystal, unlimited powaaaah, etc)
+
+TODO: FINISH DAVROS CHAIR
+TODO: TEST CORAL
+TODO: FINISH EOH
+TODO: FINISH Wibbly Lever
+
+TODO: VALE EXTERIORS (Can wait)
+TODO: TRACTOR BEAMS (Can wait)
+TODO: POWER SWITCH (Can wait)
 
 Done:
+Eye Of Harmony
 Exterior Shrinking
 Atrium
 Capaldi & Coral interior door
@@ -18,7 +24,40 @@ Cool Vortex
 SKYBOXES!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 Fix Foodmachine Bug
 Fix TARDIS Flight Issues
+Fix invisible TT
+MASSIVE Dimension revamp
+Skybox's pretty much everywhere, TARDIS, Vortex, etc
 Throttle Slam
 Key Disguises
 Some Battle Console progress
 Coffee Pot
+Fixed crashes when Entities enter the TARDIS (having Cracker's wither storm, Spider-man mod, Alex's mobs, etc installed would crash the game whenever a mob enters the TARDIS, fixed that)
+Added Blue Crystal ingots, nuggets, shards, and piles
+
+
+
+# ASEOHA 6.0
+## What's new:
+- Eye Of Harmony
+- Exterior Shrinking
+- Atrium
+- Capaldi & Coral interior door
+- Custard Console (13th Doctors Console)
+- Cool whirly Vortex
+- Coffee Pot TARDIS Console Control
+- Jelly Baby
+- Skyboxes
+- MASSIVE Dimension revamp
+- Copper Console Revamp
+- 2 New Sonic Screwdrivers (A Screwdriver, and A WiiMote)
+- Revamped Fourteenth Sonic Screwdriver
+- Added Decoration Blocks to ARS
+- Skybox's pretty much everywhere, TARDIS, Vortex, etc
+- Throttle Slam Sound (Plays sound when you left click throttle)
+- Key Disguises (With an item in your off-hand and an attuned key in your main hand, shift + Right Click and the off-hand item will become a TARDIS Key)
+- Added Blue Crystal ingots, nuggets, shards, and piles
+- Fixed invisible TT Capsule
+- Some Battle Console progress
+- Fixed NTM crashes when Entities enter the TARDIS (having Cracker's wither storm, Spider-man mod, Alex's mobs, etc installed would crash the game whenever a mob enters the TARDIS, fixed that)
+- Fixed Foodmachine Crash
+- Fixed TARDIS Flight Issues

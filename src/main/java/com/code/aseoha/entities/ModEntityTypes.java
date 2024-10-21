@@ -29,8 +29,10 @@ public class ModEntityTypes {
 
     public static final RegistryObject<EntityType<DavrosChair>> DAVROS_CHAIR =
             ENTITY_TYPES.register("davros_chair",
-                    () -> EntityType.Builder.<DavrosChair>of(DavrosChair::new, EntityClassification.MISC).sized(1.375F, 0.5625F).clientTrackingRange(10)
+                    () -> EntityType.Builder.<DavrosChair>of(DavrosChair::new,
+                                    EntityClassification.MISC).sized(0.5625F, 1.375F)
                             .build(new ResourceLocation(aseoha.MODID, "davros_chair").toString()));
+
 
     public static void register(IEventBus eventBus) {
         ENTITY_TYPES.register(eventBus);

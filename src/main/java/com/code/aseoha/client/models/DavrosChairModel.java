@@ -165,7 +165,7 @@ public class DavrosChairModel<T extends DavrosChair> extends EntityModel<T> {
 //		matrixStack.pushPose();
 //		matrixStack.mulPose(Vector3f.ZN.rotation(180));
 //
-//		base.render(matrixStack, buffer, packedLight, packedOverlay);
+		Base.render(matrixStack, buffer, packedLight, packedOverlay);
 //		matrixStack.popPose();
 	}
 

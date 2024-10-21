@@ -1,6 +1,7 @@
 {
   "client": [
     "client.BOTIRendererMixin",
+    "client.BOTIWorldMixin",
     "client.ExtRenderMixin",
     "client.TardisSkyPropertyMixin",
     "client.VortexSkyRendererMixin"
@@ -23,10 +24,11 @@
     "KeyMixin",
     "MonitorMixin",
     "NameTagMixin",
-    "PlayerDataCapMixin",
     "SonicTardisDestinationInteractionMixin",
     "TardisBottomBlockMixin",
     "TardisEntityMixin",
+    "TardisTopBlockMixin",
+    "TeleportUtilMixin",
     "TwoBlockBasicExteriorMixin"
   ],
   "package": "com.code.aseoha.mixin",

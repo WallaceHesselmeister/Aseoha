@@ -1,12 +1,15 @@
 package com.code.aseoha.world.structure.structures;
 
 import com.code.aseoha.aseoha;
+import com.code.aseoha.misc.AseohaDimensions;
 import com.google.common.collect.ImmutableList;
 import com.mojang.serialization.Codec;
 import net.minecraft.block.BlockState;
+import net.minecraft.client.Minecraft;
 import net.minecraft.entity.EntityType;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SharedSeedRandom;
+import net.minecraft.util.concurrent.TickDelayedTask;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.MutableBoundingBox;
@@ -14,6 +17,7 @@ import net.minecraft.util.math.vector.Vector3i;
 import net.minecraft.util.registry.DynamicRegistries;
 import net.minecraft.util.registry.Registry;
 import net.minecraft.world.IBlockReader;
+import net.minecraft.world.World;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.MobSpawnInfo;
 import net.minecraft.world.biome.provider.BiomeProvider;
@@ -24,9 +28,14 @@ import net.minecraft.world.gen.feature.NoFeatureConfig;
 import net.minecraft.world.gen.feature.jigsaw.JigsawManager;
 import net.minecraft.world.gen.feature.structure.*;
 import net.minecraft.world.gen.feature.template.TemplateManager;
+import net.minecraft.world.server.ServerWorld;
+import net.minecraftforge.fml.server.ServerLifecycleHooks;
+import net.tardis.mod.helper.WorldHelper;
+import org.apache.logging.log4j.Level;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.List;
+import java.util.Random;
 
 
 public class CitadelStructure extends Structure<NoFeatureConfig> {
@@ -78,7 +87,7 @@ public class CitadelStructure extends Structure<NoFeatureConfig> {
      *         as it is easier to use that.
      */
     private static final List<MobSpawnInfo.Spawners> STRUCTURE_MONSTERS = ImmutableList.of(
-            //new MobSpawnInfo.Spawners(EntityType.ILLUSIONER, 100, 4, 9),
+            new MobSpawnInfo.Spawners(EntityType.ILLUSIONER, 100, 4, 9)
             //new MobSpawnInfo.Spawners(EntityType.VINDICATOR, 100, 4, 9)
     );
     @Override
@@ -95,6 +104,7 @@ public class CitadelStructure extends Structure<NoFeatureConfig> {
         return STRUCTURE_CREATURES;
     }
 
+    private ServerWorld ServerLevel;
 
     /*
      * This is where extra checks can be done to determine if the structure can spawn here.
@@ -126,25 +136,26 @@ public class CitadelStructure extends Structure<NoFeatureConfig> {
     @Override
     protected boolean isFeatureChunk(ChunkGenerator chunkGenerator, @NotNull BiomeProvider biomeSource, long seed, @NotNull SharedSeedRandom chunkRandom, int chunkX, int chunkZ, Biome biome, ChunkPos chunkPos, NoFeatureConfig featureConfig) {
 
-        BlockPos centerOfChunk = new BlockPos(chunkX * 16, 0, chunkZ * 16);
+        BlockPos centerOfChunk = new BlockPos(0, 20, 0);
 
         // Grab height of land. Will stop at first non-air block.
-        int landHeight = chunkGenerator.getFirstOccupiedHeight(centerOfChunk.getX(), centerOfChunk.getZ(), Heightmap.Type.WORLD_SURFACE_WG);
+//        int landHeight = chunkGenerator.getFirstOccupiedHeight(centerOfChunk.getX(), centerOfChunk.getZ(), Heightmap.Type.WORLD_SURFACE_WG);
 
         // Grabs column of blocks at given position. In overworld, this column will be made of stone, water, and air.
         // In nether, it will be netherrack, lava, and air. End will only be endstone and air. It depends on what block
         // the chunk generator will place for that dimension.
-        IBlockReader columnOfBlocks = chunkGenerator.getBaseColumn(centerOfChunk.getX(), centerOfChunk.getZ());
+//        IBlockReader columnOfBlocks = chunkGenerator.getBaseColumn(centerOfChunk.getX(), centerOfChunk.getZ());
 
         // Combine the column of blocks with land height and you get the top block itself which you can test.
-        BlockState topBlock = columnOfBlocks.getBlockState(centerOfChunk.above(landHeight));
-
+//        BlockState topBlock = columnOfBlocks.getBlockState(centerOfChunk.above(landHeight));
+        
+        
         // Now we test to make sure our structure is not spawning on water or other fluids.
         // You can do height check instead too to make it spawn at high elevations.
         //final boolean IsItNewEarth = (biome.getRegistryName().toString().equals("aseoha:newearth"));
         //aseoha.LOGGER.info(IsItNewEarth);
         //if(biome.getRegistryName().toString().equals("aseoha:newearth")){ //biome.getRegistryName().equals("newearth")
-            return true;//topBlock.getFluidState().isEmpty();
+        return true; //chunkX == centerOfChunk.getX() && chunkZ == centerOfChunk.getZ();//topBlock.getFluidState().isEmpty();
         //}
         //return IsItNewEarth;
          //landHeight > 100;
@@ -162,8 +173,11 @@ public class CitadelStructure extends Structure<NoFeatureConfig> {
         public void generatePieces(@NotNull DynamicRegistries dynamicRegistryManager, @NotNull ChunkGenerator chunkGenerator, @NotNull TemplateManager templateManagerIn, int chunkX, int chunkZ, @NotNull Biome biomeIn, @NotNull NoFeatureConfig config) {
 //            new NewEarthGenThread(dynamicRegistryManager, chunkGenerator, templateManagerIn, chunkX, chunkZ, biomeIn, config, random).start();
             // Turns the chunk coordinates into actual coordinates we can use
-            int x = chunkX * 16;
-            int z = chunkZ * 16;
+            int x = 0;
+            int z = 0;
+
+//            if(Minecraft.getInstance().level != null && Minecraft.getInstance().level.getServer() != null) {
+
 
             /*
              * We pass this into addPieces to tell it where to generate the structure.
@@ -171,7 +185,7 @@ public class CitadelStructure extends Structure<NoFeatureConfig> {
              * structure will spawn at terrain height instead. Set that parameter to false to
              * force the structure to spawn at blockpos's Y value instead. You got options here!
              */
-            BlockPos centerPos = new BlockPos(x, 0, z);
+            BlockPos centerPos = new BlockPos(32, 20, 32);
 
             /*
              * If you are doing Nether structures, you'll probably want to spawn your structure on top of ledges.
@@ -180,7 +194,7 @@ public class CitadelStructure extends Structure<NoFeatureConfig> {
              * Make sure to set the final boolean in JigsawManager.addPieces to false so
              * that the structure spawns at blockpos's y value instead of placing the structure on the Bedrock roof!
              */
-            //IBlockReader blockReader = chunkGenerator.getBaseColumn(blockpos.getX(), blockpos.getZ());
+//            IBlockReader blockReader = chunkGenerator.getBaseColumn(blockpos.getX(), blockpos.getZ());
 
             // All a structure has to do is call this method to turn it into a jigsaw based structure!
             JigsawManager.addPieces(
@@ -199,16 +213,17 @@ public class CitadelStructure extends Structure<NoFeatureConfig> {
                             // Our structure is only 1 piece outward and isn't recursive so any value of 1 or more doesn't change anything.
                             // However, I recommend you keep this a decent value like 10 so people can use datapacks to add additional pieces to your structure easily.
                             // But don't make it too large for recursive structures like villages or you'll crash server due to hundreds of pieces attempting to generate!
-                            20),
+                            1),
                     AbstractVillagePiece::new,
                     chunkGenerator,
                     templateManagerIn,
                     centerPos, // Position of the structure. Y value is ignored if last parameter is set to true.
                     this.pieces, // The list that will be populated with the jigsaw pieces after this method.
-                    this.random,
+                    new Random(0),
                     false, // Special boundary adjustments for villages. It's... hard to explain. Keep this false and make your pieces not be partially intersecting.
                     // Either not intersecting or fully contained will make children pieces spawn just fine. It's easier that way.
-                    true);  // Place at heightmap (top land). Set this to false for structure to be place at the passed in blockpos's Y value instead.
+                    true);
+            // Place at heightmap (top land). Set this to false for structure to be place at the passed in blockpos's Y value instead.
             // Definitely keep this false when placing structures in the nether as otherwise, heightmap placing will put the structure on the Bedrock roof.
 
             // **THE FOLLOWING LINE IS OPTIONAL**
@@ -222,29 +237,66 @@ public class CitadelStructure extends Structure<NoFeatureConfig> {
             // the surface of water or sunken into land a bit. NOTE: land added by Structure.NOISE_AFFECTING_FEATURES
             // will also be moved alongside the piece. If you do not want this land, do not add your structure to the
             // Structure.NOISE_AFFECTING_FEATURES field and now your pieces can be set on the regular terrain instead.
-            this.pieces.forEach(piece -> piece.move(0, 1, 0));
 
             // Since by default, the start piece of a structure spawns with it's corner at centerPos
             // and will randomly rotate around that corner, we will center the piece on centerPos instead.
             // This is so that our structure's start piece is now centered on the water check done in isFeatureChunk.
             // Whatever the offset done to center the start piece, that offset is applied to all other pieces
             // so the entire structure is shifted properly to the new spot.
+//            if(Minecraft.getInstance().level.isLoaded(new BlockPos(chunkX, 0, chunkZ))) {
+//                Vector3i structureCenter = this.pieces.get(0).getBoundingBox().getCenter();
+//                int xOffset = centerPos.getX() - structureCenter.getX();
+//                int zOffset = centerPos.getZ() - structureCenter.getZ();
+//                for (StructurePiece structurePiece : this.pieces) {
+//                    structurePiece.move(xOffset, -45, zOffset);
+//                }
+//            }
+
+//            ServerWorld world = ServerLifecycleHooks.getCurrentServer().getLevel(AseohaDimensions.GALLIFREY_DIM);
+//            assert world != null;
+//            world.setChunkForced(0, 0, true);
+////            WorldHelper.markChunkDirty(world, new BlockPos(0, 0, 0));
+//                world.setChunkForced(0, 1, true);
+////            WorldHelper.markChunkDirty(world, new BlockPos(0, 0, 16));
+//                world.setChunkForced(0, 2, true);
+////            WorldHelper.markChunkDirty(world, new BlockPos(0, 0, 2 * 16));
+//                world.setChunkForced(1, 0, true);
+////            WorldHelper.markChunkDirty(world, new BlockPos(16, 0, 0));
+//                world.setChunkForced(1, 1, true);
+////            WorldHelper.markChunkDirty(world, new BlockPos(16, 0, 16));
+//                world.setChunkForced(1, 2, true);
+////            WorldHelper.markChunkDirty(world, new BlockPos(16, 0, 2 * 16));
+//                world.setChunkForced(2, 0, true);
+////            WorldHelper.markChunkDirty(world, new BlockPos(2 * 16, 0, 0));
+//                world.setChunkForced(2, 1, true);
+////            WorldHelper.markChunkDirty(world, new BlockPos(2 * 16, 0, 16));
+//                world.setChunkForced(2, 2, true);
+////            WorldHelper.markChunkDirty(world, new BlockPos(2 * 16, 0, 2 * 16));
+
+            aseoha.LOGGER.info("forEach");
+            this.pieces.forEach(piece -> piece.move(0, 1, 0));
             Vector3i structureCenter = this.pieces.get(0).getBoundingBox().getCenter();
             int xOffset = centerPos.getX() - structureCenter.getX();
             int zOffset = centerPos.getZ() - structureCenter.getZ();
-            for(StructurePiece structurePiece : this.pieces){
+            for (StructurePiece structurePiece : this.pieces) {
                 structurePiece.move(xOffset, -45, zOffset);
             }
 
-            // Sets the bounds of the structure once you are finished.
+
             this.calculateBoundingBox();
+
+
+            aseoha.LOGGER.log(Level.DEBUG, "Citadel at " +
+                    this.pieces.get(0).getBoundingBox().x0 + " " +
+                    this.pieces.get(0).getBoundingBox().y0 + " " +
+                    this.pieces.get(0).getBoundingBox().z0);
+
+
+            // Sets the bounds of the structure once you are finished.
 
             // I use to debug and quickly find out if the structure is spawning or not and where it is.
             // This is returning the coordinates of the center starting piece.
-//            aseoha.LOGGER.log(Level.DEBUG, "Road at " +
-//                    this.pieces.get(0).getBoundingBox().x0 + " " +
-//                    this.pieces.get(0).getBoundingBox().y0 + " " +
-//                    this.pieces.get(0).getBoundingBox().z0);
+
         }
 
     }

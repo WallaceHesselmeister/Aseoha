@@ -1,8 +1,6 @@
 package com.code.aseoha.upgrades;
 
-import com.code.aseoha.aseoha;
-import net.minecraft.util.math.BlockPos;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraft.util.concurrent.TickDelayedTask;
 import net.tardis.mod.misc.ITickable;
 import net.tardis.mod.subsystem.Subsystem;
 import net.tardis.mod.tileentities.ConsoleTile;
@@ -30,9 +28,6 @@ public class EngineBoost extends Upgrade implements ITickable {
 
 
     public void tick(ConsoleTile console) {
-        if(console.flightTicks == 100)
-            if(this.isUsable())
-                BoostDemEngines(console);
 //        FlightEventEvent event;
 //        BoostThemEngines();
 //        if (console.isInFlight()) {
@@ -46,6 +41,8 @@ public class EngineBoost extends Upgrade implements ITickable {
     }
 
     public void onTakeoff() {
+        this.getConsole().getLevel().getServer().tell(new TickDelayedTask(20, () -> BoostDemEngines(this.getConsole())));
+        BoostDemEngines(this.getConsole());
 //        BoostDemEngines(this.getConsole());
 //        this.getConsole().getControl(ThrottleControl.class).ifPresent((control) -> {
 //            if (control.getAmount() == 1.0F && this.isUsable() && this.isActivated()) {

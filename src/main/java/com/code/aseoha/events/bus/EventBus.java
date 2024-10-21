@@ -17,6 +17,7 @@ public class EventBus {
     public static void addEntityAttributes(EntityAttributeCreationEvent event) {
         event.put(ModEntityTypes.K9.get(), k9.setCustomAttributes().build());
         event.put(ModEntityTypes.WALLE.get(), Walle.setCustomAttributes().build());
+        event.put(ModEntityTypes.DAVROS_CHAIR.get(), Walle.setCustomAttributes().build());
     }
 
     @SubscribeEvent

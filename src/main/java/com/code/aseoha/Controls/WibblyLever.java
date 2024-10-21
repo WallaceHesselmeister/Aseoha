@@ -1,13 +1,11 @@
 package com.code.aseoha.Controls;
 
 import com.code.aseoha.aseoha;
-import com.code.aseoha.items.ModItems;
 import net.minecraft.entity.EntitySize;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
-import net.minecraft.util.concurrent.TickDelayedTask;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
 import net.minecraft.util.math.vector.Vector3d;
@@ -19,8 +17,6 @@ import net.tardis.mod.registries.ControlRegistry.ControlEntry;
 import net.tardis.mod.sounds.TSounds;
 import net.tardis.mod.tileentities.ConsoleTile;
 import net.tardis.mod.tileentities.consoles.*;
-
-import java.util.Objects;
 
 public class WibblyLever extends BaseControl {
 

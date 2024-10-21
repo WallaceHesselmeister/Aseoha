@@ -7,7 +7,7 @@ import net.tardis.mod.entity.TardisEntity;
 import net.tardis.mod.tileentities.ConsoleTile;
 
 public interface IHelpWithConsole {
-//    List<RegistryKey<World>> getAvailable();
+    //    List<RegistryKey<World>> getAvailable();
     boolean Aseoha$GetHads();
 
     void Aseoha$SetHads(boolean state);
@@ -31,6 +31,7 @@ public interface IHelpWithConsole {
     void Aseoha$SetInteriorDimension(World interiorDimension);
 
     ConsoleTile Aseoha$GetConsole();
+
     World Aseoha$GetInteriorDimension();
 
     boolean Aseoha$IsRealWorldFlight();
@@ -56,4 +57,8 @@ public interface IHelpWithConsole {
     boolean Aseoha$GetEOHOverheated();
 
     void Aseoha$SetEOHOverheated(boolean overheatedState);
+
+    boolean Aseoha$GetEOHActive();
+
+    void Aseoha$SetEOHActive(boolean aseoha$EOHActive);
 }

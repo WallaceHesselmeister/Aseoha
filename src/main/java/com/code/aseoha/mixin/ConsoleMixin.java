@@ -61,12 +61,6 @@ public abstract class ConsoleMixin extends TileEntity implements ITickableTileEn
     }
 
     @Shadow(remap = false)
-    private float artron;
-
-    @Shadow(remap = false)
-    public abstract float calcFuelUse();
-
-    @Shadow(remap = false)
     public abstract <T extends AbstractControl> Optional<T> getControl(Class<T> clazz);
 
     @Shadow(remap = false)
@@ -78,9 +72,6 @@ public abstract class ConsoleMixin extends TileEntity implements ITickableTileEn
     @Shadow(remap = false)
     @Nullable
     public abstract TardisEntity getEntity();
-
-    @Shadow(remap = false)
-    public abstract InteriorManager getInteriorManager();
 
     @Shadow(remap = false)
     private BlockPos destination;
@@ -95,30 +86,6 @@ public abstract class ConsoleMixin extends TileEntity implements ITickableTileEn
     public abstract AbstractExterior getExteriorType();
 
     @Shadow(remap = false)
-    private RegistryKey<World> destinationDimension;
-
-    @Shadow(remap = false)
-    public abstract BlockPos getDestinationPosition();
-
-    @Shadow(remap = false)
-    private InteriorManager interiorManager;
-
-    @Shadow(remap = false)
-    public abstract ConsoleRoom getConsoleRoom();
-
-    @Shadow(remap = false)
-    private RegistryKey<World> dimension;
-
-    @Shadow(remap = false)
-    public abstract void setConsoleRoom(ConsoleRoom room);
-
-    @Shadow(remap = false)
-    public int flightTicks;
-
-    @Shadow(remap = false)
-    private int reachDestinationTick;
-
-    @Shadow(remap = false)
     public abstract void registerControlEntry(ControlRegistry.ControlEntry entry);
 
     @Shadow(remap = false)
@@ -130,8 +97,8 @@ public abstract class ConsoleMixin extends TileEntity implements ITickableTileEn
     @Shadow(remap = false)
     public abstract void updateClient();
 
-    @Shadow private ConsoleRoom consoleRoom;
-    @Shadow private SparkingLevel sparkLevel;
+    @Shadow(remap = false) private ConsoleRoom consoleRoom;
+    @Shadow(remap = false) private SparkingLevel sparkLevel;
     //TODO: FINISH MAINTENANCE MODE
 //    @Shadow public abstract void initLand();
     @Unique
@@ -146,7 +113,22 @@ public abstract class ConsoleMixin extends TileEntity implements ITickableTileEn
     @Unique
     public EOHTile Aseoha$EOH;
 
+    @Override
+    public boolean Aseoha$GetEOHActive() {
+        return Aseoha$EOHActive;
+    }
+
+    @Override
+    public void Aseoha$SetEOHActive(boolean aseoha$EOHActive) {
+        Aseoha$EOHActive = aseoha$EOHActive;
+    }
+
+    @Unique
+    public boolean Aseoha$EOHActive;
+
+    @Unique
     public boolean Aseoha$EOHOverheated;
+
     @Unique
     public boolean Aseoha$EOHPillars;
 
@@ -188,9 +170,9 @@ public abstract class ConsoleMixin extends TileEntity implements ITickableTileEn
     public void Aseoha$Tick(CallbackInfo ci) {
         if (this.Aseoha$GetHasEOH()) {
             if (this.Aseoha$GetEOH() != null) {
-                if(!this.Aseoha$GetEOHPillars())
+                this.Aseoha$EOH.tick();
+                if(this.Aseoha$EOHOverheated)
                     this.Aseoha$GetEOH().SideEffects();
-                this.Aseoha$GetEOH().timer++;
             }
         }
     }
@@ -198,7 +180,7 @@ public abstract class ConsoleMixin extends TileEntity implements ITickableTileEn
     @Inject(method = "lambda$updateArtronValues$26", at = @At("TAIL"), remap = false)
     public void Aseoha$UpdateArtronValues(CallbackInfo ci) {
         if (this.Aseoha$GetHasEOH() && this.Aseoha$GetEOH() != null)
-            if (!this.Aseoha$GetEOHOverheated()) {
+            if (!this.Aseoha$GetEOHOverheated() && this.Aseoha$GetEOHActive()) {
                 this.setMaxArtron(Float.POSITIVE_INFINITY);
                 this.setArtron(Float.POSITIVE_INFINITY);
             }

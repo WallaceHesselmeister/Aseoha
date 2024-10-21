@@ -1,5 +1,6 @@
 package com.code.aseoha.mixin;
 
+import com.code.aseoha.misc.TARDISHelper;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.*;
 import net.minecraft.util.ActionResult;
@@ -24,6 +25,7 @@ import org.jetbrains.annotations.NotNull;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
 import org.spongepowered.asm.mixin.Shadow;
+import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
@@ -48,29 +50,13 @@ public abstract class KeyMixin extends ConsoleBoundWithTooltipItem {
      * @author Codiak540
      * @reason Shift R-Click disguises offhand item.
      */
-    @Inject(method = "use", at = @At("HEAD"), cancellable = true)
+    @Inject(method = "use", at = @At("HEAD"))
     private void use(World worldIn, PlayerEntity playerIn, Hand handIn, CallbackInfoReturnable<ActionResult<ItemStack>> cir) {
-        ItemStack stack = playerIn.getItemInHand(handIn);
-        if (stack.getItem() instanceof KeyItem) {
-            if (playerIn.isCrouching()) {
-                if (handIn == Hand.MAIN_HAND) {
-                    ItemStack offHandItem = playerIn.getOffhandItem();
-                    if (!(playerIn.getOffhandItem() == Items.AIR.getDefaultInstance() &&
-                            playerIn.getOffhandItem().getItem() instanceof BucketItem &&
-                            playerIn.getOffhandItem().getItem() instanceof PotionItem &&
-                            playerIn.getOffhandItem().getItem() instanceof SpawnEggItem &&
-                            playerIn.getOffhandItem().getItem().equals(Items.SNOWBALL) &&
-                            playerIn.getOffhandItem().getItem().equals(Items.ENDER_PEARL) &&
-                            playerIn.getOffhandItem().getItem().equals(Items.EGG)
-                            )) {
-                        if (stack.hasTag()) {
-                            this.setTardis(offHandItem, this.getTardis(stack));
-                            playerIn.inventory.removeItem(stack);
-                            cir.setReturnValue(ActionResult.success(stack));
-                        }
-                    }
-                }
-            }
-        }
+        TARDISHelper.MakeItemKey(playerIn, handIn, this.Aseoha$getKey());
+    }
+
+    @Unique
+    private KeyItem Aseoha$getKey() {
+        return (KeyItem) this.getItem();
     }
 }

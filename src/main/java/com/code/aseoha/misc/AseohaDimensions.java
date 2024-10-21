@@ -18,6 +18,7 @@ public class AseohaDimensions {
 //    public static List<RegistryKey<World>> TARDIS_DIMENSIONS = new ArrayList<RegistryKey<World>>();
 
     public static final RegistryKey<World> KLOM_DIM = RegistryKey.create(Registry.DIMENSION_REGISTRY, new ResourceLocation(aseoha.MODID, "klom"));
+    public static final RegistryKey<World> GALLIFREY_DIM = RegistryKey.create(Registry.DIMENSION_REGISTRY, new ResourceLocation(aseoha.MODID, "gallifrey"));
     public static final ResourceLocation KLOM_SKY_PROPERTY_KEY = new ResourceLocation(aseoha.MODID, "klom_sky_property");
     public static final ResourceLocation GALLIFREY_SKY_PROPERTY_KEY = new ResourceLocation(aseoha.MODID, "gallifrey_sky_property");
     public static final ResourceLocation RAXICORICOFALLAPITORIUS_SKY_PROPERTY_KEY = new ResourceLocation(aseoha.MODID, "raxicoricofallapitorius_sky_property");

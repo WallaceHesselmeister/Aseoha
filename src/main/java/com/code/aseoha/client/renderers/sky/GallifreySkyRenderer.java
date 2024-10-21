@@ -19,6 +19,7 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.client.ISkyRenderHandler;
 import net.tardis.mod.Tardis;
+import net.tardis.mod.client.renderers.sky.MoonSkyRenderer;
 import org.jetbrains.annotations.NotNull;
 import org.lwjgl.opengl.GL11;
 
@@ -57,7 +58,7 @@ public class GallifreySkyRenderer implements ISkyRenderHandler  {
         RenderSystem.defaultBlendFunc();
         RenderSystem.depthMask(false);
         matrixStack.pushPose();
-        matrixStack.mulPose(Vector3f.XN.rotation(world.getSunAngle(partialTicks)+150));
+        matrixStack.mulPose(Vector3f.ZN.rotation(world.getSunAngle(partialTicks)));
 //        matrixStack.mulPose(Vector3f.XP.rotation(world.getSunAngle(partialTicks)));
         matrixStack.translate(-10, 60, 60);
         float scale = 1.125F;

@@ -1,9 +1,7 @@
 package com.code.aseoha.client.renderers.blocks;
 
 import com.code.aseoha.client.models.blocks.EOHModel;
-import com.code.aseoha.client.models.blocks.TardisCoralModel;
 import com.code.aseoha.tileentities.blocks.EOHTile;
-import com.code.aseoha.tileentities.blocks.TardisCoralTile;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.IRenderTypeBuffer;
@@ -22,8 +20,6 @@ import org.jetbrains.annotations.NotNull;
 @OnlyIn(Dist.CLIENT)
 public class EOHRenderer extends TileEntityRenderer<EOHTile> {
     public static ResourceLocation TEXTURE = new ResourceLocation("aseoha", "textures/block/eoh.png");
-//    public static CoralExterior MODEL = new CoralExterior();
-    //public static WorldText TEXT = new WorldText(0.87F, 0.125F, 0.015F, 0);
 
     private EOHModel MODEL = new EOHModel();
 
@@ -46,7 +42,7 @@ public class EOHRenderer extends TileEntityRenderer<EOHTile> {
         matrixStackIn.translate(0.5, 3,0.5);
         matrixStackIn.scale(1,1,1);
         matrixStackIn.mulPose(Vector3f.YP.rotationDegrees(90));
-        if(!eohTile.active && eohTile.hasStar)
+        if(!eohTile.active && eohTile.GetHasStar())
             Minecraft.getInstance().getItemRenderer().renderStatic(Items.NETHER_STAR.getDefaultInstance(), ItemCameraTransforms.TransformType.NONE, i, i1, matrixStackIn, iRenderTypeBuffer);
         matrixStackIn.popPose();
     }

@@ -2,30 +2,34 @@ package com.code.aseoha.entities;
 
 
 import net.minecraft.block.BlockState;
+import net.minecraft.block.CampfireBlock;
 import net.minecraft.entity.*;
 import net.minecraft.entity.ai.attributes.AttributeModifierMap;
 import net.minecraft.entity.ai.attributes.Attributes;
-import net.minecraft.entity.item.BoatEntity;
-import net.minecraft.entity.passive.horse.HorseEntity;
+import net.minecraft.entity.monster.IMob;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.World;
 import net.tardis.api.space.entities.ISpaceImmuneEntity;
+import net.tardis.mod.client.ClientHelper;
+import net.tardis.mod.entity.BessieEntity;
+import net.tardis.mod.items.TItems;
+import net.tardis.mod.sounds.TSounds;
 import org.jetbrains.annotations.NotNull;
+
+import javax.annotation.Nullable;
 
 /**
  * @author Codiak <br />
  * This is a ridable Davros wheelchair.
  */
-public class DavrosChair extends HorseEntity implements ISpaceImmuneEntity {
-    public DavrosChair(EntityType<? extends HorseEntity> p_i50129_1_, World p_i50129_2_) {
+public class DavrosChair extends CreatureEntity implements IMob, ISpaceImmuneEntity {
+    public DavrosChair(EntityType<? extends CreatureEntity> p_i50129_1_, World p_i50129_2_) {
         super(p_i50129_1_, p_i50129_2_);
     }
-
-
-//    protected DavrosChair(EntityType<? extends MobEntity> p_i48576_1_, World p_i48576_2_) {
-//        super(p_i48576_1_, p_i48576_2_);
-//    }
 
     public static AttributeModifierMap.MutableAttribute setCustomAttributes() {
         return CreatureEntity.createMobAttributes()
@@ -35,256 +39,134 @@ public class DavrosChair extends HorseEntity implements ISpaceImmuneEntity {
                 .add(Attributes.FOLLOW_RANGE, 0);
     }
 
-//    private boolean inputLeft;
-//    private boolean inputRight;
-//    private boolean inputUp;
-//    private boolean inputDown;
-//    private float deltaRotation;
-//    private final float[] paddlePositions = new float[2];
-//    private static final DataParameter<Boolean> DATA_ID_PADDLE_LEFT = EntityDataManager.defineId(DavrosChair.class, DataSerializers.BOOLEAN);
-//    private static final DataParameter<Boolean> DATA_ID_PADDLE_RIGHT = EntityDataManager.defineId(DavrosChair.class, DataSerializers.BOOLEAN);
+    public void positionRider(@NotNull Entity pass) {
+//        Vector3d pos = new Vector3d(0, 1, 0);
+//            pass.setPos(pos.x, pos.y, pos.z);
+        Vector3d pos;
+        if (!this.getPassengers().isEmpty()) {
+            pos = this.getLookAngle().scale(0.25).add(this.position()); //.scale(0.5).add(this.position());
+            pass.setPos(pos.x, pos.y, pos.z);
+        }
 
-
-//    @NotNull
-//    @Override
-//    public AttributeModifierManager getAttributes() {
-//        return new AttributeModifierManager(setCustomAttributes().build());
-//    }
-//
-//    @Override
-//    public boolean canBeControlledByRider() {
-//        return true;
-//    }
-//
-//    @Override
-//    protected boolean canRide(@NotNull Entity p_184228_1_) {
-//        return true;
-//    }
-
-//    @Override
-//    public PathNavigator getNavigation() {
-//        if (this.isPassenger() && this.getVehicle() instanceof MobEntity) {
-//            MobEntity mobentity = (MobEntity)this.getVehicle();
-//            return mobentity.getNavigation();
-//        }
-//        else-if (this.isVehicle() && this.getControllingPassenger() instanceof PlayerEntity) {
-//            PlayerEntity player = (PlayerEntity) this.getVehicle();
-//            return ;
-//        }else {
-//            return this.navigation;
-//        }
-//    }
-
-//    @Override
-//    protected void defineSynchedData() {
-//        this.entityData.define(DATA_ID_PADDLE_LEFT, false);
-//        this.entityData.define(DATA_ID_PADDLE_RIGHT, false);
-//    }
-//    @Override
-//    public void tick() {
-//        super.tick();
-//        this.tickLerp();
-//        if (this.isControlledByLocalInstance()) {
-//            if (this.getPassengers().isEmpty() || !(this.getPassengers().get(0) instanceof PlayerEntity)) {
-//                this.setPaddleState(false, false);
-//            }
-//
-//            if (this.level.isClientSide) {
-//                this.controlBoat();
-//                Networking.sendToServer(new CSteerBoatPacket(this.getPaddleState(0), this.getPaddleState(1)));
-//            }
-//
-//            this.move(MoverType.SELF, this.getDeltaMovement());
-//        } else {
-//            this.setDeltaMovement(Vector3d.ZERO);
-//        }
-//
-//
-//        for(int i = 0; i <= 1; ++i) {
-//            if (this.getPaddleState(i)) {
-//                if (!this.isSilent() && (double)(this.paddlePositions[i] % ((float)Math.PI * 2F)) <= (double)((float)Math.PI / 4F) && ((double)this.paddlePositions[i] + (double)((float)Math.PI / 8F)) % (double)((float)Math.PI * 2F) >= (double)((float)Math.PI / 4F)) {
-////                    SoundEvent soundevent = this.getPaddleSound();
-////                    if (soundevent != null) {
-//                        Vector3d vector3d = this.getViewVector(1.0F);
-//                        double d0 = i == 1 ? -vector3d.z : vector3d.z;
-//                        double d1 = i == 1 ? vector3d.x : -vector3d.x;
-////                        this.level.playSound((PlayerEntity)null, this.getX() + d0, this.getY(), this.getZ() + d1, soundevent, this.getSoundSource(), 1.0F, 0.8F + 0.4F * this.random.nextFloat());
-////                    }
-//                }
-//
-//                this.paddlePositions[i] = (float)((double)this.paddlePositions[i] + (double)((float)Math.PI / 8F));
-//            } else {
-//                this.paddlePositions[i] = 0.0F;
-//            }
-//        }
-//
-//
-//        if (this.level.isClientSide) {
-//            this.controlBoat();
-//            Networking.sendToServer(new CSteerBoatPacket(this.getPaddleState(0), this.getPaddleState(1)));
-//        }
-//    }
-//
-//    private void tickLerp() {
-//        if (this.isControlledByLocalInstance()) {
-//            this.lerpSteps = 0;
-//            this.setPacketCoordinates(this.getX(), this.getY(), this.getZ());
-//        }
-//
-//        if (this.lerpSteps > 0) {
-//            double d0 = this.getX() + (this.lerpX - this.getX()) / (double)this.lerpSteps;
-//            double d1 = this.getY() + (this.lerpY - this.getY()) / (double)this.lerpSteps;
-//            double d2 = this.getZ() + (this.lerpZ - this.getZ()) / (double)this.lerpSteps;
-//            double d3 = MathHelper.wrapDegrees(this.lerpYRot - (double)this.yRot);
-//            this.yRot = (float)((double)this.yRot + d3 / (double)this.lerpSteps);
-//            this.xRot = (float)((double)this.xRot + (this.lerpXRot - (double)this.xRot) / (double)this.lerpSteps);
-//            --this.lerpSteps;
-//            this.setPos(d0, d1, d2);
-//            this.setRot(this.yRot, this.xRot);
-//        }
-//    }
-//
-//
-//    protected void clampRotation(@NotNull Entity p_184454_1_) {
-//        p_184454_1_.setYBodyRot(this.yRot);
-//        float f = MathHelper.wrapDegrees(p_184454_1_.yRot - this.yRot);
-//        float f1 = MathHelper.clamp(f, -105.0F, 105.0F);
-//        p_184454_1_.yRotO += f1 - f;
-//        p_184454_1_.yRot += f1 - f;
-//        p_184454_1_.setYHeadRot(p_184454_1_.yRot);
-//    }
-//
-//    @OnlyIn(Dist.CLIENT)
-//    public void onPassengerTurned(@NotNull Entity p_184190_1_) {
-//        this.clampRotation(p_184190_1_);
-//    }
-//
-//    @OnlyIn(Dist.CLIENT)
-//    public void setInput(boolean p_184442_1_, boolean p_184442_2_, boolean p_184442_3_, boolean p_184442_4_) {
-//        this.inputLeft = p_184442_1_;
-//        this.inputRight = p_184442_2_;
-//        this.inputUp = p_184442_3_;
-//        this.inputDown = p_184442_4_;
-//    }
-
-    @Override
-    protected float getBlockSpeedFactor() {
-        return 1.0F;
     }
 
-//    @NotNull
-//    @Override
-//    public final ActionResultType interact(@NotNull PlayerEntity p_184230_1_, @NotNull Hand p_184230_2_) {
-//        if(this.getPassengers().isEmpty()){
-//            p_184230_1_.startRiding(this);
-//            return ActionResultType.SUCCESS;
-//        }
-//        else{
-//            return ActionResultType.FAIL;
-//        }
-//    }
+    public void push(@NotNull Entity entityIn) {
+        if (!(entityIn instanceof PlayerEntity) && this.getPassengers().isEmpty() && this.level.getGameTime() % 20L == 0L && entityIn.getVehicle() == null) {
+            entityIn.startRiding(this);
+        }
 
+        super.push(entityIn);
+    }
+
+    @NotNull
     @Override
+    public ActionResultType interact(PlayerEntity player, @NotNull Hand hand) {
+        if (!player.isCrouching() && getPassengers().isEmpty() && player.getMainHandItem().isEmpty()) {
+            player.startRiding(this);
+        }
+        if (player.isCrouching() && player.getMainHandItem().getItem() == TItems.SONIC.get()) {
+            heal(1);
+        }
+        return super.interact(player, hand);
+    }
+
+    public double getPassengersRidingOffset() {
+        return 0.5;
+    }
+
+    public void tick() {
+        this.setCustomNameVisible(this.hasCustomName());
+        boolean canDrive = this.getHealth() > 5.0F;
+        if (this.getPassengers().isEmpty() && this.onGround) {
+            this.setDeltaMovement(0.0, 0.0, 0.0);
+        }
+
+        this.setAirSupply(this.getMaxAirSupply());
+        if (this.level.isClientSide) {
+            if (this.tickCount == 10) {
+                ClientHelper.playMovingSound(this, TSounds.DALEK_MOVES.get(), SoundCategory.NEUTRAL, 0.3F, true);
+            }
+
+            if (!canDrive) {
+                BlockPos pos = this.blockPosition();
+                Vector3d look = this.getLookAngle();
+                CampfireBlock.makeParticles(this.level, pos.relative(Direction.getNearest(look.x, look.y, look.z)), false, false);
+            }
+        }
+
+        super.tick();
+    }
+
+    public void travel(@NotNull Vector3d p_213352_1_) {
+        float motion = MathHelper.sqrt(Entity.getHorizontalDistanceSqr(this.getDeltaMovement()));
+        boolean isMoving = this.getSpeed() > 0;
+        if (this.isAlive()) {
+            if (this.isVehicle() && this.canBeControlledByRider()) {
+                if (this.getControllingPassenger() != null) {
+                    LivingEntity livingentity = (LivingEntity)this.getControllingPassenger();
+                    if (isMoving) {
+                        this.yRot = livingentity.yRot;
+                    }
+
+                    this.yRotO = this.yRot;
+                    this.xRot = livingentity.xRot * 0.5F;
+                    this.setRot(this.yRot, this.xRot);
+                    this.yBodyRot = this.yRot;
+                    this.yHeadRot = this.yBodyRot;
+                    float moveForwardAmount = livingentity.zza;
+                    if (moveForwardAmount <= 0.0F) {
+                        moveForwardAmount *= 0.25F;
+                    }
+
+                    this.maxUpStep = 1.0F;
+                    if (this.isControlledByLocalInstance()) {
+                        this.setSpeed(0.3F);
+                        super.travel(new Vector3d(0.0, p_213352_1_.y, (double) moveForwardAmount));
+                    }
+                }
+            } else {
+                super.travel(p_213352_1_);
+            }
+        }
+
+    }
+
+    public boolean shouldShowName() {
+        return super.shouldShowName();
+    }
+
+    public boolean rideableUnderWater() {
+        return true;
+    }
+
+    @Nullable
+    public Entity getControllingPassenger() {
+        if(!this.getPassengers().isEmpty())
+            return this.getPassengers().get(0);
+        else
+            return (Entity) null;
+    }
+
+    public boolean canBeControlledByRider() {
+        return true;
+    }
+
     protected void playStepSound(@NotNull BlockPos pos, @NotNull BlockState blockIn) {
-        this.playSound(SoundEvents.METAL_STEP, 0.20F, 0.5F);
     }
+
+    protected void playSwimSound(float volume) {
+    }
+
+    public boolean fireImmune() {
+        return true;
+    }
+
+    public boolean displayFireAnimation() {
+        return false;
+    }
+
     @Override
     public boolean shouldTakeSpaceDamage() {
         return false;
     }
-
-    //    @Override
-//    public boolean canMate(@NotNull AnimalEntity p_70878_1_) {
-//        return false;
-//    }
-
-    //    @Override
-//    public void tick() {
-//        k9.this.setTarget((LivingEntity)null);
-////        world.getPlayerByUUID(this.getOwnerUUID()).
-//        super.tick();
-//    }
-//private static int timer = 0;
-
-
-//    @Override
-//    public void addAdditionalSaveData(@NotNull CompoundNBT nbt) {
-//        super.addAdditionalSaveData(nbt);
-//        setInvNBT(this.inventory, nbt);
-//        nbt.putByte("Power", this.power);
-//
-//    }
-
-//    @Override
-//    public void readAdditionalSaveData(@NotNull CompoundNBT nbt) {
-//        super.readAdditionalSaveData(nbt);
-//        getInvNBT(this.inventory, nbt);
-//        if (nbt.contains("Power", 99)) {
-//            this.power = nbt.getByte("Power");
-//        }
-//    }
-
-//    @NotNull
-//    @Override
-//    public AttributeModifierManager getAttributes() {
-//        return new AttributeModifierManager(setCustomAttributes().build());
-//    }
-
-//    @Override
-//    public boolean hurt(DamageSource source, float amount) {
-//        if (source.getDirectEntity() instanceof PlayerEntity) {
-//            PlayerEntity player = (PlayerEntity) source.getDirectEntity();
-//            if (player.getMainHandItem().getItem() instanceof ToolItem && ((ToolItem) player.getMainHandItem().getItem()).getTier() == ItemTier.IRON) {
-//                amount *= 1.5F;
-//            }
-//        }
-////        this.knockback(.1F, .1, .1);
-//        this.power -= (byte) amount;
-//        return false;
-////        return super.hurt(source, amount);
-//
-//    }
-
-//    @Override
-//    public RecycledWolf getBreedOffspring(ServerWorld world, AgeableEntity ageableEntity) {
-//        return (RecycledWolf) null;
-//    }
-
-//    @Override
-//    public void aiStep() {
-//        super.aiStep();
-//        if (!this.level.isClientSide && !this.isPathFinding() && this.onGround) {
-//            this.level.broadcastEntityEvent(this, (byte) 8);
-//        }
-//
-//        if (!this.level.isClientSide) {
-//            this.updatePersistentAnger((ServerWorld) this.level, true);
-//        }
-//
-//    }
-
-//    @OnlyIn(Dist.CLIENT)
-//    public void handleEntityEvent(byte p_70103_1_) {
-//        if (p_70103_1_ == 8) {
-//        } else {
-//            super.handleEntityEvent(p_70103_1_);
-//        }
-//
-//    }
-
-//    @OnlyIn(Dist.CLIENT)
-//    public float getTailAngle() {
-//        if (this.isAngry()) {
-//            this.TailAngle = 1.5393804F;
-//            return 1.5393804F;
-//        } else {
-//            this.TailAngle = this.isTame() ? (0.55F - (this.getMaxHealth() - this.getHealth()) * 0.02F) * (float) Math.PI : ((float) Math.PI / 5F);
-//            return this.isTame() ? (0.55F - (this.getMaxHealth() - this.getHealth()) * 0.02F) * (float) Math.PI : ((float) Math.PI / 5F);
-//        }
-//    }
-//
-//    public static float StaticGetTailAngle(){
-//        aseoha.LOGGER.info(TailAngle);
-//        return TailAngle;
-//    }
 }

@@ -1390,6 +1390,14 @@
   ],
   "starts": [
     {
+    "config":
+    {
+      "probability": 1,
+      "type": "normal"
+    },
+      "type":"aseoha:citadel"
+  },
+    {
       "config": {
         "probability": 0.004,
         "type": "normal"

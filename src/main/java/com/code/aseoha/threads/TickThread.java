@@ -2,7 +2,7 @@ package com.code.aseoha.threads;
 
 import com.code.aseoha.aseoha;
 import com.code.aseoha.events.CommonEvents;
-import com.code.aseoha.items.ModItems;
+import com.code.aseoha.items.AseohaItems;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.monster.IMob;
 import net.minecraft.entity.projectile.ArrowEntity;
@@ -12,7 +12,6 @@ import net.minecraft.util.Direction;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraftforge.event.TickEvent;
-import net.minecraftforge.event.entity.living.LivingEvent;
 import net.tardis.mod.cap.Capabilities;
 import net.tardis.mod.helper.TardisHelper;
 import net.tardis.mod.items.SonicItem;
@@ -106,7 +105,7 @@ public class TickThread extends Thread {
                                 Objects.requireNonNull(tardisTile.getLevel()).playSound(null, tardisTile.getBlockPos(), TSounds.SINGLE_CLOISTER.get(), SoundCategory.BLOCKS, 10f, 1.5f);
                             }
                             if (random.nextInt(100 * itemStack.getStack().getCount()) == 3) {
-                                ItemStack itemStack1 = new ItemStack(ModItems.GOLDEN_POTATO.get());
+                                ItemStack itemStack1 = new ItemStack(AseohaItems.GOLDEN_POTATO.get());
                                 itemStack1.setCount(itemStack.getStack().getCount());
                                 attunementPanel.getStackInSlot(i);
                                 attunementPanel.setStackInSlot(i, itemStack1);

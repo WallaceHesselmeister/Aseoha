@@ -1,6 +1,5 @@
 package com.code.aseoha.mixin;
 
-import com.code.aseoha.block.ModBlocks;
 import net.minecraft.block.BlockState;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -29,8 +28,10 @@ public abstract class NameTagMixin extends Item {
         World worldIn = context.getLevel();
         ItemStack itemStack = context.getItemInHand();
         BlockState blockState = worldIn.getBlockState(context.getClickedPos());
-        if (itemStack.getItem() == Items.NAME_TAG && itemStack.hasCustomHoverName() && (blockState.getBlock() instanceof ConsoleBlock || blockState.is(ModBlocks.console_copper.get()) || blockState.is(ModBlocks.console_brackolin.get())))
-            worldIn.getCapability(Capabilities.TARDIS_DATA).ifPresent((tdata) -> setTardisName((TardisWorldCapability)tdata, itemStack.getHoverName().getString()));
+        if (itemStack.getItem() == Items.NAME_TAG && itemStack.hasCustomHoverName() && (blockState.getBlock() instanceof ConsoleBlock) || (blockState.getBlock() instanceof com.code.aseoha.block.ConsoleBlock)) {
+            worldIn.getCapability(Capabilities.TARDIS_DATA).ifPresent((tdata) -> setTardisName((TardisWorldCapability) tdata, itemStack.getHoverName().getString()));
+            itemStack.shrink(1);
+        }
 
         return super.useOn(context);
     }

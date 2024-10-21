@@ -220,6 +220,7 @@ public class Atrium extends Upgrade implements INBTSerializable<CompoundNBT> {
                     || blockState.getBlock() instanceof RailBlock
                     || blockState.getBlock() instanceof FenceBlock
                     || blockState.getBlock() instanceof FenceGateBlock
+                    || blockState.getBlock() instanceof IDontBreak
                     || blockState.getBlock().getTags().contains(Tags.Blocks.COBBLESTONE.getName())
                     || blockState.getBlock().getTags().contains(Tags.Blocks.CHESTS.getName())
                     || blockState.getBlock().getTags().contains(Tags.Blocks.BARRELS.getName())

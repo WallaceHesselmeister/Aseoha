@@ -1,7 +1,7 @@
 package com.code.aseoha.Controls;
 
 import com.code.aseoha.aseoha;
-import com.code.aseoha.items.ModItems;
+import com.code.aseoha.items.AseohaItems;
 import net.minecraft.entity.EntitySize;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.CompoundNBT;
@@ -102,7 +102,7 @@ public class CoffeePot extends BaseControl {
             return false;
         if(console.getArtron() >= 25) {
 //            player.inventory.add(1, ModItems.COFFEE.get().getDefaultInstance());
-            player.addItem(ModItems.COFFEE.get().getDefaultInstance());
+            player.addItem(AseohaItems.COFFEE.get().getDefaultInstance());
             console.setArtron(console.getArtron() - 25);
             return true;
         }

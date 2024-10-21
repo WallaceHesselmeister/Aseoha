@@ -18,7 +18,7 @@
         "firstOctave": -7,
         "amplitudes": [
           1,
-          1
+          0.8
         ]
       },
       "humidity_noise": {
@@ -123,6 +123,16 @@
             "temperature": 0.9,
             "humidity": 1,
             "weirdness": 0,
+            "offset": 0
+          }
+        },
+        {
+          "biome": "aseoha:gallifrey_desert",
+          "parameters": {
+            "altitude": -0.1,
+            "temperature": 0.542857142857,
+            "humidity": 0.3,
+            "weirdness": 0.1,
             "offset": 0
           }
         }

@@ -7,19 +7,13 @@ import com.code.aseoha.client.Sounds;
 import com.code.aseoha.commands.Commands;
 import com.code.aseoha.entities.k9;
 import com.code.aseoha.misc.*;
-import com.code.aseoha.networking.Networking;
-import com.code.aseoha.networking.Packets.UpdateControls;
 import com.code.aseoha.tileentities.consoles.CopperConsoleTile;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.ServerPlayerEntity;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
 import net.minecraft.network.play.server.SEntityVelocityPacket;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.Direction;
-import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.concurrent.TickDelayedTask;
 import net.minecraft.util.math.AxisAlignedBB;
@@ -27,13 +21,6 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.world.server.ServerWorld;
-import net.minecraftforge.common.capabilities.Capability;
-import net.minecraftforge.common.capabilities.ICapabilityProvider;
-import net.minecraftforge.common.util.LazyOptional;
-import net.minecraftforge.energy.CapabilityEnergy;
-import net.minecraftforge.energy.EnergyStorage;
-import net.minecraftforge.energy.IEnergyStorage;
-import net.minecraftforge.event.AttachCapabilitiesEvent;
 import net.minecraftforge.event.RegisterCommandsEvent;
 import net.minecraftforge.event.ServerChatEvent;
 import net.minecraftforge.event.TickEvent;
@@ -55,49 +42,54 @@ import net.tardis.mod.entity.DoorEntity;
 import net.tardis.mod.entity.TardisEntity;
 import net.tardis.mod.helper.TardisHelper;
 import net.tardis.mod.helper.WorldHelper;
-import net.tardis.mod.items.TItems;
 import net.tardis.mod.registries.ControlRegistry;
 import net.tardis.mod.sounds.TSounds;
 import net.tardis.mod.subsystem.StabilizerSubsystem;
 import net.tardis.mod.tileentities.ConsoleTile;
 import org.jetbrains.annotations.NotNull;
 
-import javax.annotation.Nullable;
 import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
 import javax.script.ScriptException;
 import java.util.Objects;
 
 import static com.code.aseoha.Helpers.IHelpWithMonitor.Aseoha$MonitorGetRot;
-import static net.tardis.mod.constants.TardisConstants.TARDIS_KEY_NBT_KEY;
 
 //******************************Apparently canceling the flight event with the doors crashes the game when outside the TARDIS**********************************************/
 @SuppressWarnings("unused")
 @Mod.EventBusSubscriber(modid = aseoha.MODID, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class CommonEvents {
 
+//    @SubscribeEvent
+//    public void attachCapability(AttachCapabilitiesEvent<TileEntity> event)
+//    {
+//        if (!(event.getObject() instanceof EOHTile)) return;
+//
+//        event.addCapability(new ResourceLocation("aseoha", "EOHEnergy"), new EOHEnergyProvider());
+//    }
+//
+//    @SubscribeEvent
+//    public void onAttachingCapabilities(final AttachCapabilitiesEvent<TileEntity> event) {
+//        if (!(event.getObject() instanceof IEnergyStorage)) return;
+//
+//        EnergyStorage backend = new EnergyStorage(((IEnergyStorage) event.getObject()).getMaxEnergyStored());
+//        LazyOptional<IEnergyStorage> optionalStorage = LazyOptional.of(() -> backend);
+//
+//        ICapabilityProvider provider = new ICapabilityProvider() {
+//            @NotNull
+//            @Override
+//            public <T> LazyOptional<T> getCapability(@NotNull Capability<T> cap, @Nullable Direction direction) {
+//                if (cap == CapabilityEnergy.ENERGY) {
+//                    return optionalStorage.cast();
+//                }
+//                return LazyOptional.empty();
+//            }
+//        };
+//
+//        event.addCapability(new ResourceLocation("aseoha", "fe_compatibility"), provider);
+//        event.addListener(optionalStorage::invalidate);
+//    }
 
-    @SubscribeEvent
-    public void onAttachingCapabilities(final AttachCapabilitiesEvent<TileEntity> event) {
-        if (!(event.getObject() instanceof IEnergyStorage)) return;
-
-        EnergyStorage backend = new EnergyStorage(((IEnergyStorage) event.getObject()).getMaxEnergyStored());
-        LazyOptional<IEnergyStorage> optionalStorage = LazyOptional.of(() -> backend);
-
-        ICapabilityProvider provider = new ICapabilityProvider() {
-            @NotNull
-            @Override
-            public <T> LazyOptional<T> getCapability(@NotNull Capability<T> cap, @Nullable Direction direction) {
-                if (cap == CapabilityEnergy.ENERGY) {
-                    return optionalStorage.cast();
-                }
-                return LazyOptional.empty();
-            }
-        };
-
-        event.addCapability(new ResourceLocation("aseoha", "fe_compatibility"), provider);
-        event.addListener(optionalStorage::invalidate);
-    }
 
     /**
      * @param event The RegisterCommandsEvent, I use this to register custom commands
@@ -175,18 +167,18 @@ public class CommonEvents {
             event.getPlayer().removeTag("GotASEOHABook");
         }
 
-        if (event.getMessage().toLowerCase().contains("aseoha") && event.getMessage().toLowerCase().contains("disguise")) {
-            ItemStack offHandItem = event.getPlayer().getOffhandItem();
-            ItemStack mainHandItem = event.getPlayer().getMainHandItem();
-            if (event.getPlayer().isHolding(TItems.KEY.get())) {
-                if(event.getPlayer().getOffhandItem() != Items.AIR.getDefaultInstance()){
-                    if(mainHandItem.hasTag()) {
-                        offHandItem.getOrCreateTag().putString("tardis_key_linked_console", Objects.requireNonNull(mainHandItem.getTag().get(TARDIS_KEY_NBT_KEY)).toString());
-                        event.getPlayer().inventory.removeItem(mainHandItem);
-                    }
-                }
-            }
-        }
+//        if (event.getMessage().toLowerCase().contains("aseoha") && event.getMessage().toLowerCase().contains("disguise")) {
+//            ItemStack offHandItem = event.getPlayer().getOffhandItem();
+//            ItemStack mainHandItem = event.getPlayer().getMainHandItem();
+//            if (event.getPlayer().isHolding(TItems.KEY.get())) {
+//                if(event.getPlayer().getOffhandItem() != Items.AIR.getDefaultInstance()){
+//                    if(mainHandItem.hasTag()) {
+//                        offHandItem.getOrCreateTag().putString("tardis_key_linked_console", Objects.requireNonNull(mainHandItem.getTag().get(TARDIS_KEY_NBT_KEY)).toString());
+//                        event.getPlayer().inventory.removeItem(mainHandItem);
+//                    }
+//                }
+//            }
+//        }
         //HELP ME
         if (event.getMessage().toLowerCase().replace(" ", "").contains("aseoha") && event.getMessage().toLowerCase().replace(" ", "").contains("help") && event.getMessage().toLowerCase().replace(" ", "").contains("k9")) {
 //            event.getPlayer().sendMessage(new StringTextComponent("Operation of K9 Mark II: \n\nTo ensure proper operation of K-9 Mark II make sure that your K-9 Unit is located within 20 blocks of the console unit of the TARDIS you would like to operate with your K-9 unit\n\nWhenever you would like to use your K-9 Unit, start by opening the chat, and type in \"K9\", You can also type \"K 9\" or \"K-9\", it is important to note that you may type it in uppercase, or lowercase.\n\nAfter typing K9, type in one of the many keywords available, each of these keywords corresponds to one of K9s many functions\n\nKeywords can be mixed with other words and phrases and will still work, for instance, I could say \"K9 [keyword]\" or I could say \"K9, Please do [keyword] now\" and K9 would still perform the function corresponding to the keyword (Note, when using keywords, capitalization does not matter)\n\nKeywords:\n\nThe keyword for K9s math function is: \"math\" and \"calculate\", the math function allows for Addition (+) Subtraction (-) Multiplication (*) and Division (/) it also supports parentheses ()\n\nThe Keywords for K9s Power Off function are \"power\" + \"off\"/\"down\" (Please note, you must include both power AND off in your sentence) K9's Power Off function will initiate the TARDIS Power Off Procedure, Turning all the lights off, and emitting some noises as it powers down.\n\nThe Keywords for K9's Destination Set function are \"set\"+\"destination\"/\"location\"/\"coord\" (Please note: while you can say coord, you could also add letters to the end of the keyword, like coordINATE or coordBanannaCreamPie) This will set the destination coordinate for one axis (X, Y, or Z) in order to set the coordinate, you must specify the axis (X, Y, or Z) in your message\n\nThe Keyword for K9's light function is \"set\"+\"light\" followed by a number, this number can be any number from 1-15, however, if you go above 15, it will automatically be set to 15. K9's light function sets the light level of the TARDIS.\n\nThe Keyword for K9's flight function is \"fly\", K9's flight function will activate the TARDIS Stabilizers (if present) and initiate the TARDIS flight sequence (Important Note, if you are flying a Type 40 TARDIS or older, you will have to manually pilot your TARDIS around any temporal disturbances (Flight Events), unless you have the Stabilizer Circuits installed, otherwise you run the risk of crashing and damaging your timeship, and landing in the wrong location)\n\nThe Keyword for K9's lock function are \"lock\", the lock function will lock the TARDIS doors, in order to unlock them, ensure the keywords \"disengage\" or \"un\" are present in you message to K9\n\nThe Keywords for K9's deadlock function are \"dead\"+\"lock\", K9's deadlock function will deadlock the doors. (WARNING, DEADLOCKED DOORS CAN ONLY BE UNLOCKED BY A DEADLOCKER KEY WHICH MUST BE ATTUNED TO YOUR TARDIS, OR BY ANOTHER K9), If you wish to un-deadlock the TARDIS doors with your K9, ensure the keywords \"un\"/\"disengage\" are present in your message\n\nWe Thank you for purchasing your new K9 Mark II, and wish you happy travels!\nTo file a complaint with your K9 call the ASEOHA helpline by typing \"call 770-090-0461\" in the chat\nMade in China\n K9 Mark II complies with part 15 of the FCC Rules.\nOperation is subject to the following two conditions:\n(1) this device may not cause harmful interference, \nand (2) this device must accept any interference \nreceived, including interference that may cause undesired operation.\nComplies with Canadian ICES-003 Class B.\nConforme á la NMB-003 classe B du Canada."), event.getPlayer().getUUID());
@@ -493,8 +485,9 @@ public static void OnAttack(AttackEntityEvent event) {
 //                });
 //            }
 //        }
-        aseoha.SendDebugToAll("Entity Joined World " + event.getEntity() + " With UUID " + event.getEntity().getUUID());
         if(event.getEntity() instanceof ServerPlayerEntity) {
+            aseoha.SendDebugToAll("Player Joined World " + event.getEntity() + " With UUID " + event.getEntity().getUUID());
+
             if(event.getEntity().getVehicle() instanceof TardisEntity) {
                 ServerPlayerEntity player = (ServerPlayerEntity)event.getEntity();
 
@@ -581,18 +574,16 @@ public static void OnAttack(AttackEntityEvent event) {
         }
     }
 
-
-
 @SubscribeEvent
 public static void ServerStartup(@NotNull FMLServerStartedEvent event) {
 //        aseoha.SendDebugToServer("Server Startup");
     for (ServerWorld level : event.getServer().getAllLevels())
         TardisHelper.getConsole(event.getServer(), level).ifPresent((console) -> {
+            console.removeControls();
+//            Networking.sendToServer(new UpdateControls(console.getType().getRegistryName()));
             event.getServer().tell(new TickDelayedTask(20, () -> {
-                console.removeControls();
                 console.getOrCreateControls();
                 console.updateClient();
-                Networking.sendToServer(new UpdateControls(console.getType().getRegistryName()));
             }));
         });
 }
