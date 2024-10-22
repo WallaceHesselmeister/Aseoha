@@ -21,6 +21,7 @@ import com.code.aseoha.items.AseohaItems;
 import com.code.aseoha.items.NoTadditionsItems;
 import com.code.aseoha.misc.AseohaDimensions;
 import com.code.aseoha.misc.Loot;
+import com.code.aseoha.WorkBench.WorkBenchRecipeHandler;
 import com.code.aseoha.threads.K9TickThread;
 import com.code.aseoha.threads.LivingTickThread;
 import com.code.aseoha.threads.TickThread;
@@ -33,10 +34,8 @@ import com.code.aseoha.world.biome.surface.SurfaceBuilder;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.RenderTypeLookup;
 import net.minecraft.client.world.DimensionRenderInfo;
-import net.minecraft.data.BiomeProvider;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.ModList;
@@ -46,7 +45,6 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.*;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import net.tardis.mod.ars.ConsoleRoom;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -59,7 +57,7 @@ import java.util.stream.Collectors;
  */
 @Mod("aseoha")
 public class aseoha {
-
+    public static WorkBenchRecipeHandler WorkBenchRecipeHandler = new WorkBenchRecipeHandler();
     public static final String MODID = "aseoha";
     // Directly reference a log4j logger.
     public static final Logger LOGGER = LogManager.getLogger();

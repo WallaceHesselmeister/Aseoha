@@ -74,6 +74,9 @@ public class AseohaTiles {
     public static final RegistryObject<TileEntityType<TardisCoralTile>> TARDIS_CORAL = TILES.register("tardis_coral",
             () -> TileEntityType.Builder.of(TardisCoralTile::new, AseohaBlocks.CORAL.get()).build(null));
 
+    public static final RegistryObject<TileEntityType<TardisCoralTile>> WORKBENCH = TILES.register("workbench",
+            () -> TileEntityType.Builder.of(TardisCoralTile::new, AseohaBlocks.WORKBENCH.get()).build(null));
+
     public static final RegistryObject<TileEntityType<EOHTile>> EYE_OF_HARMONY = TILES.register("eye_of_harmony",
             () -> TileEntityType.Builder.of(EOHTile::new, AseohaBlocks.EYE_OF_HARMONY.get()).build(null));
 
