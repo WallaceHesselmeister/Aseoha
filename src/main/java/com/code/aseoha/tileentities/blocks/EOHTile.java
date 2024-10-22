@@ -87,7 +87,8 @@ public class EOHTile extends TileEntity implements ITickableTileEntity {
         if (this.level.getGameTime() % 20 == 0)
             if (this.Mark) {
                 this.setChanged();
-                ((IHelpWithConsole)this.consoleTile).Aseoha$SetEOHActive(this.active);
+                if(this.consoleTile != null)
+                    ((IHelpWithConsole)this.consoleTile).Aseoha$SetEOHActive(this.active);
             }
         this.Update();
     }
@@ -170,20 +171,24 @@ public class EOHTile extends TileEntity implements ITickableTileEntity {
 
     public void Activate() {
         this.active = true;
-        this.consoleTile.updateArtronValues();
-        ((IHelpWithConsole) this.consoleTile).Aseoha$SetEOHActive(true);
+        if(this.consoleTile != null) {
+            this.consoleTile.updateArtronValues();
+            ((IHelpWithConsole) this.consoleTile).Aseoha$SetEOHActive(true);
+        }
         this.Mark = true;
     }
 
     public void Update() {
         if (this.active && this.GetStabilizers() < 2) {
-            ((IHelpWithConsole) this.consoleTile).Aseoha$SetEOHActive(true);
+            if(this.consoleTile != null)
+                ((IHelpWithConsole) this.consoleTile).Aseoha$SetEOHActive(true);
             this.timer++;
         }
         if (this.timer != 0 && this.GetStabilizers() > 1) {
             this.timer = 0;
             this.IsOverheated = false;
-            ((IHelpWithConsole) this.consoleTile).Aseoha$SetEOHOverheated(false);
+            if(this.consoleTile != null)
+                ((IHelpWithConsole) this.consoleTile).Aseoha$SetEOHOverheated(false);
             this.Mark = true;
         }
         if (this.timer > 9600) {
