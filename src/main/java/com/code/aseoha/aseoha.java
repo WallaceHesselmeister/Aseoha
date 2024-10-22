@@ -92,6 +92,7 @@ public class aseoha {
         SoundSchemeRegister.SOUND_SCHEMES.register(modBus);
         SurfaceBuilder.SurfaceBuilders.SURFACE_BUILDERS.register(modBus);
         Loot.GLOBAL_LOOT_MODIFIER.register(modBus);
+        AnimReg.EXTERIOR_ANIMATIONS.register(modBus);
         //ModBiomes.register(eventBus);
         // For events that happen after initialization. This is probably going to be use a lot.
 

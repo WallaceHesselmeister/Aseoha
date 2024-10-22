@@ -21,7 +21,7 @@ public class PrydonianRobes extends ArmorItem {
     public static final GallifreyMaterial gallifreyMaterial = new GallifreyMaterial();
 
     public PrydonianRobes(EquipmentSlotType slot) {
-        super(gallifreyMaterial, slot, ((Item.Properties)Items.ONE.get()).tab(AseohaItemGroups.ASEOHA_GROUP));
+        super(gallifreyMaterial, slot, ((Properties)Items.ONE.get()).tab(AseohaItemGroups.ASEOHA_GROUP));
     }
     @Override
     public String getArmorTexture(ItemStack stack, Entity entity, EquipmentSlotType slot, String type) {

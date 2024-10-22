@@ -40,7 +40,7 @@ public class BarnStructure extends Structure<NoFeatureConfig> {
      */
     @Override
     public  IStartFactory<NoFeatureConfig> getStartFactory() {
-        return BarnStructure.Start::new;
+        return Start::new;
     }
 
 

@@ -7,7 +7,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.tardis.mod.misc.Console;
 
 public class ConsolesRegistry {
-    public static final DeferredRegister<Console> CONSOLES = DeferredRegister.create(net.tardis.mod.misc.Console.class, aseoha.MODID);
+    public static final DeferredRegister<Console> CONSOLES = DeferredRegister.create(Console.class, aseoha.MODID);
 
     public static final RegistryObject<com.code.aseoha.misc.Console> COPPER =
             CONSOLES.register("copper", () -> new com.code.aseoha.misc.Console(() -> AseohaBlocks.console_copper.get().defaultBlockState(), "copperconsole"));

@@ -1,4 +1,4 @@
-/*package com.code.aseoha.world.biome;
+package com.code.aseoha.world.biome;/*package com.code.aseoha.world.biome;
 
 import com.code.aseoha.aseoha;
 import net.minecraft.client.audio.BackgroundMusicTracks;

@@ -1,4 +1,4 @@
-/*package com.code.aseoha.world.biome;
+package com.code.aseoha.world.biome;/*package com.code.aseoha.world.biome;
 
 import net.minecraft.util.RegistryKey;
 import net.minecraft.world.biome.Biome;

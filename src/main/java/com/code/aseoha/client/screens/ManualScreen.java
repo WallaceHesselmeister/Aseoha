@@ -1,4 +1,4 @@
-/*
+package com.code.aseoha.client.screens;/*
 package com.code.aseoha.client.screens;
 
 import com.code.aseoha.aseoha;

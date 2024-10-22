@@ -1,4 +1,4 @@
-//
+package com.code.aseoha.events.bus;//
 //package com.code.aseoha.events.bus;
 //
 //import com.code.aseoha.aseoha;

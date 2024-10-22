@@ -1,4 +1,4 @@
-//package com.code.aseoha.tileentities.exteriors;
+package com.code.aseoha.tileentities.exteriors;//package com.code.aseoha.tileentities.exteriors;
 //
 //import com.code.aseoha.tileentities.AseohaTiles;
 //import net.minecraft.state.properties.BlockStateProperties;

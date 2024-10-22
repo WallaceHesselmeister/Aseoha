@@ -1,4 +1,4 @@
-//package com.code.aseoha.items;
+package com.code.aseoha.items;//package com.code.aseoha.items;
 //
 //import com.code.aseoha.aseoha;
 ////import com.code.aseoha.client.screens.ManualScreen;

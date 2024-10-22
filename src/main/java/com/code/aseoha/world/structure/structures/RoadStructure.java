@@ -54,7 +54,7 @@ public class RoadStructure extends Structure<NoFeatureConfig> {
     @NotNull
     @Override
     public  IStartFactory<NoFeatureConfig> getStartFactory() {
-        return RoadStructure.Start::new;
+        return Start::new;
     }
 
 

@@ -31,7 +31,7 @@ public class FoodMachine extends Block {
     protected static final VoxelShape south;
     protected static final VoxelShape north;
 
-    public FoodMachine(AbstractBlock.Properties properties) {
+    public FoodMachine(Properties properties) {
         super(properties);
         this.registerDefaultState((BlockState)((BlockState)((BlockState)this.stateDefinition.any()).setValue(facing, Direction.NORTH)).setValue(WATERLOGGED, false));
     }

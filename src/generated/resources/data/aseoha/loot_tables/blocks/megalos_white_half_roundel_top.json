@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "name": "aseoha:megalos_white_half_roundel_top",
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "aseoha:megalos_white_half_roundel_top"
+        }
+      ]
+    }
+  ]
+}

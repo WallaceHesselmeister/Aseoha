@@ -34,9 +34,9 @@ import java.util.WeakHashMap;
 public class IncMod extends TorchBlock {
 
     public static final BooleanProperty LIT;
-    private static final Map<IBlockReader, List<IncMod.Toggle>> RECENT_TOGGLES;
+    private static final Map<IBlockReader, List<Toggle>> RECENT_TOGGLES;
 
-    public IncMod(AbstractBlock.Properties properties) {
+    public IncMod(Properties properties) {
         super(properties, RedstoneParticleData.REDSTONE);
         this.registerDefaultState((BlockState)((BlockState)this.stateDefinition.any()).setValue(LIT, true));
     }
@@ -94,7 +94,7 @@ public class IncMod extends TorchBlock {
         boolean lvt_5_1_ = this.hasNeighborSignal(p_225534_2_, p_225534_3_, p_225534_1_);
         List<Toggle> lvt_6_1_ = RECENT_TOGGLES.get(p_225534_2_);
 
-        while(lvt_6_1_ != null && !lvt_6_1_.isEmpty() && p_225534_2_.getGameTime() - ((IncMod.Toggle)lvt_6_1_.get(0)).when > 60L) {
+        while(lvt_6_1_ != null && !lvt_6_1_.isEmpty() && p_225534_2_.getGameTime() - ((Toggle)lvt_6_1_.get(0)).when > 60L) {
             lvt_6_1_.remove(0);
         }
 
@@ -146,7 +146,7 @@ public class IncMod extends TorchBlock {
             return Lists.newArrayList();
         });
         if (p_176598_2_) {
-            lvt_3_1_.add(new IncMod.Toggle(p_176598_1_.immutable(), p_176598_0_.getGameTime()));
+            lvt_3_1_.add(new Toggle(p_176598_1_.immutable(), p_176598_0_.getGameTime()));
         }
 
         int lvt_4_1_ = 0;

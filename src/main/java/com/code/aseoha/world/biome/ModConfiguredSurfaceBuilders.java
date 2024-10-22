@@ -1,4 +1,4 @@
-/*package com.code.aseoha.world.biome;
+package com.code.aseoha.world.biome;/*package com.code.aseoha.world.biome;
 
 import net.minecraft.block.Blocks;
 import net.minecraft.util.ResourceLocation;

@@ -55,7 +55,7 @@ VoxelShape voxel = Block.box(3, 0, 3.6999999999999997, 13, 22, 12.70000000000000
     }
 
 
-    public FoodMachineBlock(AbstractBlock.Properties prop) {
+    public FoodMachineBlock(Properties prop) {
         super(prop);
         this.registerDefaultState((BlockState)this.defaultBlockState().setValue(BlockStateProperties.WATERLOGGED, false));
     }
@@ -98,7 +98,7 @@ VoxelShape voxel = Block.box(3, 0, 3.6999999999999997, 13, 22, 12.70000000000000
                 console.setArtron((console.getArtron() - (1 * 16)));
 //            }
         } else if (!worldIn.isClientSide()) {
-            player.displayClientMessage(TardisConstants.Translations.NO_USE_OUTSIDE_TARDIS, true);
+            player.displayClientMessage(Translations.NO_USE_OUTSIDE_TARDIS, true);
         }
 
         return ActionResultType.SUCCESS;
@@ -107,7 +107,7 @@ VoxelShape voxel = Block.box(3, 0, 3.6999999999999997, 13, 22, 12.70000000000000
     public static class FoodMachineBlockItem extends BlockItem {
         private final IFormattableTextComponent descriptionTooltip = TextHelper.createDescriptionItemTooltip(new TranslationTextComponent("tooltip.foodmachine.desc"));
 
-        public FoodMachineBlockItem(Block blockIn, Item.Properties builder) {
+        public FoodMachineBlockItem(Block blockIn, Properties builder) {
             super(blockIn, builder);
         }
 

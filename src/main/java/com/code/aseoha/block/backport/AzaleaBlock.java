@@ -22,7 +22,7 @@ public class AzaleaBlock extends BushBlock implements IGrowable {
 //        return CODEC;
 //    }
 
-    public AzaleaBlock(Tree tree, AbstractBlock.Properties prop) {
+    public AzaleaBlock(Tree tree, Properties prop) {
         super(prop);
         this.treeGrower = tree;
     }

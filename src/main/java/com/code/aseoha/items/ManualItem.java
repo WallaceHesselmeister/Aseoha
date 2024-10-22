@@ -14,7 +14,7 @@ import org.jetbrains.annotations.NotNull;
 
 public class ManualItem extends Item {
     public ManualItem() {
-        super(((Item.Properties)Items.ONE.get()).tab(TItemGroups.MAINTENANCE));
+        super(((Properties)Items.ONE.get()).tab(TItemGroups.MAINTENANCE));
     }
 
     @NotNull

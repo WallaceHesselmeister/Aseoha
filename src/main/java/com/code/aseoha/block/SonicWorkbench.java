@@ -35,7 +35,7 @@ import java.util.Objects;
 @SuppressWarnings("deprecation")
 public class SonicWorkbench extends NotSolidTileBlock {
     public SonicWorkbench() {
-        super((AbstractBlock.Properties) Blocks.BASIC_TECH.get());
+        super((Properties) Blocks.BASIC_TECH.get());
     }
 
     @NotNull

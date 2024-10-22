@@ -49,7 +49,7 @@ public class CitadelStructure extends Structure<NoFeatureConfig> {
      */
     @Override
     public  IStartFactory<NoFeatureConfig> getStartFactory() {
-        return CitadelStructure.Start::new;
+        return Start::new;
     }
 
 

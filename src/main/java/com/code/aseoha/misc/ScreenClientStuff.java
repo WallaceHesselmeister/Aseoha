@@ -11,7 +11,7 @@ import net.tardis.mod.client.guis.monitors.IMonitorGui;
 @OnlyIn(Dist.CLIENT)
 public class ScreenClientStuff {
     @OnlyIn(Dist.CLIENT)
-    public static void OpenTARDISScreen(com.code.aseoha.entities.k9 k9, IMonitorGui k9mon) {
+    public static void OpenTARDISScreen(k9 k9, IMonitorGui k9mon) {
         Minecraft.getInstance().setScreen(new TARDISSubMenu(k9mon, k9));
     }
 

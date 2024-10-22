@@ -51,12 +51,12 @@ public class TwoBlockBasicExteriorMixin extends AbstractExterior {
     }
 
     @Shadow(remap = false)
-    public net.tardis.mod.tileentities.exteriors.ExteriorTile getExteriorTile(ConsoleTile console) {
+    public ExteriorTile getExteriorTile(ConsoleTile console) {
         if (Objects.requireNonNull(console.getLevel()).isClientSide()) {
             ServerWorld world = Objects.requireNonNull(console.getLevel().getServer()).getLevel(console.getCurrentDimension());
             if (world != null) {
                 TileEntity te = world.getBlockEntity(console.getCurrentLocation().above());
-                if (te instanceof net.tardis.mod.tileentities.exteriors.ExteriorTile)
+                if (te instanceof ExteriorTile)
                     return (ExteriorTile) te;
             }
         }

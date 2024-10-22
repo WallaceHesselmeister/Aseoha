@@ -19,7 +19,7 @@ import static com.code.aseoha.misc.TARDISHelper.setTardisName;
 
 @Mixin({NameTagItem.class})
 public abstract class NameTagMixin extends Item {
-    protected NameTagMixin(Item.Properties properties) {
+    protected NameTagMixin(Properties properties) {
         super(properties);
     }
 

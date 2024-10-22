@@ -30,7 +30,7 @@ public class Coral extends Block {
     public int timer;
     boolean isTransitioning = false;
 
-    public Coral(AbstractBlock.Properties props) {
+    public Coral(Properties props) {
         super(props);
         this.registerDefaultState((BlockState) this.stateDefinition.any().setValue(STATE, 0));
 

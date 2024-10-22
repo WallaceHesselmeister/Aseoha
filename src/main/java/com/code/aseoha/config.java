@@ -6,16 +6,16 @@ import org.jetbrains.annotations.NotNull;
 import org.lwjgl.system.CallbackI;
 
 public class config {
-    public static final config.Common COMMON;
+    public static final Common COMMON;
     public static final ForgeConfigSpec COMMON_SPEC;
-    public static final config.Server SERVER;
+    public static final Server SERVER;
     public static final ForgeConfigSpec SERVER_SPEC;
 
     static {
-        final Pair<Common, ForgeConfigSpec> specPair = new ForgeConfigSpec.Builder().configure(config.Common::new);
+        final Pair<Common, ForgeConfigSpec> specPair = new ForgeConfigSpec.Builder().configure(Common::new);
         COMMON = specPair.getLeft();
         COMMON_SPEC = specPair.getRight();
-        final Pair<config.Server, ForgeConfigSpec> specServerPair = new ForgeConfigSpec.Builder().configure(config.Server::new);
+        final Pair<Server, ForgeConfigSpec> specServerPair = new ForgeConfigSpec.Builder().configure(Server::new);
         SERVER = specServerPair.getLeft();
         SERVER_SPEC = specServerPair.getRight();
     }

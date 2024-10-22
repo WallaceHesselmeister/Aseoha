@@ -22,7 +22,7 @@ import java.util.Objects;
 
 public class deadLocker extends ConsoleBoundWithTooltipItem {
     public deadLocker() {
-        super((new Item.Properties()).stacksTo(1).tab(AseohaItemGroups.ASEOHA_GROUP));
+        super((new Properties()).stacksTo(1).tab(AseohaItemGroups.ASEOHA_GROUP));
     }
 
     public ResourceLocation getTardis(ItemStack stack) {

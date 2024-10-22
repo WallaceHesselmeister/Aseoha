@@ -1,4 +1,4 @@
-//package com.code.aseoha.entities;
+package com.code.aseoha.entities;//package com.code.aseoha.entities;
 
 import net.minecraft.entity.EntityType;
 import net.minecraft.util.RegistryKey;
