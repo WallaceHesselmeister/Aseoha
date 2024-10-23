@@ -24,6 +24,9 @@ public class AseohaItems {
         return (PrydonianRobes)createItem(new PrydonianRobes(EquipmentSlotType.HEAD));
     });
 
+    public static final RegistryObject<Item> MANUAL = ITEMS.register("aseoha_manual",
+            () -> createItem(new ManualItem()));
+
 //    public static final RegistryObject<Item> HADS = ITEMS.register("upgrades/hads", () -> {
 //        return (TardisPartItem)createItem(new TardisPartItem((new Item.Properties()).tab(ModItemGroup.ASEOHA_GROUP), TardisConstants.Part.PartType.UPGRADE, false, false, TardisConstants.Translations.DEMAT_CIRCUIT));
 //    });

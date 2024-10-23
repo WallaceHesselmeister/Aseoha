@@ -1,0 +1,9 @@
+{
+  "display_name": "Upgrades",
+  "pages": [
+    "aseoha:upgrades/upgrades_intro",
+    "aseoha:upgrades/engine_boosters",
+    "aseoha:upgrades/dynamic_coordinates",
+    "aseoha:upgrades/atrium"
+  ]
+}

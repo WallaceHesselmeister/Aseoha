@@ -1,0 +1,8 @@
+{
+  "display_name": "Flight Events",
+  "pages": [
+    "aseoha:flight_events/flight_events_intro",
+    "aseoha:flight_events/tardis_power_fault",
+    "aseoha:flight_events/tardis_taking_over"
+  ]
+}
