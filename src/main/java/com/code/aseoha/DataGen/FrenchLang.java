@@ -1,6 +1,8 @@
 package com.code.aseoha.DataGen;
 
 import com.code.aseoha.aseoha;
+import com.code.aseoha.items.AseohaItems;
+import com.code.aseoha.registries.AnimReg;
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.common.data.LanguageProvider;
 
@@ -12,6 +14,8 @@ public class FrenchLang extends LanguageProvider {
 
     @Override
     protected void addTranslations() {
+            add(AseohaItems.MANUAL.get(), "Pending Translation");
+            add(AnimReg.FAST_AF.get().getTranslationKey(), "Pending Translation");
             add("ars.piece.category.aseoha.astronomer", "Astronome");
             add("ars.piece.category.aseoha.cavern", "Caverne");
             add("ars.piece.category.aseoha.cavern_rooms", "Chambres souterraines");

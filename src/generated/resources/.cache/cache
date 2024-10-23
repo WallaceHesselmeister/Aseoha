@@ -1,5 +1,5 @@
-b9feb741e2e6415df3ce286e18cffba737b0c2c0 assets/aseoha/lang/en_us.json
-cd13be6e7200251fe50d87110a94f77d1136da03 assets/aseoha/lang/fr_fr.json
+af577d707b2436cea73552fe46c21e1b576c8365 assets/aseoha/lang/en_us.json
+196dfced68a834b2513f303b65fdceacd7243833 assets/aseoha/lang/fr_fr.json
 66f2a05579aa6fde1a986539b43340eeff59111f data/aseoha/advancements/recipes/aseoha_food/jelly_baby/red.json
 429a0a01aff03ef385402846dbc9c9d76fdc2d98 data/aseoha/loot_modifiers/chests/abandoned_mineshaft.json
 7f65373eb92a82433aa4bab30942d72ead795b84 data/aseoha/loot_modifiers/chests/bastion_bridge.json
@@ -115,6 +115,7 @@ c3c1cdf576418d24e22174fefc49af889f050e4b data/aseoha/loot_tables/blocks/toyota_u
 5848d72a55a70656ec9d48d27d4c60355ec51ea5 data/aseoha/loot_tables/blocks/toyota_upper_wall_pattern_top_right.json
 8fb7d14125fa588c8809b0e66c53266bc7bd002d data/aseoha/loot_tables/blocks/trenzalore_sand.json
 5922e89f3d557622fd1d9def5ef8baf8d60038ce data/aseoha/loot_tables/blocks/verdant_froglight.json
+bdfd15f84d3eed743a5c687c4e3ce69c7b5bfac5 data/aseoha/loot_tables/blocks/workbench.json
 616c3effdb6d84b992e6d60582a0c58cff1fcb9a data/aseoha/loot_tables/blocks/x_control.json
 5ca53bdcf4d1daa3b3ba4313cb21e0a1c88e6f29 data/aseoha/loot_tables/blocks/y_control.json
 8c7d7e9835cd8a928e0810ef32c0d3225f444387 data/aseoha/loot_tables/blocks/z_control.json

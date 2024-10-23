@@ -20,6 +20,5 @@ public class RecipeGen extends RecipeProvider {
     @Override
     protected void buildShapelessRecipes(@NotNull Consumer<IFinishedRecipe> consumer) {
         ShapedRecipeBuilder.shaped(AseohaItems.RED_JELLY_BABY.get()).pattern("ES").define('E', Items.SUGAR).define('S', Items.RED_DYE).group(AseohaItemGroups.ASEOHA_FOOD_GROUP.getRecipeFolderName()).unlockedBy("has_crafting_table", has(Items.SUGAR)).save(consumer);
-
     }
 }

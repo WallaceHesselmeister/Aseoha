@@ -1,6 +1,7 @@
 package com.code.aseoha.DataGen;
 
 import com.code.aseoha.aseoha;
+import com.code.aseoha.items.AseohaItems;
 import com.code.aseoha.registries.AnimReg;
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.common.data.LanguageProvider;
@@ -16,6 +17,7 @@ public class EnglishLang extends LanguageProvider {
      * THANKS JERYN!
      */
     protected void addTranslations() {
+        add(AseohaItems.MANUAL.get(), "ASEOHA Manual");
         add(AnimReg.FAST_AF.get().getTranslationKey(), "Fast Animation");
         add("ars.piece.category.aseoha.astronomer", "Astronomer");
         add("ars.piece.category.aseoha.cavern", "Cavern");

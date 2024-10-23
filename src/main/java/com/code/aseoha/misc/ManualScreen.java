@@ -66,7 +66,7 @@ public class ManualScreen extends Screen {
     }
 
     public ManualScreen(GuiContext context){
-        this(new StringTextComponent("Manual Vol.2"), aseoha.MODID);
+        this(new StringTextComponent("ASEOHA Manual"), aseoha.MODID);
         if (context instanceof GuiItemContext) {
             ItemStack stack = ((GuiItemContext) context).getItemStack();
             if (stack.hasTag()) {
