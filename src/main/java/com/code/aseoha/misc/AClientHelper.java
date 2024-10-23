@@ -42,12 +42,8 @@ public class AClientHelper {
 
 
     public static void openGUI(int guiId, GuiContext context) {
-        switch (guiId) {
-            case 0:
-                Minecraft.getInstance().setScreen(new ManualScreen(context));
-                break;
-            default:
-                break;
+        if (guiId == 0) {
+            Minecraft.getInstance().setScreen(new ManualScreen(context) {});
         }
     }
 

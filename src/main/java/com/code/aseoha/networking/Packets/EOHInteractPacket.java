@@ -37,7 +37,7 @@ public class EOHInteractPacket {
 
     public static void handle(EOHInteractPacket mes, @NotNull Supplier<NetworkEvent.Context> ctx) {
         ((NetworkEvent.Context) ctx.get()).enqueueWork(() -> {
-            ServerWorld world = Objects.requireNonNull(((NetworkEvent.Context) ctx.get()).getSender()).getLevel();
+            ServerWorld world = ctx.get().getSender().getLevel();
             if (WorldHelper.areDimensionTypesSame(world, TDimensions.DimensionTypes.TARDIS_TYPE)) {
                 TileEntity te = world.getBlockEntity(TardisHelper.TARDIS_POS);
                 if (te instanceof ConsoleTile) {

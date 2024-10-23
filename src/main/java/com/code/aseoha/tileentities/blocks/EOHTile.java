@@ -87,8 +87,8 @@ public class EOHTile extends TileEntity implements ITickableTileEntity {
         if (this.level.getGameTime() % 20 == 0)
             if (this.Mark) {
                 this.setChanged();
-                if(this.consoleTile != null)
-                    ((IHelpWithConsole)this.consoleTile).Aseoha$SetEOHActive(this.active);
+                if (this.consoleTile != null)
+                    ((IHelpWithConsole) this.consoleTile).Aseoha$SetEOHActive(this.active);
             }
         this.Update();
     }
@@ -160,8 +160,8 @@ public class EOHTile extends TileEntity implements ITickableTileEntity {
         if (this.consoleTile != null) {
             ((IHelpWithConsole) this.consoleTile).Aseoha$SetHasEOH(false);
             ((IHelpWithConsole) this.consoleTile).Aseoha$SetEOH(null);
-            ((IHelpWithConsole)this.consoleTile).Aseoha$SetEOHActive(false);
-            ((IHelpWithConsole)this.consoleTile).Aseoha$SetEOHTimer(0);
+            ((IHelpWithConsole) this.consoleTile).Aseoha$SetEOHActive(false);
+            ((IHelpWithConsole) this.consoleTile).Aseoha$SetEOHTimer(0);
             this.remove = true;
             this.invalidateCaps();
             this.requestModelDataUpdate();
@@ -171,7 +171,7 @@ public class EOHTile extends TileEntity implements ITickableTileEntity {
 
     public void Activate() {
         this.active = true;
-        if(this.consoleTile != null) {
+        if (this.consoleTile != null) {
             this.consoleTile.updateArtronValues();
             ((IHelpWithConsole) this.consoleTile).Aseoha$SetEOHActive(true);
         }
@@ -180,14 +180,14 @@ public class EOHTile extends TileEntity implements ITickableTileEntity {
 
     public void Update() {
         if (this.active && this.GetStabilizers() < 2) {
-            if(this.consoleTile != null)
+            if (this.consoleTile != null)
                 ((IHelpWithConsole) this.consoleTile).Aseoha$SetEOHActive(true);
             this.timer++;
         }
         if (this.timer != 0 && this.GetStabilizers() > 1) {
             this.timer = 0;
             this.IsOverheated = false;
-            if(this.consoleTile != null)
+            if (this.consoleTile != null)
                 ((IHelpWithConsole) this.consoleTile).Aseoha$SetEOHOverheated(false);
             this.Mark = true;
         }

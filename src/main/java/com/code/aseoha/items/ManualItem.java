@@ -30,10 +30,9 @@ public class ManualItem extends Item {
     @NotNull
     @Override
     public ActionResult<ItemStack> use(World worldIn, @NotNull PlayerEntity playerIn, @NotNull Hand handIn) {
-        if (!worldIn.isClientSide) {
-            if (handIn == Hand.MAIN_HAND)
+        if (worldIn.isClientSide && handIn == Hand.MAIN_HAND)
                 com.code.aseoha.misc.AClientHelper.openGUI(0, new GuiItemContext(playerIn.getItemInHand(handIn)));
-        }
+        
         return super.use(worldIn, playerIn, handIn);
     }
 
