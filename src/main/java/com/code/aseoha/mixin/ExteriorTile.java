@@ -38,7 +38,7 @@ public abstract class ExteriorTile extends TileEntity implements ITickableTileEn
 
     @ModifyReturnValue(method = "getLightEmittingLevel()I", at = @At("RETURN"), remap = false)
     public int Aseoha$getLightEmittingLevel(int original) {
-        return this.Aseoha$LightLevel;
+        return this.Aseoha$GetLight();
     }
 
     @Shadow(remap = false)

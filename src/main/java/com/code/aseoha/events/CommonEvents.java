@@ -5,9 +5,11 @@ import com.code.aseoha.Helpers.IHelpWithMonitor;
 import com.code.aseoha.aseoha;
 import com.code.aseoha.client.Sounds;
 import com.code.aseoha.commands.Commands;
+import com.code.aseoha.entities.DavrosChair;
 import com.code.aseoha.entities.k9;
 import com.code.aseoha.misc.*;
 import com.code.aseoha.tileentities.consoles.CopperConsoleTile;
+import net.minecraft.client.renderer.entity.PlayerRenderer;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -21,6 +23,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.world.server.ServerWorld;
+import net.minecraftforge.client.event.RenderPlayerEvent;
 import net.minecraftforge.event.RegisterCommandsEvent;
 import net.minecraftforge.event.ServerChatEvent;
 import net.minecraftforge.event.TickEvent;
@@ -59,6 +62,20 @@ import static com.code.aseoha.Helpers.IHelpWithMonitor.Aseoha$MonitorGetRot;
 @SuppressWarnings("unused")
 @Mod.EventBusSubscriber(modid = aseoha.MODID, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class CommonEvents {
+
+    /**
+     * This keeps legs from displaying in the Davros Chair
+     * @param event RenderPlayerEvent
+     */
+    @SubscribeEvent
+    public void playerRender(RenderPlayerEvent event){
+        if(event.getPlayer().getVehicle() != null){
+            if(event.getPlayer().getVehicle() instanceof DavrosChair){
+                event.getRenderer().getModel().leftLeg.visible = false;
+                event.getRenderer().getModel().rightLeg.visible = false;
+            }
+        }
+    }
 
 //    @SubscribeEvent
 //    public void attachCapability(AttachCapabilitiesEvent<TileEntity> event)
