@@ -17,7 +17,7 @@ import java.util.ArrayList;
 
 public class WorkbenchTile extends TileEntity implements ITickableTileEntity {
     public WorkbenchTile() {
-        super(AseohaTiles.TARDIS_CORAL.get());
+        super(AseohaTiles.WORKBENCH.get());
     }
     public ArrayList<Item> StoredItems;
 
