@@ -2,6 +2,7 @@ package com.code.aseoha.tileentities.blocks;
 
 import com.code.aseoha.aseoha;
 import com.code.aseoha.block.Coral;
+import com.code.aseoha.config;
 import com.code.aseoha.misc.PassNotNull;
 import com.code.aseoha.misc.TARDISHelper;
 import com.code.aseoha.tileentities.AseohaTiles;
@@ -18,7 +19,7 @@ public class TardisCoralTile extends TileEntity implements ITickableTileEntity {
     }
 
     public int timer = 0;
-    public int Maxtimer = 500;//12000;
+    public int Maxtimer = 12000;
     boolean isActive = true;
     public int STATE = 0;
 

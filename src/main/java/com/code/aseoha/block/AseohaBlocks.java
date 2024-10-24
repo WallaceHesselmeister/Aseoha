@@ -80,7 +80,7 @@ public class AseohaBlocks {
             () -> new Coral(Block.Properties.copy(Blocks.IRON_BLOCK).noOcclusion()));
 
     public static final RegistryObject<Block> WORKBENCH = registerBlock("workbench",
-            () -> new Coral(Block.Properties.copy(Blocks.IRON_BLOCK).noOcclusion()));
+            () -> new WorkbenchBlock(Block.Properties.copy(Blocks.IRON_BLOCK).noOcclusion()));
 
     public static final RegistryObject<Block> EYE_OF_HARMONY = registerBlock("eye_of_harmony",
             () -> new EOH(Block.Properties.of(Material.METAL).strength(1.25F, 5.25F).lightLevel(BlockState -> 15).noOcclusion()));

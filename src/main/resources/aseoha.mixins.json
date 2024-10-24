@@ -1,5 +1,6 @@
 {
   "client": [
+    "client.AtriumBlockMixin",
     "client.BOTIRendererMixin",
     "client.BOTIWorldMixin",
     "client.ExtRenderMixin",
@@ -12,7 +13,6 @@
   },
   "minVersion": "0.8",
   "mixins": [
-    "AtriumBlockMixin",
     "ConsoleChangeMessageMixin",
     "ConsoleMixin",
     "ConsoleTextureVariants",

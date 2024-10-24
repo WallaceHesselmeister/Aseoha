@@ -73,6 +73,9 @@ public class CommonEvents {
             if(event.getPlayer().getVehicle() instanceof DavrosChair){
                 event.getRenderer().getModel().leftLeg.visible = false;
                 event.getRenderer().getModel().rightLeg.visible = false;
+                event.getRenderer().getModel().leftPants.visible = false;
+                event.getRenderer().getModel().rightPants.visible = false;
+
             }
         }
     }
@@ -111,15 +114,16 @@ public class CommonEvents {
     /**
      * @param event The RegisterCommandsEvent, I use this to register custom commands
      */
-    @SubscribeEvent public static void registerCommands(RegisterCommandsEvent event) {Commands.register(event.getDispatcher());}
+    @SubscribeEvent public static void registerCommands(RegisterCommandsEvent event) {
+        Commands.register(event.getDispatcher());}
 
-    /**
-     * I use this to check if the player respawns, if they did, give them a manual
-     */
-    @SubscribeEvent
-    public static void respawnEvent(PlayerEvent.PlayerRespawnEvent event){
-        Objects.requireNonNull(event.getPlayer().getServer()).getCommands().performCommand(event.getPlayer().getServer().createCommandSourceStack().withEntity(event.getPlayer().getEntity()).withSuppressedOutput(), "function aseoha:givemanual");
-    }
+//    /**
+//     * I use this to check if the player respawns, if they did, give them a manual
+//     */
+//    @SubscribeEvent
+//    public static void respawnEvent(PlayerEvent.PlayerRespawnEvent event){
+//        Objects.requireNonNull(event.getPlayer().getServer()).getCommands().performCommand(event.getPlayer().getServer().createCommandSourceStack().withEntity(event.getPlayer().getEntity()).withSuppressedOutput(), "function aseoha:givemanual");
+//    }
 
 
 
@@ -387,7 +391,7 @@ public static void onTardisTakeoff(TardisEvent.Takeoff event) {
 //        event.setCanceled(true);
         TARDISHelper.setDoorState(event.getConsole(), 0);
 
-        if (event.getConsole().getArtron() < 64) {
+        if (event.getConsole().getArtron() < 32) {
             aseoha.SendDebugToClient("TARDIS TakeOff Low On Artron Code Being Executed");
             ClientHelper.shutTheFuckUp(TSounds.TARDIS_TAKEOFF.get(), SoundCategory.BLOCKS);
             Objects.requireNonNull(event.getConsole().getLevel()).playSound(null, event.getConsole().getBlockPos(), Sounds.LOW_ARTRON_TAKEOFF.get(), SoundCategory.BLOCKS, 1.0f, 1.0f);
@@ -396,7 +400,7 @@ public static void onTardisTakeoff(TardisEvent.Takeoff event) {
 
 @SubscribeEvent
 public static void onTardisLand(TardisEvent.Land event){
-    if(event.getConsole().getArtron() < 64) {
+    if(event.getConsole().getArtron() < 32) {
         aseoha.SendDebugToClient("TARDIS Land Low On Artron Code Being Executed");
         ClientHelper.shutTheFuckUp(TSounds.TARDIS_LAND.get(), SoundCategory.BLOCKS);
         Objects.requireNonNull(event.getConsole().getLevel()).playSound(null, event.getConsole().getBlockPos(), Sounds.LOW_ARTRON_LAND.get(), SoundCategory.BLOCKS, 1.0f, 1.0f);
@@ -609,6 +613,7 @@ public static void ServerStartup(@NotNull FMLServerStartedEvent event) {
         aseoha.SendDebugToAll("HADS Activated in TARDIS " + console.getCustomName());
         if(((IHelpWithConsole) console).Aseoha$GetHads()) {
 //            if (!Objects.requireNonNull(console.getLevel()).isClientSide) {
+            boolean WereStabsOn = console.getSubsystem(StabilizerSubsystem.class).orElse(null).isControlActivated();
                 console.getSubsystem(StabilizerSubsystem.class).ifPresent(stabs -> stabs.setActivated(false));
 //            }
             console.takeoff();
@@ -620,6 +625,7 @@ public static void ServerStartup(@NotNull FMLServerStartedEvent event) {
             console.updateClient();
             if (console.flightTicks == 1200) {
                 console.initLand();
+                console.getSubsystem(StabilizerSubsystem.class).orElse(null).setActivated(WereStabsOn);
             }
         }
     }
