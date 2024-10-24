@@ -401,7 +401,7 @@ public class EnglishLang extends LanguageProvider {
 //        add(RegenTraitRegistry.PHOTOSYNTHETIC.get().description().getKey(), "The sun energizes you!");
     }
 
-    public String grammerNazi(String text) {
+    public String grammarNazi(String text) {
         String firstLetter = text.substring(0, 1).toUpperCase();
         return firstLetter + text.substring(1);
     }

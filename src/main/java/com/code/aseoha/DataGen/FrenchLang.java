@@ -34,8 +34,8 @@ public class FrenchLang extends LanguageProvider {
             add("aseoha.k9.inventory", "Inventaire de K-9");
             add("aseoha.tardis.coor_x", "Définit la coordonnée X");
             add("aseoha.tardis.coord_x", "Définit la coordonnée X");
-            add("aseoha.tardis.coord_y", "Set Y Coordinate");
-            add("aseoha.tardis.coord_z", "Set Z Coordinate");
+            add("aseoha.tardis.coord_y", "Définit la coordonnée Y");
+            add("aseoha.tardis.coord_z", "Définit la coordonnée Z");
             add("aseoha.tardis.fly", "Décollage");
             add("aseoha.tardis.lock_doors", "Verrouillage des portes");
             add("aseoha.tardis.submenu", "TARDIS");

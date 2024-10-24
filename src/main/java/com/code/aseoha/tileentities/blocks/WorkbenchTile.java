@@ -9,13 +9,9 @@ import net.minecraft.tileentity.TileEntity;
 import java.util.ArrayList;
 
 public class WorkbenchTile extends TileEntity implements ITickableTileEntity {
-    public ArrayList<Item> StoredItems;
+    public ArrayList<Item> StoredItems = new ArrayList<>();
     public WorkbenchTile() {
         super(AseohaTiles.WORKBENCH.get());
-        this.StoredItems.add(Items.AIR);
-        this.StoredItems.add(Items.AIR);
-        this.StoredItems.add(Items.AIR);
-        this.StoredItems.add(Items.AIR);
     }
 
     @Override

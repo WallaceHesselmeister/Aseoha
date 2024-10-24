@@ -4,6 +4,7 @@ package com.code.aseoha;
 //import com.code.aseoha.DataGen.LootGen;
 //import com.code.aseoha.DataGen.RecipeGen;
 import com.code.aseoha.DataGen.*;
+import com.code.aseoha.DataGen.BlockStateGen;
 import com.code.aseoha.block.AseohaBlocks;
 import com.code.aseoha.client.Sounds;
 import com.code.aseoha.client.renderers.DavrosChairRenderer;
@@ -133,6 +134,7 @@ public class aseoha {
             STConfiguredStructures.registerConfiguredStructures();
 
             SurfaceBuilder.registerConfiguredSurfaceBuilders();
+            WorkBenchRecipeHandler.Init();
         });
         // some preinit code
 //        LOGGER.info("HELLO FROM PREINIT");
@@ -277,6 +279,7 @@ public class aseoha {
             generator.addProvider(new BlockLootTableGen(generator));
             generator.addProvider(new LootGen(generator));
             generator.addProvider(new RecipeGen(generator));
+            generator.addProvider(new BlockStateGen(generator));
 //            if (reports) {
 //                generator.addProvider(new BiomeProvider(generator));
 //            }

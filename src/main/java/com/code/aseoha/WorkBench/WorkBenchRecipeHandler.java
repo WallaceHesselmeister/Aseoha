@@ -1,5 +1,6 @@
 package com.code.aseoha.WorkBench;
 
+import com.code.aseoha.items.AseohaItems;
 import net.minecraft.item.Item;
 import net.minecraft.item.Items;
 import org.lwjgl.system.CallbackI;
@@ -9,9 +10,11 @@ import java.util.Arrays;
 import java.util.Objects;
 
 public class WorkBenchRecipeHandler {
-    public ArrayList<WorkBenchRecipe> RecipeList;
+    public ArrayList<WorkBenchRecipe> RecipeList = new ArrayList<>();
 
-    public void Init(){}
+    public void Init(){
+        this.AddRecipe(Items.GREEN_DYE, Items.BOOK, Items.AIR, Items.AIR, AseohaItems.MANUAL.get());
+    }
 
     public void AddRecipe(Item FirstIngredient, Item SecondIngredient, Item ThirdIngredient, Item FourthIngredient, Item RecievedItem){
         this.RecipeList.add(new WorkBenchRecipe(FirstIngredient, SecondIngredient, ThirdIngredient, FourthIngredient).AddReceivingItem(RecievedItem));
