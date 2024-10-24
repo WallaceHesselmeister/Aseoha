@@ -55,21 +55,27 @@ public class WorkbenchBlock extends Block {
     @Override
     public ActionResultType use(@NotNull BlockState p_225533_1_, @NotNull World p_225533_2_, @NotNull BlockPos p_225533_3_, @NotNull PlayerEntity p_225533_4_, @NotNull Hand p_225533_5_, @NotNull BlockRayTraceResult p_225533_6_) {
         TileEntity tile = p_225533_2_.getBlockEntity(p_225533_3_);
-        if (!p_225533_4_.getMainHandItem().isEmpty() && p_225533_4_.getMainHandItem().getItem() != Items.AIR) {
-            if (tile instanceof WorkbenchTile) {
-                if (((WorkbenchTile) tile).StoredItems.size() < 3) {
-                    ((WorkbenchTile) tile).StoredItems.add(p_225533_4_.getMainHandItem().getItem());
-                    p_225533_4_.getMainHandItem().shrink(1);
-                    return ActionResultType.CONSUME;
+        if ((WorkbenchTile) tile != null) {
+            if (!p_225533_4_.getMainHandItem().isEmpty() && p_225533_4_.getMainHandItem().getItem() != Items.AIR) {
+                if (tile instanceof WorkbenchTile) {
+                    if (!p_225533_4_.isCrouching()) {
+                        if (((WorkbenchTile) tile).StoredItems.size() < 3) {
+                            ((WorkbenchTile) tile).StoredItems.add(p_225533_4_.getMainHandItem().getItem());
+                            p_225533_4_.getMainHandItem().shrink(1);
+                            return ActionResultType.CONSUME;
+                        }
+                    }
+                    if (p_225533_4_.isCrouching()) {
+                        if (aseoha.WorkBenchRecipeHandler.IsValidRecipeFromArrayList(((WorkbenchTile) tile).StoredItems)) {
+                            p_225533_4_.inventory.add(aseoha.WorkBenchRecipeHandler.GetRecipeResultFromArrayList(((WorkbenchTile) tile).StoredItems).getDefaultInstance());
+                            return ActionResultType.CONSUME;
+                        }
+                    }
                 }
-            }
-        }
-        if(p_225533_4_.isCrouching() && tile instanceof WorkbenchTile){
-            if(aseoha.WorkBenchRecipeHandler.IsValidRecipeFromArrayList(((WorkbenchTile) tile).StoredItems)){
-                p_225533_4_.inventory.add(aseoha.WorkBenchRecipeHandler.GetRecipeResultFromArrayList(((WorkbenchTile) tile).StoredItems).getDefaultInstance());
-            }
-        }
 
+            }
+
+        }
         return ActionResultType.FAIL;
     }
 }

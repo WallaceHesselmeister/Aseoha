@@ -12,13 +12,15 @@ public class WorkBenchRecipe {
      * @param SecondIngredient 2nd Ingredient
      * @param ThirdIngredient 3rd Ingredient
      * @param FourthIngredient 4th Ingredient
-     * @param ReceivedItem The Item Received (Leave this null if you're checking if recipe exists and don't have the result)
      */
-    public WorkBenchRecipe(Item FirstIngredient, Item SecondIngredient, Item ThirdIngredient, Item FourthIngredient, Item ReceivedItem) {
+    public WorkBenchRecipe(Item FirstIngredient, Item SecondIngredient, Item ThirdIngredient, Item FourthIngredient) {
         this.Ingredients[0] = FirstIngredient;
         this.Ingredients[1] = SecondIngredient;
         this.Ingredients[2] = ThirdIngredient;
         this.Ingredients[3] = FourthIngredient;
-        Result = ReceivedItem;
+    }
+    public WorkBenchRecipe AddReceivingItem(Item Received){
+        this.Result = Received;
+        return this;
     }
 }

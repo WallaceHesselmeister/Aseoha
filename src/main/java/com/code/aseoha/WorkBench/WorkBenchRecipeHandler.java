@@ -6,15 +6,15 @@ import org.lwjgl.system.CallbackI;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Objects;
 
 public class WorkBenchRecipeHandler {
     public ArrayList<WorkBenchRecipe> RecipeList;
 
-    public void Init(){
-        this.RecipeList.add(new WorkBenchRecipe(Items.BOOK, Items.RED_DYE, (Item) null, (Item) null, (Item) null));
-    }
+    public void Init(){}
+
     public void AddRecipe(Item FirstIngredient, Item SecondIngredient, Item ThirdIngredient, Item FourthIngredient, Item RecievedItem){
-        this.RecipeList.add(new WorkBenchRecipe(FirstIngredient, SecondIngredient, ThirdIngredient, FourthIngredient, RecievedItem));
+        this.RecipeList.add(new WorkBenchRecipe(FirstIngredient, SecondIngredient, ThirdIngredient, FourthIngredient).AddReceivingItem(RecievedItem));
     }
 
     /**
@@ -22,7 +22,17 @@ public class WorkBenchRecipeHandler {
      * @return wether it is valid
      */
     public boolean IsValidRecipe(Item FirstIngredient, Item SecondIngredient, Item ThirdIngredient, Item FourthIngredient){
-        return this.RecipeList.contains(new WorkBenchRecipe(FirstIngredient, SecondIngredient, ThirdIngredient, FourthIngredient, null));
+        for(int i = 0; i < this.RecipeList.size(); i++){
+            if(Arrays.equals(this.RecipeList.get(i).Ingredients, new Item[]{FirstIngredient, SecondIngredient, ThirdIngredient, FourthIngredient}));
+            return true;
+        }
+        return false;
+
+
+
+
+
+//        return this.RecipeList.contains(new WorkBenchRecipe(FirstIngredient, SecondIngredient, ThirdIngredient, FourthIngredient));
     }
 
 
@@ -31,7 +41,14 @@ public class WorkBenchRecipeHandler {
      * @return wether it is valid
      */
     public boolean IsValidRecipeFromArrayList(ArrayList<Item> Ingredients){
-        return this.RecipeList.contains(new WorkBenchRecipe(Ingredients.get(0), Ingredients.get(1), Ingredients.get(2), Ingredients.get(3), null));
+        for(int i = 0; i < this.RecipeList.size(); i++){
+            if(Arrays.equals(this.RecipeList.get(i).Ingredients, new Item[]{Ingredients.get(0), Ingredients.get(1), Ingredients.get(2), Ingredients.get(3)}));
+            return true;
+        }
+        return false;
+
+
+//        return this.RecipeList.contains(new WorkBenchRecipe(Ingredients.get(0), Ingredients.get(1), Ingredients.get(2), Ingredients.get(3)));
     }
 
     /**
