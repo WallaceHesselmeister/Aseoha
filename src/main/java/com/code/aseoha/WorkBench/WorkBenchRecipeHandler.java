@@ -12,43 +12,49 @@ import java.util.Objects;
 public class WorkBenchRecipeHandler {
     public ArrayList<WorkBenchRecipe> RecipeList = new ArrayList<>();
 
-    public void Init(){
+    public void Init() {
         this.AddRecipe(Items.GREEN_DYE, Items.BOOK, Items.AIR, Items.AIR, AseohaItems.MANUAL.get());
     }
 
-    public void AddRecipe(Item FirstIngredient, Item SecondIngredient, Item ThirdIngredient, Item FourthIngredient, Item RecievedItem){
+    public void AddRecipe(Item FirstIngredient, Item SecondIngredient, Item ThirdIngredient, Item FourthIngredient, Item RecievedItem) {
         this.RecipeList.add(new WorkBenchRecipe(FirstIngredient, SecondIngredient, ThirdIngredient, FourthIngredient).AddReceivingItem(RecievedItem));
     }
 
     /**
      * Check if the four ingredients combined form a valid recipe
+     *
      * @return wether it is valid
      */
-    public boolean IsValidRecipe(Item FirstIngredient, Item SecondIngredient, Item ThirdIngredient, Item FourthIngredient){
-        for(int i = 0; i < this.RecipeList.size(); i++){
-            if(Arrays.equals(this.RecipeList.get(i).Ingredients, new Item[]{FirstIngredient, SecondIngredient, ThirdIngredient, FourthIngredient}));
-            return true;
+    public boolean IsValidRecipe(Item FirstIngredient, Item SecondIngredient, Item ThirdIngredient, Item FourthIngredient) {
+        for (int i = 0; i < this.RecipeList.size(); i++) {
+//            if(Arrays.equals(this.RecipeList.get(i).Ingredients, new Item[]{FirstIngredient, SecondIngredient, ThirdIngredient, FourthIngredient}));
+            if (Arrays.asList(this.RecipeList.get(i).Ingredients).contains(FirstIngredient) &&
+                    Arrays.asList(this.RecipeList.get(i).Ingredients).contains(SecondIngredient) &&
+                    Arrays.asList(this.RecipeList.get(i).Ingredients).contains(ThirdIngredient) &&
+                    Arrays.asList(this.RecipeList.get(i).Ingredients).contains(FourthIngredient)
+            )
+                return true;
         }
         return false;
-
-
-
-
-
-//        return this.RecipeList.contains(new WorkBenchRecipe(FirstIngredient, SecondIngredient, ThirdIngredient, FourthIngredient));
     }
 
 
     /**
      * Check if the four ingredients combined form a valid recipe
+     *
      * @return wether it is valid
      */
-    public boolean IsValidRecipeFromArrayList(ArrayList<Item> Ingredients){
-        while(Ingredients.size() < 4){
+    public boolean IsValidRecipeFromArrayList(ArrayList<Item> Ingredients) {
+        while (Ingredients.size() < 4) {
             Ingredients.add(Items.AIR);
         }
-        for(int i = 0; i < this.RecipeList.size(); i++){
-            if(Arrays.equals(this.RecipeList.get(i).Ingredients, new Item[]{Ingredients.get(0), Ingredients.get(1), Ingredients.get(2), Ingredients.get(3)}))
+        for (int i = 0; i < this.RecipeList.size(); i++) {
+//            if(this.RecipeList.get(i).Ingredients new Item[]{Ingredients.get(0), Ingredients.get(1), Ingredients.get(2), Ingredients.get(3)}))
+            if (Arrays.asList(this.RecipeList.get(i).Ingredients).contains(Ingredients.get(0)) &&
+                    Arrays.asList(this.RecipeList.get(i).Ingredients).contains(Ingredients.get(1)) &&
+                    Arrays.asList(this.RecipeList.get(i).Ingredients).contains(Ingredients.get(2)) &&
+                    Arrays.asList(this.RecipeList.get(i).Ingredients).contains(Ingredients.get(3))
+            )
                 return true;
         }
         return false;
@@ -59,12 +65,13 @@ public class WorkBenchRecipeHandler {
 
     /**
      * Takes 4 items and if the recipe is valid returns the result of the recipe
+     *
      * @return The result of the recipe or dirt if it doesn't exist
      */
-    public Item GetRecipeResult(Item FirstIngredient, Item SecondIngredient, Item ThirdIngredient, Item FourthIngredient){
-        if(this.IsValidRecipe(FirstIngredient, SecondIngredient, ThirdIngredient, FourthIngredient)) {
-            for(int i = 0; i < this.RecipeList.size(); i++) {
-                if(Arrays.equals(this.RecipeList.get(i).Ingredients, new Item[]{FirstIngredient, SecondIngredient, ThirdIngredient, FourthIngredient})){
+    public Item GetRecipeResult(Item FirstIngredient, Item SecondIngredient, Item ThirdIngredient, Item FourthIngredient) {
+        if (this.IsValidRecipe(FirstIngredient, SecondIngredient, ThirdIngredient, FourthIngredient)) {
+            for (int i = 0; i < this.RecipeList.size(); i++) {
+                if (Arrays.equals(this.RecipeList.get(i).Ingredients, new Item[]{FirstIngredient, SecondIngredient, ThirdIngredient, FourthIngredient})) {
                     return this.RecipeList.get(i).Result;
                 }
             }
@@ -74,13 +81,14 @@ public class WorkBenchRecipeHandler {
 
     /**
      * Takes 4 items and if the recipe is valid returns the result of the recipe
+     *
      * @return The result of the recipe or dirt if it doesn't exist
      */
-    public Item GetRecipeResultFromArrayList(ArrayList<Item> Ingredient){
+    public Item GetRecipeResultFromArrayList(ArrayList<Item> Ingredient) {
         Item FirstIngredient = Ingredient.get(0), SecondIngredient = Ingredient.get(1), ThirdIngredient = Ingredient.get(2), FourthIngredient = Ingredient.get(3);
-        if(this.IsValidRecipe(FirstIngredient, SecondIngredient, ThirdIngredient, FourthIngredient)) {
-            for(int i = 0; i < this.RecipeList.size(); i++) {
-                if(Arrays.equals(this.RecipeList.get(i).Ingredients, new Item[]{FirstIngredient, SecondIngredient, ThirdIngredient, FourthIngredient})){
+        if (this.IsValidRecipe(FirstIngredient, SecondIngredient, ThirdIngredient, FourthIngredient)) {
+            for (int i = 0; i < this.RecipeList.size(); i++) {
+                if (Arrays.equals(this.RecipeList.get(i).Ingredients, new Item[]{FirstIngredient, SecondIngredient, ThirdIngredient, FourthIngredient})) {
                     return this.RecipeList.get(i).Result;
                 }
             }
@@ -96,9 +104,9 @@ public class WorkBenchRecipeHandler {
      * This is mainly so external mods can add more recipes
      * @param Handler Handler with recipes to add to this
      */
-    public void Sync(WorkBenchRecipeHandler Handler){
-        for(int i = 0; i < Handler.RecipeList.size(); i++){
-            if(!this.RecipeList.contains(Handler.RecipeList.get(i)))
+    public void Sync(WorkBenchRecipeHandler Handler) {
+        for (int i = 0; i < Handler.RecipeList.size(); i++) {
+            if (!this.RecipeList.contains(Handler.RecipeList.get(i)))
                 this.RecipeList.add(Handler.RecipeList.get(i));
         }
     }
