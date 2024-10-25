@@ -25,6 +25,7 @@ import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.world.IBlockReader;
+import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 import org.jetbrains.annotations.NotNull;
@@ -34,12 +35,24 @@ import java.util.ArrayList;
 @SuppressWarnings("deprecation")
 public class WorkbenchBlock extends Block {
     int size = 0;
+
     public WorkbenchBlock(Properties props) {
         super(props);
     }
 
     public void tickFunction(BlockState p_225534_1_, ServerWorld p_225534_2_, BlockPos p_225534_3_, int timer) {
 
+    }
+
+    @Override
+    public void onRemove(BlockState p_196243_1_, World p_196243_2_, BlockPos p_196243_3_, BlockState p_196243_4_, boolean p_196243_5_) {
+        TileEntity tile = p_196243_2_.getBlockEntity(p_196243_3_);
+        if ((WorkbenchTile) tile != null) {
+            if (tile instanceof WorkbenchTile) {
+                ((WorkbenchTile) tile).StoredItems.clear();
+                tile.setRemoved();
+            }
+        }
     }
 
     @Override
@@ -58,33 +71,37 @@ public class WorkbenchBlock extends Block {
         TileEntity tile = p_225533_2_.getBlockEntity(p_225533_3_);
         if ((WorkbenchTile) tile != null) {
 
-                if (tile instanceof WorkbenchTile) {
-                    for(int i = 0; i < 3; i++) {
-                        if (!((WorkbenchTile) tile).StoredItems.isEmpty())
-                            if (!((WorkbenchTile) tile).StoredItems.get(i).equals(Items.AIR))
-                                this.size++;
+            if (tile instanceof WorkbenchTile) {
+                if (!((WorkbenchTile) tile).StoredItems.isEmpty())
+                    for (int i = 0; i < ((WorkbenchTile) tile).StoredItems.size(); i++) {
+                        if (!((WorkbenchTile) tile).StoredItems.get(i).equals(Items.AIR))
+                            this.size++;
                     }
-                    if (!p_225533_4_.isCrouching() && !p_225533_4_.getMainHandItem().isEmpty() && p_225533_4_.getMainHandItem().getItem() != Items.AIR) {
-                        if (this.size < 3) {
-                            ((WorkbenchTile) tile).StoredItems.add(p_225533_4_.getMainHandItem().getItem());
-                            p_225533_4_.getMainHandItem().shrink(1);
-                            return ActionResultType.CONSUME;
-                        }
-                    }
-                    if (p_225533_4_.isCrouching() && !((WorkbenchTile) tile).StoredItems.isEmpty()) {
-                        ArrayList<Items> itemsArrayList = new ArrayList<>();
-                        for(int i = 0; i < 3; i++){
-                            if(((WorkbenchTile)tile).StoredItems.get(i) == null){
-                                ((WorkbenchTile)tile).StoredItems.add(i, Items.AIR);
-                            }
-                        }
-                        if (aseoha.WorkBenchRecipeHandler.IsValidRecipeFromArrayList(((WorkbenchTile) tile).StoredItems)) {
-                            p_225533_4_.inventory.add(aseoha.WorkBenchRecipeHandler.GetRecipeResultFromArrayList(((WorkbenchTile) tile).StoredItems).getDefaultInstance());
-                            return ActionResultType.CONSUME;
-                        }
+                if (!p_225533_4_.isCrouching() && !p_225533_4_.getMainHandItem().isEmpty() && p_225533_4_.getMainHandItem().getItem() != Items.AIR) {
+                    if (this.size < 4) {
+                        ((WorkbenchTile) tile).StoredItems.add(p_225533_4_.getMainHandItem().getItem());
+                        p_225533_4_.getMainHandItem().shrink(1);
+                        return ActionResultType.CONSUME;
                     }
                 }
-
+                if (p_225533_4_.isCrouching() && !((WorkbenchTile) tile).StoredItems.isEmpty()) {
+                    ArrayList<Items> itemsArrayList = new ArrayList<>();
+//                    for (int i = 0; i < 3; i++) {
+//                        if (((WorkbenchTile) tile).StoredItems.get(i) == null) {
+//                            ((WorkbenchTile) tile).StoredItems.add(i, Items.AIR);
+//                        }
+//                    }
+                    for(int i = 0; i < 4; i++){
+                        if(((WorkbenchTile) tile).StoredItems.size() < 4) ((WorkbenchTile) tile).StoredItems.add(Items.AIR);
+                    }
+                    if (aseoha.WorkBenchRecipeHandler.IsValidRecipeFromArrayList(((WorkbenchTile) tile).StoredItems)) {
+                        p_225533_4_.inventory.add(aseoha.WorkBenchRecipeHandler.GetRecipeResultFromArrayList(((WorkbenchTile) tile).StoredItems).getDefaultInstance());
+                        ((WorkbenchTile) tile).StoredItems.clear();
+                        this.size = 0;
+                        return ActionResultType.CONSUME;
+                    }
+                }
+            }
 
 
         }

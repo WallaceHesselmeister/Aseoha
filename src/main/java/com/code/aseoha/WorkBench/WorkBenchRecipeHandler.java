@@ -44,9 +44,12 @@ public class WorkBenchRecipeHandler {
      * @return wether it is valid
      */
     public boolean IsValidRecipeFromArrayList(ArrayList<Item> Ingredients){
+        while(Ingredients.size() < 4){
+            Ingredients.add(Items.AIR);
+        }
         for(int i = 0; i < this.RecipeList.size(); i++){
-            if(Arrays.equals(this.RecipeList.get(i).Ingredients, new Item[]{Ingredients.get(0), Ingredients.get(1), Ingredients.get(2), Ingredients.get(3)}));
-            return true;
+            if(Arrays.equals(this.RecipeList.get(i).Ingredients, new Item[]{Ingredients.get(0), Ingredients.get(1), Ingredients.get(2), Ingredients.get(3)}))
+                return true;
         }
         return false;
 
