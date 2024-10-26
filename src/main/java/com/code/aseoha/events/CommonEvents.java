@@ -49,6 +49,7 @@ import net.tardis.mod.registries.ControlRegistry;
 import net.tardis.mod.sounds.TSounds;
 import net.tardis.mod.subsystem.StabilizerSubsystem;
 import net.tardis.mod.tileentities.ConsoleTile;
+import net.tardis.mod.world.dimensions.TDimensions;
 import org.jetbrains.annotations.NotNull;
 
 import javax.script.ScriptEngine;
@@ -247,6 +248,7 @@ public class CommonEvents {
                                     k9.Talk(1, event.getPlayer(), event.getPlayer().level);
                                     int lightLevel = Integer.parseInt(message.toLowerCase().replace(" ", "").replace("k-9", "").replace("k9", "").replace("k 9", "").replaceAll("[^1234567890]", ""));
                                     if (lightLevel > 15) lightLevel = 15;
+                                    if (lightLevel < 0) lightLevel = 0;
                                     consoleTile.getInteriorManager().setLight(lightLevel);
 
                                 }
@@ -595,17 +597,18 @@ public static void OnAttack(AttackEntityEvent event) {
         }
     }
 
+    //Needed this before TAPI added it
 @SubscribeEvent
 public static void ServerStartup(@NotNull FMLServerStartedEvent event) {
-//        aseoha.SendDebugToServer("Server Startup");
+    aseoha.SendDebugToServer("Server Startup");
     for (ServerWorld level : event.getServer().getAllLevels())
         TardisHelper.getConsole(event.getServer(), level).ifPresent((console) -> {
-            console.removeControls();
-//            Networking.sendToServer(new UpdateControls(console.getType().getRegistryName()));
-            event.getServer().tell(new TickDelayedTask(20, () -> {
-                console.getOrCreateControls();
-                console.updateClient();
-            }));
+            console.getInteriorManager().setLight((console.getInteriorManager().getLight() < 0) || (console.getInteriorManager().getLight() > 15) ? 15 : 0);
+//            console.removeControls();
+//            event.getServer().tell(new TickDelayedTask(20, () -> {
+//                console.getOrCreateControls();
+//                console.updateClient();
+//            }));
         });
 }
 
@@ -637,6 +640,9 @@ public static void ServerStartup(@NotNull FMLServerStartedEvent event) {
     @SubscribeEvent
     public static void OnWorldTick(TickEvent.WorldTickEvent event) {
         aseoha.tickThread.Call(event);
+        if(event.world.dimension().equals(TDimensions.TARDIS_DIMENSIONS)) {
+            TardisHelper.getConsoleInWorld(event.world).ifPresent(consoleTile -> consoleTile.getInteriorManager().setLight((consoleTile.getInteriorManager().getLight() < 0) || (consoleTile.getInteriorManager().getLight() > 15) ? 0 : consoleTile.getInteriorManager().getLight()));
+        }
     }
 
 

@@ -22,6 +22,5 @@ public abstract class InteriorManagerMixin implements INBTSerializable<CompoundN
     @Inject(method = "setLight(I)V", at = @At("TAIL"), remap = false)
     private void Aseoha$SetLight(int light, CallbackInfo ci){
         ((IHelpWithExterior) this.console.getExteriorType().getExteriorTile(this.console)).Aseoha$SetLight((byte) light);
-        aseoha.LOGGER.info(((IHelpWithExterior) this.console.getExteriorType().getExteriorTile(this.console)).Aseoha$GetLight());
     }
 }

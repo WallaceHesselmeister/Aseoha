@@ -32,11 +32,14 @@ import com.code.aseoha.registries.*;
 import com.code.aseoha.tileentities.AseohaTiles;
 import com.code.aseoha.upgrades.RegisterUpgrades;
 import com.code.aseoha.world.biome.surface.SurfaceBuilder;
+import jdk.nashorn.internal.ir.Block;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.RenderTypeLookup;
 import net.minecraft.client.world.DimensionRenderInfo;
+import net.minecraft.data.ItemTagsProvider;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.ModList;
@@ -163,9 +166,6 @@ public class aseoha {
 //        LOGGER.info("Got game settings {}", event.getMinecraftSupplier().get().options);
         // do something that can only be done with blocks
 //        ClientRegistry.RegisterClientStuff(event);
-        aseoha.LOGGER.info("Started client setup");
-        //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// ROUNDELS/MISC
-        aseoha.LOGGER.info("Started client Block Render Layers");
         RenderTypeLookup.setRenderLayer(AseohaBlocks.FAULTLOCATOR.get(), RenderType.cutout());
         RenderTypeLookup.setRenderLayer(AseohaBlocks.FAULTLOCATOR_S.get(), RenderType.cutout());
         RenderTypeLookup.setRenderLayer(AseohaBlocks.HELLBENT_HEX.get(), RenderType.cutout());
@@ -194,11 +194,11 @@ public class aseoha {
         RenderTypeLookup.setRenderLayer(AseohaBlocks.FLOWERING_AZALEA_LEAVES.get(), RenderType.cutout());
         RenderTypeLookup.setRenderLayer(AseohaBlocks.AZALEA_LEAVES.get(), RenderType.cutout());
         RenderTypeLookup.setRenderLayer(AseohaBlocks.HARMONIC_PILLAR.get(), RenderType.translucent());
+        RenderTypeLookup.setRenderLayer(AseohaBlocks.WORKBENCH.get(), RenderType.cutout());
 
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// CONSOLES
 
-        aseoha.LOGGER.info("Started client setup Consoles and EOH");
         RenderTypeLookup.setRenderLayer(AseohaBlocks.console_copper.get(), RenderType.translucent());
         net.minecraftforge.fml.client.registry.ClientRegistry.bindTileEntityRenderer(AseohaTiles.console_copper.get(), CopperConsoleRenderer::new);
 
@@ -228,19 +228,16 @@ public class aseoha {
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// ENTITIES
 
-        aseoha.LOGGER.info("Started client setup EntityRenderingHandler");
         RenderingRegistry.registerEntityRenderingHandler(ModEntityTypes.K9.get(), k9render::new);
         RenderingRegistry.registerEntityRenderingHandler(ModEntityTypes.WALLE.get(), wallerender::new);
         RenderingRegistry.registerEntityRenderingHandler(ModEntityTypes.DAVROS_CHAIR.get(), DavrosChairRenderer::new);
 
 
         AseohaDimensions.registerNoiseSettings();
-        aseoha.LOGGER.info("Started Client setup DimensionRenderInfo");
         DimensionRenderInfo.EFFECTS.put(AseohaDimensions.KLOM_SKY_PROPERTY_KEY, new KlomSkyProperty());
         DimensionRenderInfo.EFFECTS.put(AseohaDimensions.GALLIFREY_SKY_PROPERTY_KEY, new GallifreySkyProperty());
         DimensionRenderInfo.EFFECTS.put(AseohaDimensions.RAXICORICOFALLAPITORIUS_SKY_PROPERTY_KEY, new RaxicoricofallapitoriusSkyProperty());
         DimensionRenderInfo.EFFECTS.put(AseohaDimensions.BASIC_SKY_PROPERTY_KEY, new BasicSkyProperty());
-        aseoha.LOGGER.info("Ended client setup");
     }
 
     private void enqueueIMC(final InterModEnqueueEvent event) {
@@ -272,14 +269,16 @@ public class aseoha {
 
         @SubscribeEvent
         public static void onGatherData(GatherDataEvent event) {
+            ExistingFileHelper fileHelper = event.getExistingFileHelper();
             net.minecraft.data.DataGenerator generator = event.getGenerator();
-//            boolean reports = false;
+            BlockTagGen blockTags = new BlockTagGen(generator, fileHelper);
             generator.addProvider(new EnglishLang(generator));
             generator.addProvider(new FrenchLang(generator));
             generator.addProvider(new BlockLootTableGen(generator));
             generator.addProvider(new LootGen(generator));
             generator.addProvider(new RecipeGen(generator));
             generator.addProvider(new BlockStateGen(generator));
+            generator.addProvider(new ItemTagsGen(generator, blockTags, fileHelper));
 //            if (reports) {
 //                generator.addProvider(new BiomeProvider(generator));
 //            }

@@ -38,54 +38,52 @@ public class BlockStateGen implements IDataProvider {
         Map<Block, IFinishedBlockState> map = Maps.newHashMap();
         Consumer<IFinishedBlockState> consumer = (p_240085_1_) -> {
             Block block = p_240085_1_.getBlock();
-            if(block.getRegistryName().getNamespace().equals(aseoha.MODID)) {
-                IFinishedBlockState ifinishedblockstate = map.put(block, p_240085_1_);
-                if (ifinishedblockstate != null) {
-                    throw new IllegalStateException("Duplicate blockstate definition for " + block);
-                }
+            IFinishedBlockState ifinishedblockstate = map.put(block, p_240085_1_);
+            if (ifinishedblockstate != null) {
+                throw new IllegalStateException("Duplicate blockstate definition for " + block);
             }
         };
-
         Map<ResourceLocation, Supplier<JsonElement>> map1 = Maps.newHashMap();
         Set<Item> set = Sets.newHashSet();
         BiConsumer<ResourceLocation, Supplier<JsonElement>> biconsumer = (p_240086_1_, p_240086_2_) -> {
-            if(p_240086_1_.getNamespace().equals(aseoha.MODID)) {
-                Supplier<JsonElement> supplier = map1.put(p_240086_1_, p_240086_2_);
-                if (supplier != null) {
-                    throw new IllegalStateException("Duplicate model definition for " + p_240086_1_);
-                }
+            Supplier<JsonElement> supplier = map1.put(p_240086_1_, p_240086_2_);
+            if (supplier != null) {
+                throw new IllegalStateException("Duplicate model definition for " + p_240086_1_);
             }
         };
         Consumer<Item> consumer1 = set::add;
         (new BlockModelProvider(consumer, biconsumer, consumer1)).run();
         (new ItemModelProvider(biconsumer)).run();
-        List<RegistryObject<Block>> regBlocks = AseohaBlocks.BLOCKS.getEntries().stream().filter((p_240084_1_) -> {
-            if(p_240084_1_.get().getRegistryName().getNamespace().equals(aseoha.MODID))
-                return !map.containsKey(p_240084_1_.get());
-            return false;
-        }).collect(Collectors.toList());
-        List<Block> list = new ArrayList<>();
-        regBlocks.forEach(block -> {
-            list.add(block.get());
-        });
 
-            AseohaBlocks.BLOCKS.getEntries().forEach((blockRegistryObject) -> {
-                Block p_240087_2_ = blockRegistryObject.get();
 
-                    Item item = Item.BY_BLOCK.get(p_240087_2_);
-                    if (item != null) {
-                        if (set.contains(item)) {
-                            return;
-                        }
+        List<RegistryObject<Block>> listregobjects = new ArrayList<>(AseohaBlocks.BLOCKS.getEntries());
 
-                        ResourceLocation resourcelocation = ModelsResourceUtil.getModelLocation(item);
-                        if (!map1.containsKey(resourcelocation)) {
-                            map1.put(resourcelocation, new BlockModelWriter(ModelsResourceUtil.getModelLocation(p_240087_2_)));
-                        }
+        List<Block> block0List = new ArrayList<>();
+
+        listregobjects.forEach(reg -> block0List.add(reg.get()));
+
+        List<Block> list = Registry.BLOCK.stream().filter((p_240084_1_) -> p_240084_1_.getRegistryName().getNamespace().equals(aseoha.MODID) && !block0List.contains(p_240084_1_)).collect(Collectors.toList());
+
+        if (!list.isEmpty()) {
+            throw new IllegalStateException("Missing blockstate definitions for: " + list);
+        } else {
+            AseohaBlocks.BLOCKS.getEntries().forEach((p_240087_2_) -> {
+                Item item = Item.BY_BLOCK.get(p_240087_2_.get());
+                if (item != null) {
+                    if (set.contains(item)) {
+                        return;
                     }
+
+                    ResourceLocation resourcelocation = ModelsResourceUtil.getModelLocation(item);
+                    if (!map1.containsKey(resourcelocation)) {
+                        map1.put(resourcelocation, new BlockModelWriter(ModelsResourceUtil.getModelLocation(p_240087_2_.get())));
+                    }
+                }
+
             });
             this.saveCollection(p_200398_1_, path, map, BlockStateGen::createBlockStatePath);
             this.saveCollection(p_200398_1_, path, map1, BlockStateGen::createModelPath);
+        }
     }
 
 
@@ -102,11 +100,9 @@ public class BlockStateGen implements IDataProvider {
         });
     }
 
-    private static Path createBlockStatePath(Path p_240082_0_, Block p_240082_1_) {
-        ResourceLocation resourcelocation = Registry.BLOCK.getKey(p_240082_1_);
-        if(resourcelocation.getNamespace().equals(aseoha.MODID))
-            return p_240082_0_.resolve("assets/" + resourcelocation.getNamespace() + "/blockstates/" + resourcelocation.getPath() + ".json");
-        return null;
+    private static Path createBlockStatePath(Path p_240082_0_, Block p_240082_1_) {;
+        ResourceLocation resourcelocation = p_240082_1_.getRegistryName();;
+        return p_240082_0_.resolve("assets/" + resourcelocation.getNamespace() + "/blockstates/" + resourcelocation.getPath() + ".json");
     }
 
     private static Path createModelPath(Path p_240083_0_, ResourceLocation p_240083_1_) {
