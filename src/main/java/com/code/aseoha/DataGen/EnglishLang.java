@@ -1,8 +1,10 @@
 package com.code.aseoha.DataGen;
 
 import com.code.aseoha.aseoha;
+import com.code.aseoha.client.Sounds;
 import com.code.aseoha.items.AseohaItems;
 import com.code.aseoha.registries.AnimReg;
+import com.code.aseoha.registries.SoundSchemeRegister;
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.common.data.LanguageProvider;
 
@@ -17,7 +19,11 @@ public class EnglishLang extends LanguageProvider {
      * THANKS JERYN!
      */
     protected void addTranslations() {
-        add(AseohaItems.MANUAL.get(), "ASEOHA Manual");
+//        add(AseohaItems.MANUAL.get().getDescriptionId(), "Contains information on ASEOHA features");
+        add(Sounds.THROTTLE_BLAST.get().getRegistryName().getPath(), "Throttle Blast");
+        add(SoundSchemeRegister.SMITH.getId().toString(), "Smith [Mock]");
+        add(AseohaItems.COFFEE.get(), "Coffee");
+        add("item.aseoha.manual", "ASEOHA Manual");
         add(AnimReg.FAST_AF.get().getTranslationKey(), "Fast Animation");
         add("ars.piece.category.aseoha.astronomer", "Astronomer");
         add("ars.piece.category.aseoha.cavern", "Cavern");
@@ -401,8 +407,29 @@ public class EnglishLang extends LanguageProvider {
 //        add(RegenTraitRegistry.PHOTOSYNTHETIC.get().description().getKey(), "The sun energizes you!");
     }
 
+    /**
+     * Made to accept Item#toString(), remove the minecraft:item@modid, and capitalize every first letter of every word
+     * @param text Item#toString()
+     * @return Item#toString() without minecraft:item@modid and every first letter of every word capitalized
+     */
     public String grammarNazi(String text) {
+        /**
+         * remove minecraft:item@modid
+         */
+        text = text.replace("minecraft:item@" + aseoha.MODID + ":", "");
+        /**
+         * Replace _ chars with space chars
+         */
+        text = text.replace("_", " ");
         String firstLetter = text.substring(0, 1).toUpperCase();
+
+        /**
+         * Find any characters coming after a space char and replace it with the uppercase variant
+         */
+        for(int i = 0; i < text.length(); i++) {
+            if (text.substring(i, i + 1).contains(" "))
+                text = text.replace(text.substring(i, i + 2), text.substring(i, i + 2).toUpperCase());
+        }
         return firstLetter + text.substring(1);
     }
 }

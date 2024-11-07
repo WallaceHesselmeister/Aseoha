@@ -307,6 +307,33 @@ public class AseohaBlocks {
     public static RegistryObject<Block> exterior_wardrobe = registerNoItemBlock("exterior_wardrobe",
             () -> setUpBlock(new ExteriorBlock()));
 
+    public static RegistryObject<Block> EXTERIOR_MK2_CAPALDI = registerNoItemBlock("exterior_mk2_capaldi",
+            () -> setUpBlock(new ExteriorBlock()));
+
+    public static RegistryObject<Block> EXTERIOR_MK2_DAVIDSON = registerNoItemBlock("exterior_mk2_davidson",
+            () -> setUpBlock(new ExteriorBlock()));
+
+    public static RegistryObject<Block> EXTERIOR_MK2_HARTNELL = registerNoItemBlock("exterior_mk2_hartnell",
+            () -> setUpBlock(new ExteriorBlock()));
+
+    public static RegistryObject<Block> EXTERIOR_MK2_MCGANN = registerNoItemBlock("exterior_mk2_mcgann",
+            () -> setUpBlock(new ExteriorBlock()));
+
+    public static RegistryObject<Block> EXTERIOR_MK2_PERTWEE = registerNoItemBlock("exterior_mk2_pertwee",
+            () -> setUpBlock(new ExteriorBlock()));
+
+    public static RegistryObject<Block> EXTERIOR_MK2_SMITH = registerNoItemBlock("exterior_mk2_smith",
+            () -> setUpBlock(new ExteriorBlock()));
+
+    public static RegistryObject<Block> EXTERIOR_MK2_TENNANT = registerNoItemBlock("exterior_mk2_tennant",
+            () -> setUpBlock(new ExteriorBlock()));
+
+    public static RegistryObject<Block> EXTERIOR_MK2_WHITTAKER = registerNoItemBlock("exterior_mk2_whittaker",
+            () -> setUpBlock(new ExteriorBlock()));
+
+    public static RegistryObject<Block> EXTERIOR_WHITTAKER = registerNoItemBlock("exterior_whittaker",
+            () -> setUpBlock(new ExteriorBlock()));
+
     public static RegistryObject<Block> exterior_brackolin = registerNoItemBlock("exterior_brackolin",
             () -> setUpBlock(new ExteriorBlock()));
 

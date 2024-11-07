@@ -106,7 +106,7 @@ public class AseohaItems {
     public static final RegistryObject<Item> TEZARAK_COIN = ITEMS.register("tezarak_coin",
             ()-> new Item(new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP).stacksTo(16).rarity(Rarity.RARE).fireResistant()));
 
-    public static final RegistryObject<Item> BLUE_CRYSTAL_SHARD = ITEMS.register("blue_crystal_shard", //TODO: HERE
+    public static final RegistryObject<Item> BLUE_CRYSTAL_SHARD = ITEMS.register("blue_crystal_shard",
             ()-> new Item(new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP).rarity(Rarity.RARE).fireResistant()));
 
     public static final RegistryObject<Item> BLUE_CRYSTAL_PILE = ITEMS.register("blue_crystal_pile",
@@ -115,7 +115,7 @@ public class AseohaItems {
     public static final RegistryObject<Item> BLUE_CRYSTAL_NUGGET = ITEMS.register("blue_crystal_nugget",
             ()-> new Item(new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP).rarity(Rarity.RARE).fireResistant()));
 
-    public static final RegistryObject<Item> BLUE_CRYSTAL_INGOT = ITEMS.register("blue_crystal_ingot", //TODO: TO HERE
+    public static final RegistryObject<Item> BLUE_CRYSTAL_INGOT = ITEMS.register("blue_crystal_ingot",
             ()-> new Item(new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP).rarity(Rarity.RARE).fireResistant()));
 
     public static final RegistryObject<Item> CONTROL_MOLD = ITEMS.register("control_mold",

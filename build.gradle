@@ -177,13 +177,14 @@ dependencies {
 //    implementation fg.deobf("curse.maven:mekanism-268560:3659389") // Mekanism
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
     /************************************ Temporal API *****************************************/
-    implementation fg.deobf("curse.maven:temporalapi-1056469:5842441")
+//    implementation fg.deobf("curse.maven:temporalapi-1056469:5846934")
+    implementation fg.deobf("curse.maven:temporalapi-1056469:5846934")
     /************************************ Cracker's Witherstorm *********************************************/
 //    implementation fg.deobf("curse.maven:crackers-wither-storm-mod-621405:4403153")
     /************************************ Temporal Additions ************************************************/
-    implementation fg.deobf("curse.maven:t-additions-804564:5844290")
+//    implementation fg.deobf("curse.maven:t-additions-804564:5844290")
     /************************************ GeckoLib **********************************************************/
-    implementation fg.deobf("curse.maven:geckolib-388172:4182600")
+//    implementation fg.deobf("curse.maven:geckolib-388172:4182600")
     // You may put jars on which you depend on in ./libs or you may define them like so..
     // compile "some.group:artifact:version:classifier"
     // compile "some.group:artifact:version"

@@ -103,7 +103,7 @@ public class WibblyLever extends BaseControl {
     public boolean onRightClicked(ConsoleTile console, PlayerEntity player) {
         if (console == null || !console.hasLevel())
             return false;
-        if (console.getArtron() >= 64) {
+        if (console.getArtron() >= 64 && console.canFly()) {
 //            console.setDestination(console.getLevel().dimension(), new BlockPos(0, 128, 5));
             this.getConsole().forceLoadInteriorChunk(true, false);
 //            this.getConsole().takeoffLocation = this.location;

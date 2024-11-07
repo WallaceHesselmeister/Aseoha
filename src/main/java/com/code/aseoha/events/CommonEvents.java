@@ -2,6 +2,7 @@ package com.code.aseoha.events;
 
 import com.code.aseoha.Helpers.IHelpWithConsole;
 import com.code.aseoha.Helpers.IHelpWithMonitor;
+import com.code.aseoha.Helpers.IHelpWithPlayerEntity;
 import com.code.aseoha.aseoha;
 import com.code.aseoha.client.Sounds;
 import com.code.aseoha.commands.Commands;
@@ -34,11 +35,15 @@ import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.server.FMLServerStartedEvent;
+import net.mistersecret312.temporal_api.TemporalAPIMod;
+import net.mistersecret312.temporal_api.events.ControlEvent;
 import net.tardis.api.events.TardisEvent;
 import net.tardis.mod.cap.Capabilities;
 import net.tardis.mod.client.ClientHelper;
+import net.tardis.mod.client.guis.vm.VortexMDistressScreen;
 import net.tardis.mod.controls.AbstractControl;
 import net.tardis.mod.controls.HandbrakeControl;
+import net.tardis.mod.controls.StabilizerControl;
 import net.tardis.mod.controls.ThrottleControl;
 import net.tardis.mod.entity.ControlEntity;
 import net.tardis.mod.entity.DoorEntity;
@@ -49,6 +54,7 @@ import net.tardis.mod.registries.ControlRegistry;
 import net.tardis.mod.sounds.TSounds;
 import net.tardis.mod.subsystem.StabilizerSubsystem;
 import net.tardis.mod.tileentities.ConsoleTile;
+import net.tardis.mod.tileentities.console.misc.MonitorOverride;
 import net.tardis.mod.world.dimensions.TDimensions;
 import org.jetbrains.annotations.NotNull;
 
@@ -66,12 +72,13 @@ public class CommonEvents {
 
     /**
      * This keeps legs from displaying in the Davros Chair
+     *
      * @param event RenderPlayerEvent
      */
     @SubscribeEvent
-    public void playerRender(RenderPlayerEvent event){
-        if(event.getPlayer().getVehicle() != null){
-            if(event.getPlayer().getVehicle() instanceof DavrosChair){
+    public void playerRender(RenderPlayerEvent event) {
+        if (event.getPlayer().getVehicle() != null) {
+            if (event.getPlayer().getVehicle() instanceof DavrosChair) {
                 event.getRenderer().getModel().leftLeg.visible = false;
                 event.getRenderer().getModel().rightLeg.visible = false;
                 event.getRenderer().getModel().leftPants.visible = false;
@@ -115,8 +122,10 @@ public class CommonEvents {
     /**
      * @param event The RegisterCommandsEvent, I use this to register custom commands
      */
-    @SubscribeEvent public static void registerCommands(RegisterCommandsEvent event) {
-        Commands.register(event.getDispatcher());}
+    @SubscribeEvent
+    public static void registerCommands(RegisterCommandsEvent event) {
+        Commands.register(event.getDispatcher());
+    }
 
 //    /**
 //     * I use this to check if the player respawns, if they did, give them a manual
@@ -125,8 +134,6 @@ public class CommonEvents {
 //    public static void respawnEvent(PlayerEvent.PlayerRespawnEvent event){
 //        Objects.requireNonNull(event.getPlayer().getServer()).getCommands().performCommand(event.getPlayer().getServer().createCommandSourceStack().withEntity(event.getPlayer().getEntity()).withSuppressedOutput(), "function aseoha:givemanual");
 //    }
-
-
 
 
 //    @SubscribeEvent
@@ -169,10 +176,6 @@ public class CommonEvents {
 //            }
 //        }
 //    }
-
-
-
-
 
 
     /**
@@ -353,7 +356,7 @@ public class CommonEvents {
      * Use this to make sure if a player is on midnight, fire em
      */
     @SubscribeEvent
-    public static void onLivingTick(LivingEvent.LivingUpdateEvent event){
+    public static void onLivingTick(LivingEvent.LivingUpdateEvent event) {
 //        LivingEntity entity = event.getEntityLiving();
 //        if (entity.level.dimension() == Constants.MIDNIGHT)
 //            entity.setSecondsOnFire(5);
@@ -388,7 +391,7 @@ public class CommonEvents {
      * Make sure TARDIS Doors close on takeoff, and low on artron sounds
      */
     @SubscribeEvent
-public static void onTardisTakeoff(TardisEvent.Takeoff event) {
+    public static void onTardisTakeoff(TardisEvent.Takeoff event) {
 //    if(!TARDISHelper.areDoorsClosed(event.getConsole()) && !HADS.hadsActivate(event.getConsole()))
 //        event.setCanceled(true);
         TARDISHelper.setDoorState(event.getConsole(), 0);
@@ -400,24 +403,66 @@ public static void onTardisTakeoff(TardisEvent.Takeoff event) {
         }
     }
 
-@SubscribeEvent
-public static void onTardisLand(TardisEvent.Land event){
-    if(event.getConsole().getArtron() < 32) {
-        aseoha.SendDebugToClient("TARDIS Land Low On Artron Code Being Executed");
-        ClientHelper.shutTheFuckUp(TSounds.TARDIS_LAND.get(), SoundCategory.BLOCKS);
-        Objects.requireNonNull(event.getConsole().getLevel()).playSound(null, event.getConsole().getBlockPos(), Sounds.LOW_ARTRON_LAND.get(), SoundCategory.BLOCKS, 1.0f, 1.0f);
+    /**
+     * Keep TARDIS from taking off in maintenance mode or with handbrake on
+     * @param event
+     */
+    @SubscribeEvent
+    public static void TAPIOnTARDISTakeoff(net.mistersecret312.temporal_api.events.TardisEvent.TakeoffEvent event) {
+        if (((IHelpWithConsole) event.getConsole()).Aseoha$GetMaintenance())
+            event.setCanceled(true);
+        event.getConsole().getControl(HandbrakeControl.class).ifPresent(brake -> {
+            event.setCanceled(!brake.isFree());
+        });
     }
-}
+
+    @SubscribeEvent
+    public static void MiniGameEvent(net.mistersecret312.temporal_api.events.MinigameStartEvent event) {
+        ConsoleTile console = TardisHelper.getConsoleInWorld(event.getPlayer().level).orElse(null);
+        if (console != null && ((IHelpWithConsole) console).Aseoha$GetMaintenance())
+            event.setCanceled(true);
+
+    }
+
+    @SubscribeEvent
+    public static void ControlHitEvent(ControlEvent.ControlHitEvent event) {
+        if (event.getControl().getConsole() != null && ((IHelpWithConsole) event.getControl().getConsole()).Aseoha$GetMaintenance()) {
+            event.setCanceled(true);
+        }
+    }
+
+    @SubscribeEvent
+    public static void InsertSonic(ControlEvent.SonicPutEvent event) {
+        if (event.getControl().getConsole() != null && ((IHelpWithConsole) event.getControl().getConsole()).Aseoha$GetMaintenance()) {
+            event.setCanceled(true);
+        }
+    }
+
+    @SubscribeEvent
+    public static void TakeSonic(ControlEvent.SonicTakeEvent event) {
+        if (event.getControl().getConsole() != null && ((IHelpWithConsole) event.getControl().getConsole()).Aseoha$GetMaintenance()) {
+            event.setCanceled(true);
+        }
+    }
+
+    @SubscribeEvent
+    public static void onTardisLand(TardisEvent.Land event) {
+        if (event.getConsole().getArtron() < 32) {
+            aseoha.SendDebugToClient("TARDIS Land Low On Artron Code Being Executed");
+            ClientHelper.shutTheFuckUp(TSounds.TARDIS_LAND.get(), SoundCategory.BLOCKS);
+            Objects.requireNonNull(event.getConsole().getLevel()).playSound(null, event.getConsole().getBlockPos(), Sounds.LOW_ARTRON_LAND.get(), SoundCategory.BLOCKS, 1.0f, 1.0f);
+        }
+    }
 
 
     /**
      * This is SUPPOSED to trigger HADS when you hit the exterior, unfortunately I never did get it working, also used it at one point for the hammer, now all it does right is rotating the monitor on the copper console
      */
     @SubscribeEvent
-public static void OnAttack(AttackEntityEvent event) {
-        if(event.getTarget() instanceof ControlEntity)
-            if(((ControlEntity) event.getTarget()).getControl() instanceof ThrottleControl)
-                if(event.getEntity() instanceof PlayerEntity) {
+    public static void OnAttack(AttackEntityEvent event) {
+        if (event.getTarget() instanceof ControlEntity)
+            if (((ControlEntity) event.getTarget()).getControl() instanceof ThrottleControl)
+                if (event.getEntity() instanceof PlayerEntity) {
                     if (((ControlEntity) event.getTarget()).getControl().getConsole().getControl(HandbrakeControl.class).get().isFree() && !((ControlEntity) event.getTarget()).getControl().getConsole().isLanding() && !((ControlEntity) event.getTarget()).getControl().getConsole().isInFlight()) {
 //                        ClientHelper.shutTheFuckUp(TSounds.TARDIS_TAKEOFF.get(), SoundCategory.BLOCKS);
                         event.getPlayer().playSound(Sounds.THROTTLE_BLAST.get(), 1, 1);
@@ -460,9 +505,6 @@ public static void OnAttack(AttackEntityEvent event) {
     }
 
 
-
-
-
 //    @SubscribeEvent public static void onHurtEvent(LivingHurtEvent event) {
 //        if (event.getEntity() instanceof PlayerEntity) {
 //            PlayerEntity player = (PlayerEntity) event.getEntity();
@@ -471,7 +513,6 @@ public static void OnAttack(AttackEntityEvent event) {
 //            }
 //        }
 //    }
-
 
 
 //    @SubscribeEvent
@@ -492,143 +533,154 @@ public static void OnAttack(AttackEntityEvent event) {
 //    }
 
 
-    /**
-     * I was gonna use this for something. that's all.
-     */
+//    /**
+//     * I was gonna use this for something. that's all.
+//     */
     @SubscribeEvent
     public static void onEntityJoin(EntityJoinWorldEvent event) {
-//        if (event.getEntity() instanceof PlayerEntity) {
-//            if(TardisHelper.getConsoleInWorld(event.getWorld()).isPresent()){
+        if (event.getEntity() instanceof PlayerEntity) {
+            PlayerEntity player = (PlayerEntity) event.getEntity();
+            if(((IHelpWithPlayerEntity) player).Aseoha$GetPilot() == null);
+            ((IHelpWithPlayerEntity) player).Aseoha$CreatePilot(player);
+////            if(TardisHelper.getConsoleInWorld(event.getWorld()).isPresent()){
+////
+////                TardisHelper.getConsoleInWorld(event.getWorld()).ifPresent((console) -> {
+////                    if(!console.doesConsoleWorldHaveNoPlayers()){
+////                        event.getWorld().getServer().tell(new TickDelayedTask(20, console::getOrCreateControls));
+////                        console.updateClient();
+////                    }
+////                });
+////            }
+        }
+//        if(event.getEntity() instanceof ServerPlayerEntity) {
+//            aseoha.SendDebugToAll("Player Joined World " + event.getEntity() + " With UUID " + event.getEntity().getUUID());
 //
-//                TardisHelper.getConsoleInWorld(event.getWorld()).ifPresent((console) -> {
-//                    if(!console.doesConsoleWorldHaveNoPlayers()){
-//                        event.getWorld().getServer().tell(new TickDelayedTask(20, console::getOrCreateControls));
-//                        console.updateClient();
+//            if(event.getEntity().getVehicle() instanceof TardisEntity) {
+//                ServerPlayerEntity player = (ServerPlayerEntity)event.getEntity();
+//
+//                TardisEntity te = (TardisEntity) player.getVehicle();
+//                if(te.getConsole() != null) {
+//                    ConsoleTile tile = te.getConsole();
+//                    ((IHelpWithConsole) tile).Aseoha$StopRide(true);
+//                }
+////                else
+////                    te.remove();
+//            }
+//
+//            event.getEntity().getCapability(Capabilities.PLAYER_DATA).ifPresent(data -> {
+//                if(((ICapPlayer) data).hasFlyedInTardis() && ((ICapPlayer) data).getInteriorDimension() != null) {
+//                    if(event.getEntity().level.isClientSide) {
+//                        Objects.requireNonNull(event.getEntity().level.getServer()).tell(new TickDelayedTask(1, () -> {
+//                            double x = 0, y = TardisHelper.TARDIS_POS.getY(), z = 0;
+//                            ConsoleTile console = null;
+//                            ServerWorld ws = Objects.requireNonNull(event.getEntity().level.getServer()).getLevel(((ICapPlayer) data).getInteriorDimension());
+//
+//                            //Get Console
+//                            if(ws != null) {
+//                                TileEntity te = ws.getBlockEntity(TardisHelper.TARDIS_POS);
+//                                if(te instanceof ConsoleTile)
+//                                    console = (ConsoleTile)te;
+//                            }
+//
+//                            //If an interior door exists, put the player near it
+//                            DoorEntity door = console != null ? console.getDoor().orElse(null) : null;
+//
+//
+//                            if(door != null) {
+//                                x = door.getX();
+//                                z = door.getZ();
+//                                y = door.getY();
+//                            }
+//
+//                            if(door != null)
+//                                door.addEntityToTeleportImmuneList(event.getEntity().getUUID()); //TODO: MAKE SURE THIS IS RIGHT
+//
+//                            Vector3d oldMotion = event.getEntity().getDeltaMovement();
+//
+//                            ((ICapPlayer) data).setFlyingInTardis(false);
+//                            ((ICapPlayer) data).setInteriorDimension(null);
+//
+//                            WorldHelper.teleportEntities(event.getEntity(), ws, x, y, z, door.yRot, event.getEntity().xRot);
+//
+//                            //Motion
+//
+//                            Vector3d setMot = oldMotion.yRot(-(float)Math.toRadians(door.yRot));
+//
+//                            event.getEntity().level.getServer().tell(new TickDelayedTask(1, () -> {
+//                                Entity ent = ws.getEntity(event.getEntity().getUUID());
+//                                if(ent != null)
+//                                    ent.moveTo(setMot);
+//                                if(ent instanceof ServerPlayerEntity) {
+//                                    ((ServerPlayerEntity)ent).connection.send(new SEntityVelocityPacket(ent));
+//                                }
+//                            }));
+//                        }));
 //                    }
-//                });
+//                }
+//            });
+//        }
+//    }
+
+//    @SubscribeEvent
+//    public static void onEntityLeave(@NotNull PlayerEvent.PlayerLoggedOutEvent event) {
+//        aseoha.SendDebugToAll("Player left - " + event.getPlayer() + " With UUID " + event.getPlayer().getUUID());
+//        if(event.getPlayer().getVehicle() != null && event.getPlayer().getVehicle() instanceof TardisEntity) {
+//            TardisEntity te = (TardisEntity) event.getPlayer().getVehicle();
+//            if (te.getConsole() != null) {
+//                if (te.getExterior() != null) {
+//                    ConsoleTile tile = Objects.requireNonNull(te.getConsole());
+//                    ((IHelpWithConsole) tile).Aseoha$StopRide(true);
+//
+//                    event.getEntity().getCapability(Capabilities.PLAYER_DATA).ifPresent(data -> {
+//                        ((ICapPlayer) data).setFlyingInTardis(true);
+//                        ((ICapPlayer) data).setInteriorDimension(Objects.requireNonNull(tile.getLevel()).dimension());
+//                    });
+//                }
+//                te.remove();
 //            }
 //        }
-        if(event.getEntity() instanceof ServerPlayerEntity) {
-            aseoha.SendDebugToAll("Player Joined World " + event.getEntity() + " With UUID " + event.getEntity().getUUID());
-
-            if(event.getEntity().getVehicle() instanceof TardisEntity) {
-                ServerPlayerEntity player = (ServerPlayerEntity)event.getEntity();
-
-                TardisEntity te = (TardisEntity) player.getVehicle();
-                if(te.getConsole() != null) {
-                    ConsoleTile tile = te.getConsole();
-                    ((IHelpWithConsole) tile).Aseoha$StopRide(true);
-                }
-//                else
-//                    te.remove();
-            }
-
-            event.getEntity().getCapability(Capabilities.PLAYER_DATA).ifPresent(data -> {
-                if(((ICapPlayer) data).hasFlyedInTardis() && ((ICapPlayer) data).getInteriorDimension() != null) {
-                    if(event.getEntity().level.isClientSide) {
-                        Objects.requireNonNull(event.getEntity().level.getServer()).tell(new TickDelayedTask(1, () -> {
-                            double x = 0, y = TardisHelper.TARDIS_POS.getY(), z = 0;
-                            ConsoleTile console = null;
-                            ServerWorld ws = Objects.requireNonNull(event.getEntity().level.getServer()).getLevel(((ICapPlayer) data).getInteriorDimension());
-
-                            //Get Console
-                            if(ws != null) {
-                                TileEntity te = ws.getBlockEntity(TardisHelper.TARDIS_POS);
-                                if(te instanceof ConsoleTile)
-                                    console = (ConsoleTile)te;
-                            }
-
-                            //If an interior door exists, put the player near it
-                            DoorEntity door = console != null ? console.getDoor().orElse(null) : null;
-
-
-                            if(door != null) {
-                                x = door.getX();
-                                z = door.getZ();
-                                y = door.getY();
-                            }
-
-                            if(door != null)
-                                door.addEntityToTeleportImmuneList(event.getEntity().getUUID()); //TODO: MAKE SURE THIS IS RIGHT
-
-                            Vector3d oldMotion = event.getEntity().getDeltaMovement();
-
-                            ((ICapPlayer) data).setFlyingInTardis(false);
-                            ((ICapPlayer) data).setInteriorDimension(null);
-
-                            WorldHelper.teleportEntities(event.getEntity(), ws, x, y, z, door.yRot, event.getEntity().xRot);
-
-                            //Motion
-
-                            Vector3d setMot = oldMotion.yRot(-(float)Math.toRadians(door.yRot));
-
-                            event.getEntity().level.getServer().tell(new TickDelayedTask(1, () -> {
-                                Entity ent = ws.getEntity(event.getEntity().getUUID());
-                                if(ent != null)
-                                    ent.moveTo(setMot);
-                                if(ent instanceof ServerPlayerEntity) {
-                                    ((ServerPlayerEntity)ent).connection.send(new SEntityVelocityPacket(ent));
-                                }
-                            }));
-                        }));
-                    }
-                }
-            });
-        }
-    }
-
-    @SubscribeEvent
-    public static void onEntityLeave(@NotNull PlayerEvent.PlayerLoggedOutEvent event) {
-        aseoha.SendDebugToAll("Player left - " + event.getPlayer() + " With UUID " + event.getPlayer().getUUID());
-        if(event.getPlayer().getVehicle() != null && event.getPlayer().getVehicle() instanceof TardisEntity) {
-            TardisEntity te = (TardisEntity) event.getPlayer().getVehicle();
-            if (te.getConsole() != null) {
-                if (te.getExterior() != null) {
-                    ConsoleTile tile = Objects.requireNonNull(te.getConsole());
-                    ((IHelpWithConsole) tile).Aseoha$StopRide(true);
-
-                    event.getEntity().getCapability(Capabilities.PLAYER_DATA).ifPresent(data -> {
-                        ((ICapPlayer) data).setFlyingInTardis(true);
-                        ((ICapPlayer) data).setInteriorDimension(Objects.requireNonNull(tile.getLevel()).dimension());
-                    });
-                }
-                te.remove();
-            }
-        }
     }
 
     //Needed this before TAPI added it
-@SubscribeEvent
-public static void ServerStartup(@NotNull FMLServerStartedEvent event) {
-    aseoha.SendDebugToServer("Server Startup");
-    for (ServerWorld level : event.getServer().getAllLevels())
-        TardisHelper.getConsole(event.getServer(), level).ifPresent((console) -> {
-            console.getInteriorManager().setLight((console.getInteriorManager().getLight() < 0) || (console.getInteriorManager().getLight() > 15) ? 15 : 0);
+    @SubscribeEvent
+    public static void ServerStartup(@NotNull FMLServerStartedEvent event) {
+        aseoha.SendDebugToServer("Server Startup");
+        for (ServerWorld level : event.getServer().getAllLevels())
+            TardisHelper.getConsole(event.getServer(), level).ifPresent((console) -> {
+                console.getInteriorManager().setLight((console.getInteriorManager().getLight() < 0) || (console.getInteriorManager().getLight() > 15) ? 15 : 0);
 //            console.removeControls();
 //            event.getServer().tell(new TickDelayedTask(20, () -> {
 //                console.getOrCreateControls();
 //                console.updateClient();
 //            }));
-        });
-}
+            });
+    }
 
-    public static void HadsActivate(@NotNull ConsoleTile console) {
-        aseoha.SendDebugToAll("HADS Activated in TARDIS " + console.getCustomName());
-        if(((IHelpWithConsole) console).Aseoha$GetHads()) {
-//            if (!Objects.requireNonNull(console.getLevel()).isClientSide) {
-            boolean WereStabsOn = console.getSubsystem(StabilizerSubsystem.class).orElse(null).isControlActivated();
-                console.getSubsystem(StabilizerSubsystem.class).ifPresent(stabs -> stabs.setActivated(false));
-//            }
-            console.takeoff();
-            Objects.requireNonNull(Objects.requireNonNull(console.getLevel()).getServer()).tell(new TickDelayedTask(1, () -> {
-                console.setDestinationReachedTick(1);
-                console.setFlightTicks(1);
+    public static void HadsActivate(ConsoleTile console) {
+        if(console == null)
+            return;
 
-            }));
-            console.updateClient();
+        if (((IHelpWithConsole) console).Aseoha$GetHads()) {
+            StabilizerSubsystem stabs = console.getSubsystem(StabilizerSubsystem.class).orElse(null);
+            if(!console.isInFlight()) {
+                if(stabs != null)
+                    stabs.setActivated(false);
+                aseoha.SendDebugToAll("HADS Activated in TARDIS WorldKey " + console.getCustomName());
+                aseoha.SendDebugToAll("Console" + console);
+                console.takeoff();
+                console.getInteriorManager().setMonitorOverrides(new MonitorOverride(console, 1200, "HADS Has been triggered!"));
+                Objects.requireNonNull(Objects.requireNonNull(console.getLevel()).getServer()).tell(new TickDelayedTask(1, () -> {
+                    console.setDestinationReachedTick(1);
+                    console.setFlightTicks(1);
+                }));
+                console.updateClient();
+            }
             if (console.flightTicks == 1200) {
-                console.initLand();
-                console.getSubsystem(StabilizerSubsystem.class).orElse(null).setActivated(WereStabsOn);
+                console.scaleDestination();
+                console.land();
+                if(stabs != null)
+                    stabs.setActivated(true);
+                console.updateClient();
             }
         }
     }
@@ -640,14 +692,13 @@ public static void ServerStartup(@NotNull FMLServerStartedEvent event) {
     @SubscribeEvent
     public static void OnWorldTick(TickEvent.WorldTickEvent event) {
         aseoha.tickThread.Call(event);
-        if(event.world.dimension().equals(TDimensions.TARDIS_DIMENSIONS)) {
+        /**
+         * If the light value is above 15 or below 0 it'll reset to 0 to prevent crash
+         */
+        if (event.world.dimension().equals(TDimensions.TARDIS_DIMENSIONS)) {
             TardisHelper.getConsoleInWorld(event.world).ifPresent(consoleTile -> consoleTile.getInteriorManager().setLight((consoleTile.getInteriorManager().getLight() < 0) || (consoleTile.getInteriorManager().getLight() > 15) ? 0 : consoleTile.getInteriorManager().getLight()));
         }
     }
-
-
-
-
 
 
 ///////////////////////////////////////Old ass HADS code, basically just take off if a !ignored entity enters the TARDIS, can't remember why I abandoned it.

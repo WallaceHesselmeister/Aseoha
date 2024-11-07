@@ -22,6 +22,7 @@ import net.tardis.mod.subsystem.StabilizerSubsystem;
 import javax.jws.WebParam;
 
 public class BattleConsole extends AbstractConsoleEntityModel<BattleConsoleTile> {
+
     private final ModelRenderer Console;
     private final ModelRenderer Panels;
     private final ModelRenderer BasePanel1;
@@ -40,6 +41,8 @@ public class BattleConsole extends AbstractConsoleEntityModel<BattleConsoleTile>
     private final ModelRenderer cube_r7;
     private final ModelRenderer cube_r8;
     private final ModelRenderer Panel2Screen_r1;
+    private final LightModelRenderer EmmisivePanel2ScreenThingy;
+    private final ModelRenderer Panel_r1;
     private final ModelRenderer LowerPanelSupportsAndWiring;
     private final ModelRenderer cube_r9;
     private final ModelRenderer cube_r10;
@@ -59,6 +62,13 @@ public class BattleConsole extends AbstractConsoleEntityModel<BattleConsoleTile>
     private final ModelRenderer cube_r17;
     private final ModelRenderer cube_r18;
     private final LightModelRenderer Panel2Screen_r2;
+    private final LightModelRenderer FuelGauge;
+    private final LightModelRenderer FuelGagueE;
+    private final LightModelRenderer Panel2Screen_r3;
+    private final LightModelRenderer FuelGagueMid;
+    private final ModelRenderer Panel2Screen_r4;
+    private final LightModelRenderer FuelGagueF;
+    private final ModelRenderer Panel2Screen_r5;
     private final ModelRenderer LowerPanelSupportsAndWiring2;
     private final ModelRenderer cube_r19;
     private final ModelRenderer cube_r20;
@@ -69,8 +79,12 @@ public class BattleConsole extends AbstractConsoleEntityModel<BattleConsoleTile>
     private final ModelRenderer cube_r22;
     private final ModelRenderer cube_r23;
     private final LightModelRenderer Panel1Screen_r3;
-    private final ModelRenderer ThottleSlider;
+    private final LightModelRenderer EmmisivePanel1Refuel;
     private final ModelRenderer Panel1Screen_r4;
+    private final LightModelRenderer EmmisivePanel1Handbreak;
+    private final ModelRenderer Panel1ButtonRed_r1;
+    private final ModelRenderer ThottleSlider;
+    private final ModelRenderer Panel1Screen_r5;
     private final ModelRenderer UpperPanelSupportsAndWiring3;
     private final ModelRenderer cube_r24;
     private final ModelRenderer cube_r25;
@@ -79,7 +93,7 @@ public class BattleConsole extends AbstractConsoleEntityModel<BattleConsoleTile>
     private final ModelRenderer cube_r26;
     private final ModelRenderer cube_r27;
     private final ModelRenderer cube_r28;
-    private final ModelRenderer Panel2Screen_r3;
+    private final ModelRenderer Panel2Screen_r6;
     private final ModelRenderer DimensionCube;
     private final ModelRenderer cube_r29;
     private final ModelRenderer LowerPanelSupportsAndWiring3;
@@ -120,6 +134,8 @@ public class BattleConsole extends AbstractConsoleEntityModel<BattleConsoleTile>
     private final ModelRenderer cube_r60;
     private final ModelRenderer EnergyCrystal;
     private final ModelRenderer cube_r61;
+    private final ModelRenderer bb_main;
+    private final ModelRenderer Emitter_r1;
 
     public BattleConsole() {
         texWidth = 128;
@@ -236,6 +252,17 @@ public class BattleConsole extends AbstractConsoleEntityModel<BattleConsoleTile>
         setRotationAngle(Panel2Screen_r1, 0.3927F, 0.0F, 0.0F);
         Panel2Screen_r1.texOffs(56, 33).addBox(-4.5F, 2.0F, -6.0F, 9.0F, 1.0F, 9.0F, 0.0F, false);
         Panel2Screen_r1.texOffs(0, 60).addBox(-4.5F, 2.25F, -6.0F, 9.0F, 1.0F, 9.0F, 0.0F, false);
+
+        EmmisivePanel2ScreenThingy = new LightModelRenderer(this);
+        EmmisivePanel2ScreenThingy.setPos(0.0F, 0.7116F, -3.4345F);
+        LowerMainPanel.addChild(EmmisivePanel2ScreenThingy);
+
+
+        Panel_r1 = new ModelRenderer(this);
+        Panel_r1.setPos(0.0F, 0.0F, 0.0F);
+        EmmisivePanel2ScreenThingy.addChild(Panel_r1);
+        setRotationAngle(Panel_r1, 0.3927F, 0.0F, 0.0F);
+        Panel_r1.texOffs(62, 33).addBox(-2.5F, 2.0F, -2.0F, 5.0F, 0.0F, 5.0F, 0.0F, false);
 
         LowerPanelSupportsAndWiring = new ModelRenderer(this);
         LowerPanelSupportsAndWiring.setPos(0.0F, 0.0F, 0.0F);
@@ -363,6 +390,44 @@ public class BattleConsole extends AbstractConsoleEntityModel<BattleConsoleTile>
         Panel2Screen_r2.texOffs(30, 22).addBox(-4.5F, 2.0F, -6.0F, 9.0F, 1.0F, 9.0F, 0.0F, false);
         Panel2Screen_r2.texOffs(27, 52).addBox(-4.5F, 2.25F, -6.0F, 9.0F, 1.0F, 9.0F, 0.0F, false);
 
+        FuelGauge = new LightModelRenderer(this);
+        FuelGauge.setPos(0.0F, 0.7116F, -3.4345F);
+        LowerMainPanel2.addChild(FuelGauge);
+
+
+        FuelGagueE = new LightModelRenderer(this);
+        FuelGagueE.setPos(0.0F, 0.0F, 0.0F);
+        FuelGauge.addChild(FuelGagueE);
+
+
+        Panel2Screen_r3 = new LightModelRenderer(this);
+        Panel2Screen_r3.setPos(0.0F, 0.0F, 0.0F);
+        FuelGagueE.addChild(Panel2Screen_r3);
+        setRotationAngle(Panel2Screen_r3, 0.3927F, 0.0F, 0.0F);
+        Panel2Screen_r3.texOffs(38, 27).addBox(-3.5F, 2.0F, -4.0F, 2.0F, 0.0F, 2.0F, 0.0F, false);
+
+        FuelGagueMid = new LightModelRenderer(this);
+        FuelGagueMid.setPos(0.0F, 0.0F, 0.0F);
+        FuelGauge.addChild(FuelGagueMid);
+
+
+        Panel2Screen_r4 = new ModelRenderer(this);
+        Panel2Screen_r4.setPos(0.0F, 0.0F, 0.0F);
+        FuelGagueMid.addChild(Panel2Screen_r4);
+        setRotationAngle(Panel2Screen_r4, 0.3927F, 0.0F, 0.0F);
+        Panel2Screen_r4.texOffs(38, 25).addBox(-3.5F, 2.0F, -2.0F, 2.0F, 0.0F, 2.0F, 0.0F, false);
+
+        FuelGagueF = new LightModelRenderer(this);
+        FuelGagueF.setPos(0.0F, 0.0F, 0.0F);
+        FuelGauge.addChild(FuelGagueF);
+
+
+        Panel2Screen_r5 = new ModelRenderer(this);
+        Panel2Screen_r5.setPos(0.0F, 0.0F, 0.0F);
+        FuelGagueF.addChild(Panel2Screen_r5);
+        setRotationAngle(Panel2Screen_r5, 0.3927F, 0.0F, 0.0F);
+        Panel2Screen_r5.texOffs(38, 23).addBox(-3.5F, 2.0F, 0.0F, 2.0F, 0.0F, 2.0F, 0.0F, false);
+
         LowerPanelSupportsAndWiring2 = new ModelRenderer(this);
         LowerPanelSupportsAndWiring2.setPos(0.0F, 0.0F, 0.0F);
         BasePanel4.addChild(LowerPanelSupportsAndWiring2);
@@ -428,16 +493,38 @@ public class BattleConsole extends AbstractConsoleEntityModel<BattleConsoleTile>
         Panel1Screen_r3.texOffs(27, 42).addBox(-4.5F, 0.0F, -6.0F, 9.0F, 1.0F, 9.0F, 0.0F, false);
         Panel1Screen_r3.texOffs(0, 50).addBox(-4.5F, 0.25F, -6.0F, 9.0F, 1.0F, 9.0F, 0.0F, false);
 
+        EmmisivePanel1Refuel = new LightModelRenderer(this);
+        EmmisivePanel1Refuel.setPos(0.0F, -2.0F, 5.725F);
+        Monitor4.addChild(EmmisivePanel1Refuel);
+
+
+        Panel1Screen_r4 = new ModelRenderer(this);
+        Panel1Screen_r4.setPos(0.0F, 0.0F, 0.0F);
+        EmmisivePanel1Refuel.addChild(Panel1Screen_r4);
+        setRotationAngle(Panel1Screen_r4, 0.3927F, 0.0F, 0.0F);
+        Panel1Screen_r4.texOffs(40, 47).addBox(1.5F, 0.0F, -4.0F, 2.0F, 0.0F, 2.0F, 0.0F, false);
+
+        EmmisivePanel1Handbreak = new LightModelRenderer(this);
+        EmmisivePanel1Handbreak.setPos(0.0F, -2.0F, 5.725F);
+        Monitor4.addChild(EmmisivePanel1Handbreak);
+
+
+        Panel1ButtonRed_r1 = new ModelRenderer(this);
+        Panel1ButtonRed_r1.setPos(0.0F, 0.0F, 0.0F);
+        EmmisivePanel1Handbreak.addChild(Panel1ButtonRed_r1);
+        setRotationAngle(Panel1ButtonRed_r1, 0.3927F, 0.0F, 0.0F);
+        Panel1ButtonRed_r1.texOffs(-2, 126).addBox(1.5F, 0.0F, 0.0F, 2.0F, 0.0F, 2.0F, 0.0F, false);
+
         ThottleSlider = new ModelRenderer(this);
         ThottleSlider.setPos(0.0F, -2.0F, 5.725F);
         Monitor4.addChild(ThottleSlider);
 
 
-        Panel1Screen_r4 = new ModelRenderer(this);
-        Panel1Screen_r4.setPos(0.0F, 0.0F, 0.0F);
-        ThottleSlider.addChild(Panel1Screen_r4);
-        setRotationAngle(Panel1Screen_r4, 0.3927F, 0.0F, 0.0F);
-        Panel1Screen_r4.texOffs(0, 16).addBox(-3.5F, -0.25F, -4.0F, 2.0F, 0.0F, 2.0F, 0.0F, false);
+        Panel1Screen_r5 = new ModelRenderer(this);
+        Panel1Screen_r5.setPos(0.0F, 0.0F, 0.0F);
+        ThottleSlider.addChild(Panel1Screen_r5);
+        setRotationAngle(Panel1Screen_r5, 0.3927F, 0.0F, 0.0F);
+        Panel1Screen_r5.texOffs(0, 16).addBox(-3.5F, -0.25F, -4.0F, 2.0F, 0.0F, 2.0F, 0.0F, false);
 
         UpperPanelSupportsAndWiring3 = new ModelRenderer(this);
         UpperPanelSupportsAndWiring3.setPos(0.0F, 0.0F, 0.0F);
@@ -493,12 +580,12 @@ public class BattleConsole extends AbstractConsoleEntityModel<BattleConsoleTile>
         cube_r28.texOffs(68, 0).addBox(4.5F, 1.0F, -6.0F, 1.0F, 2.0F, 10.0F, 0.0F, false);
         cube_r28.texOffs(12, 70).addBox(-5.5F, 1.0F, -6.0F, 1.0F, 2.0F, 10.0F, 0.0F, false);
 
-        Panel2Screen_r3 = new ModelRenderer(this);
-        Panel2Screen_r3.setPos(0.0F, 0.7116F, -3.4345F);
-        LowerMainPanel3.addChild(Panel2Screen_r3);
-        setRotationAngle(Panel2Screen_r3, 0.3927F, 0.0F, 0.0F);
-        Panel2Screen_r3.texOffs(29, 32).addBox(-4.5F, 2.0F, -6.0F, 9.0F, 1.0F, 9.0F, 0.0F, false);
-        Panel2Screen_r3.texOffs(0, 40).addBox(-4.5F, 2.25F, -6.0F, 9.0F, 1.0F, 9.0F, 0.0F, false);
+        Panel2Screen_r6 = new ModelRenderer(this);
+        Panel2Screen_r6.setPos(0.0F, 0.7116F, -3.4345F);
+        LowerMainPanel3.addChild(Panel2Screen_r6);
+        setRotationAngle(Panel2Screen_r6, 0.3927F, 0.0F, 0.0F);
+        Panel2Screen_r6.texOffs(29, 32).addBox(-4.5F, 2.0F, -6.0F, 9.0F, 1.0F, 9.0F, 0.0F, false);
+        Panel2Screen_r6.texOffs(0, 40).addBox(-4.5F, 2.25F, -6.0F, 9.0F, 1.0F, 9.0F, 0.0F, false);
 
         DimensionCube = new ModelRenderer(this);
         DimensionCube.setPos(0.0F, -0.5225F, -5.0281F);
@@ -752,7 +839,18 @@ public class BattleConsole extends AbstractConsoleEntityModel<BattleConsoleTile>
         cube_r61.setPos(0.0F, 0.0F, 0.0F);
         EnergyCrystal.addChild(cube_r61);
         setRotationAngle(cube_r61, 0.0F, 0.7854F, 0.0F);
-        cube_r61.texOffs(20, 94).addBox(-1.5F, -33.5F, -1.5F, 3.0F, 10.0F, 3.0F, 0.0F, false);}
+        cube_r61.texOffs(20, 94).addBox(-1.5F, -33.5F, -1.5F, 3.0F, 10.0F, 3.0F, 0.0F, false);
+
+        bb_main = new ModelRenderer(this);
+        bb_main.setPos(0.0F, 24.0F, 0.0F);
+
+
+        Emitter_r1 = new ModelRenderer(this);
+        Emitter_r1.setPos(9.25F, -14.0F, -8.0F);
+        bb_main.addChild(Emitter_r1);
+        setRotationAngle(Emitter_r1, -1.5708F, 0.5411F, 0.0F);
+        Emitter_r1.texOffs(0, 0).addBox(0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, 0.0F, false);
+}
 
     @Override
     public void setupAnim(Entity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch){
@@ -904,7 +1002,19 @@ public class BattleConsole extends AbstractConsoleEntityModel<BattleConsoleTile>
 //            }
 
         });
-//            this.Pane
+
+        tile.getControl(HandbrakeControl.class).ifPresent(handbrake -> {
+            this.EmmisivePanel1Handbreak.setBright(handbrake.isFree() ? 0 : 1);
+        });
+
+        tile.getControl(RefuelerControl.class).ifPresent(handbrake -> {
+            this.EmmisivePanel1Refuel.setBright(handbrake.isRefueling() ? 1 : 0);
+        });
+
+        this.FuelGagueE.setBright(tile.getArtron() % tile.getMaxArtron() > 25 ? 1 : 0);
+        this.FuelGagueMid.setBright(tile.getArtron() % tile.getMaxArtron() > 50 ? 1 : 0);
+        this.FuelGagueF.setBright(tile.getArtron() % tile.getMaxArtron() > 75 ? 1 : 0);
+
         tile.getControl(DimensionControl.class).ifPresent((dimensionControl) -> {
             this.DimensionCube.yRot = (float) Math.toRadians((double) (360.0F * ((float) dimensionControl.getDimListIndex() / (float) dimensionControl.getAvailableDimensions())));
         });

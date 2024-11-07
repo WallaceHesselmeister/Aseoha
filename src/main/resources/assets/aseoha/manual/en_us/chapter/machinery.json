@@ -3,6 +3,7 @@
   "pages": [
     "aseoha:machinery/machinery_intro",
     "aseoha:machinery/food_machine",
-    "aseoha:machinery/eoh"
+    "aseoha:machinery/eoh",
+    "aseoha:machinery/k9"
   ]
 }

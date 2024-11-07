@@ -10,6 +10,33 @@ public class TextureVariants {
             new TexVariant(new ResourceLocation(aseoha.MODID, "textures/exteriors/invisible.png"), "exterior.invisible"),
             new TexVariant(new ResourceLocation(Tardis.MODID, "textures/exteriors/tt_capsule.png"), "exteriors.tt.default")};
 
+    public static final TexVariant[] MK2_CAPALDI = {
+            new TexVariant(new ResourceLocation(aseoha.MODID, "textures/exteriors/mk2/mk2_capaldi.png"), "exterior.mk2.capaldi")};
+
+    public static final TexVariant[] MK2_DAVIDSON = {
+            new TexVariant(new ResourceLocation(aseoha.MODID, "textures/exteriors/mk2/mk2_davidson.png"), "exterior.mk2.davidson")};
+
+    public static final TexVariant[] MK2_HARTNELL = {
+            new TexVariant(new ResourceLocation(aseoha.MODID, "textures/exteriors/mk2/mk2_hartnell.png"), "exterior.mk2.hartnell")};
+
+    public static final TexVariant[] MK2_MCGANN = {
+            new TexVariant(new ResourceLocation(aseoha.MODID, "textures/exteriors/mk2/mk2_mcgann.png"), "exterior.mk2.mcgann")};
+
+    public static final TexVariant[] MK2_PERTWEE = {
+            new TexVariant(new ResourceLocation(aseoha.MODID, "textures/exteriors/mk2/mk2_pertwee.png"), "exterior.mk2.pertwee")};
+
+    public static final TexVariant[] MK2_SMITH = {
+            new TexVariant(new ResourceLocation(aseoha.MODID, "textures/exteriors/mk2/mk2_smith.png"), "exterior.mk2.smith")};
+
+    public static final TexVariant[] MK2_TENNANT = {
+            new TexVariant(new ResourceLocation(aseoha.MODID, "textures/exteriors/mk2/mk2_tennant.png"), "exterior.mk2.tennant")};
+
+    public static final TexVariant[] MK2_WHITTAKER = {
+            new TexVariant(new ResourceLocation(aseoha.MODID, "textures/exteriors/mk2/mk2_whittaker.png"), "exterior.mk2.whittaker")};
+
+    public static final TexVariant[] WHITTAKER = {
+            new TexVariant(new ResourceLocation(aseoha.MODID, "textures/exteriors/whittaker.png"), "exterior.whittaker")};
+
     public static final TexVariant[] CUSTARD = {
             new TexVariant(new ResourceLocation(aseoha.MODID, "textures/consoles/custard.png"), "console.custard.default"),
             new TexVariant(new ResourceLocation(aseoha.MODID, "textures/consoles/custard_blue.png"), "console.custard.blue"),

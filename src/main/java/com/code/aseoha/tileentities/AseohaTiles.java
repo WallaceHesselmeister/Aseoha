@@ -103,6 +103,10 @@ public class AseohaTiles {
             TILES.register("exterior_mcgann", () -> registerTiles(McGannTile::new,
                     AseohaBlocks.exterior_mcgann.get()));
 
+    public static final RegistryObject<TileEntityType<WhittakerTile>> EXTERIOR_WHITTAKER =
+            TILES.register("exterior_whittaker", () -> registerTiles(WhittakerTile::new,
+                    AseohaBlocks.EXTERIOR_WHITTAKER.get()));
+
     public static final RegistryObject<TileEntityType<TakomakConsoleTile>> console_takomak =
             TILES.register("console_takomak", () -> registerTiles(TakomakConsoleTile::new,
                     AseohaBlocks.console_takomak.get()));
@@ -119,6 +123,38 @@ public class AseohaTiles {
     public static RegistryObject<TileEntityType<CapaldiTile>> exterior_capaldi =
             TILES.register("exterior_capaldi", () -> registerTiles(CapaldiTile::new,
                     AseohaBlocks.exterior_capaldi.get()));
+
+    public static RegistryObject<TileEntityType<mk2_capaldi>> EXTERIOR_MK2_CAPALDI =
+            TILES.register("exterior_mk2_capaldi", () -> registerTiles(mk2_capaldi::new,
+                    AseohaBlocks.EXTERIOR_MK2_CAPALDI.get()));
+
+    public static RegistryObject<TileEntityType<mk2_davidson>> EXTERIOR_MK2_DAVIDSON =
+            TILES.register("exterior_mk2_davidson", () -> registerTiles(mk2_davidson::new,
+                    AseohaBlocks.EXTERIOR_MK2_DAVIDSON.get()));
+
+    public static RegistryObject<TileEntityType<mk2_hartnell>> EXTERIOR_MK2_HARTNELL =
+            TILES.register("exterior_mk2_hartnell", () -> registerTiles(mk2_hartnell::new,
+                    AseohaBlocks.EXTERIOR_MK2_HARTNELL.get()));
+
+    public static RegistryObject<TileEntityType<mk2_pertwee>> EXTERIOR_MK2_PERTWEE =
+            TILES.register("exterior_mk2_pertwee", () -> registerTiles(mk2_pertwee::new,
+                    AseohaBlocks.EXTERIOR_MK2_PERTWEE.get()));
+
+    public static RegistryObject<TileEntityType<mk2_smith>> EXTERIOR_MK2_SMITH =
+            TILES.register("exterior_mk2_smith", () -> registerTiles(mk2_smith::new,
+                    AseohaBlocks.EXTERIOR_MK2_SMITH.get()));
+
+    public static RegistryObject<TileEntityType<mk2_tennant>> EXTERIOR_MK2_TENNANT =
+            TILES.register("exterior_mk2_tennant", () -> registerTiles(mk2_tennant::new,
+                    AseohaBlocks.EXTERIOR_MK2_TENNANT.get()));
+
+    public static RegistryObject<TileEntityType<mk2_whittaker>> EXTERIOR_MK2_WHITTAKER =
+            TILES.register("exterior_mk2_whittaker", () -> registerTiles(mk2_whittaker::new,
+                    AseohaBlocks.EXTERIOR_MK2_WHITTAKER.get()));
+
+    public static RegistryObject<TileEntityType<mk2_mcgann>> EXTERIOR_MK2_MCGANN =
+            TILES.register("exterior_mk2_mcgann", () -> registerTiles(mk2_mcgann::new,
+                    AseohaBlocks.EXTERIOR_MK2_MCGANN.get()));
 
     //WhoviansRest
 

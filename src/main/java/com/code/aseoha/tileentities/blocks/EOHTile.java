@@ -53,7 +53,7 @@ public class EOHTile extends TileEntity implements ITickableTileEntity {
         return this.hasStar;
     }
 
-    boolean Mark;
+    public boolean Mark;
 
     private boolean hasStar = false;
 
@@ -128,9 +128,6 @@ public class EOHTile extends TileEntity implements ITickableTileEntity {
         this.hasStar = compoundNBT.getBoolean("hasStar");
         this.numberOfPillars = compoundNBT.getInt("numberOfPillars");
         super.load(blockState, compoundNBT);
-//        this.worldPosition = new BlockPos(p_230337_2_.getInt("x"), p_230337_2_.getInt("y"), p_230337_2_.getInt("z"));
-//        if (p_230337_2_.contains("ForgeData")) this.customTileData = p_230337_2_.getCompound("ForgeData");
-//        if (getCapabilities() != null && p_230337_2_.contains("ForgeCaps")) deserializeCaps(p_230337_2_.getCompound("ForgeCaps"));
     }
 
     @NotNull
@@ -142,12 +139,6 @@ public class EOHTile extends TileEntity implements ITickableTileEntity {
         compoundNBT.putBoolean("active", this.active);
         compoundNBT.putInt("numberOfPillars", this.numberOfPillars);
         return super.save(compoundNBT);
-    }
-
-    @NotNull
-    @Override
-    public CompoundNBT getUpdateTag() {
-        return this.save(new CompoundNBT());
     }
 
     @Override
@@ -172,8 +163,8 @@ public class EOHTile extends TileEntity implements ITickableTileEntity {
     public void Activate() {
         this.active = true;
         if (this.consoleTile != null) {
-            this.consoleTile.updateArtronValues();
             ((IHelpWithConsole) this.consoleTile).Aseoha$SetEOHActive(true);
+            this.consoleTile.updateArtronValues();
         }
         this.Mark = true;
     }

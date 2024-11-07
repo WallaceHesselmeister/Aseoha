@@ -18,7 +18,7 @@ public abstract class TeleportUtilMixin {
      * @author Codiak540
      * @reason stop NPE with modded entities/mod's that modify the vanilla Entity, like Cracker's Witherstorm
      */
-    @Overwrite
+    @Overwrite(remap = false)
     private static Entity teleportEntityInterdimensional(Entity entity, MinecraftServer server, ServerWorld sourceDim, ServerWorld targetDim, double xCoord, double yCoord, double zCoord, float yaw, float pitch) {
         Entity old = entity;
         old.unRide();

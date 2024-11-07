@@ -16,6 +16,7 @@ import java.util.List;
 public abstract class TTTile extends ExteriorTile {
     public TTTile(TileEntityType<?> p_i48289_1_) {
         super(p_i48289_1_);
+        ((TTCapsuleExteriorTile) (Object) this).setVariants(TextureVariants.TT);
     }
 //private List<TexVariant> variants = new ArrayList<TexVariant>();
 //    @Shadow(aliases = "<clinit>") abstract void _clinit_();
@@ -24,6 +25,5 @@ public abstract class TTTile extends ExteriorTile {
     private void Aseoha$TTCapsuleExteriorTile(CallbackInfo info) {
 //        this.setVariants(TextureVariants.TT);
         ((TTCapsuleExteriorTile) (Object) this).setVariants(TextureVariants.TT);
-
     }
 }

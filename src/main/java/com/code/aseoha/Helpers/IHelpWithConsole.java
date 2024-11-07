@@ -1,5 +1,6 @@
 package com.code.aseoha.Helpers;
 
+import com.code.aseoha.misc.Pilot;
 import com.code.aseoha.tileentities.blocks.EOHTile;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.world.World;
@@ -61,4 +62,8 @@ public interface IHelpWithConsole {
     boolean Aseoha$GetEOHActive();
 
     void Aseoha$SetEOHActive(boolean aseoha$EOHActive);
+
+    void Aseoha$SetPilot(Pilot player);
+
+    Pilot Aseoha$GetPilot();
 }

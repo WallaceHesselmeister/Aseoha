@@ -26,7 +26,6 @@ public class ManualItem extends Item {
         super(new Properties().stacksTo(1).tab(AseohaItemGroups.ASEOHA_GROUP));
     }
 
-
     @NotNull
     @Override
     public ActionResult<ItemStack> use(World worldIn, @NotNull PlayerEntity playerIn, @NotNull Hand handIn) {
@@ -36,7 +35,7 @@ public class ManualItem extends Item {
         return super.use(worldIn, playerIn, handIn);
     }
 
-    protected final IFormattableTextComponent descriptionTooltip = TextHelper.createDescriptionItemTooltip(new TranslationTextComponent("tooltip.upgrades_manual.info"));
+    protected final IFormattableTextComponent descriptionTooltip = TextHelper.createDescriptionItemTooltip(new TranslationTextComponent("tooltip.aseoha_manual.info"));
 
     @Override
     public void appendHoverText(ItemStack stack, World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {

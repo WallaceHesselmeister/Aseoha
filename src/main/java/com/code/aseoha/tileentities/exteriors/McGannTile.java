@@ -31,6 +31,10 @@ public class McGannTile extends ExteriorTile {
         return new AxisAlignedBB(0, 0, 0, 0, 0, 0);
     }
 
+    @Override
+    public float getLightLevel() {
+        return 0.3f;
+    }
 //    @Override
 //    public AxisAlignedBB getRenderBoundingBox() {
 //        return RENDER.offset(this.getPos());

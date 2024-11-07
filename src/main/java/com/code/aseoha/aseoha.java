@@ -38,6 +38,7 @@ import net.minecraft.client.renderer.RenderTypeLookup;
 import net.minecraft.client.world.DimensionRenderInfo;
 import net.minecraft.data.ItemTagsProvider;
 import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -172,7 +173,6 @@ public class aseoha {
         RenderTypeLookup.setRenderLayer(AseohaBlocks.HELLBENT_POLE.get(), RenderType.cutout());
         RenderTypeLookup.setRenderLayer(AseohaBlocks.TOASTER.get(), RenderType.cutout());
         RenderTypeLookup.setRenderLayer(AseohaBlocks.COATRACK.get(), RenderType.cutout());
-
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// COOL BLOCKS
         RenderTypeLookup.setRenderLayer(AseohaBlocks.foodmachine_old.get(), RenderType.solid());
         RenderTypeLookup.setRenderLayer(AseohaBlocks.CORAL.get(), RenderType.cutout());
@@ -277,7 +277,7 @@ public class aseoha {
             generator.addProvider(new BlockLootTableGen(generator));
             generator.addProvider(new LootGen(generator));
             generator.addProvider(new RecipeGen(generator));
-            generator.addProvider(new BlockStateGen(generator));
+//            generator.addProvider(new BlockStateGen(generator));;
             generator.addProvider(new ItemTagsGen(generator, blockTags, fileHelper));
 //            if (reports) {
 //                generator.addProvider(new BiomeProvider(generator));

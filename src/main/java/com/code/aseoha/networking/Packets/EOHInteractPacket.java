@@ -46,10 +46,12 @@ public class EOHInteractPacket {
                     if (eoh != null) {
                         if (mes.intType) {
                             eoh.setHasStar(true);
-                            eoh.LastPlayerClick.getMainHandItem().shrink(1);
+//                            eoh.Mark();
+//                            eoh.LastPlayerClick.getMainHandItem().shrink(1);
                         }
                         else ((IHelpWithConsole) consoleTile).Aseoha$GetEOH().Activate();
-                        ((IHelpWithConsole) consoleTile).Aseoha$GetEOH().setChanged();
+//                        ((IHelpWithConsole) consoleTile).Aseoha$GetEOH().setChanged();
+                        eoh.Mark();
                     }
                 }
             }

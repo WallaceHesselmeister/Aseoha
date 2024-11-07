@@ -30,7 +30,7 @@ public class BattleConsoleTile extends ConsoleTile {
         //Done
         this.controlOverrides.put(FacingControl.class, new ControlOverride(new Vector3d(0.235, 1.969, 0.623), EntitySize.scalable(0.25F, 0.25F)));
         //Done
-        this.controlOverrides.put(StabilizerControl.class, new ControlOverride(new Vector3d(-0.503, .5, -0.254), EntitySize.scalable(0.1875F, 0.2575F)));
+        this.controlOverrides.put(StabilizerControl.class, new ControlOverride(new Vector3d(-0.515, .5, 0.697), EntitySize.scalable(0.1875F, 0.2575F)));
         //Done
         this.controlOverrides.put(TelepathicControl.class, new ControlOverride(new Vector3d(-0.593, .5, 0.381), EntitySize.scalable(0.5F, 0.5F)));
         //Done

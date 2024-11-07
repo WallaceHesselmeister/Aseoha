@@ -23,8 +23,8 @@ public class Sounds {
     public static final RegistryObject<SoundEvent> SMITH_FLIGHT_LOOP = SOUNDS.register("smith_flight_loop", () -> {
         return setupSound("smith_flight_loop");
     });
-    public static final RegistryObject<SoundEvent> SMITH_LAND = SOUNDS.register("smith_land", () -> {
-        return setupSound("smith_land");
+    public static final RegistryObject<SoundEvent> SMITH_LAND = SOUNDS.register("smith_landing", () -> {
+        return setupSound("smith_landing");
     });
     public static final RegistryObject<SoundEvent> THROTTLE_BLAST = SOUNDS.register("throttle_blast", () -> {
         return setupSound("throttle_blast");

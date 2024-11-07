@@ -14,9 +14,11 @@ TODO: VALE EXTERIORS (Can wait)
 TODO: TRACTOR BEAMS (Can wait)
 TODO: POWER SWITCH (Can wait)
 
-# ASEOHA NOW REQUIRES "Temporal API" BY "mistersecret"
-## ASEOHA 6.2
-### What's new:
-- Added a real manual, with a crafting recipe (green dye + book in crafting table)
-- Fixed issues with some servers
-- Fixed Power Fault crashing
+# ASEOHA 6.3
+## What's new:
+- Updated Title Name
+- Updated Manual
+- Fixed Temporal API bugs
+- Tweaks/Fixes
+- Removed the Master
+- Setup Pilot system for things such as the Limbo Atrophier

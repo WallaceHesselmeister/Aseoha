@@ -1,5 +1,6 @@
 package com.code.aseoha.threads;
 
+import com.code.aseoha.Helpers.IHelpWithConsole;
 import com.code.aseoha.aseoha;
 import com.code.aseoha.events.CommonEvents;
 import com.code.aseoha.items.AseohaItems;
@@ -68,6 +69,11 @@ public class TickThread extends Thread {
         TardisHelper.getConsoleInWorld(event.world).ifPresent(tardisTile -> {
             if (tardisTile.getInteriorManager().getLight() > 15) tardisTile.getInteriorManager().setLight(0);
             Random random = new Random();
+            if(((IHelpWithConsole) tardisTile).Aseoha$GetMaintenance()){
+                tardisTile.getInteriorManager().setLight(0);
+                tardisTile.setMaxArtron(0);
+                tardisTile.updateClient();
+            }
             event.world.getCapability(Capabilities.TARDIS_DATA).ifPresent(cap -> {
                 PanelInventory attunementPanel = cap.getEngineInventoryForSide(Direction.EAST);
                 if (attunementPanel != null) {

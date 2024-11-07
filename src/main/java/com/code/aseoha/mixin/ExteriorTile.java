@@ -3,6 +3,7 @@ package com.code.aseoha.mixin;
 import com.code.aseoha.Helpers.IHelpWithExterior;
 import com.llamalad7.mixinextras.injector.ModifyReturnValue;
 import net.minecraft.block.BlockState;
+import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.tileentity.ITickableTileEntity;
 import net.minecraft.tileentity.TileEntity;
@@ -87,13 +88,13 @@ public abstract class ExteriorTile extends TileEntity implements ITickableTileEn
     @Inject(method = "load(Lnet/minecraft/block/BlockState;Lnet/minecraft/nbt/CompoundNBT;)V", at = @At("TAIL"))
     private void Aseoha$Read(BlockState state, CompoundNBT compound, CallbackInfo ci) {
         this.Aseoha$Scale = compound.getInt("Aseoha$Scale");
-        this.Aseoha$LightLevel = compound.getByte("Aseoha$LightLevel");
+//        this.Aseoha$LightLevel = compound.getByte("Aseoha$LightLevel");
     }
 
     @Inject(method = "save(Lnet/minecraft/nbt/CompoundNBT;)Lnet/minecraft/nbt/CompoundNBT;", at = @At("TAIL"))
     private void Aseoha$Write(CompoundNBT compound, CallbackInfoReturnable<CompoundNBT> cir) {
         compound.putInt("Aseoha$Scale", this.Aseoha$Scale);
-        compound.putByte("Aseoha$LightLevel", this.Aseoha$LightLevel);
+//        compound.putByte("Aseoha$LightLevel", this.Aseoha$LightLevel);
     }
 
     @Override

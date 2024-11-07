@@ -4,6 +4,7 @@ import com.code.aseoha.aseoha;
 import com.code.aseoha.misc.TARDISHelper;
 import com.code.aseoha.networking.Networking;
 import com.code.aseoha.networking.Packets.EOHInteractPacket;
+import com.code.aseoha.networking.Packets.PlayerItemRemovePacket;
 import com.code.aseoha.tileentities.AseohaTiles;
 import com.code.aseoha.tileentities.blocks.EOHTile;
 import net.minecraft.block.Block;
@@ -43,6 +44,11 @@ public class EOH extends Block {
 
     private boolean hasStar = false;
 
+    /**
+     * DON'T USE IF UNINITIALIZED
+     */
+    private EOHTile Tile;
+
     public EOH(Properties props) {
         super(props);
     }
@@ -67,7 +73,8 @@ public class EOH extends Block {
 
     @Override
     public TileEntity createTileEntity(BlockState state, IBlockReader world) {
-        return AseohaTiles.EYE_OF_HARMONY.get().create();
+        this.Tile = AseohaTiles.EYE_OF_HARMONY.get().create();
+        return this.Tile;
     }
 
     @NotNull
@@ -92,15 +99,22 @@ public class EOH extends Block {
                         ((EOHTile) tile).setHasStar(true); // STAR
                         this.LastPlayerClick = p_225533_4_;
                         p_225533_4_.getMainHandItem().shrink(1);
-                        this.hasStar = true;
-                        ((EOHTile) tile).setChanged();
                         Networking.sendToServer(new EOHInteractPacket(true));
+                        Networking.sendToServer(new PlayerItemRemovePacket(p_225533_4_.getUUID()));
+                        this.hasStar = true;
+                        this.Mark();
                         return ActionResultType.SUCCESS;
                     }
                 }
             }
         }
         return ActionResultType.FAIL;
+    }
+
+    public void Mark(){
+
+        this.Tile.setChanged();
+        this.Tile.Mark = true;
     }
 
     @Override
