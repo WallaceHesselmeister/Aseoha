@@ -1,9 +1,0 @@
-{
-  "type": "tardis:spectrometer",
-  "processing_ticks": 200,
-  "download_ticks": 200,
-  "ingredient": {
-    "item": "minecraft:white_wool"
-  },
-  "result": "aseoha:interiors/two"
-}

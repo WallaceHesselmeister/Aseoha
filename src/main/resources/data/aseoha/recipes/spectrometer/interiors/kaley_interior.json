@@ -1,9 +1,0 @@
-{
-  "type": "tardis:spectrometer",
-  "processing_ticks": 200,
-  "download_ticks": 200,
-  "ingredient": {
-    "item": "minecraft:gilded_blackstone"
-  },
-  "result": "aseoha:interiors/kaley_interior"
-}
