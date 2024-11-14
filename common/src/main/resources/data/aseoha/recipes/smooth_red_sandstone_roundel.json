@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "e": {
+      "item": "minecraft:smooth_red_sandstone"
+    },
+    "o": {
+      "item": "minecraft:red_sandstone"
+    },
+    "p": {
+      "item": "aseoha:roundel_mold"
+    }
+  },
+  "pattern": [
+    "eoe",
+    "opo",
+    "eoe"
+  ],
+  "result": {
+    "count": 8,
+    "item": "aseoha:smooth_red_sandstone_roundel"
+  },
+  "show_notification": true
+}

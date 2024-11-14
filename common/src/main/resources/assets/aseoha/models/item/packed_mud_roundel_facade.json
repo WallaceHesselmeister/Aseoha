@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "aseoha:block/packed_mud_roundel_facade"
+  }
+}

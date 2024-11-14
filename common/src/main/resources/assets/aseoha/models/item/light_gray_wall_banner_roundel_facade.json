@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "aseoha:block/light_gray_wall_banner_roundel_facade"
+  }
+}

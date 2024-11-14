@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "aseoha:block/light_weighted_pressure_plate_roundel_facade"
+  }
+}

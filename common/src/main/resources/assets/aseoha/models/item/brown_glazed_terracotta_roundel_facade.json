@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "aseoha:block/brown_glazed_terracotta_roundel_facade"
+  }
+}

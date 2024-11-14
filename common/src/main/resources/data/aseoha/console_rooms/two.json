@@ -1,0 +1,10 @@
+{
+  "structure_resource_location":"aseoha:two",
+  "display_name":"Two",
+  "x_offset":9,
+  "y_offset":2,
+  "z_offset":9,
+  "using_remote_image":false,
+  "remote_image_url":"",
+  "image_resource_location":"aseoha:preview_1.png"
+}

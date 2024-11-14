@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "aseoha:block/mossy_stone_brick_wall_roundel_facade"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "aseoha:block/latinum_block_down",
+    "east": "aseoha:block/latinum_block_east",
+    "north": "aseoha:block/latinum_block_north",
+    "particle": "aseoha:block/latinum_block_particle",
+    "south": "aseoha:block/latinum_block_south",
+    "up": "aseoha:block/latinum_block_up",
+    "west": "aseoha:block/latinum_block_west"
+  }
+}

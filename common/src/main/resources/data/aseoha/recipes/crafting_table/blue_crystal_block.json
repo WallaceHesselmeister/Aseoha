@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "xxx",
+    "xlx",
+    "xxx"
+  ],
+  "key": {
+    "x": {
+      "item": "aseoha:blue_crystal_ingot"
+    },
+    "l": {
+      "item": "minecraft:lava_bucket"
+    }
+  },
+  "result": {
+    "item": "aseoha:blue_crystal",
+    "count": 1
+  }
+}

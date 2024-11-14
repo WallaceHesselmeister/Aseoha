@@ -1,0 +1,13 @@
+{
+  "variants":{
+    "type=bottom":{
+      "model":"aseoha:block/megalos_slab_lower"
+    },
+    "type=top":{
+      "model":"aseoha:block/megalos_slab_upper"
+    },
+    "type=double":{
+      "model":"aseoha:block/megalos"
+    }
+  }
+}

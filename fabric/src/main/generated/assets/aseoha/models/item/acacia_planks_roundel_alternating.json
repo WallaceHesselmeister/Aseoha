@@ -1,0 +1,6 @@
+{
+  "parent": "aseoha:block/alternating_nesw",
+  "textures": {
+    "all": "aseoha:block/acacia_planks_roundel_alternating"
+  }
+}

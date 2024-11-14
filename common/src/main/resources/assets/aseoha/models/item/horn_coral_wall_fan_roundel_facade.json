@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "aseoha:block/horn_coral_wall_fan_roundel_facade"
+  }
+}

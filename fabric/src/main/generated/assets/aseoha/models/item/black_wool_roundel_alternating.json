@@ -1,0 +1,6 @@
+{
+  "parent": "aseoha:block/alternating_nesw",
+  "textures": {
+    "all": "aseoha:block/black_wool_roundel_alternating"
+  }
+}

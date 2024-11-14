@@ -1,0 +1,13 @@
+{
+  "id": "aseoha:mk2",
+  "models": {
+    "inactive": "aseoha:item/sonic/mk2/inactive",
+    "interaction": "aseoha:item/sonic/mk2/interaction",
+    "overload": "aseoha:item/sonic/mk2/overload",
+    "scanning": "aseoha:item/sonic/mk2/scanning",
+    "tardis": "aseoha:item/sonic/mk2/tardis"
+  },
+  "loyalty": {
+    "type": "PILOT"
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "structure_resource_location":"aseoha:4th_secondary_interior",
+  "display_name":"Secondary",
+  "x_offset":13,
+  "y_offset":7,
+  "z_offset":30,
+  "using_remote_image":false,
+  "remote_image_url":"",
+  "image_resource_location":"aseoha:secondary.png"
+}

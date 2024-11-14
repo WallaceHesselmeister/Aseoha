@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "aseoha:block/pink_concrete_roundel_alternating"
+      },
+      {
+        "model": "aseoha:block/pink_concrete_roundel_alternating",
+        "y": 90
+      },
+      {
+        "model": "aseoha:block/pink_concrete_roundel_alternating",
+        "y": 180
+      },
+      {
+        "model": "aseoha:block/pink_concrete_roundel_alternating",
+        "y": 270
+      }
+    ]
+  }
+}

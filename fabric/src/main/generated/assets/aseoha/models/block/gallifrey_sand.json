@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "aseoha:block/gallifrey_sand",
+    "east": "aseoha:block/gallifrey_sand",
+    "north": "aseoha:block/gallifrey_sand",
+    "particle": "aseoha:block/gallifrey_sand",
+    "south": "aseoha:block/gallifrey_sand",
+    "up": "aseoha:block/gallifrey_sand",
+    "west": "aseoha:block/gallifrey_sand"
+  }
+}

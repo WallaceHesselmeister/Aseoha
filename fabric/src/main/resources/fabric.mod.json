@@ -1,0 +1,50 @@
+{
+  "schemaVersion": 1,
+  "id": "aseoha",
+  "version": "${version}",
+  "name": "ASEOHA 1.20",
+  "description": "Adds stuff, be happy!",
+  "authors": [
+    "Codiak"
+  ],
+  "contact": {
+    "homepage": ""
+  },
+  "license": "All-Rights-Reserved",
+  "icon": "assets/aseoha/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "ait-main": [
+      "com.code.fabric.compat.ait.AITInitializer"
+    ],
+    "main": [
+      "com.code.fabric.aseohaFabric"
+    ],
+    "client": [
+      "com.code.fabric.client.aseohaFabricClient"
+    ],
+    "fabric-datagen": [
+      "com.code.fabric.datagen.DataGenerator"
+    ],
+    "main": [
+      "com.code.fabric.aseohaFabric"
+    ],
+    "client": [
+      "com.code.fabric.client.aseohaFabricClient"
+    ]
+  },
+  "mixins": [
+    "aseoha.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.16.8",
+    "minecraft": "~1.20.1",
+    "java": ">=17",
+    "architectury": ">=9.2.14",
+    "ait": ">=1.0.5",
+    "fabric-api": "*"
+  },
+  "suggests": {
+    "another-mod": "*"
+  }
+}

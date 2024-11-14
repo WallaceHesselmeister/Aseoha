@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "aseoha:block/orange_terracotta_roundel_half",
+    "east": "aseoha:block/orange_terracotta_roundel_half",
+    "north": "aseoha:block/orange_terracotta_roundel_half",
+    "particle": "aseoha:block/orange_terracotta_roundel_half",
+    "south": "aseoha:block/orange_terracotta_roundel_half",
+    "up": "aseoha:block/orange_terracotta_roundel_half",
+    "west": "aseoha:block/orange_terracotta_roundel_half"
+  }
+}

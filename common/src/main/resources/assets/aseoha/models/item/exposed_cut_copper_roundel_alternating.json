@@ -1,0 +1,6 @@
+{
+  "parent": "aseoha:block/alternating_nesw",
+  "textures": {
+    "all": "aseoha:block/exposed_cut_copper_roundel"
+  }
+}

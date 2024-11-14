@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "aseoha:block/oxidized_cut_copper_slab_roundel_facade"
+  }
+}

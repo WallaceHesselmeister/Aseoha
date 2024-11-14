@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "111",
+    "111",
+    "111"
+  ],
+  "key": {
+    "1": {
+      "item": "aseoha:latinum_bar"
+    }
+  },
+  "result": {
+    "item": "aseoha:latinum_brick",
+    "count": 1
+  },
+  "show_notification": true
+}

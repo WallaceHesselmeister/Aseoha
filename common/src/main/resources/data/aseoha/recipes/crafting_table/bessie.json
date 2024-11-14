@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "   ",
+    "gXP",
+    "#Ng"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:netherite_scrap"
+    },
+    "g": {
+      "item": "minecraft:gold_ingot"
+    },
+    "N": {
+      "item": "aseoha:engine"
+    },
+    "X": {
+      "item": "minecraft:leather"
+    },
+    "P": {
+      "item": "minecraft:glass_pane"
+    }
+  },
+  "result": {
+    "item": "aseoha:bessie_spawn_egg",
+    "count": 1
+  }
+}

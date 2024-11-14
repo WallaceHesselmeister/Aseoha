@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "e": {
+      "item": "minecraft:gray_wool"
+    },
+    "o": {
+      "item": "minecraft:gray_dye"
+    },
+    "p": {
+      "item": "aseoha:roundel_mold"
+    }
+  },
+  "pattern": [
+    "eoe",
+    "opo",
+    "eoe"
+  ],
+  "result": {
+    "count": 8,
+    "item": "aseoha:gray_wool_roundel"
+  },
+  "show_notification": true
+}

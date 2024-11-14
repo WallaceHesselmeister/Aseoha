@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "aseoha:block/smooth_red_sandstone_roundel",
+    "east": "aseoha:block/smooth_red_sandstone_roundel",
+    "north": "aseoha:block/smooth_red_sandstone_roundel",
+    "particle": "aseoha:block/smooth_red_sandstone_roundel",
+    "south": "aseoha:block/smooth_red_sandstone_roundel",
+    "up": "aseoha:block/smooth_red_sandstone_roundel",
+    "west": "aseoha:block/smooth_red_sandstone_roundel"
+  }
+}

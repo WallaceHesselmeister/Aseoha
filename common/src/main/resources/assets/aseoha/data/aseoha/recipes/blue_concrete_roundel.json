@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "e": {
+      "item": "minecraft:blue_concrete"
+    },
+    "o": {
+      "item": "minecraft:blue_concrete_powder"
+    },
+    "p": {
+      "item": "aseoha:roundel_mold"
+    }
+  },
+  "pattern": [
+    "eoe",
+    "opo",
+    "eoe"
+  ],
+  "result": {
+    "count": 8,
+    "item": "aseoha:blue_concrete_roundel"
+  },
+  "show_notification": true
+}

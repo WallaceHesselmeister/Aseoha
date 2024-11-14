@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "aseoha:block/polished_basalt_roundel",
+    "east": "aseoha:block/polished_basalt_roundel",
+    "north": "aseoha:block/polished_basalt_roundel",
+    "particle": "aseoha:block/polished_basalt_roundel",
+    "south": "aseoha:block/polished_basalt_roundel",
+    "up": "aseoha:block/polished_basalt_roundel",
+    "west": "aseoha:block/polished_basalt_roundel"
+  }
+}

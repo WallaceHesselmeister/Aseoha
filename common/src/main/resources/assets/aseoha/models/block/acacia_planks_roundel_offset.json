@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "aseoha:block/acacia_planks_roundel_offset",
+    "east": "aseoha:block/acacia_planks_roundel_offset",
+    "north": "aseoha:block/acacia_planks_roundel_offset",
+    "particle": "aseoha:block/acacia_planks_roundel_offset",
+    "south": "aseoha:block/acacia_planks_roundel_offset",
+    "up": "aseoha:block/acacia_planks_roundel_offset",
+    "west": "aseoha:block/acacia_planks_roundel_offset"
+  }
+}

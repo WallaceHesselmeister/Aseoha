@@ -1,0 +1,10 @@
+{
+  "structure_resource_location":"aseoha:moonlight_forest",
+  "display_name":"\u00A79[LordAret] \u00A7dMoonlight Forest",
+  "x_offset":16,
+  "y_offset":8,
+  "z_offset":30,
+  "using_remote_image":false,
+  "remote_image_url":"https://cdn.discordapp.com/attachments/1008045128872644630/1048315324434493621/186.png",
+  "image_resource_location":"aseoha:moonlightforest.png"
+}

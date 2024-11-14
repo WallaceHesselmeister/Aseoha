@@ -1,0 +1,6 @@
+{
+  "parent": "aseoha:block/roundel_template",
+  "textures": {
+    "all": "minecraft:block/warped_planks"
+  }
+}

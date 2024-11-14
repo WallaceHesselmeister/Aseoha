@@ -1,0 +1,10 @@
+{
+  "structure_resource_location":"aseoha:ravine_interior",
+  "display_name":"Ravine",
+  "x_offset":19,
+  "y_offset":13,
+  "z_offset":30,
+  "using_remote_image":false,
+  "remote_image_url":"https://cdn.discordapp.com/attachments/800384530787336212/899720314517340250/2021-10-18_19.06.58.png",
+  "image_resource_location":"aseoha:ravine.png"
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "layer0": "aseoha:item/alternating_yellow_concrete_hex_roundel"
+  }
+}

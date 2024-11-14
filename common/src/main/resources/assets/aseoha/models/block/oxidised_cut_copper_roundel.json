@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "aseoha:block/oxidised_cut_copper_roundel",
+    "east": "aseoha:block/oxidised_cut_copper_roundel",
+    "north": "aseoha:block/oxidised_cut_copper_roundel",
+    "particle": "aseoha:block/oxidised_cut_copper_roundel",
+    "south": "aseoha:block/oxidised_cut_copper_roundel",
+    "up": "aseoha:block/oxidised_cut_copper_roundel",
+    "west": "aseoha:block/oxidised_cut_copper_roundel"
+  }
+}

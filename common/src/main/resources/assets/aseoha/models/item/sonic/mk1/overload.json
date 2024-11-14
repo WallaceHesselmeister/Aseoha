@@ -1,0 +1,6 @@
+{
+	"parent": "aseoha:item/sonic/mk1",
+	"textures": {
+		"0": "aseoha:item/sonic_tools/mk1_overload"
+	}
+}

@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "e": {
+      "item": "minecraft:lime_concrete"
+    },
+    "o": {
+      "item": "minecraft:lime_concrete_powder"
+    },
+    "p": {
+      "item": "aseoha:roundel_mold"
+    }
+  },
+  "pattern": [
+    "eoe",
+    "opo",
+    "eoe"
+  ],
+  "result": {
+    "count": 8,
+    "item": "aseoha:lime_concrete_roundel"
+  },
+  "show_notification": true
+}

@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "aseoha:block/dimensional_button"
+    },
+    "facing=north": {
+      "model": "aseoha:block/dimensional_button",
+      "y": 270
+    },
+    "facing=south": {
+      "model": "aseoha:block/dimensional_button",
+      "y": 90
+    },
+    "facing=west": {
+      "model": "aseoha:block/dimensional_button",
+      "y": 180
+    }
+  }
+}

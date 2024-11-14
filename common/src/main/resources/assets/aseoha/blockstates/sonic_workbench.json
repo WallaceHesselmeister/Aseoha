@@ -1,0 +1,21 @@
+
+{
+  "variants":{
+    "facing=north":{
+      "model": "aseoha:block/sonic_workbench",
+      "y": 0
+    },
+    "facing=east":{
+      "model": "aseoha:block/sonic_workbench",
+      "y": 90
+    },
+    "facing=south":{
+      "model": "aseoha:block/sonic_workbench",
+      "y": 180
+    },
+    "facing=west":{
+      "model": "aseoha:block/sonic_workbench",
+      "y": 270
+    }
+  }
+}

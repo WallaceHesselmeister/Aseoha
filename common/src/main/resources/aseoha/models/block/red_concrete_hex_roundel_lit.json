@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "aseoha:block/red_concrete_hex_roundel",
+    "east": "aseoha:block/red_concrete_hex_roundel",
+    "north": "aseoha:block/red_concrete_hex_roundel",
+    "particle": "aseoha:block/red_concrete_hex_roundel",
+    "south": "aseoha:block/red_concrete_hex_roundel",
+    "up": "aseoha:block/red_concrete_hex_roundel",
+    "west": "aseoha:block/red_concrete_hex_roundel"
+  }
+}

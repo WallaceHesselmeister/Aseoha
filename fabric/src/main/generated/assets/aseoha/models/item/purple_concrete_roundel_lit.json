@@ -1,0 +1,6 @@
+{
+  "parent": "aseoha:block/alternating_nesw",
+  "textures": {
+    "all": "aseoha:purple_concrete_roundel"
+  }
+}

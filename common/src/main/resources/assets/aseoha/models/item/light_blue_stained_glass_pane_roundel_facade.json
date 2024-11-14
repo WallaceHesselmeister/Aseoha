@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "aseoha:block/light_blue_stained_glass_pane_roundel_facade"
+  }
+}

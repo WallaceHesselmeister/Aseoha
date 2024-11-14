@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "e": {
+      "item": "minecraft:cyan_wool"
+    },
+    "o": {
+      "item": "minecraft:cyan_dye"
+    },
+    "p": {
+      "item": "aseoha:roundel_mold"
+    }
+  },
+  "pattern": [
+    "eoe",
+    "opo",
+    "eoe"
+  ],
+  "result": {
+    "count": 8,
+    "item": "aseoha:cyan_wool_roundel"
+  },
+  "show_notification": true
+}

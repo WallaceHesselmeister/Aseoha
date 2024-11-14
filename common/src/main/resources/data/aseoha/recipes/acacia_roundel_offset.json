@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "e": {
+      "item": "minecraft:acacia_planks"
+    },
+    "o": {
+      "item": "minecraft:acacia_log"
+    },
+    "p": {
+      "item": "aseoha:roundel_mold"
+    }
+  },
+  "pattern": [
+    "epe",
+    "eoe"
+  ],
+  "result": {
+    "item": "aseoha:acacia_roundel_offset"
+  },
+  "show_notification": true
+}

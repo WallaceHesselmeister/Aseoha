@@ -1,0 +1,10 @@
+{
+  "structure_resource_location":"aseoha:blue_doctor_interior",
+  "display_name":"Blue Doctor",
+  "x_offset":22,
+  "y_offset":15,
+  "z_offset":30,
+  "using_remote_image":false,
+  "remote_image_url":"https://imgur.com/b563wg1",
+  "image_resource_location":"aseoha:textures/gui/interior/blue_doctor_interior.png"
+}

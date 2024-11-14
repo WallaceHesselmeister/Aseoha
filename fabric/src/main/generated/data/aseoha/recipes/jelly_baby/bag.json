@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "e": {
+      "item": "aseoha:jelly_baby/handful"
+    },
+    "j": {
+      "item": "minecraft:paper"
+    }
+  },
+  "pattern": [
+    "ee",
+    "je"
+  ],
+  "result": {
+    "item": "aseoha:jelly_baby/bag"
+  },
+  "show_notification": true
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "aseoha:block/alternating_nesw",
+  "textures": {
+    "all": "aseoha:dark_oak_planks_roundel"
+  }
+}

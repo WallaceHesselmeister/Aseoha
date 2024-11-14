@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "aseoha:block/calibrated_sculk_sensor_roundel_facade"
+  }
+}

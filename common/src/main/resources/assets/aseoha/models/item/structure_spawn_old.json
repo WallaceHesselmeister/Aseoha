@@ -1,0 +1,7 @@
+{
+  "parent" : "aseoha:block/structure_spawn_old",
+  "textures": {
+    "2": "aseoha:block/panel/panel_roomgen",
+    "4": "aseoha:block/panel/panel_top"
+  }
+}

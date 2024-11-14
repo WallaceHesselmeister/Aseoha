@@ -1,0 +1,10 @@
+{
+  "structure_resource_location":"aseoha:wizard_tower",
+  "display_name":"Wizard Tower Interior",
+  "x_offset":30,
+  "y_offset":29,
+  "z_offset":30,
+  "using_remote_image":false,
+  "remote_image_url":"https://imgur.com/q6ouUIU.png",
+  "image_resource_location":"aseoha:wizard_tower.png"
+}

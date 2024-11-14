@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "aseoha:x_control"
+    }
+  ],
+  "result": {
+    "item": "aseoha:y_control",
+    "count": 1
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "parent" : "aseoha:block/structure_panel_old",
+  "textures": {
+    "0": "aseoha:block/panel/panel",
+    "4": "aseoha:block/panel/panel_top"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "display": {
+    "icon": {
+      "item": "aseoha:gallifrey_sand"
+    },
+    "title": "Gallifrey!",
+    "description": "Enter Gallifrey for the first time!",
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "aseoha:aseoha",
+  "criteria": {
+    "gallifreyfirstentry": {
+      "trigger": "minecraft:changed_dimension",
+      "conditions": {
+        "to": "aseoha:gallifrey"
+      }
+    }
+  }
+}

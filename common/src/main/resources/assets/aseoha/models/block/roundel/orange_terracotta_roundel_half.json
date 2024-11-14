@@ -1,0 +1,6 @@
+{
+  "parent":"block/cube_all",
+  "textures":{
+    "all":"aseoha:block/roundel/orange_terracotta_roundel_half"
+  }
+}

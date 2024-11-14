@@ -1,0 +1,7 @@
+{
+  "parent" : "aseoha:block/ars_egg_old",
+    "textures": {
+          "0": "aseoha:block/ars/glowy",
+          "1": "aseoha:block/ars/metal"
+      }
+}

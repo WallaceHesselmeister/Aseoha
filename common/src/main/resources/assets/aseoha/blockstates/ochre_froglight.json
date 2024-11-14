@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "aseoha:block/froglight/ochre_froglight_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "aseoha:block/froglight/ochre_froglight"
+    },
+    "axis=z": {
+      "model": "aseoha:block/froglight/ochre_froglight_horizontal",
+      "x": 90
+    }
+  }
+}

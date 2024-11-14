@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "aseoha:block/quartz_block_roundel",
+    "east": "aseoha:block/quartz_block_roundel",
+    "north": "aseoha:block/quartz_block_roundel",
+    "particle": "aseoha:block/quartz_block_roundel",
+    "south": "aseoha:block/quartz_block_roundel",
+    "up": "aseoha:block/quartz_block_roundel",
+    "west": "aseoha:block/quartz_block_roundel"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "parent" : "aseoha:block/artron_bank_old",
+  "textures": {
+    "0": "aseoha:block/artron_bank"
+  }
+}

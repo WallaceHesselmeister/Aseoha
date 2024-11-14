@@ -1,0 +1,7 @@
+{
+  "parent": "aseoha:block/1-20/template_azalea",
+  "textures": {
+    "side": "aseoha:block/1-20/flowering_azalea_side",
+    "top": "aseoha:block/1-20/flowering_azalea_top"
+  }
+}

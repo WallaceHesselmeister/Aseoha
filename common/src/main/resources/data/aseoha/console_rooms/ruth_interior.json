@@ -1,0 +1,10 @@
+{
+  "structure_resource_location":"aseoha:ruth_interior",
+  "display_name":"Ruth",
+  "x_offset":19,
+  "y_offset":13,
+  "z_offset":33,
+  "using_remote_image":false,
+  "remote_image_url":"https://cdn.discordapp.com/attachments/950508569055330334/1027717652027801711/2022-10-06_16.48.50.png",
+  "image_resource_location":"aseoha:ruth.png"
+}

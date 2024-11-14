@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    {
+      "item": "tardis:upgrades/atrium"
+    }
+  ],
+  "result": {
+    "item": "aseoha:upgrades/atrium",
+    "count": 1
+  }
+}

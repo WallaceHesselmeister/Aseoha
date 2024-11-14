@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "aseoha:block/toaster",
+    "east": "aseoha:block/toaster",
+    "north": "aseoha:block/toaster",
+    "particle": "aseoha:block/toaster",
+    "south": "aseoha:block/toaster",
+    "up": "aseoha:block/toaster",
+    "west": "aseoha:block/toaster"
+  }
+}

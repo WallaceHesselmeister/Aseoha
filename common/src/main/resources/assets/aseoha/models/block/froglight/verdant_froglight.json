@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "aseoha:block/froglight/verdant_froglight_top",
+    "side": "aseoha:block/froglight/verdant_froglight_side"
+  }
+}

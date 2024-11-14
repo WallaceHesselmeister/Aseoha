@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "aseoha:block/hb_hex",
+    "east": "aseoha:block/hb_hex",
+    "north": "aseoha:block/hb_hex",
+    "particle": "aseoha:block/hb_hex",
+    "south": "aseoha:block/hb_hex",
+    "up": "aseoha:block/hb_hex",
+    "west": "aseoha:block/hb_hex"
+  }
+}

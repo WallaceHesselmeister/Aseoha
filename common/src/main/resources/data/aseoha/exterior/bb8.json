@@ -1,0 +1,7 @@
+{
+    "id": "aseoha:bb8",
+    "category": "ait:exterior/police_box",
+    "parent": "ait:exterior/police_box/default",
+    "texture": "aseoha:textures/police_box_bb8.png",
+    "emission": "aseoha:textures/police_box_bb8_emission.png"   
+}

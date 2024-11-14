@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "down": "aseoha:block/oak_planks_roundel",
+    "east": "aseoha:block/oak_planks_roundel",
+    "north": "aseoha:block/oak_planks_roundel",
+    "particle": "aseoha:block/oak_planks_roundel",
+    "south": "aseoha:block/oak_planks_roundel",
+    "up": "aseoha:block/oak_planks_roundel",
+    "west": "aseoha:block/oak_planks_roundel"
+  }
+}
