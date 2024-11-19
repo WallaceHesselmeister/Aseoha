@@ -3,6 +3,7 @@ package com.code.aseoha.events;
 import com.code.aseoha.Helpers.IHelpWithConsole;
 import com.code.aseoha.Helpers.IHelpWithMonitor;
 import com.code.aseoha.Helpers.IHelpWithPlayerEntity;
+import com.code.aseoha.Helpers.TARDISHelper;
 import com.code.aseoha.aseoha;
 import com.code.aseoha.client.Sounds;
 import com.code.aseoha.commands.Commands;
@@ -10,13 +11,8 @@ import com.code.aseoha.entities.DavrosChair;
 import com.code.aseoha.entities.k9;
 import com.code.aseoha.misc.*;
 import com.code.aseoha.tileentities.consoles.CopperConsoleTile;
-import net.minecraft.client.renderer.entity.PlayerRenderer;
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.entity.player.ServerPlayerEntity;
-import net.minecraft.network.play.server.SEntityVelocityPacket;
-import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.concurrent.TickDelayedTask;
 import net.minecraft.util.math.AxisAlignedBB;
@@ -31,31 +27,25 @@ import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.event.entity.EntityJoinWorldEvent;
 import net.minecraftforge.event.entity.living.LivingEvent;
 import net.minecraftforge.event.entity.player.AttackEntityEvent;
-import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.server.FMLServerStartedEvent;
-import net.mistersecret312.temporal_api.TemporalAPIMod;
 import net.mistersecret312.temporal_api.events.ControlEvent;
 import net.tardis.api.events.TardisEvent;
-import net.tardis.mod.cap.Capabilities;
 import net.tardis.mod.client.ClientHelper;
-import net.tardis.mod.client.guis.vm.VortexMDistressScreen;
 import net.tardis.mod.controls.AbstractControl;
 import net.tardis.mod.controls.HandbrakeControl;
-import net.tardis.mod.controls.StabilizerControl;
 import net.tardis.mod.controls.ThrottleControl;
 import net.tardis.mod.entity.ControlEntity;
-import net.tardis.mod.entity.DoorEntity;
 import net.tardis.mod.entity.TardisEntity;
 import net.tardis.mod.helper.TardisHelper;
-import net.tardis.mod.helper.WorldHelper;
 import net.tardis.mod.registries.ControlRegistry;
 import net.tardis.mod.sounds.TSounds;
 import net.tardis.mod.subsystem.StabilizerSubsystem;
 import net.tardis.mod.tileentities.ConsoleTile;
 import net.tardis.mod.tileentities.console.misc.MonitorOverride;
 import net.tardis.mod.world.dimensions.TDimensions;
+import net.tardis.mod.world.feature.CratorFeature;
 import org.jetbrains.annotations.NotNull;
 
 import javax.script.ScriptEngine;
@@ -429,6 +419,32 @@ public class CommonEvents {
         if (event.getControl().getConsole() != null && ((IHelpWithConsole) event.getControl().getConsole()).Aseoha$GetMaintenance()) {
             event.setCanceled(true);
         }
+        ConsoleTile consoleTile = event.getControl().getConsole();
+
+        if(((IHelpWithConsole) consoleTile).Aseoha$GetPilot() == null || ((IHelpWithConsole) consoleTile).Aseoha$GetPilot().GetPilotPlayer() == null){
+            if(((IHelpWithConsole) consoleTile).Aseoha$GetPilot() == null)
+                ((IHelpWithConsole) consoleTile).Aseoha$SetPilot(new Pilot(event.getPlayer()));
+
+            if(((IHelpWithConsole) consoleTile).Aseoha$GetPilot().GetPilotPlayer() == null)
+                ((IHelpWithConsole) consoleTile).Aseoha$GetPilot().SetNewPilot(event.getPlayer());
+        }
+    }
+
+
+    @SubscribeEvent
+    public static void ControlClickedEvent(ControlEvents.ControlClickEvent event) {
+        if (event.getControl().getConsole() != null && ((IHelpWithConsole) event.getControl().getConsole()).Aseoha$GetMaintenance()) {
+            event.setCanceled(true);
+        }
+        ConsoleTile consoleTile = event.getControl().getConsole();
+
+        if(((IHelpWithConsole) consoleTile).Aseoha$GetPilot() == null || ((IHelpWithConsole) consoleTile).Aseoha$GetPilot().GetPilotPlayer() == null){
+            if(((IHelpWithConsole) consoleTile).Aseoha$GetPilot() == null)
+                ((IHelpWithConsole) consoleTile).Aseoha$SetPilot(new Pilot(event.getPlayer()));
+
+            if(((IHelpWithConsole) consoleTile).Aseoha$GetPilot().GetPilotPlayer() == null)
+                ((IHelpWithConsole) consoleTile).Aseoha$GetPilot().SetNewPilot(event.getPlayer());
+        }
     }
 
     @SubscribeEvent
@@ -460,7 +476,8 @@ public class CommonEvents {
      */
     @SubscribeEvent
     public static void OnAttack(AttackEntityEvent event) {
-        if (event.getTarget() instanceof ControlEntity)
+        if (event.getTarget() instanceof ControlEntity) {
+            ConsoleTile consoleTile = (((ControlEntity) event.getTarget()).getControl().getConsole());
             if (((ControlEntity) event.getTarget()).getControl() instanceof ThrottleControl)
                 if (event.getEntity() instanceof PlayerEntity) {
                     if (((ControlEntity) event.getTarget()).getControl().getConsole().getControl(HandbrakeControl.class).get().isFree() && !((ControlEntity) event.getTarget()).getControl().getConsole().isLanding() && !((ControlEntity) event.getTarget()).getControl().getConsole().isInFlight()) {
@@ -468,7 +485,7 @@ public class CommonEvents {
                         event.getPlayer().playSound(Sounds.THROTTLE_BLAST.get(), 1, 1);
                     }
                 }
-
+        }
         if (event.getTarget() instanceof TardisEntity) {
             ((TardisEntity) event.getTarget()).getConsole().getInteriorManager().setAlarmOn(true);
         }
@@ -536,12 +553,9 @@ public class CommonEvents {
 //    /**
 //     * I was gonna use this for something. that's all.
 //     */
-    @SubscribeEvent
-    public static void onEntityJoin(EntityJoinWorldEvent event) {
-        if (event.getEntity() instanceof PlayerEntity) {
-            PlayerEntity player = (PlayerEntity) event.getEntity();
-            if(((IHelpWithPlayerEntity) player).Aseoha$GetPilot() == null);
-            ((IHelpWithPlayerEntity) player).Aseoha$CreatePilot(player);
+//    @SubscribeEvent
+//    public static void onEntityJoin(EntityJoinWorldEvent event) {
+//        if (event.getEntity() instanceof PlayerEntity) {
 ////            if(TardisHelper.getConsoleInWorld(event.getWorld()).isPresent()){
 ////
 ////                TardisHelper.getConsoleInWorld(event.getWorld()).ifPresent((console) -> {
@@ -551,7 +565,7 @@ public class CommonEvents {
 ////                    }
 ////                });
 ////            }
-        }
+//        }
 //        if(event.getEntity() instanceof ServerPlayerEntity) {
 //            aseoha.SendDebugToAll("Player Joined World " + event.getEntity() + " With UUID " + event.getEntity().getUUID());
 //
@@ -639,7 +653,7 @@ public class CommonEvents {
 //                te.remove();
 //            }
 //        }
-    }
+//    }
 
     //Needed this before TAPI added it
     @SubscribeEvent

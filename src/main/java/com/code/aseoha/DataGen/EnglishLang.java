@@ -3,6 +3,7 @@ package com.code.aseoha.DataGen;
 import com.code.aseoha.aseoha;
 import com.code.aseoha.client.Sounds;
 import com.code.aseoha.items.AseohaItems;
+import com.code.aseoha.protocol.RegisterProtocols;
 import com.code.aseoha.registries.AnimReg;
 import com.code.aseoha.registries.SoundSchemeRegister;
 import net.minecraft.data.DataGenerator;
@@ -20,11 +21,12 @@ public class EnglishLang extends LanguageProvider {
      */
     protected void addTranslations() {
 //        add(AseohaItems.MANUAL.get().getDescriptionId(), "Contains information on ASEOHA features");
-        add(Sounds.THROTTLE_BLAST.get().getRegistryName().getPath(), "Throttle Blast");
+        add(Sounds.THROTTLE_BLAST.get().toString(), "Throttle Blast");
         add(SoundSchemeRegister.SMITH.getId().toString(), "Smith [Mock]");
         add(AseohaItems.COFFEE.get(), "Coffee");
-        add("item.aseoha.manual", "ASEOHA Manual");
-        add(AnimReg.FAST_AF.get().getTranslationKey(), "Fast Animation");
+        add(AseohaItems.MANUAL.get().getDescriptionId(), "ASEOHA Manual");
+        add(RegisterProtocols.MAINTENANCE.get().getTranslationKey(), "Maintenance");
+//        add(AnimReg.FAST_AF.get().getTranslationKey(), "Fast Animation");
         add("ars.piece.category.aseoha.astronomer", "Astronomer");
         add("ars.piece.category.aseoha.cavern", "Cavern");
         add("ars.piece.category.aseoha.cavern_rooms", "Cavern Rooms");

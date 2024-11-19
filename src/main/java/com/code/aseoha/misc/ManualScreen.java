@@ -88,7 +88,7 @@ public class ManualScreen extends Screen {
     }
 
     public void onClose() {
-        Network.sendToServer(new UpdateManualPageMessage(this.pageIndex, this.chapterIndex));
+//        Network.sendToServer(new UpdateManualPageMessage(this.pageIndex, this.chapterIndex));
         super.onClose();
     }
 

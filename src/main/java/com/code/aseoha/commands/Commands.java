@@ -16,7 +16,6 @@ public class Commands {
         dispatcher.register(
                 net.minecraft.command.Commands.literal(aseoha.MODID)
                         .then(FixControlsCommand.register(dispatcher))
-                        .then(GiveManual.register(dispatcher))
         );
     }
 

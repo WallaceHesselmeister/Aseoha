@@ -1,35 +1,24 @@
-package com.code.aseoha.misc;
+package com.code.aseoha.Helpers;
 
-import com.code.aseoha.aseoha;
-import com.code.aseoha.upgrades.EngineBoost;
-import com.code.aseoha.upgrades.HADS;
-import net.minecraft.command.CommandSource;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.*;
 import net.minecraft.nbt.CompoundNBT;
-import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.*;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.text.TextComponent;
-import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 import net.tardis.mod.ars.ConsoleRoom;
 import net.tardis.mod.cap.TardisWorldCapability;
 import net.tardis.mod.entity.DoorEntity;
-import net.tardis.mod.entity.TardisEntity;
 import net.tardis.mod.enums.EnumDoorState;
 import net.tardis.mod.exterior.AbstractExterior;
 import net.tardis.mod.helper.TardisHelper;
-import net.tardis.mod.helper.TextHelper;
 import net.tardis.mod.items.KeyItem;
 import net.tardis.mod.misc.Console;
-import net.tardis.mod.sounds.TSounds;
 import net.tardis.mod.tileentities.ConsoleTile;
 
 import javax.annotation.Nonnull;
-import javax.swing.*;
 import java.util.Iterator;
 import java.util.Objects;
 

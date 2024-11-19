@@ -2,8 +2,9 @@ package com.code.aseoha.mixin;
 
 import com.code.aseoha.Helpers.IHelpWithConsole;
 import com.code.aseoha.Helpers.IHelpWithTardisEntity;
+import com.code.aseoha.Helpers.MiscHelper;
+import com.code.aseoha.Helpers.PlayerHelper;
 import com.code.aseoha.aseoha;
-import com.code.aseoha.misc.*;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.player.PlayerEntity;

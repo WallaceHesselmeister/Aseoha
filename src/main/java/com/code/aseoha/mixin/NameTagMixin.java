@@ -14,7 +14,7 @@ import net.tardis.mod.cap.TardisWorldCapability;
 import org.jetbrains.annotations.NotNull;
 import org.spongepowered.asm.mixin.Mixin;
 
-import static com.code.aseoha.misc.TARDISHelper.setTardisName;
+import static com.code.aseoha.Helpers.TARDISHelper.setTardisName;
 
 
 @Mixin({NameTagItem.class})

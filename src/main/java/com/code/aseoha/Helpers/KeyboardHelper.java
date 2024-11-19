@@ -1,8 +1,7 @@
-package com.code.aseoha.misc;
+package com.code.aseoha.Helpers;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.util.InputMappings;
-import net.minecraft.world.World;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import org.lwjgl.glfw.GLFW;

@@ -334,6 +334,9 @@ public class AseohaBlocks {
     public static RegistryObject<Block> EXTERIOR_WHITTAKER = registerNoItemBlock("exterior_whittaker",
             () -> setUpBlock(new ExteriorBlock()));
 
+    public static RegistryObject<Block> EXTERIOR_SUTEKH_TARDIS = registerNoItemBlock("exterior_sutekh_tardis",
+            () -> setUpBlock(new ExteriorBlock()));
+
     public static RegistryObject<Block> exterior_brackolin = registerNoItemBlock("exterior_brackolin",
             () -> setUpBlock(new ExteriorBlock()));
 

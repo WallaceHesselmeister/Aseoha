@@ -1,6 +1,6 @@
 package com.code.aseoha.block.control;
 
-import com.code.aseoha.misc.TARDISHelper;
+import com.code.aseoha.Helpers.TARDISHelper;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.ActionResultType;

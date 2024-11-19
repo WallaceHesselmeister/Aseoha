@@ -1,7 +1,7 @@
 package com.code.aseoha.events;
 
 import com.code.aseoha.config;
-import com.code.aseoha.misc.KeyboardHelper;
+import com.code.aseoha.Helpers.KeyboardHelper;
 import com.code.aseoha.networking.Networking;
 import com.code.aseoha.networking.Packets.RWFPacket;
 import com.code.aseoha.networking.Packets.TardisInputMessage;

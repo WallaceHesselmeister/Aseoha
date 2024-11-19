@@ -80,6 +80,9 @@ public class ModelRegistry {
 
         ClientRegistry.bindTileEntityRenderer(AseohaTiles.EXTERIOR_MCGANN.get(), McGannRender::new);
         EnumDoorTypes.MCGANN.setInteriorDoorModel(new McGannInteriorDoor());
+
+        ClientRegistry.bindTileEntityRenderer(AseohaTiles.EXTERIOR_SUTEKH_TARDIS.get(), SutekhTardisRenderer::new);
+        EnumDoorTypes.SUTEKH_TARDIS.setInteriorDoorModel(new ModernPoliceBoxInteriorModel());
     }
 
 }

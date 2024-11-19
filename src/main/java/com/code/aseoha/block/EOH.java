@@ -1,7 +1,6 @@
 package com.code.aseoha.block;
 
 import com.code.aseoha.aseoha;
-import com.code.aseoha.misc.TARDISHelper;
 import com.code.aseoha.networking.Networking;
 import com.code.aseoha.networking.Packets.EOHInteractPacket;
 import com.code.aseoha.networking.Packets.PlayerItemRemovePacket;
@@ -24,12 +23,8 @@ import net.minecraft.util.math.shapes.VoxelShapes;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.IWorld;
 import net.minecraft.world.World;
-import net.tardis.mod.helper.Helper;
 import net.tardis.mod.helper.TardisHelper;
-import net.tardis.mod.helper.WorldHelper;
 import org.jetbrains.annotations.NotNull;
-
-import java.util.Objects;
 
 @SuppressWarnings("deprecation")
 public class EOH extends Block {

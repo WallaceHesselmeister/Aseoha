@@ -170,7 +170,8 @@ dependencies {
     shadow(annotationProcessor("io.github.llamalad7:mixinextras-common:0.3.6")) // Mixin Extras
     implementation "org.spongepowered:mixin:${mixin_version}"
     /************************************ New TARDIS Mod *********************************************/
-    implementation fg.deobf('com.gitlab.Spectre0987:TardisMod:1.5.4') // NTM
+//    implementation fg.deobf('com.gitlab.Spectre0987:TardisMod:1.5.4')
+    implementation fg.deobf("curse.maven:new-tardis-mod-290247:3667066")
     /************************************ JEI *********************************************/
     implementation fg.deobf("curse.maven:jei-238222:5534622") // JEI
     /************************************ Mekanism *********************************************/

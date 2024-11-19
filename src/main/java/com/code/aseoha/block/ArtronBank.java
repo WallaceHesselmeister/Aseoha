@@ -1,6 +1,6 @@
 package com.code.aseoha.block;
 
-import com.code.aseoha.misc.PlayerHelper;
+import com.code.aseoha.Helpers.PlayerHelper;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockRenderType;
 import net.minecraft.block.BlockState;

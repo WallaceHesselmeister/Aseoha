@@ -37,6 +37,9 @@ public class TextureVariants {
     public static final TexVariant[] WHITTAKER = {
             new TexVariant(new ResourceLocation(aseoha.MODID, "textures/exteriors/whittaker.png"), "exterior.whittaker")};
 
+    public static final TexVariant[] SUTEKH_EXTERIOR = {
+            new TexVariant(new ResourceLocation(aseoha.MODID, "textures/exteriors/sutekh_tardis.png"), "exterior.exterior")};
+
     public static final TexVariant[] CUSTARD = {
             new TexVariant(new ResourceLocation(aseoha.MODID, "textures/consoles/custard.png"), "console.custard.default"),
             new TexVariant(new ResourceLocation(aseoha.MODID, "textures/consoles/custard_blue.png"), "console.custard.blue"),

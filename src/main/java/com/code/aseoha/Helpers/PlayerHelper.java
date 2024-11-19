@@ -1,4 +1,4 @@
-package com.code.aseoha.misc;
+package com.code.aseoha.Helpers;
 
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;

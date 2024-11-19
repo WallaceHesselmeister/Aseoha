@@ -12,9 +12,7 @@
     "sky_color": 4085486,
     "fog_color": 12638463,
     "water_color": 472983,
-    "water_fog_color": 1842342,
-    "grass_color": 65344,
-    "foliage_color": 2410510
+    "water_fog_color": 1842342
   },
   "starts": [
     "aseoha:road"

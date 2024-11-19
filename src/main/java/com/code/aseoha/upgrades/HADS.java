@@ -45,6 +45,7 @@ public static void hadsActivate(ConsoleTile console) {
                 }
 }
 
+
     public void tick(ConsoleTile console) {
 //        hadsActivate(console);
 

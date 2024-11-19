@@ -15,7 +15,7 @@ public class FrenchLang extends LanguageProvider {
     @Override
     protected void addTranslations() {
             add(AseohaItems.MANUAL.get(), "Pending Translation");
-            add(AnimReg.FAST_AF.get().getTranslationKey(), "Pending Translation");
+//            add(AnimReg.FAST_AF.get().getTranslationKey(), "Pending Translation");
             add("ars.piece.category.aseoha.astronomer", "Astronome");
             add("ars.piece.category.aseoha.cavern", "Caverne");
             add("ars.piece.category.aseoha.cavern_rooms", "Chambres souterraines");

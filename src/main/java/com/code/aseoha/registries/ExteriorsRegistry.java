@@ -19,6 +19,9 @@ public class ExteriorsRegistry {
     public static final RegistryObject<AbstractExterior> CORAL = EXTERIORS.register("coral",
             () -> new TwoBlockBasicExterior(() -> AseohaBlocks.EXTERIOR_CORAL.get().defaultBlockState(), false, EnumDoorTypes.CORAL, DoorSounds.BASE, new ResourceLocation(aseoha.MODID, "textures/gui/exteriors/coralexterior.png"), TextureVariants.CORAL));
 
+    public static final RegistryObject<AbstractExterior> SUTEKH_TARDIS = EXTERIORS.register("sutekh",
+            () -> new TwoBlockBasicExterior(() -> AseohaBlocks.EXTERIOR_MK2_CAPALDI.get().defaultBlockState(), false, EnumDoorTypes.CORAL, DoorSounds.BASE, new ResourceLocation(aseoha.MODID, "textures/gui/exteriors/sutekh.png"), TextureVariants.SUTEKH_EXTERIOR));
+
     public static final RegistryObject<AbstractExterior> MK2_CAPALDI = EXTERIORS.register("mk2_capaldi",
             () -> new TwoBlockBasicExterior(() -> AseohaBlocks.EXTERIOR_MK2_CAPALDI.get().defaultBlockState(), true, EnumDoorTypes.CORAL, DoorSounds.BASE, new ResourceLocation(aseoha.MODID, "textures/gui/exteriors/mk2_capaldi.png"), TextureVariants.MK2_CAPALDI));
 

@@ -125,16 +125,20 @@ public class TickThread extends Thread {
             if (exteriorBlock != null) {
                 if (!tardisTile.isInFlight()) {
                     if (exteriorBlock.getLevel() != null) {
-                        for (LivingEntity liv : exteriorBlock.getLevel().getEntitiesOfClass(LivingEntity.class, new AxisAlignedBB(exteriorBlock.getBlockPos()).inflate(2))) {
-                            if ((liv instanceof IMob && !liv.getType().is(TardisEntityTypeTags.IGNORED_ALARM_ENTITIES))) {
-                                aseoha.SendDebugToAll("HADS Triggered by entity " + liv.getEntity() + " With UUID " + liv.getUUID());
-                                CommonEvents.HadsActivate(tardisTile);
+                        if (((IHelpWithConsole) tardisTile).Aseoha$GetHads()) {
+                            for (LivingEntity liv : exteriorBlock.getLevel().getEntitiesOfClass(LivingEntity.class, new AxisAlignedBB(exteriorBlock.getBlockPos()).inflate(2))) {
+                                if ((liv instanceof IMob && !liv.getType().is(TardisEntityTypeTags.IGNORED_ALARM_ENTITIES))) {
+                                    if (!tardisTile.isInFlight())
+                                        aseoha.SendDebugToAll("HADS Triggered by entity " + liv.getEntity() + " With UUID " + liv.getUUID());
+                                    CommonEvents.HadsActivate(tardisTile);
+                                }
                             }
-                        }
-                        for (ArrowEntity arrow : exteriorBlock.getLevel().getEntitiesOfClass(ArrowEntity.class, new AxisAlignedBB(exteriorBlock.getBlockPos()).inflate(2))) {
-                            if (arrow instanceof ArrowEntity) {
-                                aseoha.SendDebugToAll("HADS Triggered by arrow");
-                                CommonEvents.HadsActivate(tardisTile);
+                            for (ArrowEntity arrow : exteriorBlock.getLevel().getEntitiesOfClass(ArrowEntity.class, new AxisAlignedBB(exteriorBlock.getBlockPos()).inflate(2))) {
+                                if (arrow instanceof ArrowEntity) {
+                                    if (!tardisTile.isInFlight())
+                                        aseoha.SendDebugToAll("HADS Triggered by arrow");
+                                    CommonEvents.HadsActivate(tardisTile);
+                                }
                             }
                         }
                     }

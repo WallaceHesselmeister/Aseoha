@@ -2,9 +2,8 @@ package com.code.aseoha.tileentities.blocks;
 
 import com.code.aseoha.aseoha;
 import com.code.aseoha.block.Coral;
-import com.code.aseoha.config;
 import com.code.aseoha.misc.PassNotNull;
-import com.code.aseoha.misc.TARDISHelper;
+import com.code.aseoha.Helpers.TARDISHelper;
 import com.code.aseoha.tileentities.AseohaTiles;
 import net.minecraft.block.BlockState;
 import net.minecraft.tileentity.ITickableTileEntity;

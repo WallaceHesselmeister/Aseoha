@@ -3,15 +3,13 @@ package com.code.aseoha.client.models.consoles;// Made with Blockbench 4.10.4
 // Paste this class into your mod and generate all required imports
 
 
-import com.code.aseoha.aseoha;
-import com.code.aseoha.misc.TARDISHelper;
+import com.code.aseoha.Helpers.TARDISHelper;
 import com.code.aseoha.tileentities.consoles.BlueMarbleTile;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.vertex.IVertexBuilder;
 import net.minecraft.client.renderer.entity.model.EntityModel;
 import net.minecraft.client.renderer.model.ModelRenderer;
 import net.minecraft.entity.Entity;
-import net.minecraft.tileentity.TileEntityType;
 import net.minecraft.util.Direction;
 import net.tardis.mod.client.models.TileModel;
 import net.tardis.mod.controls.*;

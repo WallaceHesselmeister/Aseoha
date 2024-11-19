@@ -107,6 +107,10 @@ public class AseohaTiles {
             TILES.register("exterior_whittaker", () -> registerTiles(WhittakerTile::new,
                     AseohaBlocks.EXTERIOR_WHITTAKER.get()));
 
+    public static final RegistryObject<TileEntityType<SutekhTardisTile>> EXTERIOR_SUTEKH_TARDIS =
+            TILES.register("exterior_sutekh_tardis", () -> registerTiles(SutekhTardisTile::new,
+                    AseohaBlocks.EXTERIOR_SUTEKH_TARDIS.get()));
+
     public static final RegistryObject<TileEntityType<TakomakConsoleTile>> console_takomak =
             TILES.register("console_takomak", () -> registerTiles(TakomakConsoleTile::new,
                     AseohaBlocks.console_takomak.get()));

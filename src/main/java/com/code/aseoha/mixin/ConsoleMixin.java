@@ -164,6 +164,12 @@ public abstract class ConsoleMixin extends TileEntity implements ITickableTileEn
         this.Aseoha$EOHPillars = compound.getBoolean("eoh_pillars");
         this.Aseoha$Maintenance = compound.getBoolean("maintenance");
         this.Aseoha$ExteriorSize = compound.getInt("exterior_size_scale");
+        assert this.level != null;
+        if(compound.contains("Aseoha$Pilot_UUID")) {
+            this.Aseoha$Pilot =
+                    new Pilot(
+                            this.level.getPlayerByUUID(compound.getUUID("Aseoha$Pilot_UUID")));
+        }
 //        this.interiorDimension. = compound.
     }
 
@@ -175,6 +181,9 @@ public abstract class ConsoleMixin extends TileEntity implements ITickableTileEn
         compound.putLong("eoh_timer", this.Aseoha$EOHTimer);
         compound.putBoolean("maintenance", this.Aseoha$Maintenance);
         compound.putInt("exterior_size_scale", this.Aseoha$ExteriorSize);
+        if (this.Aseoha$Pilot != null)
+            if (this.Aseoha$Pilot.GetPilotPlayer() != null)
+                    compound.putUUID("Aseoha$Pilot_UUID", this.Aseoha$Pilot.GetPilotPlayer().getUUID());
     }
 
 

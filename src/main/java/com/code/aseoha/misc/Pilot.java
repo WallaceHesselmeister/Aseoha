@@ -1,27 +1,14 @@
 package com.code.aseoha.misc;
 
 import com.code.aseoha.Helpers.IHelpWithConsole;
-import com.code.aseoha.aseoha;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.nbt.CompoundNBT;
-import net.minecraft.nbt.ListNBT;
-import net.minecraft.nbt.StringNBT;
-import net.minecraft.util.RegistryKey;
-import net.minecraft.util.ResourceLocation;
-import net.minecraft.world.World;
-import net.minecraftforge.common.util.Constants;
-import net.minecraftforge.event.world.NoteBlockEvent;
-import net.minecraftforge.fml.server.ServerLifecycleHooks;
-import net.tardis.mod.helper.TardisHelper;
 import net.tardis.mod.tileentities.ConsoleTile;
 
-import java.awt.*;
 import java.util.ArrayList;
-import java.util.List;
-import java.util.UUID;
 
 public class Pilot {
     private PlayerEntity PilotPlayer;
+    private ArrayList<PlayerEntity> TrustedPlayers = new ArrayList<>();
 
 
     public Pilot(PlayerEntity pilot) {
@@ -37,15 +24,10 @@ public class Pilot {
      * @return True/False if this Pilot Pilots the specified console
      */
     public boolean IsPilotOf(ConsoleTile console, PlayerEntity player) {
-//        TardisHelper.getConsole(ServerLifecycleHooks.getCurrentServer(), console).ifPresent(consoleTile -> {
         if (((IHelpWithConsole) console).Aseoha$GetPilot() != null) {
             return ((IHelpWithConsole) console).Aseoha$GetPilot().PilotPlayer.equals(player);
         }
         return false;
-//        } else {
-//            if (this.ConsoleTileList.contains(console)) return true;
-//            else return false;
-//        }
     }
 
 //    public ArrayList<ConsoleTile> GetConsoleTilesPiloted() {
@@ -54,6 +36,18 @@ public class Pilot {
 
     public PlayerEntity GetPilotPlayer(){
         return this.PilotPlayer;
+    }
+
+    public ArrayList<PlayerEntity> GetTrustedPlayers() {
+        return this.TrustedPlayers;
+    }
+
+    public void AddTrustedPlayers(PlayerEntity trustedPlayers) {
+        this.TrustedPlayers.add(trustedPlayers);
+    }
+
+    public void SetNewPilot(PlayerEntity Pilot){
+        this.PilotPlayer = Pilot;
     }
 
 //    public void AddConsole(ConsoleTile consoleTile) {
