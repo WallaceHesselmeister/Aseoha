@@ -30,6 +30,8 @@ jobs:
 
     - name: Gradle Clean
       run: ./gradlew clean
+    - name: make gradle wrapper executable
+      run: chmod +x ./gradlew
 
    #- name: Gradle Refresh Dependencies
      # run: ./gradlew build --refresh-dependencies
