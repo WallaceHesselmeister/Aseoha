@@ -36,7 +36,7 @@ jobs:
 
 
     - name: Run datagen
-      run: ./gradlew runDatagen
+      run: ./gradlew runData
 
     - name: run dependency refresh
       run: ./gradlew build --refresh-dependencies
