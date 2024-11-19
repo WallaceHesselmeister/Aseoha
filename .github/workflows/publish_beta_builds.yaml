@@ -30,7 +30,7 @@ jobs:
       with:
         url: ${{ secrets.DEV_BUILDS }}
         file: 'build/libs/*'
-        username: glizzy
+        username: TAMAman
         avatar: 'https://media.forgecdn.net/avatars/thumbnails/983/766/256/256/638492366759883163.png'
         commit: '> :sparkles: [%MESSAGE%](<%LINK%>) by [%AUTHOR%](<%AUTHOR_LINK%>) '
         message: |
