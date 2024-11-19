@@ -31,7 +31,7 @@ jobs:
         url: ${{ secrets.DEV_BUILDS }}
         file: 'build/libs/*'
         username: glizzy
-        avatar: 'https://th.bing.com/th?id=OSK.zBgetYCGrwNHgHOx18wjr_vhrZLCPMNgTdmIkSU9Un8&w=46&h=46&c=11&rs=1&qlt=80&o=6&pid=SANGAM'
+        avatar: 'https://media.forgecdn.net/avatars/thumbnails/983/766/256/256/638492366759883163.png'
         commit: '> :sparkles: [%MESSAGE%](<%LINK%>) by [%AUTHOR%](<%AUTHOR_LINK%>) '
         message: |
           <:new1:1253371736510959636><:new2:1253371805734015006> New `Aseoha` dev build `#${{ github.run_number }}`:
