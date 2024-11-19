@@ -38,6 +38,9 @@ jobs:
     - name: Run datagen
       run: ./gradlew runDatagen
 
+    - name: run dependency refresh
+      run: ./gradlew build --refresh-dependencies
+
     - name: Build
       run: ./gradlew build
       #env:
