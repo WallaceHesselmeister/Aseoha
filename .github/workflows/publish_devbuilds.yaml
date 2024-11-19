@@ -10,29 +10,37 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v3
+      - name: Checkout code
+        uses: actions/checkout@v3
 
-    - name: Set up JDK
-      uses: actions/setup-java@v3
-      with:
-        distribution: 'zulu'
-        java-version: '17'
+      - name: Set up JDK
+        uses: actions/setup-java@v3
+        with:
+          distribution: 'zulu'
+          java-version: '17'
 
-    - name: Set executable permissions for gradlew
-      run: chmod +x ./gradlew
+      - name: Set executable permissions for gradlew
+        run: chmod +x ./gradlew
 
-    - name: Build the Minecraft Mod
-      run: ./gradlew build
+      - name: Build the Minecraft Mod
+        run: ./gradlew build
 
-    - name: Send JAR to Discord Webhook
-      env:
-        DISCORD_WEBHOOK_URL: ${{ secrets.DEV_BUILDS }}
-        WEBHOOK_NAME: "ASEOHA Build Bot"
-        WEBHOOK_PFP: "https://example.com/custom-profile-pic.png"
-      run: |
-        COMMITS=$(git log --pretty=format:"- %h %s (%an)" -n 5)
-        MOD_JAR=$(find build/libs -name "*.jar" | head -n 1)
-        MESSAGE="<:new1:1253371736510959636><:new2:1253371805734015006> New \`ASEOHA\` dev build \`#${{ github.run_number }}\`:\n$COMMITS"
-        JSON_PAYLOAD=$(jq -n --arg username "$WEBHOOK_NAME" --arg avatar_url "$WEBHOOK_PFP" --arg content "$MESSAGE" '{username: $username, avatar_url: $avatar_url, content: $content}')
-        curl -X POST -H "Content-Type: multipart/form-data" -F "payload_json=$JSON_PAYLOAD" -F "file=@$MOD_JAR" "$DISCORD_WEBHOOK_URL"
+      - name: Send JAR to Discord Webhook
+        env:
+          DISCORD_WEBHOOK_URL: ${{ secrets.DEV_BUILDS }}
+        run: |
+          COMMITS=$(git log --pretty=format:"- %h %s (%an)" -n 5)
+          MOD_JAR=$(find build/libs -name "*.jar" | head -n 1)
+          if [ -z "$MOD_JAR" ]; then
+            echo "No JAR file found in build/libs. Exiting."
+            exit 1
+          fi
+          MESSAGE="<:new1:1253371736510959636><:new2:1253371805734015006> New \`ASEOHA\` dev build \`#${{ github.run_number }}\`:\n$COMMITS"
+          JSON_PAYLOAD=$(jq -n \
+            --arg content "$MESSAGE" \
+            '{content: $content}')
+          curl -X POST \
+            -H "Content-Type: multipart/form-data" \
+            -F "payload_json=$JSON_PAYLOAD" \
+            -F "file=@$MOD_JAR" \
+            "$DISCORD_WEBHOOK_URL"
