@@ -5,6 +5,7 @@ package com.code.aseoha.client.models.exteriors;// Made with Blockbench 4.10.4
 
 import com.code.aseoha.client.renderers.exteriors.BrackolinRender;
 import com.code.aseoha.client.renderers.exteriors.CapaldiRender;
+import com.code.aseoha.client.renderers.exteriors.McGannRender;
 import com.code.aseoha.enums.EnumDoorTypes;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.vertex.IVertexBuilder;
@@ -24,14 +25,16 @@ import net.tardis.mod.helper.WorldHelper;
 import net.tardis.mod.tileentities.exteriors.ExteriorTile;
 
 public class McGannModel extends ExteriorModel {
+	private final ModelRenderer Base;
+	private final ModelRenderer cube_r1;
+	private final ModelRenderer bone7;
+	private final ModelRenderer cube_r2;
+	private final ModelRenderer cube_r3;
+	private final ModelRenderer cube_r4;
 	private final ModelRenderer LeftDoor;
 	private final ModelRenderer phone;
-	private final LightModelRenderer LeftDoorEmmisive;
-	private final ModelRenderer RightDoor;
-	private final LightModelRenderer RightDoorEmmisives;
-	private final ModelRenderer base;
-	private final ModelRenderer cube_r1;
-	private final LightModelRenderer Emmisives;
+	private final ModelRenderer LeftDoorEmmisive;
+	private final ModelRenderer Emmisives;
 	private final ModelRenderer text_PPCB;
 	private final ModelRenderer text_POLICE;
 	private final ModelRenderer character_p;
@@ -132,13 +135,8 @@ public class McGannModel extends ExteriorModel {
 	private final ModelRenderer character_b8;
 	private final ModelRenderer character_o8;
 	private final ModelRenderer character_x4;
-	private final ModelRenderer bone3;
-	private final ModelRenderer bone2;
-	private final ModelRenderer bone;
-	private final ModelRenderer bone7;
-	private final ModelRenderer cube_r2;
-	private final ModelRenderer cube_r3;
-	private final ModelRenderer cube_r4;
+	private final ModelRenderer RightDoor;
+	private final ModelRenderer RightDoorEmmisives;
 	private final ModelRenderer bone6;
 	private final ModelRenderer cube_r5;
 	private final ModelRenderer cube_r6;
@@ -147,6 +145,9 @@ public class McGannModel extends ExteriorModel {
 	private final ModelRenderer cube_r8;
 	private final ModelRenderer cube_r9;
 	private final ModelRenderer cube_r10;
+	private final ModelRenderer bone3;
+	private final ModelRenderer bone2;
+	private final ModelRenderer bone;
 	private final ModelRenderer bone4;
 	private final ModelRenderer cube_r11;
 	private final ModelRenderer cube_r12;
@@ -154,12 +155,126 @@ public class McGannModel extends ExteriorModel {
 	private final ModelRenderer BOTI;
 
 	public McGannModel() {
-
 		texWidth = 512;
 		texHeight = 512;
 
+		Base = new ModelRenderer(this);
+		Base.setPos(0.0F, 24.0F, 0.0F);
+		Base.texOffs(62, 238).addBox(-21.0F, -79.0F, -15.0F, 1.0F, 2.0F, 30.0F, 0.0F, false);
+		Base.texOffs(28, 271).addBox(-21.0F, -79.0F, -16.0F, 1.0F, 75.0F, 1.0F, 0.0F, false);
+		Base.texOffs(24, 271).addBox(-21.0F, -79.0F, 15.0F, 1.0F, 75.0F, 1.0F, 0.0F, false);
+		Base.texOffs(242, 267).addBox(-2.0F, -79.0F, 20.0F, 4.0F, 75.0F, 1.0F, 0.0F, false);
+		Base.texOffs(264, 267).addBox(-1.0F, -79.0F, 21.0F, 2.0F, 75.0F, 1.0F, 0.0F, false);
+		Base.texOffs(150, 45).addBox(-15.0F, -8.0F, 20.0F, 30.0F, 4.0F, 1.0F, 0.0F, false);
+		Base.texOffs(182, 11).addBox(-15.0F, -26.0F, 20.0F, 30.0F, 3.0F, 1.0F, 0.0F, false);
+		Base.texOffs(193, 69).addBox(-15.0F, -23.0F, 19.5F, 30.0F, 15.0F, 1.0F, 0.0F, false);
+		Base.texOffs(220, 149).addBox(-15.0F, -41.0F, 19.5F, 30.0F, 15.0F, 1.0F, 0.0F, false);
+		Base.texOffs(182, 15).addBox(-15.0F, -44.0F, 20.0F, 30.0F, 3.0F, 1.0F, 0.0F, false);
+		Base.texOffs(252, 165).addBox(-15.0F, -59.0F, 19.5F, 30.0F, 15.0F, 1.0F, 0.0F, false);
+		Base.texOffs(182, 19).addBox(-15.0F, -62.0F, 20.0F, 30.0F, 3.0F, 1.0F, 0.0F, false);
+		Base.texOffs(187, 183).addBox(-15.0F, -77.0F, 19.5F, 30.0F, 15.0F, 1.0F, 0.0F, false);
+		Base.texOffs(194, 85).addBox(-15.0F, -79.0F, 20.0F, 30.0F, 2.0F, 1.0F, 0.0F, false);
+		Base.texOffs(16, 271).addBox(-16.0F, -79.0F, 20.0F, 1.0F, 75.0F, 1.0F, 0.0F, false);
+		Base.texOffs(20, 271).addBox(15.0F, -79.0F, 20.0F, 1.0F, 75.0F, 1.0F, 0.0F, false);
+		Base.texOffs(222, 267).addBox(20.0F, -79.0F, -2.0F, 1.0F, 75.0F, 4.0F, 0.0F, false);
+		Base.texOffs(252, 267).addBox(21.0F, -79.0F, -1.0F, 1.0F, 75.0F, 2.0F, 0.0F, false);
+		Base.texOffs(224, 200).addBox(20.0F, -8.0F, -15.0F, 1.0F, 4.0F, 30.0F, 0.0F, false);
+		Base.texOffs(228, 103).addBox(20.0F, -26.0F, -15.0F, 1.0F, 3.0F, 30.0F, 0.0F, false);
+		Base.texOffs(150, 0).addBox(19.5F, -23.0F, -15.0F, 1.0F, 15.0F, 30.0F, 0.0F, false);
+		Base.texOffs(96, 154).addBox(19.5F, -41.0F, -15.0F, 1.0F, 15.0F, 30.0F, 0.0F, false);
+		Base.texOffs(128, 229).addBox(20.0F, -44.0F, -15.0F, 1.0F, 3.0F, 30.0F, 0.0F, false);
+		Base.texOffs(128, 184).addBox(19.5F, -59.0F, -15.0F, 1.0F, 15.0F, 30.0F, 0.0F, false);
+		Base.texOffs(224, 234).addBox(20.0F, -62.0F, -15.0F, 1.0F, 3.0F, 30.0F, 0.0F, false);
+		Base.texOffs(188, 154).addBox(19.5F, -77.0F, -15.0F, 1.0F, 15.0F, 30.0F, 0.0F, false);
+		Base.texOffs(0, 238).addBox(20.0F, -79.0F, -15.0F, 1.0F, 2.0F, 30.0F, 0.0F, false);
+		Base.texOffs(156, 262).addBox(20.0F, -79.0F, 15.0F, 1.0F, 75.0F, 1.0F, 0.0F, false);
+		Base.texOffs(12, 271).addBox(20.0F, -79.0F, -16.0F, 1.0F, 75.0F, 1.0F, 0.0F, false);
+		Base.texOffs(0, 53).addBox(-24.0F, -4.0F, -24.0F, 48.0F, 1.0F, 48.0F, 0.0F, false);
+		Base.texOffs(72, 149).addBox(-23.0F, -87.0F, -23.0F, 6.0F, 83.0F, 6.0F, 0.0F, false);
+		Base.texOffs(68, 271).addBox(-17.0F, -79.0F, -22.0F, 1.0F, 75.0F, 1.0F, 0.0F, false);
+		Base.texOffs(64, 271).addBox(16.0F, -79.0F, -22.0F, 1.0F, 75.0F, 1.0F, 0.0F, false);
+		Base.texOffs(90, 149).addBox(-17.0F, -80.0F, -22.0F, 34.0F, 1.0F, 1.0F, 0.0F, false);
+		Base.texOffs(182, 0).addBox(-20.0F, -86.0F, -26.0F, 40.0F, 6.0F, 5.0F, 0.0F, false);
+		Base.texOffs(0, 102).addBox(-21.0F, -91.0F, -21.0F, 42.0F, 5.0F, 42.0F, 0.0F, false);
+		Base.texOffs(116, 350).addBox(-21.0F, -79.0F, -21.0F, 42.0F, 0.0F, 42.0F, 0.0F, false);
+		Base.texOffs(116, 350).addBox(-21.0F, -4.05F, -21.0F, 42.0F, 0.0F, 42.0F, 0.0F, false);
+		Base.texOffs(126, 102).addBox(-17.0F, -93.0F, -17.0F, 34.0F, 2.0F, 34.0F, 0.0F, false);
+		Base.texOffs(28, 0).addBox(-2.5F, -95.0F, -2.5F, 5.0F, 1.0F, 5.0F, 0.0F, false);
+		Base.texOffs(28, 0).addBox(-2.5F, -100.0F, -2.5F, 5.0F, 1.0F, 5.0F, 0.0F, false);
+		Base.texOffs(126, 111).addBox(-4.0F, -94.0F, -4.0F, 8.0F, 1.0F, 8.0F, 0.0F, false);
+		Base.texOffs(126, 102).addBox(-4.0F, -101.0F, -4.0F, 8.0F, 1.0F, 8.0F, 0.0F, false);
+		Base.texOffs(40, 38).addBox(-3.0F, -100.0F, -3.0F, 1.0F, 6.0F, 1.0F, 0.0F, false);
+		Base.texOffs(36, 38).addBox(-3.0F, -100.0F, 2.0F, 1.0F, 6.0F, 1.0F, 0.0F, false);
+		Base.texOffs(28, 38).addBox(2.0F, -100.0F, 2.0F, 1.0F, 6.0F, 1.0F, 0.0F, false);
+		Base.texOffs(32, 38).addBox(2.0F, -100.0F, -3.0F, 1.0F, 6.0F, 1.0F, 0.0F, false);
+		Base.texOffs(28, 31).addBox(-22.0F, -90.0F, -22.0F, 4.0F, 3.0F, 4.0F, 0.0F, false);
+		Base.texOffs(28, 24).addBox(18.0F, -90.0F, -22.0F, 4.0F, 3.0F, 4.0F, 0.0F, false);
+		Base.texOffs(28, 10).addBox(18.0F, -90.0F, 18.0F, 4.0F, 3.0F, 4.0F, 0.0F, false);
+		Base.texOffs(28, 17).addBox(-22.0F, -90.0F, 18.0F, 4.0F, 3.0F, 4.0F, 0.0F, false);
+		Base.texOffs(144, 53).addBox(-26.0F, -86.0F, -20.0F, 5.0F, 6.0F, 40.0F, 0.0F, false);
+		Base.texOffs(178, 138).addBox(-20.0F, -86.0F, 21.0F, 40.0F, 6.0F, 5.0F, 0.0F, false);
+		Base.texOffs(128, 138).addBox(21.0F, -86.0F, -20.0F, 5.0F, 6.0F, 40.0F, 0.0F, false);
+		Base.texOffs(222, 34).addBox(-22.0F, -80.0F, -17.0F, 1.0F, 1.0F, 34.0F, 0.0F, false);
+		Base.texOffs(56, 271).addBox(-22.0F, -79.0F, -17.0F, 1.0F, 75.0F, 1.0F, 0.0F, false);
+		Base.texOffs(60, 271).addBox(-22.0F, -79.0F, 16.0F, 1.0F, 75.0F, 1.0F, 0.0F, false);
+		Base.texOffs(144, 99).addBox(-17.0F, -80.0F, 21.0F, 34.0F, 1.0F, 1.0F, 0.0F, false);
+		Base.texOffs(48, 271).addBox(-17.0F, -79.0F, 21.0F, 1.0F, 75.0F, 1.0F, 0.0F, false);
+		Base.texOffs(52, 271).addBox(16.0F, -79.0F, 21.0F, 1.0F, 75.0F, 1.0F, 0.0F, false);
+		Base.texOffs(216, 165).addBox(21.0F, -80.0F, -17.0F, 1.0F, 1.0F, 34.0F, 0.0F, false);
+		Base.texOffs(40, 271).addBox(21.0F, -79.0F, 16.0F, 1.0F, 75.0F, 1.0F, 0.0F, false);
+		Base.texOffs(44, 271).addBox(21.0F, -79.0F, -17.0F, 1.0F, 75.0F, 1.0F, 0.0F, false);
+		Base.texOffs(48, 149).addBox(17.0F, -87.0F, -23.0F, 6.0F, 83.0F, 6.0F, 0.0F, false);
+		Base.texOffs(0, 149).addBox(17.0F, -87.0F, 17.0F, 6.0F, 83.0F, 6.0F, 0.0F, false);
+		Base.texOffs(24, 149).addBox(-23.0F, -87.0F, 17.0F, 6.0F, 83.0F, 6.0F, 0.0F, false);
+		Base.texOffs(232, 267).addBox(-21.0F, -79.0F, -2.0F, 1.0F, 75.0F, 4.0F, 0.0F, false);
+		Base.texOffs(258, 267).addBox(-22.0F, -79.0F, -1.0F, 1.0F, 75.0F, 2.0F, 0.0F, false);
+		Base.texOffs(228, 69).addBox(-21.0F, -8.0F, -15.0F, 1.0F, 4.0F, 30.0F, 0.0F, false);
+		Base.texOffs(160, 244).addBox(-21.0F, -26.0F, -15.0F, 1.0F, 3.0F, 30.0F, 0.0F, false);
+		Base.texOffs(192, 214).addBox(-20.5F, -23.0F, -15.0F, 1.0F, 15.0F, 30.0F, 0.0F, false);
+		Base.texOffs(160, 199).addBox(-20.5F, -41.0F, -15.0F, 1.0F, 15.0F, 30.0F, 0.0F, false);
+		Base.texOffs(94, 244).addBox(-21.0F, -44.0F, -15.0F, 1.0F, 3.0F, 30.0F, 0.0F, false);
+		Base.texOffs(96, 199).addBox(-20.5F, -59.0F, -15.0F, 1.0F, 15.0F, 30.0F, 0.0F, false);
+		Base.texOffs(242, 0).addBox(-21.0F, -62.0F, -15.0F, 1.0F, 3.0F, 30.0F, 0.0F, false);
+		Base.texOffs(188, 154).addBox(-20.5F, -77.0F, -15.0F, 1.0F, 15.0F, 30.0F, 0.0F, false);
+		Base.texOffs(0, 0).addBox(-25.0F, -3.0F, -25.0F, 50.0F, 3.0F, 50.0F, 0.0F, false);
+
+		cube_r1 = new ModelRenderer(this);
+		cube_r1.setPos(0.0F, -101.5F, 0.0F);
+		Base.addChild(cube_r1);
+		setRotationAngle(cube_r1, 0.0F, 0.7854F, 0.0F);
+		cube_r1.texOffs(31, 2).addBox(-1.5F, 4.5F, -1.5F, 3.0F, 1.0F, 3.0F, 0.0F, false);
+		cube_r1.texOffs(31, 2).addBox(-1.5F, 5.5F, -1.5F, 3.0F, 1.0F, 3.0F, 0.0F, false);
+		cube_r1.texOffs(31, 2).addBox(-1.5F, 3.5F, -1.5F, 3.0F, 1.0F, 3.0F, 0.0F, false);
+		cube_r1.texOffs(31, 2).addBox(-1.5F, 2.5F, -1.5F, 3.0F, 1.0F, 3.0F, 0.0F, false);
+
+		bone7 = new ModelRenderer(this);
+		bone7.setPos(0.0F, 0.0F, 0.0F);
+		Base.addChild(bone7);
+		setRotationAngle(bone7, 0.0F, 1.5708F, 0.0F);
+
+
+		cube_r2 = new ModelRenderer(this);
+		cube_r2.setPos(-24.0F, -3.3F, -24.0F);
+		bone7.addChild(cube_r2);
+		setRotationAngle(cube_r2, -0.7854F, 0.0F, 0.7854F);
+		cube_r2.texOffs(48, 49).addBox(-0.5F, -0.35F, -0.35F, 1.0F, 1.0F, 1.0F, 0.0F, false);
+
+		cube_r3 = new ModelRenderer(this);
+		cube_r3.setPos(-24.0F, -3.3F, 24.0F);
+		bone7.addChild(cube_r3);
+		setRotationAngle(cube_r3, -0.7854F, 0.0F, 0.7854F);
+		cube_r3.texOffs(1, 49).addBox(-0.5F, -0.35F, -0.35F, 1.0F, 1.0F, 1.0F, 0.0F, false);
+
+		cube_r4 = new ModelRenderer(this);
+		cube_r4.setPos(-24.0F, -3.3F, 0.0F);
+		bone7.addChild(cube_r4);
+		setRotationAngle(cube_r4, 0.0F, 0.0F, 0.7854F);
+		cube_r4.texOffs(1, 2).addBox(-0.5F, -0.5F, -24.0F, 1.0F, 1.0F, 48.0F, 0.0F, false);
+		cube_r4.texOffs(1, 2).addBox(-0.5F, -0.1F, -24.0F, 1.0F, 1.0F, 48.0F, 0.0F, false);
+
 		LeftDoor = new ModelRenderer(this);
-		LeftDoor.setPos(-16.0F, -18.7692F, -21.0F);
+		LeftDoor.setPos(-16.0F, -42.7692F, -21.0F);
+		Base.addChild(LeftDoor);
 		LeftDoor.texOffs(270, 267).addBox(15.0F, -36.2308F, -1.0F, 2.0F, 75.0F, 1.0F, 0.0F, false);
 		LeftDoor.texOffs(6, 271).addBox(14.0F, -36.2308F, 0.0F, 2.0F, 75.0F, 1.0F, 0.0F, false);
 		LeftDoor.texOffs(36, 271).addBox(0.0F, -36.2308F, 0.0F, 1.0F, 75.0F, 1.0F, 0.0F, false);
@@ -184,7 +299,7 @@ public class McGannModel extends ExteriorModel {
 		LeftDoor.texOffs(127, 327).addBox(1.0F, -16.2308F, 1.6F, 13.0F, 1.0F, 1.0F, 0.0F, false);
 		LeftDoor.texOffs(127, 327).addBox(1.0F, 19.7692F, 0.6F, 13.0F, 15.0F, 1.0F, 0.0F, false);
 		LeftDoor.texOffs(126, 138).addBox(1.0F, -19.2308F, 0.0F, 13.0F, 3.0F, 1.0F, 0.0F, false);
-		LeftDoor.texOffs(0, 0).addBox(1.0F, -34.2308F, 0.5F, 13.0F, 15.0F, 1.0F, 0.0F, false);
+		LeftDoor.texOffs(0, 0).addBox(1.0F, -34.2308F, 0.45F, 13.0F, 15.0F, 1.0F, 0.0F, false);
 		LeftDoor.texOffs(0, 134).addBox(1.0F, -36.2308F, 0.0F, 13.0F, 2.0F, 1.0F, 0.0F, false);
 		LeftDoor.texOffs(110, 306).addBox(1.0F, -19.2308F, 1.0F, 13.0F, 3.0F, 1.0F, 0.0F, false);
 		LeftDoor.texOffs(86, 273).addBox(14.0F, -36.2308F, 1.0F, 2.0F, 75.0F, 1.0F, 0.0F, false);
@@ -202,134 +317,14 @@ public class McGannModel extends ExteriorModel {
 		phone.texOffs(129, 328).addBox(-13.0F, -15.0F, 1.0F, 13.0F, 15.0F, 0.0F, 0.0F, false);
 		phone.texOffs(40, 6).addBox(-1.0F, -9.5F, -1.0F, 1.0F, 3.0F, 1.0F, 0.0F, false);
 
-		LeftDoorEmmisive = new LightModelRenderer(this);
+		LeftDoorEmmisive = new ModelRenderer(this);
 		LeftDoorEmmisive.setPos(16.0F, -15.2308F, 22.0F);
 		LeftDoor.addChild(LeftDoorEmmisive);
-		LeftDoorEmmisive.texOffs(0, 480).addBox(-15.0F, -19.0F, -21.5F, 13.0F, 15.0F, 1.0F, 0.0F, false);
+		LeftDoorEmmisive.texOffs(0, 480).addBox(-15.0F, -19.0F, -21.56F, 13.0F, 15.0F, 1.0F, 0.0F, false);
 
-		RightDoor = new ModelRenderer(this);
-		RightDoor.setPos(16.0F, -18.8333F, -21.0F);
-		RightDoor.texOffs(0, 271).addBox(-16.0F, -36.1667F, 0.0F, 2.0F, 75.0F, 1.0F, 0.0F, false);
-		RightDoor.texOffs(126, 120).addBox(-14.0F, 34.8333F, 0.0F, 13.0F, 4.0F, 1.0F, 0.0F, false);
-		RightDoor.texOffs(144, 65).addBox(-14.0F, 16.8333F, 0.0F, 13.0F, 3.0F, 1.0F, 0.0F, false);
-		RightDoor.texOffs(0, 102).addBox(-14.0F, 19.8333F, 0.5F, 13.0F, 15.0F, 1.0F, 0.0F, false);
-		RightDoor.texOffs(0, 85).addBox(-14.0F, 1.8333F, 0.5F, 13.0F, 15.0F, 1.0F, 0.0F, false);
-		RightDoor.texOffs(43, 9).addBox(-15.0F, -7.1667F, -1.0F, 1.0F, 4.0F, 1.0F, 0.0F, false);
-		RightDoor.texOffs(44, 18).addBox(-15.0F, -11.1667F, -1.0F, 1.0F, 4.0F, 1.0F, 0.0F, false);
-		RightDoor.texOffs(144, 53).addBox(-14.0F, -1.1667F, 0.0F, 13.0F, 3.0F, 1.0F, 0.0F, false);
-		RightDoor.texOffs(0, 53).addBox(-14.0F, -16.1667F, 0.5F, 13.0F, 15.0F, 1.0F, 0.0F, false);
-		RightDoor.texOffs(127, 327).addBox(-14.0F, -16.1667F, 0.6F, 13.0F, 15.0F, 1.0F, 0.0F, false);
-		RightDoor.texOffs(127, 327).addBox(-14.0F, 1.8333F, 0.6F, 13.0F, 15.0F, 1.0F, 0.0F, false);
-		RightDoor.texOffs(127, 327).addBox(-14.0F, 19.8333F, 0.6F, 13.0F, 15.0F, 1.0F, 0.0F, false);
-		RightDoor.texOffs(0, 138).addBox(-14.0F, -19.1667F, 0.0F, 13.0F, 3.0F, 1.0F, 0.0F, false);
-		RightDoor.texOffs(0, 16).addBox(-14.0F, -34.1667F, 0.5F, 13.0F, 15.0F, 1.0F, 0.0F, false);
-		RightDoor.texOffs(126, 130).addBox(-14.0F, -36.1667F, 0.0F, 13.0F, 2.0F, 1.0F, 0.0F, false);
-		RightDoor.texOffs(32, 271).addBox(-1.0F, -36.1667F, 0.0F, 1.0F, 75.0F, 1.0F, 0.0F, false);
-		RightDoor.texOffs(110, 306).addBox(-14.0F, 34.8333F, 1.0F, 13.0F, 4.0F, 1.0F, 0.0F, false);
-		RightDoor.texOffs(86, 273).addBox(-16.0F, -36.1667F, 1.0F, 2.0F, 75.0F, 1.0F, 0.0F, false);
-		RightDoor.texOffs(86, 273).addBox(-1.0F, -36.1667F, 1.0F, 1.0F, 75.0F, 1.0F, 0.0F, false);
-		RightDoor.texOffs(110, 306).addBox(-14.0F, 16.8333F, 1.0F, 13.0F, 3.0F, 1.0F, 0.0F, false);
-		RightDoor.texOffs(110, 306).addBox(-14.0F, -1.1667F, 1.0F, 13.0F, 3.0F, 1.0F, 0.0F, false);
-		RightDoor.texOffs(110, 306).addBox(-14.0F, -19.1667F, 1.0F, 13.0F, 3.0F, 1.0F, 0.0F, false);
-		RightDoor.texOffs(110, 306).addBox(-14.0F, -36.1667F, 1.0F, 13.0F, 2.0F, 1.0F, 0.0F, false);
-
-		RightDoorEmmisives = new LightModelRenderer(this);
-		RightDoorEmmisives.setPos(-16.0F, -15.1667F, 22.0F);
-		RightDoor.addChild(RightDoorEmmisives);
-		RightDoorEmmisives.texOffs(0, 496).addBox(2.0F, -19.0F, -21.5F, 13.0F, 15.0F, 1.0F, 0.0F, false);
-
-		base = new ModelRenderer(this);
-		base.setPos(0.0F, 24.0F, 0.0F);
-		base.texOffs(62, 238).addBox(-21.0F, -79.0F, -15.0F, 1.0F, 2.0F, 30.0F, 0.0F, false);
-		base.texOffs(28, 271).addBox(-21.0F, -79.0F, -16.0F, 1.0F, 75.0F, 1.0F, 0.0F, false);
-		base.texOffs(24, 271).addBox(-21.0F, -79.0F, 15.0F, 1.0F, 75.0F, 1.0F, 0.0F, false);
-		base.texOffs(242, 267).addBox(-2.0F, -79.0F, 20.0F, 4.0F, 75.0F, 1.0F, 0.0F, false);
-		base.texOffs(264, 267).addBox(-1.0F, -79.0F, 21.0F, 2.0F, 75.0F, 1.0F, 0.0F, false);
-		base.texOffs(150, 45).addBox(-15.0F, -8.0F, 20.0F, 30.0F, 4.0F, 1.0F, 0.0F, false);
-		base.texOffs(182, 11).addBox(-15.0F, -26.0F, 20.0F, 30.0F, 3.0F, 1.0F, 0.0F, false);
-		base.texOffs(193, 69).addBox(-15.0F, -23.0F, 19.5F, 30.0F, 15.0F, 1.0F, 0.0F, false);
-		base.texOffs(220, 149).addBox(-15.0F, -41.0F, 19.5F, 30.0F, 15.0F, 1.0F, 0.0F, false);
-		base.texOffs(182, 15).addBox(-15.0F, -44.0F, 20.0F, 30.0F, 3.0F, 1.0F, 0.0F, false);
-		base.texOffs(252, 165).addBox(-15.0F, -59.0F, 19.5F, 30.0F, 15.0F, 1.0F, 0.0F, false);
-		base.texOffs(182, 19).addBox(-15.0F, -62.0F, 20.0F, 30.0F, 3.0F, 1.0F, 0.0F, false);
-		base.texOffs(187, 183).addBox(-15.0F, -77.0F, 19.5F, 30.0F, 15.0F, 1.0F, 0.0F, false);
-		base.texOffs(194, 85).addBox(-15.0F, -79.0F, 20.0F, 30.0F, 2.0F, 1.0F, 0.0F, false);
-		base.texOffs(16, 271).addBox(-16.0F, -79.0F, 20.0F, 1.0F, 75.0F, 1.0F, 0.0F, false);
-		base.texOffs(20, 271).addBox(15.0F, -79.0F, 20.0F, 1.0F, 75.0F, 1.0F, 0.0F, false);
-		base.texOffs(222, 267).addBox(20.0F, -79.0F, -2.0F, 1.0F, 75.0F, 4.0F, 0.0F, false);
-		base.texOffs(252, 267).addBox(21.0F, -79.0F, -1.0F, 1.0F, 75.0F, 2.0F, 0.0F, false);
-		base.texOffs(224, 200).addBox(20.0F, -8.0F, -15.0F, 1.0F, 4.0F, 30.0F, 0.0F, false);
-		base.texOffs(228, 103).addBox(20.0F, -26.0F, -15.0F, 1.0F, 3.0F, 30.0F, 0.0F, false);
-		base.texOffs(150, 0).addBox(19.5F, -23.0F, -15.0F, 1.0F, 15.0F, 30.0F, 0.0F, false);
-		base.texOffs(96, 154).addBox(19.5F, -41.0F, -15.0F, 1.0F, 15.0F, 30.0F, 0.0F, false);
-		base.texOffs(128, 229).addBox(20.0F, -44.0F, -15.0F, 1.0F, 3.0F, 30.0F, 0.0F, false);
-		base.texOffs(128, 184).addBox(19.5F, -59.0F, -15.0F, 1.0F, 15.0F, 30.0F, 0.0F, false);
-		base.texOffs(224, 234).addBox(20.0F, -62.0F, -15.0F, 1.0F, 3.0F, 30.0F, 0.0F, false);
-		base.texOffs(188, 154).addBox(19.5F, -77.0F, -15.0F, 1.0F, 15.0F, 30.0F, 0.0F, false);
-		base.texOffs(0, 238).addBox(20.0F, -79.0F, -15.0F, 1.0F, 2.0F, 30.0F, 0.0F, false);
-		base.texOffs(156, 262).addBox(20.0F, -79.0F, 15.0F, 1.0F, 75.0F, 1.0F, 0.0F, false);
-		base.texOffs(12, 271).addBox(20.0F, -79.0F, -16.0F, 1.0F, 75.0F, 1.0F, 0.0F, false);
-		base.texOffs(0, 0).addBox(-25.0F, -3.0F, -25.0F, 50.0F, 3.0F, 50.0F, 0.0F, false);
-		base.texOffs(0, 53).addBox(-24.0F, -4.0F, -24.0F, 48.0F, 1.0F, 48.0F, 0.0F, false);
-		base.texOffs(72, 149).addBox(-23.0F, -87.0F, -23.0F, 6.0F, 83.0F, 6.0F, 0.0F, false);
-		base.texOffs(68, 271).addBox(-17.0F, -79.0F, -22.0F, 1.0F, 75.0F, 1.0F, 0.0F, false);
-		base.texOffs(64, 271).addBox(16.0F, -79.0F, -22.0F, 1.0F, 75.0F, 1.0F, 0.0F, false);
-		base.texOffs(90, 149).addBox(-17.0F, -80.0F, -22.0F, 34.0F, 1.0F, 1.0F, 0.0F, false);
-		base.texOffs(182, 0).addBox(-20.0F, -86.0F, -26.0F, 40.0F, 6.0F, 5.0F, 0.0F, false);
-		base.texOffs(0, 102).addBox(-21.0F, -91.0F, -21.0F, 42.0F, 5.0F, 42.0F, 0.0F, false);
-		base.texOffs(116, 350).addBox(-21.0F, -79.0F, -21.0F, 42.0F, 0.0F, 42.0F, 0.0F, false);
-		base.texOffs(116, 350).addBox(-21.0F, -4.05F, -21.0F, 42.0F, 0.0F, 42.0F, 0.0F, false);
-		base.texOffs(126, 102).addBox(-17.0F, -93.0F, -17.0F, 34.0F, 2.0F, 34.0F, 0.0F, false);
-		base.texOffs(28, 0).addBox(-2.5F, -95.0F, -2.5F, 5.0F, 1.0F, 5.0F, 0.0F, false);
-		base.texOffs(28, 0).addBox(-2.5F, -100.0F, -2.5F, 5.0F, 1.0F, 5.0F, 0.0F, false);
-		base.texOffs(126, 111).addBox(-4.0F, -94.0F, -4.0F, 8.0F, 1.0F, 8.0F, 0.0F, false);
-		base.texOffs(126, 102).addBox(-4.0F, -101.0F, -4.0F, 8.0F, 1.0F, 8.0F, 0.0F, false);
-		base.texOffs(40, 38).addBox(-3.0F, -100.0F, -3.0F, 1.0F, 6.0F, 1.0F, 0.0F, false);
-		base.texOffs(36, 38).addBox(-3.0F, -100.0F, 2.0F, 1.0F, 6.0F, 1.0F, 0.0F, false);
-		base.texOffs(28, 38).addBox(2.0F, -100.0F, 2.0F, 1.0F, 6.0F, 1.0F, 0.0F, false);
-		base.texOffs(32, 38).addBox(2.0F, -100.0F, -3.0F, 1.0F, 6.0F, 1.0F, 0.0F, false);
-		base.texOffs(28, 31).addBox(-22.0F, -90.0F, -22.0F, 4.0F, 3.0F, 4.0F, 0.0F, false);
-		base.texOffs(28, 24).addBox(18.0F, -90.0F, -22.0F, 4.0F, 3.0F, 4.0F, 0.0F, false);
-		base.texOffs(28, 10).addBox(18.0F, -90.0F, 18.0F, 4.0F, 3.0F, 4.0F, 0.0F, false);
-		base.texOffs(28, 17).addBox(-22.0F, -90.0F, 18.0F, 4.0F, 3.0F, 4.0F, 0.0F, false);
-		base.texOffs(144, 53).addBox(-26.0F, -86.0F, -20.0F, 5.0F, 6.0F, 40.0F, 0.0F, false);
-		base.texOffs(178, 138).addBox(-20.0F, -86.0F, 21.0F, 40.0F, 6.0F, 5.0F, 0.0F, false);
-		base.texOffs(128, 138).addBox(21.0F, -86.0F, -20.0F, 5.0F, 6.0F, 40.0F, 0.0F, false);
-		base.texOffs(222, 34).addBox(-22.0F, -80.0F, -17.0F, 1.0F, 1.0F, 34.0F, 0.0F, false);
-		base.texOffs(56, 271).addBox(-22.0F, -79.0F, -17.0F, 1.0F, 75.0F, 1.0F, 0.0F, false);
-		base.texOffs(60, 271).addBox(-22.0F, -79.0F, 16.0F, 1.0F, 75.0F, 1.0F, 0.0F, false);
-		base.texOffs(144, 99).addBox(-17.0F, -80.0F, 21.0F, 34.0F, 1.0F, 1.0F, 0.0F, false);
-		base.texOffs(48, 271).addBox(-17.0F, -79.0F, 21.0F, 1.0F, 75.0F, 1.0F, 0.0F, false);
-		base.texOffs(52, 271).addBox(16.0F, -79.0F, 21.0F, 1.0F, 75.0F, 1.0F, 0.0F, false);
-		base.texOffs(216, 165).addBox(21.0F, -80.0F, -17.0F, 1.0F, 1.0F, 34.0F, 0.0F, false);
-		base.texOffs(40, 271).addBox(21.0F, -79.0F, 16.0F, 1.0F, 75.0F, 1.0F, 0.0F, false);
-		base.texOffs(44, 271).addBox(21.0F, -79.0F, -17.0F, 1.0F, 75.0F, 1.0F, 0.0F, false);
-		base.texOffs(48, 149).addBox(17.0F, -87.0F, -23.0F, 6.0F, 83.0F, 6.0F, 0.0F, false);
-		base.texOffs(0, 149).addBox(17.0F, -87.0F, 17.0F, 6.0F, 83.0F, 6.0F, 0.0F, false);
-		base.texOffs(24, 149).addBox(-23.0F, -87.0F, 17.0F, 6.0F, 83.0F, 6.0F, 0.0F, false);
-		base.texOffs(232, 267).addBox(-21.0F, -79.0F, -2.0F, 1.0F, 75.0F, 4.0F, 0.0F, false);
-		base.texOffs(258, 267).addBox(-22.0F, -79.0F, -1.0F, 1.0F, 75.0F, 2.0F, 0.0F, false);
-		base.texOffs(228, 69).addBox(-21.0F, -8.0F, -15.0F, 1.0F, 4.0F, 30.0F, 0.0F, false);
-		base.texOffs(160, 244).addBox(-21.0F, -26.0F, -15.0F, 1.0F, 3.0F, 30.0F, 0.0F, false);
-		base.texOffs(192, 214).addBox(-20.5F, -23.0F, -15.0F, 1.0F, 15.0F, 30.0F, 0.0F, false);
-		base.texOffs(160, 199).addBox(-20.5F, -41.0F, -15.0F, 1.0F, 15.0F, 30.0F, 0.0F, false);
-		base.texOffs(94, 244).addBox(-21.0F, -44.0F, -15.0F, 1.0F, 3.0F, 30.0F, 0.0F, false);
-		base.texOffs(96, 199).addBox(-20.5F, -59.0F, -15.0F, 1.0F, 15.0F, 30.0F, 0.0F, false);
-		base.texOffs(242, 0).addBox(-21.0F, -62.0F, -15.0F, 1.0F, 3.0F, 30.0F, 0.0F, false);
-		base.texOffs(188, 154).addBox(-20.5F, -77.0F, -15.0F, 1.0F, 15.0F, 30.0F, 0.0F, false);
-
-		cube_r1 = new ModelRenderer(this);
-		cube_r1.setPos(0.0F, -101.5F, 0.0F);
-		base.addChild(cube_r1);
-		setRotationAngle(cube_r1, 0.0F, 0.7854F, 0.0F);
-		cube_r1.texOffs(31, 2).addBox(-1.5F, 4.5F, -1.5F, 3.0F, 1.0F, 3.0F, 0.0F, false);
-		cube_r1.texOffs(31, 2).addBox(-1.5F, 5.5F, -1.5F, 3.0F, 1.0F, 3.0F, 0.0F, false);
-		cube_r1.texOffs(31, 2).addBox(-1.5F, 3.5F, -1.5F, 3.0F, 1.0F, 3.0F, 0.0F, false);
-		cube_r1.texOffs(31, 2).addBox(-1.5F, 2.5F, -1.5F, 3.0F, 1.0F, 3.0F, 0.0F, false);
-
-		Emmisives = new LightModelRenderer(this);
+		Emmisives = new ModelRenderer(this);
 		Emmisives.setPos(1.0F, -57.0F, 0.0F);
-		base.addChild(Emmisives);
+		Base.addChild(Emmisives);
 		Emmisives.texOffs(35, 466).addBox(18.5F, -20.0F, -15.0F, 1.0F, 15.0F, 30.0F, 0.0F, false);
 		Emmisives.texOffs(28, 53).addBox(-3.0F, -43.0F, -2.0F, 4.0F, 6.0F, 4.0F, 0.0F, false);
 		Emmisives.texOffs(34, 495).addBox(-16.0F, -20.0F, 19.5F, 30.0F, 15.0F, 1.0F, 0.0F, false);
@@ -1054,89 +1049,41 @@ public class McGannModel extends ExteriorModel {
 		character_x4.texOffs(292, 53).addBox(1.66F, 6.3F, 0.0F, 0.8F, 1.1F, 9.6F, 0.0F, false);
 		character_x4.texOffs(292, 53).addBox(0.96F, 5.1F, 0.0F, 1.0F, 1.4F, 9.6F, 0.0F, false);
 
-		bone3 = new ModelRenderer(this);
-		bone3.setPos(0.0F, 0.0F, 0.0F);
-		base.addChild(bone3);
-		setRotationAngle(bone3, -3.1416F, 0.0F, -3.1416F);
-		bone3.texOffs(94, 277).addBox(-20.0F, -8.0F, -15.0F, 1.0F, 4.0F, 30.0F, 0.0F, false);
-		bone3.texOffs(94, 315).addBox(-20.4F, -23.0F, -15.0F, 1.0F, 15.0F, 30.0F, 0.0F, false);
-		bone3.texOffs(94, 277).addBox(-20.0F, -26.0F, -15.0F, 1.0F, 3.0F, 30.0F, 0.0F, false);
-		bone3.texOffs(83, 270).addBox(-20.0F, -79.0F, -19.0F, 1.0F, 75.0F, 4.0F, 0.0F, false);
-		bone3.texOffs(83, 270).addBox(-17.9F, -79.0F, -21.0F, 1.0F, 75.0F, 4.0F, 0.0F, false);
-		bone3.texOffs(83, 270).addBox(-17.9F, -79.0F, 17.0F, 1.0F, 75.0F, 4.0F, 0.0F, false);
-		bone3.texOffs(94, 277).addBox(-20.0F, -44.0F, -15.0F, 1.0F, 3.0F, 30.0F, 0.0F, false);
-		bone3.texOffs(94, 315).addBox(-20.4F, -41.0F, -15.0F, 1.0F, 15.0F, 30.0F, 0.0F, false);
-		bone3.texOffs(83, 270).addBox(-20.0F, -79.0F, 15.0F, 1.0F, 75.0F, 4.0F, 0.0F, false);
-		bone3.texOffs(94, 315).addBox(-20.4F, -59.0F, -15.0F, 1.0F, 15.0F, 30.0F, 0.0F, false);
-		bone3.texOffs(94, 277).addBox(-20.0F, -62.0F, -15.0F, 1.0F, 3.0F, 30.0F, 0.0F, false);
-		bone3.texOffs(83, 270).addBox(-20.0F, -79.0F, -2.0F, 1.0F, 75.0F, 4.0F, 0.0F, false);
-		bone3.texOffs(94, 277).addBox(-20.0F, -79.0F, -15.0F, 1.0F, 2.0F, 30.0F, 0.0F, false);
+		RightDoor = new ModelRenderer(this);
+		RightDoor.setPos(16.0F, -42.8333F, -21.0F);
+		Base.addChild(RightDoor);
+		RightDoor.texOffs(0, 271).addBox(-16.0F, -36.1667F, 0.0F, 2.0F, 75.0F, 1.0F, 0.0F, false);
+		RightDoor.texOffs(126, 120).addBox(-14.0F, 34.8333F, 0.0F, 13.0F, 4.0F, 1.0F, 0.0F, false);
+		RightDoor.texOffs(144, 65).addBox(-14.0F, 16.8333F, 0.0F, 13.0F, 3.0F, 1.0F, 0.0F, false);
+		RightDoor.texOffs(0, 102).addBox(-14.0F, 19.8333F, 0.5F, 13.0F, 15.0F, 1.0F, 0.0F, false);
+		RightDoor.texOffs(0, 85).addBox(-14.0F, 1.8333F, 0.5F, 13.0F, 15.0F, 1.0F, 0.0F, false);
+		RightDoor.texOffs(43, 9).addBox(-15.0F, -7.1667F, -1.0F, 1.0F, 4.0F, 1.0F, 0.0F, false);
+		RightDoor.texOffs(44, 18).addBox(-15.0F, -11.1667F, -1.0F, 1.0F, 4.0F, 1.0F, 0.0F, false);
+		RightDoor.texOffs(144, 53).addBox(-14.0F, -1.1667F, 0.0F, 13.0F, 3.0F, 1.0F, 0.0F, false);
+		RightDoor.texOffs(0, 53).addBox(-14.0F, -16.1667F, 0.5F, 13.0F, 15.0F, 1.0F, 0.0F, false);
+		RightDoor.texOffs(127, 327).addBox(-14.0F, -16.1667F, 0.6F, 13.0F, 15.0F, 1.0F, 0.0F, false);
+		RightDoor.texOffs(127, 327).addBox(-14.0F, 1.8333F, 0.6F, 13.0F, 15.0F, 1.0F, 0.0F, false);
+		RightDoor.texOffs(127, 327).addBox(-14.0F, 19.8333F, 0.6F, 13.0F, 15.0F, 1.0F, 0.0F, false);
+		RightDoor.texOffs(0, 138).addBox(-14.0F, -19.1667F, 0.0F, 13.0F, 3.0F, 1.0F, 0.0F, false);
+		RightDoor.texOffs(0, 16).addBox(-14.0F, -34.1667F, 0.45F, 13.0F, 15.0F, 1.0F, 0.0F, false);
+		RightDoor.texOffs(126, 130).addBox(-14.0F, -36.1667F, 0.0F, 13.0F, 2.0F, 1.0F, 0.0F, false);
+		RightDoor.texOffs(32, 271).addBox(-1.0F, -36.1667F, 0.0F, 1.0F, 75.0F, 1.0F, 0.0F, false);
+		RightDoor.texOffs(110, 306).addBox(-14.0F, 34.8333F, 1.0F, 13.0F, 4.0F, 1.0F, 0.0F, false);
+		RightDoor.texOffs(86, 273).addBox(-16.0F, -36.1667F, 1.0F, 2.0F, 75.0F, 1.0F, 0.0F, false);
+		RightDoor.texOffs(86, 273).addBox(-1.0F, -36.1667F, 1.0F, 1.0F, 75.0F, 1.0F, 0.0F, false);
+		RightDoor.texOffs(110, 306).addBox(-14.0F, 16.8333F, 1.0F, 13.0F, 3.0F, 1.0F, 0.0F, false);
+		RightDoor.texOffs(110, 306).addBox(-14.0F, -1.1667F, 1.0F, 13.0F, 3.0F, 1.0F, 0.0F, false);
+		RightDoor.texOffs(110, 306).addBox(-14.0F, -19.1667F, 1.0F, 13.0F, 3.0F, 1.0F, 0.0F, false);
+		RightDoor.texOffs(110, 306).addBox(-14.0F, -36.1667F, 1.0F, 13.0F, 2.0F, 1.0F, 0.0F, false);
 
-		bone2 = new ModelRenderer(this);
-		bone2.setPos(0.0F, 0.0F, 0.0F);
-		base.addChild(bone2);
-		setRotationAngle(bone2, 0.0F, 1.5708F, 0.0F);
-		bone2.texOffs(94, 277).addBox(-20.0F, -8.0F, -15.0F, 1.0F, 4.0F, 30.0F, 0.0F, false);
-		bone2.texOffs(94, 315).addBox(-20.4F, -23.0F, -15.0F, 1.0F, 15.0F, 30.0F, 0.0F, false);
-		bone2.texOffs(94, 277).addBox(-20.0F, -26.0F, -15.0F, 1.0F, 3.0F, 30.0F, 0.0F, false);
-		bone2.texOffs(83, 270).addBox(-20.0F, -79.0F, -19.0F, 1.0F, 75.0F, 4.0F, 0.0F, false);
-		bone2.texOffs(83, 270).addBox(-17.9F, -79.0F, -21.0F, 1.0F, 75.0F, 4.0F, 0.0F, false);
-		bone2.texOffs(83, 270).addBox(16.9F, -79.0F, -21.0F, 1.0F, 75.0F, 4.0F, 0.0F, false);
-		bone2.texOffs(94, 277).addBox(-20.0F, -44.0F, -15.0F, 1.0F, 3.0F, 30.0F, 0.0F, false);
-		bone2.texOffs(94, 315).addBox(-20.4F, -41.0F, -15.0F, 1.0F, 15.0F, 30.0F, 0.0F, false);
-		bone2.texOffs(83, 270).addBox(-20.0F, -79.0F, 15.0F, 1.0F, 75.0F, 4.0F, 0.0F, false);
-		bone2.texOffs(83, 270).addBox(16.9F, -79.0F, 17.0F, 1.0F, 75.0F, 4.0F, 0.0F, false);
-		bone2.texOffs(83, 270).addBox(-17.9F, -79.0F, 17.0F, 1.0F, 75.0F, 4.0F, 0.0F, false);
-		bone2.texOffs(94, 315).addBox(-20.4F, -59.0F, -15.0F, 1.0F, 15.0F, 30.0F, 0.0F, false);
-		bone2.texOffs(94, 277).addBox(-20.0F, -62.0F, -15.0F, 1.0F, 3.0F, 30.0F, 0.0F, false);
-		bone2.texOffs(83, 270).addBox(-20.0F, -79.0F, -2.0F, 1.0F, 75.0F, 4.0F, 0.0F, false);
-		bone2.texOffs(94, 277).addBox(-20.0F, -79.0F, -15.0F, 1.0F, 2.0F, 30.0F, 0.0F, false);
-
-		bone = new ModelRenderer(this);
-		bone.setPos(0.0F, 0.0F, 0.0F);
-		base.addChild(bone);
-		bone.texOffs(94, 277).addBox(-20.0F, -8.0F, -15.0F, 1.0F, 4.0F, 30.0F, 0.0F, false);
-		bone.texOffs(94, 315).addBox(-20.4F, -23.0F, -15.0F, 1.0F, 15.0F, 30.0F, 0.0F, false);
-		bone.texOffs(94, 277).addBox(-20.0F, -26.0F, -15.0F, 1.0F, 3.0F, 30.0F, 0.0F, false);
-		bone.texOffs(83, 270).addBox(-20.0F, -79.0F, -19.0F, 1.0F, 75.0F, 4.0F, 0.0F, false);
-		bone.texOffs(94, 277).addBox(-20.0F, -44.0F, -15.0F, 1.0F, 3.0F, 30.0F, 0.0F, false);
-		bone.texOffs(94, 315).addBox(-20.4F, -41.0F, -15.0F, 1.0F, 15.0F, 30.0F, 0.0F, false);
-		bone.texOffs(83, 270).addBox(-20.0F, -79.0F, 15.0F, 1.0F, 75.0F, 4.0F, 0.0F, false);
-		bone.texOffs(83, 270).addBox(-17.9F, -79.0F, 17.0F, 1.0F, 75.0F, 4.0F, 0.0F, false);
-		bone.texOffs(83, 270).addBox(-17.9F, -79.0F, -21.0F, 1.0F, 75.0F, 4.0F, 0.0F, false);
-		bone.texOffs(94, 315).addBox(-20.4F, -59.0F, -15.0F, 1.0F, 15.0F, 30.0F, 0.0F, false);
-		bone.texOffs(94, 277).addBox(-20.0F, -62.0F, -15.0F, 1.0F, 3.0F, 30.0F, 0.0F, false);
-		bone.texOffs(83, 270).addBox(-20.0F, -79.0F, -2.0F, 1.0F, 75.0F, 4.0F, 0.0F, false);
-		bone.texOffs(94, 277).addBox(-20.0F, -79.0F, -15.0F, 1.0F, 2.0F, 30.0F, 0.0F, false);
-
-		bone7 = new ModelRenderer(this);
-		bone7.setPos(0.0F, 0.0F, 0.0F);
-		base.addChild(bone7);
-		setRotationAngle(bone7, 0.0F, 1.5708F, 0.0F);
-
-
-		cube_r2 = new ModelRenderer(this);
-		cube_r2.setPos(-24.0F, -3.3F, -24.0F);
-		bone7.addChild(cube_r2);
-		setRotationAngle(cube_r2, -0.7854F, 0.0F, 0.7854F);
-		cube_r2.texOffs(48, 49).addBox(-0.5F, -0.35F, -0.35F, 1.0F, 1.0F, 1.0F, 0.0F, false);
-
-		cube_r3 = new ModelRenderer(this);
-		cube_r3.setPos(-24.0F, -3.3F, 24.0F);
-		bone7.addChild(cube_r3);
-		setRotationAngle(cube_r3, -0.7854F, 0.0F, 0.7854F);
-		cube_r3.texOffs(1, 49).addBox(-0.5F, -0.35F, -0.35F, 1.0F, 1.0F, 1.0F, 0.0F, false);
-
-		cube_r4 = new ModelRenderer(this);
-		cube_r4.setPos(-24.0F, -3.3F, 0.0F);
-		bone7.addChild(cube_r4);
-		setRotationAngle(cube_r4, 0.0F, 0.0F, 0.7854F);
-		cube_r4.texOffs(1, 2).addBox(-0.5F, -0.5F, -24.0F, 1.0F, 1.0F, 48.0F, 0.0F, false);
-		cube_r4.texOffs(1, 2).addBox(-0.5F, -0.1F, -24.0F, 1.0F, 1.0F, 48.0F, 0.0F, false);
+		RightDoorEmmisives = new ModelRenderer(this);
+		RightDoorEmmisives.setPos(-16.0F, -15.1667F, 22.0F);
+		RightDoor.addChild(RightDoorEmmisives);
+		RightDoorEmmisives.texOffs(0, 496).addBox(2.0F, -19.0F, -21.56F, 13.0F, 15.0F, 1.0F, 0.0F, false);
 
 		bone6 = new ModelRenderer(this);
 		bone6.setPos(0.0F, 0.0F, 0.0F);
-		base.addChild(bone6);
+		Base.addChild(bone6);
 		setRotationAngle(bone6, -3.1416F, 0.0F, 3.1416F);
 
 
@@ -1161,7 +1108,7 @@ public class McGannModel extends ExteriorModel {
 
 		bone5 = new ModelRenderer(this);
 		bone5.setPos(0.0F, 0.0F, 0.0F);
-		base.addChild(bone5);
+		Base.addChild(bone5);
 		setRotationAngle(bone5, 0.0F, -1.5708F, 0.0F);
 
 
@@ -1184,9 +1131,64 @@ public class McGannModel extends ExteriorModel {
 		cube_r10.texOffs(1, 2).addBox(-0.5F, -0.5F, -24.0F, 1.0F, 1.0F, 48.0F, 0.0F, false);
 		cube_r10.texOffs(1, 2).addBox(-0.5F, -0.1F, -24.0F, 1.0F, 1.0F, 48.0F, 0.0F, false);
 
+		bone3 = new ModelRenderer(this);
+		bone3.setPos(0.0F, 0.0F, 0.0F);
+		Base.addChild(bone3);
+		setRotationAngle(bone3, -3.1416F, 0.0F, -3.1416F);
+		bone3.texOffs(94, 277).addBox(-20.0F, -8.0F, -15.0F, 1.0F, 4.0F, 30.0F, 0.0F, false);
+		bone3.texOffs(94, 315).addBox(-20.4F, -23.0F, -15.0F, 1.0F, 15.0F, 30.0F, 0.0F, false);
+		bone3.texOffs(94, 277).addBox(-20.0F, -26.0F, -15.0F, 1.0F, 3.0F, 30.0F, 0.0F, false);
+		bone3.texOffs(83, 270).addBox(-20.0F, -79.0F, -19.0F, 1.0F, 75.0F, 4.0F, 0.0F, false);
+		bone3.texOffs(83, 270).addBox(-17.9F, -79.0F, -21.0F, 1.0F, 75.0F, 4.0F, 0.0F, false);
+		bone3.texOffs(83, 270).addBox(-17.9F, -79.0F, 17.0F, 1.0F, 75.0F, 4.0F, 0.0F, false);
+		bone3.texOffs(94, 277).addBox(-20.0F, -44.0F, -15.0F, 1.0F, 3.0F, 30.0F, 0.0F, false);
+		bone3.texOffs(94, 315).addBox(-20.4F, -41.0F, -15.0F, 1.0F, 15.0F, 30.0F, 0.0F, false);
+		bone3.texOffs(83, 270).addBox(-20.0F, -79.0F, 15.0F, 1.0F, 75.0F, 4.0F, 0.0F, false);
+		bone3.texOffs(94, 315).addBox(-20.4F, -59.0F, -15.0F, 1.0F, 15.0F, 30.0F, 0.0F, false);
+		bone3.texOffs(94, 277).addBox(-20.0F, -62.0F, -15.0F, 1.0F, 3.0F, 30.0F, 0.0F, false);
+		bone3.texOffs(83, 270).addBox(-20.0F, -79.0F, -2.0F, 1.0F, 75.0F, 4.0F, 0.0F, false);
+		bone3.texOffs(94, 277).addBox(-20.0F, -79.0F, -15.0F, 1.0F, 2.0F, 30.0F, 0.0F, false);
+
+		bone2 = new ModelRenderer(this);
+		bone2.setPos(0.0F, 0.0F, 0.0F);
+		Base.addChild(bone2);
+		setRotationAngle(bone2, 0.0F, 1.5708F, 0.0F);
+		bone2.texOffs(94, 277).addBox(-20.0F, -8.0F, -15.0F, 1.0F, 4.0F, 30.0F, 0.0F, false);
+		bone2.texOffs(94, 315).addBox(-20.4F, -23.0F, -15.0F, 1.0F, 15.0F, 30.0F, 0.0F, false);
+		bone2.texOffs(94, 277).addBox(-20.0F, -26.0F, -15.0F, 1.0F, 3.0F, 30.0F, 0.0F, false);
+		bone2.texOffs(83, 270).addBox(-20.0F, -79.0F, -19.0F, 1.0F, 75.0F, 4.0F, 0.0F, false);
+		bone2.texOffs(83, 270).addBox(-17.9F, -79.0F, -21.0F, 1.0F, 75.0F, 4.0F, 0.0F, false);
+		bone2.texOffs(83, 270).addBox(16.9F, -79.0F, -21.0F, 1.0F, 75.0F, 4.0F, 0.0F, false);
+		bone2.texOffs(94, 277).addBox(-20.0F, -44.0F, -15.0F, 1.0F, 3.0F, 30.0F, 0.0F, false);
+		bone2.texOffs(94, 315).addBox(-20.4F, -41.0F, -15.0F, 1.0F, 15.0F, 30.0F, 0.0F, false);
+		bone2.texOffs(83, 270).addBox(-20.0F, -79.0F, 15.0F, 1.0F, 75.0F, 4.0F, 0.0F, false);
+		bone2.texOffs(83, 270).addBox(16.9F, -79.0F, 17.0F, 1.0F, 75.0F, 4.0F, 0.0F, false);
+		bone2.texOffs(83, 270).addBox(-17.9F, -79.0F, 17.0F, 1.0F, 75.0F, 4.0F, 0.0F, false);
+		bone2.texOffs(94, 315).addBox(-20.4F, -59.0F, -15.0F, 1.0F, 15.0F, 30.0F, 0.0F, false);
+		bone2.texOffs(94, 277).addBox(-20.0F, -62.0F, -15.0F, 1.0F, 3.0F, 30.0F, 0.0F, false);
+		bone2.texOffs(83, 270).addBox(-20.0F, -79.0F, -2.0F, 1.0F, 75.0F, 4.0F, 0.0F, false);
+		bone2.texOffs(94, 277).addBox(-20.0F, -79.0F, -15.0F, 1.0F, 2.0F, 30.0F, 0.0F, false);
+
+		bone = new ModelRenderer(this);
+		bone.setPos(0.0F, 0.0F, 0.0F);
+		Base.addChild(bone);
+		bone.texOffs(94, 277).addBox(-20.0F, -8.0F, -15.0F, 1.0F, 4.0F, 30.0F, 0.0F, false);
+		bone.texOffs(94, 315).addBox(-20.4F, -23.0F, -15.0F, 1.0F, 15.0F, 30.0F, 0.0F, false);
+		bone.texOffs(94, 277).addBox(-20.0F, -26.0F, -15.0F, 1.0F, 3.0F, 30.0F, 0.0F, false);
+		bone.texOffs(83, 270).addBox(-20.0F, -79.0F, -19.0F, 1.0F, 75.0F, 4.0F, 0.0F, false);
+		bone.texOffs(94, 277).addBox(-20.0F, -44.0F, -15.0F, 1.0F, 3.0F, 30.0F, 0.0F, false);
+		bone.texOffs(94, 315).addBox(-20.4F, -41.0F, -15.0F, 1.0F, 15.0F, 30.0F, 0.0F, false);
+		bone.texOffs(83, 270).addBox(-20.0F, -79.0F, 15.0F, 1.0F, 75.0F, 4.0F, 0.0F, false);
+		bone.texOffs(83, 270).addBox(-17.9F, -79.0F, 17.0F, 1.0F, 75.0F, 4.0F, 0.0F, false);
+		bone.texOffs(83, 270).addBox(-17.9F, -79.0F, -21.0F, 1.0F, 75.0F, 4.0F, 0.0F, false);
+		bone.texOffs(94, 315).addBox(-20.4F, -59.0F, -15.0F, 1.0F, 15.0F, 30.0F, 0.0F, false);
+		bone.texOffs(94, 277).addBox(-20.0F, -62.0F, -15.0F, 1.0F, 3.0F, 30.0F, 0.0F, false);
+		bone.texOffs(83, 270).addBox(-20.0F, -79.0F, -2.0F, 1.0F, 75.0F, 4.0F, 0.0F, false);
+		bone.texOffs(94, 277).addBox(-20.0F, -79.0F, -15.0F, 1.0F, 2.0F, 30.0F, 0.0F, false);
+
 		bone4 = new ModelRenderer(this);
 		bone4.setPos(0.0F, 0.0F, 0.0F);
-		base.addChild(bone4);
+		Base.addChild(bone4);
 
 
 		cube_r11 = new ModelRenderer(this);
@@ -1209,9 +1211,8 @@ public class McGannModel extends ExteriorModel {
 		cube_r13.texOffs(1, 2).addBox(-0.5F, -0.1F, -24.0F, 1.0F, 1.0F, 48.0F, 0.0F, false);
 
 		BOTI = new ModelRenderer(this);
-		BOTI.setPos(0.0F, 24.0F, 0.0F);
-		BOTI.texOffs(406, 164).addBox(-18.0F, -79.25F, -18.75F, 35.0F, 75.0F, 2.0F, 0.0F, false);
-	}
+		BOTI.setPos(0.0F, 21.0F, -18.75F);
+		BOTI.texOffs(442, 436).addBox(-17.0F, -76.0F, -0.25F, 34.0F, 76.0F, 0.0F, 0.0F, false);}
 
 	@Override
 	public void setupAnim(Entity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch){
@@ -1222,7 +1223,7 @@ public class McGannModel extends ExteriorModel {
 	public void renderToBuffer(MatrixStack matrixStack, IVertexBuilder buffer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha){
 		LeftDoor.render(matrixStack, buffer, packedLight, packedOverlay, red, green, blue, alpha);
 		RightDoor.render(matrixStack, buffer, packedLight, packedOverlay, red, green, blue, alpha);
-		base.render(matrixStack, buffer, packedLight, packedOverlay, red, green, blue, alpha);
+		Base.render(matrixStack, buffer, packedLight, packedOverlay, red, green, blue, alpha);
 		BOTI.render(matrixStack, buffer, packedLight, packedOverlay, red, green, blue, alpha);
 	}
 
@@ -1256,13 +1257,13 @@ public class McGannModel extends ExteriorModel {
 		matrixStack.translate(0,2.25,0);
 		LeftDoor.y = (float) -18.85;
 		RightDoor.y = (float) -18.85;
-		if(exterior.getLevel().getServer() != null)
-			TardisHelper.getConsole(exterior.getLevel().getServer(), exterior.getInteriorDimensionKey()).ifPresent(consoleTile -> {
-				this.Emmisives.setBright(1);
-				this.LeftDoorEmmisive.setBright(1);
-				this.RightDoorEmmisives.setBright(1);
-			});
-		base.render(matrixStack, buffer, packedLight, packedOverlay,1,1,1, alpha);
+//		if(exterior.getLevel().getServer() != null)
+//			TardisHelper.getConsole(exterior.getLevel().getServer(), exterior.getInteriorDimensionKey()).ifPresent(consoleTile -> {
+//				this.Emmisives.setBright(1);
+//				this.LeftDoorEmmisive.setBright(1);
+//				this.RightDoorEmmisives.setBright(1);
+//			});
+		Base.render(matrixStack, buffer, packedLight, packedOverlay,1,1,1, alpha);
 		Emmisives.render(matrixStack, buffer, packedLight, packedOverlay,1,1,1, alpha);
 		LeftDoor.render(matrixStack, buffer, packedLight, packedOverlay,1,1,1, alpha);
 		RightDoor.render(matrixStack, buffer, packedLight, packedOverlay,1,1,1, alpha);
@@ -1294,12 +1295,13 @@ public class McGannModel extends ExteriorModel {
 				matrix.popPose();
 			});
 			//Interior Doors Location
-//			info.setRenderDoor((matrix, buf) -> {
-//				matrix.pushPose();
-//				matrix.scale(0.8F, 0.8F, 0.8F);
-//				this.Doors.render(matrix, buf.getBuffer(RenderType.entityCutout(BrackolinRender.TEXTURE)), packedLight, packedOverlay);
-//				matrix.popPose();
-//			});
+			info.setRenderDoor((matrix, buf) -> {
+				matrix.pushPose();
+				matrix.scale(0.8F, 0.8F, 0.8F);
+				this.LeftDoor.render(matrix, buf.getBuffer(RenderType.entityCutout(McGannRender.TEXTURE)), packedLight, packedOverlay);
+				this.RightDoor.render(matrix, buf.getBuffer(RenderType.entityCutout(McGannRender.TEXTURE)), packedLight, packedOverlay);
+				matrix.popPose();
+			});
 
 			BOTIRenderer.addPortal(info);
 		}
