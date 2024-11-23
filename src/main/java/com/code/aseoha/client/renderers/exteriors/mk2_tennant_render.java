@@ -6,6 +6,7 @@ import com.code.aseoha.tileentities.exteriors.AlfieHudolinTile;
 import com.code.aseoha.tileentities.exteriors.mk2_tennant;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.vertex.IVertexBuilder;
+import net.minecraft.block.Blocks;
 import net.minecraft.client.renderer.IRenderTypeBuffer;
 import net.minecraft.client.renderer.tileentity.TileEntityRendererDispatcher;
 import net.minecraft.util.ResourceLocation;
@@ -15,9 +16,12 @@ import net.tardis.mod.client.TRenderTypes;
 import net.tardis.mod.client.renderers.exteriors.ExteriorRenderer;
 import net.tardis.mod.misc.WorldText;
 
+import java.util.Objects;
+
 @OnlyIn(Dist.CLIENT)
 public class mk2_tennant_render extends ExteriorRenderer<mk2_tennant> {
     public static ResourceLocation TEXTURE = new ResourceLocation("aseoha", "textures/exteriors/mk2/mk2_tennant.png");
+    public static ResourceLocation SNOW_TEXTURE = new ResourceLocation("aseoha", "textures/exteriors/mk2/mk2_tennant_snow.png");
     public static mk_two_tennant MODEL = new mk_two_tennant();
     public static WorldText TEXT = new WorldText(0.87F, 0.125F, 0.015F, 0);
 
@@ -29,9 +33,13 @@ public class mk2_tennant_render extends ExteriorRenderer<mk2_tennant> {
         matrixStack.pushPose();
         matrixStack.translate(0.0, -2.5, 0.0);
         ResourceLocation texture = TEXTURE;
-        if (tile.getVariant() != null) {
-            texture = tile.getVariant().getTexture();
-        }
+//        if (tile.getVariant() != null) {
+//            texture = tile.getVariant().getTexture();
+//        }
+
+        if(Objects.requireNonNull(tile.getLevel()).getBlockState(tile.getBlockPos().below(1)).getBlock().equals(Blocks.SNOW) ||
+                tile.getLevel().getBlockState(tile.getBlockPos().below(1)).getBlock().equals(Blocks.SNOW_BLOCK))
+            texture = SNOW_TEXTURE;
 
         IVertexBuilder ivertexbuilder = bufferIn.getBuffer(TRenderTypes.getTardis(texture));
         MODEL.render(tile, 0.25F, matrixStack, ivertexbuilder, i, i1, v1);
