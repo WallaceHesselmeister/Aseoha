@@ -1099,36 +1099,15 @@ public class CustardConsoleModel extends AbstractConsoleEntityModel<CustardConso
             this.BL1Handle2.zRot = (float) Math.toRadians(-(50.0F - throttle.getAmount() * 50.0F));
         });
 
-//        custardConsoleTile.getControl(StabilizerControl.class).ifPresent((stabs) -> {
-//
-//        });
-//
-//        custardConsoleTile.getControl(FastReturnControl.class).ifPresent((stabs) -> {
-//
-//        });
-//
-//        custardConsoleTile.getControl(LandingTypeControl.class).ifPresent((stabs) -> {
-//
-//        });
-
         custardConsoleTile.getControl(HandbrakeControl.class).ifPresent((brake) -> {
             this.BL1Handle.zRot = (float) Math.toRadians(-(50.0F - (brake.isFree() ? 0 : 1) * 50.0F)); //100.0F - 75.0F
         });
 
-//        custardConsoleTile.getControl(IncModControl.class).ifPresent((stabs) -> {
-//
-//        });
-//
-//        custardConsoleTile.getControl(DimensionControl.class).ifPresent((stabs) -> {
-//
-//        });
-
         custardConsoleTile.getControl(DoorControl.class).ifPresent((door) -> {
-            this.DoorLockLever.zRot = (float) ((float) door.getAnimationProgress() != 0 ? Math.toRadians(180) : Math.toRadians(-180));
+            this.DoorLockLever.zRot = (float) (door.getAnimationProgress() != 0 ? Math.toRadians(180) : Math.toRadians(-180));
         });
 
-        this.TimeRotor2.y =  4F + (0 - (float)Math.cos((double)custardConsoleTile.flightTicks * 0.1D) * 2F); //rotationPointY
-//        this.TimeRotor2.y = 1F + (float)Math.cos((double)custardConsoleTile.flightTicks * 0.1D) * 2F; //rotationPointY
+        this.TimeRotor2.y =  4F + (0 - (float)Math.cos((double)custardConsoleTile.flightTicks * 0.1D) * 2F);
 
         matrixStack.translate(0, -.9, 0);
         matrixStack.scale((float) .6, (float) .6, (float) .6);

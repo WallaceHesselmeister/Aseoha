@@ -1,5 +1,7 @@
 package com.code.aseoha.client.renderers.exteriors;
 
+import com.code.aseoha.Helpers.IHelpWithExterior;
+import com.code.aseoha.aseoha;
 import com.code.aseoha.client.models.exteriors.AlfieHudolinExterior;
 import com.code.aseoha.client.models.exteriors.mk_two_tennant;
 import com.code.aseoha.tileentities.exteriors.AlfieHudolinTile;
@@ -21,7 +23,7 @@ import java.util.Objects;
 @OnlyIn(Dist.CLIENT)
 public class mk2_tennant_render extends ExteriorRenderer<mk2_tennant> {
     public static ResourceLocation TEXTURE = new ResourceLocation("aseoha", "textures/exteriors/mk2/mk2_tennant.png");
-    public static ResourceLocation SNOW_TEXTURE = new ResourceLocation("aseoha", "textures/exteriors/mk2/mk2_tennant_snow.png");
+    public static ResourceLocation SNOW_TEXTURE = new ResourceLocation("aseoha", "textures/exteriors/mk2/snow/mk2_tennant.png");
     public static mk_two_tennant MODEL = new mk_two_tennant();
     public static WorldText TEXT = new WorldText(0.87F, 0.125F, 0.015F, 0);
 
@@ -37,8 +39,7 @@ public class mk2_tennant_render extends ExteriorRenderer<mk2_tennant> {
 //            texture = tile.getVariant().getTexture();
 //        }
 
-        if(Objects.requireNonNull(tile.getLevel()).getBlockState(tile.getBlockPos().below(1)).getBlock().equals(Blocks.SNOW) ||
-                tile.getLevel().getBlockState(tile.getBlockPos().below(1)).getBlock().equals(Blocks.SNOW_BLOCK))
+        if(((IHelpWithExterior) tile).Aseoha$IsSnowyVariant())
             texture = SNOW_TEXTURE;
 
         IVertexBuilder ivertexbuilder = bufferIn.getBuffer(TRenderTypes.getTardis(texture));

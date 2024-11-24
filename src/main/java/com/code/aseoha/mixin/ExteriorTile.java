@@ -16,6 +16,7 @@ import net.tardis.mod.entity.TardisEntity;
 import net.tardis.mod.enums.EnumDoorState;
 import net.tardis.mod.enums.EnumMatterState;
 import net.tardis.mod.helper.TardisHelper;
+import net.tardis.mod.misc.TexVariant;
 import net.tardis.mod.tileentities.ConsoleTile;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -60,10 +61,28 @@ public abstract class ExteriorTile extends TileEntity implements ITickableTileEn
     @Shadow(remap = false)
     protected RegistryKey<World> interiorDimension;
 
+    @Shadow public abstract void tick();
+
+    @Shadow public abstract void setVariants(TexVariant... variants);
+
     @Unique
     int Aseoha$Scale = 1;
+
     @Unique
     byte Aseoha$LightLevel;
+
+    @Unique
+    public boolean Aseoha$IsSnowyVariant() {
+        return this.Aseoha$IsSnowyVariant;
+    }
+
+    @Unique
+    public void Aseoha$SetIsSnowyVariant(boolean IsSnowyVariant) {
+        this.Aseoha$IsSnowyVariant = IsSnowyVariant;
+    }
+
+    @Unique
+    boolean Aseoha$IsSnowyVariant;
 
     @Override
     public int Aseoha$GetScale() {
@@ -88,13 +107,14 @@ public abstract class ExteriorTile extends TileEntity implements ITickableTileEn
     @Inject(method = "load(Lnet/minecraft/block/BlockState;Lnet/minecraft/nbt/CompoundNBT;)V", at = @At("TAIL"))
     private void Aseoha$Read(BlockState state, CompoundNBT compound, CallbackInfo ci) {
         this.Aseoha$Scale = compound.getInt("Aseoha$Scale");
+        this.Aseoha$IsSnowyVariant = compound.getBoolean("Aseoha$Snowy");
 //        this.Aseoha$LightLevel = compound.getByte("Aseoha$LightLevel");
     }
 
     @Inject(method = "save(Lnet/minecraft/nbt/CompoundNBT;)Lnet/minecraft/nbt/CompoundNBT;", at = @At("TAIL"))
     private void Aseoha$Write(CompoundNBT compound, CallbackInfoReturnable<CompoundNBT> cir) {
         compound.putInt("Aseoha$Scale", this.Aseoha$Scale);
-//        compound.putByte("Aseoha$LightLevel", this.Aseoha$LightLevel);
+        compound.putBoolean("Aseoha$Snowy", this.Aseoha$IsSnowyVariant);
     }
 
     @Override

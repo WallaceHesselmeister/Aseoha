@@ -22,13 +22,13 @@ import java.lang.annotation.Target;
 
 @Mixin(TTCapsuleExteriorRenderer.class)
 public class TTExterior {
-//    @Shadow @Final public static ResourceLocation TEXTURE;
 @Shadow(remap = false) public static final TTCapsuleExteriorModel MODEL = new TTCapsuleExteriorModel();
-//    @Inject(method = "renderExterior(Lnet/tardis/mod/tileentities/exteriors/TTCapsuleExteriorTile;FLcom/mojang/blaze3d/matrix/MatrixStack;Lnet/minecraft/client/renderer/IRenderTypeBuffer;IIF)V", at = @At("HEAD"), remap = false)
+
 /**
  * @author me
  * @reason texvariants
  */
+
 @Overwrite(remap = false)
     public void renderExterior(TTCapsuleExteriorTile tile, float partialTicks, MatrixStack matrixStackIn, IRenderTypeBuffer bufferIn, int combinedLightIn, int combinedOverlayIn, float alpha){
         if (tile.getVariant() != null) {
@@ -41,5 +41,4 @@ public class TTExterior {
             matrixStackIn.popPose();
         }
     }
-    //new TexVariant(new ResourceLocation(aseoha.MODID,"textures/exteriors/invisible.png"), "exterior.capaldi.invisible"),
 }

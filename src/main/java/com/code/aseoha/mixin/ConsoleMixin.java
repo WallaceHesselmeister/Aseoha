@@ -426,7 +426,7 @@ public abstract class ConsoleMixin extends TileEntity implements ITickableTileEn
     @Override
     public void Aseoha$CleanupRide() {
         this.Aseoha$RealWorldFlight = false;
-        this.getControl(ThrottleControl.class).ifPresent(throt -> throt.setAmount(0.0F));
+//        this.getControl(ThrottleControl.class).ifPresent(throt -> throt.setAmount(0.0F));
 //        this.getControl(HandbrakeControl.class).ifPresent(brake -> brake.setFree(false));
     }
 
@@ -437,7 +437,7 @@ public abstract class ConsoleMixin extends TileEntity implements ITickableTileEn
 
     @Override
     public TardisEntity Aseoha$GetTardisEntity() {
-        return this.tardisEntity;
+        return this.tardisEntity != null ? this.tardisEntity : new TardisEntity(this.level);
     }
 
     @Override
@@ -458,7 +458,7 @@ public abstract class ConsoleMixin extends TileEntity implements ITickableTileEn
 
     @Override
     public void Aseoha$SetRealWorldFlight(boolean rwf) {
-        this.Aseoha$RealWorldFlight = rwf;
+        this.Aseoha$RealWorldFlight = false;
     }
 
 //    private void setConsole(ConsoleTile console){
