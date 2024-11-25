@@ -3,14 +3,20 @@ package com.code.common.client;
 
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
+import net.minecraft.ChatFormatting;
 import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.client.gui.components.AbstractWidget;
 import net.minecraft.client.gui.components.Button;
-import net.minecraft.client.gui.components.Tooltip;
+import net.minecraft.client.gui.components.PlainTextButton;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
+import net.minecraft.util.FastColor;
+
+import java.util.ArrayList;
 
 @Environment(EnvType.CLIENT)
 public class K9Screen extends Screen {
+    public ArrayList<Integer> ButtonSizes = new ArrayList<>();
 //    private final Screen parent;
 
     public K9Screen() {
@@ -29,23 +35,12 @@ public class K9Screen extends Screen {
     public Button button2;
 
     @Override
-    @Environment(EnvType.CLIENT)
     protected void init() {
-        button1 = Button.builder(Component.literal("Button 1"), button -> {
-                    System.out.println("You clicked button1!");
-                })
-                .bounds(width / 2 - 205, 20, 200, 20)
-                .tooltip(Tooltip.create(Component.literal("Tooltip of button1")))
-                .build();
-        button2 = Button.builder(Component.literal("Button 2"), button -> {
-                    System.out.println("You clicked button2!");
-                })
-                .bounds(width / 2 + 5, 20, 200, 20)
-                .tooltip(Tooltip.create(Component.literal("Tooltip of button2")))
-                .build();
-
-        addWidget(button1) ;
-        addWidget(button2) ;
+        this.addButton(new PlainTextButton((width / 2 - 40), (height / 2) - 20,
+                this.font.width("Fly TARDIS"), 20, Component.translatable("aseoha.tardis.fly").withStyle(ChatFormatting.BOLD), button -> {
+            System.out.println("YIPPEE!!");
+        }, this.font));
+        this.ButtonSizes.add(this.font.width("Fly TARDIS"));
     }
 
     // For versions 1.20 below
@@ -59,6 +54,12 @@ public class K9Screen extends Screen {
     @Override
     public void render(GuiGraphics context, int mouseX, int mouseY, float delta) {
         super.render(context, mouseX, mouseY, delta);
+        context.fill(width / 2 - 50, height / 2 - 30, width + this.ButtonSizes.get(0) / 2 - 30, height / 2 - 10, FastColor.ARGB32.color(255, 255, 255, 255));
         context.drawCenteredString(font, Component.literal("You must see me"), width / 2, height / 2, 0xffffff);
+    }
+
+    private <T extends AbstractWidget> void addButton(T button) {
+        this.addRenderableWidget(button);
+        button.active = true;
     }
 }

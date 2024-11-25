@@ -1,18 +1,15 @@
 package com.code.forge;
 
 import com.code.aseoha;
-import com.code.common.registries.AseohaBlocks;
 import com.code.common.registries.AseohaEntities;
 import com.code.common.K9Entity;
 import com.code.common.client.models.K9model;
 import com.code.common.client.renderer.K9Renderer;
-import com.code.common.world.AseohaDimensions;
 import dev.architectury.platform.forge.EventBuses;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.event.entity.SpawnPlacementRegisterEvent;
-import net.minecraftforge.event.entity.living.LivingEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;

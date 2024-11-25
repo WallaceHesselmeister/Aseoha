@@ -1,9 +1,6 @@
 package com.code;
 
 import com.code.common.GrammarNazi;
-import com.code.common.Util;
-import com.code.common.blocks.IAmARoundel;
-import com.code.common.blocks.NESWBlock;
 import com.code.common.blocks.RoundelBlock;
 import com.code.common.registries.AseohaBlocks;
 import com.code.common.registries.AseohaEntities;
@@ -12,22 +9,13 @@ import com.code.common.items.AseohaTabs;
 import com.google.common.base.Supplier;
 import com.google.common.base.Suppliers;
 import dev.architectury.platform.Platform;
-import dev.architectury.registry.client.rendering.RenderTypeRegistry;
 import dev.architectury.registry.registries.RegistrarManager;
 import dev.architectury.registry.registries.RegistrySupplier;
-import net.minecraft.client.renderer.ItemBlockRenderTypes;
-import net.minecraft.client.renderer.RenderType;
-import net.minecraft.client.renderer.entity.layers.RenderLayer;
-import net.minecraft.core.DefaultedRegistry;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.core.registries.Registries;
-import net.minecraft.world.entity.EntityEvent;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockBehaviour;
-import net.minecraft.world.level.block.state.BlockState;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -63,7 +51,6 @@ public final class aseoha {
                 }
             });
 //        }
-
         if (Platform.isFabric()) {
             AseohaBlocks.BLOCKS.forEach(blockRegistrySupplier -> AseohaItems.ITEMS.register(GrammarNazi.IDFromBlock(blockRegistrySupplier.get()), () -> new BlockItem(blockRegistrySupplier.get(), new Item.Properties().arch$tab(AseohaTabs.MAIN_TAB))));
 
