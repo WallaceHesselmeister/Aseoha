@@ -7,8 +7,8 @@ import net.tardis.mod.misc.TexVariant;
 
 public class TextureVariants {
     public static final TexVariant[] TT = {
-            new TexVariant(new ResourceLocation(aseoha.MODID, "textures/exteriors/invisible.png"), "exterior.invisible"),
-            new TexVariant(new ResourceLocation(Tardis.MODID, "textures/exteriors/tt_capsule.png"), "exteriors.tt.default")};
+            new TexVariant(new ResourceLocation(Tardis.MODID, "textures/exteriors/tt_capsule.png"), "exteriors.tt.default"),
+            new TexVariant(new ResourceLocation(aseoha.MODID, "textures/exteriors/invisible.png"), "exterior.invisible")};
 
     public static final TexVariant[] MK2_CAPALDI = {
             new TexVariant(new ResourceLocation(aseoha.MODID, "textures/exteriors/mk2/mk2_capaldi.png"), "exterior.mk2.capaldi")};

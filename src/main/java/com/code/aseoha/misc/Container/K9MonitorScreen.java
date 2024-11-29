@@ -1,6 +1,7 @@
 package com.code.aseoha.misc.Container;
 
 import com.code.aseoha.entities.k9;
+import com.code.aseoha.misc.ScreenClientStuff;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.screen.Screen;
@@ -52,7 +53,9 @@ public abstract class K9MonitorScreen extends Screen implements IMonitorGui {
 //                    this.addButton(this.addButton(this.getMinX(), this.getMinY(), ((RegistryKey<?>)entry.getKey()).location()));
 //                }
 //            });
-            if(this.tile.getSubsystem(FlightSubsystem.class).isPresent()) {this.addSubmenu(new TranslationTextComponent("aseoha.tardis.submenu"), (Button.IPressable) ((but) -> com.code.aseoha.misc.ScreenClientStuff.OpenTARDISScreen(this.K9, this)));}
+            if(this.tile.getSubsystem(FlightSubsystem.class).isPresent()) {
+                this.addSubmenu(new TranslationTextComponent("aseoha.tardis.submenu"), (Button.IPressable) ((but) ->
+                        ScreenClientStuff.OpenTARDISScreen(this.K9, this)));}
             this.addSubmenu(new TranslationTextComponent(TardisConstants.Strings.GUI_PROTOCOL_TITLE + "interior_properties"), (button) -> Minecraft.getInstance().setScreen(new InteriorEditScreen(this, "interior")));
             this.addSubmenu(new TranslationTextComponent("gui.tardis.protocol.waypoints"), (but) -> {Minecraft.getInstance().setScreen(new WaypointMonitorScreen(this, "waypoints"));Network.sendToServer(new WaypointOpenMessage(null));});
         }

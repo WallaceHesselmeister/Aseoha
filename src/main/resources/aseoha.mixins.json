@@ -26,14 +26,13 @@
     "KeyMixin",
     "MonitorMixin",
     "NameTagMixin",
-    "PlayerDataCapMixin",
     "SonicTardisDestinationInteractionMixin",
     "SucceedFlightEventTriggerMixin",
     "TakeoffTardisTriggerMixin",
     "TardisBottomBlockMixin",
     "TardisTopBlockMixin",
+
     "TeleportUtilMixin",
-    "TTTile",
     "TwoBlockBasicExteriorMixin"
   ],
   "package": "com.code.aseoha.mixin",

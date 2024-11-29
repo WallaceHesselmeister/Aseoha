@@ -66,7 +66,7 @@ public abstract class ExteriorTile extends TileEntity implements ITickableTileEn
     @Shadow public abstract void setVariants(TexVariant... variants);
 
     @Unique
-    int Aseoha$Scale = 1;
+    boolean Aseoha$Scale = true;
 
     @Unique
     byte Aseoha$LightLevel;
@@ -85,12 +85,12 @@ public abstract class ExteriorTile extends TileEntity implements ITickableTileEn
     boolean Aseoha$IsSnowyVariant;
 
     @Override
-    public int Aseoha$GetScale() {
+    public boolean Aseoha$GetScale() {
         return this.Aseoha$Scale;
     }
 
     @Override
-    public void Aseoha$SetScale(int scale) {
+    public void Aseoha$SetScale(boolean scale) {
         this.Aseoha$Scale = scale;
     }
 
@@ -106,14 +106,13 @@ public abstract class ExteriorTile extends TileEntity implements ITickableTileEn
 
     @Inject(method = "load(Lnet/minecraft/block/BlockState;Lnet/minecraft/nbt/CompoundNBT;)V", at = @At("TAIL"))
     private void Aseoha$Read(BlockState state, CompoundNBT compound, CallbackInfo ci) {
-        this.Aseoha$Scale = compound.getInt("Aseoha$Scale");
+        this.Aseoha$Scale = compound.getBoolean("Aseoha$Scale");
         this.Aseoha$IsSnowyVariant = compound.getBoolean("Aseoha$Snowy");
-//        this.Aseoha$LightLevel = compound.getByte("Aseoha$LightLevel");
     }
 
     @Inject(method = "save(Lnet/minecraft/nbt/CompoundNBT;)Lnet/minecraft/nbt/CompoundNBT;", at = @At("TAIL"))
     private void Aseoha$Write(CompoundNBT compound, CallbackInfoReturnable<CompoundNBT> cir) {
-        compound.putInt("Aseoha$Scale", this.Aseoha$Scale);
+        compound.putBoolean("Aseoha$Scale", this.Aseoha$Scale);
         compound.putBoolean("Aseoha$Snowy", this.Aseoha$IsSnowyVariant);
     }
 

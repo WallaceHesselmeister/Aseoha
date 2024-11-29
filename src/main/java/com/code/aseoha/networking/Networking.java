@@ -2,10 +2,10 @@ package com.code.aseoha.networking;
 
 import com.code.aseoha.aseoha;
 import com.code.aseoha.networking.Packets.*;
+import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.network.NetworkDirection;
 import net.minecraftforge.fml.network.NetworkRegistry;
-import net.minecraftforge.fml.network.PacketDistributor;
 import net.minecraftforge.fml.network.simple.SimpleChannel;
 
 /**
@@ -32,14 +32,15 @@ public class Networking {
         INSTANCE.registerMessage(iterator(), RWFToggle.class, RWFToggle::encode, RWFToggle::decode, RWFToggle::handle);
         INSTANCE.registerMessage(iterator(), TardisInputMessage.class, TardisInputMessage::encode, TardisInputMessage::decode, TardisInputMessage::handle);
         INSTANCE.registerMessage(iterator(), EOHInteractPacket.class, EOHInteractPacket::encode, EOHInteractPacket::decode, EOHInteractPacket::handle);
-        //INSTANCE.registerMessage(iterator(), .class, ::encode, ::decode, ::handle);
-        //DistExecutor.safeRunWhenOn(Dist.CLIENT, () ->
     }
 
     public static void sendToServer(Object msg) {
         INSTANCE.sendToServer(msg);
     }
-//    public static void SendToClientTracking(Object Msg) {INSTANCE.send(}
+
+    public static void sendToClient(ServerPlayerEntity Player, Object msg) {
+        INSTANCE.sendTo(msg, Player.connection.connection, NetworkDirection.PLAY_TO_CLIENT);
+    }
 
     /**
      * @return This returns the current id+1, that way we always get a unique ID

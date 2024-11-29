@@ -5,9 +5,14 @@ import com.code.aseoha.entities.k9;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
+
 /**
  * This is the monitor renderer for the K9Monitor Screen, this gets called to open the screen
  */
+
+@OnlyIn(Dist.CLIENT)
 public class K9Screen extends K9MonitorScreen {
     public static final ResourceLocation TEXTURE = new ResourceLocation(aseoha.MODID, "textures/gui/monitors/k9.png");
 

@@ -262,7 +262,7 @@ public class k9 extends RecycledWolf implements IAngerable, ISpaceImmuneEntity, 
                     if (this.isOwnedBy(player)) {
                         k9.Say("Power is at " + this.power, player, player.level); //TODO: Add power to the K9 Screen, distress signals, etc
 //                        this.setOrderedToSit(!this.isOrderedToSit());
-                        if (!this.isDead && !player.isCrouching())
+                        if (!this.isDead && !player.isCrouching() && this.level.isClientSide)
                             OpenK9Screen(this);
                         this.jumping = false;
                         this.navigation.stop();

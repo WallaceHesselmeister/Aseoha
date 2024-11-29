@@ -17,9 +17,9 @@ public interface IHelpWithConsole {
 
     void Aseoha$SetMaintenance(boolean maintenance);
 
-    int Aseoha$GetExteriorSize();
+    boolean Aseoha$GetExteriorSize();
 
-    void Aseoha$SetExteriorSize(int aseoha$ExteriorSize);
+    void Aseoha$SetExteriorSize(boolean aseoha$ExteriorSize);
 
     void Aseoha$Ride(PlayerEntity Player);
 

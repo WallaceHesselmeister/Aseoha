@@ -105,7 +105,7 @@ public abstract class ConsoleMixin extends TileEntity implements ITickableTileEn
     @Unique
     public boolean Aseoha$Maintenance = false;
     @Unique
-    public int Aseoha$ExteriorSize = 1;
+    public boolean Aseoha$ExteriorSize = true;
 //    @Unique
 //    private ConsoleTile Aseoha$ConsoleTile;
 
@@ -163,7 +163,7 @@ public abstract class ConsoleMixin extends TileEntity implements ITickableTileEn
         this.Aseoha$HasEOH = compound.getBoolean("has_eoh");
         this.Aseoha$EOHPillars = compound.getBoolean("eoh_pillars");
         this.Aseoha$Maintenance = compound.getBoolean("maintenance");
-        this.Aseoha$ExteriorSize = compound.getInt("exterior_size_scale");
+        this.Aseoha$ExteriorSize = compound.getBoolean("exterior_size_scale");
         assert this.level != null;
         if(compound.contains("Aseoha$Pilot_UUID")) {
             this.Aseoha$Pilot =
@@ -180,7 +180,7 @@ public abstract class ConsoleMixin extends TileEntity implements ITickableTileEn
         compound.putBoolean("eoh_pillars", this.Aseoha$EOHPillars);
         compound.putLong("eoh_timer", this.Aseoha$EOHTimer);
         compound.putBoolean("maintenance", this.Aseoha$Maintenance);
-        compound.putInt("exterior_size_scale", this.Aseoha$ExteriorSize);
+        compound.putBoolean("exterior_size_scale", this.Aseoha$ExteriorSize);
         if (this.Aseoha$Pilot != null)
             if (this.Aseoha$Pilot.GetPilotPlayer() != null)
                     compound.putUUID("Aseoha$Pilot_UUID", this.Aseoha$Pilot.GetPilotPlayer().getUUID());
@@ -238,12 +238,12 @@ public abstract class ConsoleMixin extends TileEntity implements ITickableTileEn
     }
 
     @Override
-    public int Aseoha$GetExteriorSize() {
+    public boolean Aseoha$GetExteriorSize() {
         return this.Aseoha$ExteriorSize;
     }
 
     @Override
-    public void Aseoha$SetExteriorSize(int aseoha$ExteriorSize) {
+    public void Aseoha$SetExteriorSize(boolean aseoha$ExteriorSize) {
         this.Aseoha$ExteriorSize = aseoha$ExteriorSize;
     }
 

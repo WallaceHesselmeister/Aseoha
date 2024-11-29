@@ -39,9 +39,9 @@ public class ExtRenderMixin {
 //        ConsoleTile console = TardisHelper.getConsoleInWorld(((IHelpWithExterior) tile).Aseoha$GetInteriorDim());
         if (tile != null) {
                     float scale;
-                    if (((IHelpWithExterior) tile).Aseoha$GetScale() == 1)
+                    if (((IHelpWithExterior) tile).Aseoha$GetScale())
                         scale = 1;
-                    else if (((IHelpWithExterior) tile).Aseoha$GetScale() == 0)
+                    else if (!((IHelpWithExterior) tile).Aseoha$GetScale())
                         scale = 0.3F;
                     else
                         scale = 0;
