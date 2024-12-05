@@ -38,13 +38,8 @@ public class BrokenExteriorTypeMixin implements IHelpWithBrokenExteriorType {
     @Inject(method = "swapWithReal", at = @At("TAIL"), remap = false)
     public void Aseoha$SwapWithReal(ServerWorld world, BlockPos pos, World interior, Direction dir, CallbackInfo ci){
         TardisHelper.getConsole(world.getServer(), interior).ifPresent(tile -> {
-            aseoha.SendDebugToAll("Assigning Player " + this.Aseoha$GetPlayer() + " to Pilot Console " + tile + " In the world " + interior);
-            ((IHelpWithConsole) tile).Aseoha$SetPilot(new Pilot(this.Aseoha$GetPlayer()));
-//            if(((IHelpWithPlayerEntity) this.Aseoha$GetPlayer()).Aseoha$GetPilot() == null){
-//                ((IHelpWithPlayerEntity) this.Aseoha$GetPlayer()).Aseoha$SetPilot(new Pilot());
-//                ((IHelpWithPlayerEntity) this.Aseoha$GetPlayer()).Aseoha$CreatePilot(this.Aseoha$GetPlayer());
-//            }
-//            ((IHelpWithPlayerEntity) this.Aseoha$GetPlayer()).Aseoha$GetPilot().AddConsole(tile);
+            aseoha.SendDebugToAll("Assigning Player " + this.Aseoha$GetPlayer() + " to Pilot Console " + tile + " In the world " + tile.getLevel());
+            ((IHelpWithConsole) tile).Aseoha$SetPilot(this.Aseoha$GetPlayer());
         });
     }
 }

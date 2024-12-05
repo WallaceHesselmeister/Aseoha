@@ -20,7 +20,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 @Mixin(BrokenExteriorTile.class)
 public abstract class BrokenExteriorMixin {
 
-
     @Shadow(remap = false) public abstract BrokenExteriorType getBrokenType();
 
     @Inject(method = "tameTardis(Lnet/minecraft/entity/player/PlayerEntity;)V", at = @At("HEAD"), remap = false)

@@ -14,7 +14,6 @@ import java.util.Objects;
 public class EjectProtocol extends Protocol {
     @Override
     public void call(World world, PlayerEntity playerIn, ConsoleTile console) {
-//        ((IHelpWithConsole) console).Aseoha$SetHads(!((IHelpWithConsole) console).Aseoha$GetHads());
         for (PlayerEntity player : world.getEntitiesOfClass(PlayerEntity.class, new AxisAlignedBB(console.getBlockPos()).inflate(128))) {
             ExteriorTile ext = console.getExteriorType().getExteriorTile(console);
             if(ext!=null)

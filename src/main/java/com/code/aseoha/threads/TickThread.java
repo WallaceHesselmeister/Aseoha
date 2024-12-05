@@ -54,30 +54,32 @@ public class TickThread extends Thread {
         this.isCalledNotInitialized = true;
     }
 
-    public void Call(TickEvent.WorldTickEvent Event){
+    public void Call(TickEvent.WorldTickEvent Event) {
         this.isCalledNotInitialized = true;
 //        this.event = Event;
         this.tickEvent = Event;
         this.run();
-    };
+    }
 
     @Override
     public void run() {
         super.run();
 //        aseoha.LOGGER.info("Thread run: {}", this.getName());
-        if(isCalledNotInitialized)
+        if (isCalledNotInitialized)
             TickEvent(this.tickEvent);
     }
 
     public void TickEvent(@NotNull TickEvent.WorldTickEvent event) {
         TardisHelper.getConsoleInWorld(event.world).ifPresent(tardisTile -> {
-            if (tardisTile.getInteriorManager().getLight() > 15) tardisTile.getInteriorManager().setLight(0);
             Random random = new Random();
-            if(((IHelpWithConsole) tardisTile).Aseoha$GetMaintenance()){
+
+            if (((IHelpWithConsole) tardisTile).Aseoha$GetMaintenance()) {
+                tardisTile.onPowerDown(true);
                 tardisTile.getInteriorManager().setLight(0);
                 tardisTile.setMaxArtron(0);
                 tardisTile.updateClient();
             }
+
             event.world.getCapability(Capabilities.TARDIS_DATA).ifPresent(cap -> {
                 PanelInventory attunementPanel = cap.getEngineInventoryForSide(Direction.EAST);
                 if (attunementPanel != null) {
@@ -125,9 +127,11 @@ public class TickThread extends Thread {
                     }
                 }
             });
+
             ExteriorTile exteriorBlock = tardisTile.getExteriorType().getExteriorTile(tardisTile);
-            if (exteriorBlock != null) {
-                if (!tardisTile.isInFlight()) {
+
+            if (exteriorBlock != null)
+                if (!tardisTile.isInFlight())
                     if (exteriorBlock.getLevel() != null) {
                         if (((IHelpWithConsole) tardisTile).Aseoha$GetHads()) {
                             for (LivingEntity liv : exteriorBlock.getLevel().getEntitiesOfClass(LivingEntity.class, new AxisAlignedBB(exteriorBlock.getBlockPos()).inflate(2))) {
@@ -137,6 +141,7 @@ public class TickThread extends Thread {
                                     CommonEvents.HadsActivate(tardisTile);
                                 }
                             }
+
                             for (ArrowEntity arrow : exteriorBlock.getLevel().getEntitiesOfClass(ArrowEntity.class, new AxisAlignedBB(exteriorBlock.getBlockPos()).inflate(2))) {
                                 if (arrow instanceof ArrowEntity) {
                                     if (!tardisTile.isInFlight())
@@ -145,52 +150,43 @@ public class TickThread extends Thread {
                                 }
                             }
                         }
-                    }
-                }
 
-                if (exteriorBlock != null) {
-                    if (exteriorBlock.getLevel().getGameTime() % 70 == 0 && !tardisTile.isInFlight()) {
-                        /** check if alarm is on (For Exterior Cloister) **/
-                        if (tardisTile.getInteriorManager().isAlarmOn()) {
-                            Objects.requireNonNull(exteriorBlock.getLevel()).playSound(null, exteriorBlock.getBlockPos(), TSounds.SINGLE_CLOISTER.get(), SoundCategory.BLOCKS, 1.0F, 0.5F);//(PlayerEntity) null, tile.getExteriorType().getExteriorTile(tile).getBlockPos(), TSounds.SINGLE_CLOISTER, SoundCategory.BLOCKS, 2f, 1f);
+                        if (exteriorBlock.getLevel().getGameTime() % 70 == 0 && !tardisTile.isInFlight()) {
+                            /** check if alarm is on (For Exterior Cloister) **/
+                            if (tardisTile.getInteriorManager().isAlarmOn()) {
+                                Objects.requireNonNull(exteriorBlock.getLevel()).playSound(null, exteriorBlock.getBlockPos(), TSounds.SINGLE_CLOISTER.get(), SoundCategory.BLOCKS, 1.0F, 0.5F);//(PlayerEntity) null, tile.getExteriorType().getExteriorTile(tile).getBlockPos(), TSounds.SINGLE_CLOISTER, SoundCategory.BLOCKS, 2f, 1f);
+                            }
+                        }
+
+                        /** Check if shields are on (For Exterior Arrow Animation) **/
+                        tardisTile.getSubsystem(ShieldGeneratorSubsystem.class).ifPresent((shield) -> {
+                            if (shield.isForceFieldActivated())
+                                Objects.requireNonNull(event.world.getServer()).getCommands().performCommand(event.world.getServer().createCommandSourceStack().withSuppressedOutput(), "function aseoha:shield/checkforarrow");
+                        });
+
+                        /** Check if TARDIS has SOS (For Exterior RING RING) **/
+                        if (!tardisTile.getDistressSignals().isEmpty() && exteriorBlock.getLevel().getGameTime() % 100 == 0 && !tardisTile.isInFlight()) {
+                            Objects.requireNonNull(exteriorBlock.getLevel()).playSound(null, exteriorBlock.getBlockPos(), TSounds.COMMUNICATOR_RING.get(), SoundCategory.BLOCKS, 1f, 1f);
+                        }
+
+                        if (exteriorBlock.getLevel().getBlockState(exteriorBlock.getBlockPos().below(2)).getBlock().equals(Blocks.SNOW) ||
+                                exteriorBlock.getLevel().getBlockState(exteriorBlock.getBlockPos().below(2)).getBlock().equals(Blocks.SNOW_BLOCK)) {
+                            ((IHelpWithExterior) exteriorBlock).Aseoha$SetIsSnowyVariant(true);
+                        } else
+                            ((IHelpWithExterior) exteriorBlock).Aseoha$SetIsSnowyVariant(false);
+
+                        // Set Variants for TT Capsule
+                        if (exteriorBlock instanceof TTCapsuleExteriorTile) {
+                            exteriorBlock.setVariants(TextureVariants.TT);
                         }
                     }
 
-                    /** Check if shields are on (For Exterior Arrow Animation) **/
-                    tardisTile.getSubsystem(ShieldGeneratorSubsystem.class).ifPresent((shield) -> {
-                        if (shield.isForceFieldActivated())
-                            Objects.requireNonNull(event.world.getServer()).getCommands().performCommand(event.world.getServer().createCommandSourceStack().withSuppressedOutput(), "function aseoha:shield/checkforarrow");
-                    });
-
-                    /** Check if TARDIS has SOS (For Exterior RING RING) **/
-                    if (!tardisTile.getDistressSignals().isEmpty() && exteriorBlock.getLevel().getGameTime() % 100 == 0 && !tardisTile.isInFlight()) {
-                        Objects.requireNonNull(exteriorBlock.getLevel()).playSound(null, exteriorBlock.getBlockPos(), TSounds.COMMUNICATOR_RING.get(), SoundCategory.BLOCKS, 1f, 1f);
-                    }
-                }
-
-                if (exteriorBlock.getLevel().getBlockState(exteriorBlock.getBlockPos().below(2)).getBlock().equals(Blocks.SNOW) ||
-                        exteriorBlock.getLevel().getBlockState(exteriorBlock.getBlockPos().below(2)).getBlock().equals(Blocks.SNOW_BLOCK)) {
-                    ((IHelpWithExterior) exteriorBlock).Aseoha$SetIsSnowyVariant(true);
-                }
-                else
-                    ((IHelpWithExterior) exteriorBlock).Aseoha$SetIsSnowyVariant(false);
-
-                // Set Variants for TT Capsule
-                if(exteriorBlock instanceof TTCapsuleExteriorTile) {
-                    exteriorBlock.setVariants(TextureVariants.TT);
-                }
-            }
-
             /** For Sonic Port Charging **/
-            // Ignore the "tardistile.getsonicitem().getitem() != null is always true" that's bullshit because intelliJ doesn't account for it ACTUALLY being null, it assumes it always has a value, and if you leave out the != null it will nullPointer you
-            if (tardisTile.getSonicItem().getItem() != null) {
-                if (tardisTile.getSonicItem().getItem() == TItems.SONIC.get()) {
-                    SonicItem sonic = (SonicItem) tardisTile.getSonicItem().getItem();
-                    ItemStack sonicStack = tardisTile.getSonicItem().getStack();
-                    if (event.world.getGameTime() % 20 == 0) {
-                        sonic.charge(sonicStack, 1.5f);
-                    }
-                }
+            // Ignore the "tardistile.getsonicitem().getitem() == null is always false" that's bullshit because intelliJ doesn't account for it ACTUALLY being null, it assumes it always has a value, and if you leave out the != null it will nullPointer you
+            if (tardisTile.getSonicItem().getItem() == null) return;
+            if (tardisTile.getSonicItem().getItem() == TItems.SONIC.get()) {
+                if (event.world.getGameTime() % 20 == 0)
+                    ((SonicItem) tardisTile.getSonicItem().getItem()).charge(tardisTile.getSonicItem().getStack(), 1.5f);
             }
         });
     }

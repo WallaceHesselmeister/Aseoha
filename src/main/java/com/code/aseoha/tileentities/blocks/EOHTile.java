@@ -11,6 +11,9 @@ import net.minecraft.potion.EffectInstance;
 import net.minecraft.potion.Effects;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.ChunkPos;
+import net.minecraftforge.fml.server.ServerLifecycleHooks;
+import net.tardis.mod.helper.WorldHelper;
 import net.tardis.mod.tileentities.ConsoleTile;
 import com.code.aseoha.tileentities.AseohaTiles;
 import net.minecraft.tileentity.ITickableTileEntity;
@@ -61,25 +64,25 @@ public class EOHTile extends TileEntity implements ITickableTileEntity {
 
     /**
      * Okay so how this SHOULD work is after 5 minutes, the EOH starts causing some time-space distortion (after giving you a few nasty effects) and at 8 minutes "overheats" AKA Shuts Off, you can keep it on with NO side effects by having a "Harmonic Stabilizer" within 10 blocks of the EOH.
-     * TODO: Add nasty side effects
+     * TODO: Add nasty side effects and get em working
      */
     @Override
     public void tick() {
-        assert this.level != null;
+        this.Update();
+        WorldHelper.forceChunkVanillaIfNotLoaded(ServerLifecycleHooks.getCurrentServer().getLevel(this.level.dimension()), new ChunkPos(this.getBlockPos().getX() / 16, this.getBlockPos().getZ() / 16));
         this.consoleTile = TardisHelper.getConsoleInWorld(Objects.requireNonNull(this.getLevel())).orElse(null);
-        if (this.consoleTile != null) {
-            if (!((IHelpWithConsole) this.consoleTile).Aseoha$GetHasEOH())
-                ((IHelpWithConsole) this.consoleTile).Aseoha$SetHasEOH(true);
+        if (this.consoleTile == null) return;
+        if (!((IHelpWithConsole) this.consoleTile).Aseoha$GetHasEOH())
+            ((IHelpWithConsole) this.consoleTile).Aseoha$SetHasEOH(true);
 
-            if (((IHelpWithConsole) this.consoleTile).Aseoha$GetEOH() == null)
-                ((IHelpWithConsole) this.consoleTile).Aseoha$SetEOH(this);
+        if (((IHelpWithConsole) this.consoleTile).Aseoha$GetEOH() == null)
+            ((IHelpWithConsole) this.consoleTile).Aseoha$SetEOH(this);
 
-        }
-        if (this.consoleTile != null && this.active) {
+        if (this.active) {
             ((IHelpWithConsole) this.consoleTile).Aseoha$SetEOHTimer(this.timer);
 
             // Check for Harmonic Pillars
-            ((IHelpWithConsole) this.consoleTile).Aseoha$SetEOHPillars(this.GetStabilizers() > 0);
+            ((IHelpWithConsole) this.consoleTile).Aseoha$SetEOHPillars(((byte) this.GetStabilizers()));
             this.HasStabilizerNear = this.GetStabilizers() > 0;
             this.consoleTile.updateClient();
         }
@@ -87,10 +90,12 @@ public class EOHTile extends TileEntity implements ITickableTileEntity {
         if (this.level.getGameTime() % 20 == 0)
             if (this.Mark) {
                 this.setChanged();
-                if (this.consoleTile != null)
-                    ((IHelpWithConsole) this.consoleTile).Aseoha$SetEOHActive(this.active);
+                ((IHelpWithConsole) this.consoleTile).Aseoha$SetEOHActive(this.active);
+                ((IHelpWithConsole) this.consoleTile).Aseoha$SetEOH(this);
+                ((IHelpWithConsole) this.consoleTile).Aseoha$SetEOHOverheated(this.IsOverheated);
+                ((IHelpWithConsole) this.consoleTile).Aseoha$SetEOHTimer(this.timer);
+                ((IHelpWithConsole) this.consoleTile).Aseoha$SetEOHPillars((byte) this.GetStabilizers());
             }
-        this.Update();
     }
 
     @Deprecated
@@ -112,10 +117,9 @@ public class EOHTile extends TileEntity implements ITickableTileEntity {
                 stabs++;
             else if (!iterator.hasNext()) {
                 this.numberOfPillars = stabs;
-                stabs = 0;
+                stabs = 0; // Set it to 0 so next time round it doesn't add onto the already existing stabs amount, idk how/why but it DOES do that
                 return this.numberOfPillars;
             }
-            ;
         }
         return this.numberOfPillars;
     }
@@ -147,7 +151,6 @@ public class EOHTile extends TileEntity implements ITickableTileEntity {
         this.timer = 0;
         this.IsOverheated = false;
         this.setHasStar(false);
-        assert this.level != null;
         if (this.consoleTile != null) {
             ((IHelpWithConsole) this.consoleTile).Aseoha$SetHasEOH(false);
             ((IHelpWithConsole) this.consoleTile).Aseoha$SetEOH(null);
@@ -162,30 +165,30 @@ public class EOHTile extends TileEntity implements ITickableTileEntity {
 
     public void Activate() {
         this.active = true;
-        if (this.consoleTile != null) {
-            ((IHelpWithConsole) this.consoleTile).Aseoha$SetEOHActive(true);
-            this.consoleTile.updateArtronValues();
-        }
+        this.hasStar = true;
         this.Mark = true;
+        WorldHelper.forceChunkVanillaIfNotLoaded(ServerLifecycleHooks.getCurrentServer().getLevel(this.level.dimension()), new ChunkPos(this.getBlockPos().getX() / 16, this.getBlockPos().getZ() / 16));
+        if (this.consoleTile == null) return;
+        ((IHelpWithConsole) this.consoleTile).Aseoha$SetEOHActive(true);
+        ((IHelpWithConsole) this.consoleTile).Aseoha$SetEOH(this);
+        this.consoleTile.updateArtronValues();
     }
 
     public void Update() {
-        if (this.active && this.GetStabilizers() < 2) {
-            if (this.consoleTile != null)
-                ((IHelpWithConsole) this.consoleTile).Aseoha$SetEOHActive(true);
+        if (this.consoleTile == null) return;
+        if (this.active) {
+            ((IHelpWithConsole) this.consoleTile).Aseoha$SetEOHActive(true);
             this.timer++;
         }
-        if (this.timer != 0 && this.GetStabilizers() > 1) {
+        if (this.timer != 0 && this.GetStabilizers() > 3) {
             this.timer = 0;
             this.IsOverheated = false;
-            if (this.consoleTile != null)
-                ((IHelpWithConsole) this.consoleTile).Aseoha$SetEOHOverheated(false);
+            ((IHelpWithConsole) this.consoleTile).Aseoha$SetEOHOverheated(false);
             this.Mark = true;
         }
         if (this.timer > 9600) {
             this.IsOverheated = true;
-            if (this.consoleTile != null)
-                ((IHelpWithConsole) this.consoleTile).Aseoha$SetEOHOverheated(true);
+            ((IHelpWithConsole) this.consoleTile).Aseoha$SetEOHOverheated(true);
             this.Mark = true;
         }
     }

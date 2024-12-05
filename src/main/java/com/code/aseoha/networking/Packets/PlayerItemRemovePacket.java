@@ -45,9 +45,8 @@ public class PlayerItemRemovePacket {
     public static void handle(PlayerItemRemovePacket mes, @NotNull Supplier<NetworkEvent.Context> ctx) {
         ((NetworkEvent.Context) ctx.get()).enqueueWork(() -> {
             ServerWorld world = ((NetworkEvent.Context) ctx.get()).getSender().getLevel();
-            if(world != null && world.getPlayerByUUID(mes.player) != null)
-                if(!world.getPlayerByUUID(mes.player).abilities.instabuild)
-                    world.getPlayerByUUID(mes.player).getMainHandItem().shrink(1);
+            if(world == null || world.getPlayerByUUID(mes.player) != null) return;
+            world.getPlayerByUUID(mes.player).getMainHandItem().shrink(1);
         });
         ((NetworkEvent.Context) ctx.get()).setPacketHandled(true);
     }

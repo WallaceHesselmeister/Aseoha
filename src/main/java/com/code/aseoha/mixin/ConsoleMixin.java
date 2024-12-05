@@ -21,6 +21,7 @@ import net.minecraft.util.SoundEvents;
 import net.minecraft.util.concurrent.TickDelayedTask;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import net.minecraft.world.server.ServerWorld;
 import net.tardis.mod.ars.ConsoleRoom;
 import net.tardis.mod.client.ClientHelper;
 import net.tardis.mod.controls.AbstractControl;
@@ -30,6 +31,8 @@ import net.tardis.mod.exterior.AbstractExterior;
 import net.tardis.mod.helper.TardisHelper;
 import net.tardis.mod.helper.WorldHelper;
 import net.tardis.mod.misc.CrashType;
+import net.tardis.mod.misc.ITickable;
+import net.tardis.mod.misc.SpaceTimeCoord;
 import net.tardis.mod.registries.ControlRegistry;
 import net.tardis.mod.sounds.TSounds;
 import net.tardis.mod.tileentities.ConsoleTile;
@@ -99,6 +102,14 @@ public abstract class ConsoleMixin extends TileEntity implements ITickableTileEn
     private ConsoleRoom consoleRoom;
     @Shadow(remap = false)
     private SparkingLevel sparkLevel;
+
+    @Shadow public abstract void registerTicker(ITickable ticker);
+
+    @Shadow public abstract boolean relocatePlayerToExterior(PlayerEntity player, ServerWorld destWorld);
+
+    @Shadow public abstract void registerControlOverrides();
+
+    @Shadow private SpaceTimeCoord returnLocation;
     //TODO: FINISH MAINTENANCE MODE
     @Unique
     public boolean Aseoha$Hads = false;
@@ -129,7 +140,7 @@ public abstract class ConsoleMixin extends TileEntity implements ITickableTileEn
     public boolean Aseoha$EOHOverheated;
 
     @Unique
-    public boolean Aseoha$EOHPillars;
+    public byte Aseoha$EOHPillars;
 
     @Unique
     public long Aseoha$EOHTimer;
@@ -144,15 +155,15 @@ public abstract class ConsoleMixin extends TileEntity implements ITickableTileEn
     private World Aseoha$InteriorDimension;
 
     @Unique
-    private Pilot Aseoha$Pilot;
+    private PlayerEntity Aseoha$Pilot;
 
     @Override
-    public void Aseoha$SetPilot(Pilot player) {
+    public void Aseoha$SetPilot(PlayerEntity player) {
         this.Aseoha$Pilot = player;
     }
 
     @Override
-    public Pilot Aseoha$GetPilot() {
+    public PlayerEntity Aseoha$GetPilot() {
         return this.Aseoha$Pilot;
     }
 
@@ -161,50 +172,45 @@ public abstract class ConsoleMixin extends TileEntity implements ITickableTileEn
         this.Aseoha$Hads = compound.getBoolean("hads");
         this.Aseoha$EOHTimer = compound.getLong("eoh_timer");
         this.Aseoha$HasEOH = compound.getBoolean("has_eoh");
-        this.Aseoha$EOHPillars = compound.getBoolean("eoh_pillars");
+        this.Aseoha$EOHPillars = compound.getByte("eoh_pillars_count");
         this.Aseoha$Maintenance = compound.getBoolean("maintenance");
         this.Aseoha$ExteriorSize = compound.getBoolean("exterior_size_scale");
-        assert this.level != null;
-        if(compound.contains("Aseoha$Pilot_UUID")) {
-            this.Aseoha$Pilot =
-                    new Pilot(
-                            this.level.getPlayerByUUID(compound.getUUID("Aseoha$Pilot_UUID")));
-        }
-//        this.interiorDimension. = compound.
+        if (!compound.contains("Aseoha$Pilot_UUID")) return;
+        if(this.level.getPlayerByUUID(compound.getUUID("Aseoha$Pilot_UUID")) == null) return;
+        this.Aseoha$Pilot = //new Pilot(
+                this.level.getPlayerByUUID(compound.getUUID("Aseoha$Pilot_UUID"));
     }
 
     @Inject(method = "save(Lnet/minecraft/nbt/CompoundNBT;)Lnet/minecraft/nbt/CompoundNBT;", at = @At("HEAD"))
     public void Aseoha$ConsoleWrite(CompoundNBT compound, CallbackInfoReturnable<CompoundNBT> cir) {
         compound.putBoolean("hads", this.Aseoha$Hads);
         compound.putBoolean("has_eoh", this.Aseoha$HasEOH);
-        compound.putBoolean("eoh_pillars", this.Aseoha$EOHPillars);
+        compound.putByte("eoh_pillars_count", this.Aseoha$EOHPillars);
         compound.putLong("eoh_timer", this.Aseoha$EOHTimer);
         compound.putBoolean("maintenance", this.Aseoha$Maintenance);
         compound.putBoolean("exterior_size_scale", this.Aseoha$ExteriorSize);
-        if (this.Aseoha$Pilot != null)
-            if (this.Aseoha$Pilot.GetPilotPlayer() != null)
-                    compound.putUUID("Aseoha$Pilot_UUID", this.Aseoha$Pilot.GetPilotPlayer().getUUID());
+        if (this.Aseoha$Pilot == null) return;
+        compound.putUUID("Aseoha$Pilot_UUID", this.Aseoha$Pilot.getUUID());
     }
 
 
     @Inject(method = "tick()V", at = @At("TAIL"))
     public void Aseoha$Tick(CallbackInfo ci) {
-        if (this.Aseoha$GetHasEOH()) {
-            if (this.Aseoha$GetEOH() != null) {
-                this.Aseoha$EOH.tick();
-                if (this.Aseoha$EOHOverheated)
-                    this.Aseoha$GetEOH().SideEffects();
-            }
-        }
+        if (!this.Aseoha$GetHasEOH()) return;
+        if (this.Aseoha$GetEOH() == null) return;
+        this.Aseoha$EOH.tick();
+//        if (this.Aseoha$EOHOverheated)
+//            this.Aseoha$GetEOH().SideEffects();
     }
 
     @Inject(method = "lambda$updateArtronValues$26", at = @At("TAIL"), remap = false)
     public void Aseoha$UpdateArtronValues(CallbackInfo ci) {
-        if (this.Aseoha$GetHasEOH() && this.Aseoha$GetEOH() != null)
-            if (!this.Aseoha$GetEOHOverheated() && this.Aseoha$GetEOHActive()) {
-                this.setMaxArtron(Float.POSITIVE_INFINITY);
-                this.setArtron(Float.POSITIVE_INFINITY);
-            }
+        if (!this.Aseoha$GetHasEOH()) return;
+        if (this.Aseoha$GetEOH() == null) return;
+        if (!this.Aseoha$GetEOHOverheated()) return;
+        if (this.Aseoha$GetEOHActive()) return;
+        this.setMaxArtron(Float.POSITIVE_INFINITY);
+        this.setArtron(Float.POSITIVE_INFINITY);
     }
 
     @Override
@@ -263,12 +269,12 @@ public abstract class ConsoleMixin extends TileEntity implements ITickableTileEn
     }
 
     @Override
-    public void Aseoha$SetEOHPillars(boolean EOHPillars) {
+    public void Aseoha$SetEOHPillars(byte EOHPillars) {
         this.Aseoha$EOHPillars = EOHPillars;
     }
 
     @Override
-    public boolean Aseoha$GetEOHPillars() {
+    public byte Aseoha$GetEOHPillars() {
         return this.Aseoha$EOHPillars;
     }
 
@@ -405,22 +411,20 @@ public abstract class ConsoleMixin extends TileEntity implements ITickableTileEn
      */
     @Overwrite(remap = false)
     private void playAmbientNoises() {
-        assert this.level != null;
-        if (this.level.isClientSide && config.COMMON.ShouldAmbientSoundsPlay.get()) {
-            PlayerEntity player = ClientHelper.getClientPlayer();
-            if (player.tickCount % 2400 == 0) {
-                ClientHelper.playMovingSound(player, (SoundEvent) TSounds.AMBIENT_CREAKS.get(), SoundCategory.AMBIENT, 0.5F, false);
-            }
+        if (!this.level.isClientSide) return;
 
-            if (this.consoleRoom == ConsoleRoom.NAUTILUS && player.tickCount % 600 == 0) {
-                ClientHelper.playMovingSound(player, SoundEvents.AMBIENT_UNDERWATER_LOOP_ADDITIONS_ULTRA_RARE, SoundCategory.AMBIENT, 1.0F, false);
-            }
+        if (!config.COMMON.ShouldAmbientSoundsPlay.get()) return;
 
-            if (this.sparkLevel == SparkingLevel.SPARKS && this.level.getGameTime() % 60L == 0L) {
-                this.level.playSound(ClientHelper.getClientPlayer(), this.getBlockPos(), (SoundEvent) TSounds.ELECTRIC_SPARK.get(), SoundCategory.BLOCKS, 0.3F, 1.0F);
-            }
-        }
+        PlayerEntity player = ClientHelper.getClientPlayer();
 
+        if (player.tickCount % 2400 == 0)
+            ClientHelper.playMovingSound(player, (SoundEvent) TSounds.AMBIENT_CREAKS.get(), SoundCategory.AMBIENT, 0.5F, false);
+
+        if (this.consoleRoom == ConsoleRoom.NAUTILUS && player.tickCount % 600 == 0)
+            ClientHelper.playMovingSound(player, SoundEvents.AMBIENT_UNDERWATER_LOOP_ADDITIONS_ULTRA_RARE, SoundCategory.AMBIENT, 1.0F, false);
+
+        if (this.sparkLevel == SparkingLevel.SPARKS && this.level.getGameTime() % 60L == 0L)
+            this.level.playSound(ClientHelper.getClientPlayer(), this.getBlockPos(), (SoundEvent) TSounds.ELECTRIC_SPARK.get(), SoundCategory.BLOCKS, 0.3F, 1.0F);
     }
 
     @Override

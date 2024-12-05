@@ -32,6 +32,7 @@ public class Networking {
         INSTANCE.registerMessage(iterator(), RWFToggle.class, RWFToggle::encode, RWFToggle::decode, RWFToggle::handle);
         INSTANCE.registerMessage(iterator(), TardisInputMessage.class, TardisInputMessage::encode, TardisInputMessage::decode, TardisInputMessage::handle);
         INSTANCE.registerMessage(iterator(), EOHInteractPacket.class, EOHInteractPacket::encode, EOHInteractPacket::decode, EOHInteractPacket::handle);
+        INSTANCE.registerMessage(iterator(), PlayerItemRemovePacket.class, PlayerItemRemovePacket::encode, PlayerItemRemovePacket::decode, PlayerItemRemovePacket::handle);
     }
 
     public static void sendToServer(Object msg) {

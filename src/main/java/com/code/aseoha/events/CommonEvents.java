@@ -399,11 +399,12 @@ public class CommonEvents {
      */
     @SubscribeEvent
     public static void TAPIOnTARDISTakeoff(net.mistersecret312.temporal_api.events.TardisEvent.TakeoffEvent event) {
+
         if (((IHelpWithConsole) event.getConsole()).Aseoha$GetMaintenance())
             event.setCanceled(true);
-        event.getConsole().getControl(HandbrakeControl.class).ifPresent(brake -> {
-            event.setCanceled(!brake.isFree());
-        });
+
+        /** Ensure that the TARDIS *ONLY* Takes off if the brake is free **/
+        event.getConsole().getControl(HandbrakeControl.class).ifPresent(brake -> event.setCanceled(!brake.isFree()));
     }
 
     @SubscribeEvent
@@ -411,84 +412,84 @@ public class CommonEvents {
         ConsoleTile console = TardisHelper.getConsoleInWorld(event.getPlayer().level).orElse(null);
         if (console != null && ((IHelpWithConsole) console).Aseoha$GetMaintenance())
             event.setCanceled(true);
-
     }
 
     @SubscribeEvent
     public static void ControlHitEvent(ControlEvent.ControlHitEvent event) {
-        if (event.getControl().getConsole() != null && ((IHelpWithConsole) event.getControl().getConsole()).Aseoha$GetMaintenance()) {
+        if (event.getControl().getConsole() != null && ((IHelpWithConsole) event.getControl().getConsole()).Aseoha$GetMaintenance())
             event.setCanceled(true);
-        }
+
         ConsoleTile consoleTile = event.getControl().getConsole();
 
-        if(((IHelpWithConsole) consoleTile).Aseoha$GetPilot() == null || ((IHelpWithConsole) consoleTile).Aseoha$GetPilot().GetPilotPlayer() == null){
-            if(((IHelpWithConsole) consoleTile).Aseoha$GetPilot() == null)
-                ((IHelpWithConsole) consoleTile).Aseoha$SetPilot(new Pilot(event.getPlayer()));
+        if (((IHelpWithConsole) consoleTile).Aseoha$GetPilot() != null) return;
 
-            if(((IHelpWithConsole) consoleTile).Aseoha$GetPilot().GetPilotPlayer() == null)
-                ((IHelpWithConsole) consoleTile).Aseoha$GetPilot().SetNewPilot(event.getPlayer());
-        }
+        ((IHelpWithConsole) consoleTile).Aseoha$SetPilot(event.getPlayer());
     }
 
 
     @SubscribeEvent
     public static void ControlClickedEvent(ControlEvents.ControlClickEvent event) {
-        if (event.getControl().getConsole() != null && ((IHelpWithConsole) event.getControl().getConsole()).Aseoha$GetMaintenance()) {
+        if (event.getControl().getConsole() == null) return;
+
+        if (((IHelpWithConsole) event.getControl().getConsole()).Aseoha$GetMaintenance())
             event.setCanceled(true);
-        }
+
         ConsoleTile consoleTile = event.getControl().getConsole();
 
-        if(((IHelpWithConsole) consoleTile).Aseoha$GetPilot() == null || ((IHelpWithConsole) consoleTile).Aseoha$GetPilot().GetPilotPlayer() == null){
-            if(((IHelpWithConsole) consoleTile).Aseoha$GetPilot() == null)
-                ((IHelpWithConsole) consoleTile).Aseoha$SetPilot(new Pilot(event.getPlayer()));
-
-            if(((IHelpWithConsole) consoleTile).Aseoha$GetPilot().GetPilotPlayer() == null)
-                ((IHelpWithConsole) consoleTile).Aseoha$GetPilot().SetNewPilot(event.getPlayer());
-        }
+        if (((IHelpWithConsole) consoleTile).Aseoha$GetPilot() == null)
+            ((IHelpWithConsole) consoleTile).Aseoha$SetPilot(event.getPlayer());
     }
 
     @SubscribeEvent
     public static void InsertSonic(ControlEvent.SonicPutEvent event) {
-        if (event.getControl().getConsole() != null && ((IHelpWithConsole) event.getControl().getConsole()).Aseoha$GetMaintenance()) {
+        if (event.getControl().getConsole() == null) return;
+        if (((IHelpWithConsole) event.getControl().getConsole()).Aseoha$GetMaintenance()) {
             event.setCanceled(true);
+            // Put return just in case I need to add onto this function later on
+            return;
         }
     }
 
     @SubscribeEvent
     public static void TakeSonic(ControlEvent.SonicTakeEvent event) {
-        if (event.getControl().getConsole() != null && ((IHelpWithConsole) event.getControl().getConsole()).Aseoha$GetMaintenance()) {
+        if (event.getControl().getConsole() != null && ((IHelpWithConsole) event.getControl().getConsole()).Aseoha$GetMaintenance())
             event.setCanceled(true);
-        }
     }
 
     @SubscribeEvent
     public static void onTardisLand(TardisEvent.Land event) {
-        if (event.getConsole().getArtron() < 32) {
-            aseoha.SendDebugToClient("TARDIS Land Low On Artron Code Being Executed");
-            ClientHelper.shutTheFuckUp(TSounds.TARDIS_LAND.get(), SoundCategory.BLOCKS);
-            Objects.requireNonNull(event.getConsole().getLevel()).playSound(null, event.getConsole().getBlockPos(), Sounds.LOW_ARTRON_LAND.get(), SoundCategory.BLOCKS, 1.0f, 1.0f);
-        }
+        if (event.getConsole().getArtron() > 32) return;
+        aseoha.SendDebugToClient("TARDIS Land Low On Artron Code Being Executed (Land)");
+        ClientHelper.shutTheFuckUp(TSounds.TARDIS_LAND.get(), SoundCategory.BLOCKS);
+        Objects.requireNonNull(event.getConsole().getLevel()).playSound(null, event.getConsole().getBlockPos(), Sounds.LOW_ARTRON_LAND.get(), SoundCategory.BLOCKS, 1.0f, 1.0f);
     }
 
 
     /**
-     * This is SUPPOSED to trigger HADS when you hit the exterior, unfortunately I never did get it working, also used it at one point for the hammer, now all it does right is rotating the monitor on the copper console
+     * This is SUPPOSED to trigger HADS when you hit the exterior, unfortunately I never did get it working, also used it at one point for the hammer, now all it does right is rotating the monitor on the copper console and throttle blast
      */
     @SubscribeEvent
     public static void OnAttack(AttackEntityEvent event) {
-        if (event.getTarget() instanceof ControlEntity) {
-            ConsoleTile consoleTile = (((ControlEntity) event.getTarget()).getControl().getConsole());
-            if (((ControlEntity) event.getTarget()).getControl() instanceof ThrottleControl)
-                if (event.getEntity() instanceof PlayerEntity) {
-                    if (((ControlEntity) event.getTarget()).getControl().getConsole().getControl(HandbrakeControl.class).get().isFree() && !((ControlEntity) event.getTarget()).getControl().getConsole().isLanding() && !((ControlEntity) event.getTarget()).getControl().getConsole().isInFlight()) {
+        if (!(event.getTarget() instanceof ControlEntity)) return;
+
+        ConsoleTile consoleTile = (((ControlEntity) event.getTarget()).getControl().getConsole());
+
+        ControlEntity control = (ControlEntity) event.getTarget();
+
+        AbstractControl Control = control.getControl();
+
+        if (!(event.getEntity() instanceof PlayerEntity)) return;
+
+        if (Control instanceof ThrottleControl)
+            if (consoleTile.getControl(HandbrakeControl.class).get().isFree() &&
+                    !consoleTile.isLanding() &&
+                    !consoleTile.isInFlight()) {
 //                        ClientHelper.shutTheFuckUp(TSounds.TARDIS_TAKEOFF.get(), SoundCategory.BLOCKS);
-                        event.getPlayer().playSound(Sounds.THROTTLE_BLAST.get(), 1, 1);
-                    }
-                }
-        }
-        if (event.getTarget() instanceof TardisEntity) {
-            ((TardisEntity) event.getTarget()).getConsole().getInteriorManager().setAlarmOn(true);
-        }
+                event.getPlayer().playSound(Sounds.THROTTLE_BLAST.get(), 1, 1);
+            }
+//        if (event.getTarget() instanceof TardisEntity) {
+//            ((TardisEntity) event.getTarget()).getConsole().getInteriorManager().setAlarmOn(true);
+//        }
 //////////////////////////////////////////////////////////////////////////////////////////Old ass low on artron code + non-working hammer
 //        if(event.getPlayer().getUseItem().equals(new ItemStack(ModItems.HAMMER.get()))){
 //            ConsoleTile console = ((ControlEntity) event.getTarget()).getControl().getConsole();
@@ -506,18 +507,13 @@ public class CommonEvents {
 //                    }
 //                }
 //        }
-        if (event.getTarget() instanceof ControlEntity) {
-            ControlEntity control = (ControlEntity) event.getTarget();
-            AbstractControl Control = control.getControl();
-            if (Control.getEntry().equals(ControlRegistry.MONITOR.get()) && event.getPlayer().isCrouching()) {
-                event.setCanceled(true);
-                if (Control.getConsole() instanceof CopperConsoleTile) {
-                    BlockPos pos = Control.getConsole().getBlockPos();
-                    Vector3d p = event.getPlayer().position().subtract(pos.getX() + 0.5, pos.getY(), pos.getZ() + 0.5).normalize();
-                    float rot = Aseoha$MonitorGetRot(p);
-                    ((IHelpWithMonitor) Control).Aseoha$SetRot(rot);
-                }
-            }
+        if (!(consoleTile instanceof CopperConsoleTile)) return;
+        if (Control.getEntry().equals(ControlRegistry.MONITOR.get()) && event.getPlayer().isCrouching()) {
+            event.setCanceled(true);
+            BlockPos pos = Control.getConsole().getBlockPos();
+            Vector3d p = event.getPlayer().position().subtract(pos.getX() + 0.5, pos.getY(), pos.getZ() + 0.5).normalize();
+            float rot = Aseoha$MonitorGetRot(p);
+            ((IHelpWithMonitor) Control).Aseoha$SetRot(rot);
         }
     }
 
@@ -671,32 +667,31 @@ public class CommonEvents {
     }
 
     public static void HadsActivate(ConsoleTile console) {
-        if(console == null)
+        if (console == null)
             return;
 
-        if (((IHelpWithConsole) console).Aseoha$GetHads()) {
-            StabilizerSubsystem stabs = console.getSubsystem(StabilizerSubsystem.class).orElse(null);
-            if(!console.isInFlight()) {
-                if(stabs != null)
-                    stabs.setActivated(false);
-                aseoha.SendDebugToAll("HADS Activated in TARDIS WorldKey " + console.getCustomName());
-                aseoha.SendDebugToAll("Console" + console);
-                console.takeoff();
-                console.getInteriorManager().setMonitorOverrides(new MonitorOverride(console, 1200, "HADS Has been triggered!"));
-                Objects.requireNonNull(Objects.requireNonNull(console.getLevel()).getServer()).tell(new TickDelayedTask(1, () -> {
-                    console.setDestinationReachedTick(1);
-                    console.setFlightTicks(1);
-                }));
-                console.updateClient();
-            }
-            if (console.flightTicks == 1200) {
-                console.scaleDestination();
-                console.land();
-                if(stabs != null)
-                    stabs.setActivated(true);
-                console.updateClient();
-            }
+        if (!((IHelpWithConsole) console).Aseoha$GetHads()) return;
+
+        StabilizerSubsystem stabs = console.getSubsystem(StabilizerSubsystem.class).orElse(null);
+
+        if (console.flightTicks >= 1200) {
+            console.scaleDestination();
+            console.land();
+            stabs.setActivated(true);
+            console.updateClient();
         }
+
+        if (console.isInFlight()) return;
+        stabs.setActivated(false);
+        aseoha.SendDebugToAll("HADS Activated in TARDIS WorldKey " + console.getCustomName());
+        aseoha.SendDebugToAll("Console" + console);
+        console.takeoff();
+        console.getInteriorManager().setMonitorOverrides(new MonitorOverride(console, 1200, "HADS Has been triggered!"));
+        Objects.requireNonNull(Objects.requireNonNull(console.getLevel()).getServer()).tell(new TickDelayedTask(1, () -> {
+            console.setDestinationReachedTick(1);
+            console.setFlightTicks(1);
+        }));
+        console.updateClient();
     }
 
 

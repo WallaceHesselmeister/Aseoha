@@ -47,9 +47,9 @@ public interface IHelpWithConsole {
 
     boolean Aseoha$GetHasEOH();
 
-    void Aseoha$SetEOHPillars(boolean EOHPillarCount);
+    void Aseoha$SetEOHPillars(byte EOHPillarCount);
 
-    boolean Aseoha$GetEOHPillars();
+    byte Aseoha$GetEOHPillars();
 
     long Aseoha$GetEOHTimer();
 
@@ -63,7 +63,7 @@ public interface IHelpWithConsole {
 
     void Aseoha$SetEOHActive(boolean aseoha$EOHActive);
 
-    void Aseoha$SetPilot(Pilot player);
+    void Aseoha$SetPilot(PlayerEntity player);
 
-    Pilot Aseoha$GetPilot();
+    PlayerEntity Aseoha$GetPilot();
 }
