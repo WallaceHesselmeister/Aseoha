@@ -25,6 +25,8 @@ public class LazerRifle extends BowItem {
     /** The amount of energy to consume every shot **/
     public int CONSUME_RATE = 20;
 
+    public boolean Switch = false;
+
     public LazerRifle(Properties settings) {
         super(settings);
     }
@@ -32,12 +34,17 @@ public class LazerRifle extends BowItem {
     @Override
     public void releaseUsing(ItemStack itemStack, Level level, LivingEntity livingEntity, int i) {
         if (livingEntity instanceof Player player) {
+
             boolean bl = player.getAbilities().instabuild || this.Mag.GetCharge() >= CONSUME_RATE;
             if (bl) {
 
                 int j = this.getUseDuration(itemStack) - i;
                 float f = getPowerForTime(j);
                 if (!level.isClientSide) {
+                    if(this.Switch){
+                        this.Switch = false;
+                        return;
+                    }
                     if(this.Mag == null) return;
                     AbstractArrow lazer = this.Mag.CreatePlasmaBolt(level, this.Mag, livingEntity);
 
@@ -68,6 +75,7 @@ public class LazerRifle extends BowItem {
     @Override
     public @NotNull InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand interactionHand) {
         if(player.isCrouching()) {
+            this.Switch = true;
             if (this.Mag != null) player.addItem(this.Mag.getDefaultInstance());
             this.Mag = null;
             if (player.getItemBySlot(EquipmentSlot.OFFHAND).getItem().equals(AseohaItems.PLASMA_BOLT_MAGAZINE.get())) {
@@ -77,16 +85,6 @@ public class LazerRifle extends BowItem {
         }
         return super.use(level, player, interactionHand);
     }
-
-//    @Override
-//    public @NotNull Predicate<ItemStack> getAllSupportedProjectiles() {
-//        return super.getAllSupportedProjectiles();
-//    }
-//
-//    @Override
-//    public int getDefaultProjectileRange() {
-//        return super.getDefaultProjectileRange();
-//    }
 
     @Override
     public void appendHoverText(ItemStack stack, @Nullable Level worldIn, List<Component> tooltip, TooltipFlag flagIn) {

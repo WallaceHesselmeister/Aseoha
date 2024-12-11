@@ -24,8 +24,12 @@ import java.util.List;
 
 public class LazerRifle extends BowItem {
     AbstractPlasmaBoltMagazine Mag;
-    /** The amount of energy to consume every shot **/
+    /**
+     * The amount of energy to consume every shot
+     **/
     public int CONSUME_RATE = 20;
+
+    public boolean Switch = false;
 
     public LazerRifle(Properties settings) {
         super(settings);
@@ -40,7 +44,11 @@ public class LazerRifle extends BowItem {
                 int j = this.getUseDuration(itemStack) - i;
                 float f = getPowerForTime(j);
                 if (!level.isClientSide) {
-                    if(this.Mag == null) return;
+                    if (this.Switch) {
+                        this.Switch = false;
+                        return;
+                    }
+                    if (this.Mag == null) return;
                     AbstractArrow lazer = this.Mag.CreatePlasmaBolt(level, this.Mag, livingEntity);
 
                     lazer.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, f * 3.0F, 1.0F);
@@ -69,7 +77,8 @@ public class LazerRifle extends BowItem {
 
     @Override
     public @NotNull InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand interactionHand) {
-        if(player.isCrouching()) {
+        if (player.isCrouching()) {
+            this.Switch = true;
             if (this.Mag != null) player.addItem(this.Mag.getDefaultInstance());
             this.Mag = null;
             if (player.getItemBySlot(EquipmentSlot.OFFHAND).getItem().equals(AseohaItems.PLASMA_BOLT_MAGAZINE.get())) {

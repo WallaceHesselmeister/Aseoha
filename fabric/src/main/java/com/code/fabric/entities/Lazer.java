@@ -34,7 +34,7 @@ public class Lazer extends AbstractArrow {
 
     @Override
     protected void defineSynchedData() {
-
+        super.defineSynchedData();
     }
 
     @Override
@@ -46,7 +46,8 @@ public class Lazer extends AbstractArrow {
     protected void onHitBlock(BlockHitResult ray) {
         super.onHitBlock(ray);
         BlockState TheBlockAbove = this.level().getBlockState(ray.getBlockPos().above(1));
-        if(TheBlockAbove.equals(Blocks.AIR.defaultBlockState())) this.level().setBlock(ray.getBlockPos().above(1), Blocks.FIRE.defaultBlockState(), 0);
+        if (TheBlockAbove.equals(Blocks.AIR.defaultBlockState()))
+            this.level().setBlock(ray.getBlockPos().above(1), Blocks.FIRE.defaultBlockState(), 0);
     }
 
     @Override
