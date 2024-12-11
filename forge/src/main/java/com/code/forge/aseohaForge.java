@@ -5,7 +5,6 @@ import com.code.common.client.models.K9mkIIModel;
 import com.code.common.client.models.LazerModel;
 import com.code.common.client.renderer.K9MkIIRenderer;
 import com.code.common.client.renderer.LazerRenderer;
-import com.code.common.entities.K9MkIIEntity;
 import com.code.common.registries.AseohaEntities;
 import com.code.common.entities.K9Entity;
 import com.code.common.client.models.K9model;

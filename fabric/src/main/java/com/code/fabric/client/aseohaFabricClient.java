@@ -2,7 +2,7 @@ package com.code.fabric.client;
 
 import com.code.common.client.models.K9mkIIModel;
 import com.code.common.client.models.K9model;
-import com.code.common.client.models.LazerFabricModel;
+import com.code.common.client.models.LazerModel;
 import com.code.common.registries.AseohaBlocks;
 import com.code.fabric.client.client.renderer.K9MkIIRenderer;
 import com.code.fabric.client.client.renderer.K9Renderer;
@@ -33,6 +33,6 @@ public final class aseohaFabricClient implements ClientModInitializer {
 
         EntityModelLayerRegistry.register(K9mkIIModel.LAYER_LOCATION, K9mkIIModel::createBodyLayer);
 
-        EntityModelLayerRegistry.register(LazerFabricModel.LAYER_LOCATION, LazerFabricModel::createBodyLayer);
+        EntityModelLayerRegistry.register(LazerModel.LAYER_LOCATION, LazerModel::createBodyLayer);
     }
 }

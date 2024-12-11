@@ -1,6 +1,5 @@
 package com.code.common.client.models;
 
-import com.code.common.entities.Lazer;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.client.model.EntityModel;
@@ -9,12 +8,13 @@ import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.entity.projectile.AbstractArrow;
 
 import static com.code.aseoha.MOD_ID;
 
-public class LazerModel<T extends Lazer> extends EntityModel<T> {
+public class LazerModel<T extends AbstractArrow> extends EntityModel<T> {
         // This layer location should be baked with EntityRendererProvider.Context in the entity renderer and passed into this model's constructor
-        public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(new ResourceLocation(MOD_ID, "lazermodel"), "main");
+        public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(new ResourceLocation(MOD_ID, "lazerfabricmodel"), "main");
         private final ModelPart bb_main;
 
         public LazerModel(ModelPart root) {
@@ -31,7 +31,7 @@ public class LazerModel<T extends Lazer> extends EntityModel<T> {
         }
 
         @Override
-        public void setupAnim(Lazer entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {}
+        public void setupAnim(AbstractArrow entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {}
 
         @Override
         public void renderToBuffer(PoseStack poseStack, VertexConsumer vertexConsumer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha) {

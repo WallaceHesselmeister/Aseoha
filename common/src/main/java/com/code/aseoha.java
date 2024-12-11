@@ -29,12 +29,13 @@ public final class aseoha {
     public static void init() {
 
         // Write common init code here.
+        ForgeSpecificSetup();
+        FabricSpecificSetup();
+
         AseohaItems.ITEMS.register();
         AseohaTabs.TABS.register();
         AseohaBlocks.register();
         Structures.DEFERRED_REGISTRY_STRUCTURE.register();
-        ForgeSpecificSetup();
-        FabricSpecificSetup();
 
 
         /** If this is true then ASEOHA will attempt to make roundels for every. single. block. registered.
@@ -61,6 +62,7 @@ public final class aseoha {
     public static void ForgeSpecificSetup() {
         if(Platform.isFabric()) return;
         AseohaEntities.ENTITY_TYPES.register();
+        AseohaItems.ITEMS_NO_FABRIC.register();
     }
 
     public static void FabricSpecificSetup() {
