@@ -17,6 +17,8 @@ import static com.code.aseoha.MOD_ID;
 public class AseohaItems {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(MOD_ID, Registries.ITEM);
 
+    public static final DeferredRegister<Item> ITEMS_NO_FABRIC = DeferredRegister.create(MOD_ID, Registries.ITEM);
+
     public static TagKey<Item> JELLY_BABY = TagKey.create(Registries.ITEM, new ResourceLocation("forge", "items/jelly_baby"));
 
     public static final RegistrySupplier<Item> GOLDEN_POTATO = ITEMS.register("golden_potato", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(9).saturationMod(3).alwaysEat().effect(new MobEffectInstance(MobEffects.REGENERATION, 400, 1), 1.0F).effect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 400, 1), 1.0F).build()).arch$tab(AseohaTabs.FOOD_TAB)));
@@ -60,11 +62,11 @@ public class AseohaItems {
     public static final RegistrySupplier<Item> SONIC_FOURTEENTH = ITEMS.register("sonic_fourteenth",
             () -> new SonicItem(new Item.Properties().arch$tab(AseohaTabs.MAIN_TAB)));
 
-    public static final RegistrySupplier<Item> LAZER_RIFLE = ITEMS.register("lazer_rifle",
+    public static final RegistrySupplier<Item> LAZER_RIFLE = ITEMS_NO_FABRIC.register("lazer_rifle",
             () -> new LazerRifle(new Item.Properties().arch$tab(AseohaTabs.MAIN_TAB)));
 
-    public static final RegistrySupplier<Item> PLASMA_BOLT_MAGAZINE = ITEMS.register("plasma_bolt_magazine",
-            () -> new LazerRifle(new Item.Properties().arch$tab(AseohaTabs.MAIN_TAB)));
+    public static final RegistrySupplier<Item> PLASMA_BOLT_MAGAZINE = ITEMS_NO_FABRIC.register("plasma_bolt_magazine",
+            () -> new PlasmaBoltMagazine(new Item.Properties().arch$tab(AseohaTabs.MAIN_TAB)));
 
     public static final RegistrySupplier<Item> HEXAGONAL_ROUNDEL_MOLD = ITEMS.register("hexagonal_roundel_mold",
             () -> new Item(new Item.Properties().arch$tab(AseohaTabs.MAIN_TAB)));

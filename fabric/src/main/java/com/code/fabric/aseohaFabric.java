@@ -4,6 +4,7 @@ import com.code.aseoha;
 import com.code.common.entities.K9Entity;
 import com.code.common.entities.K9MkIIEntity;
 import com.code.fabric.registries.AseohaEntities;
+import com.code.fabric.registries.AseohaItems;
 import dev.architectury.event.events.common.TickEvent;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.object.builder.v1.entity.FabricDefaultAttributeRegistry;
@@ -14,6 +15,8 @@ public final class aseohaFabric implements ModInitializer {
 
     @Override
     public void onInitialize() {
+        AseohaItems.ITEMS.register();
+        
         AseohaEntities.ENTITY_TYPES.register();
 
         aseoha.init();

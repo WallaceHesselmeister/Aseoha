@@ -24,4 +24,8 @@ public class AseohaEntities {
         K9MkII = ENTITY_TYPES.register("k9mk2", () -> EntityType.Builder.of(K9MkIIEntity::new, MobCategory.MISC).sized(1.0f, 1.0f).build("aseoha:k9mk2"));
         LAZER = ENTITY_TYPES.register("lazer", () -> EntityType.Builder.of(Lazer::new, MobCategory.MISC).sized(0.5F, 0.5F).build("aseoha:lazer"));
     }
+
+    public static EntityType<Lazer> LazerEntityType() {
+        return LAZER.get();
+    }
 }

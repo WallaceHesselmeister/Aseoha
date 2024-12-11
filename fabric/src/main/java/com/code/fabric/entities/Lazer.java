@@ -1,6 +1,6 @@
-package com.code.common.entities;
+package com.code.fabric.entities;
 
-import com.code.common.registries.AseohaEntities;
+import com.code.fabric.registries.AseohaEntities;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.projectile.AbstractArrow;
