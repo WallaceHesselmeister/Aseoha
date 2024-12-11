@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "aseoha:block/chiseled_deepslate_roundel_facade"
-  }
-}

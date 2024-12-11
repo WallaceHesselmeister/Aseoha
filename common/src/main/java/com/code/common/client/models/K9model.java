@@ -3,7 +3,7 @@ package com.code.common.client.models;// Made with Blockbench 4.11.2
 // Paste this class into your mod and generate all required imports
 
 
-import com.code.common.K9Entity;
+import com.code.common.entities.K9Entity;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.client.model.EntityModel;
@@ -132,6 +132,15 @@ public class K9model<T extends K9Entity> extends EntityModel<T> {
 
     @Override
     public void renderToBuffer(PoseStack poseStack, VertexConsumer vertexConsumer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha) {
+        head.zScale = 1.1f;
+        head.yScale = 1.1f;
+        head.xScale = 1.1f;
+        body.zScale = 1.1f;
+        body.yScale = 1.1f;
+        body.xScale = 1.1f;
+        tail.zScale = 1.1f;
+        tail.yScale = 1.1f;
+        tail.xScale = 1.1f;
         head.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
         body.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
         tail.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);

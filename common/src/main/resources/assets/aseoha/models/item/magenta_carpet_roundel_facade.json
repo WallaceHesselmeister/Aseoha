@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "aseoha:block/magenta_carpet_roundel_facade"
-  }
-}

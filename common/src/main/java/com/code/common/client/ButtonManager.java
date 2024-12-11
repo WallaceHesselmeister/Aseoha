@@ -16,6 +16,11 @@ public class ButtonManager {
         this.Buttons.add(guiButton);
     }
 
+    public void AddButton(String ID, String Text, int PosX, int PosY, int SizeXMin, int SizeYMin, int SizeXMax, int SizeYMax, int Padding, int RGBA) {
+        GUIButton guiButton = new GUIButton(ID, Text, PosX, PosY, SizeXMin, SizeYMin, SizeXMax, SizeYMax, Padding, RGBA);
+        this.Buttons.add(guiButton);
+    }
+
     public GUIButton GetButton(String ID) {
         AtomicReference<GUIButton> buttonAtomicReference = new AtomicReference<>();
         this.Buttons.forEach(guiButton -> {
@@ -30,9 +35,18 @@ public class ButtonManager {
         GUIButton button = this.GetButton(ID);
         graphics.fill(button.GetPosX() - button.GetPadding(),
                 button.GetPosY() - button.GetPadding(),
-                button.GetPosX() + button.GetPadding() + Minecraft.getInstance().font.width(button.GetText()),
+                button.GetPosX() + Minecraft.getInstance().font.width(button.GetText()) + button.GetPadding(),
                 button.GetPosY() + Minecraft.getInstance().font.lineHeight + button.GetPadding(),
                 button.GetARGB32());
+    }
+
+    public void RenderAllButtons(GuiGraphics graphics) {
+        this.Buttons.forEach(button -> graphics.fill(
+                button.GetSizeXMin(),
+                button.GetPosY() - button.GetPadding(),
+                button.GetSizeXMax(),
+                button.GetPosY() + Minecraft.getInstance().font.lineHeight + button.GetPadding(),
+                button.GetARGB32()));
     }
 
     public void RenderButtonGradient(GuiGraphics graphics, String ID, int GradientARGB) {

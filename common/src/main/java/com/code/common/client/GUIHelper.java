@@ -1,5 +1,4 @@
 package com.code.common.client;
-import com.code.common.client.K9Screen;
 import net.minecraft.client.Minecraft;
 
 public class GUIHelper {

@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "aseoha:block/trapped_chest_roundel_facade"
-  }
-}

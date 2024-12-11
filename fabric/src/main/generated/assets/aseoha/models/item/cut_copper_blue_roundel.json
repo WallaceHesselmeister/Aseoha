@@ -1,6 +1,0 @@
-{
-  "parent": "aseoha:block/roundel_template",
-  "textures": {
-    "all": "minecraft:block/cut_copper"
-  }
-}

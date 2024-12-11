@@ -1,6 +1,8 @@
 package com.code.fabric.registries;
 
-import com.code.fabric.K9Entity;
+import com.code.common.entities.Lazer;
+import com.code.fabric.entities.K9Entity;
+import com.code.fabric.entities.K9MkIIEntity;
 import dev.architectury.registry.registries.DeferredRegister;
 import dev.architectury.registry.registries.RegistrySupplier;
 import net.minecraft.core.registries.Registries;
@@ -14,8 +16,12 @@ public class AseohaEntities {
             = DeferredRegister.create(MOD_ID, Registries.ENTITY_TYPE);
 
     public static final RegistrySupplier<EntityType<K9Entity>> K9;
+    public static final RegistrySupplier<EntityType<K9MkIIEntity>> K9MkII;
+    public static final RegistrySupplier<EntityType<Lazer>> LAZER;
 
     static {
         K9 = ENTITY_TYPES.register("k9", () -> EntityType.Builder.of(K9Entity::new, MobCategory.MISC).sized(1.0f, 1.0f).build("aseoha:k9"));
+        K9MkII = ENTITY_TYPES.register("k9mk2", () -> EntityType.Builder.of(K9MkIIEntity::new, MobCategory.MISC).sized(1.0f, 1.0f).build("aseoha:k9mk2"));
+        LAZER = ENTITY_TYPES.register("lazer", () -> EntityType.Builder.of(Lazer::new, MobCategory.MISC).sized(0.5F, 0.5F).build("aseoha:lazer"));
     }
 }

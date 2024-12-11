@@ -1,21 +1,7 @@
 {
   "variants": {
-    "": [
-      {
-        "model": "aseoha:block/oxidized_copper_roundel_alternating"
-      },
-      {
-        "model": "aseoha:block/oxidized_copper_roundel_alternating",
-        "y": 90
-      },
-      {
-        "model": "aseoha:block/oxidized_copper_roundel_alternating",
-        "y": 180
-      },
-      {
-        "model": "aseoha:block/oxidized_copper_roundel_alternating",
-        "y": 270
-      }
-    ]
+    "": {
+      "model": "aseoha:block/oxidized_copper_roundel_alternating"
+    }
   }
 }

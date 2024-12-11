@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "aseoha:block/mushroom_stem_roundel_facade"
-  }
-}

@@ -11,7 +11,17 @@ import java.util.function.Supplier;
 
 @SuppressWarnings({"deprecation", "unchecked"})
 public enum AseohaToolMaterials implements Tier {
-    LATINUM(6, 4128, 12.0F, 6.0F, 25, () -> Ingredient.of(AseohaItems.LATINUM_BRICK.get()));
+    LATINUM(6, 4128, 12.0F, 6.0F, 25, () -> Ingredient.of(AseohaItems.LATINUM_BRICK.get())),
+
+    STEEL(3, 500, 8.5F, 3.5F, 15,
+                  () -> Ingredient.of(AseohaItems.STEEL_INGOT.get())),
+
+    DALEKANIUM(4, 3000, 6.0F, 5.5F, 20,
+            () -> Ingredient.of(AseohaItems.STEEL_INGOT.get())),
+
+    CANDY_CANE(0, 32, 12.0F, 0.0F, 22,
+                       () -> Ingredient.of(AseohaItems.STEEL_INGOT.get()));
+
 
     private final int miningLevel;
     private final int itemDurability;
@@ -56,6 +66,6 @@ public enum AseohaToolMaterials implements Tier {
 
     @Override
     public @NotNull Ingredient getRepairIngredient() {
-        return (Ingredient)this.repairIngredient.get();
+        return this.repairIngredient.get();
     }
 }

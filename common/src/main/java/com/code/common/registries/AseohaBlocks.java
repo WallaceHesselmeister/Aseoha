@@ -120,6 +120,9 @@ public class AseohaBlocks {
     public static final RegistrySupplier<Block> TRENZALORE_SAND = registerBlock("trenzalore_sand",
             () -> new SandBlock(14406560, BlockBehaviour.Properties.of().strength(0.5F).sound(SoundType.SAND)));
 
+    public static final RegistrySupplier<Block> FAT_BLOCK = registerBlock("fat_block",
+            () -> new Block(BlockBehaviour.Properties.of().strength(0.2F).sound(SoundType.SAND)));
+
     public static final RegistrySupplier<Block> TOASTER = registerBlock("toaster",
             () -> new Block(BlockBehaviour.Properties.of().strength(1.25F, 5.25F).noOcclusion()));
 

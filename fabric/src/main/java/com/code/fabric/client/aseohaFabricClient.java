@@ -1,8 +1,12 @@
 package com.code.fabric.client;
 
+import com.code.common.client.models.K9mkIIModel;
 import com.code.common.client.models.K9model;
+import com.code.common.client.models.LazerModel;
 import com.code.common.registries.AseohaBlocks;
+import com.code.fabric.client.client.renderer.K9MkIIRenderer;
 import com.code.fabric.client.client.renderer.K9Renderer;
+import com.code.fabric.client.client.renderer.LazerRenderer;
 import com.code.fabric.registries.AseohaEntities;
 import dev.architectury.registry.client.level.entity.EntityModelLayerRegistry;
 import net.fabricmc.api.ClientModInitializer;
@@ -17,10 +21,18 @@ public final class aseohaFabricClient implements ClientModInitializer {
 
         // This entrypoint is suitable for setting up client-specific logic, such as rendering.
 
-        AseohaBlocks.BLUE_ROUNDELS.forEach(block -> BlockRenderLayerMap.INSTANCE.putBlock(block.get(), RenderType.cutout()));
+        AseohaBlocks.BLUE_ROUNDELS.forEach(block -> BlockRenderLayerMap.INSTANCE.putBlock(block.get(), RenderType.cutoutMipped()));
 
         EntityRendererRegistry.register(AseohaEntities.K9.get(), K9Renderer::new);
 
+        EntityRendererRegistry.register(AseohaEntities.K9MkII.get(), K9MkIIRenderer::new);
+
+        EntityRendererRegistry.register(AseohaEntities.LAZER.get(), LazerRenderer::new);
+
         EntityModelLayerRegistry.register(K9model.LAYER_LOCATION, K9model::createBodyLayer);
+
+        EntityModelLayerRegistry.register(K9mkIIModel.LAYER_LOCATION, K9mkIIModel::createBodyLayer);
+
+        EntityModelLayerRegistry.register(LazerModel.LAYER_LOCATION, LazerModel::createBodyLayer);
     }
 }

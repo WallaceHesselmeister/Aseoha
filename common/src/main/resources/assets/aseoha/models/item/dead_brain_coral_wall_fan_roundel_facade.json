@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "aseoha:block/dead_brain_coral_wall_fan_roundel_facade"
-  }
-}

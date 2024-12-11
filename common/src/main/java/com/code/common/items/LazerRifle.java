@@ -1,0 +1,108 @@
+package com.code.common.items;
+
+import com.code.common.entities.Lazer;
+import com.code.common.registries.AseohaEntities;
+import com.code.common.registries.AseohaItems;
+import net.minecraft.network.chat.Component;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
+import net.minecraft.stats.Stats;
+import net.minecraft.tags.ItemTags;
+import net.minecraft.world.InteractionHand;
+import net.minecraft.world.InteractionResult;
+import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.HumanoidArm;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.monster.CrossbowAttackMob;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.projectile.AbstractArrow;
+import net.minecraft.world.item.*;
+import net.minecraft.world.item.enchantment.EnchantmentHelper;
+import net.minecraft.world.item.enchantment.Enchantments;
+import net.minecraft.world.level.Level;
+import net.minecraft.world.phys.Vec3;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+import org.joml.Quaternionf;
+import org.joml.Vector3d;
+import org.joml.Vector3f;
+
+import java.util.List;
+import java.util.function.Predicate;
+
+import static com.code.common.entities.Lazer.CreateLazer;
+
+public class LazerRifle extends BowItem {
+    PlasmaBoltMagazine Mag;
+    /** The amount of energy to consume every shot **/
+    public int CONSUME_RATE = 20;
+
+    public LazerRifle(Properties settings) {
+        super(settings);
+    }
+
+    @Override
+    public void releaseUsing(ItemStack itemStack, Level level, LivingEntity livingEntity, int i) {
+        if (livingEntity instanceof Player player) {
+            boolean bl = player.getAbilities().instabuild || this.Mag.GetCharge() >= CONSUME_RATE;
+            if (bl) {
+
+                int j = this.getUseDuration(itemStack) - i;
+                float f = getPowerForTime(j);
+                if (!level.isClientSide) {
+                    AbstractArrow lazer = this.Mag.CreatePlasmaBolt(level, this.Mag, livingEntity);
+
+                    lazer.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, f * 3.0F, 1.0F);
+
+                    if (f == 1.0F) {
+                        lazer.setCritArrow(true);
+                    }
+
+                    int enchantmentLevel = EnchantmentHelper.getItemEnchantmentLevel(Enchantments.POWER_ARROWS, itemStack);
+
+                    if (enchantmentLevel > 0) {
+                        lazer.setBaseDamage(lazer.getBaseDamage() + (double) enchantmentLevel * 0.5 + 0.5);
+                    }
+
+                    itemStack.hurtAndBreak(1, player, (player2) -> player2.broadcastBreakEvent(player.getUsedItemHand()));
+
+                    level.addFreshEntity(lazer);
+                }
+
+                level.playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.ARROW_SHOOT, SoundSource.PLAYERS, 1.0F, 1.0F / (level.getRandom().nextFloat() * 0.4F + 1.2F) + f * 0.5F);
+
+                player.awardStat(Stats.ITEM_USED.get(this));
+            }
+        }
+    }
+
+    @Override
+    public @NotNull InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand interactionHand) {
+        if(player.isCrouching() && player.getOffhandItem().getItem().equals(AseohaItems.PLASMA_BOLT_MAGAZINE.get())) {
+            if (interactionHand.equals(InteractionHand.OFF_HAND)) {
+                if (this.Mag != null) player.addItem(this.Mag.getDefaultInstance());
+                this.Mag = null;
+                this.Mag = ((PlasmaBoltMagazine) player.getOffhandItem().getItem());
+                player.setItemSlot(EquipmentSlot.OFFHAND, ItemStack.EMPTY);
+            }
+        }
+        return super.use(level, player, interactionHand);
+    }
+
+//    @Override
+//    public @NotNull Predicate<ItemStack> getAllSupportedProjectiles() {
+//        return super.getAllSupportedProjectiles();
+//    }
+//
+//    @Override
+//    public int getDefaultProjectileRange() {
+//        return super.getDefaultProjectileRange();
+//    }
+
+    @Override
+    public void appendHoverText(ItemStack stack, @Nullable Level worldIn, List<Component> tooltip, TooltipFlag flagIn) {
+        tooltip.add(Component.translatable("tooltip.aseoha.lazer_rifle"));
+        super.appendHoverText(stack, worldIn, tooltip, flagIn);
+    }
+}

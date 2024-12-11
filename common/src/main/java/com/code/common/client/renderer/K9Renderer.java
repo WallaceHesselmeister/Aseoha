@@ -1,6 +1,6 @@
 package com.code.common.client.renderer;
 
-import com.code.common.K9Entity;
+import com.code.common.entities.K9Entity;
 import com.code.common.client.models.K9model;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.entity.MobRenderer;

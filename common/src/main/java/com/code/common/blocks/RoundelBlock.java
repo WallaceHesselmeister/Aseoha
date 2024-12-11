@@ -78,7 +78,8 @@ public class RoundelBlock extends Block implements IAmARoundel{
     public static RoundelBlock GetNormalRoundelForVariant(RoundelBlock variant){
         AtomicReference<RoundelBlock> result = new AtomicReference<>();
         AseohaBlocks.BLOCKS.forEach(block -> {
-            if(GrammarNazi.IDFromBlock(block.get()).equals(GrammarNazi.IDFromBlock(variant).replace("blue_roundel", "roundel"))){
+            if(GrammarNazi.IDFromBlock(block.get()).equals(GrammarNazi.IDFromBlock(variant)
+                    .replace("blue_roundel", "roundel").replace("roundel_lit", "roundel").replace("roundel_alternating", "roundel"))){
                 result.set((RoundelBlock) block.get());
             }
         });
@@ -94,7 +95,8 @@ public class RoundelBlock extends Block implements IAmARoundel{
     public static Block GetNormalRoundelUnsafe(Block variant){
         AtomicReference<Block> result = new AtomicReference<>();
         AseohaBlocks.BLOCKS.forEach(block -> {
-            if(GrammarNazi.IDFromBlock(block.get()).equals(GrammarNazi.IDFromBlock(variant).replace("blue_roundel", "roundel").replace("roundel_lit", "roundel"))){
+            if(GrammarNazi.IDFromBlock(block.get()).equals(GrammarNazi.IDFromBlock(variant)
+                    .replace("blue_roundel", "roundel").replace("roundel_lit", "roundel").replace("roundel_alternating", "roundel"))){
                 result.set(block.get());
             }
         });

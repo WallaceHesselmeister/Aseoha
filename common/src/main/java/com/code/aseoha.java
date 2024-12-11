@@ -6,6 +6,7 @@ import com.code.common.registries.AseohaBlocks;
 import com.code.common.registries.AseohaEntities;
 import com.code.common.registries.AseohaItems;
 import com.code.common.items.AseohaTabs;
+import com.code.common.world.Structures;
 import com.google.common.base.Supplier;
 import com.google.common.base.Suppliers;
 import dev.architectury.platform.Platform;
@@ -23,15 +24,21 @@ public final class aseoha {
     public static final String MOD_ID = "aseoha";
     public static final Supplier<RegistrarManager> MANAGER = Suppliers.memoize(() -> RegistrarManager.get(MOD_ID));
     public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
+//    public static StructureType<RoadStructure> ROAD_STRUCTURE = Registry.register(BuiltInRegistries.STRUCTURE_TYPE, new ResourceLocation(aseoha.MOD_ID, "road_structure"), () -> RoadStructure.CODEC);
 
     public static void init() {
+
         // Write common init code here.
         AseohaItems.ITEMS.register();
         AseohaTabs.TABS.register();
         AseohaBlocks.register();
+        Structures.DEFERRED_REGISTRY_STRUCTURE.register();
+        ForgeSpecificSetup();
+        FabricSpecificSetup();
+
 
         /** If this is true then ASEOHA will attempt to make roundels for every. single. block. registered.
-         * With only ASEOHA, Minecraft, and AIT installed, it works rather well, however, havn't tested it beyond that, forge support is questionable, and item textures are missing
+         * With only ASEOHA, Minecraft, and AIT installed, it works rather well, however, haven't tested it beyond that, forge support is questionable, and item textures are missing
          * In order for this to work you need to make a new item deferred register, replace the ITEMS register from here \/ with your register, and register the register below this forEach, and replace the BLOCKS register with your own too
          * (that's a lot of registering)
          **/
@@ -46,25 +53,28 @@ public final class aseoha {
                             GrammarNazi.IDFromBlock(block) + "_roundel_facade",
                             () -> new BlockItem(reg.get(), new Item.Properties().arch$tab(AseohaTabs.GENERATED_ROUNDEL_TAB))
                     );
-//                    }
-
                 }
             });
-//        }
-        if (Platform.isFabric()) {
-            AseohaBlocks.BLOCKS.forEach(blockRegistrySupplier -> AseohaItems.ITEMS.register(GrammarNazi.IDFromBlock(blockRegistrySupplier.get()), () -> new BlockItem(blockRegistrySupplier.get(), new Item.Properties().arch$tab(AseohaTabs.MAIN_TAB))));
 
-            AseohaBlocks.ROUNDELS_LIT.forEach(blockRegistrySupplier -> AseohaItems.ITEMS.register(GrammarNazi.IDFromBlock(blockRegistrySupplier.get()), () -> new BlockItem(blockRegistrySupplier.get(), new Item.Properties().arch$tab(AseohaTabs.MAIN_TAB))));
+    }
 
-            AseohaBlocks.ALTERNATING_ROUNDELS.forEach(blockRegistrySupplier -> AseohaItems.ITEMS.register(GrammarNazi.IDFromBlock(blockRegistrySupplier.get()), () -> new BlockItem(blockRegistrySupplier.get(), new Item.Properties().arch$tab(AseohaTabs.MAIN_TAB))));
+    public static void ForgeSpecificSetup() {
+        if(Platform.isFabric()) return;
+        AseohaEntities.ENTITY_TYPES.register();
+    }
 
-            AseohaBlocks.BLUE_ROUNDELS.forEach(blockRegistrySupplier -> AseohaItems.ITEMS.register(GrammarNazi.IDFromBlock(blockRegistrySupplier.get()), () -> new BlockItem(blockRegistrySupplier.get(), new Item.Properties().arch$tab(AseohaTabs.MAIN_TAB))));
-            //        if(Platform.isFabric())
+    public static void FabricSpecificSetup() {
+        if(Platform.isForge()) return;
+
+        AseohaBlocks.BLOCKS.forEach(blockRegistrySupplier -> AseohaItems.ITEMS.register(GrammarNazi.IDFromBlock(blockRegistrySupplier.get()), () -> new BlockItem(blockRegistrySupplier.get(), new Item.Properties().arch$tab(AseohaTabs.MAIN_TAB))));
+
+        AseohaBlocks.ROUNDELS_LIT.forEach(blockRegistrySupplier -> AseohaItems.ITEMS.register(GrammarNazi.IDFromBlock(blockRegistrySupplier.get()), () -> new BlockItem(blockRegistrySupplier.get(), new Item.Properties().arch$tab(AseohaTabs.MAIN_TAB))));
+
+        AseohaBlocks.ALTERNATING_ROUNDELS.forEach(blockRegistrySupplier -> AseohaItems.ITEMS.register(GrammarNazi.IDFromBlock(blockRegistrySupplier.get()), () -> new BlockItem(blockRegistrySupplier.get(), new Item.Properties().arch$tab(AseohaTabs.MAIN_TAB))));
+
+        AseohaBlocks.BLUE_ROUNDELS.forEach(blockRegistrySupplier -> AseohaItems.ITEMS.register(GrammarNazi.IDFromBlock(blockRegistrySupplier.get()), () -> new BlockItem(blockRegistrySupplier.get(), new Item.Properties().arch$tab(AseohaTabs.MAIN_TAB))));
+        //        if(Platform.isFabric())
 //            AseohaBlocks.AUTOMATICALLY_GENERATED_ROUNDELS.forEach(blockRegistrySupplier -> AseohaItems.GENERATED_ROUNDELS.register(GrammarNazi.IDFromBlock(blockRegistrySupplier.get()), () -> new BlockItem(blockRegistrySupplier.get(), new Item.Properties().arch$tab(AseohaTabs.GENERATED_ROUNDEL_TAB))));
-        }
-//    }
-        /** Platform specific code for entities, mainly K-9 **/
-        if (Platform.isForge())
-            AseohaEntities.ENTITY_TYPES.register();
+
     }
 }

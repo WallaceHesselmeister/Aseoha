@@ -39,6 +39,7 @@ import java.util.function.Consumer;
 import static net.minecraft.data.models.BlockModelGenerators.*;
 
 public class DataGenerator implements DataGeneratorEntrypoint {
+    EN_USLangProvider LangProvider;
 
     @Override
     public void onInitializeDataGenerator(FabricDataGenerator generator) {
@@ -58,10 +59,36 @@ public class DataGenerator implements DataGeneratorEntrypoint {
 
     public EN_USLangProvider AddENUSTranslations(FabricDataOutput output, CompletableFuture<HolderLookup.Provider> registriesFuture, String languageType) {
         EN_USLangProvider provider = new EN_USLangProvider(output, languageType);
+        this.LangProvider = provider;
         provider.addTranslation("desktop.aseoha.trenzaloremissy", "Missy Trenzalore");
         provider.addTranslation("dekstop.aseoha.paradox", "Paradox");
         provider.addTranslation("aseoha.k9.power.add", "Power added Master");
         provider.addTranslation("aseoha.k9.tame", "K-9 Mark III Powering on Master");
+        provider.addTranslation(AseohaItems.GINGERBREAD_CYBERMAN.get().getDescriptionId(), "Gingerbread Cyber-Man");
+        provider.addTranslation(AseohaItems.GINGERBREAD_MAN.get().getDescriptionId(), "Gingerbread Man");
+        provider.addTranslation(AseohaItems.GINGERBREAD_DALEK.get().getDescriptionId(), "Gingerbread Dalek");
+        provider.addTranslation(AseohaItems.STEEL_INGOT.get().getDescriptionId(), "Steel Ingot");
+        provider.addTranslation(AseohaItems.STEEL_AXE.get().getDescriptionId(), "Steel Axe");
+        provider.addTranslation(AseohaItems.STEEL_BOOTS.get().getDescriptionId(), "Steel Boots");
+        provider.addTranslation(AseohaItems.STEEL_INGOT.get().getDescriptionId(), "Steel Ingot");
+        provider.addTranslation(AseohaItems.STEEL_HOE.get().getDescriptionId(), "Steel Hoe");
+        provider.addTranslation(AseohaItems.STEEL_CHESTPLATE.get().getDescriptionId(), "Steel Chestplate");
+        provider.addTranslation(AseohaItems.STEEL_HELMET.get().getDescriptionId(), "Steel Helmet");
+        provider.addTranslation(AseohaItems.STEEL_BOOTS.get().getDescriptionId(), "Steel Boots");
+        provider.addTranslation(AseohaItems.STEEL_LEGGINGS.get().getDescriptionId(), "Steel Leggings");
+        provider.addTranslation(AseohaItems.STEEL_PICKAXE.get().getDescriptionId(), "Steel Pickaxe");
+        provider.addTranslation(AseohaItems.STEEL_SWORD.get().getDescriptionId(), "Steel Sword");
+        provider.addTranslation(AseohaItems.DALEKANIUM_INGOT.get().getDescriptionId(), "Dalekanium Ingot");
+        provider.addTranslation(AseohaItems.DALEKANIUM_AXE.get().getDescriptionId(), "Dalekanium Axe");
+        provider.addTranslation(AseohaItems.DALEKANIUM_BOOTS.get().getDescriptionId(), "Dalekanium Boots");
+        provider.addTranslation(AseohaItems.DALEKANIUM_INGOT.get().getDescriptionId(), "Dalekanium Ingot");
+        provider.addTranslation(AseohaItems.DALEKANIUM_HOE.get().getDescriptionId(), "Dalekanium Hoe");
+        provider.addTranslation(AseohaItems.DALEKANIUM_CHESTPLATE.get().getDescriptionId(), "Dalekanium Chestplate");
+        provider.addTranslation(AseohaItems.DALEKANIUM_HELMET.get().getDescriptionId(), "Dalekanium Helmet");
+        provider.addTranslation(AseohaItems.DALEKANIUM_BOOTS.get().getDescriptionId(), "Dalekanium Boots");
+        provider.addTranslation(AseohaItems.DALEKANIUM_LEGGINGS.get().getDescriptionId(), "Dalekanium Leggings");
+        provider.addTranslation(AseohaItems.DALEKANIUM_PICKAXE.get().getDescriptionId(), "Dalekanium Pickaxe");
+        provider.addTranslation(AseohaItems.DALEKANIUM_SWORD.get().getDescriptionId(), "Dalekanium Sword");
         provider.addTranslation(AseohaItems.SONIC_FOURTEENTH.get().getDescriptionId(), "Fourteenth Sonic");
         provider.addTranslation(AseohaItems.RED_JELLY_BABY.get().getDescriptionId(), "Red Jelly Baby");
         provider.addTranslation(AseohaItems.PURPLE_JELLY_BABY.get().getDescriptionId(), "Purple Jelly Baby");
@@ -69,11 +96,17 @@ public class DataGenerator implements DataGeneratorEntrypoint {
         provider.addTranslation(AseohaItems.ORANGE_JELLY_BABY.get().getDescriptionId(), "Orange Jelly Baby");
         provider.addTranslation(AseohaItems.HANDFUL_OF_JELLY_BABIES.get().getDescriptionId(), "Handful of Jelly Babies");
         provider.addTranslation(AseohaItems.YELLOW_JELLY_BABY.get().getDescriptionId(), "Yellow Jelly Baby");
+        add(AseohaItems.CANDY_CANE.get().getDescriptionId(), "Candy Cane");
+        add(AseohaItems.CANDY_CANE_SONIC.get().getDescriptionId(), "Candy \"Cane\"");
         AseohaItems.ITEMS.forEach(item -> {
             if(!provider.translations.containsKey(item.get().getDescriptionId()))
                 provider.addTranslation(item.get().getDescriptionId(), GrammarNazi.CleanItemString(item.toString()));
         });
         return provider;
+    }
+
+    private void add(String String1, String String2) {
+        this.LangProvider.translations.put(String1, String2);
     }
 
         private static class RecipeGenerator extends FabricRecipeProvider {
@@ -268,13 +301,13 @@ public class DataGenerator implements DataGeneratorEntrypoint {
             Block Roundel = RoundelBlock.GetNormalRoundelUnsafe(block);
             TextureMapping texMap = (new TextureMapping()).put(TextureSlot.PARTICLE, TextureMapping.getBlockTexture(Roundel)).put(TextureSlot.DOWN, TextureMapping.getBlockTexture(Roundel)).put(TextureSlot.UP, TextureMapping.getBlockTexture(Roundel)).put(TextureSlot.NORTH, TextureMapping.getBlockTexture(Roundel)).put(TextureSlot.SOUTH, TextureMapping.getBlockTexture(Roundel)).put(TextureSlot.EAST, TextureMapping.getBlockTexture(Roundel)).put(TextureSlot.WEST, TextureMapping.getBlockTexture(Roundel)).put(TextureSlot.ALL, TextureMapping.getBlockTexture(Roundel));
             blockModelGenerators.blockStateOutput.accept(createSimpleBlock(block, ModelTemplates.CUBE.create(new ResourceLocation("aseoha", "block/" + GrammarNazi.IDFromBlock(block)), texMap, blockModelGenerators.modelOutput)));
-//            ModelTemplates.CUBE_ALL.create(new ResourceLocation("aseoha", "block/" + GrammarNazi.IDFromBlock(block)), texMap, blockModelGenerators.modelOutput);
         }
 
         public void AlternatingModel(Block block, @NotNull BlockModelGenerators blockModelGenerators) {
-            RoundelBlock Roundel = ((RoundelBlock) block);
-            TextureMapping textureMappingAlt = (new TextureMapping()).put(TextureSlot.ALL, TextureMapping.getBlockTexture(Roundel.GetAverage()));
-            blockModelGenerators.blockStateOutput.accept(createSimpleBlock(block, TextureMapping.getBlockTexture(Roundel)));
+            RoundelBlock PlaceHolder = ((RoundelBlock) block);
+            RoundelBlock Roundel = RoundelBlock.GetNormalRoundelForVariant(PlaceHolder);
+            TextureMapping textureMappingAlt = (new TextureMapping()).put(TextureSlot.ALL, TextureMapping.getBlockTexture(Roundel));
+            blockModelGenerators.blockStateOutput.accept(createSimpleBlock(block, TextureMapping.getBlockTexture(PlaceHolder)));
             CUBE.create(new ResourceLocation("aseoha", "block/" + GrammarNazi.IDFromBlock(block)), textureMappingAlt, blockModelGenerators.modelOutput);
         }
 

@@ -1,0 +1,11 @@
+{
+  "type": "aseoha:adipose_three_type",
+  "generator": {
+    "type": "minecraft:noise",
+    "settings": "aseoha:adipose_three",
+    "biome_source": {
+      "type": "minecraft:fixed",
+      "biome": "aseoha:adipose_three"
+    }
+  }
+}

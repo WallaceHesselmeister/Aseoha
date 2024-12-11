@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:block/cube_all",
-  "textures": {
-    "all": "aseoha:block/potted_flowering_azalea_bush_roundel_facade"
-  }
-}

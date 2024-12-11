@@ -1,6 +1,7 @@
 package com.code.common.client;
 
 
+import com.code.aseoha;
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.ChatFormatting;
@@ -54,8 +55,9 @@ public class K9Screen extends Screen {
     @Override
     public void render(GuiGraphics context, int mouseX, int mouseY, float delta) {
         super.render(context, mouseX, mouseY, delta);
-        context.fill(width / 2 - 50, height / 2 - 30, width + this.ButtonSizes.get(0) / 2 - 30, height / 2 - 10, FastColor.ARGB32.color(255, 255, 255, 255));
-        context.drawCenteredString(font, Component.literal("You must see me"), width / 2, height / 2, 0xffffff);
+//        context.fill(width / 2 - 50, height / 2 - 30, width + this.ButtonSizes.get(0) / 2 - 30, height / 2 - 10, FastColor.ARGB32.color(255, 255, 255, 255));
+//        context.drawCenteredString(font, Component.literal("You must see me"), width / 2, height / 2, 0xffffff);
+
     }
 
     private <T extends AbstractWidget> void addButton(T button) {
