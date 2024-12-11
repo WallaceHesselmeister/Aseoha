@@ -62,8 +62,8 @@ public class AseohaItems {
     public static final RegistrySupplier<Item> SONIC_FOURTEENTH = ITEMS.register("sonic_fourteenth",
             () -> new SonicItem(new Item.Properties().arch$tab(AseohaTabs.MAIN_TAB)));
 
-    public static final RegistrySupplier<Item> LAZER_RIFLE = ITEMS_NO_FABRIC.register("lazer_rifle",
-            () -> new LazerRifle(new Item.Properties().arch$tab(AseohaTabs.MAIN_TAB)));
+    public static final RegistrySupplier<Item> PLASMA_RIFLE = ITEMS_NO_FABRIC.register("plasma_rifle",
+            () -> new PlasmaRifle(new Item.Properties().arch$tab(AseohaTabs.MAIN_TAB)));
 
     public static final RegistrySupplier<Item> PLASMA_BOLT_MAGAZINE = ITEMS_NO_FABRIC.register("plasma_bolt_magazine",
             () -> new PlasmaBoltMagazine(new Item.Properties().arch$tab(AseohaTabs.MAIN_TAB)));

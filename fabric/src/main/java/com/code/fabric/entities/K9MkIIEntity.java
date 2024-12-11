@@ -3,6 +3,7 @@ package com.code.fabric.entities;
 import com.code.fabric.client.GUIHelper;
 import loqor.ait.core.AITItems;
 import loqor.ait.core.item.ChargedZeitonCrystalItem;
+import net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents;
 import net.minecraft.core.NonNullList;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
@@ -240,12 +241,13 @@ public class K9MkIIEntity extends com.code.common.entities.K9MkIIEntity implemen
         this.setTarget(null);
         /** If the owner either doesn't exist, isn't available server-side, or K-9 just doesn't have one for literally any reason **/
         if(this.getOwner() == null) return;
+        if(this.level() == null) return;
         Say(Component.translatable("aseoha.k9.dead").toString(), (Player) this.getOwner(), this.level());
     }
 
     public static void Say(String text, Player player, Level worldIn) {
         assert player != null;
-        Objects.requireNonNull(worldIn.getServer()).tell(new TickTask(1, () -> player.displayClientMessage(Component.nullToEmpty(text + ", Master."), false)));
+        worldIn.getServer().tell(new TickTask(1, () -> player.displayClientMessage(Component.nullToEmpty(text + ", Master."), false)));
     }
 //
 //    @Override

@@ -1,5 +1,6 @@
 package com.code.fabric.items;
 
+import com.code.common.interfaces.IFireArm;
 import com.code.fabric.registries.AseohaItems;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
@@ -22,57 +23,24 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public class LazerRifle extends BowItem {
+public class AbstractFirearm extends BowItem implements IFireArm {
     AbstractPlasmaBoltMagazine Mag;
     /**
      * The amount of energy to consume every shot
      **/
-    public int CONSUME_RATE = 20;
+    private int CONSUME_RATE;
 
-    public boolean Switch = false;
+    private boolean Switch = false;
 
-    public LazerRifle(Properties settings) {
+    private int Damage;
+
+    public AbstractFirearm(Properties settings) {
         super(settings);
     }
 
     @Override
     public void releaseUsing(ItemStack itemStack, Level level, LivingEntity livingEntity, int i) {
-        if (livingEntity instanceof Player player) {
-            boolean bl = player.getAbilities().instabuild || this.Mag.GetCharge() >= CONSUME_RATE;
-            if (bl) {
-
-                int j = this.getUseDuration(itemStack) - i;
-                float f = getPowerForTime(j);
-                if (!level.isClientSide) {
-                    if (this.Switch) {
-                        this.Switch = false;
-                        return;
-                    }
-                    if (this.Mag == null) return;
-                    AbstractArrow lazer = this.Mag.CreatePlasmaBolt(level, this.Mag, livingEntity);
-
-                    lazer.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, f * 3.0F, 1.0F);
-
-                    if (f == 1.0F) {
-                        lazer.setCritArrow(true);
-                    }
-
-                    int enchantmentLevel = EnchantmentHelper.getItemEnchantmentLevel(Enchantments.POWER_ARROWS, itemStack);
-
-                    if (enchantmentLevel > 0) {
-                        lazer.setBaseDamage(lazer.getBaseDamage() + (double) enchantmentLevel * 0.5 + 0.5);
-                    }
-
-                    itemStack.hurtAndBreak(1, player, (player2) -> player2.broadcastBreakEvent(player.getUsedItemHand()));
-
-                    level.addFreshEntity(lazer);
-                }
-
-                level.playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.ARROW_SHOOT, SoundSource.PLAYERS, 1.0F, 1.0F / (level.getRandom().nextFloat() * 0.4F + 1.2F) + f * 0.5F);
-
-                player.awardStat(Stats.ITEM_USED.get(this));
-            }
-        }
+        this.Shoot(itemStack, level, livingEntity, i);
     }
 
     @Override
@@ -89,19 +57,77 @@ public class LazerRifle extends BowItem {
         return super.use(level, player, interactionHand);
     }
 
-//    @Override
-//    public @NotNull Predicate<ItemStack> getAllSupportedProjectiles() {
-//        return super.getAllSupportedProjectiles();
-//    }
-//
-//    @Override
-//    public int getDefaultProjectileRange() {
-//        return super.getDefaultProjectileRange();
-//    }
+
+    /** The amount of energy to drain from the magazine **/
+    public int GetConsumeRate() {
+        return this.CONSUME_RATE;
+    }
+
+    /** The amount of energy to drain from the magazine **/
+    public void SetConsumeRate(int i) {
+        this.CONSUME_RATE = i;
+    }
+
+    /** The amount of energy to drain from the magazine **/
+    public int GetDamage() {
+        return this.Damage;
+    }
+
+    /** The amount of energy to drain from the magazine **/
+    public void SetDamage(int i) {
+        this.Damage = i;
+    }
+
+    public void Shoot(ItemStack itemStack, Level level, LivingEntity livingEntity, int i) {
+        if (livingEntity instanceof Player player) {
+
+            boolean bl = player.getAbilities().instabuild || this.Mag.GetCharge() >= CONSUME_RATE;
+            if (bl) {
+
+                int j = this.getUseDuration(itemStack) - i;
+                float f = getPowerForTime(j);
+                if (!level.isClientSide) {
+                    if(this.Switch){
+                        this.Switch = false;
+                        return;
+                    }
+                    if(this.Mag == null) return;
+                    AbstractArrow lazer = this.Mag.CreatePlasmaBolt(level, this.Mag, livingEntity);
+
+                    lazer.setBaseDamage(this.GetDamage());
+
+                    lazer.shootFromRotation(player, player.getXRot(), player.getYRot(), 0.0F, f * 3.0F, 1.0F);
+
+                    if (f == 1.0F) {
+                        lazer.setCritArrow(true);
+                    }
+
+                    int enchantmentLevel = EnchantmentHelper.getItemEnchantmentLevel(Enchantments.POWER_ARROWS, itemStack);
+
+                    if (enchantmentLevel > 0) {
+                        lazer.setBaseDamage(lazer.getBaseDamage() + (double) enchantmentLevel * 0.5 + 0.5);
+                    }
+
+                    itemStack.hurtAndBreak(1, player, (player2) -> player2.broadcastBreakEvent(player.getUsedItemHand()));
+
+                    this.Mag.OnShoot();
+
+                    level.addFreshEntity(lazer);
+                }
+
+                level.playSound(null, player.getX(), player.getY(), player.getZ(), SoundEvents.ARROW_SHOOT, SoundSource.PLAYERS, 1.0F, 1.0F / (level.getRandom().nextFloat() * 0.4F + 1.2F) + f * 0.5F);
+
+                player.awardStat(Stats.ITEM_USED.get(this));
+            }
+        }
+    }
 
     @Override
     public void appendHoverText(ItemStack stack, @Nullable Level worldIn, List<Component> tooltip, TooltipFlag flagIn) {
-        tooltip.add(Component.translatable("tooltip.aseoha.lazer_rifle"));
+        int charge = this.Mag == null ? 0 : this.Mag.GetCharge();
+        tooltip.add(Component.translatable("tooltip.aseoha.plasma_rifle").append(" || ").append(Component.translatable("tooltip.aseoha.plasma_rifle_charge").append(": ").append(
+                charge == 0 ? Component.translatable("tooltip.aseoha.plasma_rifle.empty").toString() : Integer.toString(charge)
+        )));
         super.appendHoverText(stack, worldIn, tooltip, flagIn);
     }
 }

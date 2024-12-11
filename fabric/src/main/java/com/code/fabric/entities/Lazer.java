@@ -12,6 +12,7 @@ import net.minecraft.world.phys.BlockHitResult;
 import org.jetbrains.annotations.NotNull;
 
 public class Lazer extends AbstractArrow {
+    private double BaseDamage;
     public Lazer(EntityType<? extends Lazer> entityType, Level world) {
         super(AseohaEntities.LazerEntityType(), world);
     }
@@ -55,8 +56,13 @@ public class Lazer extends AbstractArrow {
         return ItemStack.EMPTY;
     }
 
-    public static AbstractArrow CreateLazer(Level world, LivingEntity shooter) {
-        Lazer staserBoltEntity = new Lazer(AseohaEntities.LazerEntityType(), world);
-        return staserBoltEntity.createFromConstructor(world, shooter);
+    @Override
+    public void setBaseDamage(double d) {
+        this.BaseDamage = d;
+    }
+
+    @Override
+    public double getBaseDamage() {
+        return this.BaseDamage;
     }
 }

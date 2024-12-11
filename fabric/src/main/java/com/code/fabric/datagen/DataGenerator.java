@@ -60,6 +60,9 @@ public class DataGenerator implements DataGeneratorEntrypoint {
     public EN_USLangProvider AddENUSTranslations(FabricDataOutput output, CompletableFuture<HolderLookup.Provider> registriesFuture, String languageType) {
         EN_USLangProvider provider = new EN_USLangProvider(output, languageType);
         this.LangProvider = provider;
+        add("tooltip.aseoha.plasma_rifle", "Plasma Rifle");
+        add("tooltip.aseoha.plasma_rifle_charge", "Charge");
+        add("tooltip.aseoha.plasma_rifle.empty", "Empty");
         provider.addTranslation("desktop.aseoha.trenzaloremissy", "Missy Trenzalore");
         provider.addTranslation("dekstop.aseoha.paradox", "Paradox");
         provider.addTranslation("aseoha.k9.power.add", "Power added Master");

@@ -458,6 +458,7 @@
   "block.aseoha.exposed_cut_copper_roundel": "Exposed Cut Copper Roundel",
   "block.aseoha.exposed_cut_copper_roundel_alternating": "Exposed Cut Copper Roundel Alternating",
   "block.aseoha.exposed_cut_copper_roundel_lit": "Exposed Cut Copper Roundel Lit",
+  "block.aseoha.fat_block": "Fat Block",
   "block.aseoha.faultlocator": "Faultlocator",
   "block.aseoha.faultlocator_s": "Faultlocator S",
   "block.aseoha.gallifrey_sand": "Gallifrey Sand",
@@ -708,8 +709,8 @@
   "item.aseoha.steel_shovel": "Steel Shovel",
   "item.aseoha.steel_sword": "Steel Sword",
   "item.aseoha.tezarak_coin": "Tezarak Coin",
-  "item.aseoha.twinkie": "Twinkie"
+  "item.aseoha.twinkie": "Twinkie",
+  "tooltip.aseoha.plasma_rifle": "Plasma Rifle",
+  "tooltip.aseoha.plasma_rifle_charge": "Charge",
+  "tooltip.aseoha.plasma_rifle.empty": "Empty"
 }
-
-
-
