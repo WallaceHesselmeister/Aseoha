@@ -1,8 +1,9 @@
-package com.code.common.items;
+package com.code.fabric.items.plasma_magazines;
 
-import com.code.common.entities.Lazer;
+
 import com.code.common.interfaces.IFireArmMagazine;
-import com.code.common.registries.AseohaEntities;
+import com.code.fabric.entities.Lazer;
+import com.code.fabric.registries.AseohaEntities;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;

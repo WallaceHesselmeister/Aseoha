@@ -1,19 +1,27 @@
 package com.code.fabric.entities;
 
 import com.code.fabric.client.GUIHelper;
+import com.code.fabric.registries.AseohaEntities;
+import dev.architectury.platform.Platform;
 import loqor.ait.core.AITItems;
 import loqor.ait.core.item.ChargedZeitonCrystalItem;
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.minecraft.core.NonNullList;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.TickTask;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.*;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.damagesource.DamageSources;
+import net.minecraft.world.damagesource.DamageType;
+import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeMap;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -22,8 +30,10 @@ import net.minecraft.world.entity.animal.Animal;
 import net.minecraft.world.entity.animal.Squid;
 import net.minecraft.world.entity.animal.Wolf;
 import net.minecraft.world.entity.animal.axolotl.Axolotl;
+import net.minecraft.world.entity.monster.RangedAttackMob;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.entity.vehicle.ContainerEntity;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.ChestMenu;
@@ -44,8 +54,8 @@ import java.util.function.Predicate;
  * @author Me <br />
  * K9! The Entity Class
  */
-public class K9Entity extends com.code.common.entities.K9Entity implements HasCustomInventoryScreen, ContainerEntity {
-
+public class K9Entity extends com.code.common.entities.K9Entity implements HasCustomInventoryScreen, ContainerEntity, RangedAttackMob {
+    private float TailAngle;
     private static final int CONTAINER_SIZE = 54;
     private NonNullList<ItemStack> itemStacks;
     @Nullable
@@ -70,6 +80,21 @@ public class K9Entity extends com.code.common.entities.K9Entity implements HasCu
         return (Integer)this.entityData.get(DATA_ID_ATTACK_TARGET) != 0;
     }
 
+    @Override
+    public void performRangedAttack(LivingEntity livingEntity, float f) {
+        if (!this.level().isClientSide && this.hasLineOfSight(livingEntity)) {
+
+            Lazer PlasmaBoltEntity = new Lazer(AseohaEntities.LAZER.get(), this.level());
+
+            AbstractArrow abstractArrow = PlasmaBoltEntity.createFromConstructor(this.level(), this);
+
+            abstractArrow.setBaseDamage(10);
+
+            abstractArrow.shootFromRotation(abstractArrow, this.getXRot(), this.yHeadRot, 0.0F, 1.5F, 0.0F);
+
+            this.level().addFreshEntity(abstractArrow);
+        }
+    }
 
 //    private MenuProvider createContainerProvider() {
 //        return new MenuComponent() {
@@ -104,7 +129,7 @@ public class K9Entity extends com.code.common.entities.K9Entity implements HasCu
     @NotNull
     @Override
     public InteractionResult mobInteract(Player player, @NotNull InteractionHand hand) {
-        if(hand.equals(InteractionHand.OFF_HAND))
+        if (hand.equals(InteractionHand.OFF_HAND))
             return InteractionResult.PASS;
 
         ItemStack itemstack = player.getItemInHand(hand);
@@ -120,8 +145,7 @@ public class K9Entity extends com.code.common.entities.K9Entity implements HasCu
                     this.tame(player);
                     player.sendSystemMessage(Component.translatable("aseoha.k9.tame"));
                     return InteractionResult.SUCCESS;
-                }
-                else return InteractionResult.FAIL;
+                } else return InteractionResult.FAIL;
             }
             return InteractionResult.FAIL;
         }
@@ -131,14 +155,14 @@ public class K9Entity extends com.code.common.entities.K9Entity implements HasCu
 //            return flag ? InteractionResult.CONSUME : InteractionResult.PASS;
 //        }
 //        else {
-            if (this.isTame()) {
-                if (item.equals(this.GetChargeItem())) {
-                    ((ChargedZeitonCrystalItem) this.GetChargeItem()).removeFuel(1000, itemstack);
-                    this.power = (byte) 1000;
-                    player.sendSystemMessage(Component.translatable("aseoha.k9.power.add"));
-                    return InteractionResult.SUCCESS;
-                }
+        if (this.isTame()) {
+            if (item.equals(this.GetChargeItem())) {
+                ((ChargedZeitonCrystalItem) this.GetChargeItem()).removeFuel(1000, itemstack);
+                this.power = (byte) 1000;
+                player.sendSystemMessage(Component.translatable("aseoha.k9.power.add"));
+                return InteractionResult.SUCCESS;
             }
+        }
 //        }
 
 //        if (!player.isCrouching()) {
@@ -152,10 +176,9 @@ public class K9Entity extends com.code.common.entities.K9Entity implements HasCu
 
 
         if (this.isTame()) { // && this.isOwnedBy(player)
-            /** if player's crouching, but not holding [Charge item] make K-9 sit **/
+            /** if player's crouching, but not holding [Charge item] **/
             if (player.isCrouching() && !item.equals(this.GetChargeItem())) {
-//                this.setOrderedToSit(!this.isOrderedToSit());
-                if(this.level().isClientSide)
+                if (this.level().isClientSide)
                     GUIHelper.OpenGUI(1);
                 return InteractionResult.SUCCESS;
             }
@@ -179,19 +202,6 @@ public class K9Entity extends com.code.common.entities.K9Entity implements HasCu
         super.setTame(p_70903_1_);
     }
 
-//    @Override
-//    public void die(@NotNull DamageSource damageSource) {
-////        super.die(damageSource);
-//        this.setHealth(1000);
-//        this.power=0;
-//    }
-
-
-//    public AttributeModifierManager getAttributes() {
-//        return new AttributeModifierManager(createAttributes().build());
-//    }
-
-
     /**
      * NTM would use an implement and this to disable space damage, might ask Loqor to do this for AIT
      */
@@ -213,53 +223,10 @@ public class K9Entity extends com.code.common.entities.K9Entity implements HasCu
         return true;
     }
 
-    //    @Override
-//    public void tick() {
-//        k9.this.setTarget((LivingEntity)null);
-////        world.getPlayerByUUID(this.getOwnerUUID()).
-//        super.tick();
-//    }
-//private static int timer = 0;
-//    public static void Talk(int text, Player player, Level worldIn) {
-//        assert player != null;
-////        TardisHelper.getConsoleInWorld(player.level);
-//        Objects.requireNonNull(worldIn.getServer()).tell(new TickTask(1, () -> {
-//
-//            switch (text) {
-//                case 1:
-//                    player.displayClientMessage(Constants.AffirmativeK9, player.getUUID());
-//                    break;
-//                case 2:
-//                    player.displayClientMessage(Constants.DoesNotComputeK9, player.getUUID());
-//                    break;
-//                default:
-//                    player.displayClientMessage(Constants.InsufficientDataK9, player.getUUID());
-//
-//            }
-//        }));
-//    }
-
-    public static void Say(String text, Player player, Level worldIn) {
+    public void Say(String text, Player player, Level worldIn) {
         assert player != null;
         Objects.requireNonNull(worldIn.getServer()).tell(new TickTask(1, () -> player.displayClientMessage(Component.nullToEmpty(text + ", Master."), false)));
     }
-//
-//    @Override
-//    public void addAdditionalSaveData(@NotNull CompoundNBT nbt) {
-//        super.addAdditionalSaveData(nbt);
-//        setInvNBT(this.inventory, nbt);
-//        nbt.putByte("Power", this.power);
-//
-//    }
-//
-//    @Override
-//    public void readAdditionalSaveData(@NotNull CompoundNBT nbt) {
-//        super.readAdditionalSaveData(nbt);
-//        getInvNBT(this.inventory, nbt);
-//        if (nbt.contains("Power", 99)) {
-//            this.power = nbt.getByte("Power");
-//        }
-//    }
 
     @Override
     public void addAdditionalSaveData(CompoundTag compoundTag) {
@@ -285,17 +252,12 @@ public class K9Entity extends com.code.common.entities.K9Entity implements HasCu
 
     @Override
     public boolean hurt(DamageSource source, float amount) {
-        if (source.getDirectEntity() instanceof Player) {
-            Player player = (Player) source.getDirectEntity();
-//            if (player.getMainHandItem().getItem() instanceof ToolItem && ((ToolItem) player.getMainHandItem().getItem()).getTier() == ItemTier.IRON) {
-//                amount *= 1.5F;
-//            }
-        }
-//        this.knockback(.1F, .1, .1);
-        this.power -= (byte) amount;
-        return false;
-//        return super.hurt(source, amount);
+        if (!Objects.equals(source.getEntity(), this.getOwner()))
+            this.setTarget((LivingEntity) source.getEntity());
 
+        this.power -= (byte) amount;
+
+        return super.hurt(source, amount);
     }
 
     @Override
@@ -315,15 +277,6 @@ public class K9Entity extends com.code.common.entities.K9Entity implements HasCu
         }
 
     }
-
-//    @OnlyIn(Dist.CLIENT)
-//    public void handleEntityEvent(byte p_70103_1_) {
-//        if (p_70103_1_ == 8) {
-//        } else {
-//            super.handleEntityEvent(p_70103_1_);
-//        }
-//
-//    }
 
     @Override
     public void openCustomInventoryScreen(Player player) {
@@ -426,108 +379,24 @@ public class K9Entity extends com.code.common.entities.K9Entity implements HasCu
         this.level().gameEvent(GameEvent.CONTAINER_CLOSE, this.position(), GameEvent.Context.of(player));
     }
 
-    private static class AttackSelector implements Predicate<LivingEntity> {
-        private final K9Entity k9;
 
-        public AttackSelector(K9Entity k9) {
-            this.k9 = k9;
-        }
-
-        public boolean test(@Nullable LivingEntity livingEntity) {
-            return (livingEntity instanceof Player || livingEntity instanceof Squid || livingEntity instanceof Axolotl) && livingEntity.distanceToSqr(this.k9) > 9.0;
+    @Environment(EnvType.CLIENT)
+    public float getTailAngle() {
+        if (this.isAngry()) {
+            this.TailAngle = 1.5393804F;
+            return 1.5393804F;
+        } else {
+            this.TailAngle = this.isTame() ? (0.55F - (100 - this.power) * 0.02F) * (float) Math.PI : ((float) Math.PI / 5F);
+            return this.isTame() ? (0.55F - (100 - this.power) * 0.02F) * (float) Math.PI : ((float) Math.PI / 5F);
         }
     }
-
-//    @OnlyIn(Dist.CLIENT)
-//    public float getTailAngle() {
-//        if (this.isAngry()) {
-//            this.TailAngle = 1.5393804F;
-//            return 1.5393804F;
-//        } else {
-//            this.TailAngle = this.isTame() ? (0.55F - (this.getMaxHealth() - this.getHealth()) * 0.02F) * (float) Math.PI : ((float) Math.PI / 5F);
-//            return this.isTame() ? (0.55F - (this.getMaxHealth() - this.getHealth()) * 0.02F) * (float) Math.PI : ((float) Math.PI / 5F);
-//        }
-//    }
 
 //    public static float StaticGetTailAngle(){
 //        aseoha.LOGGER.info(TailAngle);
 //        return TailAngle;
 //    }
 
-    public int getAttackDuration() {
-        return 20;
-    }
 
-    static class AttackGoal extends Goal {
-        private final K9Entity k9;
-        private int attackTime;
-        private final boolean elder;
-
-        public AttackGoal(K9Entity k9) {
-            this.k9 = k9;
-            this.elder = false;
-            this.setFlags(EnumSet.of(Flag.MOVE, Flag.LOOK));
-        }
-
-        public boolean canUse() {
-            LivingEntity livingEntity = this.k9.getTarget();
-            return livingEntity != null && livingEntity.isAlive();
-        }
-
-        public boolean canContinueToUse() {
-            return super.canContinueToUse() && (this.elder || this.k9.getTarget() != null && this.k9.distanceToSqr(this.k9.getTarget()) > 9.0);
-        }
-
-        public void start() {
-            this.attackTime = -10;
-            this.k9.getNavigation().stop();
-            LivingEntity livingEntity = this.k9.getTarget();
-            if (livingEntity != null) {
-                this.k9.getLookControl().setLookAt(livingEntity, 90.0F, 90.0F);
-            }
-
-            this.k9.hasImpulse = true;
-        }
-
-        public void stop() {
-            this.k9.setActiveAttackTarget(0);
-            this.k9.setTarget((LivingEntity) null);
-        }
-
-        public boolean requiresUpdateEveryTick() {
-            return true;
-        }
-
-        public void tick() {
-            LivingEntity livingEntity = this.k9.getTarget();
-            if (livingEntity != null) {
-                this.k9.getNavigation().stop();
-                this.k9.getLookControl().setLookAt(livingEntity, 90.0F, 90.0F);
-                //    if (!this.k9.hasLineOfSight(livingEntity))
-                //    this.k9.setTarget((LivingEntity)null);
-                if (this.k9.hasLineOfSight(livingEntity)) {
-                    ++this.attackTime;
-                    if (this.attackTime == 0) {
-                        this.k9.setActiveAttackTarget(livingEntity.getId());
-                        if (!this.k9.isSilent()) {
-                            this.k9.level().broadcastEntityEvent(this.k9, (byte)21);
-                        }
-                    } else if (this.attackTime >= this.k9.getAttackDuration()) {
-                        float f = 1.0F;
-                        if (this.k9.level().getDifficulty() == Difficulty.HARD) {
-                            f += 0.7F;
-                        }
-
-                        livingEntity.hurt(this.k9.damageSources().indirectMagic(this.k9, this.k9), f);
-                        livingEntity.hurt(this.k9.damageSources().mobAttack(this.k9), (float)this.k9.getAttributeValue(Attributes.ATTACK_DAMAGE));
-                        this.k9.setTarget((LivingEntity)null);
-                    }
-
-                    super.tick();
-                }
-            }
-        }
-    }
     static {
         DATA_ID_MOVING = SynchedEntityData.defineId(K9Entity.class, EntityDataSerializers.BOOLEAN);
         DATA_ID_ATTACK_TARGET = SynchedEntityData.defineId(K9Entity.class, EntityDataSerializers.INT);

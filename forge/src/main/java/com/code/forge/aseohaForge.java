@@ -1,16 +1,21 @@
 package com.code.forge;
 
 import com.code.aseoha;
+import com.code.common.client.models.DalekModel;
 import com.code.common.client.models.K9mkIIModel;
 import com.code.common.client.models.LazerModel;
+import com.code.common.client.renderer.DalekRenderer;
 import com.code.common.client.renderer.K9MkIIRenderer;
 import com.code.common.client.renderer.LazerRenderer;
+import com.code.common.entities.DalekEntity;
 import com.code.common.registries.AseohaEntities;
 import com.code.common.entities.K9Entity;
 import com.code.common.client.models.K9model;
 import com.code.common.client.renderer.K9Renderer;
 import com.code.common.world.AseohaDimensions;
 import dev.architectury.platform.forge.EventBuses;
+import net.minecraft.world.entity.SpawnPlacements;
+import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
@@ -47,6 +52,8 @@ public final class aseohaForge {
             event.registerEntityRenderer(AseohaEntities.K9MkII.get(), K9MkIIRenderer::new);
 
             event.registerEntityRenderer(AseohaEntities.LAZER.get(), LazerRenderer::new);
+
+            event.registerEntityRenderer(AseohaEntities.DALEK.get(), DalekRenderer::new);
         }
 
         @SubscribeEvent
@@ -56,6 +63,8 @@ public final class aseohaForge {
             event.registerLayerDefinition(K9mkIIModel.LAYER_LOCATION, K9mkIIModel::createBodyLayer);
 
             event.registerLayerDefinition(LazerModel.LAYER_LOCATION, LazerModel::createBodyLayer);
+
+            event.registerLayerDefinition(DalekModel.LAYER_LOCATION, DalekModel::createBodyLayer);
         }
     }
 
@@ -72,12 +81,12 @@ public final class aseohaForge {
         public static void AddCustomAttributes(EntityAttributeCreationEvent event){
             event.put(AseohaEntities.K9.get(), K9Entity.setCustomAttributes().build());
             event.put(AseohaEntities.K9MkII.get(), K9Entity.setCustomAttributes().build());
+            event.put(AseohaEntities.DALEK.get(), DalekEntity.setCustomAttributes().build());
         }
 
         @SubscribeEvent
         public static void SpawnPlacementRegister(SpawnPlacementRegisterEvent event){
-            // If I wanted K-9 to naturally spawn I'd do something like this
-//            event.register(AseohaEntities.K9.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.WORLD_SURFACE, K9Entity::canSpawn, SpawnPlacementRegisterEvent.Operation.OR);
+            event.register(AseohaEntities.DALEK.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.WORLD_SURFACE, DalekEntity::checkMobSpawnRules, SpawnPlacementRegisterEvent.Operation.OR);
         }
     }
 }

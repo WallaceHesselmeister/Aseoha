@@ -1,5 +1,8 @@
 package com.code.common.entities;
 
+import com.code.aseoha;
+import com.code.common.client.GUIHelper;
+import com.code.common.registries.AseohaEntities;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.NonNullList;
 import net.minecraft.nbt.CompoundTag;
@@ -12,8 +15,10 @@ import net.minecraft.server.TickTask;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
+import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.world.*;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeMap;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
@@ -22,13 +27,14 @@ import net.minecraft.world.entity.ai.goal.*;
 import net.minecraft.world.entity.ai.goal.target.*;
 import net.minecraft.world.entity.ambient.AmbientCreature;
 import net.minecraft.world.entity.animal.Animal;
-import net.minecraft.world.entity.animal.Squid;
 import net.minecraft.world.entity.animal.Wolf;
-import net.minecraft.world.entity.animal.axolotl.Axolotl;
 import net.minecraft.world.entity.animal.horse.Llama;
 import net.minecraft.world.entity.monster.Creeper;
+import net.minecraft.world.entity.monster.Monster;
+import net.minecraft.world.entity.monster.RangedAttackMob;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.projectile.AbstractArrow;
 import net.minecraft.world.entity.vehicle.ContainerEntity;
 import net.minecraft.world.inventory.AbstractContainerMenu;
 import net.minecraft.world.inventory.ChestMenu;
@@ -41,17 +47,15 @@ import net.minecraft.world.level.gameevent.GameEvent;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.EnumSet;
 import java.util.Objects;
 import java.util.Random;
-import java.util.function.Predicate;
 
 
 /**
  * @author Me <br />
  * K9! The Entity Class
  */
-public class K9Entity extends Wolf implements HasCustomInventoryScreen, ContainerEntity {
+public class K9Entity extends Wolf implements HasCustomInventoryScreen, ContainerEntity, RangedAttackMob {
 
     private static final int CONTAINER_SIZE = 27;
     private NonNullList<ItemStack> itemStacks;
@@ -60,7 +64,7 @@ public class K9Entity extends Wolf implements HasCustomInventoryScreen, Containe
     private long lootTableSeed;
     private static final EntityDataAccessor<Integer> DATA_ID_ATTACK_TARGET;
     private static final EntityDataAccessor<Boolean> DATA_ID_MOVING;
-    public boolean isDead = true;
+    public boolean isDead;
     public byte power = 0;
     public int timer = 0;
 //    private static float TailAngle;
@@ -74,38 +78,24 @@ public class K9Entity extends Wolf implements HasCustomInventoryScreen, Containe
                 .add(Attributes.MAX_HEALTH, 60.0D)
                 .add(Attributes.MOVEMENT_SPEED, 0.2D)
                 .add(Attributes.ATTACK_DAMAGE, 13.0D)
-                .add(Attributes.FOLLOW_RANGE, 99999999.0D);
+                .add(Attributes.FOLLOW_RANGE,  Double.POSITIVE_INFINITY);
     }
 
     @Override
     protected void registerGoals() {
         super.registerGoals();
-//        this.goalSelector.removeGoal(new SwimGoal(this));
         this.goalSelector.removeGoal(new LeapAtTargetGoal(this, 0.4F));
         this.goalSelector.removeGoal(new MeleeAttackGoal(this, 1.0, true));
         this.goalSelector.removeGoal(new BreedGoal(this, 1.0));
         this.goalSelector.removeGoal(new AvoidEntityGoal<>(this, Llama.class, 24.0F, 1.5, 1.5));
-
-//        this.goalSelector.addGoal(0, new SwimGoal(this));
-//        this.goalSelector.addGoal(1, new RangedAttackGoal(this, 1.5, 40, 6.0F));
-//        this.goalSelector.addGoal(2, new ZombieAttackGoal(this, 1.0D, false));
-//        this.goalSelector.addGoal(7, new WaterAvoidingRandomWalkingGoal(this, 1.0D));
-        this.targetSelector.addGoal(1, (new HurtByTargetGoal(this)).setAlertOthers(K9Entity.class));
-//        this.targetSelector.addGoal(2, new NearestAttackableTargetGoal<>(this, Player.class, true));
-//        this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<>(this, AbstractVillagerEntity.class, false));
-        this.goalSelector.addGoal(10, new RandomLookAroundGoal(this));
+        this.goalSelector.addGoal(1, new RangedAttackGoal(this, 1.5, 40, 6.0F));
+        this.goalSelector.removeGoal(new NearestAttackableTargetGoal<>(this, Player.class, true));
         this.targetSelector.addGoal(1, new OwnerHurtByTargetGoal(this));
         this.targetSelector.addGoal(2, new OwnerHurtTargetGoal(this));
+        this.goalSelector.addGoal(7, new WaterAvoidingRandomStrollGoal(this, 1.0D));
+        this.targetSelector.addGoal(1, (new HurtByTargetGoal(this)).setAlertOthers(K9Entity.class));
         this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<>(this, Creeper.class, true));
-        this.targetSelector.removeGoal(new NonTameRandomTargetGoal(this, Animal.class, false, PREY_SELECTOR));
-        this.goalSelector.addGoal(4, new K9Entity.AttackGoal(this));
-        this.goalSelector.addGoal(8, new LookAtPlayerGoal(this, Player.class, 8.0F));
-        this.goalSelector.addGoal(8, new LookAtPlayerGoal(this, K9Entity.class, 12.0F, 0.01F));
-        this.targetSelector.addGoal(4, new NearestAttackableTargetGoal<>(this, LivingEntity.class, 10, true, false, new K9Entity.AttackSelector(this)));
-//        this.targetSelector.addGoal(4, new NearestAttackableTargetGoal<>(this, LivingEntity.class, 10, true, false, new K9Entity.AttackSelector(this)));
-
-        this.goalSelector.removeGoal(new NearestAttackableTargetGoal<>(this, Player.class, true));
-//        this.targetSelector.addGoal(4, new NearestAttackableTargetGoal(this, Player.class, 10, true, false, this::isAngryAt));
+        this.targetSelector.addGoal(3, new NearestAttackableTargetGoal<>(this, Monster.class, true));
     }
 
     @Override
@@ -132,49 +122,26 @@ public class K9Entity extends Wolf implements HasCustomInventoryScreen, Containe
         return false;
     }
 
-
     public boolean hasActiveAttackTarget() {
         return (Integer)this.entityData.get(DATA_ID_ATTACK_TARGET) != 0;
     }
 
 
-    /**
-     * @param target         The Targeted Entity
-     * @param distanceFactor The Distance
-     *                       Old 1.16 code, figure it out
-     */
-    public void performRangedAttack(@NotNull LivingEntity target, float distanceFactor) {
-//        if (!this.level.isClientSide && this.canSee(target)) {
-//            LaserEntity lazer = new LaserEntity(TEntities.LASER.get(), this, this.getCommandSenderWorld(), 4.0F, TDamageSources.causeTardisMobDamage("laser", this));
-//            lazer.setColor(new Vector3d(1.0, 0.0, 0.0));
-//            lazer.setDamage((float) Objects.requireNonNull(this.getAttribute(Attributes.ATTACK_DAMAGE)).getBaseValue());
-//            lazer.setRayLength(1F);
-//            lazer.shootFromRotation(lazer, this.xRot, this.yHeadRot, 0.0F, 1.5F, 0.0F);
-//            this.level.addFreshEntity(lazer);
-//            this.level.playSound(null, this.blockPosition(), TSounds.LASER_GUN_FIRE.get(), SoundCategory.HOSTILE, 1.0F, 1.0F);
-//        }
+    @Override
+    public void performRangedAttack(LivingEntity livingEntity, float f) {
+        if (!this.level().isClientSide && this.hasLineOfSight(livingEntity)) {
 
+            Lazer PlasmaBoltEntity = new Lazer(AseohaEntities.LAZER.get(), this.level());
+
+            AbstractArrow abstractArrow = PlasmaBoltEntity.createFromConstructor(this.level(), this);
+
+            abstractArrow.setBaseDamage(10);
+
+            abstractArrow.shootFromRotation(abstractArrow, this.getXRot(), this.yHeadRot, 0.0F, 1.5F, 0.0F);
+
+            this.level().addFreshEntity(abstractArrow);
+        }
     }
-
-//    private MenuProvider createContainerProvider() {
-//        return new MenuComponent() {
-//            public Container createMenu(int i, @NotNull Inventory playerInventory, @NotNull Player player) {
-//                return new InventoryContainers(i, playerInventory, K9Entity.this.inventory);
-//            }
-//
-//            @NotNull
-//            public Component getDisplayName() {
-//                return Component.translatable("aseoha.k9.inventory");
-//            }
-//        };
-//    }
-
-    //Why does this exist? I have no clue honestly
-//    @Override
-//    protected int addExperiencePoints(PlayerEntity player)
-//    {
-//        return 3 + this.world.random.nextInt(5);
-//    }
 
     /**
      * @return The Item used for recharging K-9
@@ -215,169 +182,62 @@ public class K9Entity extends Wolf implements HasCustomInventoryScreen, Containe
      * @return Duration of time it takes to deplete one percent of K-9's charge
      */
     public static int TimeToDeplete(){
-        return 1200 * 20;
+        return 25 * 20;
     }
 
     @Override
     public void tick() {
-        if(!this.isTame() || this.isDead){
-            this.getNavigation().stop();
-        }
-        if (this.isAlive()) {
-            if (this.timer < TimeToDeplete()) {
-                timer++;
-            }
-            if (this.timer >= TimeToDeplete()) {
-                if (this.power > 0)
-                    this.power -= 1;
-                this.timer = 0;
-            }
-            if(this.isTame() && this.getOwner() != null) {
-                if (this.power == 10)
-                    this.getOwner().sendSystemMessage(Component.nullToEmpty("Power Banks At 10%, Master."));
-                if (this.power == 0) {
-                    this.getOwner().sendSystemMessage(Component.nullToEmpty("Power Banks Depleted, Master."));
-                    this.power = -1;
-                }
-            }
-            this.isDead = this.power <= 0;
-            if (this.isDead) {
-                if (!this.isInsidePortal && this.onGround()) {
-                    this.setNoAi(this.isDead);
-                    this.navigation.stop();
-                    this.setTarget((LivingEntity) null);
-                }
-            }
-
-            this.power = this.power < 0 ? -1 : this.power;
-        }
         super.tick();
+        aseoha.threadManager.K9TickThread(this);
     }
 
-
-    //    @Override
-//    public boolean attackEntityAsMob(Entity entityIn) {
-//        if (!super.attackEntityAsMob(entityIn)) {
-//            return false;
-//        } else {
-//            if (entityIn instanceof LivingEntity) {
-//                ((LivingEntity)entityIn).addEffect(new EffectInstance(Effects.MOVEMENT_SLOWDOWN, 200,3));
-//                ((LivingEntity)entityIn).addEffect(new EffectInstance(Effects.WEAKNESS, 200));
-//                ((LivingEntity)entityIn).addEffect(new EffectInstance(Effects.CONFUSION, 200));
-//            }
-//            return true;
-//        }
-//    }
-    //****************************************Just for power****************************************//
-//    @Override
-//    public void tick() {
-//        super.tick();
-////        aseoha.k9TickThread.Call(this);
-//        if (this.isAlive()) {
-//            this.setNoAi(this.isDead);
-//            if (this.timer < config.SERVER.K9PowerDrainRate.get() * 20) {
-//                timer++;
-//            }
-//            if (this.timer >= config.SERVER.K9PowerDrainRate.get() * 20) {
-//                if (this.power > 0)
-//                    this.power -= 1;
-//                this.timer = 0;
-//            }
-//            if (this.timer == 0 && this.power == 10)
-//                Objects.requireNonNull(this.getOwner()).sendSystemMessage(Component.nullToEmpty("Power Banks At 10%, Master."), Objects.requireNonNull(this.getOwnerUUID()));
-//            if (this.timer == 0 && this.power == 1) {
-//                Objects.requireNonNull(this.getOwner()).level.(Component.nullToEmpty("Power Banks Depleted, Master."), Objects.requireNonNull(this.getOwnerUUID()));
-//                this.power = 0;
-//            }
-//            this.isDead = this.power <= 0;
-//            if (this.isDead) {
-//                this.jumping = false;
-//                this.setNoGravity(false);
-//                if (!this.isInsidePortal && this.onGround) {
-//                    this.navigation.stop();
-//                    this.setTarget((LivingEntity) null);
-//                }
-//            }
-////            aseoha.LOGGER.info(this.power);
-//            if (this.power < 0) this.power = 0;
-//        }
-//    }
-
-    //*******************************Honestly I can barely read half of this, need to clean it****************************************//
     @NotNull
     @Override
     public InteractionResult mobInteract(Player player, @NotNull InteractionHand hand) {
+        if (hand.equals(InteractionHand.OFF_HAND))
+            return InteractionResult.PASS;
+
         ItemStack itemstack = player.getItemInHand(hand);
 
         Item item = itemstack.getItem();
 
-        /******************** If it's tamed by the player ***************************/
-        if (this.isTame() && this.isOwnedBy(player)) {
-            /** if player's crouching, but not holding [Charge item] make K-9 sit **/
-            if (player.isCrouching() && !item.equals(this.GetChargeItem()))
-                this.setOrderedToSit(!this.isOrderedToSit());
-            /** Else open inventory **/
-            else if (!item.equals(this.GetChargeItem()))
-                this.openCustomInventoryScreen(player);
-
-        }
 
         if (!this.isTame()) {
             if (item.equals(this.GetTameItem())) {
                 int rand = new Random(System.currentTimeMillis()).nextInt(100);
-                if (rand >= 75) {
+                if (rand >= 50) {
                     this.tame(player);
+                    player.sendSystemMessage(Component.translatable("aseoha.k9.tame"));
                     return InteractionResult.SUCCESS;
-                }
+                } else return InteractionResult.FAIL;
             }
+            return InteractionResult.FAIL;
         }
-        if (this.level().isClientSide) {
-            boolean flag = this.isOwnedBy(player) || this.isTame() || item == Items.IRON_INGOT && !this.isTame() && !this.isAngry();
-            return flag ? InteractionResult.CONSUME : InteractionResult.PASS;
-        } else {
-            if (this.isTame()) {
-                if (item.equals(this.GetChargeItem())) {
-                    this.power++;
-                }
+
+        if (this.isTame()) {
+            if (item.equals(this.GetChargeItem())) {
+                this.power += 10;
+                player.sendSystemMessage(Component.translatable("aseoha.k9.power.add"));
+                return InteractionResult.SUCCESS;
             }
         }
 
-        //********INVENTORY********//
-        if (player.isCrouching() && !this.isNoAi()) {
-            if (!this.isDead) {
+
+        if (this.isTame()) { // && this.isOwnedBy(player)
+            /** if player's crouching, but not holding [Charge item] **/
+            if (player.isCrouching() && !item.equals(this.GetChargeItem())) {
+                if (this.level().isClientSide)
+                    GUIHelper.OpenGUI(1);
+                return InteractionResult.SUCCESS;
+            }
+            /** Else open inventory **/
+            else if (!item.equals(this.GetChargeItem())) {
                 this.openCustomInventoryScreen(player);
                 return InteractionResult.SUCCESS;
             }
         }
-//                if (!(item instanceof IArtronItemStackBattery && !player.isCrouching())) {
-        if (!player.isCrouching()) {
-            InteractionResult actionresulttype = super.mobInteract(player, hand);
-            if (this.isOwnedBy(player)) {
-                K9Entity.Say("Power is at " + this.power, player, player.level()); //TODO: Add power to the K9 Screen, distress signals, etc
-//                        this.setOrderedToSit(!this.isOrderedToSit());
-                return InteractionResult.SUCCESS;
-            }
-            return actionresulttype;
-//                }
-        }
-//        else if (item instanceof SonicItem && !this.isAngry()) {
-////                if (!player.abilities.instabuild) {
-////                    itemstack.shrink(1);
-////                }
-//
-//            this.random.nextInt(1);
-//            if (!this.isTame()) {
-//                this.tame(player);
-//                this.navigation.stop();
-//                this.setTarget((LivingEntity) null);
-//                this.setOrderedToSit(true);
-//                this.level().broadcastEntityEvent(this, (byte) 7);
-//            } else {
-//                this.level().broadcastEntityEvent(this, (byte) 6);
-//            }
-//
-//            return InteractionResult.SUCCESS;
-//        }
+
+
         return InteractionResult.FAIL;
     }
 //@OnlyIn(Dist.CLIENT)
@@ -389,13 +249,6 @@ public class K9Entity extends Wolf implements HasCustomInventoryScreen, Containe
     public void setTame(boolean p_70903_1_) {
         super.setTame(p_70903_1_);
     }
-
-//    @Override
-//    public void die(@NotNull DamageSource damageSource) {
-////        super.die(damageSource);
-//        this.setHealth(1000);
-//        this.power=0;
-//    }
 
 
 //    public AttributeModifierManager getAttributes() {
@@ -450,9 +303,10 @@ public class K9Entity extends Wolf implements HasCustomInventoryScreen, Containe
 //        }));
 //    }
 
-    public static void Say(String text, Player player, Level worldIn) {
+    public void Say(String text, Player player, Level worldIn) {
         assert player != null;
-        Objects.requireNonNull(worldIn.getServer()).tell(new TickTask(1, () -> player.displayClientMessage(Component.nullToEmpty(text + ", Master."), false)));
+        if(!worldIn.isClientSide)
+            worldIn.getServer().tell(new TickTask(1, () -> player.displayClientMessage(Component.nullToEmpty(text + ", Master."), false)));
     }
 //
 //    @Override
@@ -477,14 +331,16 @@ public class K9Entity extends Wolf implements HasCustomInventoryScreen, Containe
         super.addAdditionalSaveData(compoundTag);
         this.addChestVehicleSaveData(compoundTag);
         compoundTag.putByte("Power", this.power);
+        this.addPersistentAngerSaveData(compoundTag);
     }
 
     @Override
     public void readAdditionalSaveData(CompoundTag compoundTag) {
         super.readAdditionalSaveData(compoundTag);
         this.readChestVehicleSaveData(compoundTag);
-        if(compoundTag.contains("Power"))
+        if (compoundTag.contains("Power"))
             this.power = compoundTag.getByte("Power");
+        this.readPersistentAngerSaveData(this.level(), compoundTag);
     }
 
 
@@ -496,17 +352,19 @@ public class K9Entity extends Wolf implements HasCustomInventoryScreen, Containe
 
     @Override
     public boolean hurt(DamageSource source, float amount) {
-        if (source.getDirectEntity() instanceof Player) {
-            Player player = (Player) source.getDirectEntity();
-//            if (player.getMainHandItem().getItem() instanceof ToolItem && ((ToolItem) player.getMainHandItem().getItem()).getTier() == ItemTier.IRON) {
-//                amount *= 1.5F;
-//            }
-        }
-//        this.knockback(.1F, .1, .1);
-        this.power -= (byte) amount;
-        return false;
-//        return super.hurt(source, amount);
+        if (!Objects.equals(source.getEntity(), this.getOwner()))
+            this.setTarget((LivingEntity) source.getEntity());
 
+        this.power -= (byte) amount;
+
+        return super.hurt(source, amount);
+    }
+
+    @Override
+    public boolean isInvulnerableTo(DamageSource damageSource) {
+        if(this.isRemoved()) return true;
+
+        return !(damageSource.is(DamageTypeTags.BYPASSES_INVULNERABILITY) || damageSource.is(DamageTypes.GENERIC_KILL) || damageSource.is(DamageTypes.FELL_OUT_OF_WORLD));
     }
 
     @Override
@@ -640,17 +498,6 @@ public class K9Entity extends Wolf implements HasCustomInventoryScreen, Containe
         this.level().gameEvent(GameEvent.CONTAINER_CLOSE, this.position(), GameEvent.Context.of(player));
     }
 
-    private static class AttackSelector implements Predicate<LivingEntity> {
-        private final K9Entity k9;
-
-        public AttackSelector(K9Entity k9) {
-            this.k9 = k9;
-        }
-
-        public boolean test(@Nullable LivingEntity livingEntity) {
-            return (livingEntity instanceof Player || livingEntity instanceof Squid || livingEntity instanceof Axolotl) && livingEntity.distanceToSqr(this.k9) > 9.0;
-        }
-    }
 
 //    @OnlyIn(Dist.CLIENT)
 //    public float getTailAngle() {
@@ -668,80 +515,18 @@ public class K9Entity extends Wolf implements HasCustomInventoryScreen, Containe
 //        return TailAngle;
 //    }
 
-    public int getAttackDuration() {
-        return 20;
+    public boolean isInsidePortal() {
+        return this.isInsidePortal;
     }
 
-    static class AttackGoal extends Goal {
-        private final K9Entity k9;
-        private int attackTime;
-        private final boolean elder;
-
-        public AttackGoal(K9Entity k9) {
-            this.k9 = k9;
-            this.elder = false;
-            this.setFlags(EnumSet.of(Flag.MOVE, Flag.LOOK));
-        }
-
-        public boolean canUse() {
-            LivingEntity livingEntity = this.k9.getTarget();
-            return livingEntity != null && livingEntity.isAlive();
-        }
-
-        public boolean canContinueToUse() {
-            return super.canContinueToUse() && (this.elder || this.k9.getTarget() != null && this.k9.distanceToSqr(this.k9.getTarget()) > 9.0);
-        }
-
-        public void start() {
-            this.attackTime = -10;
-            this.k9.getNavigation().stop();
-            LivingEntity livingEntity = this.k9.getTarget();
-            if (livingEntity != null) {
-                this.k9.getLookControl().setLookAt(livingEntity, 90.0F, 90.0F);
-            }
-
-            this.k9.hasImpulse = true;
-        }
-
-        public void stop() {
-            this.k9.setActiveAttackTarget(0);
-            this.k9.setTarget((LivingEntity) null);
-        }
-
-        public boolean requiresUpdateEveryTick() {
-            return true;
-        }
-
-        public void tick() {
-            LivingEntity livingEntity = this.k9.getTarget();
-            if (livingEntity != null) {
-                this.k9.getNavigation().stop();
-                this.k9.getLookControl().setLookAt(livingEntity, 90.0F, 90.0F);
-                //    if (!this.k9.hasLineOfSight(livingEntity))
-                //    this.k9.setTarget((LivingEntity)null);
-                if (this.k9.hasLineOfSight(livingEntity)) {
-                    ++this.attackTime;
-                    if (this.attackTime == 0) {
-                        this.k9.setActiveAttackTarget(livingEntity.getId());
-                        if (!this.k9.isSilent()) {
-                            this.k9.level().broadcastEntityEvent(this.k9, (byte)21);
-                        }
-                    } else if (this.attackTime >= this.k9.getAttackDuration()) {
-                        float f = 1.0F;
-                        if (this.k9.level().getDifficulty() == Difficulty.HARD) {
-                            f += 0.7F;
-                        }
-
-                        livingEntity.hurt(this.k9.damageSources().indirectMagic(this.k9, this.k9), f);
-                        livingEntity.hurt(this.k9.damageSources().mobAttack(this.k9), (float)this.k9.getAttributeValue(Attributes.ATTACK_DAMAGE));
-                        this.k9.setTarget((LivingEntity)null);
-                    }
-
-                    super.tick();
-                }
-            }
-        }
+    public boolean IsJumping() {
+        return this.jumping;
     }
+
+    public void SetIsJumping(boolean b) {
+        this.jumping = b;
+    }
+
     static {
         DATA_ID_MOVING = SynchedEntityData.defineId(K9Entity.class, EntityDataSerializers.BOOLEAN);
         DATA_ID_ATTACK_TARGET = SynchedEntityData.defineId(K9Entity.class, EntityDataSerializers.INT);

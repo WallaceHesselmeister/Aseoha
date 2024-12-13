@@ -1,6 +1,7 @@
 package com.code;
 
 import com.code.common.GrammarNazi;
+import com.code.common.ThreadManager;
 import com.code.common.blocks.RoundelBlock;
 import com.code.common.registries.AseohaBlocks;
 import com.code.common.registries.AseohaEntities;
@@ -24,6 +25,7 @@ public final class aseoha {
     public static final String MOD_ID = "aseoha";
     public static final Supplier<RegistrarManager> MANAGER = Suppliers.memoize(() -> RegistrarManager.get(MOD_ID));
     public static final Logger LOGGER = LoggerFactory.getLogger(MOD_ID);
+    public static ThreadManager threadManager = new ThreadManager();
 //    public static StructureType<RoadStructure> ROAD_STRUCTURE = Registry.register(BuiltInRegistries.STRUCTURE_TYPE, new ResourceLocation(aseoha.MOD_ID, "road_structure"), () -> RoadStructure.CODEC);
 
     public static void init() {
@@ -37,6 +39,7 @@ public final class aseoha {
         FabricSpecificSetup();
         ForgeSpecificSetupTakeTwo();
 
+        threadManager.InitializeThreads();
 
         /** If this is true then ASEOHA will attempt to make roundels for every. single. block. registered.
          * With only ASEOHA, Minecraft, and AIT installed, it works rather well, however, haven't tested it beyond that, forge support is questionable, and item textures are missing

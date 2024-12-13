@@ -1,5 +1,6 @@
 package com.code.fabric.registries;
 
+import com.code.common.entities.DalekEntity;
 import com.code.fabric.entities.K9Entity;
 import com.code.fabric.entities.K9MkIIEntity;
 import com.code.fabric.entities.Lazer;
@@ -18,11 +19,13 @@ public class AseohaEntities {
     public static final RegistrySupplier<EntityType<K9Entity>> K9;
     public static final RegistrySupplier<EntityType<K9MkIIEntity>> K9MkII;
     public static final RegistrySupplier<EntityType<Lazer>> LAZER;
+    public static final RegistrySupplier<EntityType<DalekEntity>> DALEK;
 
     static {
         K9 = ENTITY_TYPES.register("k9", () -> EntityType.Builder.of(K9Entity::new, MobCategory.MISC).sized(1.0f, 1.0f).build("aseoha:k9"));
         K9MkII = ENTITY_TYPES.register("k9mk2", () -> EntityType.Builder.of(K9MkIIEntity::new, MobCategory.MISC).sized(1.0f, 1.0f).build("aseoha:k9mk2"));
         LAZER = ENTITY_TYPES.register("lazer", () -> EntityType.Builder.of(com.code.fabric.entities.Lazer::new, MobCategory.MISC).sized(0.5F, 0.5F).build("aseoha:lazer"));
+        DALEK = ENTITY_TYPES.register("dalek", () -> EntityType.Builder.of(DalekEntity::new, MobCategory.MISC).sized(0.5F, 0.5F).build("aseoha:dalek"));
     }
 
     public static EntityType<com.code.fabric.entities.Lazer> LazerEntityType() {

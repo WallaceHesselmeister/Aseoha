@@ -288,7 +288,7 @@ public class K9mkIIModel<T extends K9MkIIEntity> extends EntityModel<T> {
 
     @Override
     public void setupAnim(@NotNull K9MkIIEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
-        this.head.zRot = ((float) Math.toRadians(entity.isDead ? 0f : -37.5));
+        this.head.zRot = ((float) Math.toRadians(entity.isDead ? 50f : -37.5));
     }
 
     @Override

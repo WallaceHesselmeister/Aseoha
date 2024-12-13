@@ -1,7 +1,7 @@
 package com.code.fabric.registries;
 
 import com.code.fabric.items.PlasmaRifle;
-import com.code.fabric.items.PlasmaBoltMagazine;
+import com.code.fabric.items.plasma_magazines.SmallPlasmaBoltMagazine;
 import dev.architectury.registry.registries.DeferredRegister;
 import dev.architectury.registry.registries.RegistrySupplier;
 import net.minecraft.core.registries.Registries;
@@ -16,5 +16,5 @@ public class AseohaItems {
             () -> new PlasmaRifle(new Item.Properties()));
 
     public static final RegistrySupplier<Item> PLASMA_BOLT_MAGAZINE = ITEMS.register("plasma_bolt_magazine",
-            () -> new PlasmaBoltMagazine(new Item.Properties()));
+            () -> new SmallPlasmaBoltMagazine(new Item.Properties()));
 }

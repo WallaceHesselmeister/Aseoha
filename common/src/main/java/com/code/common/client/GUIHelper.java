@@ -7,12 +7,8 @@ public class GUIHelper {
      */
     public static void OpenGUI(int Id){
         switch (Id){
-            case 1:
-                Minecraft.getInstance().setScreen(new K9Screen());
-                break;
-            default:
-                Minecraft.getInstance().setScreen(new K9Screen());
-                break;
+            case 1 -> Minecraft.getInstance().setScreen(new K9Screen());
+            default -> Minecraft.getInstance().setScreen(new K9Screen());
         }
     }
 }

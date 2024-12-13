@@ -1,6 +1,7 @@
 package com.code.fabric.items;
 
 import com.code.common.interfaces.IFireArm;
+import com.code.fabric.items.plasma_magazines.AbstractPlasmaBoltMagazine;
 import com.code.fabric.registries.AseohaItems;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;

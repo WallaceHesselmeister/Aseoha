@@ -2,6 +2,7 @@ package com.code.common.registries;
 
 import com.code.common.AseohaToolMaterials;
 import com.code.common.items.*;
+import com.code.common.items.plasma_magazine.SmallPlasmaBoltMagazine;
 import dev.architectury.registry.registries.DeferredRegister;
 import dev.architectury.registry.registries.RegistrySupplier;
 import net.minecraft.core.registries.Registries;
@@ -66,7 +67,7 @@ public class AseohaItems {
             () -> new PlasmaRifle(new Item.Properties().arch$tab(AseohaTabs.MAIN_TAB)));
 
     public static final RegistrySupplier<Item> PLASMA_BOLT_MAGAZINE = ITEMS_NO_FABRIC.register("plasma_bolt_magazine",
-            () -> new PlasmaBoltMagazine(new Item.Properties().arch$tab(AseohaTabs.MAIN_TAB)));
+            () -> new SmallPlasmaBoltMagazine(new Item.Properties().arch$tab(AseohaTabs.MAIN_TAB)));
 
     public static final RegistrySupplier<Item> HEXAGONAL_ROUNDEL_MOLD = ITEMS.register("hexagonal_roundel_mold",
             () -> new Item(new Item.Properties().arch$tab(AseohaTabs.MAIN_TAB)));

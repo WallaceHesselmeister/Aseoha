@@ -67,7 +67,7 @@ public class K9Screen extends Screen {
     @Override
     public void render(GuiGraphics context, int mouseX, int mouseY, float delta) {
         super.render(context, mouseX, mouseY, delta);
-        context.blit(GUIBackground, 0, 0, width, 0, width / 2, height);
+        context.blit(GUIBackground, 0, 0, width, 0, width, height);
 
         this.ButtonManager.RenderAllButtons(context);
     }
