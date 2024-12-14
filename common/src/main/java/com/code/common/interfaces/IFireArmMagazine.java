@@ -15,4 +15,6 @@ public interface IFireArmMagazine {
     short GetRounds();
     /** Loads ammo into the gun and takes away from the mag **/
     short LoadAmmo(short Ammo);
+    /** Returns the full amount of ammo in the mag and removes it all **/
+    int Empty();
 }

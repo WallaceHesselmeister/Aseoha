@@ -40,6 +40,10 @@ public class Lazer extends AbstractArrow {
         return new Lazer(world, shooter);
     }
 
+    public void SetKnockback(int k) {
+        this.knockback = k;
+    }
+
     public EntityType<?> EntityType() {
         return AseohaEntities.LazerEntityType();
     }
@@ -179,9 +183,9 @@ public class Lazer extends AbstractArrow {
 
             if (entity instanceof LivingEntity) {
                 LivingEntity livingEntity = (LivingEntity) entity;
-                if (!this.level().isClientSide && this.getPierceLevel() <= 0) {
-                    livingEntity.setArrowCount(livingEntity.getArrowCount() + 1);
-                }
+//                if (!this.level().isClientSide && this.getPierceLevel() <= 0) {
+//                    livingEntity.setArrowCount(livingEntity.getArrowCount() + 1);
+//                }
 
                 if (this.knockback > 0) {
                     double d = Math.max(0.0, 1.0 - livingEntity.getAttributeValue(Attributes.KNOCKBACK_RESISTANCE));
@@ -210,6 +214,7 @@ public class Lazer extends AbstractArrow {
             if (!this.level().isClientSide && this.getDeltaMovement().lengthSqr() < 1.0E-7)
                 this.discard();
         }
-
+        if (!this.level().isClientSide)
+            this.discard();
     }
 }

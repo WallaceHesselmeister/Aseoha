@@ -5,6 +5,7 @@ import com.code.common.entities.DalekEntity;
 import com.code.common.entities.K9Entity;
 import com.code.common.entities.K9MkIIEntity;
 import com.code.common.items.AseohaTabs;
+import com.code.fabric.entities.CybermanEntity;
 import com.code.fabric.registries.AseohaEntities;
 import com.code.fabric.registries.AseohaItems;
 import dev.architectury.event.events.common.TickEvent;
@@ -34,6 +35,8 @@ public final class aseohaFabric implements ModInitializer {
         FabricDefaultAttributeRegistry.register(AseohaEntities.K9MkII.get(), K9MkIIEntity.createMobAttributes());
 
         FabricDefaultAttributeRegistry.register(AseohaEntities.DALEK.get(), DalekEntity.createMobAttributes());
+
+        FabricDefaultAttributeRegistry.register(AseohaEntities.CYBERMAN.get(), CybermanEntity.createMobAttributes());
 
         TickThread.start();
 

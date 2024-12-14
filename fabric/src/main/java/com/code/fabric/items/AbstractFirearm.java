@@ -29,9 +29,7 @@ public class AbstractFirearm extends BowItem implements IFireArm {
     boolean HasMag;
     AbstractMagazine Mag;
     private int Ammo;
-    /**
-     * The amount of energy to consume every shot
-     **/
+
     private int CONSUME_RATE = 1;
 
     private boolean Switch = false;

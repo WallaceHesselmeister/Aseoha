@@ -63,6 +63,10 @@ public class Lazer extends AbstractArrow {
         return true;
     }
 
+    public void SetKnockback(int k) {
+        this.knockback = k;
+    }
+
     @Override
     protected void onHitBlock(BlockHitResult ray) {
         super.onHitBlock(ray);

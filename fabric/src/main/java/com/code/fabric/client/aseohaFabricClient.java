@@ -1,9 +1,7 @@
 package com.code.fabric.client;
 
-import com.code.common.client.models.DalekModel;
-import com.code.common.client.models.K9mkIIModel;
-import com.code.common.client.models.K9model;
-import com.code.common.client.models.LazerModel;
+import com.code.common.client.models.*;
+import com.code.common.client.renderer.CybusCybermanRenderer;
 import com.code.common.client.renderer.DalekRenderer;
 import com.code.common.registries.AseohaBlocks;
 import com.code.fabric.client.client.renderer.K9MkIIRenderer;
@@ -34,6 +32,8 @@ public final class aseohaFabricClient implements ClientModInitializer {
 
         EntityRendererRegistry.register(AseohaEntities.DALEK.get(), DalekRenderer::new);
 
+        EntityRendererRegistry.register(AseohaEntities.CYBERMAN.get(), CybusCybermanRenderer::new);
+
         ////////////////////////////////////////////////////////////////////////////////////////////
 
         EntityModelLayerRegistry.register(K9model.LAYER_LOCATION, K9model::createBodyLayer);
@@ -43,5 +43,7 @@ public final class aseohaFabricClient implements ClientModInitializer {
         EntityModelLayerRegistry.register(LazerModel.LAYER_LOCATION, LazerModel::createBodyLayer);
 
         EntityModelLayerRegistry.register(DalekModel.LAYER_LOCATION, DalekModel::createBodyLayer);
+
+        EntityModelLayerRegistry.register(CybusCybermanModel.LAYER_LOCATION, CybusCybermanModel::createBodyLayer);
     }
 }
