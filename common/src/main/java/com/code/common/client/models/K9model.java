@@ -132,17 +132,17 @@ public class K9model<T extends K9Entity> extends EntityModel<T> {
 
     @Override
     public void renderToBuffer(PoseStack poseStack, VertexConsumer vertexConsumer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha) {
-        head.zScale = 1.1f;
-        head.yScale = 1.1f;
-        head.xScale = 1.1f;
-        body.zScale = 1.1f;
-        body.yScale = 1.1f;
-        body.xScale = 1.1f;
-        tail.zScale = 1.1f;
-        tail.yScale = 1.1f;
-        tail.xScale = 1.1f;
-        head.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
-        body.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
-        tail.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
+        this.head.zScale = 1.1f;
+        this.head.yScale = 1.1f;
+        this.head.xScale = 1.1f;
+        this.body.zScale = 1.1f;
+        this.body.yScale = 1.1f;
+        this.body.xScale = 1.1f;
+        this.tail.zScale = 1.1f;
+        this.tail.yScale = 1.1f;
+        this.tail.xScale = 1.1f;
+        this.head.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
+        this.body.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
+        this.tail.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
     }
 }

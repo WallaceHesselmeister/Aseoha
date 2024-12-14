@@ -293,9 +293,9 @@ public class K9mkIIModel<T extends K9MkIIEntity> extends EntityModel<T> {
 
     @Override
     public void renderToBuffer(PoseStack poseStack, VertexConsumer vertexConsumer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha) {
-        Base.zScale = 1.2f;
-        Base.yScale = 1.2f;
-        Base.xScale = 1.2f;
-        Base.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
+        this.Base.zScale = 1.2f;
+        this.Base.yScale = 1.2f;
+        this.Base.xScale = 1.2f;
+        this.Base.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
     }
 }

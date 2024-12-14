@@ -1,7 +1,8 @@
 package com.code.fabric.items;
 
 import com.code.common.interfaces.IFireArm;
-import com.code.common.items.magazines.AbstractMagazine;
+import com.code.common.interfaces.IFireArmMagazine;
+import com.code.fabric.items.magazines.AbstractMagazine;
 import com.code.common.misc.FireArmType;
 import com.code.fabric.registries.AseohaItems;
 import net.minecraft.network.chat.Component;
@@ -51,8 +52,10 @@ public class AbstractFirearm extends BowItem implements IFireArm {
             this.Switch = true;
             if (player.getItemBySlot(EquipmentSlot.OFFHAND).getItem().equals(AseohaItems.PLASMA_BOLT_MAGAZINE.get())) {
                 AbstractMagazine Mag = ((AbstractMagazine) player.getItemBySlot(EquipmentSlot.OFFHAND).getItem());
-                if(this.HasMag) {
+                if(!this.HasMag) {
                     int Amount = this.Ammo - Mag.Empty();
+                    this.HasMag = true;
+                    this.Mag = Mag;
                     this.Ammo += Amount;
                     player.setItemSlot(EquipmentSlot.OFFHAND, ItemStack.EMPTY);
                 }

@@ -1,11 +1,6 @@
 package com.code.fabric.entities;
 
 import com.code.fabric.registries.AseohaEntities;
-import com.google.common.collect.Lists;
-import it.unimi.dsi.fastutil.ints.IntOpenHashSet;
-import net.minecraft.advancements.CriteriaTriggers;
-import net.minecraft.core.BlockPos;
-import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.network.protocol.game.ClientboundGameEventPacket;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.util.Mth;
@@ -23,15 +18,11 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.*;
-import net.minecraft.world.phys.shapes.VoxelShape;
 import org.jetbrains.annotations.NotNull;
-
-import java.util.Arrays;
-import java.util.Iterator;
 
 public class Lazer extends AbstractArrow {
     private double BaseDamage;
-    private double knockback;
+    private double Knockback;
 
     public Lazer(EntityType<? extends Lazer> entityType, Level world) {
         super(AseohaEntities.LazerEntityType(), world);
@@ -64,7 +55,7 @@ public class Lazer extends AbstractArrow {
     }
 
     public void SetKnockback(int k) {
-        this.knockback = k;
+        this.Knockback = k;
     }
 
     @Override
@@ -111,7 +102,8 @@ public class Lazer extends AbstractArrow {
                 hitResult = entityHitResult;
             }
 
-            if (hitResult != null && ((HitResult) hitResult).getType() == HitResult.Type.ENTITY) {
+            if (hitResult != null && hitResult.getType() == HitResult.Type.ENTITY) {
+                assert hitResult instanceof EntityHitResult;
                 Entity entity = ((EntityHitResult) hitResult).getEntity();
                 Entity entity2 = this.getOwner();
                 if (entity instanceof Player && entity2 instanceof Player && !((Player) entity2).canHarmPlayer((Player) entity)) {
@@ -184,15 +176,14 @@ public class Lazer extends AbstractArrow {
 
         if (entity.hurt(damageSource, (float) i)) {
 
-            if (entity instanceof LivingEntity) {
-                LivingEntity livingEntity = (LivingEntity) entity;
+            if (entity instanceof LivingEntity livingEntity) {
                 if (!this.level().isClientSide && this.getPierceLevel() <= 0) {
                     livingEntity.setArrowCount(livingEntity.getArrowCount() + 1);
                 }
 
-                if (this.knockback > 0) {
+                if (this.Knockback > 0) {
                     double d = Math.max(0.0, 1.0 - livingEntity.getAttributeValue(Attributes.KNOCKBACK_RESISTANCE));
-                    Vec3 vec3 = this.getDeltaMovement().multiply(1.0, 0.0, 1.0).normalize().scale((double) this.knockback * 0.6 * d);
+                    Vec3 vec3 = this.getDeltaMovement().multiply(1.0, 0.0, 1.0).normalize().scale(this.Knockback * 0.6 * d);
                     if (vec3.lengthSqr() > 0.0) {
                         livingEntity.push(vec3.x, 0.1, vec3.z);
                     }
@@ -204,7 +195,7 @@ public class Lazer extends AbstractArrow {
                 }
 
                 this.doPostHurtEffects(livingEntity);
-                if (entity2 != null && livingEntity != entity2 && livingEntity instanceof Player && entity2 instanceof ServerPlayer && !this.isSilent()) {
+                if (livingEntity != entity2 && livingEntity instanceof Player && entity2 instanceof ServerPlayer && !this.isSilent()) {
                     ((ServerPlayer) entity2).connection.send(new ClientboundGameEventPacket(ClientboundGameEventPacket.ARROW_HIT_PLAYER, 0.0F));
                 }
             }
