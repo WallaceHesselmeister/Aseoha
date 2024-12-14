@@ -91,6 +91,13 @@ public abstract class AbstractMagazine extends Item implements IFireArmMagazine 
     }
 
     @Override
+    public int Empty(){
+        int Amount = this.AMMUNITION;
+        this.AMMUNITION = 0;
+        return Amount;
+    }
+
+    @Override
     public void appendHoverText(ItemStack stack, @Nullable Level worldIn, List<Component> tooltip, TooltipFlag flagIn) {
         int charge = this.GetRounds();
         String Amount = charge == 0 ? String.valueOf(Component.translatable("tooltip.aseoha.plasma_rifle.empty")) : Integer.toString(charge);
