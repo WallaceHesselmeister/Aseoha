@@ -1,5 +1,6 @@
 package com.code.common.items;
 
+import com.code.common.misc.FireArmType;
 import net.minecraft.world.item.Item;
 
 public class PlasmaRifle extends AbstractFirearm {
@@ -8,21 +9,8 @@ public class PlasmaRifle extends AbstractFirearm {
         super(settings);
     }
 
-    /**
-     * The amount of energy to drain from the magazine
-     **/
     @Override
-    public int GetConsumeRate() {
-        return 20;
+    public com.code.common.misc.FireArmType GetFireArmType() {
+        return FireArmType.RIFLE;
     }
-
-    /**
-     * The amount of energy to drain from the magazine
-     **/
-    @Override
-    public int GetDamage() {
-        return 12;
-    }
-
-
 }

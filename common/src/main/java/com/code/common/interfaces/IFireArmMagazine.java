@@ -2,15 +2,17 @@ package com.code.common.interfaces;
 
 public interface IFireArmMagazine {
     /** The Capacity of the Magazine **/
-    double GetMaxSize();
+    short GetMaxSize();
     /** Gets called when the firearm is discharged, used mainly for plasma discharge **/
     void OnShoot();
     /** Sets the charge of the magazine **/
-    void SetCharge(int i);
+    void SetRounds(short i);
     /** Removes charge from the magazine **/
-    void RemoveCharge(int i);
+    void RemoveRounds(short i);
     /** Adds charge to the magazine **/
-    void AddCharge(int i);
+    void AddRounds(short i);
     /** Gets the charge of the magazine **/
-    int GetCharge();
+    short GetRounds();
+    /** Loads ammo into the gun and takes away from the mag **/
+    short LoadAmmo(short Ammo);
 }

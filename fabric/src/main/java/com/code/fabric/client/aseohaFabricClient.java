@@ -9,6 +9,7 @@ import com.code.common.registries.AseohaBlocks;
 import com.code.fabric.client.client.renderer.K9MkIIRenderer;
 import com.code.fabric.client.client.renderer.K9Renderer;
 import com.code.fabric.client.client.renderer.LazerRenderer;
+import com.code.fabric.entities.DalekEntity;
 import com.code.fabric.registries.AseohaEntities;
 import dev.architectury.registry.client.level.entity.EntityModelLayerRegistry;
 import net.fabricmc.api.ClientModInitializer;
@@ -33,7 +34,7 @@ public final class aseohaFabricClient implements ClientModInitializer {
 
         EntityRendererRegistry.register(AseohaEntities.DALEK.get(), DalekRenderer::new);
 
-
+        ////////////////////////////////////////////////////////////////////////////////////////////
 
         EntityModelLayerRegistry.register(K9model.LAYER_LOCATION, K9model::createBodyLayer);
 

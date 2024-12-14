@@ -12,7 +12,6 @@ import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.entity.Entity;
 
 public class DalekModel<T extends DalekEntity> extends EntityModel<T> {
     // This layer location should be baked with EntityRendererProvider.Context in the entity renderer and passed into this model's constructor
@@ -128,9 +127,9 @@ public class DalekModel<T extends DalekEntity> extends EntityModel<T> {
 
         PartDefinition GunRack_r6 = multitool2.addOrReplaceChild("GunRack_r6", CubeListBuilder.create().texOffs(46, 18).addBox(-1.0F, -1.5F, -0.5F, 2.0F, 3.0F, 1.0F, new CubeDeformation(0.0F)), PartPose.offsetAndRotation(2.5F, -17.0F, -13.25F, 0.0F, 1.5708F, 0.0F));
 
-        PartDefinition gunstick = GunRack.addOrReplaceChild("gunstick", CubeListBuilder.create().texOffs(4, 0).addBox(1.5F, -17.0F, -9.25F, 2.0F, 0.0F, 6.0F, new CubeDeformation(0.0F))
-                .texOffs(0, 6).addBox(2.0F, -17.5F, -9.25F, 1.0F, 1.0F, 6.0F, new CubeDeformation(0.001F))
-                .texOffs(0, 0).addBox(1.5F, -17.0F, -9.25F, 2.0F, 0.0F, 6.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 17.0F, -1.25F));
+        PartDefinition gunstick = GunRack.addOrReplaceChild("gunstick", CubeListBuilder.create().texOffs(4, 0).addBox(-1.0F, 0.0F, -6.25F, 2.0F, 0.0F, 6.0F, new CubeDeformation(0.0F))
+                .texOffs(0, 6).addBox(-0.5F, -0.5F, -6.25F, 1.0F, 1.0F, 6.0F, new CubeDeformation(0.001F))
+                .texOffs(0, 0).addBox(-1.0F, 0.0F, -6.25F, 2.0F, 0.0F, 6.0F, new CubeDeformation(0.0F)), PartPose.offset(2.5F, 0.0F, -4.25F));
 
         PartDefinition Head = partdefinition.addOrReplaceChild("Head", CubeListBuilder.create().texOffs(38, 0).addBox(-4.0F, -2.0F, -4.0F, 8.0F, 3.0F, 8.0F, new CubeDeformation(0.0F))
                 .texOffs(57, 40).addBox(-3.0F, -4.0F, -3.0F, 6.0F, 2.0F, 6.0F, new CubeDeformation(0.0F)), PartPose.offset(0.0F, 0.0F, 1.25F));
@@ -152,13 +151,18 @@ public class DalekModel<T extends DalekEntity> extends EntityModel<T> {
 
     @Override
     public void setupAnim(DalekEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
-
+        this.Head.yRot = netHeadYaw * (float) (Math.PI / 180.0);
+        if(entity.getTarget() == null) return;
+        double degY = Math.atan2(entity.getTarget().getY(), entity.getY());
+        double degZ = Math.atan2(entity.getTarget().getZ(), entity.getZ());
+        this.GunRack.yRot = (float) degY;
+        this.GunRack.zRot = (float) degZ;
     }
 
     @Override
     public void renderToBuffer(PoseStack poseStack, VertexConsumer vertexConsumer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha) {
-        Base.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
-        GunRack.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
-        Head.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
+        this.Base.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
+        this.GunRack.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
+        this.Head.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
     }
 }

@@ -1,7 +1,8 @@
 package com.code.fabric.items;
 
 import com.code.common.interfaces.IFireArm;
-import com.code.fabric.items.plasma_magazines.AbstractPlasmaBoltMagazine;
+import com.code.common.items.magazines.AbstractMagazine;
+import com.code.common.misc.FireArmType;
 import com.code.fabric.registries.AseohaItems;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
@@ -25,11 +26,13 @@ import org.jetbrains.annotations.Nullable;
 import java.util.List;
 
 public class AbstractFirearm extends BowItem implements IFireArm {
-    AbstractPlasmaBoltMagazine Mag;
+    boolean HasMag;
+    AbstractMagazine Mag;
+    private int Ammo;
     /**
      * The amount of energy to consume every shot
      **/
-    private int CONSUME_RATE;
+    private int CONSUME_RATE = 1;
 
     private boolean Switch = false;
 
@@ -48,11 +51,23 @@ public class AbstractFirearm extends BowItem implements IFireArm {
     public @NotNull InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand interactionHand) {
         if (player.isCrouching()) {
             this.Switch = true;
-            if (this.Mag != null) player.addItem(this.Mag.getDefaultInstance());
-            this.Mag = null;
             if (player.getItemBySlot(EquipmentSlot.OFFHAND).getItem().equals(AseohaItems.PLASMA_BOLT_MAGAZINE.get())) {
-                this.Mag = ((AbstractPlasmaBoltMagazine) player.getItemBySlot(EquipmentSlot.OFFHAND).getItem());
-                player.setItemSlot(EquipmentSlot.OFFHAND, ItemStack.EMPTY);
+                AbstractMagazine Mag = ((AbstractMagazine) player.getItemBySlot(EquipmentSlot.OFFHAND).getItem());
+                if(this.HasMag) {
+                    int Amount = this.Ammo - Mag.Empty();
+                    this.Ammo += Amount;
+                    player.setItemSlot(EquipmentSlot.OFFHAND, ItemStack.EMPTY);
+                }
+
+                else {
+                    int Amount = this.Ammo;
+                    Amount -= (Mag.GetMaxSize() - Mag.GetRounds());
+                    Mag.AddRounds(((short) Amount));
+                    this.Ammo = Amount;
+                    player.setItemSlot(EquipmentSlot.OFFHAND, this.Mag.getDefaultInstance());
+                    this.Mag = null;
+                }
+
             }
         }
         return super.use(level, player, interactionHand);
@@ -60,29 +75,43 @@ public class AbstractFirearm extends BowItem implements IFireArm {
 
 
     /** The amount of energy to drain from the magazine **/
+    @Override
     public int GetConsumeRate() {
         return this.CONSUME_RATE;
     }
 
     /** The amount of energy to drain from the magazine **/
+    @Override
     public void SetConsumeRate(int i) {
         this.CONSUME_RATE = i;
     }
 
     /** The amount of energy to drain from the magazine **/
+    @Override
     public int GetDamage() {
         return this.Damage;
     }
 
     /** The amount of energy to drain from the magazine **/
+    @Override
     public void SetDamage(int i) {
         this.Damage = i;
+    }
+
+    @Override
+    public int GetAccuracy() {
+        return this.GetFireArmType().GetAccuracy();
+    }
+
+    @Override
+    public FireArmType GetFireArmType() {
+        return FireArmType.RIFLE;
     }
 
     public void Shoot(ItemStack itemStack, Level level, LivingEntity livingEntity, int i) {
         if (livingEntity instanceof Player player) {
 
-            boolean bl = player.getAbilities().instabuild || this.Mag.GetCharge() >= CONSUME_RATE;
+            boolean bl = player.getAbilities().instabuild || this.Ammo >= CONSUME_RATE;
             if (bl) {
 
                 int j = this.getUseDuration(itemStack) - i;
@@ -92,6 +121,7 @@ public class AbstractFirearm extends BowItem implements IFireArm {
                         this.Switch = false;
                         return;
                     }
+
                     if(this.Mag == null) return;
                     AbstractArrow lazer = this.Mag.CreatePlasmaBolt(level, this.Mag, livingEntity);
 
@@ -125,9 +155,8 @@ public class AbstractFirearm extends BowItem implements IFireArm {
 
     @Override
     public void appendHoverText(ItemStack stack, @Nullable Level worldIn, List<Component> tooltip, TooltipFlag flagIn) {
-        int charge = this.Mag == null ? 0 : this.Mag.GetCharge();
         tooltip.add(Component.translatable("tooltip.aseoha.plasma_rifle").append(" || ").append(Component.translatable("tooltip.aseoha.plasma_rifle_charge").append(": ").append(
-                charge == 0 ? Component.translatable("tooltip.aseoha.plasma_rifle.empty").toString() : Integer.toString(charge)
+                this.Ammo == 0 ? String.valueOf(Component.translatable("tooltip.aseoha.plasma_rifle.empty")) : Integer.toString(this.Ammo)
         )));
         super.appendHoverText(stack, worldIn, tooltip, flagIn);
     }

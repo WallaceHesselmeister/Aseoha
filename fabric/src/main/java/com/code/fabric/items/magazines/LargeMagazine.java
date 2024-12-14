@@ -1,4 +1,4 @@
-package com.code.fabric.items.plasma_magazines;
+package com.code.fabric.items.magazines;
 
 
 import net.minecraft.network.chat.Component;
@@ -9,8 +9,8 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public class LargePlasmaBoltMagazine extends AbstractPlasmaBoltMagazine {
-    public LargePlasmaBoltMagazine(Properties properties) {
+public class LargeMagazine extends AbstractMagazine {
+    public LargeMagazine(Properties properties) {
         super(properties);
     }
 
@@ -20,7 +20,7 @@ public class LargePlasmaBoltMagazine extends AbstractPlasmaBoltMagazine {
     }
 
     @Override
-    public double GetMaxSize() {
-        return 3000;
+    public short GetMaxSize() {
+        return 100;
     }
 }

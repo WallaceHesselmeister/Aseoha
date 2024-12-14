@@ -1,6 +1,6 @@
 package com.code.fabric.registries;
 
-import com.code.common.entities.DalekEntity;
+import com.code.fabric.entities.DalekEntity;
 import com.code.fabric.entities.K9Entity;
 import com.code.fabric.entities.K9MkIIEntity;
 import com.code.fabric.entities.Lazer;

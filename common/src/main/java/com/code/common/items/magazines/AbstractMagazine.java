@@ -1,4 +1,4 @@
-package com.code.common.items.plasma_magazine;
+package com.code.common.items.magazines;
 
 import com.code.common.entities.Lazer;
 import com.code.common.interfaces.IFireArmMagazine;
@@ -15,12 +15,12 @@ import org.jetbrains.annotations.NotNull;
 /**
  * Extend this and override GetMaxSize to make a custom magazine
  */
-public abstract class AbstractPlasmaBoltMagazine extends Item implements IFireArmMagazine {
-    private static final double MAX_SIZE = 2000;
-    private int CHARGE = 2000;
+public abstract class AbstractMagazine extends Item implements IFireArmMagazine {
+    private static final short MAX_AMMUNITION = 32;
+    private short AMMUNITION = 32;
     static String CAPACITY = "capacity";
 
-    public AbstractPlasmaBoltMagazine(Properties properties) {
+    public AbstractMagazine(Properties properties) {
         super(properties);
     }
 
@@ -43,42 +43,52 @@ public abstract class AbstractPlasmaBoltMagazine extends Item implements IFireAr
     }
 
 
-    public AbstractArrow CreatePlasmaBolt(Level world, AbstractPlasmaBoltMagazine Mag, LivingEntity shooter) {
+    public AbstractArrow CreatePlasmaBolt(Level world, AbstractMagazine Mag, LivingEntity shooter) {
         Lazer PlasmaBoltEntity = new Lazer(AseohaEntities.LAZER.get(), world);
         return PlasmaBoltEntity.createFromConstructor(world, shooter);
     }
 
     @Override
     public void OnShoot(){
-        this.RemoveCharge(10);
+        this.RemoveRounds((short) 10);
     }
 
     @Override
-    public void SetCharge(int i){
-        this.CHARGE = i;
+    public void SetRounds(short i){
+        this.AMMUNITION = i;
     }
 
     @Override
-    public void RemoveCharge(int i){
-        this.CHARGE -= i;
+    public void RemoveRounds(short i){
+        this.AMMUNITION -= i;
     }
 
     @Override
-    public void AddCharge(int i){
-        this.CHARGE += i;
+    public void AddRounds(short i){
+        this.AMMUNITION += i;
     }
 
     @Override
-    public int GetCharge() {
-        return this.CHARGE;
+    public int Empty(){
+        int Amount = this.AMMUNITION;
+        this.AMMUNITION = 0;
+        return Amount;
     }
 
-    /**
-     * Override this to get different magazine capacity
-     * @return The Capacity of the magazine
-     */
-    public double GetMaxSize() {
-        return MAX_SIZE;
+    @Override
+    public short GetRounds() {
+        return this.AMMUNITION;
+    }
+
+    public short GetMaxSize() {
+        return MAX_AMMUNITION;
+    }
+
+    @Override
+    public short LoadAmmo(short Ammo) {
+        Ammo = (short) (AMMUNITION - Ammo);
+        this.AMMUNITION -= Ammo;
+        return Ammo;
     }
 
 }

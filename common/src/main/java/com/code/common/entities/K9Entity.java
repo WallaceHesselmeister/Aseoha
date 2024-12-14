@@ -108,8 +108,6 @@ public class K9Entity extends Wolf implements HasCustomInventoryScreen, Containe
     public void onSyncedDataUpdated(EntityDataAccessor<?> entityDataAccessor) {
         super.onSyncedDataUpdated(entityDataAccessor);
         if (DATA_ID_ATTACK_TARGET.equals(entityDataAccessor)) {
-//            this.clientSideAttackTime = 0;
-//            this.clientSideCachedAttackTarget = null;
         }
 
     }
@@ -240,10 +238,6 @@ public class K9Entity extends Wolf implements HasCustomInventoryScreen, Containe
 
         return InteractionResult.FAIL;
     }
-//@OnlyIn(Dist.CLIENT)
-//    public void openK9Screen() {Minecraft.getInstance().setScreen(new K9Screen(this) {});}
-
-    //************************I don't even know why this is here*******************************//
 
     @Override
     public void setTame(boolean p_70903_1_) {
@@ -256,9 +250,9 @@ public class K9Entity extends Wolf implements HasCustomInventoryScreen, Containe
 //    }
 
 
-    /**
-     * NTM would use an implement and this to disable space damage, might ask Loqor to do this for AIT
-     */
+
+     // NTM would use an implement and this to disable space damage, might ask Loqor to do this for AIT
+
 //    public boolean shouldTakeSpaceDamage() {
 //        return false;
 //    }
@@ -277,12 +271,6 @@ public class K9Entity extends Wolf implements HasCustomInventoryScreen, Containe
         return true;
     }
 
-    //    @Override
-//    public void tick() {
-//        k9.this.setTarget((LivingEntity)null);
-////        world.getPlayerByUUID(this.getOwnerUUID()).
-//        super.tick();
-//    }
 //private static int timer = 0;
 //    public static void Talk(int text, Player player, Level worldIn) {
 //        assert player != null;
@@ -308,23 +296,6 @@ public class K9Entity extends Wolf implements HasCustomInventoryScreen, Containe
         if(!worldIn.isClientSide)
             worldIn.getServer().tell(new TickTask(1, () -> player.displayClientMessage(Component.nullToEmpty(text + ", Master."), false)));
     }
-//
-//    @Override
-//    public void addAdditionalSaveData(@NotNull CompoundNBT nbt) {
-//        super.addAdditionalSaveData(nbt);
-//        setInvNBT(this.inventory, nbt);
-//        nbt.putByte("Power", this.power);
-//
-//    }
-//
-//    @Override
-//    public void readAdditionalSaveData(@NotNull CompoundNBT nbt) {
-//        super.readAdditionalSaveData(nbt);
-//        getInvNBT(this.inventory, nbt);
-//        if (nbt.contains("Power", 99)) {
-//            this.power = nbt.getByte("Power");
-//        }
-//    }
 
     @Override
     public void addAdditionalSaveData(CompoundTag compoundTag) {
@@ -385,23 +356,12 @@ public class K9Entity extends Wolf implements HasCustomInventoryScreen, Containe
 
     }
 
-//    @OnlyIn(Dist.CLIENT)
-//    public void handleEntityEvent(byte p_70103_1_) {
-//        if (p_70103_1_ == 8) {
-//        } else {
-//            super.handleEntityEvent(p_70103_1_);
-//        }
-//
-//    }
-
     @Override
     public void openCustomInventoryScreen(Player player) {
         player.openMenu(this);
         if (!player.level().isClientSide) {
             this.gameEvent(GameEvent.CONTAINER_OPEN, player);
-//            PiglinAi.angerNearbyPiglins(player, true);
         }
-
     }
 
     @Override
@@ -418,7 +378,7 @@ public class K9Entity extends Wolf implements HasCustomInventoryScreen, Containe
     public ItemStack getItem(int i) {
 //        return this.getChestVehicleItem(i);
 //        this.unpackChestVehicleLootTable((Player)null);
-        return (ItemStack)this.getItemStacks().get(i);
+        return this.getItemStacks().get(i);
     }
 
     @Override

@@ -4,7 +4,7 @@
 	"textures": {
 		"0": "aseoha:textures/item/plasma_rifle_barrel",
 		"1": "aseoha:textures/item/plasma_rifle",
-		"particle": "Barrel"
+		"particle": "aseoha:textures/item/plasma_rifle_barrel"
 	},
 	"elements": [
 		{
