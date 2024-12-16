@@ -1,8 +1,6 @@
 package com.code.aseoha.misc;
 
-import com.code.aseoha.Helpers.IHelpWithConsole;
 import net.minecraft.entity.player.PlayerEntity;
-import net.tardis.mod.tileentities.ConsoleTile;
 
 import java.util.ArrayList;
 
