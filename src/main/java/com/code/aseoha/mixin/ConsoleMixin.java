@@ -2,13 +2,9 @@ package com.code.aseoha.mixin;
 
 import com.code.aseoha.config;
 import com.code.aseoha.Helpers.IHelpWithConsole;
-import com.code.aseoha.Helpers.IHelpWithTardisEntity;
-import com.code.aseoha.misc.Pilot;
 import com.code.aseoha.registries.ControlsRegistry;
 import com.code.aseoha.tileentities.blocks.EOHTile;
-import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
 import net.minecraft.block.BlockState;
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.tileentity.ITickableTileEntity;
@@ -18,25 +14,20 @@ import net.minecraft.util.RegistryKey;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.SoundEvents;
-import net.minecraft.util.concurrent.TickDelayedTask;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 import net.tardis.mod.ars.ConsoleRoom;
 import net.tardis.mod.client.ClientHelper;
 import net.tardis.mod.controls.AbstractControl;
-import net.tardis.mod.controls.ThrottleControl;
 import net.tardis.mod.entity.TardisEntity;
 import net.tardis.mod.exterior.AbstractExterior;
 import net.tardis.mod.helper.TardisHelper;
-import net.tardis.mod.helper.WorldHelper;
-import net.tardis.mod.misc.CrashType;
 import net.tardis.mod.misc.ITickable;
 import net.tardis.mod.misc.SpaceTimeCoord;
 import net.tardis.mod.registries.ControlRegistry;
 import net.tardis.mod.sounds.TSounds;
 import net.tardis.mod.tileentities.ConsoleTile;
-import net.tardis.mod.tileentities.console.misc.InteriorManager;
 import net.tardis.mod.tileentities.console.misc.SparkingLevel;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
@@ -48,7 +39,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import javax.annotation.Nullable;
-import java.util.Objects;
 import java.util.Optional;
 
 @Mixin(value = ConsoleTile.class, priority = 998)
@@ -103,13 +93,13 @@ public abstract class ConsoleMixin extends TileEntity implements ITickableTileEn
     @Shadow(remap = false)
     private SparkingLevel sparkLevel;
 
-    @Shadow public abstract void registerTicker(ITickable ticker);
+    @Shadow(remap = false) public abstract void registerTicker(ITickable ticker);
 
-    @Shadow public abstract boolean relocatePlayerToExterior(PlayerEntity player, ServerWorld destWorld);
+    @Shadow(remap = false) public abstract boolean relocatePlayerToExterior(PlayerEntity player, ServerWorld destWorld);
 
-    @Shadow public abstract void registerControlOverrides();
+    @Shadow(remap = false) public abstract void registerControlOverrides();
 
-    @Shadow private SpaceTimeCoord returnLocation;
+    @Shadow(remap = false) private SpaceTimeCoord returnLocation;
     //TODO: FINISH MAINTENANCE MODE
     @Unique
     public boolean Aseoha$Hads = false;
@@ -207,8 +197,8 @@ public abstract class ConsoleMixin extends TileEntity implements ITickableTileEn
     public void Aseoha$UpdateArtronValues(CallbackInfo ci) {
         if (!this.Aseoha$GetHasEOH()) return;
         if (this.Aseoha$GetEOH() == null) return;
-        if (!this.Aseoha$GetEOHOverheated()) return;
-        if (this.Aseoha$GetEOHActive()) return;
+        if (this.Aseoha$GetEOHOverheated()) return;
+        if (!this.Aseoha$GetEOHActive()) return;
         this.setMaxArtron(Float.POSITIVE_INFINITY);
         this.setArtron(Float.POSITIVE_INFINITY);
     }

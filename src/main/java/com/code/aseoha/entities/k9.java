@@ -101,7 +101,7 @@ public class k9 extends RecycledWolf implements IAngerable, ISpaceImmuneEntity, 
      * Recycled from the security drone
      *
      * @param target         The Targeted Entity
-     * @param distanceFactor The Distance
+     * @param distanceFactor The Distance (unused)
      */
     public void performRangedAttack(@NotNull LivingEntity target, float distanceFactor) {
         if (!this.level.isClientSide && this.canSee(target)) {
@@ -175,34 +175,6 @@ public class k9 extends RecycledWolf implements IAngerable, ISpaceImmuneEntity, 
     public void tick() {
         super.tick();
         aseoha.k9TickThread.Call(this);
-//        if (this.isAlive()) {
-//            this.setNoAi(this.isDead);
-//            if (this.timer < config.SERVER.K9PowerDrainRate.get() * 20) {
-//                timer++;
-//            }
-//            if (this.timer >= config.SERVER.K9PowerDrainRate.get() * 20) {
-//                if (this.power > 0)
-//                    this.power -= 1;
-//                this.timer = 0;
-//            }
-//            if (this.timer == 0 && this.power == 10)
-//                Objects.requireNonNull(this.getOwner()).sendMessage(ITextComponent.nullToEmpty("Power Banks At 10%, Master."), Objects.requireNonNull(this.getOwnerUUID()));
-//            if (this.timer == 0 && this.power == 1) {
-//                Objects.requireNonNull(this.getOwner()).sendMessage(ITextComponent.nullToEmpty("Power Banks Depleted, Master."), Objects.requireNonNull(this.getOwnerUUID()));
-//                this.power = 0;
-//            }
-//            this.isDead = this.power <= 0;
-//            if (this.isDead) {
-//                this.jumping = false;
-//                this.setNoGravity(false);
-//                if (!this.isInsidePortal && this.onGround) {
-//                    this.navigation.stop();
-//                    this.setTarget((LivingEntity) null);
-//                }
-//            }
-////            aseoha.LOGGER.info(this.power);
-//            if (this.power < 0) this.power = 0;
-//        }
     }
 
     //*******************************Honestly I can barely read half of this, need to clean it****************************************//
@@ -216,36 +188,7 @@ public class k9 extends RecycledWolf implements IAngerable, ISpaceImmuneEntity, 
             return flag ? ActionResultType.CONSUME : ActionResultType.PASS;
         } else {
             if (this.isTame()) {
-                //***********HEAL***********//
-//                if (item instanceof SonicItem) {
-//                    if (this.getHealth() < this.getMaxHealth()) {
-//                        if(((SonicItem) item).getCharge(itemstack) > 25) {
-//                            ((SonicItem) item).discharge(itemstack, 25);
-//                            this.heal((float) 1);
-//                            return ActionResultType.SUCCESS;
-//                        }
-//                    }
-//                    if (power < 100) {
-//                        if(((SonicItem) item).getCharge(itemstack) > 25) {
-//                            ((SonicItem) item).discharge(itemstack, 25);
-//                            this.power += 25;
-//                        }
-//                    }
-//                }
                 if (item instanceof IArtronItemStackBattery) {
-//                    if (this.getHealth() < this.getMaxHealth()) {
-//                        ((IArtronItemStackBattery) item).discharge(itemstack, 25);
-//                        this.heal((float) 1);
-//                        return ActionResultType.SUCCESS;
-//                    }
-//                    for(int i = 100;this.getHealth()<this.maxHe && ((IArtronItemStackBattery) item).getCharge(itemstack) > 1; i--){
-//                        this.power++;
-//                        ((IArtronItemStackBattery) item).discharge(itemstack, 1);
-//                    }
-//                    if (power < 75) {
-//                        ((IArtronItemStackBattery) item).discharge(itemstack, 25);
-//                        this.power += 25;
-//                    }
                     for (int i = 100; this.power < 100 && ((IArtronItemStackBattery) item).getCharge(itemstack) > 1; i--) {
                         this.power++;
                         ((IArtronItemStackBattery) item).discharge(itemstack, 1);

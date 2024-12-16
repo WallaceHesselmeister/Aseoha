@@ -22,7 +22,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin(ControlEntity.class)
 public abstract class ControlMixin extends Entity {
-    @Shadow public abstract AbstractControl getControl();
+    @Shadow(remap = false) public abstract AbstractControl getControl();
 
     public ControlMixin(EntityType<?> p_i48580_1_, World p_i48580_2_) {
         super(p_i48580_1_, p_i48580_2_);

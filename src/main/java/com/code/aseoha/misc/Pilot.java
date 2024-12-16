@@ -17,18 +17,18 @@ public class Pilot {
 
     public Pilot() {}
 
-    /**
-     * Returns true if this Pilot is the Pilot of the provided console
-     *
-     * @param console ResourceLocation to check if this Pilot Pilots
-     * @return True/False if this Pilot Pilots the specified console
-     */
-    public boolean IsPilotOf(ConsoleTile console, PlayerEntity player) {
-        if (((IHelpWithConsole) console).Aseoha$GetPilot() != null) {
-            return ((IHelpWithConsole) console).Aseoha$GetPilot().PilotPlayer.equals(player);
-        }
-        return false;
-    }
+//    /**
+//     * Returns true if this Pilot is the Pilot of the provided console
+//     *
+//     * @param console ResourceLocation to check if this Pilot Pilots
+//     * @return True/False if this Pilot Pilots the specified console
+//     */
+//    public boolean IsPilotOf(ConsoleTile console, PlayerEntity player) {
+//        if (((IHelpWithConsole) console).Aseoha$GetPilot() != null) {
+//            return ((IHelpWithConsole) console).Aseoha$GetPilot().PilotPlayer.equals(player);
+//        }
+//        return false;
+//    }
 
 //    public ArrayList<ConsoleTile> GetConsoleTilesPiloted() {
 //        return this.ConsoleTileList;

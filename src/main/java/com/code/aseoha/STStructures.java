@@ -47,6 +47,7 @@ public class STStructures {
      *   So it is best to keep your structure names the same as long as you can instead of changing them frequently.
      */
     public static final RegistryObject<Structure<NoFeatureConfig>> ROAD = DEFERRED_REGISTRY_STRUCTURE.register("road", () -> (new RoadStructure(NoFeatureConfig.CODEC)));
+    public static final RegistryObject<Structure<NoFeatureConfig>> GRIDLOCK = DEFERRED_REGISTRY_STRUCTURE.register("gridlock", () -> (new RoadStructure(NoFeatureConfig.CODEC)));
     public static final RegistryObject<Structure<NoFeatureConfig>> BARN_ONE = DEFERRED_REGISTRY_STRUCTURE.register("barn_one", () -> (new BarnStructure(NoFeatureConfig.CODEC)));
     public static final RegistryObject<Structure<NoFeatureConfig>> CITADEL = DEFERRED_REGISTRY_STRUCTURE.register("citadel", () -> (new CitadelStructure(NoFeatureConfig.CODEC)));
 
@@ -62,6 +63,13 @@ public class STStructures {
                         917847679 /* this modifies the seed of the structure so no two structures always spawn over each-other. Make this large and unique. */),
                 true);
 
+        setupMapSpacingAndLand(
+                GRIDLOCK.get(), /* The instance of the structure */
+                new StructureSeparationSettings(20 /* average distance apart in chunks between spawn attempts */,
+                        16 /* minimum distance apart in chunks between spawn attempts. MUST BE LESS THAN ABOVE VALUE*/,
+                        917847679 /* this modifies the seed of the structure so no two structures always spawn over each-other. Make this large and unique. */),
+                true);
+
 
 
 
@@ -72,12 +80,12 @@ public class STStructures {
                         913457679 /* this modifies the seed of the structure so no two structures always spawn over each-other. Make this large and unique. */),
                 true);
 
-        setupMapSpacingAndLand(
-                CITADEL.get(), /* The instance of the structure */
-                new StructureSeparationSettings(1 /* average distance apart in chunks between spawn attempts */,
-                        0 /* minimum distance apart in chunks between spawn attempts. MUST BE LESS THAN ABOVE VALUE*/,
-                        913457679 /* this modifies the seed of the structure so no two structures always spawn over each-other. Make this large and unique. */),
-                true);
+//        setupMapSpacingAndLand(
+//                CITADEL.get(), /* The instance of the structure */
+//                new StructureSeparationSettings(1 /* average distance apart in chunks between spawn attempts */,
+//                        0 /* minimum distance apart in chunks between spawn attempts. MUST BE LESS THAN ABOVE VALUE*/,
+//                        913457679 /* this modifies the seed of the structure so no two structures always spawn over each-other. Make this large and unique. */),
+//                true);
 
 
         // Add more structures here and so on

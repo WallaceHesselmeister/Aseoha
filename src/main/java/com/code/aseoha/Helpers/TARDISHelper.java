@@ -174,7 +174,9 @@ public class TARDISHelper {
             if (playerIn.isCrouching()) {
                 if (handIn == Hand.MAIN_HAND) {
                     ItemStack offHandItem = playerIn.getOffhandItem();
-                    if (!(playerIn.getOffhandItem() == Items.AIR.getDefaultInstance() &&
+                    if (!(
+                            playerIn.getOffhandItem().isEmpty() &&
+                            playerIn.getOffhandItem() == Items.AIR.getDefaultInstance() &&
                             playerIn.getOffhandItem().getItem() instanceof BlockItem &&
                             playerIn.getOffhandItem().getItem() instanceof BucketItem &&
                             playerIn.getOffhandItem().getItem() instanceof PotionItem &&

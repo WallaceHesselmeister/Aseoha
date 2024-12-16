@@ -1,0 +1,50 @@
+{
+  "surface_builder": "aseoha:adipose_three",
+  "depth": 0.04,
+  "scale": 0.2,
+  "temperature": 0.5,
+  "downfall": 0.7,
+  "precipitation": "rain",
+  "category": "none",
+  "player_spawn_friendly": true,
+  "effects": {
+    "sky_color": 14070917,
+    "fog_color": 14072469,
+    "water_color": 11040821,
+    "water_fog_color": 12159819,
+    "grass_color": 14072724,
+    "foliage_color": 14072724
+  },
+  "starts": [],
+  "spawners": {
+    "monster": [],
+    "creature": [],
+    "ambient": [],
+    "water_creature": [],
+    "water_ambient": [],
+    "misc": []
+  },
+  "spawn_costs": {},
+  "carvers": {
+    "air": [
+      "minecraft:cave"
+    ]
+  },
+  "features": [
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [
+      "minecraft:ore_coal",
+      "minecraft:ore_iron"
+    ],
+    [],
+    [],
+    [
+      "minecraft:freeze_top_layer"
+    ]
+  ]
+}

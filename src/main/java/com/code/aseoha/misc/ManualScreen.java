@@ -25,15 +25,11 @@ import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.tardis.mod.Tardis;
-import com.code.aseoha.misc.Page;
-import com.code.aseoha.misc.TOCPage;
 import net.tardis.mod.client.guis.widgets.ChangeChapterButton;
 import net.tardis.mod.client.guis.widgets.ReturnToIndexButton;
 import net.tardis.mod.contexts.gui.GuiItemContext;
-import net.tardis.mod.items.ManualItem;
 import net.tardis.mod.misc.GuiContext;
-import net.tardis.mod.network.Network;
-import net.tardis.mod.network.packets.UpdateManualPageMessage;
+import org.jetbrains.annotations.NotNull;
 
 public class ManualScreen extends Screen {
     public static final ResourceLocation TEXTURE = new ResourceLocation(aseoha.MODID, "textures/gui/manual.png");
@@ -305,7 +301,7 @@ public class ManualScreen extends Screen {
         return this.chapterIndex;
     }
 
-    public Pair<Page, Page> getPages() {
+    public Pair getPages() {
         Chapter chapter = this.getChapter();
         if (chapter != null && this.pageIndex < chapter.getPages().size()) {
             Page page2 = null;
@@ -323,7 +319,8 @@ public class ManualScreen extends Screen {
         return TEXTURE;
     }
 
-    public <T extends Widget> T addButton(T button) {
+    @NotNull
+    public <T extends Widget> T addButton(@NotNull T button) {
         return super.addButton(button);
     }
 

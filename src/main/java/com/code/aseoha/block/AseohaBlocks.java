@@ -179,6 +179,9 @@ public class AseohaBlocks {
     public static final RegistryObject<Block> TRENZALORE_SAND = registerBlock("trenzalore_sand",
             () -> new SandBlock(14406560, AbstractBlock.Properties.of(Material.SAND, MaterialColor.SAND).strength(0.5F).sound(SoundType.SAND)));
 
+    public static final RegistryObject<Block> FAT_BLOCK = registerBlock("fat_block",
+            () -> new Block(AbstractBlock.Properties.of(Material.CLAY, MaterialColor.CLAY).strength(0.3F).sound(SoundType.SAND)));
+
     /****************************  1.20 BACKPORTED  *************************/
     public static final RegistryObject<Block> OCHRE_FROGLIGHT = registerBlock("ochre_froglight",
             () -> new RotatedPillarBlock(AbstractBlock.Properties.of(Material.STONE).strength(0.3F).lightLevel(maxLightLevel).noOcclusion()));

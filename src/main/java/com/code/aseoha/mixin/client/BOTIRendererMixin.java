@@ -36,35 +36,34 @@ public abstract class BOTIRendererMixin {
      * We erase the data inside the matrixstack so it doesn't show up as the last matrixstack (ex: the overworld/nether) and it doesn't crash because it can't render something inside the TARDIS
      * Call me paranoid all you want but this prevents an NPE with TARDIS in TARDIS
      */
-    @Inject(method = "Lnet/tardis/mod/client/renderers/boti/BOTIRenderer;renderWorld(Lcom/mojang/blaze3d/matrix/MatrixStack;Lnet/tardis/mod/boti/WorldShell;IIF)V", at = @At("HEAD"), remap = false)
+    @Inject(method = "renderWorld(Lcom/mojang/blaze3d/matrix/MatrixStack;Lnet/tardis/mod/boti/WorldShell;IIF)V", at = @At("HEAD"), remap = false)
     private static void Aseoha$RenderWorld(MatrixStack matrixStack, WorldShell shell, int combinedLight, int combinedOverlay, float partialTicks, CallbackInfo ci) {
 //        aseoha.LOGGER.info("IsInTardis {}", Aseoha$IsInTARDIS);
-        if (shell.getWorld().dimension() != null) {
+        if (shell.getWorld().dimension() == null) return;
 //                    aseoha.LOGGER.info(!WorldHelper.areDimensionTypesSame(shell.getWorld(), TDimensions.DimensionTypes.TARDIS_TYPE));
-            if (!WorldHelper.canTravelToDimension(shell.getWorld())) { //IF can't travel to shell world
-                assert Minecraft.getInstance().level != null;
-                if (!WorldHelper.canTravelToDimension(Minecraft.getInstance().level)) { //IF can't also travel to client world
-                    ResourceLocation key = Minecraft.getInstance().level.dimension().location();
+        if (WorldHelper.canTravelToDimension(shell.getWorld())) return; //IF can't travel to shell world
+        assert Minecraft.getInstance().level != null;
+        if (WorldHelper.canTravelToDimension(Minecraft.getInstance().level))
+            return; //IF can't also travel to client world
+        ResourceLocation key = Minecraft.getInstance().level.dimension().location();
 
 
-                    List<? extends String> blacklist = (List) TConfig.SERVER.blacklistedDims.get(); //+ TDimensions.DimensionTypes.TARDIS_TYPE;
-                    Iterator var3 = blacklist.iterator();
+        List<? extends String> blacklist = (List) TConfig.SERVER.blacklistedDims.get(); //+ TDimensions.DimensionTypes.TARDIS_TYPE;
+        Iterator<? extends String> var3 = blacklist.iterator();
 
-                    while (var3.hasNext()) {
-                        String s = (String) var3.next();
-                        if (key.toString().contentEquals(s)) {
+        for (int i = 0; i < blacklist.size(); i++) { // Yeah IntelliJ Ik it can be replaced with an "enhanced" for but I don't give a single f
+//            while (var3.hasNext()) {
+
+            String s = blacklist.get(i);
+            if (key.toString().contentEquals(s)) {
 //
 //                        if (!WorldHelper.areDimensionTypesSame(Minecraft.getInstance().level, TDimensions.DimensionTypes.TARDIS_TYPE)) {
-                            aseoha.LOGGER.info(Minecraft.getInstance().level);
-                            shell.setNeedsUpdate(false);
-                            matrixStack.clear();
-                            matrixStack.popPose();
-                            matrixStack.pushPose();
+                aseoha.LOGGER.info(Minecraft.getInstance().level);
+                shell.setNeedsUpdate(false);
+                matrixStack.clear();
+                matrixStack.popPose();
+                matrixStack.pushPose();
 //                        }
-                        }
-
-                    }
-                }
             }
         }
     }
@@ -87,23 +86,19 @@ public abstract class BOTIRendererMixin {
      */
     @Overwrite(remap = false)
     public static <T extends AbstractClientPlayerEntity> void renderPlayer(T player, MatrixStack matrix, IRenderTypeBuffer buffer, WorldShell shell) {
-        if(shell == null || shell.getWorld() == null || player == null || buffer == null)
+        if (shell == null || shell.getWorld() == null || player == null || buffer == null || player.level == null)
             return;
-        if (player.level != null) {
-            if (WorldHelper.areDimensionTypesSame(shell.getWorld(), TDimensions.DimensionTypes.TARDIS_TYPE)) {
-                if (Minecraft.getInstance().level != null)
-                    if (!WorldHelper.areDimensionTypesSame(player.level, TDimensions.DimensionTypes.TARDIS_TYPE)) {
-                        try {
-                            EntityRenderer<T> renderer = (EntityRenderer<T>) Minecraft.getInstance().getEntityRenderDispatcher().getRenderer(player);
-                            if (renderer != null) {
-                                renderer.render(player, player.getYHeadRot(), 0, matrix, buffer, LightTexture.pack(shell.getLightEmission(player.blockPosition()), 15));
-                            }
-                        } catch (Exception e) {
-                            aseoha.LOGGER.info("There's been a potentially fatal error in the BOTI whilst Rendering a player");
-                            e.printStackTrace();
-                        }
-                    }
-            }
+        if (!WorldHelper.areDimensionTypesSame(shell.getWorld(), TDimensions.DimensionTypes.TARDIS_TYPE) ||
+                WorldHelper.areDimensionTypesSame(player.level, TDimensions.DimensionTypes.TARDIS_TYPE) ||
+                Minecraft.getInstance().level == null) return;
+        try {
+            EntityRenderer<T> renderer = (EntityRenderer<T>) Minecraft.getInstance().getEntityRenderDispatcher().getRenderer(player);
+            if (renderer == null) return;
+            renderer.render(player, player.getYHeadRot(), 0, matrix, buffer, LightTexture.pack(shell.getLightEmission(player.blockPosition()), 15));
+        } catch (Exception e) {
+            aseoha.LOGGER.info("There's been a potentially fatal error in the BOTI whilst Rendering a player, if you are seeing this, DM codiak540");
+            e.printStackTrace();
         }
+
     }
 }

@@ -6,7 +6,7 @@
       "weight": 22,
       "element": {
         "location": "aseoha:road",
-        "processors": "minecraft:mossify_10_percent",
+        "processors": "aseoha:new_earth_road",
         "projection": "rigid",
         "element_type": "minecraft:legacy_single_pool_element"
       }
@@ -15,7 +15,7 @@
       "weight": 11,
       "element": {
         "location": "aseoha:road1",
-        "processors": "minecraft:mossify_10_percent",
+        "processors": "aseoha:new_earth_road",
         "projection": "rigid",
         "element_type": "minecraft:legacy_single_pool_element"
       }
@@ -24,7 +24,7 @@
       "weight": 9,
       "element": {
         "location": "aseoha:road_curve",
-        "processors": "minecraft:mossify_10_percent",
+        "processors": "aseoha:new_earth_road",
         "projection": "rigid",
         "element_type": "minecraft:legacy_single_pool_element"
       }
@@ -33,7 +33,7 @@
       "weight": 10,
       "element": {
         "location": "aseoha:road_intersection",
-        "processors": "minecraft:mossify_10_percent",
+        "processors": "aseoha:new_earth_road",
         "projection": "rigid",
         "element_type": "minecraft:legacy_single_pool_element"
       }

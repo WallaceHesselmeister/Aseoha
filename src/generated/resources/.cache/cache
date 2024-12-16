@@ -1,5 +1,5 @@
-c4dbec9eb4855318837cf4a309ec920d18a02743 assets/aseoha/lang/en_us.json
-0c9c50c7c47f028d2bd72f165f0d51f93a563c6c assets/aseoha/lang/fr_fr.json
+13ce842640ab48b337dfacd72a302f5564c9d46f assets/aseoha/lang/en_us.json
+82e7af1f7fe175f8b612e7034b3107a751b04ad1 assets/aseoha/lang/fr_fr.json
 b4f7327f1b2fdae1428ea05620b656ee94c10b5e data/aseoha/advancements/recipes/aseoha/aseoha_manual.json
 66f2a05579aa6fde1a986539b43340eeff59111f data/aseoha/advancements/recipes/aseoha_food/jelly_baby/red.json
 429a0a01aff03ef385402846dbc9c9d76fdc2d98 data/aseoha/loot_modifiers/chests/abandoned_mineshaft.json
@@ -26,6 +26,7 @@ a1b17a53a36e978f2cc72ee067ce5e9aa9049242 data/aseoha/loot_tables/blocks/copper_r
 226e32c7f216775d33ea23a0740d080de07d913d data/aseoha/loot_tables/blocks/dimensional_button.json
 2c061071b779784c3b17bc5ceb325fd7c1a8c436 data/aseoha/loot_tables/blocks/eye_of_harmony.json
 c7fb1664b92c5be6387b144fabc01facd8587e05 data/aseoha/loot_tables/blocks/facing_control.json
+f9097ed4d6d5561654a3ef77c2c2f4b1f13f227e data/aseoha/loot_tables/blocks/fat_block.json
 e172165ad0d975aeeb76868adde6fbc61ce702ed data/aseoha/loot_tables/blocks/faultlocator.json
 4798a2e937315c9fc8c60de0e304b4af93c6ea78 data/aseoha/loot_tables/blocks/faultlocator_s.json
 c9d1f44556b7a8a4027695495efca5ad20632c62 data/aseoha/loot_tables/blocks/flight_button.json

@@ -5,6 +5,8 @@ import com.code.aseoha.entities.k9;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraftforge.event.TickEvent;
+import net.tardis.mod.helper.TardisHelper;
+import net.tardis.mod.helper.WorldHelper;
 
 import java.util.Objects;
 
@@ -23,7 +25,7 @@ public class K9TickThread extends Thread {
 //        this.event = Event;
         this.K9 = k9Entity;
         this.run();
-    };
+    }
     @Override
     public void run() {
         super.run();

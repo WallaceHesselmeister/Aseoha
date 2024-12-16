@@ -2,14 +2,12 @@ package com.code.aseoha.events;
 
 import com.code.aseoha.Helpers.IHelpWithConsole;
 import com.code.aseoha.Helpers.IHelpWithMonitor;
-import com.code.aseoha.Helpers.IHelpWithPlayerEntity;
 import com.code.aseoha.Helpers.TARDISHelper;
 import com.code.aseoha.aseoha;
 import com.code.aseoha.client.Sounds;
 import com.code.aseoha.commands.Commands;
 import com.code.aseoha.entities.DavrosChair;
 import com.code.aseoha.entities.k9;
-import com.code.aseoha.misc.*;
 import com.code.aseoha.tileentities.consoles.CopperConsoleTile;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -24,7 +22,6 @@ import net.minecraftforge.client.event.RenderPlayerEvent;
 import net.minecraftforge.event.RegisterCommandsEvent;
 import net.minecraftforge.event.ServerChatEvent;
 import net.minecraftforge.event.TickEvent;
-import net.minecraftforge.event.entity.EntityJoinWorldEvent;
 import net.minecraftforge.event.entity.living.LivingEvent;
 import net.minecraftforge.event.entity.player.AttackEntityEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -37,7 +34,6 @@ import net.tardis.mod.controls.AbstractControl;
 import net.tardis.mod.controls.HandbrakeControl;
 import net.tardis.mod.controls.ThrottleControl;
 import net.tardis.mod.entity.ControlEntity;
-import net.tardis.mod.entity.TardisEntity;
 import net.tardis.mod.helper.TardisHelper;
 import net.tardis.mod.registries.ControlRegistry;
 import net.tardis.mod.sounds.TSounds;
@@ -45,7 +41,6 @@ import net.tardis.mod.subsystem.StabilizerSubsystem;
 import net.tardis.mod.tileentities.ConsoleTile;
 import net.tardis.mod.tileentities.console.misc.MonitorOverride;
 import net.tardis.mod.world.dimensions.TDimensions;
-import net.tardis.mod.world.feature.CratorFeature;
 import org.jetbrains.annotations.NotNull;
 
 import javax.script.ScriptEngine;
@@ -428,7 +423,7 @@ public class CommonEvents {
 
 
     @SubscribeEvent
-    public static void ControlClickedEvent(ControlEvents.ControlClickEvent event) {
+    public static void ControlClickedEvent(ControlEvent event) {
         if (event.getControl().getConsole() == null) return;
 
         if (((IHelpWithConsole) event.getControl().getConsole()).Aseoha$GetMaintenance())

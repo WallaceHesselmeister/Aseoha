@@ -61,9 +61,11 @@ public abstract class ExteriorTile extends TileEntity implements ITickableTileEn
     @Shadow(remap = false)
     protected RegistryKey<World> interiorDimension;
 
-    @Shadow public abstract void tick();
+    @Shadow(remap = false)
+    public abstract void tick();
 
-    @Shadow public abstract void setVariants(TexVariant... variants);
+    @Shadow(remap = false)
+    public abstract void setVariants(TexVariant... variants);
 
     @Unique
     boolean Aseoha$Scale = true;
@@ -121,30 +123,24 @@ public abstract class ExteriorTile extends TileEntity implements ITickableTileEn
         this.setMatterState(EnumMatterState.DEMAT);
         this.setDoorState(EnumDoorState.CLOSED);
         this.hasDemated = true;
-//        this.alpha = 0.0F;
-
         this.deleteExteriorBlocks();
     }
 
     @Unique
     public TardisEntity Aseoha$GetOrCreateTardisEntity() {
-        if (this.hasDemated) {
+        if (this.hasDemated)
             return null;
-        } else {
+        else {
             TardisEntity ent = this.createEntity();
-            if (ent != null) {
-                assert this.level != null;
-                ConsoleTile console = TardisHelper.getConsole(Objects.requireNonNull(this.level.getServer()), this.interiorDimension).orElse(null);
-                if (console != null) {
-                    if (console.getExteriorType().getExteriorTile(console) != null) {
-                        ent.setExteriorTile(console.getExteriorType().getExteriorTile(console));
-                        assert this.level != null;
-                        TardisHelper.getConsole(Objects.requireNonNull(this.level.getServer()), this.interiorDimension).ifPresent(tile -> {
-                            tile.setEntity(ent);
-                        });
-                    }
-                }
-            }
+            if (ent == null) return null;
+            assert this.level != null;
+            ConsoleTile console = TardisHelper.getConsole(Objects.requireNonNull(this.level.getServer()), this.interiorDimension).orElse(null);
+            if (console == null) return null;
+            if (console.getExteriorType().getExteriorTile(console) == null) return null;
+            ent.setExteriorTile(console.getExteriorType().getExteriorTile(console));
+            assert this.level != null;
+            TardisHelper.getConsole(Objects.requireNonNull(this.level.getServer()), this.interiorDimension).ifPresent(
+                    tile -> tile.setEntity(ent));
             return ent;
         }
     }

@@ -1,6 +1,8 @@
 package com.code.aseoha.items;
 import com.code.aseoha.client.Sounds;
 import com.code.aseoha.entities.ModEntityTypes;
+import com.code.aseoha.items.Materials.AseohaArmorMaterials;
+import com.code.aseoha.items.Materials.AseohaItemTiers;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.*;
 import net.minecraft.potion.EffectInstance;
@@ -82,6 +84,15 @@ public class AseohaItems {
     public static final RegistryObject<Item> GOLDEN_POTATO = ITEMS.register("golden_potato",
             () -> new Item((new Item.Properties()).food(new Food.Builder().nutrition(9).saturationMod(2).effect(() -> new EffectInstance(Effects.FIRE_RESISTANCE, 1200, 0), 1.0F).alwaysEat().build()).tab(AseohaItemGroups.ASEOHA_FOOD_GROUP).rarity(Rarity.EPIC).fireResistant()));
 
+    public static final RegistryObject<Item> GINGERBREAD_MAN = ITEMS.register("gingerbread_man",
+            () -> new Item((new Item.Properties()).food(new Food.Builder().nutrition(2).saturationMod(0.5F).build()).tab(AseohaItemGroups.ASEOHA_FOOD_GROUP).rarity(Rarity.UNCOMMON)));
+
+    public static final RegistryObject<Item> GINGERBREAD_CYBERMAN = ITEMS.register("gingerbread_cyberman",
+            () -> new Item((new Item.Properties()).food(new Food.Builder().nutrition(4).saturationMod(0.7F).build()).tab(AseohaItemGroups.ASEOHA_FOOD_GROUP).rarity(Rarity.UNCOMMON)));
+
+    public static final RegistryObject<Item> GINGERBREAD_DALEK = ITEMS.register("gingerbread_dalek",
+            () -> new Item((new Item.Properties()).food(new Food.Builder().nutrition(4).saturationMod(0.7F).build()).tab(AseohaItemGroups.ASEOHA_FOOD_GROUP).rarity(Rarity.UNCOMMON)));
+
     public static final RegistryObject<Item> RED_JELLY_BABY = ITEMS.register("jelly_baby/red",
             () -> new Item((new Item.Properties()).food(new Food.Builder().nutrition(1).saturationMod(2).build()).tab(AseohaItemGroups.ASEOHA_FOOD_GROUP).rarity(Rarity.EPIC)));
 
@@ -118,6 +129,12 @@ public class AseohaItems {
     public static final RegistryObject<Item> BLUE_CRYSTAL_INGOT = ITEMS.register("blue_crystal_ingot",
             ()-> new Item(new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP).rarity(Rarity.RARE).fireResistant()));
 
+    public static final RegistryObject<Item> STEEL_INGOT = ITEMS.register("steel_ingot",
+            ()-> new Item(new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP).rarity(Rarity.UNCOMMON)));
+
+    public static final RegistryObject<Item> DALEKANIUM_INGOT = ITEMS.register("dalekanium_ingot",
+            ()-> new Item(new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP).rarity(Rarity.UNCOMMON)));
+
     public static final RegistryObject<Item> CONTROL_MOLD = ITEMS.register("control_mold",
             ()-> new Item(new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP).stacksTo(1).rarity(Rarity.UNCOMMON)));
 
@@ -125,10 +142,73 @@ public class AseohaItems {
             ()-> new Item(new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP).stacksTo(1).rarity(Rarity.UNCOMMON)));
 
     public static final RegistryObject<Item> MAJESTIC_TALE_DISC = ITEMS.register("majestic_tale_disc",
-            () -> new MusicDiscItem(1, () -> Sounds.MAJESTIC_TALE.get(), new Item.Properties().stacksTo(1).tab(AseohaItemGroups.ASEOHA_GROUP)));
+            () -> new MusicDiscItem(1, Sounds.MAJESTIC_TALE, new Item.Properties().stacksTo(1).tab(AseohaItemGroups.ASEOHA_GROUP)));
 
     public static final RegistryObject<Item> HAMMER = ITEMS.register("hammer",
             ()-> new Item(new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP).stacksTo(1).rarity(Rarity.RARE).fireResistant()));
+
+    public static final RegistryObject<Item> CANDY_CANE = ITEMS.register("candy_cane",
+            () -> new Item((new Item.Properties()).food(new Food.Builder().nutrition(4).saturationMod(0.7F).build()).tab(AseohaItemGroups.ASEOHA_FOOD_GROUP).rarity(Rarity.UNCOMMON)));
+
+    public static final RegistryObject<Item> CANDY_CANE_SONIC = ITEMS.register("candy_cane_sonic",
+            () -> new SwordItem(AseohaItemTiers.CANDY_CANE, 3, -2.4f, new Item.Properties().tab(AseohaItemGroups.ASEOHA_FOOD_GROUP).rarity(Rarity.UNCOMMON)));
+
+
+    public static final RegistryObject<Item> STEEL_PICKAXE = ITEMS.register("steel_pickaxe",
+            () -> new PickaxeItem(AseohaItemTiers.STEEL, 1, -2.8F, new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP)));
+
+    public static final RegistryObject<Item> STEEL_SHOVEL = ITEMS.register("steel_shovel",
+            () -> new ShovelItem(AseohaItemTiers.STEEL, 1, -3.0F, new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP)));
+
+    public static final RegistryObject<Item> STEEL_AXE = ITEMS.register("steel_axe",
+            () -> new AxeItem(AseohaItemTiers.STEEL, 7, -3.2F, new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP)));
+
+    public static final RegistryObject<Item> STEEL_HOE = ITEMS.register("steel_hoe",
+            () -> new HoeItem(AseohaItemTiers.STEEL, 1, -2.0F, new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP)));
+
+    public static final RegistryObject<Item> STEEL_SWORD = ITEMS.register("steel_sword",
+            () -> new SwordItem(AseohaItemTiers.STEEL, 3, -2.4F, new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP)));
+
+
+    public static final RegistryObject<Item> STEEL_BOOTS = ITEMS.register("steel_boots",
+            () -> new ArmorItem(AseohaArmorMaterials.STEEL, EquipmentSlotType.FEET, new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP)));
+
+    public static final RegistryObject<Item> STEEL_LEGGINGS = ITEMS.register("steel_leggings",
+            () -> new ArmorItem(AseohaArmorMaterials.STEEL, EquipmentSlotType.LEGS, new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP)));
+
+    public static final RegistryObject<Item> STEEL_CHEST = ITEMS.register("steel_chestplate",
+            () -> new ArmorItem(AseohaArmorMaterials.STEEL, EquipmentSlotType.CHEST, new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP)));
+
+    public static final RegistryObject<Item> STEEL_HELMET = ITEMS.register("steel_helmet",
+            () -> new ArmorItem(AseohaArmorMaterials.STEEL, EquipmentSlotType.HEAD, new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP)));
+
+
+    public static final RegistryObject<Item> DALEKANIUM_HELMET = ITEMS.register("dalekanium_helmet",
+            () -> new ArmorItem(AseohaArmorMaterials.DALEKANIUM, EquipmentSlotType.HEAD, new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP)));
+
+    public static final RegistryObject<Item> DALEKANIUM_CHESTPLATE = ITEMS.register("dalekanium_chestplate",
+            () -> new ArmorItem(AseohaArmorMaterials.DALEKANIUM, EquipmentSlotType.CHEST, new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP)));
+
+    public static final RegistryObject<Item> DALEKANIUM_LEGGINGS = ITEMS.register("dalekanium_leggings",
+            () -> new ArmorItem(AseohaArmorMaterials.DALEKANIUM, EquipmentSlotType.LEGS, new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP)));
+
+    public static final RegistryObject<Item> DALEKANIUM_BOOTS = ITEMS.register("dalekanium_boots",
+            () -> new ArmorItem(AseohaArmorMaterials.DALEKANIUM, EquipmentSlotType.FEET, new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP)));
+
+    public static final RegistryObject<Item> DALEKANIUM_PICKAXE = ITEMS.register("dalekanium_pickaxe",
+            () -> new PickaxeItem(AseohaItemTiers.DALEKANIUM, 1, -2.8F, new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP)));
+
+    public static final RegistryObject<Item> DALEKANIUM_SHOVEL = ITEMS.register("dalekanium_shovel",
+            () -> new ShovelItem(AseohaItemTiers.DALEKANIUM, 1, -3.0F, new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP)));
+
+    public static final RegistryObject<Item> DALEKANIUM_AXE = ITEMS.register("dalekanium_axe",
+            () -> new AxeItem(AseohaItemTiers.DALEKANIUM, 7, -3.2F, new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP)));
+
+    public static final RegistryObject<Item> DALEKANIUM_HOE = ITEMS.register("dalekanium_hoe",
+            () -> new HoeItem(AseohaItemTiers.DALEKANIUM, 1, -2.0F, new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP)));
+
+    public static final RegistryObject<Item> DALEKANIUM_SWORD = ITEMS.register("dalekanium_sword",
+            () -> new SwordItem(AseohaItemTiers.DALEKANIUM, 3, -2.4F, new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP)));
 
 //    public static final RegistryObject<Item> SONIC_LASER = ITEMS.register("sonic_laser",
 //            ()-> new );

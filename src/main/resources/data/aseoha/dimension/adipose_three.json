@@ -1,0 +1,52 @@
+{
+  "type": "aseoha:adipose_three",
+  "generator": {
+    "type": "minecraft:noise",
+    "seed": 896847028,
+    "settings": "minecraft:overworld",
+    "biome_source": {
+      "type": "minecraft:multi_noise",
+      "seed": 896847028,
+      "altitude_noise": {
+        "firstOctave": -7,
+        "amplitudes": [
+          1,
+          1
+        ]
+      },
+      "temperature_noise": {
+        "firstOctave": -7,
+        "amplitudes": [
+          1,
+          0.8
+        ]
+      },
+      "humidity_noise": {
+        "firstOctave": -7,
+        "amplitudes": [
+          1,
+          1
+        ]
+      },
+      "weirdness_noise": {
+        "firstOctave": -7,
+        "amplitudes": [
+          1,
+          1
+        ]
+      },
+      "biomes": [
+        {
+          "biome": "aseoha:adipose_three",
+          "parameters": {
+            "altitude": -0.1,
+            "temperature": 0.542857142857,
+            "humidity": 0.3,
+            "weirdness": 0.1,
+            "offset": 0
+          }
+        }
+      ]
+    }
+  }
+}

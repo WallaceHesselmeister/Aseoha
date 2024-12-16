@@ -19,7 +19,6 @@
     "ConsoleChangeMessageMixin",
     "ConsoleMixin",
     "ConsoleTextureVariants",
-    "ControlMixin",
     "ExteriorTile",
     "HandbrakeMixin",
     "HelperMixin",

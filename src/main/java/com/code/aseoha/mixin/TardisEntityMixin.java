@@ -170,14 +170,14 @@ public abstract class TardisEntityMixin extends Entity implements IHelpWithTardi
 
     @Inject(method = "tick()V", at = @At("HEAD"))
     private void Aseoha$Tick(CallbackInfo ci) {
-        if (Dist.CLIENT.isClient()) {
-            if (this.isVehicle()) {
+//        if (Dist.CLIENT.isClient()) {
+//            if (this.isVehicle()) {
 //                ClientHelper.proxy.forceThirdPerson();
 //                WorldHelper.forceThirdPerson
-                MiscHelper.forceThirdPerson();
+//                MiscHelper.forceThirdPerson();
 
-            }
-        }
+//            }
+//        }
 //        if(this.getControllingPassenger().equals(TardisEntity.class))
 
         if (this.isVehicle()) {

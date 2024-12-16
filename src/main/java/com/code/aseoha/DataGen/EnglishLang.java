@@ -1,6 +1,7 @@
 package com.code.aseoha.DataGen;
 
 import com.code.aseoha.aseoha;
+import com.code.aseoha.block.AseohaBlocks;
 import com.code.aseoha.client.Sounds;
 import com.code.aseoha.items.AseohaItems;
 import com.code.aseoha.protocol.RegisterProtocols;
@@ -20,12 +21,28 @@ public class EnglishLang extends LanguageProvider {
      * THANKS JERYN!
      */
     protected void addTranslations() {
+        add(AseohaBlocks.FAT_BLOCK.get().asItem().getDescriptionId(), "Fat Block");
 //        add(AseohaItems.MANUAL.get().getDescriptionId(), "Contains information on ASEOHA features");
+        add(AseohaItems.GINGERBREAD_CYBERMAN.get().getDescriptionId(), "Gingerbread Cyber-Man");
+        add(AseohaItems.GINGERBREAD_MAN.get().getDescriptionId(), "Gingerbread Man");
+        add(AseohaItems.GINGERBREAD_DALEK.get().getDescriptionId(), "Gingerbread Dalek");
+        add(AseohaItems.STEEL_INGOT.get().getDescriptionId(), "Steel Ingot");
+        add(AseohaItems.STEEL_AXE.get().getDescriptionId(), "Steel Axe");
+        add(AseohaItems.STEEL_BOOTS.get().getDescriptionId(), "Steel Boots");
+        add(AseohaItems.STEEL_HOE.get().getDescriptionId(), "Steel Hoe");
+        add(AseohaItems.STEEL_CHEST.get().getDescriptionId(), "Steel Chestplate");
+        add(AseohaItems.STEEL_HELMET.get().getDescriptionId(), "Steel Helmet");
+        add(AseohaItems.STEEL_LEGGINGS.get().getDescriptionId(), "Steel Leggings");
+        add(AseohaItems.STEEL_PICKAXE.get().getDescriptionId(), "Steel Pickaxe");
+        add(AseohaItems.STEEL_SWORD.get().getDescriptionId(), "Steel Sword");
+        add(AseohaItems.STEEL_SHOVEL.get().getDescriptionId(), "Steel Shovel");
+        add(AseohaItems.CANDY_CANE.get().getDescriptionId(), "Candy Cane");
+        add(AseohaItems.CANDY_CANE_SONIC.get().getDescriptionId(), "Candy \"Cane\"");
         add(Sounds.THROTTLE_BLAST.get().toString(), "Throttle Blast");
         add(SoundSchemeRegister.SMITH.getId().toString(), "Smith [Mock]");
         add(AseohaItems.COFFEE.get(), "Coffee");
         add(AseohaItems.MANUAL.get().getDescriptionId(), "ASEOHA Manual");
-        add(RegisterProtocols.MAINTENANCE.get().getTranslationKey(), "Maintenance");
+//        add(RegisterProtocols.MAINTENANCE.get().getTranslationKey(), "Maintenance");
 //        add(AnimReg.FAST_AF.get().getTranslationKey(), "Fast Animation");
         add("ars.piece.category.aseoha.astronomer", "Astronomer");
         add("ars.piece.category.aseoha.cavern", "Cavern");

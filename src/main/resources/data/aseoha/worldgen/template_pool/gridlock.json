@@ -1,0 +1,42 @@
+{
+  "name": "aseoha:gridlock_peices",
+  "fallback": "aseoha:gridlock_peices",
+  "elements": [
+    {
+      "weight": 11,
+      "element": {
+        "location": "aseoha:gridlock_houses_one",
+        "processors": "minecraft:mossify_50_percent",
+        "projection": "rigid",
+        "element_type": "minecraft:legacy_single_pool_element"
+      }
+    },
+    {
+      "weight": 9,
+      "element": {
+        "location": "aseoha:gridlock_standalone_ally",
+        "processors": "minecraft:mossify_50_percent",
+        "projection": "rigid",
+        "element_type": "minecraft:legacy_single_pool_element"
+      }
+    },
+    {
+      "weight": 10,
+      "element": {
+        "location": "aseoha:gridlock_standalone_fourway",
+        "processors": "minecraft:mossify_50_percent",
+        "projection": "rigid",
+        "element_type": "minecraft:legacy_single_pool_element"
+      }
+    },
+    {
+      "weight": 10,
+      "element": {
+        "location": "aseoha:gridlock_standalone_curve",
+        "processors": "minecraft:mossify_50_percent",
+        "projection": "rigid",
+        "element_type": "minecraft:legacy_single_pool_element"
+      }
+    }
+  ]
+}

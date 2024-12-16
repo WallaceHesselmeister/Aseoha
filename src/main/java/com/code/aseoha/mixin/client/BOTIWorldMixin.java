@@ -28,7 +28,7 @@ public abstract class BOTIWorldMixin {
      * @author Codiak
      * @reason BECAUSE I DID (prevent NPE with TARDIS in TARDIS)
      */
-    @Overwrite(remap = false)
+    @Overwrite
     public BlockState getBlockState(BlockPos pos) {
         try {
             return shell.getBlockState(pos);

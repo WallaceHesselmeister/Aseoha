@@ -8,8 +8,8 @@
   "has_skylight": true,
   "has_ceiling": false,
   "coordinate_scale": 2,
-  "ambient_light": 0,
+  "ambient_light": 10,
   "logical_height": 256,
   "infiniburn": "minecraft:infiniburn_overworld",
-  "effects": "basic_sky_property"
+  "effects": "aseoha:basic_sky_property"
 }

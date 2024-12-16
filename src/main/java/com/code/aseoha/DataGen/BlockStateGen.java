@@ -22,8 +22,9 @@ import net.minecraft.util.registry.Registry;
 import net.minecraftforge.fml.RegistryObject;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.jetbrains.annotations.NotNull;
 
-
+@SuppressWarnings("deprecation")
 public class BlockStateGen implements IDataProvider {
     private static final Logger LOGGER = LogManager.getLogger();
     private static final Gson GSON = (new GsonBuilder()).setPrettyPrinting().disableHtmlEscaping().create();
@@ -34,7 +35,7 @@ public class BlockStateGen implements IDataProvider {
     }
 
     @Override
-    public void run(DirectoryCache p_200398_1_) {
+    public void run(@NotNull DirectoryCache p_200398_1_) {
         Path path = this.generator.getOutputFolder();
         Map<Block, IFinishedBlockState> map = Maps.newHashMap();
         Consumer<IFinishedBlockState> consumer = (p_240085_1_) -> {
