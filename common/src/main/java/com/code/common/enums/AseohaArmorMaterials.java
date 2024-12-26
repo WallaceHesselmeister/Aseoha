@@ -1,4 +1,4 @@
-package com.code.common.items;
+package com.code.common.enums;
 
 import com.code.aseoha;
 import com.code.common.registries.AseohaItems;

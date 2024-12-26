@@ -1,4 +1,4 @@
-package com.code.common.misc;
+package com.code.common.enums;
 
 import com.code.common.interfaces.IFireArmType;
 

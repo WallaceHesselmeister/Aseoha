@@ -1,6 +1,7 @@
 package com.code;
 
-import com.code.common.GrammarNazi;
+import com.code.common.NetworkHandler;
+import com.code.common.misc.GrammarNazi;
 import com.code.common.ThreadManager;
 import com.code.common.blocks.RoundelBlock;
 import com.code.common.registries.AseohaBlocks;
@@ -10,10 +11,12 @@ import com.code.common.items.AseohaTabs;
 import com.code.common.world.Structures;
 import com.google.common.base.Supplier;
 import com.google.common.base.Suppliers;
+import dev.architectury.networking.NetworkManager;
 import dev.architectury.platform.Platform;
 import dev.architectury.registry.registries.RegistrarManager;
 import dev.architectury.registry.registries.RegistrySupplier;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
@@ -38,7 +41,7 @@ public final class aseoha {
         Structures.DEFERRED_REGISTRY_STRUCTURE.register();
         FabricSpecificSetup();
         ForgeSpecificSetupTakeTwo();
-
+        SetupNetworking();
         threadManager.InitializeThreads();
 
         /** If this is true then ASEOHA will attempt to make roundels for every. single. block. registered.
@@ -85,5 +88,10 @@ public final class aseoha {
         //        if(Platform.isFabric())
 //            AseohaBlocks.AUTOMATICALLY_GENERATED_ROUNDELS.forEach(blockRegistrySupplier -> AseohaItems.GENERATED_ROUNDELS.register(GrammarNazi.IDFromBlock(blockRegistrySupplier.get()), () -> new BlockItem(blockRegistrySupplier.get(), new Item.Properties().arch$tab(AseohaTabs.GENERATED_ROUNDEL_TAB))));
 
+    }
+
+    public static void SetupNetworking(){
+
+        NetworkHandler.RegisterPackets();
     }
 }

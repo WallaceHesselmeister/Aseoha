@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "aseoha:block/cobbled_deepslate_roundel_lit"
+    "all": "aseoha:block/cobbled_deepslate_roundel"
   }
 }

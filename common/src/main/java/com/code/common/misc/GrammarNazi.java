@@ -1,4 +1,4 @@
-package com.code.common;
+package com.code.common.misc;
 
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;

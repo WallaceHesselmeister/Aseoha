@@ -1,7 +1,8 @@
 package com.code.fabric.datagen;
 
 import com.code.aseoha;
-import com.code.common.GrammarNazi;
+import com.code.common.enums.SonicInteractionType;
+import com.code.common.misc.GrammarNazi;
 import com.code.common.blocks.RoundelBlock;
 import com.code.common.registries.AseohaBlocks;
 import com.code.common.registries.AseohaItems;
@@ -11,7 +12,6 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricRecipeProvider;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagProvider;
-import net.minecraft.client.model.Model;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
@@ -26,7 +26,6 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Items;
-import net.minecraft.world.level.ClipContext;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import org.jetbrains.annotations.Contract;
@@ -60,6 +59,9 @@ public class DataGenerator implements DataGeneratorEntrypoint {
     public EN_USLangProvider AddENUSTranslations(FabricDataOutput output, CompletableFuture<HolderLookup.Provider> registriesFuture, String languageType) {
         EN_USLangProvider provider = new EN_USLangProvider(output, languageType);
         this.LangProvider = provider;
+        add(SonicInteractionType.BLOCKS.Name().getString(), "Block Interaction Mode");
+        add(SonicInteractionType.ENTITY.Name().getString(), "Entity Interaction Mode");
+        add(SonicInteractionType.SCANNER.Name().getString(), "Scanner Mode");
         add("tooltip.aseoha.plasma_rifle", "Plasma Rifle");
         add("tooltip.aseoha.plasma_rifle_charge", "Charge");
         add("tooltip.aseoha.plasma_rifle.empty", "Empty");
@@ -315,7 +317,7 @@ public class DataGenerator implements DataGeneratorEntrypoint {
         }
 
         public void AlternatingItemModel(Item item, @NotNull ItemModelGenerators blockModelGenerators) {
-            Block block = Block.byItem(item);
+            Block block = RoundelBlock.GetNormalRoundelUnsafe(Block.byItem(item));
             TextureMapping textureMappingAlt = new TextureMapping().put(TextureSlot.ALL, TextureMapping.getBlockTexture(block));
             CUBE.create(new ResourceLocation("aseoha", "item/" + GrammarNazi.IDFromItem(item)), textureMappingAlt, blockModelGenerators.output);
         }
@@ -340,9 +342,15 @@ public class DataGenerator implements DataGeneratorEntrypoint {
         }
 
         public void LitItemModel(Item item, @NotNull ItemModelGenerators blockModelGenerators) {
-            Block block = Block.byItem(item);
-            TextureMapping textureMappingAlt = new TextureMapping().put(TextureSlot.ALL, BuiltInRegistries.BLOCK.getKey(RoundelBlock.GetNormalRoundelUnsafe(block)));
-            CUBE.create(new ResourceLocation("aseoha", "item/" + GrammarNazi.IDFromItem(item)), textureMappingAlt, blockModelGenerators.output);
+//            Block block = Block.byItem(item);
+//            TextureMapping textureMappingAlt = new TextureMapping().put(TextureSlot.ALL, BuiltInRegistries.BLOCK.getKey(RoundelBlock.GetNormalRoundelUnsafe(block)));
+//            CUBE.create(new ResourceLocation("aseoha", "item/" + GrammarNazi.IDFromItem(item)), textureMappingAlt, blockModelGenerators.output);
+
+
+//            TextureMapping textureMapping = (new TextureMapping()).put(TextureSlot.ALL, TextureMapping.getBlockTexture(block));
+//
+//            ModelTemplates.CUBE_ALL.create(ModelLocationUtils.getModelLocation(item), textureMapping, blockModelGenerators.output);
+
         }
 
         @Contract("_ -> new")
@@ -370,12 +378,22 @@ public class DataGenerator implements DataGeneratorEntrypoint {
                     AlternatingItemModel(item.get(), itemModelGenerator);
                 } else {
                     if (GrammarNazi.IDFromBlock(block).contains("roundel_lit")) {
-                        LitItemModel(item.get(), itemModelGenerator);
-                        //RoundelBlock.GetNormalRoundelUnsafe(Block.byItem(item.get())).asItem()
+
+//                        LitItemModel(item.get(), itemModelGenerator);
+
+                        TextureMapping textureMapping = (new TextureMapping()).put(TextureSlot.ALL, TextureMapping.getBlockTexture(RoundelBlock.GetNormalRoundelUnsafe(block)));
+
+                        ModelTemplates.CUBE_ALL.create(ModelLocationUtils.getModelLocation(item.get()), textureMapping, itemModelGenerator.output);
+
+
                     } else if (GrammarNazi.IDFromBlock(block).contains("blue_roundel")) {
+
                         CreateGennedItemModel(item.get(), itemModelGenerator);
+
                     } else if (block != Blocks.AIR) {
+
                         TextureMapping textureMapping = (new TextureMapping()).put(TextureSlot.ALL, TextureMapping.getBlockTexture(block));
+
                         ModelTemplates.CUBE_ALL.create(ModelLocationUtils.getModelLocation(item.get()), textureMapping, itemModelGenerator.output);
                     }
                     //                        itemModelGenerator.generateFlatItem(item.get(), ModelTemplates.CUBE);

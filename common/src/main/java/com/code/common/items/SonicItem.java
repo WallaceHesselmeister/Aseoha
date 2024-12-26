@@ -1,52 +1,231 @@
 package com.code.common.items;
 
+import com.code.common.NetworkHandler;
+import com.code.common.enums.SonicInteractionType;
+import com.code.common.misc.ClientUtil;
+import dev.architectury.networking.NetworkManager;
+import io.netty.buffer.Unpooled;
 import net.minecraft.core.BlockPos;
+import net.minecraft.network.FriendlyByteBuf;
+import net.minecraft.server.network.ServerGamePacketListenerImpl;
+import net.minecraft.sounds.SoundEvent;
+import net.minecraft.sounds.SoundEvents;
+import net.minecraft.sounds.SoundSource;
+import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
+import net.minecraft.world.InteractionResultHolder;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.HumanoidArm;
+import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.monster.Creeper;
+import net.minecraft.world.entity.monster.Skeleton;
+import net.minecraft.world.entity.monster.ZombieVillager;
+import net.minecraft.world.entity.player.Player;
+import net.minecraft.world.entity.projectile.ProjectileUtil;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.entity.BrushableBlockEntity;
+import net.minecraft.world.level.block.piston.PistonBaseBlock;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.gameevent.GameEvent;
+import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.phys.HitResult;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 public class SonicItem extends Item {
+    private SonicInteractionType InteractionType = SonicInteractionType.BLOCKS;
+
     public SonicItem(Properties properties) {
         super(properties);
     }
 
-    public InteractionResult useOn(UseOnContext useOnContext) {
+    @Override
+    public @NotNull InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand interactionHand) {
+        if (interactionHand == InteractionHand.OFF_HAND)
+            return InteractionResultHolder.pass(player.getItemInHand(InteractionHand.MAIN_HAND));
+
+        if (player.isCrouching()) {
+            this.InteractionType = SonicInteractionType.values()[
+                    this.InteractionType.ordinal() < SonicInteractionType.values().length - 1 ? this.InteractionType.ordinal() + 1 : 0
+                    ];
+            if (!level.isClientSide)
+                player.sendSystemMessage(this.InteractionType.Name());
+        }
+
+        if (this.InteractionType == SonicInteractionType.BLOCKS)
+            return InteractionResultHolder.pass(player.getItemInHand(interactionHand));
+
+        if (!(this.InteractionType == SonicInteractionType.ENTITY))
+            return InteractionResultHolder.pass(player.getItemInHand(InteractionHand.MAIN_HAND));
+
+        this.EntityInteraction(level);
+
+        return super.use(level, player, interactionHand);
+    }
+
+    @Override
+    public @NotNull InteractionResult useOn(UseOnContext useOnContext) {
+        switch (this.InteractionType) {
+            case BLOCKS -> this.BlockInteraction(useOnContext);
+            case SCANNER -> this.ScannerInteraction(useOnContext);
+        }
+
+        return InteractionResult.PASS;
+    }
+
+    public InteractionResult EntityInteraction(@NotNull Level level) {
+        if (level.isClientSide()) return InteractionResult.PASS;
+
+        Entity lookingAtEntity = ClientUtil.GetEntityClientIsLookingAt();
+
+        FriendlyByteBuf buf = new FriendlyByteBuf(Unpooled.buffer());
+
+        if (lookingAtEntity instanceof Creeper creeper) {
+            buf.writeUUID(creeper.getUUID());
+            NetworkManager.sendToServer(NetworkHandler.IGNITE_CREEPER_PACKET_ID, buf);
+            creeper.ignite();
+            return InteractionResult.SUCCESS;
+        }
+
+        if (lookingAtEntity instanceof Skeleton skeleton) {
+            buf.writeUUID(skeleton.getUUID());
+            NetworkManager.sendToServer(NetworkHandler.KILL_ENTITY, buf);
+            return InteractionResult.SUCCESS;
+        }
+
+        if (lookingAtEntity instanceof ZombieVillager zombieVillager) {
+            buf.writeUUID(zombieVillager.getUUID());
+            NetworkManager.sendToServer(NetworkHandler.CURE_VILLAGER, buf);
+            return InteractionResult.SUCCESS;
+        }
+
+        return InteractionResult.FAIL;
+    }
+
+    public InteractionResult ScannerInteraction(UseOnContext useOnContext) {
+        return InteractionResult.PASS;
+    }
+
+    public InteractionResult BlockInteraction(@NotNull UseOnContext useOnContext) {
         BlockState State = useOnContext.getLevel().getBlockState(useOnContext.getClickedPos());
         Level Level = useOnContext.getLevel();
         BlockPos Pos = useOnContext.getClickedPos();
-        if(State.equals(Blocks.REDSTONE_LAMP.defaultBlockState())){
-            if (!Level.isClientSide) {
-                boolean bl2 = (Boolean)State.getValue(RedstoneLampBlock.LIT);
-//                if (bl2 != Level.hasNeighborSignal(Pos)) {
-                    if (bl2) {
-                        Level.scheduleTick(Pos, State.getBlock(), 4);
-                    } else {
-                        Level.setBlock(Pos, (BlockState)State.cycle(RedstoneLampBlock.LIT), 2);
-                    }
-//                }
 
-            }
+        if (State.getBlock().equals(Blocks.IRON_DOOR)) {
+            State = State.cycle(DoorBlock.OPEN);
+            Level.setBlock(Pos, State, 10);
+            this.playDoorSound(useOnContext.getPlayer(), Level, Pos, State.getValue(BlockStateProperties.OPEN), (DoorBlock) State.getBlock());
+            Level.gameEvent(useOnContext.getPlayer(), ((DoorBlock) State.getBlock()).isOpen(State) ? GameEvent.BLOCK_OPEN : GameEvent.BLOCK_CLOSE, Pos);
             return InteractionResult.SUCCESS;
         }
-        if(State.equals(Blocks.IRON_TRAPDOOR.defaultBlockState())) {
-            Level.setBlock(useOnContext.getClickedPos(), State.cycle(TrapDoorBlock.OPEN), 2);
-            return InteractionResult.sidedSuccess(Level.isClientSide);
+
+        if (State.getBlock() instanceof RedstoneLampBlock) {
+            if (!Level.isClientSide)
+                Level.setBlockAndUpdate(Pos, State.cycle(RedstoneLampBlock.LIT));
+            return InteractionResult.SUCCESS;
         }
-        if(State.equals(Blocks.IRON_DOOR.defaultBlockState())) {
-//            State = (BlockState)State.cycle(DoorBlock.OPEN);
-//            Level.setBlock(Pos, State, 10);
-//            Level.gameEvent(useOnContext.getPlayer(), ((DoorBlock) State.getBlock()).isOpen(State) ? GameEvent.BLOCK_OPEN : GameEvent.BLOCK_CLOSE, useOnContext.getClickedPos());
-//            return InteractionResult.sidedSuccess(Level.isClientSide);
-            ((DoorBlock) State.getBlock()).setOpen(useOnContext.getPlayer(), Level, State, Pos, !((DoorBlock) State.getBlock()).isOpen(State));
+
+        if (State.getBlock().equals(Blocks.IRON_TRAPDOOR)) {
+            Level.setBlockAndUpdate(useOnContext.getClickedPos(), State.cycle(TrapDoorBlock.OPEN));
+            return InteractionResult.SUCCESS;
         }
-        if(State.equals(Blocks.TNT.defaultBlockState())) {
+
+        if (State.getBlock().equals(Blocks.TNT)) {
             TntBlock.explode(Level, useOnContext.getClickedPos());
             Level.removeBlock(Pos, false);
             return InteractionResult.SUCCESS;
         }
+
+        if (State.getBlock() instanceof SandBlock) {
+            Level.setBlockAndUpdate(Pos, Blocks.GLASS.defaultBlockState());
+            return InteractionResult.SUCCESS;
+        }
+
+        if (State.getBlock() instanceof GlassBlock) {
+            Level.removeBlock(Pos, false);
+            Level.playSound(useOnContext.getPlayer(), Pos, SoundEvents.GLASS_BREAK, SoundSource.BLOCKS, 1.0F, Level.getRandom().nextFloat() * 0.1F + 0.9F);
+            return InteractionResult.SUCCESS;
+        }
+
+        if (State.getBlock().equals(Blocks.BRICKS)) {
+            Level.removeBlock(Pos, false);
+            return InteractionResult.SUCCESS;
+        }
+
+        if (State.getBlock().equals(Blocks.BRICK_SLAB)) {
+            Level.removeBlock(Pos, false);
+            return InteractionResult.SUCCESS;
+        }
+
+        if (State.getBlock().equals(Blocks.BRICK_WALL)) {
+            Level.removeBlock(Pos, false);
+            return InteractionResult.SUCCESS;
+        }
+
+        if (State.getBlock().equals(Blocks.BRICK_STAIRS)) {
+            Level.removeBlock(Pos, false);
+            return InteractionResult.SUCCESS;
+        }
+
+        if (State.getBlock() instanceof PistonBaseBlock pistonBaseBlock) {
+            pistonBaseBlock.triggerEvent(State, Level, Pos, 1, 2);
+        }
+
         return InteractionResult.PASS;
+    }
+
+
+    private @NotNull HitResult calculateHitResult(LivingEntity livingEntity) {
+        final double MAX_BRUSH_DISTANCE = Math.sqrt(ServerGamePacketListenerImpl.MAX_INTERACTION_DISTANCE) - 1.0;
+        return ProjectileUtil.getHitResultOnViewVector(livingEntity, entity -> !entity.isSpectator() && entity.isPickable(), MAX_BRUSH_DISTANCE);
+    }
+
+    @Override
+    public void onUseTick(Level level, LivingEntity livingEntity, ItemStack itemStack, int i) {
+        if (this.InteractionType != SonicInteractionType.SCANNER) return;
+        if (i >= 0 && livingEntity instanceof Player player) {
+            HitResult hitResult = this.calculateHitResult(livingEntity);
+            if (hitResult instanceof BlockHitResult blockHitResult && hitResult.getType() == HitResult.Type.BLOCK) {
+                int j = this.getUseDuration(itemStack) - i + 1;
+                boolean bl = j % 10 == 5;
+                if (bl) {
+                    BlockPos blockPos = blockHitResult.getBlockPos();
+                    BlockState blockState = level.getBlockState(blockPos);
+                    HumanoidArm humanoidArm = livingEntity.getUsedItemHand() == InteractionHand.MAIN_HAND ? player.getMainArm() : player.getMainArm().getOpposite();
+                    SoundEvent soundEvent;
+                    if (blockState.getBlock() instanceof BrushableBlock brushableBlock) {
+                        soundEvent = brushableBlock.getBrushSound();
+                    } else {
+                        soundEvent = SoundEvents.BRUSH_GENERIC;
+                    }
+
+                    level.playSound(player, blockPos, soundEvent, SoundSource.BLOCKS);
+                    if (!level.isClientSide() && level.getBlockEntity(blockPos) instanceof BrushableBlockEntity brushableBlockEntity) {
+                        boolean bl2 = brushableBlockEntity.brush(level.getGameTime(), player, blockHitResult.getDirection());
+                        if (bl2) {
+                            EquipmentSlot equipmentSlot = itemStack.equals(player.getItemBySlot(EquipmentSlot.OFFHAND)) ? EquipmentSlot.OFFHAND : EquipmentSlot.MAINHAND;
+                            itemStack.hurtAndBreak(1, livingEntity, livingEntityx -> livingEntityx.broadcastBreakEvent(equipmentSlot));
+                        }
+                    }
+                }
+
+                return;
+            }
+
+            livingEntity.releaseUsingItem();
+        } else {
+            livingEntity.releaseUsingItem();
+        }
+    }
+
+
+    public void playDoorSound(@Nullable Entity entity, @NotNull Level level, BlockPos blockPos, boolean bl, DoorBlock Block) {
+        level.playSound(entity, blockPos, bl ? Block.type().doorOpen() : Block.type().doorClose(), SoundSource.BLOCKS, 1.0F, level.getRandom().nextFloat() * 0.1F + 0.9F);
     }
 }

@@ -1,14 +1,10 @@
 package com.code.common.registries;
 
-import com.code.common.GrammarNazi;
-import com.code.common.blocks.IAmARoundel;
 import com.code.common.blocks.RoundelBlock;
 import com.code.common.items.AseohaTabs;
-import com.code.common.blocks.RoundelBlock;
 import dev.architectury.platform.Platform;
 import dev.architectury.registry.registries.DeferredRegister;
 import dev.architectury.registry.registries.RegistrySupplier;
-import net.minecraft.client.renderer.RenderType;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
@@ -27,13 +23,21 @@ import static net.minecraft.world.level.material.MapColor.METAL;
 
 public class AseohaBlocks {
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(MOD_ID, Registries.BLOCK);
-    /** Need this so I can use a foreach from the BLOCKS to register more blocks without getting a ConcurrentModifierException **/
+
+    public static final DeferredRegister<Block> BLOCKS_NO_ITEMS = DeferredRegister.create(MOD_ID, Registries.BLOCK);
+    /**
+     * Need this so I can use a foreach from the BLOCKS to register more blocks without getting a ConcurrentModifierException
+     **/
     public static final DeferredRegister<Block> ROUNDELS_LIT = DeferredRegister.create(MOD_ID, Registries.BLOCK);
 
-    /** Need this for alternating roundels to automatically generate **/
+    /**
+     * Need this for alternating roundels to automatically generate
+     **/
     public static final DeferredRegister<Block> ALTERNATING_ROUNDELS = DeferredRegister.create(MOD_ID, Registries.BLOCK);
 
-    /** This is used for Blue Roundels (Duh) **/
+    /**
+     * This is used for Blue Roundels (Duh)
+     **/
     public static final DeferredRegister<Block> BLUE_ROUNDELS = DeferredRegister.create(MOD_ID, Registries.BLOCK);
     //    Registrar<Item> items = MANAGER.get().get(Registries.ITEM);
 
@@ -97,6 +101,9 @@ public class AseohaBlocks {
 
 //    public static final RegistrySupplier<Block> HARMONIC_PILLAR = registerBlock("harmonic_pillar",
 //            () -> setUpBlock(new EOHPillar(Block.Properties.of(METAL).strength(1.25F, 5.25F).lightLevel(BlockState -> 2).noOcclusion())));
+
+    public static final RegistrySupplier<Block> PISTON_POWERED = registerBlock("piston_powered",
+            () -> new Block(BlockBehaviour.Properties.of()));
 
     public static final RegistrySupplier<Block> FAULTLOCATOR = registerBlock("faultlocator", () -> new Block(BlockBehaviour.Properties.of().noOcclusion().sound(SoundType.STONE).strength(1.25F, 4.2F)));
 
@@ -632,37 +639,37 @@ public class AseohaBlocks {
             () -> new RoundelBlock(BlockBehaviour.Properties.of().strength(1.25F, 5.25F), Blocks.YELLOW_CONCRETE));
 
 
-    private static <T extends Block>RegistrySupplier<T> registerBlock(String name, Supplier<T> block){
+    private static <T extends Block> RegistrySupplier<T> registerBlock(String name, Supplier<T> block) {
         RegistrySupplier<T> toReturn = BLOCKS.register(name, block);
-        if(Platform.isForge()) {
+        if (Platform.isForge()) {
             registerBlockItem(name, toReturn);
         }
-            if (name.contains("roundel") && !name.contains("hex")) {
-                registerAltBlock(name + "_alternating", block);
-                registerLitBlock(name + "_lit", () -> new RoundelBlock(BlockBehaviour.Properties.of().strength(1.25f, 5.25f).mapColor(MapColor.SAND).lightLevel((blockStatex) -> 15)));
-                registerBlueRoundel(name, () -> new RoundelBlock(BlockBehaviour.Properties.of().strength(1.25f, 5.25f)));
+        if (name.contains("roundel") && !name.contains("hex")) {
+            registerAltBlock(name + "_alternating", block);
+            registerLitBlock(name + "_lit", () -> new RoundelBlock(BlockBehaviour.Properties.of().strength(1.25f, 5.25f).mapColor(MapColor.SAND).lightLevel((blockStatex) -> 15)));
+            registerBlueRoundel(name, () -> new RoundelBlock(BlockBehaviour.Properties.of().strength(1.25f, 5.25f)));
         }
         return toReturn;
     }
 
-    private static <T extends Block>RegistrySupplier<T> registerBlueRoundel(String name, @NotNull Supplier<T> block) {
+    private static <T extends Block> RegistrySupplier<T> registerBlueRoundel(String name, @NotNull Supplier<T> block) {
         name = name.replace("roundel", "blue_roundel");
         RegistrySupplier<T> toReturn = BLUE_ROUNDELS.register(name, block);
-        if(Platform.isForge()){
+        if (Platform.isForge()) {
             registerBlockItem(name, toReturn);
         }
         return toReturn;
     }
 
-    private static <T extends Block>RegistrySupplier<T> registerAltBlock(String name, Supplier<T> block){
+    private static <T extends Block> RegistrySupplier<T> registerAltBlock(String name, Supplier<T> block) {
         RegistrySupplier<T> toReturn = ALTERNATING_ROUNDELS.register(name, block);
-        if(Platform.isForge()) {
+        if (Platform.isForge()) {
             registerBlockItem(name, toReturn);
         }
         return toReturn;
     }
 
-    private static <T extends Block>RegistrySupplier<T> registerLitBlock(String name, Supplier<T> block) {
+    private static <T extends Block> RegistrySupplier<T> registerLitBlock(String name, Supplier<T> block) {
         RegistrySupplier<T> toReturn = ROUNDELS_LIT.register(name, block);
         if (Platform.isForge()) {
             registerBlockItem(name, toReturn);
@@ -677,7 +684,14 @@ public class AseohaBlocks {
         );
     }
 
-    public static void register(){
+
+    private static <T extends Block> RegistrySupplier<T> registerBlockNoItem(String name, Supplier<T> block) {
+        RegistrySupplier<T> toReturn = BLOCKS_NO_ITEMS.register(name, block);
+        return toReturn;
+    }
+
+    public static void register() {
+        BLOCKS_NO_ITEMS.register();
         BLOCKS.register();
         ROUNDELS_LIT.register();
         ALTERNATING_ROUNDELS.register();

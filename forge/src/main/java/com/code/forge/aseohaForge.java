@@ -1,17 +1,11 @@
 package com.code.forge;
 
 import com.code.aseoha;
-import com.code.common.client.models.DalekModel;
-import com.code.common.client.models.K9mkIIModel;
-import com.code.common.client.models.LazerModel;
-import com.code.common.client.renderer.DalekRenderer;
-import com.code.common.client.renderer.K9MkIIRenderer;
-import com.code.common.client.renderer.LazerRenderer;
+import com.code.common.client.models.*;
+import com.code.common.client.renderer.*;
 import com.code.common.entities.DalekEntity;
 import com.code.common.registries.AseohaEntities;
 import com.code.common.entities.K9Entity;
-import com.code.common.client.models.K9model;
-import com.code.common.client.renderer.K9Renderer;
 import com.code.common.world.AseohaDimensions;
 import dev.architectury.platform.forge.EventBuses;
 import net.minecraft.world.entity.SpawnPlacements;
@@ -54,6 +48,8 @@ public final class aseohaForge {
             event.registerEntityRenderer(AseohaEntities.LAZER.get(), LazerRenderer::new);
 
             event.registerEntityRenderer(AseohaEntities.DALEK.get(), DalekRenderer::new);
+
+            event.registerEntityRenderer(AseohaEntities.CYBERMAN.get(), CybusCybermanRenderer::new);
         }
 
         @SubscribeEvent
@@ -65,6 +61,8 @@ public final class aseohaForge {
             event.registerLayerDefinition(LazerModel.LAYER_LOCATION, LazerModel::createBodyLayer);
 
             event.registerLayerDefinition(DalekModel.LAYER_LOCATION, DalekModel::createBodyLayer);
+
+            event.registerLayerDefinition(CybusCybermanModel.LAYER_LOCATION, CybusCybermanModel::createBodyLayer);
         }
     }
 

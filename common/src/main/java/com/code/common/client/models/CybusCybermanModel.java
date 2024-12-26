@@ -1,7 +1,7 @@
 package com.code.common.client.models;
 
 
-import com.code.common.entities.DalekEntity;
+import com.code.common.entities.CybermanEntity;
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.client.model.EntityModel;
@@ -10,12 +10,15 @@ import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.entity.Entity;
+import net.minecraft.util.Mth;
+import net.minecraft.world.entity.HumanoidArm;
+
+import static com.code.aseoha.MOD_ID;
 
 
-public class CybusCybermanModel<T extends Entity> extends EntityModel<T> {
+public class CybusCybermanModel<T extends CybermanEntity> extends EntityModel<T> {
     // This layer location should be baked with EntityRendererProvider.Context in the entity renderer and passed into this model's constructor
-    public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(new ResourceLocation("modid", "cyberman"), "main");
+    public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(new ResourceLocation(MOD_ID, "cybuscybermanmodel"), "main");
     private final ModelPart h_head;
     private final ModelPart Body;
     private final ModelPart RightArm;
@@ -278,17 +281,87 @@ public class CybusCybermanModel<T extends Entity> extends EntityModel<T> {
     }
 
     @Override
-    public void setupAnim(Entity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
+    public void setupAnim(CybermanEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
 
+        boolean bl = entity.getFallFlyingTicks() > 4;
+        this.h_head.yRot = netHeadYaw * (float) (Math.PI / 180.0);
+        if (bl) {
+            this.h_head.xRot = (float) (-Math.PI / 4);
+        }
+        this.h_head.xRot = headPitch * (float) (Math.PI / 180.0);
+
+        this.Body.yRot = 0.0F;
+//        this.RightArm.z = 0.0F;
+//        this.RightArm.x = -5.0F;
+//        this.LeftArm.z = 0.0F;
+//        this.LeftArm.x = 5.0F;
+        float k = 1.0F;
+        if (bl) {
+            k = (float) entity.getDeltaMovement().lengthSqr();
+            k /= 0.2F;
+            k *= k * k;
+        }
+
+        if (k < 1.0F) {
+            k = 1.0F;
+        }
+
+        this.RightArm.xRot = Mth.cos(limbSwing * 0.6662F) * 2.0F * limbSwingAmount * 0.5F / k;
+        this.LeftArm.xRot = -Mth.cos(limbSwing * 0.6662F) * 2.0F * limbSwingAmount * 0.5F / k;
+        this.RightArm.zRot = 0.0F;
+        this.LeftArm.zRot = 0.0F;
+        this.RightLeg.xRot = Mth.cos(limbSwing * 0.6662F) * 1.4F * limbSwingAmount / k;
+        this.LeftLeg.xRot = -Mth.cos(limbSwing * 0.6662F) * 1.4F * limbSwingAmount / k;
+        this.RightLeg.yRot = 0.005F;
+        this.LeftLeg.yRot = -0.005F;
+        this.RightLeg.zRot = 0.005F;
+        this.LeftLeg.zRot = -0.005F;
+        if (this.riding) {
+            this.RightArm.xRot += (float) (-Math.PI / 5);
+            this.LeftArm.xRot += (float) (-Math.PI / 5);
+            this.RightLeg.xRot = -1.4137167F;
+            this.RightLeg.yRot = (float) (Math.PI / 10);
+            this.RightLeg.zRot = 0.07853982F;
+            this.LeftLeg.xRot = -1.4137167F;
+            this.LeftLeg.yRot = (float) (-Math.PI / 10);
+            this.LeftLeg.zRot = -0.07853982F;
+        }
+
+        this.RightArm.yRot = 0.0F;
+        this.LeftArm.yRot = 0.0F;
+        boolean bl3 = entity.getMainArm() == HumanoidArm.RIGHT;
+        if (entity.isUsingItem()) {
+            this.poseRightArm(entity);
+            this.poseLeftArm(entity);
+        }
+
+//        this.Body.xRot = 0.0F;
+//        this.RightLeg.z = 0.0F;
+//        this.LeftLeg.z = 0.0F;
+//        this.RightLeg.y = 12.0F;
+//        this.LeftLeg.y = 12.0F;
+//        this.h_head.y = 0.0F;
+//        this.Body.y = 0.0F;
+//        this.LeftArm.y = 2.0F;
+//        this.RightArm.y = 2.0F;
+
+    }
+
+    private void poseRightArm(CybermanEntity livingEntity) {
+        this.RightArm.yRot = 0.0F;
+    }
+
+    private void poseLeftArm(CybermanEntity livingEntity) {
+        this.LeftArm.yRot = 0.0F;
     }
 
     @Override
     public void renderToBuffer(PoseStack poseStack, VertexConsumer vertexConsumer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha) {
-        h_head.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
-        Body.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
-        RightArm.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
-        LeftArm.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
-        RightLeg.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
-        LeftLeg.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
+        this.h_head.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
+        this.Body.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
+        this.RightArm.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
+        this.LeftArm.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
+        this.RightLeg.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
+        this.LeftLeg.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
     }
 }

@@ -1,5 +1,7 @@
 package com.code.common.interfaces;
 
+import com.code.common.enums.AmmoType;
+
 public interface IFireArmMagazine {
     /** The Capacity of the Magazine **/
     short GetMaxSize();
@@ -17,4 +19,6 @@ public interface IFireArmMagazine {
     short LoadAmmo(short Ammo);
     /** Returns the full amount of ammo in the mag and removes it all **/
     int Empty();
+    /** The type of ammunition the mag holds **/
+    AmmoType GetAmmoType();
 }

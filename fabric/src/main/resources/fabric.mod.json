@@ -14,9 +14,6 @@
   "icon": "assets/aseoha/icon.png",
   "environment": "*",
   "entrypoints": {
-    "ait-main": [
-      "com.code.fabric.compat.ait.AITInitializer"
-    ],
     "main": [
       "com.code.fabric.aseohaFabric"
     ],
@@ -25,15 +22,10 @@
     ],
     "fabric-datagen": [
       "com.code.fabric.datagen.DataGenerator"
-    ],
-    "main": [
-      "com.code.fabric.aseohaFabric"
-    ],
-    "client": [
-      "com.code.fabric.client.aseohaFabricClient"
     ]
   },
   "mixins": [
+    "aseoha-common.mixins.json",
     "aseoha.mixins.json"
   ],
   "depends": {

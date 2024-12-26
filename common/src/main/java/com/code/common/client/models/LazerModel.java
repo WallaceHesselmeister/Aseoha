@@ -31,7 +31,9 @@ public class LazerModel<T extends AbstractArrow> extends EntityModel<T> {
         }
 
         @Override
-        public void setupAnim(AbstractArrow entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {}
+        public void setupAnim(AbstractArrow entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch) {
+            this.bb_main.yRot = netHeadYaw * (float) (Math.PI / 180.0);
+        }
 
         @Override
         public void renderToBuffer(PoseStack poseStack, VertexConsumer vertexConsumer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha) {

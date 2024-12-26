@@ -1,6 +1,6 @@
 package com.code.common.blocks;
 
-import com.code.common.GrammarNazi;
+import com.code.common.misc.GrammarNazi;
 import com.code.common.registries.AseohaBlocks;
 import io.netty.util.internal.UnstableApi;
 import net.minecraft.world.level.block.Block;
@@ -91,7 +91,7 @@ public class RoundelBlock extends Block implements IAmARoundel{
      * @param variant
      * @return
      */
-    @Deprecated
+    @UnstableApi
     public static Block GetNormalRoundelUnsafe(Block variant){
         AtomicReference<Block> result = new AtomicReference<>();
         AseohaBlocks.BLOCKS.forEach(block -> {

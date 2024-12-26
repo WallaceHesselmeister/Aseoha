@@ -1,9 +1,8 @@
 package com.code.fabric.items;
 
 import com.code.common.interfaces.IFireArm;
-import com.code.common.interfaces.IFireArmMagazine;
 import com.code.fabric.items.magazines.AbstractMagazine;
-import com.code.common.misc.FireArmType;
+import com.code.common.enums.FireArmType;
 import com.code.fabric.registries.AseohaItems;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
@@ -29,7 +28,7 @@ import java.util.List;
 public class AbstractFirearm extends BowItem implements IFireArm {
     boolean HasMag;
     AbstractMagazine Mag;
-    private int Ammo;
+    private int Ammo = 32;
 
     private int CONSUME_RATE = 1;
 
@@ -50,7 +49,7 @@ public class AbstractFirearm extends BowItem implements IFireArm {
     public @NotNull InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand interactionHand) {
         if (player.isCrouching()) {
             this.Switch = true;
-            if (player.getItemBySlot(EquipmentSlot.OFFHAND).getItem().equals(AseohaItems.PLASMA_BOLT_MAGAZINE.get())) {
+            if (player.getItemBySlot(EquipmentSlot.OFFHAND).getItem().equals(AseohaItems.MAGAZINE_NINE_MIL.get())) {
                 AbstractMagazine Mag = ((AbstractMagazine) player.getItemBySlot(EquipmentSlot.OFFHAND).getItem());
                 if(!this.HasMag) {
                     int Amount = this.Ammo - Mag.Empty();
@@ -65,10 +64,10 @@ public class AbstractFirearm extends BowItem implements IFireArm {
                     Amount -= (Mag.GetMaxSize() - Mag.GetRounds());
                     Mag.AddRounds(((short) Amount));
                     this.Ammo = Amount;
+                    if(this.Mag == null) return InteractionResultHolder.fail(this.getDefaultInstance());
                     player.setItemSlot(EquipmentSlot.OFFHAND, this.Mag.getDefaultInstance());
                     this.Mag = null;
                 }
-
             }
         }
         return super.use(level, player, interactionHand);

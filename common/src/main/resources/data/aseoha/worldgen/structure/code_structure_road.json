@@ -4,7 +4,7 @@
 
   "start_pool": "aseoha:road",
 
-  "size": 1,
+  "size": 20,
 
   "max_distance_from_center": 128,
 

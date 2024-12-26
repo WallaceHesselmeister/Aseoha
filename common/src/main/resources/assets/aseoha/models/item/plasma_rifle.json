@@ -2,9 +2,9 @@
 	"credit": "Made with Blockbench",
 	"texture_size": [64, 64],
 	"textures": {
-		"0": "aseoha:textures/item/plasma_rifle_barrel",
-		"1": "aseoha:textures/item/plasma_rifle",
-		"particle": "aseoha:textures/item/plasma_rifle_barrel"
+		"0": "aseoha:item/firearm/plasma_rifle_barrel",
+		"1": "aseoha:item/firearm/plasma_rifle",
+		"particle": "aseoha:item/firearm/plasma_rifle_barrel"
 	},
 	"elements": [
 		{

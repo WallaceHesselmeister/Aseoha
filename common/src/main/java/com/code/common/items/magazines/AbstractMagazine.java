@@ -1,6 +1,7 @@
 package com.code.common.items.magazines;
 
 import com.code.common.entities.Lazer;
+import com.code.common.enums.AmmoType;
 import com.code.common.interfaces.IFireArmMagazine;
 import com.code.common.registries.AseohaEntities;
 import net.minecraft.nbt.CompoundTag;
@@ -17,8 +18,10 @@ import org.jetbrains.annotations.NotNull;
  */
 public abstract class AbstractMagazine extends Item implements IFireArmMagazine {
     private static final short MAX_AMMUNITION = 32;
-    private short AMMUNITION = 32;
+    private short AMMUNITION;
+    private final AmmoType TYPE = AmmoType.NINE_MILLIMETER;
     static String CAPACITY = "capacity";
+    static String ROUNDS = "rounds";
 
     public AbstractMagazine(Properties properties) {
         super(properties);
@@ -28,7 +31,8 @@ public abstract class AbstractMagazine extends Item implements IFireArmMagazine 
     public void onCraftedBy(ItemStack itemStack, Level level, Player player) {
         super.onCraftedBy(itemStack, level, player);
         CompoundTag nbt = itemStack.getOrCreateTag();
-        nbt.putDouble(CAPACITY, 0);
+        nbt.putShort(CAPACITY, (short) 0);
+        nbt.putShort(ROUNDS, (short) 0);
     }
 
     @Override
@@ -37,7 +41,9 @@ public abstract class AbstractMagazine extends Item implements IFireArmMagazine 
 
         CompoundTag nbt = stack.getOrCreateTag();
 
-        nbt.putDouble(CAPACITY, this.GetMaxSize());
+        nbt.putShort(CAPACITY, this.GetMaxSize());
+
+        nbt.putShort(ROUNDS, this.GetRounds());
 
         return stack;
     }
@@ -84,11 +90,14 @@ public abstract class AbstractMagazine extends Item implements IFireArmMagazine 
         return MAX_AMMUNITION;
     }
 
+    public AmmoType GetAmmoType(){
+        return this.TYPE;
+    }
+
     @Override
     public short LoadAmmo(short Ammo) {
         Ammo = (short) (AMMUNITION - Ammo);
         this.AMMUNITION -= Ammo;
         return Ammo;
     }
-
 }

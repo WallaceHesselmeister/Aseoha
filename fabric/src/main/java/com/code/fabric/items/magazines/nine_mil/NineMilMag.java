@@ -1,5 +1,8 @@
-package com.code.common.items.magazines;
+package com.code.fabric.items.magazines.nine_mil;
 
+
+import com.code.common.enums.AmmoType;
+import com.code.fabric.items.magazines.AbstractMagazine;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
@@ -8,8 +11,8 @@ import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
 
-public class SmallMagazine extends AbstractMagazine {
-    public SmallMagazine(Properties properties) {
+public class NineMilMag extends AbstractMagazine {
+    public NineMilMag(Properties properties) {
         super(properties);
     }
 
@@ -20,6 +23,14 @@ public class SmallMagazine extends AbstractMagazine {
 
     @Override
     public short GetMaxSize() {
-        return 34;
+        return 12;
+    }
+
+    /**
+     * The type of ammunition the mag holds
+     **/
+    @Override
+    public AmmoType GetAmmoType() {
+        return AmmoType.NINE_MILLIMETER;
     }
 }

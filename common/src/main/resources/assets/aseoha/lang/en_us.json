@@ -362,9 +362,11 @@
 
 
 
-
   "aseoha.k9.power.add": "Power added Master",
   "aseoha.k9.tame": "K-9 Mark III Powering on Master",
+  "aseoha.sonic.mode.block": "Block Interaction Mode",
+  "aseoha.sonic.mode.entity": "Entity Interaction Mode",
+  "aseoha.sonic.mode.scanner": "Scanner Mode",
   "block.aseoha.acacia_planks_blue_roundel": "Acacia Planks Blue Roundel",
   "block.aseoha.acacia_planks_roundel": "Acacia Planks Roundel",
   "block.aseoha.acacia_planks_roundel_alternating": "Acacia Planks Roundel Alternating",
@@ -661,6 +663,15 @@
   "item.aseoha.blue_crystal_nugget": "Blue Crystal Nugget",
   "item.aseoha.blue_crystal_pile": "Blue Crystal Pile",
   "item.aseoha.blue_crystal_shard": "Blue Crystal Shard",
+  "item.aseoha.bullet.bullet_five_five_six_forty_five_nato": "Bullet/bullet Five Five Six Forty Five Nato",
+  "item.aseoha.bullet.five_five_six_forty_five_nato": "Bullet/five Five Six Forty Five Nato",
+  "item.aseoha.bullet.forty_five_acp": "Bullet/forty Five Acp",
+  "item.aseoha.bullet.nine_mill": "Bullet/nine Mill",
+  "item.aseoha.bullet.ten_millimeter": "Bullet/ten Millimeter",
+  "item.aseoha.bullet.thirty_eight_spl": "Bullet/thirty Eight Spl",
+  "item.aseoha.bullet.three_eighty_acp": "Bullet/three Eighty Acp",
+  "item.aseoha.bullet.three_five_seven": "Bullet/three Five Seven",
+  "item.aseoha.bullet.twenty_two_lr": "Bullet/twenty Two Lr",
   "item.aseoha.candy_cane": "Candy Cane",
   "item.aseoha.candy_cane_sonic": "Candy \"Cane\"",
   "item.aseoha.coffee": "Coffee",
@@ -711,6 +722,6 @@
   "item.aseoha.tezarak_coin": "Tezarak Coin",
   "item.aseoha.twinkie": "Twinkie",
   "tooltip.aseoha.plasma_rifle": "Plasma Rifle",
-  "tooltip.aseoha.plasma_rifle_charge": "Charge",
-  "tooltip.aseoha.plasma_rifle.empty": "Empty"
+  "tooltip.aseoha.plasma_rifle.empty": "Empty",
+  "tooltip.aseoha.plasma_rifle_charge": "Charge"
 }

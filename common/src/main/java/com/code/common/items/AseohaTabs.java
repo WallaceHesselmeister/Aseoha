@@ -32,6 +32,14 @@ public class AseohaTabs {
             )
     );
 
+    public static final RegistrySupplier<CreativeModeTab> FIREARMS_TAB = TABS.register(
+            "aseoha_firearms_tab", // Tab ID
+            () -> CreativeTabRegistry.create(
+                    Component.translatable("aseoha.creative_tab.firearms"),
+                    () -> AseohaItems.BULLET_NINE_MIL.get().getDefaultInstance()
+            )
+    );
+
     public static final RegistrySupplier<CreativeModeTab> GENERATED_ROUNDEL_TAB = TABS.register(
             "aseoha_roundel_genned_tab", // Tab ID
             () -> CreativeTabRegistry.create(

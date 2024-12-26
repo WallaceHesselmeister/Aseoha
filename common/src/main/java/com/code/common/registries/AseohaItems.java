@@ -1,8 +1,11 @@
 package com.code.common.registries;
 
-import com.code.common.AseohaToolMaterials;
+import com.code.common.enums.AseohaToolMaterials;
+import com.code.common.enums.AseohaArmorMaterials;
 import com.code.common.items.*;
-import com.code.common.items.magazines.SmallMagazine;
+import com.code.common.items.BulletItem;
+import com.code.common.enums.AmmoType;
+import com.code.common.items.magazines.pistol.nine_mil.NineMilMag;
 import dev.architectury.registry.registries.DeferredRegister;
 import dev.architectury.registry.registries.RegistrySupplier;
 import net.minecraft.core.registries.Registries;
@@ -10,6 +13,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
 
@@ -21,6 +25,9 @@ public class AseohaItems {
     public static final DeferredRegister<Item> ITEMS_NO_FABRIC = DeferredRegister.create(MOD_ID, Registries.ITEM);
 
     public static TagKey<Item> JELLY_BABY = TagKey.create(Registries.ITEM, new ResourceLocation("forge", "items/jelly_baby"));
+
+
+    public static final RegistrySupplier<Item> K9_SPAWN_EGG = ITEMS_NO_FABRIC.register("k9_spawn_egg", () -> new SpawnEggItem(AseohaEntities.K9.get(), 56063, 44543, new Item.Properties()));
 
     public static final RegistrySupplier<Item> GOLDEN_POTATO = ITEMS.register("golden_potato", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(9).saturationMod(3).alwaysEat().effect(new MobEffectInstance(MobEffects.REGENERATION, 400, 1), 1.0F).effect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 400, 1), 1.0F).build()).arch$tab(AseohaTabs.FOOD_TAB)));
 
@@ -66,8 +73,8 @@ public class AseohaItems {
     public static final RegistrySupplier<Item> PLASMA_RIFLE = ITEMS_NO_FABRIC.register("plasma_rifle",
             () -> new PlasmaRifle(new Item.Properties().arch$tab(AseohaTabs.MAIN_TAB)));
 
-    public static final RegistrySupplier<Item> PLASMA_BOLT_MAGAZINE = ITEMS_NO_FABRIC.register("plasma_bolt_magazine",
-            () -> new SmallMagazine(new Item.Properties().arch$tab(AseohaTabs.MAIN_TAB)));
+    public static final RegistrySupplier<Item> MAGAZINE_NINE_MIL = ITEMS_NO_FABRIC.register("magazines/magazine_nine_mil",
+            () -> new NineMilMag(new Item.Properties().arch$tab(AseohaTabs.MAIN_TAB)));
 
     public static final RegistrySupplier<Item> HEXAGONAL_ROUNDEL_MOLD = ITEMS.register("hexagonal_roundel_mold",
             () -> new Item(new Item.Properties().arch$tab(AseohaTabs.MAIN_TAB)));
@@ -180,7 +187,6 @@ public static final RegistrySupplier<Item> LATINUM_HELMET = ITEMS.register("lati
     public static final RegistrySupplier<Item> DALEKANIUM_SWORD = ITEMS.register("dalekanium_sword",
             () -> new SwordItem(AseohaToolMaterials.DALEKANIUM, 3, -2.4F, new Item.Properties().arch$tab(AseohaTabs.MAIN_TAB)));
 
-
     public static final RegistrySupplier<Item> DALEKANIUM_INGOT = ITEMS.register("dalekanium_ingot", () -> new SteelItem((new Item.Properties()).arch$tab(AseohaTabs.MAIN_TAB)));
 
 
@@ -188,6 +194,22 @@ public static final RegistrySupplier<Item> LATINUM_HELMET = ITEMS.register("lati
     public static final RegistrySupplier<Item> LATINUM_BAR = ITEMS.register("latinum_bar", () -> new SteelItem((new Item.Properties()).arch$tab(AseohaTabs.MAIN_TAB).fireResistant()));
     public static final RegistrySupplier<Item> LATINUM_BRICK = ITEMS.register("latinum_brick", () -> new SteelItem((new Item.Properties()).arch$tab(AseohaTabs.MAIN_TAB).fireResistant()));
     public static final RegistrySupplier<Item> LATINUM_SLIP = ITEMS.register("latinum_slip", () -> new SteelItem((new Item.Properties()).arch$tab(AseohaTabs.MAIN_TAB).fireResistant()));
+
+
+    /***************************** BULLETS ****************************************/
+    public static final RegistrySupplier<Item> BULLET_NINE_MIL = ITEMS.register("bullet/nine_mill", () -> new BulletItem(AmmoType.NINE_MILLIMETER));
+    public static final RegistrySupplier<Item> BULLET_FIVE_FIVE_SIX_FORTY_FIVE_NATO = ITEMS.register("bullet/bullet_five_five_six_forty_five_nato", () -> new BulletItem(AmmoType.FIVE_FIVE_SIX_FORTY_FIVE_NATO));
+    public static final RegistrySupplier<Item> BULLET_FIVE_SEVEN_FN = ITEMS.register("bullet/five_five_six_forty_five_nato", () -> new BulletItem(AmmoType.FIVE_SEVEN_FN));
+    public static final RegistrySupplier<Item> BULLET_FORTY_FIVE_ACP = ITEMS.register("bullet/forty_five_acp", () -> new BulletItem(AmmoType.FORTY_FIVE_ACP));
+    public static final RegistrySupplier<Item> BULLET_TEN_MILLIMETER = ITEMS.register("bullet/ten_millimeter", () -> new BulletItem(AmmoType.TEN_MILLIMETER));
+    public static final RegistrySupplier<Item> BULLET_THIRTY_EIGHT_SPL = ITEMS.register("bullet/thirty_eight_spl", () -> new BulletItem(AmmoType.THIRTY_EIGHT_SPL));
+    public static final RegistrySupplier<Item> BULLET_THREE_EIGHTY_ACP = ITEMS.register("bullet/three_eighty_acp", () -> new BulletItem(AmmoType.THREE_EIGHTY_ACP));
+    public static final RegistrySupplier<Item> BULLET_THREE_FIVE_SEVEN = ITEMS.register("bullet/three_five_seven", () -> new BulletItem(AmmoType.THREE_FIVE_SEVEN));
+    public static final RegistrySupplier<Item> BULLET_TWENTY_TWO_LR = ITEMS.register("bullet/twenty_two_lr", () -> new BulletItem(AmmoType.TWENTY_TWO_LR));
+//    public static final RegistrySupplier<Item> BULLET_ = ITEMS.register("bullet/", () -> new BulletItem(AmmoType.));
+
+
+
 
     public static <T extends Item> T createItem(T item) {
         return item;

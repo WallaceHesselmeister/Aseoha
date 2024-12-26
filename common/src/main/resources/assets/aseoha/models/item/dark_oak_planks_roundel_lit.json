@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:block/cube_all",
   "textures": {
-    "all": "aseoha:block/dark_oak_planks_roundel_lit"
+    "all": "aseoha:block/dark_oak_planks_roundel"
   }
 }

@@ -1,6 +1,6 @@
 package com.code.common.items;
 
-import com.code.common.misc.FireArmType;
+import com.code.common.enums.FireArmType;
 import net.minecraft.world.item.Item;
 
 public class PlasmaRifle extends AbstractFirearm {
@@ -10,7 +10,7 @@ public class PlasmaRifle extends AbstractFirearm {
     }
 
     @Override
-    public com.code.common.misc.FireArmType GetFireArmType() {
+    public FireArmType GetFireArmType() {
         return FireArmType.RIFLE;
     }
 }

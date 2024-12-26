@@ -1,10 +1,13 @@
 package com.code.common.items;
 
+import com.code.common.NetworkHandler;
 import com.code.common.interfaces.IFireArm;
 import com.code.common.items.magazines.AbstractMagazine;
-import com.code.common.misc.AmmoType;
-import com.code.common.misc.FireArmType;
+import com.code.common.enums.FireArmType;
 import com.code.common.registries.AseohaItems;
+import dev.architectury.networking.NetworkManager;
+import io.netty.buffer.Unpooled;
+import net.minecraft.network.FriendlyByteBuf;
 import net.minecraft.network.chat.Component;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
@@ -49,13 +52,17 @@ public abstract class AbstractFirearm extends BowItem implements IFireArm {
     @Override
     public @NotNull InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand interactionHand) {
         if (player.isCrouching()) {
+            FriendlyByteBuf buf = new FriendlyByteBuf(Unpooled.buffer());
             this.Switch = true;
-            if (player.getItemBySlot(EquipmentSlot.OFFHAND).getItem().equals(AseohaItems.PLASMA_BOLT_MAGAZINE.get())) {
-                AbstractMagazine Mag = ((AbstractMagazine) player.getItemBySlot(EquipmentSlot.OFFHAND).getItem());
-                if(this.Ammo == 0) {
-                    int Amount = this.Ammo - Mag.Empty();
-                    this.Ammo += Amount;
-                    player.setItemSlot(EquipmentSlot.OFFHAND, ItemStack.EMPTY);
+            if (player.level().isClientSide) {
+                if (player.getItemBySlot(EquipmentSlot.OFFHAND).getItem().equals(AseohaItems.MAGAZINE_NINE_MIL.get())) {
+                    AbstractMagazine Mag = ((AbstractMagazine) player.getItemBySlot(EquipmentSlot.OFFHAND).getItem());
+                    if (this.Ammo == 0) {
+                        int Amount = this.Ammo - Mag.Empty();
+                        this.Ammo += Amount;
+                        NetworkManager.sendToServer(NetworkHandler.OFFHAND_REMOVE_PACKET_ID, buf);
+                        player.setItemSlot(EquipmentSlot.OFFHAND, ItemStack.EMPTY);
+                    }
                 }
             }
         }
