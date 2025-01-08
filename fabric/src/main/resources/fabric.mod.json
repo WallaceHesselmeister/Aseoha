@@ -10,7 +10,7 @@
   "contact": {
     "homepage": ""
   },
-  "license": "All-Rights-Reserved",
+  "license": "wtfpl",
   "icon": "assets/aseoha/icon.png",
   "environment": "*",
   "entrypoints": {
@@ -29,10 +29,9 @@
     "aseoha.mixins.json"
   ],
   "depends": {
-    "fabricloader": ">=0.16.8",
+    "fabric": "*",
     "minecraft": "~1.20.1",
-    "java": ">=17",
-    "architectury": ">=9.2.14",
+    "architectury": ">=9.1.12",
     "ait": ">=1.0.5",
     "fabric-api": "*"
   },

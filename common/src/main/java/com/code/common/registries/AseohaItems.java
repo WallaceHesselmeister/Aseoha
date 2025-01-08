@@ -20,6 +20,8 @@ import net.minecraft.world.item.*;
 import static com.code.aseoha.MOD_ID;
 
 public class AseohaItems {
+    public static final DeferredRegister<Item> SPAWN_EGGS = DeferredRegister.create(MOD_ID, Registries.ITEM);
+
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(MOD_ID, Registries.ITEM);
 
     public static final DeferredRegister<Item> ITEMS_NO_FABRIC = DeferredRegister.create(MOD_ID, Registries.ITEM);
@@ -27,7 +29,7 @@ public class AseohaItems {
     public static TagKey<Item> JELLY_BABY = TagKey.create(Registries.ITEM, new ResourceLocation("forge", "items/jelly_baby"));
 
 
-    public static final RegistrySupplier<Item> K9_SPAWN_EGG = ITEMS_NO_FABRIC.register("k9_spawn_egg", () -> new SpawnEggItem(AseohaEntities.K9.get(), 56063, 44543, new Item.Properties()));
+    public static final RegistrySupplier<Item> K9_SPAWN_EGG = SPAWN_EGGS.register("k9_spawn_egg", () -> new SpawnEggItem(AseohaEntities.K9.get(), 56063, 44543, new Item.Properties()));
 
     public static final RegistrySupplier<Item> GOLDEN_POTATO = ITEMS.register("golden_potato", () -> new Item(new Item.Properties().food(new FoodProperties.Builder().nutrition(9).saturationMod(3).alwaysEat().effect(new MobEffectInstance(MobEffects.REGENERATION, 400, 1), 1.0F).effect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 400, 1), 1.0F).build()).arch$tab(AseohaTabs.FOOD_TAB)));
 

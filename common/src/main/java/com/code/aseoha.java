@@ -11,12 +11,10 @@ import com.code.common.items.AseohaTabs;
 import com.code.common.world.Structures;
 import com.google.common.base.Supplier;
 import com.google.common.base.Suppliers;
-import dev.architectury.networking.NetworkManager;
 import dev.architectury.platform.Platform;
 import dev.architectury.registry.registries.RegistrarManager;
 import dev.architectury.registry.registries.RegistrySupplier;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
@@ -73,6 +71,7 @@ public final class aseoha {
     public static void ForgeSpecificSetupTakeTwo() {
         if(Platform.isFabric()) return;
         AseohaEntities.ENTITY_TYPES.register();
+        AseohaItems.SPAWN_EGGS.register();
     }
 
     public static void FabricSpecificSetup() {
@@ -87,6 +86,7 @@ public final class aseoha {
         AseohaBlocks.BLUE_ROUNDELS.forEach(blockRegistrySupplier -> AseohaItems.ITEMS.register(GrammarNazi.IDFromBlock(blockRegistrySupplier.get()), () -> new BlockItem(blockRegistrySupplier.get(), new Item.Properties().arch$tab(AseohaTabs.MAIN_TAB))));
         //        if(Platform.isFabric())
 //            AseohaBlocks.AUTOMATICALLY_GENERATED_ROUNDELS.forEach(blockRegistrySupplier -> AseohaItems.GENERATED_ROUNDELS.register(GrammarNazi.IDFromBlock(blockRegistrySupplier.get()), () -> new BlockItem(blockRegistrySupplier.get(), new Item.Properties().arch$tab(AseohaTabs.GENERATED_ROUNDEL_TAB))));
+
 
     }
 

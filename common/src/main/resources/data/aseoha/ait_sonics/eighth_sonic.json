@@ -1,0 +1,13 @@
+{
+  "id": "aseoha:eighth_sonic",
+  "models": {
+    "inactive": "aseoha:item/ait_sonic_tools/eighth_sonic",
+    "interaction": "aseoha:item/ait_sonic_tools/eighth_sonic",
+    "overload": "aseoha:item/ait_sonic_tools/eighth_sonic",
+    "scanning": "aseoha:item/ait_sonic_tools/eighth_sonic",
+    "tardis": "aseoha:item/ait_sonic_tools/eighth_sonic"
+  },
+  "loyalty": {
+    "type": "NEUTRAL"
+  }
+}

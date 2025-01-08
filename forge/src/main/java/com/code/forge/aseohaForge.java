@@ -3,6 +3,7 @@ package com.code.forge;
 import com.code.aseoha;
 import com.code.common.client.models.*;
 import com.code.common.client.renderer.*;
+import com.code.common.data.ExteriorPredicatesReloader;
 import com.code.common.entities.DalekEntity;
 import com.code.common.registries.AseohaEntities;
 import com.code.common.entities.K9Entity;
@@ -12,6 +13,7 @@ import net.minecraft.world.entity.SpawnPlacements;
 import net.minecraft.world.level.levelgen.Heightmap;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.EntityRenderersEvent;
+import net.minecraftforge.event.AddReloadListenerEvent;
 import net.minecraftforge.event.entity.EntityAttributeCreationEvent;
 import net.minecraftforge.event.entity.SpawnPlacementRegisterEvent;
 import net.minecraftforge.event.entity.living.LivingEvent;
@@ -85,6 +87,11 @@ public final class aseohaForge {
         @SubscribeEvent
         public static void SpawnPlacementRegister(SpawnPlacementRegisterEvent event){
             event.register(AseohaEntities.DALEK.get(), SpawnPlacements.Type.ON_GROUND, Heightmap.Types.WORLD_SURFACE, DalekEntity::checkMobSpawnRules, SpawnPlacementRegisterEvent.Operation.OR);
+        }
+
+        @SubscribeEvent
+        public static void onServerResourceReload(AddReloadListenerEvent event){
+            event.addListener(ExteriorPredicatesReloader.INSTANCE);
         }
     }
 }

@@ -1,0 +1,13 @@
+{
+  "id": "aseoha:baker_alt",
+  "models": {
+    "inactive": "aseoha:item/ait-sonic_tools/baker_alt_sonic_inactive",
+    "interaction": "aseoha:item/ait-sonic_tools/baker_alt_sonic_interactive",
+    "overload": "aseoha:item/ait-sonic_tools/baker_alt_sonic_overload",
+    "scanning": "aseoha:item/ait-sonic_tools/baker_alt_sonic_scanning",
+    "tardis": "aseoha:item/ait-sonic_tools/baker_alt_sonic_tardis"
+  },
+  "loyalty": {
+    "type": "NEUTRAL"
+  }
+}

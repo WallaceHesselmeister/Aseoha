@@ -2,10 +2,6 @@ plugins {
     id "com.github.johnrengelman.shadow" version "7.1.2"
 }
 
-//fabricApi {
-//    configureDataGeneration()
-//}
-
 architectury {
     platformSetupLoomIde()
     fabric()
@@ -13,6 +9,14 @@ architectury {
 
 loom {
     accessWidenerPath = project(":common").loom.accessWidenerPath
+}
+
+configurations {
+    common
+    shadowCommon // Don't use shadow from the shadow plugin since it *excludes* files.
+    compileClasspath.extendsFrom common
+    runtimeClasspath.extendsFrom common
+    developmentFabric.extendsFrom common
 }
 
 repositories {
@@ -40,22 +44,12 @@ repositories {
     }
 }
 
-configurations {
-    common
-    shadowCommon // Don't use shadow from the shadow plugin since it *excludes* files.
-    compileClasspath.extendsFrom common
-    runtimeClasspath.extendsFrom common
-    developmentFabric.extendsFrom common
-}
-
 dependencies {
     modImplementation "net.fabricmc:fabric-loader:${rootProject.fabric_loader_version}"
-
     modApi "net.fabricmc.fabric-api:fabric-api:${rootProject.fabric_api_version}"
-
     // Remove the next line if you don't want to depend on the API
-
     modApi "dev.architectury:architectury-fabric:${rootProject.architectury_version}"
+
 
     modImplementation "io.wispforest:owo-lib:0.11.1+1.20"
 
