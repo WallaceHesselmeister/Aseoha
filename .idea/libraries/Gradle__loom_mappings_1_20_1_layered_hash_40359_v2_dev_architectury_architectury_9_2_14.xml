@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="Gradle: loom_mappings_1_20_1_layered_hash_40359_v2.dev.architectury:architectury:9.2.14" type="java-imported" external-system-id="GRADLE">
+    <properties groupId="loom_mappings_1_20_1_layered_hash_40359_v2.dev.architectury" artifactId="architectury" version="9.2.14" baseVersion="9.2.14" />
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/.gradle/loom-cache/remapped_mods/loom_mappings_1_20_1_layered_hash_40359_v2/dev/architectury/architectury/9.2.14/architectury-9.2.14.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

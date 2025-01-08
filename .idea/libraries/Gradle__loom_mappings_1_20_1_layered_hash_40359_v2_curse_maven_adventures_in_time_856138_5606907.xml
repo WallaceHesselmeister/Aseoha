@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="Gradle: loom_mappings_1_20_1_layered_hash_40359_v2.curse.maven:adventures-in-time-856138:5606907" type="java-imported" external-system-id="GRADLE">
+    <properties groupId="loom_mappings_1_20_1_layered_hash_40359_v2.curse.maven" artifactId="adventures-in-time-856138" version="5606907" baseVersion="5606907" />
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/.gradle/loom-cache/remapped_mods/loom_mappings_1_20_1_layered_hash_40359_v2/curse/maven/adventures-in-time-856138/5606907/adventures-in-time-856138-5606907.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
