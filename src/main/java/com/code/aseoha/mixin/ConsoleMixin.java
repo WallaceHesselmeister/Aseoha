@@ -159,16 +159,28 @@ public abstract class ConsoleMixin extends TileEntity implements ITickableTileEn
 
     @Inject(method = "load(Lnet/minecraft/block/BlockState;Lnet/minecraft/nbt/CompoundNBT;)V", at = @At("HEAD"))
     public void Aseoha$ConsoleRead(BlockState state, CompoundNBT compound, CallbackInfo ci) {
-        this.Aseoha$Hads = compound.getBoolean("hads");
-        this.Aseoha$EOHTimer = compound.getLong("eoh_timer");
-        this.Aseoha$HasEOH = compound.getBoolean("has_eoh");
-        this.Aseoha$EOHPillars = compound.getByte("eoh_pillars_count");
-        this.Aseoha$Maintenance = compound.getBoolean("maintenance");
-        this.Aseoha$ExteriorSize = compound.getBoolean("exterior_size_scale");
-        if (!compound.contains("Aseoha$Pilot_UUID")) return;
-        if(this.level.getPlayerByUUID(compound.getUUID("Aseoha$Pilot_UUID")) == null) return;
-        this.Aseoha$Pilot = //new Pilot(
-                this.level.getPlayerByUUID(compound.getUUID("Aseoha$Pilot_UUID"));
+        /** it's not pretty but it gets the job done **/
+        if (compound.contains("hads"))
+            this.Aseoha$Hads = compound.getBoolean("hads");
+        if (compound.contains("eoh_timer"))
+            this.Aseoha$EOHTimer = compound.getLong("eoh_timer");
+        if (compound.contains("has_eoh"))
+            this.Aseoha$HasEOH = compound.getBoolean("has_eoh");
+        if (compound.contains("eoh_pillars_count"))
+            this.Aseoha$EOHPillars = compound.getByte("eoh_pillars_count");
+        if (compound.contains("maintenance"))
+            this.Aseoha$Maintenance = compound.getBoolean("maintenance");
+        if (compound.contains("exterior_size_scale")) {
+            if (compound.get("exterior_size_scale").getClass().equals(Boolean.class)) {
+                this.Aseoha$ExteriorSize = compound.getBoolean("exterior_size_scale");
+            } else {
+                this.Aseoha$ExteriorSize = compound.getInt("exterior_size_scale") == 1;
+            }
+        }
+//        if (!compound.contains("Aseoha$Pilot_UUID")) return;
+//        if(this.level.getPlayerByUUID(compound.getUUID("Aseoha$Pilot_UUID")) == null) return;
+//        this.Aseoha$Pilot = //new Pilot(
+//                this.level.getPlayerByUUID(compound.getUUID("Aseoha$Pilot_UUID"));
     }
 
     @Inject(method = "save(Lnet/minecraft/nbt/CompoundNBT;)Lnet/minecraft/nbt/CompoundNBT;", at = @At("HEAD"))
@@ -179,8 +191,8 @@ public abstract class ConsoleMixin extends TileEntity implements ITickableTileEn
         compound.putLong("eoh_timer", this.Aseoha$EOHTimer);
         compound.putBoolean("maintenance", this.Aseoha$Maintenance);
         compound.putBoolean("exterior_size_scale", this.Aseoha$ExteriorSize);
-        if (this.Aseoha$Pilot == null) return;
-        compound.putUUID("Aseoha$Pilot_UUID", this.Aseoha$Pilot.getUUID());
+//        if (this.Aseoha$Pilot == null) return;
+//        compound.putUUID("Aseoha$Pilot_UUID", this.Aseoha$Pilot.getUUID());
     }
 
 
@@ -189,8 +201,6 @@ public abstract class ConsoleMixin extends TileEntity implements ITickableTileEn
         if (!this.Aseoha$GetHasEOH()) return;
         if (this.Aseoha$GetEOH() == null) return;
         this.Aseoha$EOH.tick();
-//        if (this.Aseoha$EOHOverheated)
-//            this.Aseoha$GetEOH().SideEffects();
     }
 
     @Inject(method = "lambda$updateArtronValues$26", at = @At("TAIL"), remap = false)

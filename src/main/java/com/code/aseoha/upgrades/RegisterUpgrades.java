@@ -22,6 +22,10 @@ public class RegisterUpgrades extends UpgradeRegistry {
         return setupUpgrade(EngineBoost::new, (Item) AseohaItems.ENGINE_BOOSTER.get(), FlightSubsystem.class);
     });
 
+//    public static final RegistryObject<UpgradeEntry> EXTRAPOLATORSHIELDING = UPGRADES.register("extrapolator_shielding", () -> {
+//        return setupUpgrade(EngineBoost::new, (Item) AseohaItems.ENGINE_BOOSTER.get(), FlightSubsystem.class);
+//    });
+
     public static final RegistryObject<UpgradeEntry> DYNAMIC_COORDS = UPGRADES.register("dynamic_coordinates", () -> {
         return setupUpgrade(DynamicCoordinates::new, (Item) AseohaItems.DYNAMIC_COORDS.get(), FlightSubsystem.class);
     });

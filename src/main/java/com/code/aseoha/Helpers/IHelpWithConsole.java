@@ -1,6 +1,5 @@
 package com.code.aseoha.Helpers;
 
-import com.code.aseoha.misc.Pilot;
 import com.code.aseoha.tileentities.blocks.EOHTile;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.world.World;

@@ -1,3 +1,5 @@
 #Changes if the craft of a Stattenheim Remote is available
 StattenheimRecipe = true
+#Lists dimensions not initially available but are capable of being unlocked
+BlockedDimensions = ["tadditions:the_verge_of_reality", "minecraft:the_end"]
 

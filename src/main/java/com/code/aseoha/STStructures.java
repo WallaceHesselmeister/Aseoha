@@ -1,7 +1,6 @@
 package com.code.aseoha;
 
 import com.code.aseoha.world.structure.structures.BarnStructure;
-import com.code.aseoha.world.structure.structures.CitadelStructure;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
 import com.code.aseoha.world.structure.structures.RoadStructure;
@@ -17,7 +16,6 @@ import net.minecraftforge.registries.ForgeRegistries;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
-import java.util.function.Supplier;
 
 public class STStructures {
 
@@ -47,9 +45,9 @@ public class STStructures {
      *   So it is best to keep your structure names the same as long as you can instead of changing them frequently.
      */
     public static final RegistryObject<Structure<NoFeatureConfig>> ROAD = DEFERRED_REGISTRY_STRUCTURE.register("road", () -> (new RoadStructure(NoFeatureConfig.CODEC)));
-    public static final RegistryObject<Structure<NoFeatureConfig>> GRIDLOCK = DEFERRED_REGISTRY_STRUCTURE.register("gridlock", () -> (new RoadStructure(NoFeatureConfig.CODEC)));
+//    public static final RegistryObject<Structure<NoFeatureConfig>> GRIDLOCK = DEFERRED_REGISTRY_STRUCTURE.register("gridlock", () -> (new RoadStructure(NoFeatureConfig.CODEC)));
     public static final RegistryObject<Structure<NoFeatureConfig>> BARN_ONE = DEFERRED_REGISTRY_STRUCTURE.register("barn_one", () -> (new BarnStructure(NoFeatureConfig.CODEC)));
-    public static final RegistryObject<Structure<NoFeatureConfig>> CITADEL = DEFERRED_REGISTRY_STRUCTURE.register("citadel", () -> (new CitadelStructure(NoFeatureConfig.CODEC)));
+//    public static final RegistryObject<Structure<NoFeatureConfig>> CITADEL = DEFERRED_REGISTRY_STRUCTURE.register("citadel", () -> (new CitadelStructure(NoFeatureConfig.CODEC)));
 
     /**
      * This is where we set the rarity of your structures and determine if land conforms to it.
@@ -63,12 +61,12 @@ public class STStructures {
                         917847679 /* this modifies the seed of the structure so no two structures always spawn over each-other. Make this large and unique. */),
                 true);
 
-        setupMapSpacingAndLand(
-                GRIDLOCK.get(), /* The instance of the structure */
-                new StructureSeparationSettings(20 /* average distance apart in chunks between spawn attempts */,
-                        16 /* minimum distance apart in chunks between spawn attempts. MUST BE LESS THAN ABOVE VALUE*/,
-                        917847679 /* this modifies the seed of the structure so no two structures always spawn over each-other. Make this large and unique. */),
-                true);
+//        setupMapSpacingAndLand(
+//                GRIDLOCK.get(), /* The instance of the structure */
+//                new StructureSeparationSettings(20 /* average distance apart in chunks between spawn attempts */,
+//                        16 /* minimum distance apart in chunks between spawn attempts. MUST BE LESS THAN ABOVE VALUE*/,
+//                        917847679 /* this modifies the seed of the structure so no two structures always spawn over each-other. Make this large and unique. */),
+//                true);
 
 
 

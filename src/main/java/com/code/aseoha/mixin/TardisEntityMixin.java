@@ -2,7 +2,6 @@ package com.code.aseoha.mixin;
 
 import com.code.aseoha.Helpers.IHelpWithConsole;
 import com.code.aseoha.Helpers.IHelpWithTardisEntity;
-import com.code.aseoha.Helpers.MiscHelper;
 import com.code.aseoha.Helpers.PlayerHelper;
 import com.code.aseoha.aseoha;
 import net.minecraft.entity.Entity;
@@ -17,7 +16,6 @@ import net.minecraft.util.concurrent.TickDelayedTask;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
-import net.minecraftforge.api.distmarker.Dist;
 import net.tardis.mod.controls.ThrottleControl;
 import net.tardis.mod.entity.DoorEntity;
 import net.tardis.mod.entity.TardisEntity;

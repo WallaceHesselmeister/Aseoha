@@ -22,12 +22,11 @@ public class AseohaItems {
     public static final DeferredRegister<Item> ITEMS =
             DeferredRegister.create(ForgeRegistries.ITEMS, MODID);
 
-    public static final RegistryObject<Item> PRYDONIAN_HELM = ITEMS.register("prydonian_robes_helm", () -> {
-        return (PrydonianRobes)createItem(new PrydonianRobes(EquipmentSlotType.HEAD));
-    });
+    public static final RegistryObject<Item> PRYDONIAN_HELM = ITEMS.register("prydonian_robes_helm", () -> createItem(new PrydonianRobes(EquipmentSlotType.HEAD)));
 
     public static final RegistryObject<Item> MANUAL = ITEMS.register("aseoha_manual",
             () -> createItem(new ManualItem()));
+
 
 //    public static final RegistryObject<Item> HADS = ITEMS.register("upgrades/hads", () -> {
 //        return (TardisPartItem)createItem(new TardisPartItem((new Item.Properties()).tab(ModItemGroup.ASEOHA_GROUP), TardisConstants.Part.PartType.UPGRADE, false, false, TardisConstants.Translations.DEMAT_CIRCUIT));

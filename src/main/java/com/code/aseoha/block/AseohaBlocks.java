@@ -37,6 +37,9 @@ public class AseohaBlocks {
         return (p_lambda$litBlockEmission$34_1_) -> (Boolean)p_lambda$litBlockEmission$34_1_.getValue(BlockStateProperties.LIT) ? light : 0;
     }
 
+    public static final RegistryObject<Block> TRIBOPHYSICAL_WAVEFORM_MACRO_KINETIC_EXTRAPOLATOR = registerBlock("tribophysical_waveform_macro_kinetic_extrapolator",
+            () -> setUpBlock(new ExtrapolatorShieldBlock(AbstractBlock.Properties.of(Material.STONE))));
+
     /*****************************  ROUNDELS  **********************************/
 
     public static final RegistryObject<Block> HELLBENT_ROUNDEL1 = registerBlock("hb_roundel01",
@@ -295,6 +298,9 @@ public class AseohaBlocks {
 
     /************************EXTERIORS********************/
     public static RegistryObject<Block> EXTERIOR_CORAL = registerNoItemBlock("exterior_coral",
+            () -> setUpBlock(new ExteriorBlock()));
+
+    public static RegistryObject<Block> EXTERIOR_COLIN_RICHMOND = registerNoItemBlock("exterior_colin_richmond",
             () -> setUpBlock(new ExteriorBlock()));
 
     public static RegistryObject<Block> exterior_capaldi = registerNoItemBlock("exterior_capaldi",

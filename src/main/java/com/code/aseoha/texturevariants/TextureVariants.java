@@ -100,5 +100,6 @@ public static final TexVariant[] COPPER = {//new TexVariant[]{
             new TexVariant(new ResourceLocation(aseoha.MODID,"textures/consoles/valeconsole2.png"), "vale.purple"),
     };
 
+    public static TexVariant[] DATA = aseoha.OneVariants.toArray(new TexVariant[0]);
 
 }

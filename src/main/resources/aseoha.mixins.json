@@ -1,5 +1,6 @@
 {
   "client": [
+    "PlayerRendererMixin",
     "TTExterior",
     "client.AtriumBlockMixin",
     "client.BOTIRendererMixin",
@@ -19,6 +20,8 @@
     "ConsoleChangeMessageMixin",
     "ConsoleMixin",
     "ConsoleTextureVariants",
+    "ControlMixin",
+    "ExteriorTexVariantsMixin",
     "ExteriorTile",
     "HandbrakeMixin",
     "HelperMixin",
@@ -26,11 +29,11 @@
     "MonitorMixin",
     "NameTagMixin",
     "SonicTardisDestinationInteractionMixin",
+    "SteamExteriorMixin",
     "SucceedFlightEventTriggerMixin",
     "TakeoffTardisTriggerMixin",
     "TardisBottomBlockMixin",
     "TardisTopBlockMixin",
-
     "TeleportUtilMixin",
     "TwoBlockBasicExteriorMixin"
   ],

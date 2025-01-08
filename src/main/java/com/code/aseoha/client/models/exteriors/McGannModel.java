@@ -12,6 +12,7 @@ import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.model.ModelRenderer;
 import net.minecraft.entity.Entity;
 import net.minecraft.util.math.vector.Vector3f;
+import net.tardis.mod.client.models.LightModelRenderer;
 import net.tardis.mod.client.models.exteriors.ExteriorModel;
 import net.tardis.mod.client.renderers.boti.BOTIRenderer;
 import net.tardis.mod.client.renderers.boti.PortalInfo;
@@ -29,8 +30,8 @@ public class McGannModel extends ExteriorModel {
 	private final ModelRenderer cube_r4;
 	private final ModelRenderer LeftDoor;
 	private final ModelRenderer phone;
-	private final ModelRenderer LeftDoorEmmisive;
-	private final ModelRenderer Emmisives;
+	private final LightModelRenderer LeftDoorEmmisive;
+	private final LightModelRenderer Emmisives;
 	private final ModelRenderer text_PPCB;
 	private final ModelRenderer text_POLICE;
 	private final ModelRenderer character_p;
@@ -132,7 +133,7 @@ public class McGannModel extends ExteriorModel {
 	private final ModelRenderer character_o8;
 	private final ModelRenderer character_x4;
 	private final ModelRenderer RightDoor;
-	private final ModelRenderer RightDoorEmmisives;
+	private final LightModelRenderer RightDoorEmmisives;
 	private final ModelRenderer bone6;
 	private final ModelRenderer cube_r5;
 	private final ModelRenderer cube_r6;
@@ -313,12 +314,12 @@ public class McGannModel extends ExteriorModel {
 		phone.texOffs(129, 328).addBox(-13.0F, -15.0F, 1.0F, 13.0F, 15.0F, 0.0F, 0.0F, false);
 		phone.texOffs(40, 6).addBox(-1.0F, -9.5F, -1.0F, 1.0F, 3.0F, 1.0F, 0.0F, false);
 
-		LeftDoorEmmisive = new ModelRenderer(this);
+		LeftDoorEmmisive = new LightModelRenderer(this);
 		LeftDoorEmmisive.setPos(16.0F, -15.2308F, 22.0F);
 		LeftDoor.addChild(LeftDoorEmmisive);
 		LeftDoorEmmisive.texOffs(0, 480).addBox(-15.0F, -19.0F, -21.56F, 13.0F, 15.0F, 1.0F, 0.0F, false);
 
-		Emmisives = new ModelRenderer(this);
+		Emmisives = new LightModelRenderer(this);
 		Emmisives.setPos(1.0F, -57.0F, 0.0F);
 		Base.addChild(Emmisives);
 		Emmisives.texOffs(35, 466).addBox(18.5F, -20.0F, -15.0F, 1.0F, 15.0F, 30.0F, 0.0F, false);
@@ -1072,7 +1073,7 @@ public class McGannModel extends ExteriorModel {
 		RightDoor.texOffs(110, 306).addBox(-14.0F, -19.1667F, 1.0F, 13.0F, 3.0F, 1.0F, 0.0F, false);
 		RightDoor.texOffs(110, 306).addBox(-14.0F, -36.1667F, 1.0F, 13.0F, 2.0F, 1.0F, 0.0F, false);
 
-		RightDoorEmmisives = new ModelRenderer(this);
+		RightDoorEmmisives = new LightModelRenderer(this);
 		RightDoorEmmisives.setPos(-16.0F, -15.1667F, 22.0F);
 		RightDoor.addChild(RightDoorEmmisives);
 		RightDoorEmmisives.texOffs(0, 496).addBox(2.0F, -19.0F, -21.56F, 13.0F, 15.0F, 1.0F, 0.0F, false);
@@ -1217,10 +1218,10 @@ public class McGannModel extends ExteriorModel {
 
 	@Override
 	public void renderToBuffer(MatrixStack matrixStack, IVertexBuilder buffer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha){
-		LeftDoor.render(matrixStack, buffer, packedLight, packedOverlay, red, green, blue, alpha);
-		RightDoor.render(matrixStack, buffer, packedLight, packedOverlay, red, green, blue, alpha);
-		Base.render(matrixStack, buffer, packedLight, packedOverlay, red, green, blue, alpha);
-		BOTI.render(matrixStack, buffer, packedLight, packedOverlay, red, green, blue, alpha);
+//		LeftDoor.render(matrixStack, buffer, packedLight, packedOverlay, red, green, blue, alpha);
+//		RightDoor.render(matrixStack, buffer, packedLight, packedOverlay, red, green, blue, alpha);
+//		Base.render(matrixStack, buffer, packedLight, packedOverlay, red, green, blue, alpha);
+//		BOTI.render(matrixStack, buffer, packedLight, packedOverlay, red, green, blue, alpha);
 	}
 
 	public void setRotationAngle(ModelRenderer modelRenderer, float x, float y, float z) {
@@ -1250,22 +1251,20 @@ public class McGannModel extends ExteriorModel {
 		}
 //		LeftDoor.y = 2.25F;
 //		Shell.render(matrixStack, buffer, packedLight, packedOverlay,1,1,1, alpha);
-		matrixStack.translate(0,2.25,0);
-		LeftDoor.y = (float) -18.85;
-		RightDoor.y = (float) -18.85;
-//		if(exterior.getLevel().getServer() != null)
-//			TardisHelper.getConsole(exterior.getLevel().getServer(), exterior.getInteriorDimensionKey()).ifPresent(consoleTile -> {
-//				this.Emmisives.setBright(1);
-//				this.LeftDoorEmmisive.setBright(1);
-//				this.RightDoorEmmisives.setBright(1);
-//			});
-		Base.render(matrixStack, buffer, packedLight, packedOverlay,1,1,1, alpha);
-		Emmisives.render(matrixStack, buffer, packedLight, packedOverlay,1,1,1, alpha);
-		LeftDoor.render(matrixStack, buffer, packedLight, packedOverlay,1,1,1, alpha);
-		RightDoor.render(matrixStack, buffer, packedLight, packedOverlay,1,1,1, alpha);
+		matrixStack.translate(0, 2.25, 0);
+		this.LeftDoor.y = (float) -18.85;
+		this.RightDoor.y = (float) -18.85;
+		this.Emmisives.setBright(exterior.getLightLevel());
+		this.LeftDoorEmmisive.setBright(exterior.getLightLevel());
+		this.RightDoorEmmisives.setBright(exterior.getLightLevel());
+		this.Base.render(matrixStack, buffer, packedLight, packedOverlay, 1, 1, 1, alpha);
+		this.Emmisives.render(matrixStack, buffer, packedLight, packedOverlay, 1, 1, 1, alpha);
+		this.LeftDoor.render(matrixStack, buffer, packedLight, packedOverlay, 1, 1, 1, alpha);
+		this.RightDoor.render(matrixStack, buffer, packedLight, packedOverlay, 1, 1, 1, alpha);
 //		BOTI.render(matrixStack, buffer, packedLight, packedOverlay,1,1,1, alpha);
 		matrixStack.popPose();
 	}
+
 	public void renderBoti(ExteriorTile exterior, float scale, MatrixStack matrixStack, IVertexBuilder buffer, int packedLight, int packedOverlay, float alpha) {
 		if(exterior.getBotiWorld() != null && exterior.getOpen() != EnumDoorState.CLOSED) {
 			PortalInfo info = new PortalInfo();

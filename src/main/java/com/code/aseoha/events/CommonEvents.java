@@ -6,19 +6,17 @@ import com.code.aseoha.Helpers.TARDISHelper;
 import com.code.aseoha.aseoha;
 import com.code.aseoha.client.Sounds;
 import com.code.aseoha.commands.Commands;
-import com.code.aseoha.entities.DavrosChair;
+import com.code.aseoha.data.DataPackExterior;
 import com.code.aseoha.entities.k9;
 import com.code.aseoha.tileentities.consoles.CopperConsoleTile;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.SoundCategory;
-import net.minecraft.util.concurrent.TickDelayedTask;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.text.StringTextComponent;
-import net.minecraft.world.server.ServerWorld;
-import net.minecraftforge.client.event.RenderPlayerEvent;
+import net.minecraftforge.event.AddReloadListenerEvent;
 import net.minecraftforge.event.RegisterCommandsEvent;
 import net.minecraftforge.event.ServerChatEvent;
 import net.minecraftforge.event.TickEvent;
@@ -38,14 +36,15 @@ import net.tardis.mod.helper.TardisHelper;
 import net.tardis.mod.registries.ControlRegistry;
 import net.tardis.mod.sounds.TSounds;
 import net.tardis.mod.subsystem.StabilizerSubsystem;
+import net.tardis.mod.texturevariants.TextureVariants;
 import net.tardis.mod.tileentities.ConsoleTile;
-import net.tardis.mod.tileentities.console.misc.MonitorOverride;
 import net.tardis.mod.world.dimensions.TDimensions;
 import org.jetbrains.annotations.NotNull;
 
 import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
 import javax.script.ScriptException;
+import java.util.Arrays;
 import java.util.Objects;
 
 import static com.code.aseoha.Helpers.IHelpWithMonitor.Aseoha$MonitorGetRot;
@@ -55,23 +54,6 @@ import static com.code.aseoha.Helpers.IHelpWithMonitor.Aseoha$MonitorGetRot;
 @Mod.EventBusSubscriber(modid = aseoha.MODID, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class CommonEvents {
 
-    /**
-     * This keeps legs from displaying in the Davros Chair
-     *
-     * @param event RenderPlayerEvent
-     */
-    @SubscribeEvent
-    public void playerRender(RenderPlayerEvent event) {
-        if (event.getPlayer().getVehicle() != null) {
-            if (event.getPlayer().getVehicle() instanceof DavrosChair) {
-                event.getRenderer().getModel().leftLeg.visible = false;
-                event.getRenderer().getModel().rightLeg.visible = false;
-                event.getRenderer().getModel().leftPants.visible = false;
-                event.getRenderer().getModel().rightPants.visible = false;
-
-            }
-        }
-    }
 
 //    @SubscribeEvent
 //    public void attachCapability(AttachCapabilitiesEvent<TileEntity> event)
@@ -342,11 +324,10 @@ public class CommonEvents {
      */
     @SubscribeEvent
     public static void onLivingTick(LivingEvent.LivingUpdateEvent event) {
-//        LivingEntity entity = event.getEntityLiving();
-//        if (entity.level.dimension() == Constants.MIDNIGHT)
-//            entity.setSecondsOnFire(5);
-        //LivingTickThread(event).run();
         aseoha.livingTickThread.Call(event);
+//        DataPackExterior.getRegistry().forEach((one, two) ->
+        Arrays.stream(TextureVariants.STEAM).forEach((texVariant) ->
+                aseoha.SteamVariants.forEach((variant) -> aseoha.LOGGER.info("Variant (ASEOHA) ArrayList: {}, Variant (NTM) TextureVariants {}", variant.getTexture(), texVariant.getTexture())));
     }
 
 
@@ -390,6 +371,7 @@ public class CommonEvents {
 
     /**
      * Keep TARDIS from taking off in maintenance mode or with handbrake on
+     *
      * @param event
      */
     @SubscribeEvent
@@ -423,7 +405,7 @@ public class CommonEvents {
 
 
     @SubscribeEvent
-    public static void ControlClickedEvent(ControlEvent event) {
+    public static void ControlClickedEvent(ControlEvents.ControlClickEvent event) {
         if (event.getControl().getConsole() == null) return;
 
         if (((IHelpWithConsole) event.getControl().getConsole()).Aseoha$GetMaintenance())
@@ -646,47 +628,9 @@ public class CommonEvents {
 //        }
 //    }
 
-    //Needed this before TAPI added it
     @SubscribeEvent
     public static void ServerStartup(@NotNull FMLServerStartedEvent event) {
         aseoha.SendDebugToServer("Server Startup");
-        for (ServerWorld level : event.getServer().getAllLevels())
-            TardisHelper.getConsole(event.getServer(), level).ifPresent((console) -> {
-                console.getInteriorManager().setLight((console.getInteriorManager().getLight() < 0) || (console.getInteriorManager().getLight() > 15) ? 15 : 0);
-//            console.removeControls();
-//            event.getServer().tell(new TickDelayedTask(20, () -> {
-//                console.getOrCreateControls();
-//                console.updateClient();
-//            }));
-            });
-    }
-
-    public static void HadsActivate(ConsoleTile console) {
-        if (console == null)
-            return;
-
-        if (!((IHelpWithConsole) console).Aseoha$GetHads()) return;
-
-        StabilizerSubsystem stabs = console.getSubsystem(StabilizerSubsystem.class).orElse(null);
-
-        if (console.flightTicks >= 1200) {
-            console.scaleDestination();
-            console.land();
-            stabs.setActivated(true);
-            console.updateClient();
-        }
-
-        if (console.isInFlight()) return;
-        stabs.setActivated(false);
-        aseoha.SendDebugToAll("HADS Activated in TARDIS WorldKey " + console.getCustomName());
-        aseoha.SendDebugToAll("Console" + console);
-        console.takeoff();
-        console.getInteriorManager().setMonitorOverrides(new MonitorOverride(console, 1200, "HADS Has been triggered!"));
-        Objects.requireNonNull(Objects.requireNonNull(console.getLevel()).getServer()).tell(new TickDelayedTask(1, () -> {
-            console.setDestinationReachedTick(1);
-            console.setFlightTicks(1);
-        }));
-        console.updateClient();
     }
 
 
@@ -724,4 +668,9 @@ public class CommonEvents {
 //                }
 //            }
 //        }));
+
+    @SubscribeEvent
+    public static void AddDataPackReloadListeners(AddReloadListenerEvent event) {
+        event.addListener(DataPackExterior.DATA_LOADER);
+    }
 }

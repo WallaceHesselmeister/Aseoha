@@ -1,8 +1,6 @@
 package com.code.aseoha.mixin;
 
-import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.util.concurrent.TickDelayedTask;
 import net.tardis.mod.controls.BaseControl;
 import net.tardis.mod.controls.HandbrakeControl;
 import net.tardis.mod.controls.ThrottleControl;
@@ -13,7 +11,6 @@ import net.tardis.mod.tileentities.ConsoleTile;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
 import org.spongepowered.asm.mixin.Shadow;
-import org.spongepowered.asm.mixin.injection.At;
 
 @Mixin(HandbrakeControl.class)
 public abstract class HandbrakeMixin extends BaseControl {

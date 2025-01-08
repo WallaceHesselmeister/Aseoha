@@ -1,10 +1,5 @@
 package com.code.aseoha;
-//import com.code.aseoha.DataGen.BlockLootTableGen;
-//import com.code.aseoha.DataGen.EnglishLang;
-//import com.code.aseoha.DataGen.LootGen;
-//import com.code.aseoha.DataGen.RecipeGen;
 import com.code.aseoha.DataGen.*;
-import com.code.aseoha.DataGen.BlockStateGen;
 import com.code.aseoha.block.AseohaBlocks;
 import com.code.aseoha.client.Sounds;
 import com.code.aseoha.client.renderers.DavrosChairRenderer;
@@ -32,13 +27,10 @@ import com.code.aseoha.registries.*;
 import com.code.aseoha.tileentities.AseohaTiles;
 import com.code.aseoha.upgrades.RegisterUpgrades;
 import com.code.aseoha.world.biome.surface.SurfaceBuilder;
-import jdk.nashorn.internal.ir.Block;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.RenderTypeLookup;
 import net.minecraft.client.world.DimensionRenderInfo;
-import net.minecraft.data.ItemTagsProvider;
 import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.client.model.generators.BlockStateProvider;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -50,9 +42,11 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.*;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.tardis.mod.misc.TexVariant;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.util.ArrayList;
 import java.util.stream.Collectors;
 
 /**
@@ -69,6 +63,8 @@ public class aseoha {
     public static LivingTickThread livingTickThread = new LivingTickThread();
     public static TickThread tickThread = new TickThread();
     public static K9TickThread k9TickThread = new K9TickThread();
+    public static ArrayList<TexVariant> OneVariants = new ArrayList<>();
+    public static ArrayList<TexVariant> SteamVariants = new ArrayList<>();
 
 
     public aseoha() {
@@ -122,6 +118,11 @@ public class aseoha {
         ModLoadingContext.get().registerConfig(ModConfig.Type.SERVER, config.SERVER_SPEC);
 
         // Register ourselves for server and other game events we are interested in
+
+        SteamVariants.add(new TexVariant("steampunk", "tardis.common.normal"));
+        SteamVariants.add(new TexVariant("steam_blue", "exterior.steam.blue"));
+        SteamVariants.add(new TexVariant("steam_rust", "exterior.steam.rust"));
+
         MinecraftForge.EVENT_BUS.register(this);
     }
 
@@ -234,6 +235,7 @@ public class aseoha {
 
 
         AseohaDimensions.registerNoiseSettings();
+
         DimensionRenderInfo.EFFECTS.put(AseohaDimensions.KLOM_SKY_PROPERTY_KEY, new KlomSkyProperty());
         DimensionRenderInfo.EFFECTS.put(AseohaDimensions.GALLIFREY_SKY_PROPERTY_KEY, new GallifreySkyProperty());
         DimensionRenderInfo.EFFECTS.put(AseohaDimensions.RAXICORICOFALLAPITORIUS_SKY_PROPERTY_KEY, new RaxicoricofallapitoriusSkyProperty());

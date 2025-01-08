@@ -53,9 +53,8 @@ package com.code.aseoha.tileentities;
 
 import com.code.aseoha.aseoha;
 import com.code.aseoha.block.AseohaBlocks;
-//import com.code.aseoha.tileentities.blocks.ChiseledBookShelfBlockEntity;
-//import com.code.aseoha.tileentities.blocks.ChiseledBookShelfBlockEntity;
 import com.code.aseoha.tileentities.blocks.EOHTile;
+import com.code.aseoha.tileentities.blocks.ExtrapolatorTile;
 import com.code.aseoha.tileentities.blocks.TardisCoralTile;
 import com.code.aseoha.tileentities.blocks.WorkbenchTile;
 import com.code.aseoha.tileentities.consoles.*;
@@ -74,6 +73,9 @@ public class AseohaTiles {
 
     public static final RegistryObject<TileEntityType<TardisCoralTile>> TARDIS_CORAL = TILES.register("tardis_coral",
             () -> TileEntityType.Builder.of(TardisCoralTile::new, AseohaBlocks.CORAL.get()).build(null));
+
+    public static final RegistryObject<TileEntityType<ExtrapolatorTile>> TRIBOPHYSICAL_WAVEFORM_MACRO_KINETIC_EXTRAPOLATOR_TILE = TILES.register("tribophysical_waveform_macro_kinetic_extrapolator_tile",
+            () -> TileEntityType.Builder.of(ExtrapolatorTile::new, AseohaBlocks.TRIBOPHYSICAL_WAVEFORM_MACRO_KINETIC_EXTRAPOLATOR.get()).build(null));
 
     public static final RegistryObject<TileEntityType<WorkbenchTile>> WORKBENCH = TILES.register("workbench",
             () -> TileEntityType.Builder.of(WorkbenchTile::new, AseohaBlocks.WORKBENCH.get()).build(null));
@@ -102,6 +104,10 @@ public class AseohaTiles {
     public static final RegistryObject<TileEntityType<McGannTile>> EXTERIOR_MCGANN =
             TILES.register("exterior_mcgann", () -> registerTiles(McGannTile::new,
                     AseohaBlocks.exterior_mcgann.get()));
+
+    public static final RegistryObject<TileEntityType<ColinRichmondExteriorTile>> EXTERIOR_COLIN_RICHMOND =
+            TILES.register("exterior_colin_richmond", () -> registerTiles(ColinRichmondExteriorTile::new,
+                    AseohaBlocks.EXTERIOR_COLIN_RICHMOND.get()));
 
     public static final RegistryObject<TileEntityType<WhittakerTile>> EXTERIOR_WHITTAKER =
             TILES.register("exterior_whittaker", () -> registerTiles(WhittakerTile::new,

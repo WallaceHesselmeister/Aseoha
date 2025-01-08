@@ -20,34 +20,36 @@ import net.tardis.mod.upgrades.UpgradeEntry;
 
 public class HADS extends Upgrade implements ITickable {
     public Random random;
-private ExteriorTile tile;
+    private ExteriorTile tile;
+
     public HADS(UpgradeEntry entry, ConsoleTile tile, Class<? extends Subsystem> clazz) {
         super(entry, tile, clazz);
         tile.registerTicker(this);
 //        this.random = new Random();
     }
-//public boolean isActive = this.isActivated();
-public static void hadsActivate(ConsoleTile console) {
-                if (!Objects.requireNonNull(console.getLevel()).isClientSide) {
-                    console.getSubsystem(StabilizerSubsystem.class).ifPresent(stabs -> stabs.setActivated(false));
-                }
-                if(((IHelpWithConsole) console).Aseoha$GetHads()) {
-                    console.takeoff();
-                    Objects.requireNonNull(console.getLevel().getServer()).tell(new TickDelayedTask(1, () -> {
-                        console.setDestinationReachedTick(1);
-                        console.setFlightTicks(1);
 
-                    }));
-                    console.updateClient();
-                    if (console.flightTicks == 1200) {
-                        console.initLand();
-                    }
-                }
-}
+    //public boolean isActive = this.isActivated();
+    public static void hadsActivate(ConsoleTile console) {
+        if (!Objects.requireNonNull(console.getLevel()).isClientSide) {
+            console.getSubsystem(StabilizerSubsystem.class).ifPresent(stabs -> stabs.setActivated(false));
+        }
+        if (((IHelpWithConsole) console).Aseoha$GetHads()) {
+            console.takeoff();
+            Objects.requireNonNull(console.getLevel().getServer()).tell(new TickDelayedTask(1, () -> {
+                console.setDestinationReachedTick(1);
+                console.setFlightTicks(1);
 
+            }));
+            console.updateClient();
+            if (console.flightTicks == 1200) {
+                console.initLand();
+            }
+        }
+    }
 
+    @Override
     public void tick(ConsoleTile console) {
-//        hadsActivate(console);
+        if (!this.getConsole().getUpgrade(this.getClass()).isPresent()) return;
 
         if (!console.isInFlight() && this.isUsable() && this.isActivated()) {
 
@@ -87,4 +89,4 @@ public static void hadsActivate(ConsoleTile console) {
     }
 
 
-    }
+}

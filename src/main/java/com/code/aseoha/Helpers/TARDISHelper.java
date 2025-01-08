@@ -33,7 +33,7 @@ public class TARDISHelper {
      */
     public static boolean areDoorsOpen(ConsoleTile console){
         DoorEntity doorEntity;
-        for (Iterator i = Objects.requireNonNull(console.getLevel()).getEntitiesOfClass(DoorEntity.class, (new AxisAlignedBB(console.getBlockPos())).inflate(25.0)).iterator(); i.hasNext(); doorEntity.updateExteriorDoorData()) {doorEntity = (DoorEntity) i.next();
+        for (Iterator<DoorEntity> i = Objects.requireNonNull(console.getLevel()).getEntitiesOfClass(DoorEntity.class, (new AxisAlignedBB(console.getBlockPos())).inflate(25.0)).iterator(); i.hasNext(); doorEntity.updateExteriorDoorData()) {doorEntity = (DoorEntity) i.next();
             if (doorEntity.getOpenState() == EnumDoorState.BOTH)
                 return true;
 
@@ -51,7 +51,7 @@ public class TARDISHelper {
      */
     public static boolean areDoorsClosed(ConsoleTile console){
         DoorEntity doorEntity;
-        for (Iterator i = Objects.requireNonNull(console.getLevel()).getEntitiesOfClass(DoorEntity.class, (new AxisAlignedBB(console.getBlockPos())).inflate(25.0)).iterator(); i.hasNext(); doorEntity.updateExteriorDoorData()) {doorEntity = (DoorEntity) i.next();
+        for (Iterator<DoorEntity> i = Objects.requireNonNull(console.getLevel()).getEntitiesOfClass(DoorEntity.class, (new AxisAlignedBB(console.getBlockPos())).inflate(25.0)).iterator(); i.hasNext(); doorEntity.updateExteriorDoorData()) {doorEntity = (DoorEntity) i.next();
             if (doorEntity.getOpenState() == EnumDoorState.CLOSED)
                 return true;
 
@@ -65,7 +65,7 @@ public class TARDISHelper {
      */
     public static boolean isOneDoorOpen(ConsoleTile console){
         DoorEntity doorEntity;
-        for (Iterator i = Objects.requireNonNull(console.getLevel()).getEntitiesOfClass(DoorEntity.class, (new AxisAlignedBB(console.getBlockPos())).inflate(25.0)).iterator(); i.hasNext(); doorEntity.updateExteriorDoorData()) {doorEntity = (DoorEntity) i.next();
+        for (Iterator<DoorEntity> i = Objects.requireNonNull(console.getLevel()).getEntitiesOfClass(DoorEntity.class, (new AxisAlignedBB(console.getBlockPos())).inflate(25.0)).iterator(); i.hasNext(); doorEntity.updateExteriorDoorData()) {doorEntity = (DoorEntity) i.next();
             if (doorEntity.getOpenState() == EnumDoorState.ONE)
                 return true;
 
@@ -88,52 +88,6 @@ public class TARDISHelper {
                 doorEntity.setOpenState(EnumDoorState.BOTH);
         }
     }
-
-
-//    private static boolean setConsoleChanged(boolean state, boolean overwrite){
-//        aseoha.LOGGER.info("INSIDE setConsoleChanged");
-//        if(overwrite || !consoleChange)
-//            consoleChange = state;
-//
-//        return consoleChange;
-//    }
-
-
-
-//    private static boolean consoleChange = false;
-//    private static ConsoleTile prevConsole = null;
-    private static World world = null;
-//
-//    private static ConsoleTile getPrevConsole(ConsoleTile console, boolean overwrite){
-//        if(overwrite || prevConsole == null) {
-//            prevConsole = console;
-//        }
-//        return prevConsole;
-//    }
-
-    private static World getWorld(ConsoleTile consoleTile, boolean overwrite){
-        if(overwrite || world == null) {
-            world = consoleTile.getLevel();
-        }
-        return world;
-    }
-
-
-//    public static boolean hasConsoleChanged(ConsoleTile console){
-//
-//        ConsoleTile preConsole = getPrevConsole(console, false);
-//        if(preConsole != console && getWorld(console, false) == console.getLevel()){
-//            getPrevConsole(null, true);
-//            aseoha.LOGGER.info("changed!");
-//            return true;
-//        }
-//        return false;
-//    }
-
-
-
-
-
 
     public static void createTARDIS(BlockPos blockPos, ServerWorld world, AbstractExterior exterior, ConsoleRoom room, Console console) {
         BlockPos createPosition = (new BlockPos(blockPos.getX(), blockPos.getY(), blockPos.getZ())).relative(Direction.NORTH);
@@ -158,8 +112,7 @@ public class TARDISHelper {
 
     public static String getTardisName(TardisWorldCapability cap) {
         CompoundNBT nbt = cap.serializeNBT();
-        String tname = nbt.getString("name");
-        return tname;
+        return nbt.getString("name");
     }
 
     public static void setTardisName(TardisWorldCapability cap, String tname) {
@@ -175,14 +128,14 @@ public class TARDISHelper {
                 if (handIn == Hand.MAIN_HAND) {
                     ItemStack offHandItem = playerIn.getOffhandItem();
                     if (!(
-                            playerIn.getOffhandItem().isEmpty() &&
-                            playerIn.getOffhandItem() == Items.AIR.getDefaultInstance() &&
-                            playerIn.getOffhandItem().getItem() instanceof BlockItem &&
-                            playerIn.getOffhandItem().getItem() instanceof BucketItem &&
-                            playerIn.getOffhandItem().getItem() instanceof PotionItem &&
-                            playerIn.getOffhandItem().getItem() instanceof SpawnEggItem &&
-                            playerIn.getOffhandItem().getItem().equals(Items.SNOWBALL) &&
-                            playerIn.getOffhandItem().getItem().equals(Items.ENDER_PEARL) &&
+                            playerIn.getOffhandItem().isEmpty() ||
+                            playerIn.getOffhandItem().getItem().equals(Items.AIR) ||
+                            playerIn.getOffhandItem().getItem() instanceof BlockItem ||
+                            playerIn.getOffhandItem().getItem() instanceof BucketItem ||
+                            playerIn.getOffhandItem().getItem() instanceof PotionItem ||
+                            playerIn.getOffhandItem().getItem() instanceof SpawnEggItem ||
+                            playerIn.getOffhandItem().getItem().equals(Items.SNOWBALL) ||
+                            playerIn.getOffhandItem().getItem().equals(Items.ENDER_PEARL) ||
                             playerIn.getOffhandItem().getItem().equals(Items.EGG)
                     )) {
                         if (stack.hasTag()) {

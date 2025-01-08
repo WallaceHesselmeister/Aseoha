@@ -1,9 +1,7 @@
 package com.code.aseoha.mixin;
 
 import com.code.aseoha.Helpers.IHelpWithExterior;
-import com.llamalad7.mixinextras.injector.ModifyReturnValue;
 import net.minecraft.block.BlockState;
-import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.tileentity.ITickableTileEntity;
 import net.minecraft.tileentity.TileEntity;
@@ -38,11 +36,6 @@ public abstract class ExteriorTile extends TileEntity implements ITickableTileEn
     @Shadow(remap = false)
     public abstract TardisEntity createEntity();
 
-    @ModifyReturnValue(method = "getLightEmittingLevel()I", at = @At("RETURN"), remap = false)
-    public int Aseoha$getLightEmittingLevel(int original) {
-        return this.Aseoha$GetLight();
-    }
-
     @Shadow(remap = false)
     public abstract void setMatterState(EnumMatterState state);
 
@@ -70,8 +63,6 @@ public abstract class ExteriorTile extends TileEntity implements ITickableTileEn
     @Unique
     boolean Aseoha$Scale = true;
 
-    @Unique
-    byte Aseoha$LightLevel;
 
     @Unique
     public boolean Aseoha$IsSnowyVariant() {
@@ -94,16 +85,6 @@ public abstract class ExteriorTile extends TileEntity implements ITickableTileEn
     @Override
     public void Aseoha$SetScale(boolean scale) {
         this.Aseoha$Scale = scale;
-    }
-
-    @Override
-    public byte Aseoha$GetLight() {
-        return this.Aseoha$LightLevel;
-    }
-
-    @Override
-    public void Aseoha$SetLight(byte Level) {
-        this.Aseoha$LightLevel = Level;
     }
 
     @Inject(method = "load(Lnet/minecraft/block/BlockState;Lnet/minecraft/nbt/CompoundNBT;)V", at = @At("TAIL"))

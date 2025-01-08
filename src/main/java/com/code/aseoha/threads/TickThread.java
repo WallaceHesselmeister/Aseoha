@@ -3,7 +3,6 @@ package com.code.aseoha.threads;
 import com.code.aseoha.Helpers.IHelpWithConsole;
 import com.code.aseoha.Helpers.IHelpWithExterior;
 import com.code.aseoha.aseoha;
-import com.code.aseoha.events.CommonEvents;
 import com.code.aseoha.items.AseohaItems;
 import com.code.aseoha.texturevariants.TextureVariants;
 import net.minecraft.block.Blocks;
@@ -14,6 +13,7 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.util.Direction;
 import net.minecraft.util.SoundCategory;
+import net.minecraft.util.concurrent.TickDelayedTask;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraftforge.event.TickEvent;
 import net.tardis.mod.cap.Capabilities;
@@ -22,7 +22,10 @@ import net.tardis.mod.items.SonicItem;
 import net.tardis.mod.items.TItems;
 import net.tardis.mod.sounds.TSounds;
 import net.tardis.mod.subsystem.ShieldGeneratorSubsystem;
+import net.tardis.mod.subsystem.StabilizerSubsystem;
 import net.tardis.mod.tags.TardisEntityTypeTags;
+import net.tardis.mod.tileentities.ConsoleTile;
+import net.tardis.mod.tileentities.console.misc.MonitorOverride;
 import net.tardis.mod.tileentities.exteriors.ExteriorTile;
 import net.tardis.mod.tileentities.exteriors.TTCapsuleExteriorTile;
 import net.tardis.mod.tileentities.inventory.PanelInventory;
@@ -134,19 +137,19 @@ public class TickThread extends Thread {
                 if (!tardisTile.isInFlight())
                     if (exteriorBlock.getLevel() != null) {
                         if (((IHelpWithConsole) tardisTile).Aseoha$GetHads()) {
-                            for (LivingEntity liv : exteriorBlock.getLevel().getEntitiesOfClass(LivingEntity.class, new AxisAlignedBB(exteriorBlock.getBlockPos()).inflate(2))) {
+                            for (LivingEntity liv : exteriorBlock.getLevel().getEntitiesOfClass(LivingEntity.class, new AxisAlignedBB(exteriorBlock.getBlockPos()).inflate(5))) {
                                 if ((liv instanceof IMob && !liv.getType().is(TardisEntityTypeTags.IGNORED_ALARM_ENTITIES))) {
                                     if (!tardisTile.isInFlight())
                                         aseoha.SendDebugToAll("HADS Triggered by entity " + liv.getEntity() + " With UUID " + liv.getUUID());
-                                    CommonEvents.HadsActivate(tardisTile);
+                                    HadsActivate(tardisTile);
                                 }
                             }
 
-                            for (ArrowEntity arrow : exteriorBlock.getLevel().getEntitiesOfClass(ArrowEntity.class, new AxisAlignedBB(exteriorBlock.getBlockPos()).inflate(2))) {
+                            for (ArrowEntity arrow : exteriorBlock.getLevel().getEntitiesOfClass(ArrowEntity.class, new AxisAlignedBB(exteriorBlock.getBlockPos()).inflate(3))) {
                                 if (arrow instanceof ArrowEntity) {
                                     if (!tardisTile.isInFlight())
                                         aseoha.SendDebugToAll("HADS Triggered by arrow");
-                                    CommonEvents.HadsActivate(tardisTile);
+                                    HadsActivate(tardisTile);
                                 }
                             }
                         }
@@ -183,11 +186,39 @@ public class TickThread extends Thread {
 
             /** For Sonic Port Charging **/
             // Ignore the "tardistile.getsonicitem().getitem() == null is always false" that's bullshit because intelliJ doesn't account for it ACTUALLY being null, it assumes it always has a value, and if you leave out the != null it will nullPointer you
-            if (tardisTile.getSonicItem().getItem() == null) return;
-            if (tardisTile.getSonicItem().getItem() == TItems.SONIC.get()) {
+            if (!(tardisTile.getSonicItem().getItem() == null) && tardisTile.getSonicItem().getItem() == TItems.SONIC.get()) {
                 if (event.world.getGameTime() % 20 == 0)
                     ((SonicItem) tardisTile.getSonicItem().getItem()).charge(tardisTile.getSonicItem().getStack(), 1.5f);
             }
         });
+    }
+
+
+    public static void HadsActivate(ConsoleTile console) {
+        if (console == null)
+            return;
+
+        if (!((IHelpWithConsole) console).Aseoha$GetHads()) return;
+
+        StabilizerSubsystem stabs = console.getSubsystem(StabilizerSubsystem.class).orElse(null);
+
+        if (console.flightTicks >= 1200) {
+            console.scaleDestination();
+            console.land();
+            stabs.setActivated(true);
+            console.updateClient();
+        }
+
+        if (console.isInFlight()) return;
+        stabs.setActivated(false);
+        aseoha.SendDebugToAll("HADS Activated in TARDIS WorldKey " + console.getCustomName());
+        aseoha.SendDebugToAll("Console" + console);
+        console.takeoff();
+        console.getInteriorManager().setMonitorOverrides(new MonitorOverride(console, 1200, "HADS Has been triggered!"));
+        Objects.requireNonNull(Objects.requireNonNull(console.getLevel()).getServer()).tell(new TickDelayedTask(1, () -> {
+            console.setDestinationReachedTick(1);
+            console.setFlightTicks(1);
+        }));
+        console.updateClient();
     }
 }

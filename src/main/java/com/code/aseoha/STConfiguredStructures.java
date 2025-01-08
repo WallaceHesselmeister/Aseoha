@@ -13,12 +13,11 @@ public class STConfiguredStructures {
      */
     public static StructureFeature<?, ?> CONFIGURED_ROAD = STStructures.ROAD.get().configured(IFeatureConfig.NONE);
     public static StructureFeature<?, ?> CONFIGURED_BARN_ONE = STStructures.BARN_ONE.get().configured(IFeatureConfig.NONE);
-    public static StructureFeature<?, ?> CONFIGURED_CITADEL = STStructures.CITADEL.get().configured(IFeatureConfig.NONE);
+//    public static StructureFeature<?, ?> CONFIGURED_CITADEL = STStructures.CITADEL.get().configured(IFeatureConfig.NONE);
 
     /**
      * Registers the configured structure which is what gets added to the biomes.
      * Noticed we are not using a forge registry because there is none for configured structures.
-     *
      * We can register configured structures at any time before a world is clicked on and made.
      * But the best time to register configured features by code is honestly to do it in FMLCommonSetupEvent.
      */
@@ -26,7 +25,7 @@ public class STConfiguredStructures {
         Registry<StructureFeature<?, ?>> registry = WorldGenRegistries.CONFIGURED_STRUCTURE_FEATURE;
         Registry.register(registry, new ResourceLocation(aseoha.MODID, "road"), CONFIGURED_ROAD);
         Registry.register(registry, new ResourceLocation(aseoha.MODID, "barn_one"), CONFIGURED_BARN_ONE);
-        Registry.register(registry, new ResourceLocation(aseoha.MODID, "citadel"), CONFIGURED_CITADEL);
+//        Registry.register(registry, new ResourceLocation(aseoha.MODID, "citadel"), CONFIGURED_CITADEL);
 
         /* Ok so, this part may be hard to grasp but basically, just add your structure to this to
          * prevent any sort of crash or issue with other mod's custom ChunkGenerators. If they use
@@ -45,6 +44,6 @@ public class STConfiguredStructures {
          */
         FlatGenerationSettings.STRUCTURE_FEATURES.put(STStructures.ROAD.get(), CONFIGURED_ROAD);
         FlatGenerationSettings.STRUCTURE_FEATURES.put(STStructures.BARN_ONE.get(), CONFIGURED_BARN_ONE);
-        FlatGenerationSettings.STRUCTURE_FEATURES.put(STStructures.CITADEL.get(), CONFIGURED_CITADEL);
+//        FlatGenerationSettings.STRUCTURE_FEATURES.put(STStructures.CITADEL.get(), CONFIGURED_CITADEL);
     }
 }

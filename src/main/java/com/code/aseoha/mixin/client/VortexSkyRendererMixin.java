@@ -16,11 +16,13 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
+import static com.code.aseoha.aseoha.MODID;
+
 @Mixin(value = VortexSkyRenderer.class, remap = false)
 public class VortexSkyRendererMixin {
     @Shadow
     @Final
-    public static ResourceLocation TEXTURE;
+    public static ResourceLocation TEXTURE = new ResourceLocation(MODID, "textures/vortex/vortex.png");
 
     @Inject(method = "render", at = @At("HEAD"), cancellable = true)
     private void onRender(int ticks, float partialTicks, MatrixStack matrixStack, ClientWorld world, Minecraft mc, CallbackInfo ci){

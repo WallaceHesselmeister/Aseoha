@@ -22,13 +22,14 @@ public class ModelRegistry {
     @SubscribeEvent
     public static void Register(FMLClientSetupEvent event) {
         // Render Stuff
-        event.enqueueWork(() -> {
-            RenderTypeLookup.setRenderLayer(AseohaBlocks.EXTERIOR_CORAL.get(), RenderType.translucent());
-        });
+        event.enqueueWork(() -> RenderTypeLookup.setRenderLayer(AseohaBlocks.EXTERIOR_CORAL.get(), RenderType.translucent()));
 
         //ClientRegistry
         ClientRegistry.bindTileEntityRenderer(AseohaTiles.EXTERIOR_CORAL.get(), CoralRenderer::new);
         EnumDoorTypes.CORAL.setInteriorDoorModel(new CoralInteriorDoor());
+
+        ClientRegistry.bindTileEntityRenderer(AseohaTiles.EXTERIOR_COLIN_RICHMOND.get(), ColinRichmondRender::new);
+        EnumDoorTypes.COLIN_RICHMOND.setInteriorDoorModel(new CoralInteriorDoor());
 
         ClientRegistry.bindTileEntityRenderer(AseohaTiles.exterior_brackolin.get(), BrackolinRender::new);
         EnumDoorTypes.BRACKOLIN.setInteriorDoorModel(new BrackolinInteriorDoor());

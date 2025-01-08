@@ -178,8 +178,7 @@ dependencies {
 //    implementation fg.deobf("curse.maven:mekanism-268560:3659389") // Mekanism
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
     /************************************ Temporal API *****************************************/
-//    implementation fg.deobf("curse.maven:temporalapi-1056469:5846934")
-    implementation fg.deobf("curse.maven:temporalapi-1056469:5846934")
+    implementation fg.deobf("curse.maven:temporalapi-1056469:5967827")
     /************************************ Cracker's Witherstorm *********************************************/
 //    implementation fg.deobf("curse.maven:crackers-wither-storm-mod-621405:4403153")
     /************************************ Temporal Additions ************************************************/

@@ -1,25 +1,12 @@
 package com.code.aseoha.commands;
 
-import java.util.Collection;
-import java.util.Objects;
-import java.util.concurrent.CompletableFuture;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
-
 import com.mojang.brigadier.StringReader;
 import com.mojang.brigadier.arguments.ArgumentType;
-import com.mojang.brigadier.context.CommandContext;
 import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import com.mojang.brigadier.exceptions.DynamicCommandExceptionType;
-import com.mojang.brigadier.suggestion.Suggestions;
-import com.mojang.brigadier.suggestion.SuggestionsBuilder;
 
-import net.minecraft.command.CommandSource;
-import net.minecraft.command.ISuggestionProvider;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.TranslationTextComponent;
-import net.tardis.mod.exterior.AbstractExterior;
-import net.tardis.mod.registries.ExteriorRegistry;
 
 public class FixControlsArgument implements ArgumentType<ResourceLocation>{
 //    private static final Collection<String> EXAMPLES = Stream.of(ExteriorRegistry.STEAMPUNK, ExteriorRegistry.TRUNK).map((exterior) -> Objects.requireNonNull(exterior.get().getRegistryName()).toString()).collect(Collectors.toList());

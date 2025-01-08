@@ -117,6 +117,14 @@ public enum EnumDoorTypes implements IDoorType {
             default:return 30.0;
         }
     }, EnumDoorState.CLOSED, EnumDoorState.ONE, EnumDoorState.BOTH),
+    COLIN_RICHMOND (state -> {
+        switch(state) {
+            case CLOSED: return 90.0D;
+            case ONE: return -45.0D;
+            case BOTH : return 30.0D;
+            default:return 30.0;
+        }
+    }, EnumDoorState.CLOSED, EnumDoorState.ONE, EnumDoorState.BOTH),
     WARDROBE(state -> {
         switch(state) {
             case CLOSED: return 0.0D;
@@ -179,8 +187,8 @@ public enum EnumDoorTypes implements IDoorType {
 
 
 
-    Function<EnumDoorState, Double> func;
-    EnumDoorState[] validStates;
+    final Function<EnumDoorState, Double> func;
+    final EnumDoorState[] validStates;
     Supplier<Supplier<IInteriorDoorRenderer>> renderer;
 
     EnumDoorTypes(Function<EnumDoorState, Double> func, EnumDoorState... states){
