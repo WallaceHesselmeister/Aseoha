@@ -1,6 +1,0 @@
-{
-	"parent": "aseoha:item/sonic/d07",
-	"textures": {
-		"0": "aseoha:item/sonic_tools/d07_interaction"
-	}
-}
