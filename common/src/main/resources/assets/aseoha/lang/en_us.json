@@ -2,11 +2,12 @@
 
   //1.20.1 AIT Sonics
   "sonic.aseoha.baker_alt": "Baker",
-  "c.aseoha.eighth_sonic": "McGann",
+  "sonic.aseoha.eighth_sonic": "McGann",
   "sonic.aseoha.war_sonic": "War",
+  "sonic.aseoha.sonic_screwdriver": "Codiak's Screwdriver",
 
   //1.20.1 AIT Exteriors
-  "ait_exterior.aseoha.toywardianbox": "Toywardian Box",
+  "exterior.aseoha.toywardianbox": "Toywardian Box",
 
   //1.20.1 AIT Desktops/Interiors
   "desktop.aseoha:darkwardian": "Darkwardian",
