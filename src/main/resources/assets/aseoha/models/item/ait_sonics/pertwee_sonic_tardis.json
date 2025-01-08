@@ -2,8 +2,8 @@
 	"credit": "Made with Blockbench",
 	"texture_size": [32, 32],
 	"textures": {
-		"0": "aseoha:item/ait-sonic_tools/fourthtardis",
-		"particle": "aseoha:item/ait-sonic_tools/fourthtardis"
+		"0": "aseoha:item/ait_sonic_tools/thirdtardis",
+		"particle": "aseoha:item/ait_sonic_tools/thirdtardis"
 	},
 	"elements": [
 		{
@@ -158,7 +158,7 @@
 		"fixed": {
 			"rotation": [-180, 0, -180],
 			"translation": [0, -2.5, 0],
-			"scale": [0.7, 0.7, 0.7]
+			"scale": [0.7, 1, 0.7]
 		}
 	},
 	"groups": [

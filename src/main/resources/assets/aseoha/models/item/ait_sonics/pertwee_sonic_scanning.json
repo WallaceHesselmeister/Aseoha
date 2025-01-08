@@ -2,8 +2,8 @@
 	"credit": "Made with Blockbench",
 	"texture_size": [32, 32],
 	"textures": {
-		"0": "aseoha:item/ait-sonic_tools/thirdscan",
-		"particle": "aseoha:item/ait-sonic_tools/thirdscan"
+		"0": "aseoha:item/ait_sonic_tools/thirdscan",
+		"particle": "aseoha:item/ait_sonic_tools/thirdscan"
 	},
 	"elements": [
 		{

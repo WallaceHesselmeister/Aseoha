@@ -2,8 +2,8 @@
 	"credit": "Made with Blockbench",
 	"texture_size": [32, 32],
 	"textures": {
-		"0": "aseoha:item/ait-sonic_tools/thirdinactive",
-		"particle": "aseoha:item/ait-sonic_tools/thirdinactive"
+		"0": "aseoha:item/ait_sonic_tools/eighth_sonic",
+		"particle": "aseoha:item/ait_sonic_tools/eighth_sonic"
 	},
 	"elements": [
 		{
@@ -126,7 +126,6 @@
 	],
 	"display": {
 		"thirdperson_righthand": {
-			"rotation": [0, -180, 0],
 			"translation": [0, 0.5, 1.5],
 			"scale": [0.5, 0.5, 0.5]
 		},
@@ -139,7 +138,7 @@
 			"scale": [0.5, 0.5, 0.5]
 		},
 		"firstperson_lefthand": {
-			"rotation": [-22, 0, 0],
+			"rotation": [-22, -180, 0],
 			"scale": [0.5, 0.5, 0.5]
 		},
 		"ground": {
