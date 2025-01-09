@@ -1,15 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="CompilerConfiguration">
-    <bytecodeTargetLevel target="21">
-      <module name="aseoha.common.main" target="17" />
-      <module name="aseoha.common.test" target="17" />
-      <module name="aseoha.fabric.main" target="17" />
-      <module name="aseoha.fabric.test" target="17" />
-      <module name="aseoha.forge.main" target="17" />
-      <module name="aseoha.forge.test" target="17" />
-      <module name="aseoha.main" target="17" />
-      <module name="aseoha.test" target="17" />
-    </bytecodeTargetLevel>
+    <bytecodeTargetLevel target="21" />
   </component>
 </project>
