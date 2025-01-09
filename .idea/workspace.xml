@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b04c8ecc-26df-4dfd-ac4a-4281199323ee" name="Changes" comment="coral sonic alt v3" />
+    <list default="true" id="b04c8ecc-26df-4dfd-ac4a-4281199323ee" name="Changes" comment="coral sonic alt v4" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -131,7 +131,15 @@
       <option name="project" value="LOCAL" />
       <updated>1736443229956</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="coral sonic alt v4">
+      <option name="closed" value="true" />
+      <created>1736443671570</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1736443671570</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="VcsManagerConfiguration">
@@ -140,6 +148,7 @@
     <MESSAGE value="coral sonic alt v1" />
     <MESSAGE value="coral sonic alt v2" />
     <MESSAGE value="coral sonic alt v3" />
-    <option name="LAST_COMMIT_MESSAGE" value="coral sonic alt v3" />
+    <MESSAGE value="coral sonic alt v4" />
+    <option name="LAST_COMMIT_MESSAGE" value="coral sonic alt v4" />
   </component>
 </project>

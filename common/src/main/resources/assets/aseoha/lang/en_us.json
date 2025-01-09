@@ -11,12 +11,15 @@
   "sonic.aseoha.sonic_coral2": "Coral Alt 2",
   "sonic.aseoha.sonic_coral3": "Coral Alt 3",
   "sonic.aseoha.sonic_coral4": "Coral Alt 4",
+  "sonic.aseoha.sonic_coral5": "Coral Alt 5",
 
   //1.20.1 AIT Exteriors
   "exterior.aseoha.toywardianbox": "Toywardian Box",
 
   //1.20.1 AIT Desktops/Interiors
   "desktop.aseoha:darkwardian": "Darkwardian",
+  "desktop.aseoha.coppercoral": "Copper Coral",
+  "desktop.aseoha.toywardian": "Toywardian",
 
   //etc
   "ars.piece.category.aseoha.astronomer": "Astronomer",
