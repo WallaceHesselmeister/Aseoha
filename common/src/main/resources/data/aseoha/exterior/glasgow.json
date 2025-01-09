@@ -2,8 +2,8 @@
     "id": "aseoha:glasgow",
     "category": "ait:exterior/police_box",
     "parent": "ait:exterior/police_box/default",
-    "texture": "aseoha:textures/glasgow.png",
-    "emission": "aseoha:textures/glasgow_emission.png",
+    "texture": "aseoha:textures/exterior/glasgow.png",
+    "emission": "aseoha:textures/exterior/glasgow_emission.png",
     "overrides": {
         "snowy": "ait:textures/blockentities/exteriors/police_box/police_box_default_snowy.png",
         "sculk": "ait:textures/blockentities/exteriors/police_box/police_box_sculk.png",

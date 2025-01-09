@@ -4,8 +4,72 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b04c8ecc-26df-4dfd-ac4a-4281199323ee" name="Changes" comment="updated en lang for the exteriors and desktops which didnt get done">
+    <list default="true" id="b04c8ecc-26df-4dfd-ac4a-4281199323ee" name="Changes" comment="updated stuff to add 8 exterior by dan">
+      <change afterPath="$PROJECT_DIR$/common/src/main/resources/data/aseoha/exterior/burntcapsule.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/resources/assets/aseoha/textures/aisat_prime.png" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/resources/assets/aseoha/textures/exterior/aisat_prime.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/resources/assets/aseoha/textures/aisat_prime_emission.png" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/resources/assets/aseoha/textures/exterior/aisat_prime_emission.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/resources/assets/aseoha/textures/burnt_default.png" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/resources/assets/aseoha/textures/exterior/burnt_default.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/resources/assets/aseoha/textures/classic_2.png" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/resources/assets/aseoha/textures/exterior/classic_2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/resources/assets/aseoha/textures/classic_2_emission.png" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/resources/assets/aseoha/textures/exterior/classic_2_emission.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/resources/assets/aseoha/textures/classic_3.png" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/resources/assets/aseoha/textures/exterior/classic_3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/resources/assets/aseoha/textures/classic_3_emission.png" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/resources/assets/aseoha/textures/exterior/classic_3_emission.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/resources/assets/aseoha/textures/classic_4.png" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/resources/assets/aseoha/textures/exterior/classic_4.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/resources/assets/aseoha/textures/classic_4_emission.png" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/resources/assets/aseoha/textures/exterior/classic_4_emission.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/resources/assets/aseoha/textures/edwardian.png" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/resources/assets/aseoha/textures/exterior/edwardian.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/resources/assets/aseoha/textures/edwardian_emission.png" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/resources/assets/aseoha/textures/exterior/edwardian_emission.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/resources/assets/aseoha/textures/edwardianblu.png" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/resources/assets/aseoha/textures/exterior/edwardianblu.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/resources/assets/aseoha/textures/edwardianblu_emission.png" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/resources/assets/aseoha/textures/exterior/edwardianblu_emission.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/resources/assets/aseoha/textures/glasgow.png" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/resources/assets/aseoha/textures/exterior/glasgow.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/resources/assets/aseoha/textures/glasgow_emissive.png" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/resources/assets/aseoha/textures/exterior/glasgow_emissive.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/resources/assets/aseoha/textures/police_box_11.png" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/resources/assets/aseoha/textures/exterior/police_box_11.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/resources/assets/aseoha/textures/police_box_11_emission.png" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/resources/assets/aseoha/textures/exterior/police_box_11_emission.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/resources/assets/aseoha/textures/police_box_11alt.png" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/resources/assets/aseoha/textures/exterior/police_box_11alt.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/resources/assets/aseoha/textures/police_box_11alt_emission.png" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/resources/assets/aseoha/textures/exterior/police_box_11alt_emission.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/resources/assets/aseoha/textures/police_box_12.png" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/resources/assets/aseoha/textures/exterior/police_box_12.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/resources/assets/aseoha/textures/police_box_12_emission.png" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/resources/assets/aseoha/textures/exterior/police_box_12_emission.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/resources/assets/aseoha/textures/police_box_12alt.png" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/resources/assets/aseoha/textures/exterior/police_box_12alt.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/resources/assets/aseoha/textures/police_box_12alt_emission.png" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/resources/assets/aseoha/textures/exterior/police_box_12alt_emission.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/resources/assets/aseoha/textures/police_box_8.png" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/resources/assets/aseoha/textures/exterior/police_box_8.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/resources/assets/aseoha/textures/police_box_8_emission.png" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/resources/assets/aseoha/textures/exterior/police_box_8_emission.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/resources/assets/aseoha/textures/police_box_cf.png" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/resources/assets/aseoha/textures/exterior/police_box_cf.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/resources/assets/aseoha/textures/police_box_cf_emission.png" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/resources/assets/aseoha/textures/exterior/police_box_cf_emission.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/resources/assets/aseoha/textures/police_box_cmyk.png" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/resources/assets/aseoha/textures/exterior/police_box_cmyk.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/resources/assets/aseoha/textures/police_box_cmyk_emission.png" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/resources/assets/aseoha/textures/exterior/police_box_cmyk_emission.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/resources/assets/aseoha/textures/police_box_comicbox_emission.png" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/resources/assets/aseoha/textures/exterior/police_box_comicbox_emission.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/resources/assets/aseoha/textures/police_box_coralalt.png" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/resources/assets/aseoha/textures/exterior/police_box_coralalt.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/resources/assets/aseoha/textures/police_box_coralalt_emission.png" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/resources/assets/aseoha/textures/exterior/police_box_coralalt_emission.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/resources/assets/aseoha/textures/police_box_coralbillcipher.png" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/resources/assets/aseoha/textures/exterior/police_box_coralbillcipher.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/resources/assets/aseoha/textures/police_box_coralbillcipher_emission.png" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/resources/assets/aseoha/textures/exterior/police_box_coralbillcipher_emission.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/resources/assets/aseoha/textures/police_box_coralwar.png" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/resources/assets/aseoha/textures/exterior/police_box_coralwar.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/resources/assets/aseoha/textures/police_box_nate.png" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/resources/assets/aseoha/textures/exterior/police_box_nate.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/resources/data/aseoha/exterior/11.json" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/resources/data/aseoha/exterior/11.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/resources/data/aseoha/exterior/11alt.json" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/resources/data/aseoha/exterior/11alt.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/resources/data/aseoha/exterior/12.json" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/resources/data/aseoha/exterior/12.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/resources/data/aseoha/exterior/12alt.json" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/resources/data/aseoha/exterior/12alt.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/resources/data/aseoha/exterior/13h.json" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/resources/data/aseoha/exterior/13h.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/resources/data/aseoha/exterior/2.json" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/resources/data/aseoha/exterior/2.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/resources/data/aseoha/exterior/3.json" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/resources/data/aseoha/exterior/3.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/resources/data/aseoha/exterior/4.json" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/resources/data/aseoha/exterior/4.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/resources/data/aseoha/exterior/8.json" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/resources/data/aseoha/exterior/8.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/resources/data/aseoha/exterior/aisat.json" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/resources/data/aseoha/exterior/aisat.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/resources/data/aseoha/exterior/ambient.json" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/resources/data/aseoha/exterior/ambient.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/resources/data/aseoha/exterior/azure.json" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/resources/data/aseoha/exterior/azure.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/resources/data/aseoha/exterior/bb8.json" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/resources/data/aseoha/exterior/bb8.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/resources/data/aseoha/exterior/billcipher.json" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/resources/data/aseoha/exterior/billcipher.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/resources/data/aseoha/exterior/cf.json" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/resources/data/aseoha/exterior/cf.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/resources/data/aseoha/exterior/cmyk.json" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/resources/data/aseoha/exterior/cmyk.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/resources/data/aseoha/exterior/comic.json" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/resources/data/aseoha/exterior/comic.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/resources/data/aseoha/exterior/coralalt.json" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/resources/data/aseoha/exterior/coralalt.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/resources/data/aseoha/exterior/edwardian.json" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/resources/data/aseoha/exterior/edwardian.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/resources/data/aseoha/exterior/edwardianblu.json" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/resources/data/aseoha/exterior/edwardianblu.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/resources/data/aseoha/exterior/glasgow.json" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/resources/data/aseoha/exterior/glasgow.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/resources/data/aseoha/exterior/nate.json" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/resources/data/aseoha/exterior/nate.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/resources/data/aseoha/exterior/synth.json" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/resources/data/aseoha/exterior/synth.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/resources/data/aseoha/exterior/technicolour.json" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/resources/data/aseoha/exterior/technicolour.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/resources/data/aseoha/exterior/tokacoral.json" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/resources/data/aseoha/exterior/tokacoral.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/resources/data/aseoha/exterior/toywardian.json" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/resources/data/aseoha/exterior/toywardian.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/resources/data/aseoha/exterior/vintage.json" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/resources/data/aseoha/exterior/vintage.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -82,6 +146,7 @@
       <recent name="C:\Users\nitew\IdeaProjects\Aseoha_1.20.1\common\src\main\resources\data\aseoha\sonic_tools" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\nitew\IdeaProjects\Aseoha_1.20.1\common\src\main\resources\assets\aseoha\textures\exterior" />
       <recent name="C:\Users\nitew\IdeaProjects\Aseoha_1.20.1\common\src\main\resources\assets\aseoha\textures\item\sonic_tools" />
       <recent name="C:\Users\nitew\IdeaProjects\Aseoha_1.20.1\common\src\main\resources\assets\aseoha\models\item\sonic" />
     </key>
@@ -159,7 +224,39 @@
       <option name="project" value="LOCAL" />
       <updated>1736445056685</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="updated stuff to add 12alt exterior by dan">
+      <option name="closed" value="true" />
+      <created>1736462765409</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1736462765409</updated>
+    </task>
+    <task id="LOCAL-00010" summary="updated stuff to add cf exterior by dan">
+      <option name="closed" value="true" />
+      <created>1736462895747</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1736462895747</updated>
+    </task>
+    <task id="LOCAL-00011" summary="updated stuff to add glasgow exterior by dan">
+      <option name="closed" value="true" />
+      <created>1736463005431</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1736463005431</updated>
+    </task>
+    <task id="LOCAL-00012" summary="updated stuff to add 8 exterior by dan">
+      <option name="closed" value="true" />
+      <created>1736463157284</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1736463157284</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
@@ -182,6 +279,10 @@
     <MESSAGE value="coral sonic alt v4" />
     <MESSAGE value="coral sonic alt v5" />
     <MESSAGE value="updated en lang for the exteriors and desktops which didnt get done" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated en lang for the exteriors and desktops which didnt get done" />
+    <MESSAGE value="updated stuff to add 12alt exterior by dan" />
+    <MESSAGE value="updated stuff to add cf exterior by dan" />
+    <MESSAGE value="updated stuff to add glasgow exterior by dan" />
+    <MESSAGE value="updated stuff to add 8 exterior by dan" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated stuff to add 8 exterior by dan" />
   </component>
 </project>
