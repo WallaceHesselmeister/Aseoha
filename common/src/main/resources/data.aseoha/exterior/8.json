@@ -1,0 +1,7 @@
+{
+    "id": "aseoha:8",
+    "category": "ait:exterior/classic",
+    "parent": "ait:exterior/classic/hudolin",
+    "texture": "aseoha:textures/exterior/police_box_8.png",
+    "emission": "aseoha:textures/exterior/police_box_8_emission.png"
+}

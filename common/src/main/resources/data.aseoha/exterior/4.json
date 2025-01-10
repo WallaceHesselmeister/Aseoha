@@ -1,0 +1,15 @@
+{
+    "id": "aseoha:4",
+    "category": "ait:exterior/classic",
+    "parent": "ait:exterior/classic/yeti",
+    "texture": "aseoha:textures/exterior/classic_4.png",
+    "emission": "aseoha:textures/exterior/classic_4_emission.png",
+    "overrides": {
+        "chorus": "ait:textures/blockentities/exteriors/classic/classic_definitive_chorus.png",
+        "cherry": "ait:textures/blockentities/exteriors/classic/classic_definitive_cherry.png",
+        "snowy": "ait:textures/blockentities/exteriors/classic/classic_definitive_snowy.png",
+        "sculk": "ait:textures/blockentities/exteriors/classic/classic_definitive_sculk.png",
+        "sandy": "ait:textures/blockentities/exteriors/classic/classic_sand.png",
+        "muddy": "ait:textures/blockentities/exteriors/classic/classic_mud.png"
+}
+}
