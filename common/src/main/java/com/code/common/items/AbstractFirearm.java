@@ -149,7 +149,7 @@ public abstract class AbstractFirearm extends BowItem implements IFireArm {
     }
 
     @Override
-    public void appendHoverText(ItemStack stack, @Nullable Level worldIn, List<Component> tooltip, TooltipFlag flagIn) {
+    public void appendHoverText(ItemStack stack, Level worldIn, List<Component> tooltip, TooltipFlag flagIn) {
         tooltip.add(Component.translatable("tooltip.aseoha.plasma_rifle").append(" || ").append(Component.translatable("tooltip.aseoha.plasma_rifle_charge").append(": ").append(
                 this.Ammo == 0 ? String.valueOf(Component.translatable("tooltip.aseoha.plasma_rifle.empty")) : Integer.toString(this.Ammo)
         )));
