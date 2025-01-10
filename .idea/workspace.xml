@@ -33,21 +33,21 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/WallaceHesselmeister/Aseoha.git",
-    "accountId": "56d8766f-ab69-4d6c-a3e5-a1390bce6b86"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/WallaceHesselmeister/Aseoha.git&quot;,
+    &quot;accountId&quot;: &quot;56d8766f-ab69-4d6c-a3e5-a1390bce6b86&quot;
   }
-}]]></component>
+}</component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "git-widget-placeholder": "Architectury-1.20",
-    "last_opened_file_path": "C:/Users/nitew/IdeaProjects/Aseoha_1.20.1"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;git-widget-placeholder&quot;: &quot;Architectury-1.20&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/nitew/IdeaProjects/Aseoha_1.20.1&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\nitew\IdeaProjects\Aseoha_1.20.1\common\src\main\resources\data\aseoha\sonic_tools" />
@@ -56,6 +56,7 @@
       <recent name="C:\Users\nitew\IdeaProjects\Aseoha_1.20.1\common\src\main\resources\assets\aseoha\textures\item\sonic_tools" />
     </key>
   </component>
+  <component name="RunManager" selected="Application.Data Generation (:fabric)" />
   <component name="TaskManager">
     <task id="LOCAL-00001" summary="added sonic screwdriver">
       <option name="closed" value="true" />
