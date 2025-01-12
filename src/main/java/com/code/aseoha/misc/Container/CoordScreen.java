@@ -1,14 +1,11 @@
 package com.code.aseoha.misc.Container;
 
-import com.code.aseoha.aseoha;
 import com.code.aseoha.networking.Networking;
 import com.code.aseoha.networking.Packets.SetCoords;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.client.gui.widget.TextFieldWidget;
-import net.minecraft.client.gui.widget.Widget;
 import net.minecraft.client.gui.widget.button.Button;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.Direction;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.text.StringTextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
@@ -18,10 +15,6 @@ import net.tardis.mod.client.guis.monitors.IMonitorGui;
 import net.tardis.mod.client.guis.monitors.MonitorScreen;
 import net.tardis.mod.constants.TardisConstants.Translations;
 import net.tardis.mod.helper.TardisHelper;
-import net.tardis.mod.network.Network;
-import net.tardis.mod.network.packets.ConsoleUpdateMessage;
-import net.tardis.mod.network.packets.console.DataTypes;
-import net.tardis.mod.network.packets.console.LandCode;
 import net.tardis.mod.tileentities.ConsoleTile;
 
 import java.util.Objects;
@@ -62,10 +55,7 @@ public class CoordScreen extends MonitorScreen {
                 Networking.sendToServer(new SetCoords(this.console, this.Axis, Integer.parseInt(this.coord.getValue())));
             }
         });
-        this.cancel = this.createButton(this.parent.getMinX(), this.parent.getMinY(), Translations.GUI_CANCEL, (but) -> {
-            this.onClose();
-        });
-        this.font.getClass();
+        this.cancel = this.createButton(this.parent.getMinX(), this.parent.getMinY(), Translations.GUI_CANCEL, (but) -> this.onClose());
         int height = 9 + 10;
         this.addButton(this.coord = new TextFieldWidget(this.font, centerX - 75, this.parent.getMinY() - this.parent.getHeight() / 2, this.parent.getWidth() - 50, height, new StringTextComponent("")));
         this.addButton(this.setCoord);
@@ -81,11 +71,11 @@ public class CoordScreen extends MonitorScreen {
             this.coord.setSuggestion("");
         }
 
-        if ((!this.coord.isMouseOver((double)mouseX, (double)mouseY) || this.coord.isFocused()) && this.coord.getValue().isEmpty() && !this.coord.isFocused()) {
+        if ((!this.coord.isMouseOver(mouseX, mouseY) || this.coord.isFocused()) && this.coord.getValue().isEmpty() && !this.coord.isFocused()) {
             assert Objects.requireNonNull(this.minecraft).level != null;
             assert this.minecraft.level != null;
             TileEntity te = this.minecraft.level.getBlockEntity(TardisHelper.TARDIS_POS);
-            if (te instanceof ConsoleTile && te != null) {
+            if ( te != null && te instanceof ConsoleTile) {
                 ConsoleTile console = (ConsoleTile)te;
                 this.coord.setSuggestion(this.coord_suggestion_current_value.getString() + console.getDestinationPosition().getX());
             } else {

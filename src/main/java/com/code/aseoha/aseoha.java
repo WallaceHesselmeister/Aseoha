@@ -64,7 +64,6 @@ public class aseoha {
     public static TickThread tickThread = new TickThread();
     public static K9TickThread k9TickThread = new K9TickThread();
     public static ArrayList<TexVariant> OneVariants = new ArrayList<>();
-    public static ArrayList<TexVariant> SteamVariants = new ArrayList<>();
 
 
     public aseoha() {
@@ -118,10 +117,6 @@ public class aseoha {
         ModLoadingContext.get().registerConfig(ModConfig.Type.SERVER, config.SERVER_SPEC);
 
         // Register ourselves for server and other game events we are interested in
-
-        SteamVariants.add(new TexVariant("steampunk", "tardis.common.normal"));
-        SteamVariants.add(new TexVariant("steam_blue", "exterior.steam.blue"));
-        SteamVariants.add(new TexVariant("steam_rust", "exterior.steam.rust"));
 
         MinecraftForge.EVENT_BUS.register(this);
     }

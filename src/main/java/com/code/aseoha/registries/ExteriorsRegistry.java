@@ -75,7 +75,7 @@ public class ExteriorsRegistry {
             () -> new TwoBlockBasicExterior(() -> AseohaBlocks.exterior_mcgann.get().defaultBlockState(), false, EnumDoorTypes.MCGANN, DoorSounds.BASE, new ResourceLocation(aseoha.MODID, "textures/gui/exteriors/mcgann.png"), TextureVariants.MCGANN));
 
     public static final RegistryObject<AbstractExterior> COLIN_RICHMOND = EXTERIORS.register("colin_richmond",
-            () -> new TwoBlockBasicExterior(() -> AseohaBlocks.EXTERIOR_COLIN_RICHMOND.get().defaultBlockState(), true, EnumDoorTypes.COLIN_RICHMOND, DoorSounds.BASE, new ResourceLocation(aseoha.MODID, "textures/gui/exteriors/colin_richmond/rtd9.png"), aseoha.SteamVariants.toArray(new TexVariant[0])));
+            () -> new TwoBlockBasicExterior(() -> AseohaBlocks.EXTERIOR_COLIN_RICHMOND.get().defaultBlockState(), true, EnumDoorTypes.COLIN_RICHMOND, DoorSounds.BASE, new ResourceLocation(aseoha.MODID, "textures/gui/exteriors/colin_richmond/rtd9.png")));
 
 //    public static final RegistryObject<AbstractExterior> STREETSIDE = EXTERIORS.register("streetside",
 //            () -> new TwoBlockBasicExterior(() -> ModBlocks.exterior_streetside.get().defaultBlockState(), false, EnumDoorTypes.STREETSIDE, DoorSounds.BASE, new ResourceLocation(aseoha.MODID, "textures/gui/exteriors/streetside.png")));

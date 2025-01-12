@@ -12,7 +12,6 @@ public class ColinRichmondExteriorTile extends ExteriorTile {
     public static final AxisAlignedBB RENDER = new AxisAlignedBB(-1, -1, -1, 2, 2, 2);
     public ColinRichmondExteriorTile() {
         super(AseohaTiles.EXTERIOR_COLIN_RICHMOND.get());
-        this.setVariants(aseoha.SteamVariants.toArray(new TexVariant[0]));
     }
 
      @Override

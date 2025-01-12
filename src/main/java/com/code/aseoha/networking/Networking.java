@@ -25,11 +25,10 @@ public class Networking {
         INSTANCE.registerMessage(iterator(), TakeOffFromClient.class, TakeOffFromClient::encode, TakeOffFromClient::decode, TakeOffFromClient::handle);
         INSTANCE.registerMessage(iterator(), ToggleLocks.class, ToggleLocks::encode, ToggleLocks::decode, ToggleLocks::handle);
         INSTANCE.registerMessage(iterator(), SetCoords.class, SetCoords::encode, SetCoords::decode, SetCoords::handle);
+        INSTANCE.registerMessage(iterator(), ExitRWF.class, ExitRWF::encode, ExitRWF::decode, ExitRWF::handle);
         INSTANCE.registerMessage(iterator(), UpdateControls.class, UpdateControls::encode, UpdateControls::decode, UpdateControls::handle);
         INSTANCE.registerMessage(iterator(), UpdateClientPacket.class, UpdateClientPacket::encode, UpdateClientPacket::decode, UpdateClientPacket::handle);
         INSTANCE.registerMessage(iterator(), ExteriorSizePacket.class, ExteriorSizePacket::encode, ExteriorSizePacket::decode, ExteriorSizePacket::handle);
-        INSTANCE.registerMessage(iterator(), RWFPacket.class, RWFPacket::encode, RWFPacket::decode, RWFPacket::handle);
-        INSTANCE.registerMessage(iterator(), RWFToggle.class, RWFToggle::encode, RWFToggle::decode, RWFToggle::handle);
         INSTANCE.registerMessage(iterator(), TardisInputMessage.class, TardisInputMessage::encode, TardisInputMessage::decode, TardisInputMessage::handle);
         INSTANCE.registerMessage(iterator(), EOHInteractPacket.class, EOHInteractPacket::encode, EOHInteractPacket::decode, EOHInteractPacket::handle);
         INSTANCE.registerMessage(iterator(), PlayerItemRemovePacket.class, PlayerItemRemovePacket::encode, PlayerItemRemovePacket::decode, PlayerItemRemovePacket::handle);

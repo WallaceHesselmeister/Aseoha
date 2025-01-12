@@ -26,21 +26,8 @@ public enum ExteriorJsonType implements IExteriorJsonType {
     @Override
     public void AddVariant(DataPackExterior dataPackExterior) {
         TexVariant variant = new TexVariant(dataPackExterior.getTexture(), dataPackExterior.getTranslationKey());
-        switch (dataPackExterior.GetExteriorType()) {
-            case COLIN_RICHMOND:
-                if (!aseoha.OneVariants.contains(variant))
-                    aseoha.OneVariants.add(variant);
-//                TextureVariants.xxyyzz = aseoha.SteamVariants.toArray(new TexVariant[0]);
-                break;
-            case STEAM:
-                if (!aseoha.SteamVariants.contains(variant)) {
-                    aseoha.SteamVariants.add(variant);
-//                    (IHelpWithExteriorTexVariants)ExteriorTexVariantsMixin.STEAM = aseoha.SteamVariants.toArray(new TexVariant[0]);
-//
 
-                }
-                break;
-        }
+        //TODO: finish data stuffs!
 
     }
 

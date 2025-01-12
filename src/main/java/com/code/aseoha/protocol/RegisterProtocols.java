@@ -12,6 +12,7 @@ public class RegisterProtocols extends ProtocolRegistry {
     public static final RegistryObject<Protocol> HADS = PROTOCOLSREGISTER.register("hads", HadsProtocol::new);
     public static final RegistryObject<Protocol> EJECT = PROTOCOLSREGISTER.register("eject", EjectProtocol::new);
     public static final RegistryObject<Protocol> SHRINK = PROTOCOLSREGISTER.register("shrink", ShrinkProtocol::new);
+    public static final RegistryObject<Protocol> RWF = PROTOCOLSREGISTER.register("rwf", RWFProtocol::new);
 //    public static final RegistryObject<Protocol> MAINTENANCE = PROTOCOLSREGISTER.register("maintenance", MaintenanceProtocol::new);
 //    public static final RegistryObject<Protocol> RWF = PROTOCOLSREGISTER.register("rwf", RWFProtocol::new);
     //TODO: FINISH RWF

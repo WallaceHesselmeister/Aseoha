@@ -36,7 +36,7 @@ public class ExtrapolatorShieldBlock extends Block {
 
     public ExtrapolatorShieldBlock(Properties p_i48440_1_) {
         super(p_i48440_1_);
-        this.registerDefaultState(this.defaultBlockState().setValue(LIT, Boolean.valueOf(false)));
+        this.registerDefaultState(this.defaultBlockState().setValue(LIT, false));
     }
 
     private ExtrapolatorTile Tile;
@@ -53,7 +53,7 @@ public static VoxelShape SHAPE = createVoxelShape();
     }
 
     @Override
-    public void destroy(IWorld p_176206_1_, BlockPos p_176206_2_, BlockState p_176206_3_) {
+    public void destroy(@NotNull IWorld p_176206_1_, @NotNull BlockPos p_176206_2_, @NotNull BlockState p_176206_3_) {
         super.destroy(p_176206_1_, p_176206_2_, p_176206_3_);
     }
 
@@ -70,8 +70,7 @@ public static VoxelShape SHAPE = createVoxelShape();
 
 
     @Override
-    public void onPlace(BlockState p_220082_1_, World p_220082_2_, BlockPos p_220082_3_, BlockState p_220082_4_, boolean p_220082_5_) {
-        super.onPlace(p_220082_1_, p_220082_2_, p_220082_3_, p_220082_4_, p_220082_5_);
+    public void onPlace(@NotNull BlockState p_220082_1_, @NotNull World p_220082_2_, @NotNull BlockPos p_220082_3_, @NotNull BlockState p_220082_4_, boolean p_220082_5_) {
         if(p_220082_2_.getServer() == null) return;
         WorldHelper.forceChunkVanillaIfNotLoaded(p_220082_2_.getServer().getLevel(p_220082_2_.dimension()), new ChunkPos(p_220082_3_));
         aseoha.SendDebugToAll("Extrapolator Shielding Placed in TARDIS " + p_220082_2_);

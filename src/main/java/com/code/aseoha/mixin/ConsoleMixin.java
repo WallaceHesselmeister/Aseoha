@@ -1,10 +1,14 @@
 package com.code.aseoha.mixin;
 
+import com.code.aseoha.Helpers.IHelpWithExterior;
+import com.code.aseoha.aseoha;
 import com.code.aseoha.config;
 import com.code.aseoha.Helpers.IHelpWithConsole;
+import com.code.aseoha.protocol.EjectProtocol;
 import com.code.aseoha.registries.ControlsRegistry;
 import com.code.aseoha.tileentities.blocks.EOHTile;
 import net.minecraft.block.BlockState;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.tileentity.ITickableTileEntity;
@@ -17,18 +21,25 @@ import net.minecraft.util.SoundEvents;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
+import net.minecraftforge.common.util.LazyOptional;
 import net.tardis.mod.ars.ConsoleRoom;
 import net.tardis.mod.client.ClientHelper;
 import net.tardis.mod.controls.AbstractControl;
+import net.tardis.mod.controls.HandbrakeControl;
+import net.tardis.mod.controls.ThrottleControl;
+import net.tardis.mod.entity.DoorEntity;
 import net.tardis.mod.entity.TardisEntity;
 import net.tardis.mod.exterior.AbstractExterior;
 import net.tardis.mod.helper.TardisHelper;
+import net.tardis.mod.misc.CrashType;
 import net.tardis.mod.misc.ITickable;
 import net.tardis.mod.misc.SpaceTimeCoord;
 import net.tardis.mod.registries.ControlRegistry;
 import net.tardis.mod.sounds.TSounds;
 import net.tardis.mod.tileentities.ConsoleTile;
+import net.tardis.mod.tileentities.console.misc.ExteriorPropertyManager;
 import net.tardis.mod.tileentities.console.misc.SparkingLevel;
+import net.tardis.mod.tileentities.exteriors.ExteriorTile;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
 import org.spongepowered.asm.mixin.Shadow;
@@ -100,7 +111,18 @@ public abstract class ConsoleMixin extends TileEntity implements ITickableTileEn
     @Shadow(remap = false) public abstract void registerControlOverrides();
 
     @Shadow(remap = false) private SpaceTimeCoord returnLocation;
+
+    @Shadow(remap = false) public abstract void playSoundAtExterior(SoundEvent sound, SoundCategory cat, float vol, float pitch);
+
+    @Shadow(remap = false) public abstract PlayerEntity getPilot();
+
+    @Shadow(remap = false) public abstract LazyOptional<DoorEntity> getDoor();
+
+    @Shadow(remap = false) public abstract ExteriorPropertyManager getExteriorManager();
+
+    @Shadow(remap = false) private AbstractExterior exterior;
     //TODO: FINISH MAINTENANCE MODE
+
     @Unique
     public boolean Aseoha$Hads = false;
     @Unique
@@ -170,6 +192,8 @@ public abstract class ConsoleMixin extends TileEntity implements ITickableTileEn
             this.Aseoha$EOHPillars = compound.getByte("eoh_pillars_count");
         if (compound.contains("maintenance"))
             this.Aseoha$Maintenance = compound.getBoolean("maintenance");
+
+        //Old versions of ASEOHA used an integer for the scale (I planned on variable size), check if this is a boolean, if not, convert the int to a bool
         if (compound.contains("exterior_size_scale")) {
             if (compound.get("exterior_size_scale").getClass().equals(Boolean.class)) {
                 this.Aseoha$ExteriorSize = compound.getBoolean("exterior_size_scale");
@@ -198,6 +222,28 @@ public abstract class ConsoleMixin extends TileEntity implements ITickableTileEn
 
     @Inject(method = "tick()V", at = @At("TAIL"))
     public void Aseoha$Tick(CallbackInfo ci) {
+
+        if(this.Aseoha$IsRealWorldFlight()) {
+            if(!this.getLevel().isClientSide) {
+                TardisEntity tardis = this.Aseoha$GetTardisEntity();
+                if (tardis.getPassengers().isEmpty()) {
+                    PlayerEntity p = this.getPilot();
+                    ExteriorTile Exterior = this.exterior.getExteriorTile(this.Aseoha$GetConsole());
+
+                    tardis.setNoGravity(true);
+
+                    this.relocatePlayerToExterior(p, (ServerWorld) Exterior.getLevel());
+                    aseoha.LOGGER.warn("GO BULLSEYE!!");
+                    p.startRiding(tardis);
+                    aseoha.LOGGER.warn("GO BULLSEYE!! TAKE 2");
+//                    ((IHelpWithExterior) Exterior).Aseoha$DematFly();
+                    Exterior.setRemoved();
+                    aseoha.LOGGER.warn("GO BULLSEYE!! TAKE 3");
+                    this.updateClient();
+                }
+            }
+        }
+
         if (!this.Aseoha$GetHasEOH()) return;
         if (this.Aseoha$GetEOH() == null) return;
         this.Aseoha$EOH.tick();
@@ -430,18 +476,19 @@ public abstract class ConsoleMixin extends TileEntity implements ITickableTileEn
     @Override
     public void Aseoha$CleanupRide() {
         this.Aseoha$RealWorldFlight = false;
-//        this.getControl(ThrottleControl.class).ifPresent(throt -> throt.setAmount(0.0F));
-//        this.getControl(HandbrakeControl.class).ifPresent(brake -> brake.setFree(false));
+        this.getControl(ThrottleControl.class).ifPresent(throt -> throt.setAmount(0.0F));
+        this.getControl(HandbrakeControl.class).ifPresent(brake -> brake.setFree(false));
     }
 
-//    @Inject(method = "crash(Lnet/tardis/mod/misc/CrashType;)V", at = @At("HEAD"), remap = false)
-//    private void Aseoha$Crash(CrashType type, CallbackInfo ci) {
+    @Inject(method = "crash(Lnet/tardis/mod/misc/CrashType;)V", at = @At("HEAD"), remap = false)
+    private void Aseoha$Crash(CrashType type, CallbackInfo ci) {
 //        this.Aseoha$StopRide(false);
-//    }
+        this.getEntity().ejectPassengers();
+    }
 
     @Override
     public TardisEntity Aseoha$GetTardisEntity() {
-        return this.tardisEntity != null ? this.tardisEntity : new TardisEntity(this.level);
+        return this.tardisEntity != null ? this.tardisEntity : new TardisEntity(this.getExteriorType().getExteriorTile(this.Aseoha$GetConsole()).getLevel());
     }
 
     @Override
@@ -462,7 +509,7 @@ public abstract class ConsoleMixin extends TileEntity implements ITickableTileEn
 
     @Override
     public void Aseoha$SetRealWorldFlight(boolean rwf) {
-        this.Aseoha$RealWorldFlight = false;
+        this.Aseoha$RealWorldFlight = rwf;
     }
 
 //    private void setConsole(ConsoleTile console){

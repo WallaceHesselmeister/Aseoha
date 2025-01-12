@@ -13,6 +13,7 @@ import mezz.jei.api.ingredients.IIngredients;
 import mezz.jei.api.recipe.category.IRecipeCategory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
+import org.jetbrains.annotations.NotNull;
 
 public class WorkbenchRecipeCategory implements IRecipeCategory<WorkBenchRecipe> {
     public final static ResourceLocation UID = new ResourceLocation(aseoha.MODID, "lightning");
@@ -39,6 +40,7 @@ public class WorkbenchRecipeCategory implements IRecipeCategory<WorkBenchRecipe>
         return WorkBenchRecipe.class;
     }
 
+    @NotNull
     @Override
     public String getTitle() {
         return AseohaBlocks.WORKBENCH.get().getName().getString();

@@ -48,14 +48,13 @@ public abstract class BOTIRendererMixin {
         ResourceLocation key = Minecraft.getInstance().level.dimension().location();
 
 
-        List<? extends String> blacklist = (List) TConfig.SERVER.blacklistedDims.get(); //+ TDimensions.DimensionTypes.TARDIS_TYPE;
+        List<? extends String> blacklist = TConfig.SERVER.blacklistedDims.get(); //+ TDimensions.DimensionTypes.TARDIS_TYPE;
         Iterator<? extends String> var3 = blacklist.iterator();
 
-        for (int i = 0; i < blacklist.size(); i++) { // Yeah IntelliJ Ik it can be replaced with an "enhanced" for but I don't give a single f
+        for (String o : blacklist) { // Yeah IntelliJ Ik it can be replaced with an "enhanced" for but I don't give a single f
 //            while (var3.hasNext()) {
 
-            String s = blacklist.get(i);
-            if (key.toString().contentEquals(s)) {
+            if (key.toString().contentEquals(o)) {
 //
 //                        if (!WorldHelper.areDimensionTypesSame(Minecraft.getInstance().level, TDimensions.DimensionTypes.TARDIS_TYPE)) {
                 aseoha.LOGGER.info(Minecraft.getInstance().level);

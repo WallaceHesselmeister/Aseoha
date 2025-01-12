@@ -325,9 +325,6 @@ public class CommonEvents {
     @SubscribeEvent
     public static void onLivingTick(LivingEvent.LivingUpdateEvent event) {
         aseoha.livingTickThread.Call(event);
-//        DataPackExterior.getRegistry().forEach((one, two) ->
-        Arrays.stream(TextureVariants.STEAM).forEach((texVariant) ->
-                aseoha.SteamVariants.forEach((variant) -> aseoha.LOGGER.info("Variant (ASEOHA) ArrayList: {}, Variant (NTM) TextureVariants {}", variant.getTexture(), texVariant.getTexture())));
     }
 
 
