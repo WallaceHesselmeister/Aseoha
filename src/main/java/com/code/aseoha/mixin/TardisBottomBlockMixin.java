@@ -10,10 +10,8 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.util.math.shapes.IBooleanFunction;
-import net.minecraft.util.math.shapes.ISelectionContext;
 import net.minecraft.util.math.shapes.VoxelShape;
 import net.minecraft.util.math.shapes.VoxelShapes;
-import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
 import net.tardis.mod.blocks.exteriors.TardisExteriorBottomBlock;
 import net.tardis.mod.blocks.template.CubeBlock;
@@ -21,13 +19,25 @@ import net.tardis.mod.misc.IDontBreak;
 import net.tardis.mod.tileentities.exteriors.ExteriorTile;
 import org.jetbrains.annotations.NotNull;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Unique;
 
 import java.util.stream.Stream;
 
 @Mixin(TardisExteriorBottomBlock.class)
+@SuppressWarnings("deprecation")
 public class TardisBottomBlockMixin extends CubeBlock implements IDontBreak, IWaterLoggable {
     public TardisBottomBlockMixin(Properties prop, SoundType sound, float hardness, float resistance) {
         super(prop, sound, hardness, resistance);
+    }
+
+    @Unique
+    private static VoxelShape aseoha$getSHAPE() {
+        return aseoha$SHAPE;
+    }
+
+    @Unique
+    private static void aseoha$setSHAPE(VoxelShape SHAPE) {
+        TardisBottomBlockMixin.aseoha$SHAPE = SHAPE;
     }
 
     @NotNull
@@ -41,9 +51,11 @@ public class TardisBottomBlockMixin extends CubeBlock implements IDontBreak, IWa
         return super.use(state, world, pos, player, hand, ray);
     }
 
-    private static VoxelShape SHAPE = createVoxelShape();
+    @Unique
+    private static VoxelShape aseoha$SHAPE = aseoha$createVoxelShape();
 
-    private static VoxelShape createVoxelShape(){
+    @Unique
+    private static VoxelShape aseoha$createVoxelShape(){
         return Stream.of(
                 Block.box(0, -1, -0.5, 16, 0, 16.500000000000007),
                 Block.box(0, 0, -0.5000000000000001, 16, 32, 0.5),

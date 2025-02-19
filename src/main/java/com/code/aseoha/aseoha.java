@@ -12,12 +12,14 @@ import com.code.aseoha.client.renderers.sky.KlomSkyProperty;
 import com.code.aseoha.client.renderers.sky.RaxicoricofallapitoriusSkyProperty;
 import com.code.aseoha.client.renderers.wallerender;
 import com.code.aseoha.commands.Commands;
+import com.code.aseoha.compat.NoProjectTARDISBlocks;
 import com.code.aseoha.entities.ModEntityTypes;
 import com.code.aseoha.items.AseohaItems;
-import com.code.aseoha.items.NoTadditionsItems;
+import com.code.aseoha.compat.NoTadditionsItems;
 import com.code.aseoha.misc.AseohaDimensions;
 import com.code.aseoha.misc.Loot;
 import com.code.aseoha.WorkBench.WorkBenchRecipeHandler;
+import com.code.aseoha.misc.VortexVariant;
 import com.code.aseoha.threads.K9TickThread;
 import com.code.aseoha.threads.LivingTickThread;
 import com.code.aseoha.threads.TickThread;
@@ -42,7 +44,6 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
 import net.minecraftforge.fml.event.lifecycle.*;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
-import net.tardis.mod.misc.TexVariant;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -63,7 +64,7 @@ public class aseoha {
     public static LivingTickThread livingTickThread = new LivingTickThread();
     public static TickThread tickThread = new TickThread();
     public static K9TickThread k9TickThread = new K9TickThread();
-    public static ArrayList<TexVariant> OneVariants = new ArrayList<>();
+    public static ArrayList<VortexVariant> VortexVariants = new ArrayList<>();
 
 
     public aseoha() {
@@ -75,6 +76,8 @@ public class aseoha {
         AseohaItems.register(modBus);
         if (!(ModList.get().isLoaded("tadditions")))
             NoTadditionsItems.register(modBus);
+        if(!(ModList.get().isLoaded("project_tardis")))
+            NoProjectTARDISBlocks.BLOCKS.register(modBus);
         //ConsolesRegistry.CONSOLES.register(modBus);
         RegisterProtocols.PROTOCOLSREGISTER.register(modBus);
         ConsolesRegistry.CONSOLES.register(modBus);
@@ -158,6 +161,7 @@ public class aseoha {
 
 
     }*/
+
     private void doClientStuff(final FMLClientSetupEvent event) {
         // do something that can only be done on the client
 //        LOGGER.info("Got game settings {}", event.getMinecraftSupplier().get().options);
@@ -171,7 +175,8 @@ public class aseoha {
         RenderTypeLookup.setRenderLayer(AseohaBlocks.COATRACK.get(), RenderType.cutout());
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// COOL BLOCKS
         RenderTypeLookup.setRenderLayer(AseohaBlocks.foodmachine_old.get(), RenderType.solid());
-        RenderTypeLookup.setRenderLayer(AseohaBlocks.CORAL.get(), RenderType.cutout());
+        if(!ModList.get().isLoaded("project-tardis"))
+            RenderTypeLookup.setRenderLayer(NoProjectTARDISBlocks.CORAL.get(), RenderType.cutout());
         RenderTypeLookup.setRenderLayer(AseohaBlocks.DIMENSIONAL_BUTTON.get(), RenderType.cutout());
         RenderTypeLookup.setRenderLayer(AseohaBlocks.FACING_CONTROL.get(), RenderType.cutout());
         RenderTypeLookup.setRenderLayer(AseohaBlocks.HANDBREAK_CONTROL.get(), RenderType.cutout());
@@ -345,7 +350,7 @@ public class aseoha {
 
             /*   6tt
              * putIfAbsent so people can override the spacing with dimension datapacks themselves if they wish to customize spacing more precisely per dimension.
-             * Requires AccessTransformer  (see resources/META-INF/accesstransformer.cfg)
+             * Requires AccessTransformer (see resources/META-INF/accesstransformer.cfg)
              *
              * NOTE: if you add per-dimension spacing configs, you can't use putIfAbsent as WorldGenRegistries.NOISE_GENERATOR_SETTINGS in FMLCommonSetupEvent
              * already added your default structure spacing to some dimensions. You would need to override the spacing with .put(...)

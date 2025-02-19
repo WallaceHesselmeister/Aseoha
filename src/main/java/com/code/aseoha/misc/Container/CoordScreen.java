@@ -1,7 +1,7 @@
 package com.code.aseoha.misc.Container;
 
 import com.code.aseoha.networking.Networking;
-import com.code.aseoha.networking.Packets.SetCoords;
+import com.code.aseoha.networking.Packets.SetCoordsPacket;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.client.gui.widget.TextFieldWidget;
 import net.minecraft.client.gui.widget.button.Button;
@@ -52,7 +52,7 @@ public class CoordScreen extends MonitorScreen {
                 if(this.coord.getValue().replaceAll("[^1234567890]", "").isEmpty()){
                     this.coord.setValue("0");
                 }
-                Networking.sendToServer(new SetCoords(this.console, this.Axis, Integer.parseInt(this.coord.getValue())));
+                Networking.sendToServer(new SetCoordsPacket(this.console, this.Axis, Integer.parseInt(this.coord.getValue())));
             }
         });
         this.cancel = this.createButton(this.parent.getMinX(), this.parent.getMinY(), Translations.GUI_CANCEL, (but) -> this.onClose());

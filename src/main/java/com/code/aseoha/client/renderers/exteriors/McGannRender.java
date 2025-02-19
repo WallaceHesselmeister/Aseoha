@@ -1,8 +1,6 @@
 package com.code.aseoha.client.renderers.exteriors;
 
-import com.code.aseoha.client.models.exteriors.CapaldiExterior;
 import com.code.aseoha.client.models.exteriors.McGannModel;
-import com.code.aseoha.tileentities.exteriors.CapaldiTile;
 import com.code.aseoha.tileentities.exteriors.McGannTile;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.vertex.IVertexBuilder;

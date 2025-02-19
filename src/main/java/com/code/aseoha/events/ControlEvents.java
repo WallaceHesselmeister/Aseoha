@@ -1,8 +1,3 @@
-//
-// Source code recreated from a .class file by IntelliJ IDEA
-// (powered by FernFlower decompiler)
-//
-
 package com.code.aseoha.events;
 
 import net.minecraft.entity.player.PlayerEntity;
@@ -32,6 +27,7 @@ public class ControlEvents extends Event {
             super(control, player);
         }
 
+        @Override
         public boolean isCancelable() {
             return true;
         }

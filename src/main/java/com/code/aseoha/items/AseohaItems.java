@@ -36,18 +36,19 @@ public class AseohaItems {
 //        return (TardisPartItem)createItem(new TardisPartItem((new Item.Properties()).tab(ModItemGroup.ASEOHA_GROUP), TardisConstants.Part.PartType.UPGRADE, false, false, TardisConstants.Translations.DEMAT_CIRCUIT));
 //    });
 
-    public static final RegistryObject<Item> ENGINE_BOOSTER = ITEMS.register("upgrades/engine_booster", () -> {
-        return (TardisPartItem)createItem(new TardisPartItem((new Item.Properties()).tab(AseohaItemGroups.ASEOHA_GROUP), TardisConstants.Part.PartType.UPGRADE, false, false, TardisConstants.Translations.DEMAT_CIRCUIT));
-    });
+    public static final RegistryObject<Item> ENGINE_BOOSTER = ITEMS.register("upgrades/engine_booster", () -> createItem(new TardisPartItem((new Item.Properties()).tab(AseohaItemGroups.ASEOHA_GROUP), TardisConstants.Part.PartType.UPGRADE, false, false, TardisConstants.Translations.DEMAT_CIRCUIT)));
 
-    public static final RegistryObject<Item> DYNAMIC_COORDS = ITEMS.register("upgrades/dynamic_coordinates", () -> {
-        return (TardisPartItem)createItem(new TardisPartItem((new Item.Properties()).tab(AseohaItemGroups.ASEOHA_GROUP), TardisConstants.Part.PartType.UPGRADE, false, false, TardisConstants.Translations.DEMAT_CIRCUIT));
-    });
+    public static final RegistryObject<Item> DYNAMIC_COORDS = ITEMS.register("upgrades/dynamic_coordinates", () -> createItem(new TardisPartItem((new Item.Properties()).tab(AseohaItemGroups.ASEOHA_GROUP), TardisConstants.Part.PartType.UPGRADE, false, false, TardisConstants.Translations.DEMAT_CIRCUIT)));
 
-    public static final RegistryObject<Item> ATRIUM_UPGRADE = ITEMS.register("upgrades/atrium", () -> {
-        return (TardisPartItem)createItem(new TardisPartItem((new Item.Properties()).tab(AseohaItemGroups.ASEOHA_GROUP), TardisConstants.Part.PartType.UPGRADE, false, false, TardisConstants.Translations.CHAMELEON_CIRCUIT));
-    });
-//
+    public static final RegistryObject<Item> ATRIUM_UPGRADE = ITEMS.register("upgrades/atrium", () -> createItem(new TardisPartItem((new Item.Properties()).tab(AseohaItemGroups.ASEOHA_GROUP), TardisConstants.Part.PartType.UPGRADE, false, false, TardisConstants.Translations.CHAMELEON_CIRCUIT)));
+
+    public static final RegistryObject<Item> WARP_DRIVE = ITEMS.register("upgrades/warp_drive", () -> createItem(new TardisPartItem((new Item.Properties()).tab(AseohaItemGroups.ASEOHA_GROUP), TardisConstants.Part.PartType.UPGRADE, false, false, TardisConstants.Translations.CHAMELEON_CIRCUIT)));
+
+    public static final RegistryObject<Item> TESSERACT_DRIVE = ITEMS.register("upgrades/tesseract_drive", () -> createItem(new TardisPartItem((new Item.Properties()).tab(AseohaItemGroups.ASEOHA_GROUP), TardisConstants.Part.PartType.UPGRADE, false, false, TardisConstants.Translations.CHAMELEON_CIRCUIT)));
+
+    public static final RegistryObject<Item> LIGHTSPEED_DRIVE = ITEMS.register("upgrades/lightspeed_drive", () -> createItem(new TardisPartItem((new Item.Properties()).tab(AseohaItemGroups.ASEOHA_GROUP), TardisConstants.Part.PartType.UPGRADE, false, false, TardisConstants.Translations.CHAMELEON_CIRCUIT)));
+
+    //
 //    public static final RegistryObject<Item> MANUAL = ITEMS.register("manual",
 //            () -> new WrittenBookItem(new Item.Properties().tab(ModItemGroup.ASEOHA_GROUP)));
 
@@ -63,7 +64,7 @@ public class AseohaItems {
             () -> new SpawnEggs(ModEntityTypes.WALLE, 0xFF871D, 0xFF800F,
                     new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP)));
 
-    public static final RegistryObject<SpawnEggs> DAVROS_SPAWN_EGG = ITEMS.register("davros_spawn_egg",
+    public static final RegistryObject<SpawnEggs> DAVROS_SPAWN_EGG = ITEMS.register("davros_chair_spawn_egg",
             () -> new SpawnEggs(ModEntityTypes.DAVROS_CHAIR, 0xFF871D, 0xFF800F,
                     new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP)));
 

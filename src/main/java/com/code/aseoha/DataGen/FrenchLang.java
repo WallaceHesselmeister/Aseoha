@@ -30,8 +30,8 @@ public class FrenchLang extends LanguageProvider {
             add("aseoha.gui.coord.suggestion.default", "Définit les coordonnées");
             add("aseoha.gui.coord.title", "Coordonnées du TARDIS");
             add("aseoha.gui.coord_set", "Confirmer");
-            add("aseoha.k9.container.screen", "Interface TARDIS-K9");
-            add("aseoha.k9.inventory", "Inventaire de K-9");
+            add("aseoha.K9Entity.container.screen", "Interface TARDIS-K9");
+            add("aseoha.K9Entity.inventory", "Inventaire de K-9");
             add("aseoha.tardis.coor_x", "Définit la coordonnée X");
             add("aseoha.tardis.coord_x", "Définit la coordonnée X");
             add("aseoha.tardis.coord_y", "Définit la coordonnée Y");
@@ -147,7 +147,7 @@ public class FrenchLang extends LanguageProvider {
             add("console.custard.off", "Éteinte");
             add("control.aseoha.coffeepot", "Cafetière");
             add("control.aseoha.wibbly_lever", "Levier bizarre");
-            add("entity.aseoha.k9", "K9");
+            add("entity.aseoha.K9Entity", "K9");
             add("exterior.tardis.bluedoctor", "Extérieur Boîte Bleue");
             add("exterior.tardis.brackolin", "Extérieur Rétro");
             add("exterior.tardis.hartnell112", "Extérierur original (1.12);");

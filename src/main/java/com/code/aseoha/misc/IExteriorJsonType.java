@@ -1,8 +1,8 @@
 package com.code.aseoha.misc;
 
-import com.code.aseoha.data.DataPackExterior;
+import com.code.aseoha.data.DataPackVortex;
 
 public interface IExteriorJsonType {
     String GetJsonName();
-    void AddVariant(DataPackExterior dataPackExterior);
+    void AddVariant(DataPackVortex dataPackExterior);
 }

@@ -53,6 +53,7 @@ package com.code.aseoha.tileentities;
 
 import com.code.aseoha.aseoha;
 import com.code.aseoha.block.AseohaBlocks;
+import com.code.aseoha.compat.NoProjectTARDISBlocks;
 import com.code.aseoha.tileentities.blocks.EOHTile;
 import com.code.aseoha.tileentities.blocks.ExtrapolatorTile;
 import com.code.aseoha.tileentities.blocks.TardisCoralTile;
@@ -72,7 +73,7 @@ public class AseohaTiles {
     public static final DeferredRegister<TileEntityType<?>> TILES = DeferredRegister.create(ForgeRegistries.TILE_ENTITIES, aseoha.MODID);
 
     public static final RegistryObject<TileEntityType<TardisCoralTile>> TARDIS_CORAL = TILES.register("tardis_coral",
-            () -> TileEntityType.Builder.of(TardisCoralTile::new, AseohaBlocks.CORAL.get()).build(null));
+            () -> TileEntityType.Builder.of(TardisCoralTile::new, NoProjectTARDISBlocks.CORAL.get()).build(null));
 
     public static final RegistryObject<TileEntityType<ExtrapolatorTile>> TRIBOPHYSICAL_WAVEFORM_MACRO_KINETIC_EXTRAPOLATOR_TILE = TILES.register("tribophysical_waveform_macro_kinetic_extrapolator_tile",
             () -> TileEntityType.Builder.of(ExtrapolatorTile::new, AseohaBlocks.TRIBOPHYSICAL_WAVEFORM_MACRO_KINETIC_EXTRAPOLATOR.get()).build(null));

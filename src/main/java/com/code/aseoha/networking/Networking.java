@@ -22,16 +22,17 @@ public class Networking {
     );
 
     public static void init() {
-        INSTANCE.registerMessage(iterator(), TakeOffFromClient.class, TakeOffFromClient::encode, TakeOffFromClient::decode, TakeOffFromClient::handle);
-        INSTANCE.registerMessage(iterator(), ToggleLocks.class, ToggleLocks::encode, ToggleLocks::decode, ToggleLocks::handle);
-        INSTANCE.registerMessage(iterator(), SetCoords.class, SetCoords::encode, SetCoords::decode, SetCoords::handle);
-        INSTANCE.registerMessage(iterator(), ExitRWF.class, ExitRWF::encode, ExitRWF::decode, ExitRWF::handle);
-        INSTANCE.registerMessage(iterator(), UpdateControls.class, UpdateControls::encode, UpdateControls::decode, UpdateControls::handle);
+        INSTANCE.registerMessage(iterator(), TakeOffFromClientPacket.class, TakeOffFromClientPacket::encode, TakeOffFromClientPacket::decode, TakeOffFromClientPacket::handle);
+        INSTANCE.registerMessage(iterator(), ToggleLocksPacket.class, ToggleLocksPacket::encode, ToggleLocksPacket::decode, ToggleLocksPacket::handle);
+        INSTANCE.registerMessage(iterator(), SetCoordsPacket.class, SetCoordsPacket::encode, SetCoordsPacket::decode, SetCoordsPacket::handle);
+        INSTANCE.registerMessage(iterator(), ExitRWFPacket.class, ExitRWFPacket::encode, ExitRWFPacket::decode, ExitRWFPacket::handle);
+        INSTANCE.registerMessage(iterator(), UpdateControlsPacket.class, UpdateControlsPacket::encode, UpdateControlsPacket::decode, UpdateControlsPacket::handle);
         INSTANCE.registerMessage(iterator(), UpdateClientPacket.class, UpdateClientPacket::encode, UpdateClientPacket::decode, UpdateClientPacket::handle);
         INSTANCE.registerMessage(iterator(), ExteriorSizePacket.class, ExteriorSizePacket::encode, ExteriorSizePacket::decode, ExteriorSizePacket::handle);
-        INSTANCE.registerMessage(iterator(), TardisInputMessage.class, TardisInputMessage::encode, TardisInputMessage::decode, TardisInputMessage::handle);
+        INSTANCE.registerMessage(iterator(), TardisInputMessagePacket.class, TardisInputMessagePacket::encode, TardisInputMessagePacket::decode, TardisInputMessagePacket::handle);
         INSTANCE.registerMessage(iterator(), EOHInteractPacket.class, EOHInteractPacket::encode, EOHInteractPacket::decode, EOHInteractPacket::handle);
         INSTANCE.registerMessage(iterator(), PlayerItemRemovePacket.class, PlayerItemRemovePacket::encode, PlayerItemRemovePacket::decode, PlayerItemRemovePacket::handle);
+        INSTANCE.registerMessage(iterator(), EnterRWFPacket.class, EnterRWFPacket::encode, EnterRWFPacket::decode, EnterRWFPacket::handle);
     }
 
     public static void sendToServer(Object msg) {

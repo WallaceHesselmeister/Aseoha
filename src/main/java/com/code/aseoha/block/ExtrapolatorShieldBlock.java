@@ -31,6 +31,7 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.Random;
 
+@SuppressWarnings("deprecation")
 public class ExtrapolatorShieldBlock extends Block {
     public static final BooleanProperty LIT = RedstoneTorchBlock.LIT;
 
@@ -41,7 +42,7 @@ public class ExtrapolatorShieldBlock extends Block {
 
     private ExtrapolatorTile Tile;
 
-public static VoxelShape SHAPE = createVoxelShape();
+    public static VoxelShape SHAPE = createVoxelShape();
 
     public static VoxelShape createVoxelShape() {
         return Block.box(2.25, 0, 0.75, 30, 2.5, 14.75);
@@ -71,13 +72,13 @@ public static VoxelShape SHAPE = createVoxelShape();
 
     @Override
     public void onPlace(@NotNull BlockState p_220082_1_, @NotNull World p_220082_2_, @NotNull BlockPos p_220082_3_, @NotNull BlockState p_220082_4_, boolean p_220082_5_) {
-        if(p_220082_2_.getServer() == null) return;
+        if (p_220082_2_.getServer() == null) return;
         WorldHelper.forceChunkVanillaIfNotLoaded(p_220082_2_.getServer().getLevel(p_220082_2_.dimension()), new ChunkPos(p_220082_3_));
         aseoha.SendDebugToAll("Extrapolator Shielding Placed in TARDIS " + p_220082_2_);
     }
 
     @Override
-    public void neighborChanged(BlockState blockState, World world, BlockPos blockPos, Block block, BlockPos blockPos1, boolean b) {
+    public void neighborChanged(@NotNull BlockState blockState, World world, @NotNull BlockPos blockPos, @NotNull Block block, @NotNull BlockPos blockPos1, boolean b) {
         if (!world.isClientSide) {
             boolean flag = blockState.getValue(LIT);
             if (flag != world.hasNeighborSignal(blockPos)) {
@@ -93,84 +94,83 @@ public static VoxelShape SHAPE = createVoxelShape();
 
 
     @Override
-    public void tick(BlockState blockState, ServerWorld serverWorld, BlockPos blockPos, Random random) {
+    public void tick(@NotNull BlockState blockState, @NotNull ServerWorld serverWorld, @NotNull BlockPos blockPos, @NotNull Random random) {
 
         super.tick(blockState, serverWorld, blockPos, random);
 
         if (!blockState.getValue(LIT)) return;
         if (!serverWorld.hasNeighborSignal(blockPos))
-            serverWorld.setBlock(blockPos, blockState.cycle(LIT), 2);
+            serverWorld.setBlockAndUpdate(blockPos, blockState.cycle(LIT));
 
+        if (TardisHelper.getConsoleInWorld(serverWorld).isPresent())
+            TardisHelper.getConsoleInWorld(serverWorld).ifPresent(tardisTile -> {
+                ExteriorTile exteriorBlock = tardisTile.getExteriorType().getExteriorTile(tardisTile);
 
-        ConsoleTile tardisTile = TardisHelper.getConsoleInWorld(serverWorld).orElse(null);
-        if (tardisTile != null) {
-            ExteriorTile exteriorBlock = tardisTile.getExteriorType().getExteriorTile(tardisTile);
+                tardisTile.getSubsystem(ShieldGeneratorSubsystem.class).ifPresent((shieldGeneratorSubsystem -> {
+                    if (shieldGeneratorSubsystem.isForceFieldActivated()) {
+                        AxisAlignedBB AABB = new AxisAlignedBB(exteriorBlock.getBlockPos()).inflate(3);
+                        for (MonsterEntity liv : exteriorBlock.getLevel().getEntitiesOfClass(MonsterEntity.class, AABB)) {
 
-            tardisTile.getSubsystem(ShieldGeneratorSubsystem.class).ifPresent((shieldGeneratorSubsystem -> {
-                if (shieldGeneratorSubsystem.isForceFieldActivated()) {
-                    AxisAlignedBB AABB = new AxisAlignedBB(exteriorBlock.getBlockPos()).inflate(3);
-                    for (MonsterEntity liv : exteriorBlock.getLevel().getEntitiesOfClass(MonsterEntity.class, AABB)) {
+                            Vector3d LivPos = liv.position();
 
-                        Vector3d LivPos = liv.position();
+                            Vector3d AABBVec = AABB.getCenter();
 
-                        Vector3d AABBVec = AABB.getCenter();
+                            Vector3d Normalized = AABBVec.add(LivPos).normalize();
 
-                        Vector3d Normalized = AABBVec.add(LivPos).normalize();
+                            double X, Z;
 
-                        double X, Z;
+                            if (LivPos.z > AABB.getCenter().z)
+                                Z = Normalized.z;
+                            else Z = -Normalized.z;
 
-                        if(LivPos.z > AABB.getCenter().z)
-                            Z = Normalized.z;
-                        else Z = - Normalized.z;
+                            if (LivPos.x > AABB.getCenter().x)
+                                X = Normalized.x;
+                            else X = -Normalized.x;
 
-                        if(LivPos.x > AABB.getCenter().x)
-                            X = Normalized.x;
-                        else X = - Normalized.x;
-
-                        liv.push(X, 0, Z);
-                    }
-
-                    for (ArrowEntity liv : exteriorBlock.getLevel().getEntitiesOfClass(ArrowEntity.class, AABB)) {
-                        /** If the entity whom shot the arrow is inside the AABB DON'T block it **/
-                        if (liv != null && liv.getOwner() != null) {
-                            if (!AABB.contains(liv.getOwner().position())) {
-                                Vector3d LivPos = liv.position();
-                                Vector3d AABBVec = AABB.getCenter();
-
-                                Vector3d Normalized = AABBVec.add(LivPos).normalize();
-
-
-                                double X, Z;
-
-                                if(LivPos.z > AABB.getCenter().z)
-                                    Z = Normalized.z;
-                                else Z = - Normalized.z;
-
-                                if(LivPos.x > AABB.getCenter().x)
-                                    X = Normalized.x;
-                                else X = - Normalized.x;
-
-                                liv.push(X, 0, Z);}
+                            liv.push(X, 0, Z);
                         }
-                    }
 
-                    for (LaserEntity liv : exteriorBlock.getLevel().getEntitiesOfClass(LaserEntity.class, AABB)) {
-                        /** If the entity whom shot the arrow is inside the AABB DON'T block it **/
-                        if (liv != null && liv.getOwner() != null) {
-                            if (!AABB.contains(liv.getOwner().position())) {
-                                Vector3d LivPos = liv.position();
-                                Vector3d AABBVec = AABB.getCenter();
+                        for (ArrowEntity liv : exteriorBlock.getLevel().getEntitiesOfClass(ArrowEntity.class, AABB)) {
+                            /** If the entity whom shot the arrow is inside the AABB DON'T block it **/
+                            if (liv != null && liv.getOwner() != null) {
+                                if (!AABB.contains(liv.getOwner().position())) {
+                                    Vector3d LivPos = liv.position();
+                                    Vector3d AABBVec = AABB.getCenter();
 
-                                Vector3d Normalized = AABBVec.add(LivPos).normalize();
+                                    Vector3d Normalized = AABBVec.add(LivPos).normalize();
 
-                                liv.push(Normalized.x, -30, Normalized.z);
+
+                                    double X, Z;
+
+                                    if (LivPos.z > AABB.getCenter().z)
+                                        Z = Normalized.z;
+                                    else Z = -Normalized.z;
+
+                                    if (LivPos.x > AABB.getCenter().x)
+                                        X = Normalized.x;
+                                    else X = -Normalized.x;
+
+                                    liv.push(X, 0, Z);
+                                }
+                            }
+                        }
+
+                        for (LaserEntity liv : exteriorBlock.getLevel().getEntitiesOfClass(LaserEntity.class, AABB)) {
+                            /** If the entity whom shot the arrow is inside the AABB DON'T block it **/
+                            if (liv != null && liv.getOwner() != null) {
+                                if (!AABB.contains(liv.getOwner().position())) {
+                                    Vector3d LivPos = liv.position();
+                                    Vector3d AABBVec = AABB.getCenter();
+
+                                    Vector3d Normalized = AABBVec.add(LivPos).normalize();
+
+                                    liv.push(Normalized.x, -30, Normalized.z);
+                                }
                             }
                         }
                     }
-                }
-            }));
-        }
-
+                }));
+            });
 
         else {
 
@@ -185,19 +185,19 @@ public static VoxelShape SHAPE = createVoxelShape();
 
                 double X, Z;
 
-                if(LivPos.z > AABB.getCenter().z)
+                if (LivPos.z > AABB.getCenter().z)
                     Z = Normalized.z;
-                else Z = - Normalized.z;
+                else Z = -Normalized.z;
 
-                if(LivPos.x > AABB.getCenter().x)
+                if (LivPos.x > AABB.getCenter().x)
                     X = Normalized.x;
-                else X = - Normalized.x;
+                else X = -Normalized.x;
 
                 liv.push(X, 0, Z);
             }
 
             for (ArrowEntity liv : serverWorld.getLevel().getEntitiesOfClass(ArrowEntity.class, AABB)) {
-                /** If the entity whom shot the arrow is inside the AABB DON'T block it **/
+                /** If the entity that shot the arrow is inside the AABB DON'T block it **/
                 if (liv != null && liv.getOwner() != null) {
                     if (!AABB.contains(liv.getOwner().position())) {
                         Vector3d LivPos = liv.position();
@@ -211,7 +211,7 @@ public static VoxelShape SHAPE = createVoxelShape();
             }
 
             for (LaserEntity liv : serverWorld.getLevel().getEntitiesOfClass(LaserEntity.class, AABB)) {
-                /** If the entity whom shot the arrow is inside the AABB DON'T block it **/
+                /** If the entity that shot the laser is inside the AABB DON'T block it **/
                 if (liv != null && liv.getOwner() != null) {
                     if (!AABB.contains(liv.getOwner().position())) {
                         Vector3d LivPos = liv.position();

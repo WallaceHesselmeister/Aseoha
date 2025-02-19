@@ -2,13 +2,16 @@ package com.code.aseoha.events;
 
 import com.code.aseoha.Helpers.IHelpWithConsole;
 import com.code.aseoha.Helpers.IHelpWithMonitor;
+import com.code.aseoha.Helpers.PlayerHelper;
 import com.code.aseoha.Helpers.TARDISHelper;
 import com.code.aseoha.aseoha;
 import com.code.aseoha.client.Sounds;
 import com.code.aseoha.commands.Commands;
-import com.code.aseoha.data.DataPackExterior;
+import com.code.aseoha.data.DataPackVortex;
 import com.code.aseoha.entities.k9;
 import com.code.aseoha.tileentities.consoles.CopperConsoleTile;
+import com.code.aseoha.upgrades.AutoStabilizer;
+import com.code.aseoha.upgrades.HADS;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.SoundCategory;
@@ -22,29 +25,30 @@ import net.minecraftforge.event.ServerChatEvent;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.event.entity.living.LivingEvent;
 import net.minecraftforge.event.entity.player.AttackEntityEvent;
+import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.server.FMLServerStartedEvent;
 import net.mistersecret312.temporal_api.events.ControlEvent;
+import net.mistersecret312.temporal_api.events.FlightEventEvent;
+import net.mistersecret312.temporal_api.events.MinigameStartEvent;
 import net.tardis.api.events.TardisEvent;
 import net.tardis.mod.client.ClientHelper;
 import net.tardis.mod.controls.AbstractControl;
 import net.tardis.mod.controls.HandbrakeControl;
 import net.tardis.mod.controls.ThrottleControl;
 import net.tardis.mod.entity.ControlEntity;
+import net.tardis.mod.entity.TardisEntity;
 import net.tardis.mod.helper.TardisHelper;
 import net.tardis.mod.registries.ControlRegistry;
 import net.tardis.mod.sounds.TSounds;
 import net.tardis.mod.subsystem.StabilizerSubsystem;
-import net.tardis.mod.texturevariants.TextureVariants;
 import net.tardis.mod.tileentities.ConsoleTile;
-import net.tardis.mod.world.dimensions.TDimensions;
 import org.jetbrains.annotations.NotNull;
 
 import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
 import javax.script.ScriptException;
-import java.util.Arrays;
 import java.util.Objects;
 
 import static com.code.aseoha.Helpers.IHelpWithMonitor.Aseoha$MonitorGetRot;
@@ -306,7 +310,7 @@ public class CommonEvents {
 
 
             }
-//                    K9.ifPresent(k9EntityType -> k9.Talk(1));
+//                    K9.ifPresent(k9Type -> k9.Talk(1));
 
         }));
 //        else {
@@ -314,10 +318,6 @@ public class CommonEvents {
 //        }
 //        }
     }
-
-    //@SubscribeEvent
-    //public static void onSuccessfulFlightEvent(FlightEventEvent.SuccessFlightEvent event){}
-
 
     /**
      * Use this to make sure if a player is on midnight, fire em
@@ -328,27 +328,21 @@ public class CommonEvents {
     }
 
 
-//    @SubscribeEvent
-//    public static void onEventPopup(FlightEventEvent.StartFlightEvent event){
-//    HADS hads = event.getConsole().getUpgrade(HADS.class).orElse(null);
-//    if(hads.isActivated())
-//        if(event.getConsole().isInFlight())
-//            if(event.getConsole().doesConsoleWorldHaveNoPlayers())
-//                if(event.getConsole().getInteriorManager().isAlarmOn())
-//                    event.setCanceled(true);
-//    ConsoleTile console = TardisHelper.getConsoleInWorld(Objects.requireNonNull(event.getConsole().getLevel())).get();
-//    AutoStabilizer autostabs = console.getUpgrade(AutoStabilizer.class).orElse(null);
-//    if(autostabs != null) {
-//        if (console.doesConsoleWorldHaveNoPlayers()) {
-//                if (autostabs.isUsable() && autostabs.isActivated()) {
-//                    event.setCanceled(true);
-//                }
-//        }
-//    }
-//        event.isCanceled();
+    @SubscribeEvent
+    public static void onEventPopup(FlightEventEvent.StartFlightEvent event) {
+        event.getConsole().getUpgrade(HADS.class).ifPresent(hads -> {
+            if (hads.isActivated() && hads.isUsable())
+                if (((IHelpWithConsole) event.getConsole()).Aseoha$GetHads())
+                    event.setCanceled(true);
+            ConsoleTile console = TardisHelper.getConsoleInWorld(Objects.requireNonNull(event.getConsole().getLevel())).get();
+        });
 
-//    }
-
+        event.getConsole().getUpgrade(AutoStabilizer.class).ifPresent(autostabs -> {
+            if (autostabs.isUsable() && autostabs.isActivated())
+                if (event.getConsole().doesConsoleWorldHaveNoPlayers())
+                    event.setCanceled(true);
+        });
+    }
 
     /**
      * Make sure TARDIS Doors close on takeoff, and low on artron sounds
@@ -382,7 +376,7 @@ public class CommonEvents {
     }
 
     @SubscribeEvent
-    public static void MiniGameEvent(net.mistersecret312.temporal_api.events.MinigameStartEvent event) {
+    public static void MiniGameEvent(MinigameStartEvent event) {
         ConsoleTile console = TardisHelper.getConsoleInWorld(event.getPlayer().level).orElse(null);
         if (console != null && ((IHelpWithConsole) console).Aseoha$GetMaintenance())
             event.setCanceled(true);
@@ -390,10 +384,21 @@ public class CommonEvents {
 
     @SubscribeEvent
     public static void ControlHitEvent(ControlEvent.ControlHitEvent event) {
-        if (event.getControl().getConsole() != null && ((IHelpWithConsole) event.getControl().getConsole()).Aseoha$GetMaintenance())
+        if(event.getControl().getConsole() == null) {
             event.setCanceled(true);
-
+            return;
+        }
         ConsoleTile consoleTile = event.getControl().getConsole();
+
+        if (((IHelpWithConsole) event.getControl().getConsole()).Aseoha$GetMaintenance()) {
+            event.setCanceled(true);
+            return;
+        }
+
+        if(((IHelpWithConsole) consoleTile).Aseoha$GetIsomorphic() && !PlayerHelper.HasKey(event.getPlayer(), consoleTile)){
+            event.setCanceled(true);
+            return;
+        }
 
         if (((IHelpWithConsole) consoleTile).Aseoha$GetPilot() != null) return;
 
@@ -405,10 +410,17 @@ public class CommonEvents {
     public static void ControlClickedEvent(ControlEvents.ControlClickEvent event) {
         if (event.getControl().getConsole() == null) return;
 
-        if (((IHelpWithConsole) event.getControl().getConsole()).Aseoha$GetMaintenance())
-            event.setCanceled(true);
-
         ConsoleTile consoleTile = event.getControl().getConsole();
+
+        if(((IHelpWithConsole) consoleTile).Aseoha$GetIsomorphic() && !PlayerHelper.HasKey(event.getPlayer(), consoleTile)){
+            event.setCanceled(true);
+            return;
+        }
+
+        if (((IHelpWithConsole) consoleTile).Aseoha$GetMaintenance()) {
+            event.setCanceled(true);
+            return;
+        }
 
         if (((IHelpWithConsole) consoleTile).Aseoha$GetPilot() == null)
             ((IHelpWithConsole) consoleTile).Aseoha$SetPilot(event.getPlayer());
@@ -416,7 +428,6 @@ public class CommonEvents {
 
     @SubscribeEvent
     public static void InsertSonic(ControlEvent.SonicPutEvent event) {
-        if (event.getControl().getConsole() == null) return;
         if (((IHelpWithConsole) event.getControl().getConsole()).Aseoha$GetMaintenance()) {
             event.setCanceled(true);
             // Put return just in case I need to add onto this function later on
@@ -426,7 +437,7 @@ public class CommonEvents {
 
     @SubscribeEvent
     public static void TakeSonic(ControlEvent.SonicTakeEvent event) {
-        if (event.getControl().getConsole() != null && ((IHelpWithConsole) event.getControl().getConsole()).Aseoha$GetMaintenance())
+        if (((IHelpWithConsole) event.getControl().getConsole()).Aseoha$GetMaintenance())
             event.setCanceled(true);
     }
 
@@ -492,7 +503,8 @@ public class CommonEvents {
     }
 
 
-//    @SubscribeEvent public static void onHurtEvent(LivingHurtEvent event) {
+//    @SubscribeEvent
+//    public static void onHurtEvent(LivingHurtEvent event) {
 //        if (event.getEntity() instanceof PlayerEntity) {
 //            PlayerEntity player = (PlayerEntity) event.getEntity();
 //            if (player.getVehicle() != null && player.getVehicle() instanceof TardisEntity) {
@@ -605,25 +617,22 @@ public class CommonEvents {
 //        }
 //    }
 
-//    @SubscribeEvent
-//    public static void onEntityLeave(@NotNull PlayerEvent.PlayerLoggedOutEvent event) {
-//        aseoha.SendDebugToAll("Player left - " + event.getPlayer() + " With UUID " + event.getPlayer().getUUID());
-//        if(event.getPlayer().getVehicle() != null && event.getPlayer().getVehicle() instanceof TardisEntity) {
-//            TardisEntity te = (TardisEntity) event.getPlayer().getVehicle();
-//            if (te.getConsole() != null) {
-//                if (te.getExterior() != null) {
-//                    ConsoleTile tile = Objects.requireNonNull(te.getConsole());
-//                    ((IHelpWithConsole) tile).Aseoha$StopRide(true);
-//
+    @SubscribeEvent
+    public static void onEntityLeave(@NotNull PlayerEvent.PlayerLoggedOutEvent event) {
+        aseoha.SendDebugToAll("Player left - " + event.getPlayer() + " With UUID " + event.getPlayer().getUUID());
+        if (event.getPlayer().getVehicle() != null && event.getPlayer().getVehicle() instanceof TardisEntity) {
+            TardisEntity te = (TardisEntity) event.getPlayer().getVehicle();
+            if (te.getConsole() != null)
+                if (((IHelpWithConsole) te.getConsole()).Aseoha$IsRealWorldFlight())
+                    ((IHelpWithConsole) te.getConsole()).Aseoha$CleanupRide();
+
+
 //                    event.getEntity().getCapability(Capabilities.PLAYER_DATA).ifPresent(data -> {
 //                        ((ICapPlayer) data).setFlyingInTardis(true);
 //                        ((ICapPlayer) data).setInteriorDimension(Objects.requireNonNull(tile.getLevel()).dimension());
 //                    });
-//                }
-//                te.remove();
-//            }
-//        }
-//    }
+        }
+    }
 
     @SubscribeEvent
     public static void ServerStartup(@NotNull FMLServerStartedEvent event) {
@@ -637,12 +646,12 @@ public class CommonEvents {
     @SubscribeEvent
     public static void OnWorldTick(TickEvent.WorldTickEvent event) {
         aseoha.tickThread.Call(event);
-        /**
-         * If the light value is above 15 or below 0 it'll reset to 0 to prevent crash
-         */
-        if (event.world.dimension().equals(TDimensions.TARDIS_DIMENSIONS)) {
-            TardisHelper.getConsoleInWorld(event.world).ifPresent(consoleTile -> consoleTile.getInteriorManager().setLight((consoleTile.getInteriorManager().getLight() < 0) || (consoleTile.getInteriorManager().getLight() > 15) ? 0 : consoleTile.getInteriorManager().getLight()));
-        }
+//        /**
+//         * If the light value is above 15 or below 0 it'll reset to 0 to prevent crash
+//         */
+//        if (event.world.dimension().equals(TDimensions.TARDIS_DIMENSIONS)) {
+//            TardisHelper.getConsoleInWorld(event.world).ifPresent(consoleTile -> consoleTile.getInteriorManager().setLight((consoleTile.getInteriorManager().getLight() < 0) || (consoleTile.getInteriorManager().getLight() > 15) ? 0 : consoleTile.getInteriorManager().getLight()));
+//        }
     }
 
 
@@ -668,6 +677,6 @@ public class CommonEvents {
 
     @SubscribeEvent
     public static void AddDataPackReloadListeners(AddReloadListenerEvent event) {
-        event.addListener(DataPackExterior.DATA_LOADER);
+        event.addListener(DataPackVortex.DATA_LOADER);
     }
 }

@@ -1,0 +1,10 @@
+{
+  "display_name": "Monitor Functions",
+  "pages": [
+    "aseoha:monitor_functions/monitor_functions_intro",
+    "aseoha:monitor_functions/hads",
+    "aseoha:monitor_functions/isomorphic_security",
+    "aseoha:monitor_functions/eject",
+    "aseoha:monitor_functions/shrink"
+  ]
+}

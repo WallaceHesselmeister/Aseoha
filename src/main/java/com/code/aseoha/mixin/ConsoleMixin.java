@@ -1,15 +1,18 @@
 package com.code.aseoha.mixin;
 
-import com.code.aseoha.Helpers.IHelpWithExterior;
+import com.code.aseoha.Helpers.TARDISHelper;
 import com.code.aseoha.aseoha;
 import com.code.aseoha.config;
 import com.code.aseoha.Helpers.IHelpWithConsole;
-import com.code.aseoha.protocol.EjectProtocol;
+import com.code.aseoha.networking.Networking;
+import com.code.aseoha.networking.Packets.EnterRWFPacket;
 import com.code.aseoha.registries.ControlsRegistry;
 import com.code.aseoha.tileentities.blocks.EOHTile;
+import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.tileentity.ITickableTileEntity;
 import net.minecraft.tileentity.TileEntity;
@@ -18,6 +21,7 @@ import net.minecraft.util.RegistryKey;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.SoundEvents;
+import net.minecraft.util.concurrent.TickDelayedTask;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
@@ -31,6 +35,7 @@ import net.tardis.mod.entity.DoorEntity;
 import net.tardis.mod.entity.TardisEntity;
 import net.tardis.mod.exterior.AbstractExterior;
 import net.tardis.mod.helper.TardisHelper;
+import net.tardis.mod.helper.WorldHelper;
 import net.tardis.mod.misc.CrashType;
 import net.tardis.mod.misc.ITickable;
 import net.tardis.mod.misc.SpaceTimeCoord;
@@ -52,7 +57,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 import javax.annotation.Nullable;
 import java.util.Optional;
 
-@Mixin(value = ConsoleTile.class, priority = 998)
+@Mixin(value = ConsoleTile.class)
 public abstract class ConsoleMixin extends TileEntity implements ITickableTileEntity, IHelpWithConsole {
 
     public ConsoleMixin(TileEntityType<?> p_i48289_1_) {
@@ -123,10 +128,25 @@ public abstract class ConsoleMixin extends TileEntity implements ITickableTileEn
     @Shadow(remap = false) private AbstractExterior exterior;
     //TODO: FINISH MAINTENANCE MODE
 
+    @Shadow(remap = false) public abstract boolean forceLoadExteriorChunk(boolean forceLoad);
+
+    @Shadow(remap = false) public abstract boolean forceLoadInteriorChunk(boolean forceLoad, boolean clearForcedChunksBeforeReforce);
+
+    @Shadow(remap = false) public abstract void setEntity(@org.jetbrains.annotations.Nullable TardisEntity ent);
+
+    @Shadow(remap = false) private RegistryKey<World> destinationDimension;
+
+    @Shadow(remap = false) public abstract void land();
+
     @Unique
     public boolean Aseoha$Hads = false;
+
+    @Unique
+    public boolean Aseoha$Isomorphic = false;
+
     @Unique
     public boolean Aseoha$Maintenance = false;
+
     @Unique
     public boolean Aseoha$ExteriorSize = true;
 //    @Unique
@@ -192,6 +212,8 @@ public abstract class ConsoleMixin extends TileEntity implements ITickableTileEn
             this.Aseoha$EOHPillars = compound.getByte("eoh_pillars_count");
         if (compound.contains("maintenance"))
             this.Aseoha$Maintenance = compound.getBoolean("maintenance");
+        if (compound.contains("isomorphicShielding"))
+            this.Aseoha$Isomorphic = compound.getBoolean("isomorphicShielding");
 
         //Old versions of ASEOHA used an integer for the scale (I planned on variable size), check if this is a boolean, if not, convert the int to a bool
         if (compound.contains("exterior_size_scale")) {
@@ -215,35 +237,58 @@ public abstract class ConsoleMixin extends TileEntity implements ITickableTileEn
         compound.putLong("eoh_timer", this.Aseoha$EOHTimer);
         compound.putBoolean("maintenance", this.Aseoha$Maintenance);
         compound.putBoolean("exterior_size_scale", this.Aseoha$ExteriorSize);
+        compound.putBoolean("isomorphicShielding", this.Aseoha$Isomorphic);
 //        if (this.Aseoha$Pilot == null) return;
 //        compound.putUUID("Aseoha$Pilot_UUID", this.Aseoha$Pilot.getUUID());
+    }
+
+//    @ModifyReturnValue(method = "Lnet/tardis/mod/tileentities/ConsoleTile;isInFlight()Z")
+    @ModifyExpressionValue(remap = false, method = "isInFlight", at = @At(value = "RETURN"))
+    public boolean Aseoha$IsInFlight(boolean original){
+        return original || this.Aseoha$IsRealWorldFlight();
     }
 
 
     @Inject(method = "tick()V", at = @At("TAIL"))
     public void Aseoha$Tick(CallbackInfo ci) {
 
-        if(this.Aseoha$IsRealWorldFlight()) {
-            if(!this.getLevel().isClientSide) {
-                TardisEntity tardis = this.Aseoha$GetTardisEntity();
-                if (tardis.getPassengers().isEmpty()) {
-                    PlayerEntity p = this.getPilot();
-                    ExteriorTile Exterior = this.exterior.getExteriorTile(this.Aseoha$GetConsole());
+        if (this.Aseoha$IsRealWorldFlight()) {
+            aseoha.LOGGER.warn("GO BULLSEYE!!");
+            if (this.getLevel() != null) {
+                if (!this.getLevel().isClientSide()) {
+                    this.forceLoadInteriorChunk(true, false);
+                    if (this.Aseoha$GetExterior() != null) {
+                        ExteriorTile Exterior = this.Aseoha$GetExterior();
+                        TardisEntity tardis = Exterior.createEntity();
 
-                    tardis.setNoGravity(true);
+                        assert tardis != null;
+                        if (tardis.getPassengers().isEmpty()) {
+                            PlayerEntity p = this.getPilot();
 
-                    this.relocatePlayerToExterior(p, (ServerWorld) Exterior.getLevel());
-                    aseoha.LOGGER.warn("GO BULLSEYE!!");
-                    p.startRiding(tardis);
-                    aseoha.LOGGER.warn("GO BULLSEYE!! TAKE 2");
-//                    ((IHelpWithExterior) Exterior).Aseoha$DematFly();
-                    Exterior.setRemoved();
-                    aseoha.LOGGER.warn("GO BULLSEYE!! TAKE 3");
-                    this.updateClient();
+                            if (Exterior != null && Exterior.getLevel() != null) {
+                                Networking.sendToClient(((ServerPlayerEntity) p), new EnterRWFPacket(this.Aseoha$GetConsole().getLevel().dimension().location()));
+
+                                Exterior.getLevel().addFreshEntity(tardis);
+                                tardis.setConsole(this.Aseoha$GetConsole());
+                                tardis.setExteriorTile(Exterior);
+                                tardis.setInvulnerable(true);
+                                tardis.setNoGravity(true);
+                                WorldHelper.teleportEntities(tardis, (ServerWorld) Exterior.getLevel(), Exterior.getBlockPos(), 0, 0);
+                                this.setEntity(tardis);
+
+//                            this.relocatePlayerToExterior(p, (ServerWorld) Exterior.getLevel());
+                                WorldHelper.teleportEntities(p, (ServerWorld) Exterior.getLevel(), Exterior.getBlockPos(), 0, 0);
+//                            this.getLevel().getServer().tell(new TickDelayedTask(1, () -> p.startRiding(tardis)));
+
+                                assert this.level != null;
+                                Exterior.deleteExteriorBlocks();
+                                p.startRiding(tardis);
+                            }
+                        }
+                    }
                 }
             }
         }
-
         if (!this.Aseoha$GetHasEOH()) return;
         if (this.Aseoha$GetEOH() == null) return;
         this.Aseoha$EOH.tick();
@@ -267,6 +312,21 @@ public abstract class ConsoleMixin extends TileEntity implements ITickableTileEn
     @Override
     public void Aseoha$SetHads(boolean Hads) {
         this.Aseoha$Hads = Hads;
+    }
+
+    @Override
+    public ExteriorTile Aseoha$GetExterior() {
+        return TARDISHelper.getExteriorTile(this.Aseoha$GetConsole());
+    }
+
+    @Override
+    public boolean Aseoha$GetIsomorphic() {
+        return this.Aseoha$Isomorphic;
+    }
+
+    @Override
+    public void Aseoha$SetIsomorphic(boolean state) {
+        this.Aseoha$Isomorphic = state;
     }
 
     @Override
@@ -323,7 +383,6 @@ public abstract class ConsoleMixin extends TileEntity implements ITickableTileEn
     public byte Aseoha$GetEOHPillars() {
         return this.Aseoha$EOHPillars;
     }
-
 
     @Override
     public EOHTile Aseoha$GetEOH() {
@@ -392,42 +451,39 @@ public abstract class ConsoleMixin extends TileEntity implements ITickableTileEn
 //        }
 //    }
 
-//    @Override
-//    public void Aseoha$StopRide(boolean land) {
-//        assert this.level != null;
-//        if (this.level.isClientSide()) {
-//            if (this.tardisEntity != null) {
-//                if (!this.tardisEntity.getPassengers().isEmpty()) {
-//                    Entity entity = this.tardisEntity.getPassengers().get(0);
-//
-//                    if (entity instanceof PlayerEntity) {
-//                        ((IHelpWithTardisEntity) this.tardisEntity).setCanDismount(true);
-//
-//                        PlayerEntity playerEntity = (PlayerEntity) entity;
-//                        playerEntity.stopRiding();
-//                        if (this.Aseoha$InteriorDimension != null) {
-//                            assert this.Aseoha$GetInteriorDimension() != null;
-//                            Objects.requireNonNull(this.Aseoha$GetInteriorDimension().getServer()).tell(new TickDelayedTask(1, ()
-//                                    -> WorldHelper.teleportEntities(playerEntity, this.Aseoha$GetInteriorDimension().getServer().getLevel(this.Aseoha$GetInteriorDimension().dimension()), this.Aseoha$RidingPlayerPos.getX(), this.Aseoha$RidingPlayerPos.getY(), this.Aseoha$RidingPlayerPos.getZ(), playerEntity.yRot, playerEntity.xRot)
-//                            ));
-//                        }
-//                    }
-//
-//                    ClientHelper.shutTheFuckUp(null, SoundCategory.BLOCKS);
-////                }
-//                }
-//
-//                if (land) {
-//                    if (this.tardisEntity != null) {
-//                        this.destination = this.tardisEntity.blockPosition();
-//                    }
-//
-//                    this.land();
-//                }
-//            }
+    @Override
+    public void Aseoha$StopRide(boolean land) {
+        assert this.level != null;
+        if (this.level.isClientSide()) {
+            if (this.tardisEntity != null) {
+                if (!this.tardisEntity.getPassengers().isEmpty()) {
+                    Entity entity = this.tardisEntity.getPassengers().get(0);
+
+                    if (entity instanceof PlayerEntity) {
+
+                        PlayerEntity playerEntity = (PlayerEntity) entity;
+                        playerEntity.stopRiding();
+                        if (this.Aseoha$InteriorDimension != null) {
+                            this.Aseoha$GetInteriorDimension().getServer().tell(new TickDelayedTask(1, ()
+                                    -> WorldHelper.teleportEntities(playerEntity, this.Aseoha$GetInteriorDimension().getServer().getLevel(this.Aseoha$GetInteriorDimension().dimension()), this.Aseoha$RidingPlayerPos.getX(), this.Aseoha$RidingPlayerPos.getY(), this.Aseoha$RidingPlayerPos.getZ(), playerEntity.yRot, playerEntity.xRot)
+                            ));
+                        }
+                    }
+
+                    ClientHelper.shutTheFuckUp(null, SoundCategory.BLOCKS);
+                }
+
+                if (land) {
+                    if (this.tardisEntity != null) {
+                        this.destination = this.tardisEntity.blockPosition();
+                    }
+
+                    this.land();
+                }
+            }
+        }
 //        }
-////        }
-//    }
+    }
 
 //    @Inject(method = "lambda$takeoff$7", at = @At(value = "INVOKE", target = "Lnet/tardis/mod/exterior/AbstractExterior;demat(Lnet/tardis/mod/tileentities/ConsoleTile;)V", shift = At.Shift.BEFORE), remap = false)
 //    public void Aseoha$TakeoffLambda7(ServerWorld otherWorld, ChunkPos chunkPos, CallbackInfo ci) {
@@ -476,6 +532,7 @@ public abstract class ConsoleMixin extends TileEntity implements ITickableTileEn
     @Override
     public void Aseoha$CleanupRide() {
         this.Aseoha$RealWorldFlight = false;
+        this.Aseoha$StopRide(true);
         this.getControl(ThrottleControl.class).ifPresent(throt -> throt.setAmount(0.0F));
         this.getControl(HandbrakeControl.class).ifPresent(brake -> brake.setFree(false));
     }
@@ -488,7 +545,7 @@ public abstract class ConsoleMixin extends TileEntity implements ITickableTileEn
 
     @Override
     public TardisEntity Aseoha$GetTardisEntity() {
-        return this.tardisEntity != null ? this.tardisEntity : new TardisEntity(this.getExteriorType().getExteriorTile(this.Aseoha$GetConsole()).getLevel());
+        return this.tardisEntity != null ? this.tardisEntity : new TardisEntity(this.getLevel());
     }
 
     @Override

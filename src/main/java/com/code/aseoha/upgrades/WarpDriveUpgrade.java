@@ -1,7 +1,9 @@
 package com.code.aseoha.upgrades;
 
+import net.minecraft.dispenser.IPosition;
 import net.minecraft.inventory.Inventory;
 import net.minecraft.util.concurrent.TickDelayedTask;
+import net.minecraft.util.math.vector.Vector3d;
 import net.tardis.mod.constants.TardisConstants;
 import net.tardis.mod.misc.ITickable;
 import net.tardis.mod.subsystem.Subsystem;

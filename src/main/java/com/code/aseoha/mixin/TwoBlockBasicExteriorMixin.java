@@ -113,28 +113,27 @@ public class TwoBlockBasicExteriorMixin extends AbstractExterior {
     private void Aseoha$Demat(ConsoleTile console, CallbackInfo ci) {
         ServerWorld worldIn = Objects.requireNonNull(Objects.requireNonNull(console.getLevel()).getServer()).getLevel(console.getCurrentDimension());
         if (worldIn != null) {
-            if (this.getExteriorTile(console) != null) {
-                if (!((IHelpWithConsole) console).Aseoha$IsRealWorldFlight()) {
-                    ((IHelpWithExterior) this.getExteriorTile(console)).Aseoha$DematFly();
-                } else {
-//                    ((IHelpWithConsole) console).setInteriorDimension(this.getExteriorTile(console).getInteriorDimensionKey());
-
-                    //Don't demat on real world flight, entity replaces tile entity
-                    TardisEntity entity = this.getExteriorTile(console).createEntity();
-                    assert entity != null;
-                    entity.setNoGravity(true);
-                    if (entity != null) {
-                        entity.setExteriorTile(this.getExteriorTile(console));
-                        entity.setConsole(console);
-                        assert worldIn != null;
-                        if (worldIn.addFreshEntity(entity)) {
-                            ((IHelpWithExterior) this.getExteriorTile(console)).Aseoha$DematFly();
-                            console.setEntity(entity);
-                        }
-
-                    }
-                }
-            }
+//            if (this.getExteriorTile(console) != null) {
+//                if (!((IHelpWithConsole) console).Aseoha$IsRealWorldFlight()) {
+//                    ((IHelpWithExterior) this.getExteriorTile(console)).Aseoha$DematFly();
+//                } else {
+////                    ((IHelpWithConsole) console).setInteriorDimension(this.getExteriorTile(console).getInteriorDimensionKey());
+//
+//                    //Don't demat on real world flight, entity replaces tile entity
+//                    TardisEntity entity = this.getExteriorTile(console).createEntity();
+//                    if (entity != null) {
+//                        entity.setNoGravity(true);
+//                        entity.setExteriorTile(this.getExteriorTile(console));
+//                        entity.setConsole(console);
+//                        assert worldIn != null;
+//                        if (worldIn.addFreshEntity(entity)) {
+//                            ((IHelpWithExterior) this.getExteriorTile(console)).Aseoha$DematFly();
+//                            console.setEntity(entity);
+//                        }
+//
+//                    }
+//                }
+//            }
         }
     }
 }

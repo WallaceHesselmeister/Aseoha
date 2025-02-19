@@ -70,6 +70,7 @@ VoxelShape voxel = Block.box(3, 0, 3.6999999999999997, 13, 22, 12.70000000000000
         FluidState fluid = context.getLevel().getFluidState(context.getClickedPos());
         return (BlockState)((BlockState) Objects.requireNonNull(super.getStateForPlacement(context)).setValue(BlockStateProperties.HORIZONTAL_FACING, Objects.requireNonNull(context.getPlayer()).getDirection().getOpposite())).setValue(BlockStateProperties.WATERLOGGED, fluid.getFluidState().is(FluidTags.WATER));
     }
+
     @NotNull
     public ActionResultType use(@NotNull BlockState state, @NotNull World worldIn, @NotNull BlockPos pos, @NotNull PlayerEntity player, @NotNull Hand handIn, @NotNull BlockRayTraceResult hit) {
         if (!WorldHelper.isDimensionBlocked(worldIn)) {

@@ -82,7 +82,7 @@ public class CoffeePot extends BaseControl {
             if (this.getConsole() instanceof SteamConsoleTile)
                 return new Vector3d(0.666, 7.0 / 16.0, 0.782); //DONE
 
-            return new Vector3d(0, 7.0 / 16.0, 0);
+            return new Vector3d(0, 0, 0);
     }
 
 

@@ -17,7 +17,7 @@ public class CoralRenderer extends ExteriorRenderer<CoralTile> {
 //    public static CoralExterior MODEL = new CoralExterior();
 //    public static WorldText TEXT = new WorldText(0.87F, 0.125F, 0.015F, 0);
 
-    private CoralExterior MODEL = new CoralExterior();
+    private final CoralExterior MODEL = new CoralExterior();
 
     public CoralRenderer(TileEntityRendererDispatcher rendererDispatcherIn) {
         super(rendererDispatcherIn);

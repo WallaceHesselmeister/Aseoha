@@ -1,0 +1,10 @@
+{
+    "structure_resource_location": "aseoha:jazz_age",
+    "display_name":"Jazz Age Interior",
+    "x_offset":26,
+    "y_offset":6,
+    "z_offset":30,
+    "using_remote_image":false,
+    "remote_image_url":"",
+    "image_resource_location":"tardis:textures/gui/interiors/generic_preview.png"
+}

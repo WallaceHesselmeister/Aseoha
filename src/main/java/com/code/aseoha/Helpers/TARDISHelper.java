@@ -3,6 +3,7 @@ package com.code.aseoha.Helpers;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.*;
 import net.minecraft.nbt.CompoundNBT;
+import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.*;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
@@ -17,6 +18,7 @@ import net.tardis.mod.helper.TardisHelper;
 import net.tardis.mod.items.KeyItem;
 import net.tardis.mod.misc.Console;
 import net.tardis.mod.tileentities.ConsoleTile;
+import net.tardis.mod.tileentities.exteriors.ExteriorTile;
 
 import javax.annotation.Nonnull;
 import java.util.Iterator;
@@ -26,6 +28,20 @@ public class TARDISHelper {
 //    public static void engineBooster(ConsoleTile consoleTile, EngineBoost engineBoost){
 //        engineBoost.BoostThemEngines(consoleTile);
 //    }
+
+    public static ExteriorTile getExteriorTile(ConsoleTile console) {
+        if (!console.getLevel().isClientSide()) {
+            ServerWorld world = console.getLevel().getServer().getLevel(console.getCurrentDimension());
+            if (world != null) {
+                TileEntity te = world.getBlockEntity(console.getCurrentLocation().above());
+                if (te instanceof ExteriorTile) {
+                    return (ExteriorTile)te;
+                }
+            }
+        }
+
+        return null;
+    }
 
     /**
      * @param console The TARDIS Console

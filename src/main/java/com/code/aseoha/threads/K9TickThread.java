@@ -4,11 +4,6 @@ import com.code.aseoha.config;
 import com.code.aseoha.entities.k9;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.util.text.ITextComponent;
-import net.minecraftforge.event.TickEvent;
-import net.tardis.mod.helper.TardisHelper;
-import net.tardis.mod.helper.WorldHelper;
-
-import java.util.Objects;
 
 public class K9TickThread extends Thread {
     private k9 K9;
@@ -16,14 +11,14 @@ public class K9TickThread extends Thread {
     public K9TickThread(){
         this.IsCalledNotInitialized = false;
     }
-    public K9TickThread(k9 K9Entity){
-        this.K9 = K9Entity;
+    public K9TickThread(k9 k9){
+        this.K9 = k9;
         this.IsCalledNotInitialized = true;
     }
-    public void Call(k9 k9Entity){
+    public void Call(k9 k9){
         this.IsCalledNotInitialized = true;
 //        this.event = Event;
-        this.K9 = k9Entity;
+        this.K9 = k9;
         this.run();
     }
     @Override

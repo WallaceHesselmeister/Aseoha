@@ -64,23 +64,20 @@ public class AseohaBlocks {
     /**********************************  LEGACY NTM ROUNDELS  ********************************/
 
 
-    public static final RegistryObject<Block> MEGLOS_ROUNDEL1 = registerBlock("mg_roundel1",
-            () -> setUpBlock(new RoundelBlock(AbstractBlock.Properties.of(Material.STONE), SoundType.STONE, 1.25F, 4.2F)));
-
-    public static final RegistryObject<Block> MEGLOS_ROUNDEL2 = registerBlock("mg_roundel2",
-            () -> setUpBlock(new RoundelBlock(AbstractBlock.Properties.of(Material.STONE), SoundType.STONE, 1.25F, 4.2F)));
-
-    public static final RegistryObject<Block> MEGLOS_ROUNDEL3 = registerBlock("mg_roundel3",
-            () -> setUpBlock(new RoundelBlock(AbstractBlock.Properties.of(Material.STONE), SoundType.STONE, 1.25F, 4.2F)));
-
-    public static final RegistryObject<Block> MEGLOS_ROUNDEL4 = registerBlock("mg_roundel4",
-            () -> setUpBlock(new RoundelBlock(AbstractBlock.Properties.of(Material.STONE), SoundType.STONE, 1.25F, 4.2F)));
-
-    public static final RegistryObject<Block> MEGLOS_ROUNDEL5 = registerBlock("mg_roundel5",
-            () -> setUpBlock(new RoundelBlock(AbstractBlock.Properties.of(Material.STONE), SoundType.STONE, 1.25F, 4.2F)));
-
-    public static final RegistryObject<Block> CORAL = registerBlock("tardis_coral",
-            () -> new Coral(Block.Properties.copy(Blocks.IRON_BLOCK).noOcclusion()));
+//    public static final RegistryObject<Block> MEGLOS_ROUNDEL1 = registerNoItemBlock("mg_roundel1",
+//            () -> setUpBlock(new RoundelBlock(AbstractBlock.Properties.of(Material.STONE), SoundType.STONE, 1.25F, 4.2F)));
+//
+//    public static final RegistryObject<Block> MEGLOS_ROUNDEL2 = registerNoItemBlock("mg_roundel2",
+//            () -> setUpBlock(new RoundelBlock(AbstractBlock.Properties.of(Material.STONE), SoundType.STONE, 1.25F, 4.2F)));
+//
+//    public static final RegistryObject<Block> MEGLOS_ROUNDEL3 = registerNoItemBlock("mg_roundel3",
+//            () -> setUpBlock(new RoundelBlock(AbstractBlock.Properties.of(Material.STONE), SoundType.STONE, 1.25F, 4.2F)));
+//
+//    public static final RegistryObject<Block> MEGLOS_ROUNDEL4 = registerNoItemBlock("mg_roundel4",
+//            () -> setUpBlock(new RoundelBlock(AbstractBlock.Properties.of(Material.STONE), SoundType.STONE, 1.25F, 4.2F)));
+//
+//    public static final RegistryObject<Block> MEGLOS_ROUNDEL5 = registerNoItemBlock("mg_roundel5",
+//            () -> setUpBlock(new RoundelBlock(AbstractBlock.Properties.of(Material.STONE), SoundType.STONE, 1.25F, 4.2F)));
 
     public static final RegistryObject<Block> WORKBENCH = registerBlock("workbench",
             () -> new WorkbenchBlock(Block.Properties.copy(Blocks.IRON_BLOCK).noOcclusion()));
@@ -567,8 +564,7 @@ public class AseohaBlocks {
     }
 
     private static <T extends Block>RegistryObject<T> registerNoItemBlock(String name, Supplier<T> block){
-        RegistryObject<T> toReturn = BLOCKS.register(name, block);
-        return toReturn;
+        return BLOCKS.register(name, block);
     }
 
 

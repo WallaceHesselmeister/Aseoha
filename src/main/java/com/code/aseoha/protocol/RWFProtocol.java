@@ -15,7 +15,7 @@ public class RWFProtocol extends Protocol {
         if (world.isClientSide)
             playerIn.closeContainer();
         console.setPilot(playerIn);
-        ((IHelpWithConsole) console).Aseoha$SetRealWorldFlight(!((IHelpWithConsole) console).Aseoha$IsRealWorldFlight());
+        ((IHelpWithConsole) console).Aseoha$SetRealWorldFlight(true);
     }
 
     @Override

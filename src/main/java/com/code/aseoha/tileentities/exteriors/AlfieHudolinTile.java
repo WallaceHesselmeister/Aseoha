@@ -11,7 +11,8 @@ public class AlfieHudolinTile extends ExteriorTile {
     public static final AxisAlignedBB RENDER = new AxisAlignedBB(-1, -1, -1, 2, 2, 2);
     public AlfieHudolinTile() {
         super(AseohaTiles.exterior_alfiehudolin.get());
-        this.setVariants(TextureVariants.ALFIEHUDOLIN);}
+        this.setVariants(TextureVariants.ALFIEHUDOLIN);
+    }
 
      @Override
     public AxisAlignedBB getDoorAABB() {

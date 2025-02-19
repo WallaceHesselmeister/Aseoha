@@ -5,6 +5,8 @@
     "aseoha:upgrades",
     "aseoha:flight_events",
     "aseoha:storage",
-    "aseoha:dimensions"
+    "aseoha:dimensions",
+    "aseoha:monitor_functions",
+    "aseoha:controls"
   ]
 }

@@ -9,6 +9,10 @@ import net.minecraft.util.IItemProvider;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraftforge.fml.server.ServerLifecycleHooks;
+import net.tardis.mod.entity.TardisEntity;
+import net.tardis.mod.helper.TardisHelper;
+import net.tardis.mod.items.KeyItem;
+import net.tardis.mod.tileentities.ConsoleTile;
 
 import java.util.concurrent.atomic.AtomicReference;
 
@@ -49,5 +53,21 @@ public class PlayerHelper {
                 ResultPlayer.set(P2);
         });
         return ResultPlayer.get();
+    }
+
+    /**
+     * Returns true if the player has a key to the TARDIS
+     * @param player the player to check
+     * @param console the console of the TARDIS the player should have a key to
+     * @return a boolean
+     */
+    public static boolean HasKey(PlayerEntity player, ConsoleTile console) {
+        AtomicReference<Boolean> atomic = new AtomicReference<>();
+        player.inventory.items.forEach((item) -> {
+            if(item.getItem() instanceof KeyItem) {
+                atomic.set(((KeyItem) item.getItem()).getTardis(item).equals(console.getLevel().dimension().location()));
+            }
+        });
+        return atomic.get() != null && atomic.get();
     }
 }

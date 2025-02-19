@@ -42,9 +42,7 @@ public abstract class K9MonitorScreen extends Screen implements IMonitorGui {
         super.init();
         assert this.minecraft != null;
         assert this.minecraft.level != null;
-        TardisHelper.getConsoleInWorld(this.minecraft.level).ifPresent((tile) -> {
-            this.tile = tile;
-        });
+        TardisHelper.getConsoleInWorld(this.minecraft.level).ifPresent((tile) -> this.tile = tile);
         this.id = 0;
         this.buttons.clear();
         if (this.tile != null) {

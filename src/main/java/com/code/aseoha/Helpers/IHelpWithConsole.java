@@ -5,12 +5,19 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.world.World;
 import net.tardis.mod.entity.TardisEntity;
 import net.tardis.mod.tileentities.ConsoleTile;
+import net.tardis.mod.tileentities.exteriors.ExteriorTile;
 
 public interface IHelpWithConsole {
     //    List<RegistryKey<World>> getAvailable();
     boolean Aseoha$GetHads();
 
+    ExteriorTile Aseoha$GetExterior();
+
     void Aseoha$SetHads(boolean state);
+
+    boolean Aseoha$GetIsomorphic();
+
+    void Aseoha$SetIsomorphic(boolean state);
 
     boolean Aseoha$GetMaintenance();
 

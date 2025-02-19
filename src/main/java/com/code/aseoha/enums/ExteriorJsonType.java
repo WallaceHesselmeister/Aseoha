@@ -1,7 +1,6 @@
 package com.code.aseoha.enums;
 
-import com.code.aseoha.aseoha;
-import com.code.aseoha.data.DataPackExterior;
+import com.code.aseoha.data.DataPackVortex;
 import com.code.aseoha.misc.IExteriorJsonType;
 import net.tardis.mod.misc.TexVariant;
 
@@ -24,7 +23,7 @@ public enum ExteriorJsonType implements IExteriorJsonType {
     }
 
     @Override
-    public void AddVariant(DataPackExterior dataPackExterior) {
+    public void AddVariant(DataPackVortex dataPackExterior) {
         TexVariant variant = new TexVariant(dataPackExterior.getTexture(), dataPackExterior.getTranslationKey());
 
         //TODO: finish data stuffs!
