@@ -1,7 +1,7 @@
 package com.code.aseoha.registries;
 
 import com.code.aseoha.aseoha;
-import com.code.aseoha.config;
+import com.code.aseoha.Config;
 import com.code.aseoha.flightevent.PowerFault;
 import com.code.aseoha.flightevent.TakingOver;
 import net.minecraft.util.ResourceLocation;
@@ -38,7 +38,7 @@ public class RegisterFlightEvent extends FlightEventRegistry{
     }
 
     public static void registerRandomEntries() {
-        addRandomEvent(config.COMMON.PowerFaultRarity.get(), POWER_FAILURE.get());
-        addRandomEvent(config.COMMON.TakingOverRarity.get(), TAKING_OVER.get());
+        addRandomEvent(Config.COMMON.PowerFaultRarity.get(), POWER_FAILURE.get());
+        addRandomEvent(Config.COMMON.TakingOverRarity.get(), TAKING_OVER.get());
     }
 }

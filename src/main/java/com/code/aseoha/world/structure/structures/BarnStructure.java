@@ -160,7 +160,7 @@ public class BarnStructure extends Structure<NoFeatureConfig> {
 
         @Override
         public void generatePieces(@NotNull DynamicRegistries dynamicRegistryManager, @NotNull ChunkGenerator chunkGenerator, @NotNull TemplateManager templateManagerIn, int chunkX, int chunkZ, @NotNull Biome biomeIn, @NotNull NoFeatureConfig config) {
-//            new NewEarthGenThread(dynamicRegistryManager, chunkGenerator, templateManagerIn, chunkX, chunkZ, biomeIn, config, random).start();
+//            new NewEarthGenThread(dynamicRegistryManager, chunkGenerator, templateManagerIn, chunkX, chunkZ, biomeIn, Config, random).start();
             // Turns the chunk coordinates into actual coordinates we can use
             int x = chunkX * 16;
             int z = chunkZ * 16;

@@ -74,13 +74,14 @@ public class KlomSkyRenderer implements ISkyRenderHandler {
     }
 
     private void DrawStars(BufferBuilder bufferbuilder, MatrixStack matrixStack){
-        if (STAR_VERTEX_BUFFER == null) { //If the vbo is null (which it is when first called), initialise it and render our data onto it
+        if (STAR_VERTEX_BUFFER == null) { // If the vbo is null (which it is when first called),
+            // initialize it and render our data onto it
             this.STAR_VERTEX_BUFFER = new VertexBuffer(this.VERTEX_FORMAT);
             this.RenderSky(bufferbuilder, matrixStack);
             bufferbuilder.end();
             this.STAR_VERTEX_BUFFER.upload(bufferbuilder);
         }
-        if (STAR_VERTEX_BUFFER != null) { //Once our rendering is done, setup the buffer and send the quads to the gpu
+        if (STAR_VERTEX_BUFFER != null) { // Once our rendering is done, set up the buffer and send the quads to the gpu
             STAR_VERTEX_BUFFER.bind();
            VERTEX_FORMAT.setupBufferState(0L);
             STAR_VERTEX_BUFFER.draw(matrixStack.last().pose(), GL11.GL_QUADS);
@@ -116,7 +117,6 @@ public class KlomSkyRenderer implements ISkyRenderHandler {
 //        mars.SetVerticleUVs(0.3046875F, 0F, 0.39453125F, 0.08984375F);
 
         this.RenderSinglePlanet(bufferBuilder, matrix4f, 45, -26, -40, 25, new Planets().GetMars());
-//        this.RenderSinglePlanet(bufferBuilder, matrix4f, 23, 100, 0, 10, sun);
     }
 
     private void RenderSky(@NotNull BufferBuilder bufferBuilder, @NotNull MatrixStack matrixStack) {
@@ -236,4 +236,5 @@ public class KlomSkyRenderer implements ISkyRenderHandler {
         bufferBuilder.vertex(matrix4f, x, y, z + size).color(1F, 1, 1, 1).endVertex();
         bufferBuilder.vertex(matrix4f, x + size, y, z + size).color(1F, 1, 1, 1).endVertex();
         bufferBuilder.vertex(matrix4f, x + size, y, z).color(1F, 1, 1, 1).endVertex();
-    }}
+    }
+}

@@ -1,6 +1,6 @@
 package com.code.aseoha.misc;
 
-import com.code.aseoha.config;
+import com.code.aseoha.Config;
 import net.minecraft.util.Direction;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.capabilities.CapabilityInject;
@@ -8,7 +8,6 @@ import net.minecraftforge.common.capabilities.ICapabilityProvider;
 import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.energy.CapabilityEnergy;
 import net.minecraftforge.energy.IEnergyStorage;
-import net.tardis.mod.tileentities.machines.RoundelTapTile;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -16,7 +15,7 @@ public class EOHEnergyProvider implements IEnergyStorage, ICapabilityProvider {
     @CapabilityInject(IEnergyStorage.class)
     public static final Capability<IEnergyStorage> ENERGY = null;
     private IEnergyStorage instance = ENERGY.getDefaultInstance();
-    protected int maxExtract = config.SERVER.EOHMaxFETransfer.get();
+    protected int maxExtract = Config.SERVER.EOHMaxFETransfer.get();
 
     @Override
     public int receiveEnergy(int maxReceive, boolean simulate) {

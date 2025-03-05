@@ -170,24 +170,11 @@ public class k9model <T extends k9> extends EntityModel<T> {
 		tail.setPos(-0.5F, 16.5F, 9.0F);
 		tail.texOffs(52, 0).addBox(0.0F, -2.0F, -1.0F, 1.0F, 1.0F, 8.0F, 0.0F, false);
 	}
+
 	@Override
 	public void setupAnim(T t, float v, float v1, float v2, float v3, float v4) {
-		this.tail.zRot = (float) Math.toRadians(t.power);
+		this.tail.zRot = (float) Math.toRadians(t.getTailAngle());
 	}
-
-//	@Override
-//	public void setupAnim(Entity entity, float v, float v1, float v2, float v3, float v4) {
-//
-//	}
-
-//	@Override
-//	public void setupAnim(T t, float v, float v1, float v2, float v3, float v4) {
-//
-//	}
-//	@Override
-//	public void setupAnim(Entity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch){
-//		//previously the render function, render code was moved to a method below
-//	}
 
 	@Override
 	public void renderToBuffer(MatrixStack matrixStack, IVertexBuilder buffer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha){

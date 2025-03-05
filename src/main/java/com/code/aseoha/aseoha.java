@@ -116,8 +116,8 @@ public class aseoha {
         Networking.init();
 
         //Register the Configs
-        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, config.COMMON_SPEC);
-        ModLoadingContext.get().registerConfig(ModConfig.Type.SERVER, config.SERVER_SPEC);
+        ModLoadingContext.get().registerConfig(ModConfig.Type.COMMON, Config.COMMON_SPEC);
+        ModLoadingContext.get().registerConfig(ModConfig.Type.SERVER, Config.SERVER_SPEC);
 
         // Register ourselves for server and other game events we are interested in
 
@@ -289,21 +289,21 @@ public class aseoha {
 
 //    @OnlyIn(Dist.DEDICATED_SERVER)
     public static void SendDebugToServer(String DebugMessage) {
-        if (config.SERVER.DebugMode.get() && Dist.DEDICATED_SERVER.isDedicatedServer())
+        if (Config.SERVER.DebugMode.get() && Dist.DEDICATED_SERVER.isDedicatedServer())
             System.out.println("[ASEOHA Debug] " + DebugMessage);
     }
 
 //    @OnlyIn(Dist.CLIENT)
     public static void SendDebugToClient(String DebugMessage) {
-        if (config.COMMON.DebugMode.get() && Dist.CLIENT.isClient())
+        if (Config.COMMON.DebugMode.get() && Dist.CLIENT.isClient())
             System.out.println("[ASEOHA Debug] " + DebugMessage);
     }
 
 
     public static void SendDebugToAll(String DebugMessage) {
-        if (config.COMMON.DebugMode.get() && Dist.CLIENT.isClient())
+        if (Config.COMMON.DebugMode.get() && Dist.CLIENT.isClient())
             System.out.println("[ASEOHA Debug] " + DebugMessage);
-        if (config.SERVER.DebugMode.get() && Dist.DEDICATED_SERVER.isDedicatedServer())
+        if (Config.SERVER.DebugMode.get() && Dist.DEDICATED_SERVER.isDedicatedServer())
             System.out.println("[ASEOHA Debug] " + DebugMessage);
     }
 }

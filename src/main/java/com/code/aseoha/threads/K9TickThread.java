@@ -1,6 +1,6 @@
 package com.code.aseoha.threads;
 
-import com.code.aseoha.config;
+import com.code.aseoha.Config;
 import com.code.aseoha.entities.k9;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.util.text.ITextComponent;
@@ -27,10 +27,10 @@ public class K9TickThread extends Thread {
         if (this.IsCalledNotInitialized) {
             if (this.K9.isAlive()) {
                 this.K9.setNoAi(this.K9.isDead);
-                if (this.K9.timer < config.SERVER.K9PowerDrainRate.get() * 20) {
+                if (this.K9.timer < Config.SERVER.K9PowerDrainRate.get() * 20) {
                     this.K9.timer++;
                 }
-                if (this.K9.timer >= config.SERVER.K9PowerDrainRate.get() * 20) {
+                if (this.K9.timer >= Config.SERVER.K9PowerDrainRate.get() * 20) {
                     if (this.K9.power > 0)
                         this.K9.power -= 1;
                     this.K9.timer = 0;

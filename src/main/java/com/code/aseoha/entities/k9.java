@@ -3,11 +3,8 @@ package com.code.aseoha.entities;
 
 import com.code.aseoha.Constants;
 import com.code.aseoha.aseoha;
-import com.code.aseoha.config;
 import com.code.aseoha.misc.InventoryContainers;
-import com.code.aseoha.threads.K9TickThread;
 import net.minecraft.block.BlockState;
-import net.minecraft.dispenser.IPosition;
 import net.minecraft.entity.*;
 import net.minecraft.entity.ai.attributes.AttributeModifierManager;
 import net.minecraft.entity.ai.attributes.AttributeModifierMap;
@@ -44,7 +41,6 @@ import net.tardis.mod.sounds.TSounds;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Objects;
-import java.util.UUID;
 
 import static com.code.aseoha.misc.NBTHelper.getInvNBT;
 import static com.code.aseoha.misc.NBTHelper.setInvNBT;
@@ -68,11 +64,7 @@ public class k9 extends RecycledWolf implements IAngerable, ISpaceImmuneEntity, 
     }
 
     public static AttributeModifierMap.MutableAttribute setCustomAttributes() {
-        return CreatureEntity.createMobAttributes()
-                .add(Attributes.MAX_HEALTH, 60.0D)
-                .add(Attributes.MOVEMENT_SPEED, 0.2D)
-                .add(Attributes.ATTACK_DAMAGE, 13.0D)
-                .add(Attributes.FOLLOW_RANGE, 99999999.0D);
+        return CreatureEntity.createMobAttributes().add(Attributes.MAX_HEALTH, 60.0D).add(Attributes.MOVEMENT_SPEED, 0.2D).add(Attributes.ATTACK_DAMAGE, 13.0D).add(Attributes.FOLLOW_RANGE, 99999999.0D);
     }
 
 
@@ -170,14 +162,14 @@ public class k9 extends RecycledWolf implements IAngerable, ISpaceImmuneEntity, 
 //            return true;
 //        }
 //    }
-    //****************************************Just for power****************************************//
+    //**************************************** Just for power ****************************************//
     @Override
     public void tick() {
         super.tick();
         aseoha.k9TickThread.Call(this);
     }
 
-    //*******************************Honestly I can barely read half of this, need to clean it****************************************//
+    //******************************* Honestly, I can barely read half of this, need to clean it ****************************************//
     @NotNull
     @Override
     public ActionResultType mobInteract(PlayerEntity player, @NotNull Hand hand) {
@@ -197,16 +189,14 @@ public class k9 extends RecycledWolf implements IAngerable, ISpaceImmuneEntity, 
 
                 //********INVENTORY********//
                 if (player.isCrouching() && !this.isNoAi()) {
-                    if (!this.isDead)
-                        player.openMenu(this.createContainerProvider());
+                    if (!this.isDead) player.openMenu(this.createContainerProvider());
                 }
                 if (!(item instanceof IArtronItemStackBattery && !player.isCrouching())) {
                     ActionResultType actionresulttype = super.mobInteract(player, hand);
                     if (this.isOwnedBy(player)) {
                         k9.Say("Power is at " + this.power, player, player.level); //TODO: Add power to the K9 Screen, distress signals, etc
 //                        this.setOrderedToSit(!this.isOrderedToSit());
-                        if (!this.isDead && !player.isCrouching() && this.level.isClientSide)
-                            OpenK9Screen(this);
+                        if (!this.isDead && !player.isCrouching() && this.level.isClientSide) OpenK9Screen(this);
                         this.jumping = false;
                         this.navigation.stop();
                         this.setTarget((LivingEntity) null);
@@ -305,7 +295,7 @@ public class k9 extends RecycledWolf implements IAngerable, ISpaceImmuneEntity, 
 
     public static void Say(String text, PlayerEntity player, World worldIn) {
         assert player != null;
-        Objects.requireNonNull(worldIn.getServer()).tell(new TickDelayedTask(1, () -> player.sendMessage(new StringTextComponent(text + ", Master."), player.getUUID())));
+        worldIn.getServer().tell(new TickDelayedTask(1, () -> player.sendMessage(new StringTextComponent(text + ", Master."), player.getUUID())));
     }
 
     @Override
@@ -348,7 +338,7 @@ public class k9 extends RecycledWolf implements IAngerable, ISpaceImmuneEntity, 
 
     @Override
     public RecycledWolf getBreedOffspring(ServerWorld world, AgeableEntity ageableEntity) {
-        return (RecycledWolf) null;
+        return (k9) null;
     }
 
     @Override
@@ -365,12 +355,8 @@ public class k9 extends RecycledWolf implements IAngerable, ISpaceImmuneEntity, 
     }
 
     @OnlyIn(Dist.CLIENT)
-    public void handleEntityEvent(byte p_70103_1_) {
-        if (p_70103_1_ == 8) {
-        } else {
-            super.handleEntityEvent(p_70103_1_);
-        }
-
+    public void handleEntityEvent(byte flag) {
+        if (flag != 8) super.handleEntityEvent(flag);
     }
 
 //    @OnlyIn(Dist.CLIENT)

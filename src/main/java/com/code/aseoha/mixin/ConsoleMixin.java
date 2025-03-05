@@ -1,8 +1,8 @@
 package com.code.aseoha.mixin;
 
+import com.code.aseoha.Config;
 import com.code.aseoha.Helpers.TARDISHelper;
 import com.code.aseoha.aseoha;
-import com.code.aseoha.config;
 import com.code.aseoha.Helpers.IHelpWithConsole;
 import com.code.aseoha.networking.Networking;
 import com.code.aseoha.networking.Packets.EnterRWFPacket;
@@ -515,7 +515,7 @@ public abstract class ConsoleMixin extends TileEntity implements ITickableTileEn
     private void playAmbientNoises() {
         if (!this.level.isClientSide) return;
 
-        if (!config.COMMON.ShouldAmbientSoundsPlay.get()) return;
+        if (!Config.COMMON.ShouldAmbientSoundsPlay.get()) return;
 
         PlayerEntity player = ClientHelper.getClientPlayer();
 

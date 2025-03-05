@@ -2,7 +2,7 @@ package com.code.aseoha.events;
 
 import com.code.aseoha.Helpers.IHelpWithConsole;
 import com.code.aseoha.Helpers.KeyboardHelper;
-import com.code.aseoha.config;
+import com.code.aseoha.Config;
 import com.code.aseoha.networking.Networking;
 import com.code.aseoha.networking.Packets.ExitRWFPacket;
 import net.minecraft.client.Minecraft;
@@ -55,7 +55,7 @@ public class ClientEvents {
     @SubscribeEvent
     @OnlyIn(Dist.CLIENT)
     public static void onSoundPlayed(PlaySoundEvent event){
-        if(!config.COMMON.ShouldAmbientSoundsPlay.get() && event.getSound().getLocation() == TSounds.AMBIENT_CREAKS.getId()){
+        if(!Config.COMMON.ShouldAmbientSoundsPlay.get() && event.getSound().getLocation() == TSounds.AMBIENT_CREAKS.getId()){
             ClientHelper.shutTheFuckUp(TSounds.AMBIENT_CREAKS.get(), event.getSound().getSource());
         }
     }

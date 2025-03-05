@@ -9,7 +9,6 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 @Mixin({ServerWorldInfo.class})
 public class ServerWorldInfoMixin {
-
     @Inject(
             method = {"worldGenSettingsLifecycle"},
             at = {@At("HEAD")},

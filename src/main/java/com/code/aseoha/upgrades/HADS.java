@@ -3,6 +3,7 @@ package com.code.aseoha.upgrades;
 import java.util.Objects;
 import java.util.Random;
 
+import com.code.aseoha.Config;
 import com.code.aseoha.Helpers.IHelpWithConsole;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.monster.IMob;
@@ -28,20 +29,21 @@ public class HADS extends Upgrade implements ITickable {
 //        this.random = new Random();
     }
 
-    //public boolean isActive = this.isActivated();
     public static void hadsActivate(ConsoleTile console) {
-        if (!Objects.requireNonNull(console.getLevel()).isClientSide) {
-            console.getSubsystem(StabilizerSubsystem.class).ifPresent(stabs -> stabs.setActivated(false));
-        }
+        if (console.getLevel() == null || console.getLevel().isClientSide) return;
+
+        console.getSubsystem(StabilizerSubsystem.class).ifPresent(stabs -> stabs.setActivated(false));
+
         if (((IHelpWithConsole) console).Aseoha$GetHads()) {
             console.takeoff();
-            Objects.requireNonNull(console.getLevel().getServer()).tell(new TickDelayedTask(1, () -> {
-                console.setDestinationReachedTick(1);
-                console.setFlightTicks(1);
-
+            console.getLevel().getServer().tell(new TickDelayedTask(1, () -> {
+                console.setDestinationReachedTick(console.flightTicks);
+//                console.setDestinationReachedTick(1);
+//                console.setFlightTicks(1);
+                console.updateClient();
             }));
-            console.updateClient();
-            if (console.flightTicks == 1200) {
+
+            if (console.flightTicks >= Config.SERVER.HADSDuration.get()) {
                 console.initLand();
             }
         }
@@ -69,8 +71,7 @@ public class HADS extends Upgrade implements ITickable {
         }
     }
 
-    public void onLand() {
-    }
+    public void onLand() {}
 
     public void onTakeoff() {
 //        this.getConsole().getControl(ThrottleControl.class).ifPresent((control) -> {

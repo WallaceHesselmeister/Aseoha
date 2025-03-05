@@ -171,7 +171,7 @@ public class CitadelStructure extends Structure<NoFeatureConfig> {
 
         @Override
         public void generatePieces(@NotNull DynamicRegistries dynamicRegistryManager, @NotNull ChunkGenerator chunkGenerator, @NotNull TemplateManager templateManagerIn, int chunkX, int chunkZ, @NotNull Biome biomeIn, @NotNull NoFeatureConfig config) {
-//            new NewEarthGenThread(dynamicRegistryManager, chunkGenerator, templateManagerIn, chunkX, chunkZ, biomeIn, config, random).start();
+//            new NewEarthGenThread(dynamicRegistryManager, chunkGenerator, templateManagerIn, chunkX, chunkZ, biomeIn, Config, random).start();
             // Turns the chunk coordinates into actual coordinates we can use
             int x = 0;
             int z = 0;

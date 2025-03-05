@@ -38,6 +38,7 @@ import net.minecraft.entity.monster.GhastEntity;
 import net.minecraft.entity.passive.AnimalEntity;
 import net.minecraft.entity.passive.TameableEntity;
 import net.minecraft.entity.passive.TurtleEntity;
+import net.minecraft.entity.passive.WolfEntity;
 import net.minecraft.entity.passive.horse.AbstractHorseEntity;
 import net.minecraft.entity.passive.horse.LlamaEntity;
 import net.minecraft.entity.player.PlayerEntity;
@@ -75,6 +76,7 @@ public class RecycledWolf extends TameableEntity implements IAngerable {
         EntityType<?> entitytype = p_213440_0_.getType();
         return entitytype == EntityType.SHEEP || entitytype == EntityType.RABBIT || entitytype == EntityType.FOX;
     };
+
     private float interestedAngle;
     private float interestedAngleO;
     private boolean isWet;
@@ -530,6 +532,15 @@ public class RecycledWolf extends TameableEntity implements IAngerable {
         public void tick() {
             RecycledWolf.this.setTarget((LivingEntity)null);
             super.tick();
+        }
+    }
+
+    @OnlyIn(Dist.CLIENT)
+    public float getTailAngle() {
+        if (this.isAngry()) {
+            return 1.5393804F;
+        } else {
+            return this.isTame() ? (0.55F - (this.getMaxHealth() - this.getHealth()) * 0.02F) * (float)Math.PI : ((float)Math.PI / 5F);
         }
     }
 }
