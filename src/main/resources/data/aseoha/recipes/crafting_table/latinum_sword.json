@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    " 1 ",
+    " 1 ",
+    " 2 "
+  ],
+  "key": {
+    "1": {
+      "item": "aseoha:latinum_brick"
+    },
+    "2": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "aseoha:latinum_sword",
+    "count": 1
+  },
+  "show_notification": true
+}

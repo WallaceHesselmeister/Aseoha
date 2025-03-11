@@ -1,0 +1,7 @@
+{
+    "id": "aseoha:edwardian",
+    "category": "ait:exterior/classic",
+    "parent": "ait:exterior/classic/hudolin",
+    "texture": "aseoha:textures/edwardian.png",
+    "emission": "aseoha:textures/edwardian_emission.png"
+}

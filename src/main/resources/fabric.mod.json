@@ -1,0 +1,30 @@
+{
+  "schemaVersion": 1,
+  "id": "aseoha",
+  "version": "${version}",
+  "name": "Aseoha",
+  "description": "",
+  "authors": [],
+  "contact": {},
+  "license": "WTFPL",
+  "icon": "assets/aseoha/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "com.code.aseoha.client.aseohaClient"
+    ],
+    "main": [
+      "com.code.aseoha.aseoha"
+    ]
+  },
+  "mixins": [
+    "aseoha.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "ait": "*",
+    "minecraft": "${minecraft_version}"
+  },
+  "accessWidener" : "aseoha.accesswidener"
+}
