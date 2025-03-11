@@ -1,0 +1,20 @@
+{
+  "fly": {
+    "sound": {
+      "sound_id": "aseoha:smith_flight_loop"
+    },
+    "time": 60
+  },
+  "land": {
+    "sound": {
+      "sound_id": "aseoha:smith_landing"
+    },
+    "time": 180
+  },
+  "takeoff": {
+    "sound": {
+      "sound_id": "aseoha:smith_takeoff"
+    },
+    "time": 280
+  }
+}

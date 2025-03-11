@@ -1,0 +1,6 @@
+{
+	"parent": "aseohait:item/sonic/mk2",
+	"textures": {
+		"0": "aseohait:item/sonic_tools/mk2_interaction"
+	}
+}

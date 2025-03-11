@@ -1,0 +1,16 @@
+{
+  "required": true,
+  "minVersion": "0.8",
+  "package": "tama.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "refmap": "aseoha.refmap.json",
+  "mixins": [
+    "MonitorMixin",
+    "SonicPortMixin"
+  ],
+  "client": [
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

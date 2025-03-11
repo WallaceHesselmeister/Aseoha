@@ -1,0 +1,6 @@
+{
+	"parent":"aseohait:block/offset",
+	"textures":{
+		"0":"aseohait:block/roundel/acacia_planks_roundel"
+	}
+}

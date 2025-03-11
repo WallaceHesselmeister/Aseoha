@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "gNg",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:piston"
+    },
+    "g": {
+      "item": "minecraft:iron_ingot"
+    },
+    "N": {
+      "item": "minecraft:redstone"
+    }
+  },
+  "result": {
+    "item": "aseoha:engine",
+    "count": 1
+  }
+}

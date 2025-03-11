@@ -1,0 +1,40 @@
+{
+  "temperature": 0.8,
+  "downfall": 0.4,
+  "temperature_modifier": "none",
+  "effects": {
+    "sky_color": 4085486,
+    "fog_color": 12638463,
+    "water_color": 472983,
+    "water_fog_color": 1842342,
+    "grass_color": 65344,
+    "foliage_color": 2410510
+  },
+  "spawners": {
+    "creature": [
+      {
+        "type": "minecraft:villager",
+        "weight": 1,
+        "minCount": 10,
+        "maxCount": 20
+      }
+    ]
+  },
+  "spawn_costs": {},
+  "carvers": {},
+  "features": [
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    []
+  ],
+  "has_precipitation": true
+}

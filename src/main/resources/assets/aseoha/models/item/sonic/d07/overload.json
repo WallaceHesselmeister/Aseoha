@@ -1,0 +1,6 @@
+{
+	"parent": "aseohait:item/sonic/d07",
+	"textures": {
+		"0": "aseohait:item/sonic_tools/d07_overload"
+	}
+}

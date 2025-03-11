@@ -1,0 +1,8 @@
+{
+  "can_travel_to": true,
+  "dimension_type": "aseoha:mondas_type",
+  "must_be_unlocked": true,
+  "must_land_inside": false,
+  "name": "Mondas",
+  "travel_distance": 500
+}

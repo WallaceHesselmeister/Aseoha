@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "fxf",
+    "xzx",
+    "crc"
+  ],
+  "key": {
+    "x": {
+      "item": "minecraft:glass_pane"
+    },
+    "z": {
+      "item": "aseoha:blue_crystal"
+    },
+    "r": {
+      "item": "minecraft:redstone"
+    },
+    "f": {
+      "item": "minecraft:redstone_lamp"
+    },
+    "c": {
+      "item": "tardis:circuits"
+    }
+  },
+  "result": {
+    "item": "aseoha:eye_of_harmony"
+  }
+}

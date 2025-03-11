@@ -1,0 +1,10 @@
+{
+  "structure_resource_location":"aseoha:jungle_interior",
+  "display_name":"Jungle Biosphere",
+  "x_offset":29,
+  "y_offset":28,
+  "z_offset":30,
+  "using_remote_image":false,
+  "remote_image_url":"https://i.imgur.com/asnDCDc.png",
+  "image_resource_location":"aseoha:jungle.png"
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "aseohait:block/roundel/bamboo_planks_roundel",
+  "textures": {
+    "layer0": "aseohait:block/roundel/bamboo_planks_roundel"
+  }
+}

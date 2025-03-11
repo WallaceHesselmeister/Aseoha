@@ -1,0 +1,6 @@
+{
+  "parent" : "aseoha:block/meglos_slab_lower",
+  "textures": {
+    "0": "aseoha:block/meglos/meglos_blank"
+  }
+}

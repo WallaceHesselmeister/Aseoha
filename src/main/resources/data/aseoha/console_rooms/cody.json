@@ -1,0 +1,10 @@
+{
+  "structure_resource_location":"aseoha:cody",
+  "display_name":"Cody",
+  "x_offset":15,
+  "y_offset":4,
+  "z_offset":30,
+  "using_remote_image":false,
+  "remote_image_url":"https://github.com/WallaceHesselmeister/WallaceHesselmeister.github.io/blob/main/cody.png?raw=true",
+  "image_resource_location":"aseoha:cody.png"
+}

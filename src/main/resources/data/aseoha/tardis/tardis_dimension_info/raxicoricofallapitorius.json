@@ -1,0 +1,8 @@
+{
+  "can_travel_to": true,
+  "dimension_type": "aseoha:raxicoricofallapatorious",
+  "must_be_unlocked": false,
+  "must_land_inside": false,
+  "name": "Raxicoricofallapitorius",
+  "travel_distance": 150
+}

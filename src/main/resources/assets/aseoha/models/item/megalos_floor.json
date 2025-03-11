@@ -1,0 +1,6 @@
+{
+  "parent" : "aseoha:block/meglos_floor",
+  "textures": {
+    "7": "aseoha:block/meglos/meglos_floor"
+  }
+}

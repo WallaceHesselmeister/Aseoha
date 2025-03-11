@@ -1,0 +1,42 @@
+{
+  "name": "aseoha:conversion_ship_overworld",
+  "fallback": "aseoha:conversion_ship_overworld",
+  "elements": [
+    {
+      "weight": 16,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "aseoha:conversion_ship/crashed_one",
+        "processors": "minecraft:mossify_20_percent"
+      }
+    },
+    {
+      "weight": 17,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "aseoha:conversion_ship/crashed_two",
+        "processors": "minecraft:mossify_20_percent"
+      }
+    },
+    {
+      "weight": 15,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "aseoha:conversion_ship/crashed_three",
+        "processors": "minecraft:mossify_20_percent"
+      }
+    },
+    {
+      "weight": 18,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "aseoha:conversion_ship/crashed_four",
+        "processors": "minecraft:mossify_20_percent"
+      }
+    }
+  ]
+}

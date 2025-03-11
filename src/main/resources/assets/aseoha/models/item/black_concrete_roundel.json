@@ -1,0 +1,6 @@
+{
+  "parent": "aseohait:block/roundel/black_concrete_roundel",
+  "textures": {
+    "layer0": "aseohait:block/roundel/black_concrete_roundel"
+  }
+}

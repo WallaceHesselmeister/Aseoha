@@ -1,0 +1,16 @@
+{
+  "replace": false,
+  "entries": [
+    "aseoha:chests/stronghold_library",
+    "aseoha:gameplay/hero_of_the_village/librarian_gift",
+    "aseoha:chests/end_city_treasure",
+    "aseoha:chests/abandoned_mineshaft",
+    "aseoha:chests/bastion_bridge",
+    "aseoha:chests/shipwreck_treasure",
+    "aseoha:gameplay/fishing/treasure",
+    "aseoha:chests/bastion_treasure",
+    "aseoha:chests/woodland_mansion",
+    "aseoha:chests/buried_treasure",
+    "aseoha:chests/shipwreck_supply"
+  ]
+}

@@ -1,0 +1,6 @@
+{
+	"parent": "aseohait:item/sonic/mk4",
+	"textures": {
+		"0": "aseohait:item/sonic_tools/mk4_inactive"
+	}
+}

@@ -1,0 +1,41 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "hga",
+    "lNj",
+    "z#k"
+  ],
+  "key": {
+    "#": {
+      "item": "aseoha:engine"
+    },
+    "g": {
+      "item": "minecraft:gold_block"
+    },
+    "N": {
+      "item": "tardis:artron_collector"
+    },
+    "h": {
+      "item": "tardis:circuits"
+    },
+    "j": {
+      "item": "minecraft:ender_eye"
+    },
+    "k": {
+      "item": "minecraft:netherite_ingot"
+    },
+    "l": {
+      "item": "tardis:int_door"
+    },
+    "a": {
+      "item": "minecraft:diamond"
+    },
+    "z": {
+      "item": "aseoha:artron_bank_old"
+    }
+  },
+  "result": {
+    "item": "aseoha:tardis_coral",
+    "count": 1
+  }
+}

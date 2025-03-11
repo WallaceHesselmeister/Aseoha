@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:jigsaw",
+  "biomes": "aseoha:mondas_plains",
+  "step": "surface_structures",
+  "terrain_adaptation": "none",
+  "spawn_overrides": {},
+  "start_pool": "aseoha:conversion_ship_mondas",
+  "size": 7,
+  "start_height": {
+    "below_top": 0
+  },
+  "max_distance_from_center": 20,
+  "use_expansion_hack": false
+}

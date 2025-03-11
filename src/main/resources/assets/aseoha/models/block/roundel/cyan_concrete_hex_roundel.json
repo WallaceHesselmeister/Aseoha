@@ -1,0 +1,6 @@
+{
+	"parent":"aseohait:block/alternating_texture_nesw",
+	"textures":{
+		"0":"aseohait:block/roundel/hexagonals/cyan_concrete_hex_roundel"
+	}
+}

@@ -1,0 +1,8 @@
+{
+  "can_travel_to": true,
+  "dimension_type": "aseoha:klom_type",
+  "must_be_unlocked": false,
+  "must_land_inside": false,
+  "name": "Klom",
+  "travel_distance": 150
+}

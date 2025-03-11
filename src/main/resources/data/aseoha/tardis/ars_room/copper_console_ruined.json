@@ -1,0 +1,9 @@
+{
+  "type": "room",
+  "canBeRemoved": true,
+  "extra_unlocks": [],
+  "generates_naturally": true,
+  "parent": "aseoha:copper_console",
+  "roomLocation": "aseoha:rooms/ruined/console/copper",
+  "y_offset": -2
+}

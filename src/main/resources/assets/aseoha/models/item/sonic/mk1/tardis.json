@@ -1,0 +1,6 @@
+{
+	"parent": "aseohait:item/sonic/mk1",
+	"textures": {
+		"0": "aseohait:item/sonic_tools/mk1_tardis"
+	}
+}

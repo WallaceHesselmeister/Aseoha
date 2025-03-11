@@ -1,0 +1,20 @@
+{
+  "replace": false,
+  "values": [
+    "aseoha:death_zone",
+    "aseoha:gallifrey_desert",
+    "aseoha:gallifreybiome",
+    "aseoha:midnight",
+    "aseoha:newearth",
+    "aseoha:raxicoricofallapitoriusbiome",
+    "aseoha:redlands",
+    "aseoha:redlands_cliffs",
+    "aseoha:redlands_cold_ocean",
+    "aseoha:redlands_gravelly_mountains",
+    "aseoha:redlands_modified_gravelly_mountains",
+    "aseoha:redlands_mountains",
+    "aseoha:redlands_river",
+    "aseoha:skarobiome",
+    "aseoha:trenzalorebiome"
+  ]
+}

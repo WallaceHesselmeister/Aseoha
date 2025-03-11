@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "NgN",
+    "gXg",
+    "NgN"
+  ],
+  "key": {
+    "g": {
+      "item": "minecraft:clay_ball"
+    },
+    "N": {
+      "item": "minecraft:quartz"
+    },
+    "X": {
+      "item": "tardis:circuit_paste"
+    }
+  },
+  "result": {
+    "item": "aseoha:control_mold",
+    "count": 1
+  }
+}
