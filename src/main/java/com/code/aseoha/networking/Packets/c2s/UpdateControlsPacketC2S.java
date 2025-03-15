@@ -1,4 +1,4 @@
-package com.code.aseoha.networking.Packets;
+package com.code.aseoha.networking.Packets.c2s;
 
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.tileentity.TileEntity;
@@ -15,7 +15,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Objects;
 import java.util.function.Supplier;
 
-public class UpdateControlsPacket {
+public class UpdateControlsPacketC2S {
 //    public static void handle(MyMessage msg, Supplier<NetworkEvent.Context> ctx) {
 //        ctx.get().enqueueWork(() -> {
 //            // Work that needs to be thread-safe (most work)
@@ -27,21 +27,21 @@ public class UpdateControlsPacket {
 
     public ResourceLocation console;
 
-    public UpdateControlsPacket(ResourceLocation console) {
+    public UpdateControlsPacketC2S(ResourceLocation console) {
         this.console = console;
     }
 
-    public static void encode(@NotNull UpdateControlsPacket mes, @NotNull PacketBuffer buffer) {
+    public static void encode(@NotNull UpdateControlsPacketC2S mes, @NotNull PacketBuffer buffer) {
         buffer.writeResourceLocation(mes.console);
     }
 
     @NotNull
     @Contract("_ -> new")
-    public static UpdateControlsPacket decode(@NotNull PacketBuffer buffer) {
-        return new UpdateControlsPacket(buffer.readResourceLocation());
+    public static UpdateControlsPacketC2S decode(@NotNull PacketBuffer buffer) {
+        return new UpdateControlsPacketC2S(buffer.readResourceLocation());
     }
 
-    public static void handle(UpdateControlsPacket mes, @NotNull Supplier<NetworkEvent.Context> ctx) {
+    public static void handle(UpdateControlsPacketC2S mes, @NotNull Supplier<NetworkEvent.Context> ctx) {
         ((NetworkEvent.Context) ctx.get()).enqueueWork(() -> {
             ServerWorld world = Objects.requireNonNull(((NetworkEvent.Context) ctx.get()).getSender()).getLevel();
             if (WorldHelper.areDimensionTypesSame(world, TDimensions.DimensionTypes.TARDIS_TYPE)) {

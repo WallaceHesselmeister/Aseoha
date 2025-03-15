@@ -17,6 +17,7 @@ public class Constants {
     public final static RegistryKey<Biome> GALLIFREY_BIOME = RegistryKey.create(Registry.BIOME_REGISTRY, new ResourceLocation("aseoha", "gallifrey_biome"));
     public final static RegistryKey<Biome> GALLIFREY_DESERT_BIOME = RegistryKey.create(Registry.BIOME_REGISTRY, new ResourceLocation("aseoha", "gallifrey_desert"));
 
+    public final static TranslationTextComponent WORKBENCH_CATEGORY = new TranslationTextComponent("aseoha.jei.category.workbench");
     public final static RegistryKey<Biome> REDLANDS_TAIGA_BIOME = RegistryKey.create(Registry.BIOME_REGISTRY, new ResourceLocation("aseoha", "redlands_taiga"));
     public final static RegistryKey<World> MIDNIGHT = RegistryKey.create(Registry.DIMENSION_REGISTRY, new ResourceLocation("aseoha", "midnight"));
     public final static ITextComponent AffirmativeK9 = new StringTextComponent("[K9] Affirmative, Master!");

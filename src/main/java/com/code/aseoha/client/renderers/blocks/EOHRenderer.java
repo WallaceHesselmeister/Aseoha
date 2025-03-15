@@ -42,7 +42,7 @@ public class EOHRenderer extends TileEntityRenderer<EOHTile> {
         matrixStackIn.translate(0.5, 3, 0.5);
         matrixStackIn.scale(1, 1, 1);
         matrixStackIn.mulPose(Vector3f.YP.rotationDegrees(90));
-        if (!eohTile.active && eohTile.GetHasStar())
+        if (!eohTile.active && eohTile.isHasStar())
             Minecraft.getInstance().getItemRenderer().renderStatic(Items.NETHER_STAR.getDefaultInstance(), ItemCameraTransforms.TransformType.NONE, i, i1, matrixStackIn, iRenderTypeBuffer);
         matrixStackIn.popPose();
     }

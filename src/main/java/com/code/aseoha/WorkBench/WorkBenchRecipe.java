@@ -55,7 +55,6 @@ public class WorkBenchRecipe {
         ingredients.add(ingredient3);
         ingredients.add(ingredient4);
         return ingredients;
-//        return
     }
 
     public Item GetOutput(){

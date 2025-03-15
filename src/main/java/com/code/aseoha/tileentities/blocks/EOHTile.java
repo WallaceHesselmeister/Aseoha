@@ -4,6 +4,10 @@ import java.util.*;
 
 import com.code.aseoha.block.AseohaBlocks;
 import com.code.aseoha.Helpers.IHelpWithConsole;
+import com.code.aseoha.networking.Networking;
+import com.code.aseoha.networking.Packets.c2s.EOHSyncPacketC2S;
+import lombok.Getter;
+import lombok.Setter;
 import net.minecraft.block.*;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.CompoundNBT;
@@ -32,35 +36,41 @@ public class EOHTile extends TileEntity implements ITickableTileEntity {
     /**
      * This is used to get the time the Eye has NOT had a stabilizer for
      */
-    public long timer = 0;
+    @Getter
+    private long timer = 0;
     /**
-     * This is here for activation/de-activation
+     * This is here for activation/deactivation
      */
+    @Getter @Setter
     public boolean active = false;
     /**
      * if there's a stabilizer within 10 blocks of the EOH
      */
+    @Getter @Setter
     public boolean HasStabilizerNear = false;
     /**
      * if it's "overheated", basically if it's gone 8 minutes without a stabilizer
      */
     public boolean IsOverheated;
 
-    public int numberOfPillars = 0;
+    @Getter
+    private int numberOfPillars = 0;
 
-    public void setHasStar(boolean hasStar) {
-        this.hasStar = hasStar;
-    }
-
-    public boolean GetHasStar() {
-        return this.hasStar;
-    }
-
+    @Getter
     public boolean Mark;
 
+    @Getter @Setter
     private boolean hasStar = false;
 
+    @Getter
     private ConsoleTile consoleTile;
+
+    @Override
+    public void onLoad() {
+        super.onLoad();
+        if(this.level.isClientSide) return;
+        Networking.sendToDimension(this.level.dimension(), new EOHSyncPacketC2S());
+    }
 
     /**
      * Okay so how this SHOULD work is after 5 minutes, the EOH starts causing some time-space distortion (after giving you a few nasty effects) and at 8 minutes "overheats" AKA Shuts Off, you can keep it on with NO side effects by having a "Harmonic Stabilizer" within 10 blocks of the EOH.
@@ -69,7 +79,8 @@ public class EOHTile extends TileEntity implements ITickableTileEntity {
     @Override
     public void tick() {
         this.Update();
-        WorldHelper.forceChunkVanillaIfNotLoaded(ServerLifecycleHooks.getCurrentServer().getLevel(this.level.dimension()), new ChunkPos(this.getBlockPos().getX() / 16, this.getBlockPos().getZ() / 16));
+        if(!this.level.isClientSide)
+            WorldHelper.forceChunkVanillaIfNotLoaded(ServerLifecycleHooks.getCurrentServer().getLevel(this.level.dimension()), new ChunkPos(this.getBlockPos().getX() / 16, this.getBlockPos().getZ() / 16));
         this.consoleTile = TardisHelper.getConsoleInWorld(Objects.requireNonNull(this.getLevel())).orElse(null);
         if (this.consoleTile == null) return;
         if (!((IHelpWithConsole) this.consoleTile).Aseoha$GetHasEOH())
@@ -97,6 +108,7 @@ public class EOHTile extends TileEntity implements ITickableTileEntity {
                 ((IHelpWithConsole) this.consoleTile).Aseoha$SetEOHOverheated(this.IsOverheated);
                 ((IHelpWithConsole) this.consoleTile).Aseoha$SetEOHTimer(this.timer);
                 ((IHelpWithConsole) this.consoleTile).Aseoha$SetEOHPillars((byte) this.GetStabilizers());
+                this.Mark = !this.Mark;
             }
     }
 
@@ -200,21 +212,22 @@ public class EOHTile extends TileEntity implements ITickableTileEntity {
             if (this.timer > 6000) {
                 assert this.level != null;
                 List<PlayerEntity> PlayerList = this.level.getEntitiesOfClass(PlayerEntity.class, new AxisAlignedBB(this.worldPosition).inflate(1000));
-                for (int i = 0; i < PlayerList.size(); i++) {
-                    PlayerList.get(i).addEffect(new EffectInstance(Effects.CONFUSION, 20, 20));
+                for (PlayerEntity player : PlayerList) {
+                    player.addEffect(new EffectInstance(Effects.CONFUSION, 20, 20));
                 }
             }
             if (this.timer > 7200) {
+                assert this.level != null;
                 List<PlayerEntity> PlayerList = this.level.getEntitiesOfClass(PlayerEntity.class, new AxisAlignedBB(this.worldPosition).inflate(1000));
-                for (int i = 0; i < PlayerList.size(); i++) {
-                    PlayerList.get(i).addEffect(new EffectInstance(Effects.POISON, 20, 20));
+                for (PlayerEntity player : PlayerList) {
+                    player.addEffect(new EffectInstance(Effects.POISON, 20, 20));
                 }
             }
 
             if (this.timer > 8400) {
                 List<PlayerEntity> PlayerList = this.level.getEntitiesOfClass(PlayerEntity.class, new AxisAlignedBB(this.worldPosition).inflate(1000));
-                for (int i = 0; i < PlayerList.size(); i++) {
-                    PlayerList.get(i).addEffect(new EffectInstance(Effects.BLINDNESS, 20, 20, true, true, true));
+                for (PlayerEntity player : PlayerList) {
+                    player.addEffect(new EffectInstance(Effects.BLINDNESS, 20, 20, true, true, true));
                 }
             }
             if (this.timer > 9600) {

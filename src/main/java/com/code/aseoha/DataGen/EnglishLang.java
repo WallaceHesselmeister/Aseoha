@@ -1,5 +1,6 @@
 package com.code.aseoha.DataGen;
 
+import com.code.aseoha.Constants;
 import com.code.aseoha.aseoha;
 import com.code.aseoha.block.AseohaBlocks;
 import com.code.aseoha.client.Sounds;
@@ -21,6 +22,11 @@ public class EnglishLang extends LanguageProvider {
      * THANKS JERYN!
      */
     protected void addTranslations() {
+        add("ars.piece.category.aseoha.ironclad", "Ironclad");
+        add("ars.piece.category.aseoha.ironclad_corridor", "Corridors");
+        add("ars.piece.category.aseoha.ironclad_corridor_tunnel", "Tunnel Corridors");
+        add("ars.piece.category.aseoha.ironclad_rooms", "Rooms");
+        add(Constants.WORKBENCH_CATEGORY.getKey(), "Workbench");
         add(AseohaBlocks.FAT_BLOCK.get().asItem().getDescriptionId(), "Fat Block");
 //        add(AseohaItems.MANUAL.get().getDescriptionId(), "Contains information on ASEOHA features");
         add(AseohaItems.GINGERBREAD_CYBERMAN.get().getDescriptionId(), "Gingerbread Cyber-Man");
@@ -428,6 +434,7 @@ public class EnglishLang extends LanguageProvider {
 
     /**
      * Made to accept Item#toString(), remove the minecraft:item@modid, and capitalize every first letter of every word
+     *
      * @param text Item#toString()
      * @return Item#toString() without minecraft:item@modid and every first letter of every word capitalized
      */
@@ -445,7 +452,7 @@ public class EnglishLang extends LanguageProvider {
         /**
          * Find any characters coming after a space char and replace it with the uppercase variant
          */
-        for(int i = 0; i < text.length(); i++) {
+        for (int i = 0; i < text.length(); i++) {
             if (text.substring(i, i + 1).contains(" "))
                 text = text.replace(text.substring(i, i + 2), text.substring(i, i + 2).toUpperCase());
         }

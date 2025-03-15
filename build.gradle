@@ -158,6 +158,7 @@ repositories {
     mavenCentral()
     maven { url 'https://jitpack.io' }
     maven { url "https://cursemaven.com" }
+    maven { url "https://dvs1.progwml6.com/files/maven/" } // JEI Maven
 }
 
 //dependencies {}
@@ -174,7 +175,9 @@ dependencies {
 //    implementation fg.deobf('com.gitlab.Spectre0987:TardisMod:1.5.4')
     implementation fg.deobf("curse.maven:new-tardis-mod-290247:3667066")
     /************************************ JEI *********************************************/
-    implementation fg.deobf("curse.maven:jei-238222:5534622") // JEI
+//    implementation fg.deobf("curse.maven:jei-238222:5534622") // JEI
+    compileOnly fg.deobf("mezz.jei:jei-1.16.5:7.7.1.153:api") // JEI API for compilation
+    runtimeOnly fg.deobf("mezz.jei:jei-1.16.5:7.7.1.153") // Full JEI for runtime
     /************************************ Mekanism *********************************************/
 //    implementation fg.deobf("curse.maven:mekanism-268560:3659389") // Mekanism
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
@@ -186,6 +189,9 @@ dependencies {
 //    implementation fg.deobf("curse.maven:t-additions-804564:5844290")
     /************************************ GeckoLib **********************************************************/
 //    implementation fg.deobf("curse.maven:geckolib-388172:4182600")
+    /************************************ LomBok ************************************************************/
+    compileOnly 'org.projectlombok:lombok:1.18.32'
+    annotationProcessor 'org.projectlombok:lombok:1.18.32'
     // You may put jars on which you depend on in ./libs or you may define them like so..
     // compile "some.group:artifact:version:classifier"
     // compile "some.group:artifact:version"

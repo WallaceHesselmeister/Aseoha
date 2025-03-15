@@ -3,11 +3,9 @@ package com.code.aseoha.WorkBench;
 import com.code.aseoha.items.AseohaItems;
 import net.minecraft.item.Item;
 import net.minecraft.item.Items;
-import org.lwjgl.system.CallbackI;
 
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Objects;
 
 public class WorkBenchRecipeHandler {
     public ArrayList<WorkBenchRecipe> RecipeList = new ArrayList<>();
@@ -84,12 +82,12 @@ public class WorkBenchRecipeHandler {
      *
      * @return The result of the recipe or dirt if it doesn't exist
      */
-    public Item GetRecipeResultFromArrayList(ArrayList<Item> Ingredient) {
+    public Item GetRecipeResult(ArrayList<Item> Ingredient) {
         Item FirstIngredient = Ingredient.get(0), SecondIngredient = Ingredient.get(1), ThirdIngredient = Ingredient.get(2), FourthIngredient = Ingredient.get(3);
         if (this.IsValidRecipe(FirstIngredient, SecondIngredient, ThirdIngredient, FourthIngredient)) {
-            for (int i = 0; i < this.RecipeList.size(); i++) {
-                if (Arrays.equals(this.RecipeList.get(i).Ingredients, new Item[]{FirstIngredient, SecondIngredient, ThirdIngredient, FourthIngredient})) {
-                    return this.RecipeList.get(i).Result;
+            for (WorkBenchRecipe workBenchRecipe : this.RecipeList) {
+                if (Arrays.equals(workBenchRecipe.Ingredients, new Item[]{FirstIngredient, SecondIngredient, ThirdIngredient, FourthIngredient})) {
+                    return workBenchRecipe.Result;
                 }
             }
         }

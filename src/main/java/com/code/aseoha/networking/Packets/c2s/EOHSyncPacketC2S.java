@@ -1,4 +1,4 @@
-package com.code.aseoha.networking.Packets;
+package com.code.aseoha.networking.Packets.c2s;
 
 import com.code.aseoha.Helpers.IHelpWithConsole;
 import com.code.aseoha.block.EOH;
@@ -15,25 +15,20 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.function.Supplier;
 
-public class EOHInteractPacket {
+public class EOHSyncPacketC2S {
 
-    public boolean intType;
+    public EOHSyncPacketC2S() {}
 
-    public EOHInteractPacket(boolean intType) {
-        this.intType = intType;
-    }
-
-    public static void encode(@NotNull EOHInteractPacket mes, @NotNull PacketBuffer buffer) {
-        buffer.writeBoolean(mes.intType);
+    public static void encode(@NotNull EOHSyncPacketC2S mes, @NotNull PacketBuffer buffer) {
     }
 
     @NotNull
     @Contract("_ -> new")
-    public static EOHInteractPacket decode(@NotNull PacketBuffer buffer) {
-        return new EOHInteractPacket(buffer.readBoolean());
+    public static EOHSyncPacketC2S decode(@NotNull PacketBuffer buffer) {
+        return new EOHSyncPacketC2S();
     }
 
-    public static void handle(EOHInteractPacket mes, @NotNull Supplier<NetworkEvent.Context> ctx) {
+    public static void handle(EOHSyncPacketC2S mes, @NotNull Supplier<NetworkEvent.Context> ctx) {
         ctx.get().enqueueWork(() -> {
             ServerWorld world = ctx.get().getSender().getLevel();
             if (WorldHelper.areDimensionTypesSame(world, TDimensions.DimensionTypes.TARDIS_TYPE)) {
@@ -41,16 +36,8 @@ public class EOHInteractPacket {
                 if (te instanceof ConsoleTile) {
                     ConsoleTile consoleTile = (ConsoleTile) te;
                     EOH eoh = ((IHelpWithConsole) consoleTile).Aseoha$GetEOH().getBlockState().getBlock() instanceof EOH ? (EOH) ((IHelpWithConsole) consoleTile).Aseoha$GetEOH().getBlockState().getBlock() : null;
-                    if (eoh != null) {
-                        if (mes.intType) {
-                            eoh.setHasStar(true);
-                            eoh.Mark();
-                            eoh.LastPlayerClick.getMainHandItem().shrink(1);
-                        }
-                        else ((IHelpWithConsole) consoleTile).Aseoha$GetEOH().Activate();
-//                        ((IHelpWithConsole) consoleTile).Aseoha$GetEOH().setChanged();
-                        eoh.Mark();
-                    }
+                    if (eoh == null) return;
+                    eoh.Mark();
                 }
             }
 

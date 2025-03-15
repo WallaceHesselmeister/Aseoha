@@ -1,4 +1,4 @@
-package com.code.aseoha.networking.Packets;
+package com.code.aseoha.networking.Packets.c2s;
 
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.tileentity.TileEntity;
@@ -13,22 +13,22 @@ import net.tardis.mod.world.dimensions.TDimensions;
 import java.util.Objects;
 import java.util.function.Supplier;
 
-public class ToggleLocksPacket {
+public class ToggleLocksPacketC2S {
     public ResourceLocation console;
 
-    public ToggleLocksPacket(ResourceLocation console) {
+    public ToggleLocksPacketC2S(ResourceLocation console) {
         this.console = console;
     }
 
-    public static void encode(ToggleLocksPacket mes, PacketBuffer buffer) {
+    public static void encode(ToggleLocksPacketC2S mes, PacketBuffer buffer) {
         buffer.writeResourceLocation(mes.console);
     }
 
-    public static ToggleLocksPacket decode(PacketBuffer buffer) {
-        return new ToggleLocksPacket(buffer.readResourceLocation());
+    public static ToggleLocksPacketC2S decode(PacketBuffer buffer) {
+        return new ToggleLocksPacketC2S(buffer.readResourceLocation());
     }
 
-    public static void handle(ToggleLocksPacket mes, Supplier<NetworkEvent.Context> ctx) {
+    public static void handle(ToggleLocksPacketC2S mes, Supplier<NetworkEvent.Context> ctx) {
         ((NetworkEvent.Context) ctx.get()).enqueueWork(() -> {
             ServerWorld world = Objects.requireNonNull(((NetworkEvent.Context) ctx.get()).getSender()).getLevel();
             if (WorldHelper.areDimensionTypesSame(world, TDimensions.DimensionTypes.TARDIS_TYPE)) {

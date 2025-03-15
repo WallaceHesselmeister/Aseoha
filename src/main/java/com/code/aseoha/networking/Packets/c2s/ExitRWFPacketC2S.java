@@ -1,4 +1,4 @@
-package com.code.aseoha.networking.Packets;
+package com.code.aseoha.networking.Packets.c2s;
 
 import com.code.aseoha.Helpers.IHelpWithConsole;
 import net.minecraft.network.PacketBuffer;
@@ -14,22 +14,22 @@ import net.tardis.mod.world.dimensions.TDimensions;
 import java.util.Objects;
 import java.util.function.Supplier;
 
-public class ExitRWFPacket {
+public class ExitRWFPacketC2S {
     public ResourceLocation console;
 
-    public ExitRWFPacket(ResourceLocation console) {
+    public ExitRWFPacketC2S(ResourceLocation console) {
         this.console = console;
     }
 
-    public static void encode(ExitRWFPacket mes, PacketBuffer buffer) {
+    public static void encode(ExitRWFPacketC2S mes, PacketBuffer buffer) {
         buffer.writeResourceLocation(mes.console);
     }
 
-    public static ExitRWFPacket decode(PacketBuffer buffer) {
-        return new ExitRWFPacket(buffer.readResourceLocation());
+    public static ExitRWFPacketC2S decode(PacketBuffer buffer) {
+        return new ExitRWFPacketC2S(buffer.readResourceLocation());
     }
 
-    public static void handle(ExitRWFPacket mes, Supplier<NetworkEvent.Context> ctx) {
+    public static void handle(ExitRWFPacketC2S mes, Supplier<NetworkEvent.Context> ctx) {
         ((NetworkEvent.Context) ctx.get()).enqueueWork(() -> {
             ServerWorld world = Objects.requireNonNull(((NetworkEvent.Context) ctx.get()).getSender()).getLevel();
             if (WorldHelper.areDimensionTypesSame(world, TDimensions.DimensionTypes.TARDIS_TYPE)) {

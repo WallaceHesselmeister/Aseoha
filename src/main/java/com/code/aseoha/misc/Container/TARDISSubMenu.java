@@ -5,8 +5,10 @@ import java.util.Objects;
 import com.code.aseoha.client.Sounds;
 import com.code.aseoha.entities.k9;
 import com.code.aseoha.networking.Networking;
-import com.code.aseoha.networking.Packets.TakeOffFromClientPacket;
-import com.code.aseoha.networking.Packets.ToggleLocksPacket;
+import com.code.aseoha.networking.Packets.c2s.TakeOffFromClientPacketC2S;
+import com.code.aseoha.networking.Packets.c2s.ToggleLocksPacketC2S;
+import lombok.Getter;
+import lombok.Setter;
 import net.minecraft.client.Minecraft;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.SoundCategory;
@@ -25,6 +27,8 @@ import net.tardis.mod.tileentities.ConsoleTile;
 
 @OnlyIn(Dist.CLIENT)
 public class TARDISSubMenu extends MonitorScreen {
+    @Setter
+    @Getter
     private int index = 0;
     private k9 K9;
 
@@ -51,12 +55,12 @@ public class TARDISSubMenu extends MonitorScreen {
                 console = (ConsoleTile) te;
                 TextButton fly;
                 this.addButton(fly = (TextButton) this.createButton(this.parent.getMinX(), this.parent.getMinY(), new TranslationTextComponent("aseoha.tardis.fly"), (but) -> {
-                    Networking.sendToServer(new TakeOffFromClientPacket(Objects.requireNonNull(console.getLevel()).dimension().getRegistryName()));
+                    Networking.sendToServer(new TakeOffFromClientPacketC2S(Objects.requireNonNull(console.getLevel()).dimension().getRegistryName()));
 
                     Objects.requireNonNull(this.K9.level).playSound(null, this.K9.blockPosition(), Sounds.AFFIRMATIVE_MASTER.get(), SoundCategory.BLOCKS, 1.0f, 1.0f);
                 }));
                 this.addButton((TextButton) this.createButton(this.parent.getMinX(), this.parent.getMinY(), new TranslationTextComponent("aseoha.tardis.lock_doors"), (but) -> {
-                    Networking.sendToServer(new ToggleLocksPacket(Objects.requireNonNull(console.getLevel()).dimension().getRegistryName()));
+                    Networking.sendToServer(new ToggleLocksPacketC2S(Objects.requireNonNull(console.getLevel()).dimension().getRegistryName()));
                     Objects.requireNonNull(this.K9.level).playSound(null, this.K9.blockPosition(), Sounds.AFFIRMATIVE_MASTER.get(), SoundCategory.BLOCKS, 1.0f, 1.0f);
 
                 }));
@@ -89,13 +93,5 @@ public class TARDISSubMenu extends MonitorScreen {
     @OnlyIn(Dist.CLIENT)
     public void openCoordScreen(IMonitorGui parent, ConsoleTile console, byte Axis) {
         Minecraft.getInstance().setScreen(new CoordScreen(parent, Axis, Objects.requireNonNull(console.getLevel()).dimension().getRegistryName()));
-    }
-
-    public int getIndex() {
-        return index;
-    }
-
-    public void setIndex(int index) {
-        this.index = index;
     }
 }

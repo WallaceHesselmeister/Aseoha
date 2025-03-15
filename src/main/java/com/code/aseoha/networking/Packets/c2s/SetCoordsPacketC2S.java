@@ -1,4 +1,4 @@
-package com.code.aseoha.networking.Packets;
+package com.code.aseoha.networking.Packets.c2s;
 
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.tileentity.TileEntity;
@@ -16,7 +16,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Objects;
 import java.util.function.Supplier;
 
-public class SetCoordsPacket {
+public class SetCoordsPacketC2S {
     public ResourceLocation console;
     public int Coord;
     public Byte Axis;
@@ -27,13 +27,13 @@ public class SetCoordsPacket {
      * @param axis Byte, 1 = X, 2 = Y, 3 = Z
      * @param coord An Integer value, the coord to be set
      */
-    public SetCoordsPacket(ResourceLocation console, byte axis, int coord) {
+    public SetCoordsPacketC2S(ResourceLocation console, byte axis, int coord) {
         this.console = console;
         this.Coord = coord;
         this.Axis = axis;
     }
 
-    public static void encode(@NotNull SetCoordsPacket mes, @NotNull PacketBuffer buffer) {
+    public static void encode(@NotNull SetCoordsPacketC2S mes, @NotNull PacketBuffer buffer) {
         buffer.writeResourceLocation(mes.console);
         buffer.writeByte(mes.Axis);
         buffer.writeInt(mes.Coord);
@@ -41,11 +41,11 @@ public class SetCoordsPacket {
 
     @NotNull
     @Contract("_ -> new")
-    public static SetCoordsPacket decode(@NotNull PacketBuffer buffer) {
-        return new SetCoordsPacket(buffer.readResourceLocation(), buffer.readByte(), buffer.readInt());
+    public static SetCoordsPacketC2S decode(@NotNull PacketBuffer buffer) {
+        return new SetCoordsPacketC2S(buffer.readResourceLocation(), buffer.readByte(), buffer.readInt());
     }
 
-    public static void handle(SetCoordsPacket mes, @NotNull Supplier<NetworkEvent.Context> ctx) {
+    public static void handle(SetCoordsPacketC2S mes, @NotNull Supplier<NetworkEvent.Context> ctx) {
         ((NetworkEvent.Context) ctx.get()).enqueueWork(() -> {
             ServerWorld world = Objects.requireNonNull(((NetworkEvent.Context) ctx.get()).getSender()).getLevel();
             if (WorldHelper.areDimensionTypesSame(world, TDimensions.DimensionTypes.TARDIS_TYPE)) {

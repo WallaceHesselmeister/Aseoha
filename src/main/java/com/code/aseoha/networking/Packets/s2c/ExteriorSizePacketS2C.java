@@ -1,4 +1,4 @@
-package com.code.aseoha.networking.Packets;
+package com.code.aseoha.networking.Packets.s2c;
 
 import com.code.aseoha.Helpers.IHelpWithConsole;
 import net.minecraft.network.PacketBuffer;
@@ -16,30 +16,30 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Objects;
 import java.util.function.Supplier;
 
-public class ExteriorSizePacket {
+public class ExteriorSizePacketS2C {
     public ResourceLocation console;
     public boolean size;
     /**
      * Used for setting Exterior Size
      * @param console The ResourceLocation of the consoletile of the TARDIS
      */
-    public ExteriorSizePacket(ResourceLocation console, boolean size) {
+    public ExteriorSizePacketS2C(ResourceLocation console, boolean size) {
         this.console = console;
         this.size = size;
     }
 
-    public static void encode(@NotNull ExteriorSizePacket mes, @NotNull PacketBuffer buffer) {
+    public static void encode(@NotNull ExteriorSizePacketS2C mes, @NotNull PacketBuffer buffer) {
         buffer.writeResourceLocation(mes.console);
         buffer.writeBoolean(mes.size);
     }
 
     @NotNull
     @Contract("_ -> new")
-    public static ExteriorSizePacket decode(@NotNull PacketBuffer buffer) {
-        return new ExteriorSizePacket(buffer.readResourceLocation(), buffer.readBoolean());
+    public static ExteriorSizePacketS2C decode(@NotNull PacketBuffer buffer) {
+        return new ExteriorSizePacketS2C(buffer.readResourceLocation(), buffer.readBoolean());
     }
 
-    public static void handle(ExteriorSizePacket mes, @NotNull Supplier<NetworkEvent.Context> ctx) {
+    public static void handle(ExteriorSizePacketS2C mes, @NotNull Supplier<NetworkEvent.Context> ctx) {
         ctx.get().enqueueWork(() -> {
             World world = Objects.requireNonNull(ctx.get().getSender()).getLevel();
             if (WorldHelper.areDimensionTypesSame(world, TDimensions.DimensionTypes.TARDIS_TYPE)) {
