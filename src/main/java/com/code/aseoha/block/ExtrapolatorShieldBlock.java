@@ -131,7 +131,7 @@ public class ExtrapolatorShieldBlock extends Block {
                         }
 
                         for (ArrowEntity liv : exteriorBlock.getLevel().getEntitiesOfClass(ArrowEntity.class, AABB)) {
-                            /** If the entity whom shot the arrow is inside the AABB DON'T block it **/
+                            /** If the entity that shot the arrow is inside the AABB DON'T block it **/
                             if (liv != null && liv.getOwner() != null) {
                                 if (!AABB.contains(liv.getOwner().position())) {
                                     Vector3d LivPos = liv.position();
@@ -156,7 +156,7 @@ public class ExtrapolatorShieldBlock extends Block {
                         }
 
                         for (LaserEntity liv : exteriorBlock.getLevel().getEntitiesOfClass(LaserEntity.class, AABB)) {
-                            /** If the entity whom shot the arrow is inside the AABB DON'T block it **/
+                            /** If the entity that shot the lazer is inside the AABB DON'T block it **/
                             if (liv != null && liv.getOwner() != null) {
                                 if (!AABB.contains(liv.getOwner().position())) {
                                     Vector3d LivPos = liv.position();

@@ -3,6 +3,9 @@ import com.code.aseoha.client.Sounds;
 import com.code.aseoha.entities.ModEntityTypes;
 import com.code.aseoha.items.Materials.AseohaArmorMaterials;
 import com.code.aseoha.items.Materials.AseohaItemTiers;
+import com.code.aseoha.items.Upgrades.LightSpeedDrive;
+import com.code.aseoha.items.Upgrades.TesseractDrive;
+import com.code.aseoha.items.Upgrades.WarpDrive;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.*;
 import net.minecraft.potion.EffectInstance;
@@ -42,11 +45,11 @@ public class AseohaItems {
 
     public static final RegistryObject<Item> ATRIUM_UPGRADE = ITEMS.register("upgrades/atrium", () -> createItem(new TardisPartItem((new Item.Properties()).tab(AseohaItemGroups.ASEOHA_GROUP), TardisConstants.Part.PartType.UPGRADE, false, false, TardisConstants.Translations.CHAMELEON_CIRCUIT)));
 
-    public static final RegistryObject<Item> WARP_DRIVE = ITEMS.register("upgrades/warp_drive", () -> createItem(new TardisPartItem((new Item.Properties()).tab(AseohaItemGroups.ASEOHA_GROUP), TardisConstants.Part.PartType.UPGRADE, false, false, TardisConstants.Translations.CHAMELEON_CIRCUIT)));
+    public static final RegistryObject<Item> WARP_DRIVE = ITEMS.register("upgrades/warp_drive", () -> createItem(new WarpDrive()));
 
-    public static final RegistryObject<Item> TESSERACT_DRIVE = ITEMS.register("upgrades/tesseract_drive", () -> createItem(new TardisPartItem((new Item.Properties()).tab(AseohaItemGroups.ASEOHA_GROUP), TardisConstants.Part.PartType.UPGRADE, false, false, TardisConstants.Translations.CHAMELEON_CIRCUIT)));
+    public static final RegistryObject<Item> TESSERACT_DRIVE = ITEMS.register("upgrades/tesseract_drive", () -> createItem(new TesseractDrive()));
 
-    public static final RegistryObject<Item> LIGHTSPEED_DRIVE = ITEMS.register("upgrades/lightspeed_drive", () -> createItem(new TardisPartItem((new Item.Properties()).tab(AseohaItemGroups.ASEOHA_GROUP), TardisConstants.Part.PartType.UPGRADE, false, false, TardisConstants.Translations.CHAMELEON_CIRCUIT)));
+    public static final RegistryObject<Item> LIGHTSPEED_DRIVE = ITEMS.register("upgrades/lightspeed_drive", () -> createItem(new LightSpeedDrive()));
 
     //
 //    public static final RegistryObject<Item> MANUAL = ITEMS.register("manual",

@@ -21,12 +21,11 @@ public class DataVortexCodecListener extends CodecJsonDataListener<DataPackVorte
 
     public Map<ResourceLocation, DataPackVortex> mapValues(Map<ResourceLocation, JsonElement> inputs) {
         Map<ResourceLocation, DataPackVortex> map = DataPackVortex.registerCoreDataPackExteriors();
-        Map<ResourceLocation, DataPackVortex> parsedInData = new HashMap();
+        Map<ResourceLocation, DataPackVortex> parsedInData = new HashMap<>();
 
         for (Map.Entry<ResourceLocation, JsonElement> resourceLocationJsonElementEntry : inputs.entrySet()) {
-            Map.Entry<ResourceLocation, JsonElement> entry = (Map.Entry) resourceLocationJsonElementEntry;
-            ResourceLocation key = entry.getKey();
-            JsonElement element = entry.getValue();
+            ResourceLocation key = resourceLocationJsonElementEntry.getKey();
+            JsonElement element = resourceLocationJsonElementEntry.getValue();
             this.codec.decode(JsonOps.INSTANCE, element).get().ifLeft((result) -> {
                 ((DataPackVortex) result.getFirst()).setRegistryName(key);
                 parsedInData.put(key, result.getFirst());
@@ -43,9 +42,8 @@ public class DataVortexCodecListener extends CodecJsonDataListener<DataPackVorte
     }
 
     public void setData(Map<ResourceLocation, DataPackVortex> input) {
-
         for (Map.Entry<ResourceLocation, DataPackVortex> resourceLocationDataPackExteriorEntry : input.entrySet()) {
-            resourceLocationDataPackExteriorEntry.getValue().setRegistryName(((Map.Entry<ResourceLocation, DataPackVortex>) (Map.Entry) resourceLocationDataPackExteriorEntry).getKey());
+            resourceLocationDataPackExteriorEntry.getValue().setRegistryName(resourceLocationDataPackExteriorEntry.getKey());
         }
 
         super.setData(input);

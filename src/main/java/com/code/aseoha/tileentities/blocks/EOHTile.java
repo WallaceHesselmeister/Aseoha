@@ -78,6 +78,8 @@ public class EOHTile extends TileEntity implements ITickableTileEntity {
         if (((IHelpWithConsole) this.consoleTile).Aseoha$GetEOH() == null)
             ((IHelpWithConsole) this.consoleTile).Aseoha$SetEOH(this);
 
+        this.active = this.hasStar;
+
         if (this.active) {
             ((IHelpWithConsole) this.consoleTile).Aseoha$SetEOHTimer(this.timer);
 

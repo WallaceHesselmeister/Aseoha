@@ -1,6 +1,5 @@
 package com.code.aseoha.upgrades;
 
-import java.util.Objects;
 import java.util.Random;
 
 import com.code.aseoha.Config;
@@ -29,7 +28,7 @@ public class HADS extends Upgrade implements ITickable {
 //        this.random = new Random();
     }
 
-    public static void hadsActivate(ConsoleTile console) {
+    public static void activateHADS(ConsoleTile console) {
         if (console.getLevel() == null || console.getLevel().isClientSide) return;
 
         console.getSubsystem(StabilizerSubsystem.class).ifPresent(stabs -> stabs.setActivated(false));
@@ -64,7 +63,7 @@ public class HADS extends Upgrade implements ITickable {
             if (tile.getLevel() != null) {
                 for (LivingEntity liv : tile.getLevel().getEntitiesOfClass(LivingEntity.class, new AxisAlignedBB(tile.getBlockPos()).inflate(2))) {
                     if (liv instanceof IMob && !liv.getType().is(TardisEntityTypeTags.IGNORED_ALARM_ENTITIES)) {
-                        hadsActivate(console);
+                        activateHADS(console);
                     }
                 }
             }

@@ -30,6 +30,7 @@ public class PrydonianRobes extends ArmorItem {
     }
 
     @Override
+    @SuppressWarnings("unchecked")
     public <A extends BipedModel<?>> A getArmorModel(LivingEntity entityLiving, ItemStack itemStack, EquipmentSlotType armorSlot, A _default) {
         Map<Item, BipedModel<?>> map = AClientHelper.getPrydonianArmorModel(itemStack);
         BipedModel<?> model = map.get(itemStack.getItem());

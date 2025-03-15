@@ -125,7 +125,8 @@ public class ManualScreen extends Screen {
         this.page2X = this.pageX + 120;
     }
 
-    public void render(MatrixStack matrixStack, int mouseX, int mouseY, float partialTicks) {
+    @SuppressWarnings("unchecked")
+    public void render(@NotNull MatrixStack matrixStack, int mouseX, int mouseY, float partialTicks) {
         this.renderBackground(matrixStack);
         Minecraft.getInstance().getTextureManager().bind(this.getTexture());
         this.blit(matrixStack, (this.width - 256) / 2, (this.height - 187) / 2, 0, 0, 256, 187);
@@ -169,6 +170,7 @@ public class ManualScreen extends Screen {
 
     }
 
+    @SuppressWarnings("unchecked")
     public boolean mouseClicked(double mouseX, double mouseY, int button) {
         Pair<Page, Page> pages = this.getPages();
         if (mouseY > (double)this.pageY && mouseY < (double)(this.pageY + 144)) {
@@ -301,6 +303,7 @@ public class ManualScreen extends Screen {
         return this.chapterIndex;
     }
 
+    @SuppressWarnings("unchecked")
     public Pair getPages() {
         Chapter chapter = this.getChapter();
         if (chapter != null && this.pageIndex < chapter.getPages().size()) {
@@ -311,7 +314,7 @@ public class ManualScreen extends Screen {
 
             return new Pair(this.getChapter().getPages().get(this.pageIndex), page2);
         } else {
-            return new Pair((Object)null, (Object)null);
+            return new Pair(null, null);
         }
     }
 

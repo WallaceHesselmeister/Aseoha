@@ -82,8 +82,13 @@ public class AseohaBlocks {
     public static final RegistryObject<Block> WORKBENCH = registerBlock("workbench",
             () -> new WorkbenchBlock(Block.Properties.copy(Blocks.IRON_BLOCK).noOcclusion()));
 
+    /** Eye Of Harmony Blocks **/
+
+    public static final RegistryObject<Block> ZERO_POINT_DWARF_STAR_ALLOY = registerBlock("zero_point_dwarf_star_alloy",
+            () -> setUpBlock(new Block(Block.Properties.of(Material.METAL).strength(10, 50F).lightLevel(BlockState -> 2).noOcclusion())));
+
     public static final RegistryObject<Block> EYE_OF_HARMONY = registerBlock("eye_of_harmony",
-            () -> new EOH(Block.Properties.of(Material.METAL).strength(1.25F, 5.25F).lightLevel(BlockState -> 15).noOcclusion()));
+            () -> new EOH(Block.Properties.of(Material.METAL).strength(1200, 2400).lightLevel(BlockState -> 15).noOcclusion()));
 
     public static final RegistryObject<Block> HARMONIC_PILLAR = registerBlock("harmonic_pillar",
             () -> setUpBlock(new EOHPillar(Block.Properties.of(Material.METAL).strength(1.25F, 5.25F).lightLevel(BlockState -> 2).noOcclusion())));

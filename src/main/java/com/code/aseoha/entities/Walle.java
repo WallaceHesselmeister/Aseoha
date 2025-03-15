@@ -227,6 +227,7 @@ public boolean isSensitiveToWater() {
         this.entityData.set(DATA_CARRY_STATE, Optional.ofNullable(p_195406_1_));
     }
     @Nullable
+    @SuppressWarnings("unchecked")
     public BlockState getCarriedBlock() {
         return (BlockState)((Optional)this.entityData.get(DATA_CARRY_STATE)).orElse((BlockState)null);
     }

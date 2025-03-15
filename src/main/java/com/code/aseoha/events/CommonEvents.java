@@ -1,5 +1,6 @@
 package com.code.aseoha.events;
 
+import com.code.aseoha.Constants;
 import com.code.aseoha.Helpers.IHelpWithConsole;
 import com.code.aseoha.Helpers.IHelpWithMonitor;
 import com.code.aseoha.Helpers.PlayerHelper;
@@ -12,6 +13,8 @@ import com.code.aseoha.entities.k9;
 import com.code.aseoha.tileentities.consoles.CopperConsoleTile;
 import com.code.aseoha.upgrades.AutoStabilizer;
 import com.code.aseoha.upgrades.HADS;
+import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.SoundCategory;
@@ -49,7 +52,10 @@ import org.jetbrains.annotations.NotNull;
 import javax.script.ScriptEngine;
 import javax.script.ScriptEngineManager;
 import javax.script.ScriptException;
+import java.util.Arrays;
 import java.util.Objects;
+import java.util.concurrent.atomic.AtomicReference;
+import java.util.stream.Collectors;
 
 import static com.code.aseoha.Helpers.IHelpWithMonitor.Aseoha$MonitorGetRot;
 
@@ -106,81 +112,22 @@ public class CommonEvents {
 //        Objects.requireNonNull(event.getPlayer().getServer()).getCommands().performCommand(event.getPlayer().getServer().createCommandSourceStack().withEntity(event.getPlayer().getEntity()).withSuppressedOutput(), "function aseoha:givemanual");
 //    }
 
-
-//    @SubscribeEvent
-//    public static void chatEvent(ServerChatEvent event)
-//    {
-//        String message = event.getMessage();
-//        ServerPlayerEntity player = event.getPlayer();
-//        World level = player.getLevel();
-//        aseoha.LOGGER.info(message);
-//        aseoha.LOGGER.info(player.getStringUUID());
-//        aseoha.LOGGER.info(level.dimension().getRegistryName());
-//        if ((message.toLowerCase().contains("meter") || message.toLowerCase().contains("metre")) && message.toLowerCase().contains("second"))
-//        {
-//            String[] parts = message.replace("'", "").replace("seconds", "").replace("meter", "-").replace("meters", "-").replace("metre", "-").replace("metres", "-").split("-");
-//            float meters = Float.parseFloat(parts[0].replaceAll("[^1234567890.]", ""));
-//            int seconds = Integer.parseInt(parts[1].replaceAll("[^1234567890]", ""))*20;
-//            aseoha.LOGGER.info(meters);
-//            aseoha.LOGGER.info(seconds);
-//            if(meters > 0f && seconds > 0)
-//            {
-//                aseoha.LOGGER.info(seconds);
-////                List<ItemEntity> fallenItems = level.getEntities(EntityType.ITEM, new AxisAlignedBB(player.blockPosition().offset(new Vector3i(-3, -3, -3)), player.blockPosition().offset(new Vector3i(3, 3, 3))), item -> item.getItem().getItem() instanceof MedusaItem);
-////                List<Player> nearbyPlayers = level.getEntities(EntityType.PLAYER, new AxisAlignedBB(player.blockPosition().offset(new Vector3i(-3, -3, -3)), player.blockPosition().offset(new Vector3i(3, 3, 3))), playerEntity -> playerEntity.is().hasAnyMatching(item -> item.getItem() instanceof MedusaItem));
-//
-////                for(ItemEntity item : fallenItems)
-////                {
-////                    MedusaItem medusa = ((MedusaItem) item.getItem().getItem());
-////                    medusa.setStartDelay(item.getItem(), seconds);
-////                    medusa.setDelay(item.getItem(), seconds);
-////                    medusa.setRadius(item.getItem(), meters);
-////                    medusa.setCountdownActive(item.getItem(), true);
-////                }
-////                for(Player playerEntity : nearbyPlayers)
-////                {
-////                    for(ItemStack stack : playerEntity.inventory().items)
-////                    {
-////                        aseoha.LOGGER.info(stack);
-////                    }
-////                }
-//            }
-//        }
-//    }
-
-
     /**
      * This is just to check if somebody enters something in chat, what they entered, and mostly for K9 voice prompts
      */
     @SubscribeEvent
     public static void onServerChat(@NotNull ServerChatEvent event) {
         aseoha.SendDebugToServer("A whole crap ton of chat crap going on right now");
-        String message = event.getMessage();
+        AtomicReference<String> message = new AtomicReference<>(event.getMessage());
         ScriptEngineManager mgr = new ScriptEngineManager();
         ScriptEngine engine = mgr.getEngineByName("JavaScript");
 
-        if (event.getMessage().toLowerCase().contains("aseoha") && event.getMessage().toLowerCase().contains("give") && event.getMessage().toLowerCase().contains("manual")) {
-            event.getPlayer().removeTag("GotASEOHABook");
-        }
-
-//        if (event.getMessage().toLowerCase().contains("aseoha") && event.getMessage().toLowerCase().contains("disguise")) {
-//            ItemStack offHandItem = event.getPlayer().getOffhandItem();
-//            ItemStack mainHandItem = event.getPlayer().getMainHandItem();
-//            if (event.getPlayer().isHolding(TItems.KEY.get())) {
-//                if(event.getPlayer().getOffhandItem() != Items.AIR.getDefaultInstance()){
-//                    if(mainHandItem.hasTag()) {
-//                        offHandItem.getOrCreateTag().putString("tardis_key_linked_console", Objects.requireNonNull(mainHandItem.getTag().get(TARDIS_KEY_NBT_KEY)).toString());
-//                        event.getPlayer().inventory.removeItem(mainHandItem);
-//                    }
-//                }
-//            }
-//        }
         //HELP ME
         if (event.getMessage().toLowerCase().replace(" ", "").contains("aseoha") && event.getMessage().toLowerCase().replace(" ", "").contains("help") && event.getMessage().toLowerCase().replace(" ", "").contains("k9")) {
 //            event.getPlayer().sendMessage(new StringTextComponent("Operation of K9 Mark II: \n\nTo ensure proper operation of K-9 Mark II make sure that your K-9 Unit is located within 20 blocks of the console unit of the TARDIS you would like to operate with your K-9 unit\n\nWhenever you would like to use your K-9 Unit, start by opening the chat, and type in \"K9\", You can also type \"K 9\" or \"K-9\", it is important to note that you may type it in uppercase, or lowercase.\n\nAfter typing K9, type in one of the many keywords available, each of these keywords corresponds to one of K9s many functions\n\nKeywords can be mixed with other words and phrases and will still work, for instance, I could say \"K9 [keyword]\" or I could say \"K9, Please do [keyword] now\" and K9 would still perform the function corresponding to the keyword (Note, when using keywords, capitalization does not matter)\n\nKeywords:\n\nThe keyword for K9s math function is: \"math\" and \"calculate\", the math function allows for Addition (+) Subtraction (-) Multiplication (*) and Division (/) it also supports parentheses ()\n\nThe Keywords for K9s Power Off function are \"power\" + \"off\"/\"down\" (Please note, you must include both power AND off in your sentence) K9's Power Off function will initiate the TARDIS Power Off Procedure, Turning all the lights off, and emitting some noises as it powers down.\n\nThe Keywords for K9's Destination Set function are \"set\"+\"destination\"/\"location\"/\"coord\" (Please note: while you can say coord, you could also add letters to the end of the keyword, like coordINATE or coordBanannaCreamPie) This will set the destination coordinate for one axis (X, Y, or Z) in order to set the coordinate, you must specify the axis (X, Y, or Z) in your message\n\nThe Keyword for K9's light function is \"set\"+\"light\" followed by a number, this number can be any number from 1-15, however, if you go above 15, it will automatically be set to 15. K9's light function sets the light level of the TARDIS.\n\nThe Keyword for K9's flight function is \"fly\", K9's flight function will activate the TARDIS Stabilizers (if present) and initiate the TARDIS flight sequence (Important Note, if you are flying a Type 40 TARDIS or older, you will have to manually pilot your TARDIS around any temporal disturbances (Flight Events), unless you have the Stabilizer Circuits installed, otherwise you run the risk of crashing and damaging your timeship, and landing in the wrong location)\n\nThe Keyword for K9's lock function are \"lock\", the lock function will lock the TARDIS doors, in order to unlock them, ensure the keywords \"disengage\" or \"un\" are present in you message to K9\n\nThe Keywords for K9's deadlock function are \"dead\"+\"lock\", K9's deadlock function will deadlock the doors. (WARNING, DEADLOCKED DOORS CAN ONLY BE UNLOCKED BY A DEADLOCKER KEY WHICH MUST BE ATTUNED TO YOUR TARDIS, OR BY ANOTHER K9), If you wish to un-deadlock the TARDIS doors with your K9, ensure the keywords \"un\"/\"disengage\" are present in your message\n\nWe Thank you for purchasing your new K9 Mark II, and wish you happy travels!\nTo file a complaint with your K9 call the ASEOHA helpline by typing \"call 770-090-0461\" in the chat\nMade in China\n K9 Mark II complies with part 15 of the FCC Rules.\nOperation is subject to the following two conditions:\n(1) this device may not cause harmful interference, \nand (2) this device must accept any interference \nreceived, including interference that may cause undesired operation.\nComplies with Canadian ICES-003 Class B.\nConforme á la NMB-003 classe B du Canada."), event.getPlayer().getUUID());
             event.getPlayer().sendMessage(new StringTextComponent("Upon crafting K-9, you must tame your K-9, which you can do with your sonic screwdriver, then you must recharge your K-9 Unit, in order to do so, click on him with any item that holds an Artron Charge (Sonic Screwdriver, Artron Battery, etc) his maximum capacity is 100 AU, and by default will drain 1 AU every 25 seconds (this can be configured via the server Config), upon charging him up, it will now be able to move and you can now open up it's inventory and GUI, to open the GUI, simply right click the K-9, to open up his inventory, simply Right Click K-9 while you are Crouching. \nWe Thank you for purchasing your new K9 Mark II, and wish you happy travels!\nTo file a complaint with your K9 call the ASEOHA helpline by typing \"call 770-090-0461\" in the chat\nMade in China\n K9 Mark II complies with part 15 of the FCC Rules.\nOperation is subject to the following two conditions:\n(1) this device may not cause harmful interference, \nand (2) this device must accept any interference \nreceived, including interference that may cause undesired operation.\nComplies with Canadian ICES-003 Class B.\nConforme á la NMB-003 classe B du Canada."), event.getPlayer().getUUID());
         }
-        if (event.getMessage().toLowerCase().replace("-", "").replace(" ", "").contains("7700900461")) {
+        if (event.getMessage().toLowerCase().replace("-", "").replace(" ", "").contains("7700900461")) { // The doctors phone number
             event.getPlayer().sendMessage(new StringTextComponent("You have reached the TARDIS, She's busy routing you through the vortex, please hold!"), event.getPlayer().getUUID());
         }
 
@@ -195,116 +142,143 @@ public class CommonEvents {
 //                //*********************Do Stuff Here**********************//
 //
 //            }
-            //******************************************K-9!******************************************//
-            if (message.toLowerCase().replace(" ", "").contains("k9") || message.toLowerCase().replace(" ", "").contains("k-9") || message.toLowerCase().replace(" ", "").contains("k 9")) {
-                for (LivingEntity liv : Objects.requireNonNull(consoleTile.getLevel()).getEntitiesOfClass(LivingEntity.class, new AxisAlignedBB(consoleTile.getBlockPos()).inflate(20))) {
+            //****************************************** K-9! ******************************************//
+            if (Arrays.stream(Constants.waysOfSayingK9).limit(Constants.waysOfSayingK9.length).collect(Collectors.toList()).contains(message.get().toLowerCase())) {
+                // Remove all instances of K9 for message parsing
+                for (int i = 0; i < Constants.waysOfSayingK9.length; i++)
+                    message.set(message.get().replace(Constants.waysOfSayingK9[i], ""));
+
+                for (LivingEntity liv : consoleTile.getLevel().getEntitiesOfClass(LivingEntity.class, new AxisAlignedBB(consoleTile.getBlockPos()).inflate(20))) {
+                    outofK9:
                     if (liv instanceof k9) {
-                        if (!((k9) liv).isDead) {
-                            if (message.toLowerCase().contains("fly")) {
+                        if (((k9) liv).isDead || ((k9) liv).isNoAi()) break outofK9;
+                        if (message.get().toLowerCase().contains("fly")) {
+                            k9.Talk(1, event.getPlayer(), event.getPlayer().level);
+                            consoleTile.getSubsystem(StabilizerSubsystem.class).ifPresent((stabs) -> stabs.setActivated(true));
+                            consoleTile.takeoff();
+                        }
+
+
+                        if (message.get().toLowerCase().contains("power")) {
+                            if (message.get().toLowerCase().contains("off") || message.get().toLowerCase().contains("down")) {
                                 k9.Talk(1, event.getPlayer(), event.getPlayer().level);
-                                consoleTile.getSubsystem(StabilizerSubsystem.class).ifPresent((stabs) -> stabs.setActivated(true));
-                                consoleTile.takeoff();
+                                consoleTile.onPowerDown(true);
+                            }
+                        }
+
+
+                        if (message.get().toLowerCase().contains("set")) {
+                            if (message.get().toLowerCase().contains("light")) {
+                                k9.Talk(1, event.getPlayer(), event.getPlayer().level);
+                                int lightLevel = Integer.parseInt(message.get().toLowerCase().replace(" ", "").replace("k-9", "").replace("k9", "").replace("k 9", "").replaceAll("[^1234567890]", ""));
+                                if (lightLevel > 15) lightLevel = 15;
+                                if (lightLevel < 0) lightLevel = 0;
+                                consoleTile.getInteriorManager().setLight(lightLevel);
 
                             }
 
+                            if (message.get().toLowerCase().contains("coord") || message.get().toLowerCase().contains("location") || message.get().toLowerCase().contains("destination")) {
 
-                            if (message.toLowerCase().contains("power")) {
-                                if (message.toLowerCase().contains("off") || message.toLowerCase().contains("down")) {
+                                if (message.get().toLowerCase().contains("x") && !message.get().toLowerCase().contains("y") && !message.get().toLowerCase().contains("z")) {
+                                    consoleTile.setDestination(consoleTile.getDestinationDimension(), new BlockPos(Integer.parseInt(message.get().toLowerCase().replace(" ", "").replace("k-9", "").replace("k9", "").replaceAll("[^1234567890]", "")), consoleTile.getDestinationPosition().getY(), consoleTile.getDestinationPosition().getZ()));
                                     k9.Talk(1, event.getPlayer(), event.getPlayer().level);
-                                    consoleTile.onPowerDown(true);
+                                }
 
+                                if (message.get().toLowerCase().contains("y") && !message.get().toLowerCase().contains("x") && !message.get().toLowerCase().contains("z")) {
+                                    consoleTile.setDestination(consoleTile.getDestinationDimension(), new BlockPos(consoleTile.getDestinationPosition().getX(), Integer.parseInt(message.get().toLowerCase().replace(" ", "").replace("k-9", "").replace("k9", "").replaceAll("[^1234567890]", "")), consoleTile.getDestinationPosition().getZ()));
+                                    k9.Talk(1, event.getPlayer(), event.getPlayer().level);
+                                }
+
+                                if (message.get().toLowerCase().contains("z") && !message.get().toLowerCase().contains("x") && !message.get().toLowerCase().contains("y")) {
+                                    consoleTile.setDestination(consoleTile.getDestinationDimension(), new BlockPos(consoleTile.getDestinationPosition().getX(), consoleTile.getDestinationPosition().getY(), Integer.parseInt(message.get().toLowerCase().replace(" ", "").replace("k-9", "").replace("k9", "").replaceAll("[^1234567890]", ""))));
+                                    k9.Talk(1, event.getPlayer(), event.getPlayer().level);
+                                }
+                                if ((message.get().toLowerCase().contains("x") && message.get().toLowerCase().contains("y")) || (message.get().toLowerCase().contains("x") && message.get().contains("z")) || (message.get().toLowerCase().contains("z") && message.get().toLowerCase().contains("y"))) {
+                                    k9.Talk(2, event.getPlayer(), event.getPlayer().level);
                                 }
                             }
+                        }
 
-
-                            if (message.toLowerCase().contains("set")) {
-                                if (message.toLowerCase().contains("light")) {
-                                    k9.Talk(1, event.getPlayer(), event.getPlayer().level);
-                                    int lightLevel = Integer.parseInt(message.toLowerCase().replace(" ", "").replace("k-9", "").replace("k9", "").replace("k 9", "").replaceAll("[^1234567890]", ""));
-                                    if (lightLevel > 15) lightLevel = 15;
-                                    if (lightLevel < 0) lightLevel = 0;
-                                    consoleTile.getInteriorManager().setLight(lightLevel);
-
-                                }
-
-                                if (message.toLowerCase().contains("coord") || message.toLowerCase().contains("location") || message.toLowerCase().contains("destination")) {
-
-                                    if (message.toLowerCase().contains("x") && !message.toLowerCase().contains("y") && !message.toLowerCase().contains("z")) {
-                                        consoleTile.setDestination(consoleTile.getDestinationDimension(), new BlockPos(Integer.parseInt(message.toLowerCase().replace(" ", "").replace("k-9", "").replace("k9", "").replaceAll("[^1234567890]", "")), consoleTile.getDestinationPosition().getY(), consoleTile.getDestinationPosition().getZ()));
-                                        k9.Talk(1, event.getPlayer(), event.getPlayer().level);
-                                    }
-
-                                    if (message.toLowerCase().contains("y") && !message.toLowerCase().contains("x") && !message.toLowerCase().contains("z")) {
-                                        consoleTile.setDestination(consoleTile.getDestinationDimension(), new BlockPos(consoleTile.getDestinationPosition().getX(), Integer.parseInt(message.toLowerCase().replace(" ", "").replace("k-9", "").replace("k9", "").replaceAll("[^1234567890]", "")), consoleTile.getDestinationPosition().getZ()));
-                                        k9.Talk(1, event.getPlayer(), event.getPlayer().level);
-                                    }
-
-                                    if (message.toLowerCase().contains("z") && !message.toLowerCase().contains("x") && !message.toLowerCase().contains("y")) {
-                                        consoleTile.setDestination(consoleTile.getDestinationDimension(), new BlockPos(consoleTile.getDestinationPosition().getX(), consoleTile.getDestinationPosition().getY(), Integer.parseInt(message.toLowerCase().replace(" ", "").replace("k-9", "").replace("k9", "").replaceAll("[^1234567890]", ""))));
-                                        k9.Talk(1, event.getPlayer(), event.getPlayer().level);
-                                    }
-                                    if ((message.toLowerCase().contains("x") && message.toLowerCase().contains("y")) || (message.toLowerCase().contains("x") && message.contains("z")) || (message.toLowerCase().contains("z") && message.toLowerCase().contains("y"))) {
-                                        k9.Talk(2, event.getPlayer(), event.getPlayer().level);
-                                    }
-                                }
+                        if (message.get().toLowerCase().contains("dead") && message.get().toLowerCase().contains("lock")) {
+                            if ((message.get().toLowerCase().contains("engage") || message.get().toLowerCase().contains("on")) && !message.get().toLowerCase().contains("dis") && !message.get().toLowerCase().contains("off")) {
+                                TARDISHelper.setDoorState(consoleTile, 0);
+                                consoleTile.getExteriorType().getExteriorTile(consoleTile).setAdditionalLockLevel(1);
+                                consoleTile.getExteriorType().getExteriorTile(consoleTile).copyDoorStateToInteriorDoor();
+                                consoleTile.getExteriorType().getExteriorTile(consoleTile).updateClient();
+                                k9.Talk(1, event.getPlayer(), event.getPlayer().level);
                             }
-
-                            if (message.toLowerCase().contains("dead") && message.toLowerCase().contains("lock")) {
-                                if ((message.toLowerCase().contains("engage") || message.toLowerCase().contains("on")) && !message.toLowerCase().contains("dis") && !message.toLowerCase().contains("off")) {
-                                    TARDISHelper.setDoorState(consoleTile, 0);
-                                    consoleTile.getExteriorType().getExteriorTile(consoleTile).setAdditionalLockLevel(1);
-                                    consoleTile.getExteriorType().getExteriorTile(consoleTile).copyDoorStateToInteriorDoor();
-                                    consoleTile.getExteriorType().getExteriorTile(consoleTile).updateClient();
-                                    k9.Talk(1, event.getPlayer(), event.getPlayer().level);
-                                }
-                                if ((message.toLowerCase().contains("dis") && message.toLowerCase().contains("engage")) || message.toLowerCase().contains("off")) {
-                                    TARDISHelper.setDoorState(consoleTile, 0);
-                                    consoleTile.getExteriorType().getExteriorTile(consoleTile).setAdditionalLockLevel(0);
-                                    consoleTile.getExteriorType().getExteriorTile(consoleTile).copyDoorStateToInteriorDoor();
-                                    consoleTile.getExteriorType().getExteriorTile(consoleTile).updateClient();
-                                    k9.Talk(1, event.getPlayer(), event.getPlayer().level);
-                                }
+                            if ((message.get().toLowerCase().contains("dis") && message.get().toLowerCase().contains("engage")) || message.get().toLowerCase().contains("off")) {
+                                TARDISHelper.setDoorState(consoleTile, 0);
+                                consoleTile.getExteriorType().getExteriorTile(consoleTile).setAdditionalLockLevel(0);
+                                consoleTile.getExteriorType().getExteriorTile(consoleTile).copyDoorStateToInteriorDoor();
+                                consoleTile.getExteriorType().getExteriorTile(consoleTile).updateClient();
+                                k9.Talk(1, event.getPlayer(), event.getPlayer().level);
                             }
+                        }
 
-                            if (message.toLowerCase().contains("lock") && !message.toLowerCase().contains("dead")) {
-                                if (!(message.toLowerCase().contains("engage") && message.toLowerCase().contains("dis")) || !message.toLowerCase().contains("un")) {
-                                    TARDISHelper.setDoorState(consoleTile, 0);
-                                    consoleTile.getExteriorType().getExteriorTile(consoleTile).setLocked(true);
-                                    consoleTile.getExteriorType().getExteriorTile(consoleTile).copyDoorStateToInteriorDoor();
-                                    consoleTile.getExteriorType().getExteriorTile(consoleTile).updateClient();
-                                    k9.Talk(1, event.getPlayer(), event.getPlayer().level);
-                                } else {
-                                    TARDISHelper.setDoorState(consoleTile, 0);
-                                    consoleTile.getExteriorType().getExteriorTile(consoleTile).setLocked(false);
-                                    consoleTile.getExteriorType().getExteriorTile(consoleTile).copyDoorStateToInteriorDoor();
-                                    consoleTile.getExteriorType().getExteriorTile(consoleTile).updateClient();
-                                    k9.Talk(1, event.getPlayer(), event.getPlayer().level);
-                                }
+                        if (message.get().toLowerCase().contains("lock") && !message.get().toLowerCase().contains("dead")) {
+                            if (!(message.get().toLowerCase().contains("engage") && message.get().toLowerCase().contains("dis")) || !message.get().toLowerCase().contains("un")) {
+                                TARDISHelper.setDoorState(consoleTile, 0);
+                                consoleTile.getExteriorType().getExteriorTile(consoleTile).setLocked(true);
+                                consoleTile.getExteriorType().getExteriorTile(consoleTile).copyDoorStateToInteriorDoor();
+                                consoleTile.getExteriorType().getExteriorTile(consoleTile).updateClient();
+                                k9.Talk(1, event.getPlayer(), event.getPlayer().level);
+                            } else {
+                                TARDISHelper.setDoorState(consoleTile, 0);
+                                consoleTile.getExteriorType().getExteriorTile(consoleTile).setLocked(false);
+                                consoleTile.getExteriorType().getExteriorTile(consoleTile).copyDoorStateToInteriorDoor();
+                                consoleTile.getExteriorType().getExteriorTile(consoleTile).updateClient();
+                                k9.Talk(1, event.getPlayer(), event.getPlayer().level);
                             }
+                        }
 
 
-                            //Very complicated, but basically it uses regex and smart stuff to replace every variant of "K9" and then everything that isn't a number, and then print a JavaScript evaluation of the string (basically JS goes through the string, does mathy stuff)
+                        // Very complicated,
+                        // but basically it uses regex and smart stuff
+                        // to replace everything that isn't a number,
+                        // and then print a JavaScript evaluation of the string
+                        // (basically JS goes through the string, does mathy stuff)
 
-                            if (message.toLowerCase().contains("math") || message.toLowerCase().contains("calculate")) {
+                        if (message.get().toLowerCase().contains("math") || message.get().toLowerCase().contains("calculate")) {
 //                            aseoha.LOGGER.info(engine.eval(message.toLowerCase().replace(" ", "").replace("k9", "").replace("k 9", "").replace("k-9", "").replaceAll("[^1234567890()^+*/-]", "")).toString());
-                                try {
-                                    k9.Say("[K9] The result of the equation is " + engine.eval(message.toLowerCase().replace(" ", "").replace("k9", "").replace("k 9", "").replace("k-9", "").replaceAll("[^1234567890()^+*/-]", "")).toString(), event.getPlayer(), event.getPlayer().level);
-                                } catch (ScriptException e) {
-                                    throw new RuntimeException(e);
-                                }
+                            try {
+                                k9.Say("[K9] The result of the equation is " + engine.eval(message.get().toLowerCase().replace(" ", "").replaceAll("[^1234567890()^+*/-]", "")).toString(), event.getPlayer(), event.getPlayer().level);
+                            } catch (ScriptException e) {
+                                throw new RuntimeException(e);
                             }
-                            if (message.toLowerCase().contains("scan")) {
+                        }
+                        if (message.get().toLowerCase().contains("scan")) {
 //                            if(new BlockPos(consoleTile.getCurrentLocation().getX()+1,consoleTile.getCurrentLocation().getY(), consoleTile.getCurrentLocation().getZ()).equals(Blocks.LAVA))
 //                                if(new BlockPos(consoleTile.getCurrentLocation().getX()-1,consoleTile.getCurrentLocation().getY(), consoleTile.getCurrentLocation().getZ()).equals(Blocks.LAVA))
 //                                    if(new BlockPos(consoleTile.getCurrentLocation().getX(),consoleTile.getCurrentLocation().getY(), consoleTile.getCurrentLocation().getZ()+1).equals(Blocks.LAVA))
 //                                        if(new BlockPos(consoleTile.getCurrentLocation().getX(),consoleTile.getCurrentLocation().getY(), consoleTile.getCurrentLocation().getZ()-1).equals(Blocks.LAVA))
+                            int DangerousBlocks = 0;
+                            for (int x = -5; x <= 5; x++) {
+                                for (int y = -5; x <= 5; x++) {
+                                    for (int z = -5; x <= 5; x++) {
+                                        BlockPos pos = new BlockPos(x, y, z);
+                                        BlockState state = consoleTile.getExteriorType().getExteriorTile(consoleTile).getLevel().getBlockState(pos);
+                                        if (state.equals(Blocks.LAVA.defaultBlockState()) ||
+                                                state.equals(Blocks.SPAWNER.defaultBlockState()) ||
+                                                state.equals(Blocks.MAGMA_BLOCK.defaultBlockState()) ||
+                                                state.equals(Blocks.FIRE.defaultBlockState()) ||
+                                                state.equals(Blocks.INFESTED_COBBLESTONE.defaultBlockState()) ||
+                                                state.equals(Blocks.INFESTED_CHISELED_STONE_BRICKS.defaultBlockState()) ||
+                                                state.equals(Blocks.TNT.defaultBlockState()) ||
+                                                state.equals(Blocks.WITHER_ROSE.defaultBlockState()) ||
+                                                state.equals(Blocks.GRAVEL.defaultBlockState())) {
+                                            DangerousBlocks++;
+                                        }
+                                    }
+                                }
                             }
+
+                        }
 //                    if(message.toLowerCase().contains("coord") || message.toLowerCase().contains("location") || message.toLowerCase().contains("destination")) {
 //                        if (message.toLowerCase().contains("x") && !message.toLowerCase().contains("y") && !message.toLowerCase().contains("z")) {
 //                            consoleTile.setDestination(consoleTile.getDestinationDimension(), new BlockPos(Integer.parseInt(nums), consoleTile.getDestinationPosition().getY(), consoleTile.getDestinationPosition().getZ()));
 //                        }
 //                    }
-                        }
                     }
                 }
 
@@ -384,7 +358,7 @@ public class CommonEvents {
 
     @SubscribeEvent
     public static void ControlHitEvent(ControlEvent.ControlHitEvent event) {
-        if(event.getControl().getConsole() == null) {
+        if (event.getControl().getConsole() == null) {
             event.setCanceled(true);
             return;
         }
@@ -395,7 +369,7 @@ public class CommonEvents {
             return;
         }
 
-        if(((IHelpWithConsole) consoleTile).Aseoha$GetIsomorphic() && !PlayerHelper.HasKey(event.getPlayer(), consoleTile)){
+        if (((IHelpWithConsole) consoleTile).Aseoha$GetIsomorphic() && !PlayerHelper.HasKey(event.getPlayer(), consoleTile)) {
             event.setCanceled(true);
             return;
         }
@@ -412,7 +386,7 @@ public class CommonEvents {
 
         ConsoleTile consoleTile = event.getControl().getConsole();
 
-        if(((IHelpWithConsole) consoleTile).Aseoha$GetIsomorphic() && !PlayerHelper.HasKey(event.getPlayer(), consoleTile)){
+        if (((IHelpWithConsole) consoleTile).Aseoha$GetIsomorphic() && !PlayerHelper.HasKey(event.getPlayer(), consoleTile)) {
             event.setCanceled(true);
             return;
         }

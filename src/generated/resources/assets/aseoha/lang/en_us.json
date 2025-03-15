@@ -395,5 +395,8 @@
   "tooltip.aseoha.undeadlocker": "Un-Deadlocks a TARDIS",
   "tooltip.item.info.reenabled": "This was Re-Enabled by ASEOHA!",
   "tooltip.part.upgrades/atrium.description": "Takes blocks with the TARDIS exterior \nConsult the ASEOHA Manual for more information",
-  "tooltip.part.upgrades/dynamic_coordinates.description": "Makes the TARDIS monitor update flight position while flying"
+  "tooltip.part.upgrades/dynamic_coordinates.description": "Makes the TARDIS monitor update flight position while flying",
+  "tooltip.aseoha.upgrade_lightspeed_drive": "Cuts off 25% of the TARDIS Flight time",
+  "tooltip.aseoha.upgrade_warp_drive": "If the Destination is less than 4000 blocks away, the TARDIS will travel instantly",
+  "tooltip.aseoha.upgrade_tesseract_drive": "TARDIS Flights will instantly finish"
 }

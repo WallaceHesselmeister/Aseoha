@@ -1,6 +1,5 @@
 package com.code.aseoha.block;
 
-import com.code.aseoha.aseoha;
 import com.code.aseoha.networking.Networking;
 import com.code.aseoha.networking.Packets.EOHInteractPacket;
 import com.code.aseoha.networking.Packets.PlayerItemRemovePacket;
@@ -103,7 +102,6 @@ public class EOH extends Block {
     }
 
     public void Mark() {
-
         this.Tile.setChanged();
         this.Tile.Mark = true;
     }

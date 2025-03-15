@@ -2,7 +2,6 @@ package com.code.aseoha.networking.Packets;
 
 import com.code.aseoha.Helpers.IHelpWithConsole;
 import com.code.aseoha.block.EOH;
-import com.code.aseoha.tileentities.blocks.EOHTile;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.server.ServerWorld;
@@ -14,7 +13,6 @@ import net.tardis.mod.world.dimensions.TDimensions;
 import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
 
-import java.util.Objects;
 import java.util.function.Supplier;
 
 public class EOHInteractPacket {
@@ -36,7 +34,7 @@ public class EOHInteractPacket {
     }
 
     public static void handle(EOHInteractPacket mes, @NotNull Supplier<NetworkEvent.Context> ctx) {
-        ((NetworkEvent.Context) ctx.get()).enqueueWork(() -> {
+        ctx.get().enqueueWork(() -> {
             ServerWorld world = ctx.get().getSender().getLevel();
             if (WorldHelper.areDimensionTypesSame(world, TDimensions.DimensionTypes.TARDIS_TYPE)) {
                 TileEntity te = world.getBlockEntity(TardisHelper.TARDIS_POS);
@@ -46,8 +44,8 @@ public class EOHInteractPacket {
                     if (eoh != null) {
                         if (mes.intType) {
                             eoh.setHasStar(true);
-//                            eoh.Mark();
-//                            eoh.LastPlayerClick.getMainHandItem().shrink(1);
+                            eoh.Mark();
+                            eoh.LastPlayerClick.getMainHandItem().shrink(1);
                         }
                         else ((IHelpWithConsole) consoleTile).Aseoha$GetEOH().Activate();
 //                        ((IHelpWithConsole) consoleTile).Aseoha$GetEOH().setChanged();

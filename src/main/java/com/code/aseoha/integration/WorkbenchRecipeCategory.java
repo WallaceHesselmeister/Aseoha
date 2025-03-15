@@ -14,7 +14,6 @@ import mezz.jei.api.recipe.category.IRecipeCategory;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import org.jetbrains.annotations.NotNull;
-
 public class WorkbenchRecipeCategory implements IRecipeCategory<WorkBenchRecipe> {
     public final static ResourceLocation UID = new ResourceLocation(aseoha.MODID, "lightning");
     public final static ResourceLocation TEXTURE =

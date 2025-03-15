@@ -331,8 +331,7 @@ public class k9 extends RecycledWolf implements IAngerable, ISpaceImmuneEntity, 
         }
 //        this.knockback(.1F, .1, .1);
         this.power -= (byte) amount;
-        return false;
-//        return super.hurt(source, amount);
+        return super.hurt(source, amount);
 
     }
 
@@ -359,6 +358,14 @@ public class k9 extends RecycledWolf implements IAngerable, ISpaceImmuneEntity, 
         if (flag != 8) super.handleEntityEvent(flag);
     }
 
+    @OnlyIn(Dist.CLIENT)
+    public float getTailAngle() {
+        if (this.isAngry()) {
+            return 1.5393804F;
+        } else {
+            return this.isTame() ? (0.55F - (100 - this.power) * 0.02F) * (float)Math.PI : ((float)Math.PI / 5F);
+        }
+    }
 //    @OnlyIn(Dist.CLIENT)
 //    public float getTailAngle() {
 //        if (this.isAngry()) {

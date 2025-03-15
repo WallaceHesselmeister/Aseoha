@@ -2,7 +2,7 @@ buildscript {
     ext.kotlin_version = '1.9.23'
     repositories {
         maven { url = 'https://maven.minecraftforge.net' }
-        maven { url = 'https://repo.spongepowered.org/repository/maven-public' }
+        maven { url='https://repo.spongepowered.org/repository/maven-public' }
         mavenCentral()
 //        jcenter()
 //        maven {url='https://dist.creeper.host/Sponge/maven'}
@@ -17,6 +17,7 @@ buildscript {
 plugins {
     id "com.github.johnrengelman.shadow" version "7.1.2"
 }
+
 apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'kotlin'
 apply plugin: 'org.spongepowered.mixin'
@@ -66,11 +67,6 @@ minecraft {
     // These can be tweaked, removed, or duplicated as needed.
     runs {
         client {
-            jvmArg "-XX:+AllowEnhancedClassRedefinition"
-            property 'forge.logging.markers', 'REGISTRIES'
-            property 'forge.logging.console.level', 'debug'
-            property 'forge.enabledGameTestNamespaces', 'aseoha'
-
             workingDirectory project.file('run')
             arg "-mixin.config=aseoha.mixins.json"
             property 'mixin.env.remapRefMap', 'true'
@@ -223,16 +219,16 @@ shadowJar {
 jar {
     manifest {
         attributes([
-                "Specification-Title"     : "aseoha",
-                "Specification-Vendor"    : "tamaaseoha",
-                "Specification-Version"   : "1", // We are version 1 of ourselves
-                "Implementation-Title"    : project.name,
-                "Implementation-Version"  : "${ModVer}",
-                "Implementation-Vendor"   : "TAMA",
+                "Specification-Title": "aseoha",
+                "Specification-Vendor": "tamaaseoha",
+                "Specification-Version": "1", // We are version 1 of ourselves
+                "Implementation-Title": project.name,
+                "Implementation-Version": "${ModVer}",
+                "Implementation-Vendor" :"TAMA",
                 "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ"),
-                "TweakClass"              : "org.spongepowered.asm.launch.MixinTweaker",
-                "TweakOrder"              : 0,
-                "MixinConfigs"            : "aseoha.mixins.json"
+                "TweakClass": "org.spongepowered.asm.launch.MixinTweaker",
+                "TweakOrder": 0,
+                "MixinConfigs": "aseoha.mixins.json"
         ])
     }
     rename 'mixin.refmap.json', 'aseoha.mixin-refmap.json'
