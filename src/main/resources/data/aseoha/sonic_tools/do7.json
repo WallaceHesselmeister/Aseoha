@@ -1,0 +1,25 @@
+{
+  "id": "aseoha:do7",
+  "models": {
+    "inactive": "aseoha:item/sonic/do7/inactive",
+    "interaction": "aseoha:item/sonic/do7/interaction",
+    "overload": "aseoha:item/sonic/d07/overload",
+    "scanning": "aseoha:item/sonic/do7/scanning",
+    "tardis": "aseoha:item/sonic/do7/tardis"
+  },
+  "rendering": {
+    "position": {
+      "x": 10.0,
+      "y": 10.0,
+      "z": 0.0
+    },
+    "scale": {
+      "x": -1.5,
+      "y": -1.5,
+      "z": -1.5
+    }
+  },
+  "loyalty": {
+    "type": "OWNER"
+  }
+}

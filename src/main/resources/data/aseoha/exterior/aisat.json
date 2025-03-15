@@ -2,8 +2,8 @@
     "id": "aseoha:aisat",
     "category": "ait:exterior/classic",
     "parent": "ait:exterior/classic/prime",
-    "texture": "aseoha:textures/aisat_prime.png",
-    "emission": "aseoha:textures/aisat_prime_emission.png",
+    "texture": "aseoha:textures/exterior/aisat_prime.png",
+    "emission": "aseoha:textures/exterior/aisat_prime_emission.png",
     "overrides": {
         "snowy": "ait:textures/blockentities/exteriors/classic/classic_prime_snowy.png",
         "chorus": "ait:textures/blockentities/exteriors/classic/classic_prime_chorus.png",
