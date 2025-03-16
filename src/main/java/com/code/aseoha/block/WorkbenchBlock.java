@@ -5,7 +5,10 @@ import com.code.aseoha.tileentities.AseohaTiles;
 import com.code.aseoha.tileentities.blocks.WorkbenchTile;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.entity.item.ItemEntity;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ActionResultType;
@@ -27,15 +30,17 @@ public class WorkbenchBlock extends Block {
         super(props);
     }
 
-    public void tickFunction(BlockState p_225534_1_, ServerWorld p_225534_2_, BlockPos p_225534_3_, int timer) {
-
-    }
-
     @Override
-    public void onRemove(BlockState p_196243_1_, World p_196243_2_, BlockPos p_196243_3_, BlockState p_196243_4_, boolean p_196243_5_) {
-        TileEntity tile = p_196243_2_.getBlockEntity(p_196243_3_);
-        if ((WorkbenchTile) tile != null) {
+    public void onRemove(BlockState state, World world, BlockPos pos, BlockState state1, boolean flag) {
+        TileEntity tile = world.getBlockEntity(pos);
+        if (tile != null) {
             if (tile instanceof WorkbenchTile) {
+                for(Item item : ((WorkbenchTile) tile).StoredItems) {
+                    ItemStack stack = item.getDefaultInstance();
+                    ItemEntity itemEntity = new ItemEntity(world, pos.getX(), pos.getY(), pos.getZ(), stack);
+                    itemEntity.setDefaultPickUpDelay();
+                    world.addFreshEntity(itemEntity);
+                }
                 ((WorkbenchTile) tile).StoredItems.clear();
                 tile.setRemoved();
             }
