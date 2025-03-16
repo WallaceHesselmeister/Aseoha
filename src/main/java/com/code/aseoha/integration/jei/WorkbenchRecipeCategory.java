@@ -26,7 +26,7 @@ public class WorkbenchRecipeCategory implements IRecipeCategory<WorkBenchRecipeW
 
     public WorkbenchRecipeCategory(IGuiHelper guiHelper) {
         ResourceLocation texture = new ResourceLocation(aseoha.MODID, "textures/gui/workbench.png");
-        this.background = guiHelper.createDrawable(texture, 0, 0, 255, 255);
+        this.background = guiHelper.createDrawable(texture, 0, 0, 178, 76);
 
         this.icon = guiHelper.createDrawableIngredient(new ItemStack(AseohaBlocks.WORKBENCH.get()));
         this.title = Constants.WORKBENCH_CATEGORY.getString();

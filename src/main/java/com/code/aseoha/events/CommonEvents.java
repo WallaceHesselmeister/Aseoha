@@ -652,6 +652,8 @@ public class CommonEvents {
 
     @SubscribeEvent
     public static void AddDataPackReloadListeners(AddReloadListenerEvent event) {
+        aseoha.WorkBenchRecipeHandler.getRecipeList().clear();
+        aseoha.WorkBenchRecipeHandler.Init();
         event.addListener(DataPackVortex.DATA_LOADER);
         event.addListener(DataPackWorkbenchRecipe.DATA_LOADER);
     }

@@ -41,6 +41,22 @@ public class WorkBenchRecipeHandler {
         return false;
     }
 
+    /**
+     * Checks if this handler contains the provided recipe
+     * @param recipe Recipe to check for
+     */
+    public boolean Contains(WorkBenchRecipe recipe) {
+        for (WorkBenchRecipe workBenchRecipe : this.RecipeList) {
+            if (Arrays.asList(workBenchRecipe.Ingredients).contains(recipe.Ingredients[0]) &&
+                    Arrays.asList(workBenchRecipe.Ingredients).contains(recipe.Ingredients[1]) &&
+                    Arrays.asList(workBenchRecipe.Ingredients).contains(recipe.Ingredients[2]) &&
+                    Arrays.asList(workBenchRecipe.Ingredients).contains(recipe.Ingredients[3]) &&
+                    workBenchRecipe.Result.equals(recipe.Result)
+            ) return true;
+        }
+        return false;
+    }
+
 
     /**
      * Check if the four ingredients combined form a valid recipe

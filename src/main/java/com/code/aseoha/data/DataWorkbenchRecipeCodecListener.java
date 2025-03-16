@@ -34,7 +34,7 @@ public class DataWorkbenchRecipeCodecListener extends CodecJsonDataListener<Data
                 parsedInData.put(key, result.getFirst());
                 /****** Add variant to the common variants array *****/
                 // TODO: THIS
-                if (!aseoha.WorkBenchRecipeHandler.getRecipeList().contains(MiscHelper.WorkbenchDataRecipeToRecipe(result.getFirst())))
+                if (!aseoha.WorkBenchRecipeHandler.Contains(MiscHelper.WorkbenchDataRecipeToRecipe(result.getFirst())))
                     aseoha.WorkBenchRecipeHandler.AddRecipe(MiscHelper.WorkbenchDataRecipeToRecipe(result.getFirst()));
                 this.logger.info("Added Datapack entry: {}, {}", result.getFirst().toString(), result.getFirst().getRegistryName());
 
