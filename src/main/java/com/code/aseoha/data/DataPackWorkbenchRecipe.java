@@ -72,8 +72,6 @@ public class DataPackWorkbenchRecipe {
                 slot4,
                 result
         );
-        if(!aseoha.WorkBenchRecipeHandler.getRecipeList().contains(recipe))
-            aseoha.WorkBenchRecipeHandler.AddRecipe(recipe);
 
         if (registryName == null) {
             throw new NullPointerException();

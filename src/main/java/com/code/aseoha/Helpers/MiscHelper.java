@@ -1,5 +1,8 @@
 package com.code.aseoha.Helpers;
 
+import com.code.aseoha.WorkBench.WorkBenchRecipe;
+import com.code.aseoha.aseoha;
+import com.code.aseoha.data.DataPackWorkbenchRecipe;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.settings.PointOfView;
 import net.minecraft.item.Item;
@@ -21,5 +24,15 @@ public class MiscHelper {
             throw new IllegalArgumentException("No item found for ResourceLocation: " + resourceLocation);
         }
         return item;
+    }
+
+    public static WorkBenchRecipe WorkbenchDataRecipeToRecipe(DataPackWorkbenchRecipe dataPackRecipe) {
+        return new WorkBenchRecipe(
+                MiscHelper.getItemFromResourceLocation(dataPackRecipe.getSlot1()),
+                MiscHelper.getItemFromResourceLocation(dataPackRecipe.getSlot2()),
+                MiscHelper.getItemFromResourceLocation(dataPackRecipe.getSlot3()),
+                MiscHelper.getItemFromResourceLocation(dataPackRecipe.getSlot4()),
+                MiscHelper.getItemFromResourceLocation(dataPackRecipe.getResult())
+        );
     }
 }

@@ -5,6 +5,8 @@
 
 package com.code.aseoha.data;
 
+import com.code.aseoha.Helpers.MiscHelper;
+import com.code.aseoha.aseoha;
 import com.google.gson.JsonElement;
 import com.mojang.serialization.Codec;
 import com.mojang.serialization.JsonOps;
@@ -32,7 +34,8 @@ public class DataWorkbenchRecipeCodecListener extends CodecJsonDataListener<Data
                 parsedInData.put(key, result.getFirst());
                 /****** Add variant to the common variants array *****/
                 // TODO: THIS
-
+                if (!aseoha.WorkBenchRecipeHandler.getRecipeList().contains(MiscHelper.WorkbenchDataRecipeToRecipe(result.getFirst())))
+                    aseoha.WorkBenchRecipeHandler.AddRecipe(MiscHelper.WorkbenchDataRecipeToRecipe(result.getFirst()));
                 this.logger.info("Added Datapack entry: {}, {}", result.getFirst().toString(), result.getFirst().getRegistryName());
 
             }).ifRight((partial) -> this.logger.error("Failed to parse data json for {} due to: {}", key.toString(), partial.message()));
