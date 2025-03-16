@@ -32,10 +32,10 @@ public class DataWorkbenchRecipeCodecListener extends CodecJsonDataListener<Data
             this.codec.decode(JsonOps.INSTANCE, element).get().ifLeft((result) -> {
                 result.getFirst().setRegistryName(key);
                 parsedInData.put(key, result.getFirst());
-                /****** Add variant to the common variants array *****/
-                // TODO: THIS
-                if (!aseoha.WorkBenchRecipeHandler.Contains(MiscHelper.WorkbenchDataRecipeToRecipe(result.getFirst())))
+
+                if (!aseoha.WorkBenchRecipeHandler.ContainsIngredients(MiscHelper.WorkbenchDataRecipeToRecipe(result.getFirst())))
                     aseoha.WorkBenchRecipeHandler.AddRecipe(MiscHelper.WorkbenchDataRecipeToRecipe(result.getFirst()));
+
                 this.logger.info("Added Datapack entry: {}, {}", result.getFirst().toString(), result.getFirst().getRegistryName());
 
             }).ifRight((partial) -> this.logger.error("Failed to parse data json for {} due to: {}", key.toString(), partial.message()));

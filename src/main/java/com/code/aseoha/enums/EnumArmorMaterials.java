@@ -16,11 +16,14 @@ public enum EnumArmorMaterials implements IArmorMaterial {
     CUSTOM("custom", 25, new int[]{3, 6, 8, 3}, 15,
             SoundEvents.ARMOR_EQUIP_DIAMOND, 2.0F, 0.0F, () -> Ingredient.of(Items.DIAMOND)),
 
-    SASH_OF_RASSILON("sash_of_rassilon", 25, new int[]{3, 6, 8, 3}, 15,
-            SoundEvents.ARMOR_EQUIP_DIAMOND, 2.0F, 0.0F, () -> Ingredient.of(Items.STRING)),
+    SASH_OF_RASSILON("sash_of_rassilon", 25, new int[]{1, 1, 1, 1}, 15,
+            SoundEvents.ARMOR_EQUIP_LEATHER, 1.0F, 0.0F, () -> Ingredient.of(Items.WHITE_WOOL)),
 
-    SCARF("scarf", 25, new int[]{3, 6, 8, 3}, 15,
-    SoundEvents.ARMOR_EQUIP_DIAMOND, 2.0F, 0.0F, () -> Ingredient.of(Items.WHITE_WOOL)),
+    SCARF("scarf", 25, new int[]{1, 1, 1, 1}, 15,
+            SoundEvents.ARMOR_EQUIP_LEATHER, 1.0F, 0.0F, () -> Ingredient.of(Items.WHITE_WOOL)),
+
+    BOWTIE("bowtie", 25, new int[]{1, 1, 1, 1}, 15,
+            SoundEvents.ARMOR_EQUIP_LEATHER, 1.0F, 0.0F, () -> Ingredient.of(Items.WHITE_WOOL)),
 
     STEEL("steel", 25, new int[] { 3, 6, 7, 2 }, 10,
             SoundEvents.ARMOR_EQUIP_IRON, 1.0f, 0.5f, () -> Ingredient.of(AseohaItems.STEEL_INGOT.get())),

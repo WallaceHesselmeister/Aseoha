@@ -60,18 +60,18 @@ public class DataPackWorkbenchRecipe {
     public static DataPackWorkbenchRecipe register(DataPackWorkbenchRecipe dataPackRecipe, ResourceLocation registryName) {
         DATA_LOADER.getData().put(registryName, dataPackRecipe.setRegistryName(registryName));
 
-        Item slot1 = MiscHelper.getItemFromResourceLocation(dataPackRecipe.getSlot1());
-        Item slot2 = MiscHelper.getItemFromResourceLocation(dataPackRecipe.getSlot2());
-        Item slot3 = MiscHelper.getItemFromResourceLocation(dataPackRecipe.getSlot3());
-        Item slot4 = MiscHelper.getItemFromResourceLocation(dataPackRecipe.getSlot4());
-        Item result = MiscHelper.getItemFromResourceLocation(dataPackRecipe.getResult());
-        WorkBenchRecipe recipe = new WorkBenchRecipe(
-            slot1,
-                slot2,
-                slot3,
-                slot4,
-                result
-        );
+//        Item slot1 = MiscHelper.getItemFromResourceLocation(dataPackRecipe.getSlot1());
+//        Item slot2 = MiscHelper.getItemFromResourceLocation(dataPackRecipe.getSlot2());
+//        Item slot3 = MiscHelper.getItemFromResourceLocation(dataPackRecipe.getSlot3());
+//        Item slot4 = MiscHelper.getItemFromResourceLocation(dataPackRecipe.getSlot4());
+//        Item result = MiscHelper.getItemFromResourceLocation(dataPackRecipe.getResult());
+//        WorkBenchRecipe recipe = new WorkBenchRecipe(
+//            slot1,
+//                slot2,
+//                slot3,
+//                slot4,
+//                result
+//        );
 
         if (registryName == null) {
             throw new NullPointerException();

@@ -1,14 +1,16 @@
 package com.code.aseoha.WorkBench;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
 import net.minecraft.item.Item;
 import net.minecraft.item.crafting.Ingredient;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-
+@AllArgsConstructor
 public class WorkBenchRecipe {
-    Item Ingredients[] = new Item[4];
+    final Item Ingredients[] = new Item[4];
     Item Result;
 
     /**

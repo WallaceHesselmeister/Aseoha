@@ -36,7 +36,7 @@ public class WorkbenchBlock extends Block {
         TileEntity tile = world.getBlockEntity(pos);
         if (tile != null) {
             if (tile instanceof WorkbenchTile) {
-                for(Item item : ((WorkbenchTile) tile).StoredItems) {
+                for (Item item : ((WorkbenchTile) tile).StoredItems) {
                     ItemStack stack = item.getDefaultInstance();
                     ItemEntity itemEntity = new ItemEntity(world, pos.getX(), pos.getY(), pos.getZ(), stack);
                     itemEntity.setDefaultPickUpDelay();
@@ -61,38 +61,35 @@ public class WorkbenchBlock extends Block {
     @NotNull
     @Override
     public ActionResultType use(@NotNull BlockState state, @NotNull World world, @NotNull BlockPos pos, @NotNull PlayerEntity player, @NotNull Hand hand, @NotNull BlockRayTraceResult blockRayTraceResult) {
+        if (hand.equals(Hand.OFF_HAND) || world.isClientSide) return ActionResultType.PASS;
+
         TileEntity tile = world.getBlockEntity(pos);
         if (tile instanceof WorkbenchTile) {
-                if (!((WorkbenchTile) tile).StoredItems.isEmpty())
-                    for (int i = 0; i < ((WorkbenchTile) tile).StoredItems.size(); i++) {
-                        if (!((WorkbenchTile) tile).StoredItems.get(i).equals(Items.AIR))
-                            this.size++;
-                    }
-                if (!player.isCrouching() && !player.getMainHandItem().isEmpty() && player.getMainHandItem().getItem() != Items.AIR) {
-                    if (this.size < 4) {
-                        ((WorkbenchTile) tile).StoredItems.add(player.getMainHandItem().getItem());
-                        player.getMainHandItem().shrink(1);
-                        return ActionResultType.CONSUME;
-                    }
+            if (!((WorkbenchTile) tile).StoredItems.isEmpty())
+                for (int i = 0; i < ((WorkbenchTile) tile).StoredItems.size(); i++) {
+                    if (!((WorkbenchTile) tile).StoredItems.get(i).equals(Items.AIR))
+                        this.size++;
                 }
-                if (player.isCrouching() && !((WorkbenchTile) tile).StoredItems.isEmpty()) {
-                    ArrayList<Items> itemsArrayList = new ArrayList<>();
-//                    for (int i = 0; i < 3; i++) {
-//                        if (((WorkbenchTile) tile).StoredItems.get(i) == null) {
-//                            ((WorkbenchTile) tile).StoredItems.add(i, Items.AIR);
-//                        }
-//                    }
-                    for(int i = 0; i < 4; i++){
-                        if(((WorkbenchTile) tile).StoredItems.size() < 4) ((WorkbenchTile) tile).StoredItems.add(Items.AIR);
-                    }
-                    if (aseoha.WorkBenchRecipeHandler.IsValidRecipe(((WorkbenchTile) tile).StoredItems)) {
-                        player.inventory.add(aseoha.WorkBenchRecipeHandler.GetRecipeResult(((WorkbenchTile) tile).StoredItems).getDefaultInstance());
-                        ((WorkbenchTile) tile).StoredItems.clear();
-                        this.size = 0;
-                        return ActionResultType.CONSUME;
-                    }
+            if (!player.isCrouching() && !player.getMainHandItem().isEmpty() && player.getMainHandItem().getItem() != Items.AIR) {
+                if (this.size < 4) {
+                    ((WorkbenchTile) tile).StoredItems.add(player.getMainHandItem().getItem());
+                    player.getMainHandItem().shrink(1);
+                    return ActionResultType.CONSUME;
                 }
             }
+            if (player.isCrouching() && !((WorkbenchTile) tile).StoredItems.isEmpty()) {
+                for (int i = 0; i < 4; i++) {
+                    if (((WorkbenchTile) tile).StoredItems.size() < 4)
+                        ((WorkbenchTile) tile).StoredItems.add(Items.AIR);
+                }
+                if (aseoha.WorkBenchRecipeHandler.IsValidRecipe(((WorkbenchTile) tile).StoredItems)) {
+                    player.inventory.add(aseoha.WorkBenchRecipeHandler.GetRecipeResult(((WorkbenchTile) tile).StoredItems).getDefaultInstance());
+                    ((WorkbenchTile) tile).StoredItems.clear();
+                    this.size = 0;
+                    return ActionResultType.CONSUME;
+                }
+            }
+        }
         return ActionResultType.FAIL;
     }
 }

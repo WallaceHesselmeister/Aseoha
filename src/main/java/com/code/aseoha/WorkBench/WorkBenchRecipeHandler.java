@@ -13,15 +13,29 @@ public class WorkBenchRecipeHandler {
     private ArrayList<WorkBenchRecipe> RecipeList = new ArrayList<>();
 
     public void Init() {
-        this.AddRecipe(Items.GREEN_DYE, Items.BOOK, Items.AIR, Items.AIR, AseohaItems.MANUAL.get());
+        this.AddRecipe(Items.GREEN_DYE, Items.BOOK, null, null, AseohaItems.MANUAL.get());
     }
 
+    /** Takes the provided ingredients + result and registers it as a recipe. <br />
+     * If another recipe with the same ingredients already exists, it will <i><b>NOT</b></i> Register the recipe**/
     public void AddRecipe(Item FirstIngredient, Item SecondIngredient, Item ThirdIngredient, Item FourthIngredient, Item RecievedItem) {
-        this.RecipeList.add(new WorkBenchRecipe(FirstIngredient, SecondIngredient, ThirdIngredient, FourthIngredient).AddReceivingItem(RecievedItem));
+        // Make sure if an ingredient is null it gets set to air
+        FirstIngredient = FirstIngredient == null ? Items.AIR : FirstIngredient;
+        SecondIngredient = SecondIngredient == null ? Items.AIR : SecondIngredient;
+        ThirdIngredient = ThirdIngredient == null ? Items.AIR : ThirdIngredient;
+        FourthIngredient = FourthIngredient == null ? Items.AIR : FourthIngredient;
+
+        WorkBenchRecipe recipe = new WorkBenchRecipe(FirstIngredient, SecondIngredient, ThirdIngredient, FourthIngredient).AddReceivingItem(RecievedItem);
+        // Make sure we don't register the same recipe twice, or register a recipe with the same ingredients but different result as another recipe
+        if(!this.ContainsIngredients(recipe))
+            this.RecipeList.add(recipe);
     }
 
+    /** Takes the provided recipe and registers it. <br />
+     * If another recipe with the same ingredients already exists it will <i><b>NOT</b></i> Register the recipe**/
     public void AddRecipe(WorkBenchRecipe Recipe) {
-        this.RecipeList.add(Recipe);
+        if(!this.ContainsIngredients(Recipe))
+            this.RecipeList.add(Recipe);
     }
 
     /**
@@ -42,26 +56,41 @@ public class WorkBenchRecipeHandler {
     }
 
     /**
-     * Checks if this handler contains the provided recipe
+     * Checks if this handler contains the provided recipe <br />
+     * It only checks the ingredients, that way if a recipe shares the same ingredients with a different result it won't be registered
      * @param recipe Recipe to check for
      */
-    public boolean Contains(WorkBenchRecipe recipe) {
+    public boolean ContainsIngredients(WorkBenchRecipe recipe) {
         for (WorkBenchRecipe workBenchRecipe : this.RecipeList) {
             if (Arrays.asList(workBenchRecipe.Ingredients).contains(recipe.Ingredients[0]) &&
                     Arrays.asList(workBenchRecipe.Ingredients).contains(recipe.Ingredients[1]) &&
                     Arrays.asList(workBenchRecipe.Ingredients).contains(recipe.Ingredients[2]) &&
-                    Arrays.asList(workBenchRecipe.Ingredients).contains(recipe.Ingredients[3]) &&
-                    workBenchRecipe.Result.equals(recipe.Result)
+                    Arrays.asList(workBenchRecipe.Ingredients).contains(recipe.Ingredients[3])
             ) return true;
         }
         return false;
     }
 
+    /**
+     * Checks if this handler contains the provided recipe <br />
+     * @param Recipe Recipe to check for
+     */
+    public boolean Contains(WorkBenchRecipe Recipe) {
+        for (WorkBenchRecipe workBenchRecipe : this.RecipeList) {
+            if (Arrays.asList(workBenchRecipe.Ingredients).contains(Recipe.Ingredients[0]) &&
+                    Arrays.asList(workBenchRecipe.Ingredients).contains(Recipe.Ingredients[1]) &&
+                    Arrays.asList(workBenchRecipe.Ingredients).contains(Recipe.Ingredients[2]) &&
+                    Arrays.asList(workBenchRecipe.Ingredients).contains(Recipe.Ingredients[3]) &&
+                    workBenchRecipe.Result.equals(Recipe.Result)
+            ) return true;
+        }
+        return false;
+    }
 
     /**
      * Check if the four ingredients combined form a valid recipe
      *
-     * @return wether it is valid
+     * @return whether it is valid, and registered
      */
     public boolean IsValidRecipe(ArrayList<Item> Ingredients) {
         while (Ingredients.size() < 4) {

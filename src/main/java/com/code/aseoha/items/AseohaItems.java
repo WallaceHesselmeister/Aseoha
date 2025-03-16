@@ -7,6 +7,7 @@ import com.code.aseoha.items.Materials.AseohaItemTiers;
 import com.code.aseoha.items.Upgrades.LightSpeedDrive;
 import com.code.aseoha.items.Upgrades.TesseractDrive;
 import com.code.aseoha.items.Upgrades.WarpDrive;
+import com.code.aseoha.items.armor.BowtieArmorItem;
 import com.code.aseoha.items.armor.ScarfArmorItem;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.*;
@@ -215,7 +216,13 @@ public class AseohaItems {
             () -> new SwordItem(AseohaItemTiers.DALEKANIUM, 3, -2.4F, new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP)));
 
     public static final RegistryObject<Item> SCARF = ARMOR_ITEMS.register("scarf",
-            () -> new ScarfArmorItem(EnumArmorMaterials.SCARF, EquipmentSlotType.HEAD, new Item.Properties().tab(ItemGroup.TAB_COMBAT)));
+            () -> new ScarfArmorItem(EnumArmorMaterials.SCARF, EquipmentSlotType.HEAD, new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP)));
+
+    public static final RegistryObject<Item> BOWTIE_RED = ARMOR_ITEMS.register("bowtie_red",
+            () -> new BowtieArmorItem(EnumArmorMaterials.BOWTIE, EquipmentSlotType.CHEST, new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP), "red"));
+
+    public static final RegistryObject<Item> BOWTIE_BLUE = ARMOR_ITEMS.register("bowtie_blue",
+            () -> new BowtieArmorItem(EnumArmorMaterials.BOWTIE, EquipmentSlotType.CHEST, new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP), "blue"));
 
 //    public static final RegistryObject<Item> SONIC_LASER = ITEMS.register("sonic_laser",
 //            ()-> new );
