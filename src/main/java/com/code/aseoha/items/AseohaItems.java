@@ -8,6 +8,7 @@ import com.code.aseoha.items.Upgrades.LightSpeedDrive;
 import com.code.aseoha.items.Upgrades.TesseractDrive;
 import com.code.aseoha.items.Upgrades.WarpDrive;
 import com.code.aseoha.items.armor.BowtieArmorItem;
+import com.code.aseoha.items.armor.SashArmorItem;
 import com.code.aseoha.items.armor.ScarfArmorItem;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.*;
@@ -217,6 +218,9 @@ public class AseohaItems {
 
     public static final RegistryObject<Item> SCARF = ARMOR_ITEMS.register("scarf",
             () -> new ScarfArmorItem(EnumArmorMaterials.SCARF, EquipmentSlotType.HEAD, new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP)));
+
+    public static final RegistryObject<Item> SASH_OF_RASSILON = ARMOR_ITEMS.register("sash_of_rassilon",
+            () -> new SashArmorItem(EnumArmorMaterials.SASH_OF_RASSILON, EquipmentSlotType.CHEST, new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP)));
 
     public static final RegistryObject<Item> BOWTIE_RED = ARMOR_ITEMS.register("bowtie_red",
             () -> new BowtieArmorItem(EnumArmorMaterials.BOWTIE, EquipmentSlotType.CHEST, new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP), "red"));

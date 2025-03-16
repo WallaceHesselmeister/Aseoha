@@ -33,10 +33,4 @@ public class ScarfArmorItem extends ArmorItem {
         MODEL.body.visible = true;
         return (A) MODEL;
     }
-
-    @Nullable
-    @Override
-    public EquipmentSlotType getEquipmentSlot(ItemStack stack) {
-        return this.slot;
-    }
 }

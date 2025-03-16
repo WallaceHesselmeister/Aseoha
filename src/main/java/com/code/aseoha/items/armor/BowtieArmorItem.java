@@ -1,9 +1,8 @@
 package com.code.aseoha.items.armor;
 
-import com.code.aseoha.Helpers.PlayerHelper;
 import com.code.aseoha.aseoha;
 import com.code.aseoha.client.models.armor.BowTieModel;
-import com.code.aseoha.client.models.armor.ScarfModel;
+import lombok.Getter;
 import net.minecraft.client.renderer.entity.model.BipedModel;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
@@ -15,7 +14,8 @@ import net.minecraft.util.ResourceLocation;
 import org.jetbrains.annotations.Nullable;
 
 public class BowtieArmorItem extends ArmorItem {
-    public static final BowTieModel MODEL = new BowTieModel();
+    @Getter
+    private static final BowTieModel MODEL = new BowTieModel();
     public final String color;
 
     public BowtieArmorItem(IArmorMaterial material, EquipmentSlotType slot, Properties properties, String color) {

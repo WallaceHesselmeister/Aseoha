@@ -3,6 +3,7 @@ package com.code.aseoha.client.models.armor;// Made with Blockbench 4.10.4
 // Paste this class into your mod and generate all required imports
 
 
+import com.code.aseoha.interfaces.IAmBoringBipedModelStuff;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.vertex.IVertexBuilder;
 import net.minecraft.client.renderer.entity.model.EntityModel;
@@ -11,7 +12,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.LivingEntity;
 import net.tardis.mod.client.models.entity.TBaseArmorModel;
 
-public class PrydonianHelmModel extends TBaseArmorModel<LivingEntity> {
+public class PrydonianHelmModel extends TBaseArmorModel<LivingEntity> implements IAmBoringBipedModelStuff {
 	private final ModelRenderer armorHead;
 	private final ModelRenderer armorHead_r1;
 	private final ModelRenderer armorHead_r2;
@@ -52,10 +53,6 @@ public class PrydonianHelmModel extends TBaseArmorModel<LivingEntity> {
 		armorHead_r4.texOffs(54, 50).addBox(-1.5F, -0.5F, -3.0F, 3.0F, 1.0F, 6.0F, -0.3F, false);
 		}
 
-	public void setupAnim(LivingEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netbipedHeadYaw, float bipedHeadPitch) {
-		super.setupAnim(entity, limbSwing, limbSwingAmount, ageInTicks, netbipedHeadYaw, bipedHeadPitch);
-	}
-
 	@Override
 	public void renderToBuffer(MatrixStack matrixStack, IVertexBuilder buffer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha){
 //		armorHead.render(matrixStack, buffer, packedLight, packedOverlay, red, green, blue, alpha);
@@ -70,11 +67,5 @@ public class PrydonianHelmModel extends TBaseArmorModel<LivingEntity> {
 		super.head.render(matrixStack, buffer, packedLight, packedOverlay);
 		matrixStack.popPose();
 
-	}
-
-	public void setRotationAngle(ModelRenderer modelRenderer, float x, float y, float z) {
-		modelRenderer.xRot = x;
-		modelRenderer.yRot = y;
-		modelRenderer.zRot = z;
 	}
 }

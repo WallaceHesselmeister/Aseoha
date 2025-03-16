@@ -1,5 +1,6 @@
 package com.code.aseoha.client.models.armor;
 
+import com.code.aseoha.interfaces.IAmBoringBipedModelStuff;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.vertex.IVertexBuilder;
 import net.minecraft.client.renderer.entity.model.BipedModel;
@@ -7,7 +8,7 @@ import net.minecraft.client.renderer.model.ModelRenderer;
 import net.minecraft.entity.LivingEntity;
 import org.jetbrains.annotations.NotNull;
 
-public class ScarfModel extends BipedModel<LivingEntity> {
+public class ScarfModel extends BipedModel<LivingEntity> implements IAmBoringBipedModelStuff {
     private final ModelRenderer base;
     private final ModelRenderer cube_r1;
     private final ModelRenderer cube_r2;
@@ -106,11 +107,5 @@ public class ScarfModel extends BipedModel<LivingEntity> {
     @Override
     public void renderToBuffer(@NotNull MatrixStack matrixStack, @NotNull IVertexBuilder buffer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha) {
         this.base.render(matrixStack, buffer, packedLight, packedOverlay, red, green, blue, alpha);
-    }
-
-    public void setRotationAngle(ModelRenderer modelRenderer, float x, float y, float z) {
-        modelRenderer.xRot = x;
-        modelRenderer.yRot = y;
-        modelRenderer.zRot = z;
     }
 }

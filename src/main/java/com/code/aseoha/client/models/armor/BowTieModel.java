@@ -1,13 +1,15 @@
 package com.code.aseoha.client.models.armor;
 
+import com.code.aseoha.interfaces.IAmBoringBipedModelStuff;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.vertex.IVertexBuilder;
 import net.minecraft.client.renderer.entity.model.BipedModel;
 import net.minecraft.client.renderer.model.ModelRenderer;
 import net.minecraft.entity.LivingEntity;
+import net.minecraft.util.math.vector.Vector3f;
 import org.jetbrains.annotations.NotNull;
 
-public class BowTieModel extends BipedModel<LivingEntity> {
+public class BowTieModel extends BipedModel<LivingEntity> implements IAmBoringBipedModelStuff {
         private final ModelRenderer bone;
         private final ModelRenderer cube_r1;
         private final ModelRenderer cube_r2;
@@ -60,17 +62,11 @@ public class BowTieModel extends BipedModel<LivingEntity> {
         }
 
         @Override
-        public void setupAnim(@NotNull LivingEntity entity, float limbSwing, float limbSwingAmount, float ageInTicks, float netHeadYaw, float headPitch){
-        }
-
-        @Override
         public void renderToBuffer(@NotNull MatrixStack matrixStack, @NotNull IVertexBuilder buffer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha){
+            matrixStack.pushPose();
+            matrixStack.mulPose(Vector3f.YP.rotationDegrees(180));
+            matrixStack.translate(0, -0.05, 0);
             bone.render(matrixStack, buffer, packedLight, packedOverlay, red, green, blue, alpha);
-        }
-
-        public void setRotationAngle(ModelRenderer modelRenderer, float x, float y, float z) {
-            modelRenderer.xRot = x;
-            modelRenderer.yRot = y;
-            modelRenderer.zRot = z;
+            matrixStack.popPose();
         }
     }
