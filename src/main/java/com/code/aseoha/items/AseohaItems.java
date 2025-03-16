@@ -1,11 +1,13 @@
 package com.code.aseoha.items;
 import com.code.aseoha.client.Sounds;
 import com.code.aseoha.entities.ModEntityTypes;
+import com.code.aseoha.enums.EnumArmorMaterials;
 import com.code.aseoha.items.Materials.AseohaArmorMaterials;
 import com.code.aseoha.items.Materials.AseohaItemTiers;
 import com.code.aseoha.items.Upgrades.LightSpeedDrive;
 import com.code.aseoha.items.Upgrades.TesseractDrive;
 import com.code.aseoha.items.Upgrades.WarpDrive;
+import com.code.aseoha.items.armor.ScarfArmorItem;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.*;
 import net.minecraft.potion.EffectInstance;
@@ -25,11 +27,13 @@ public class AseohaItems {
     public static final DeferredRegister<Item> ITEMS =
             DeferredRegister.create(ForgeRegistries.ITEMS, MODID);
 
+    public static final DeferredRegister<Item> ARMOR_ITEMS =
+            DeferredRegister.create(ForgeRegistries.ITEMS, MODID);
+
     public static final RegistryObject<Item> PRYDONIAN_HELM = ITEMS.register("prydonian_robes_helm", () -> createItem(new PrydonianRobes(EquipmentSlotType.HEAD)));
 
     public static final RegistryObject<Item> MANUAL = ITEMS.register("aseoha_manual",
             () -> createItem(new ManualItem()));
-
 
 //    public static final RegistryObject<Item> HADS = ITEMS.register("upgrades/hads", () -> {
 //        return (TardisPartItem)createItem(new TardisPartItem((new Item.Properties()).tab(ModItemGroup.ASEOHA_GROUP), TardisConstants.Part.PartType.UPGRADE, false, false, TardisConstants.Translations.DEMAT_CIRCUIT));
@@ -156,7 +160,6 @@ public class AseohaItems {
     public static final RegistryObject<Item> CANDY_CANE_SONIC = ITEMS.register("candy_cane_sonic",
             () -> new SwordItem(AseohaItemTiers.CANDY_CANE, 3, -2.4f, new Item.Properties().tab(AseohaItemGroups.ASEOHA_FOOD_GROUP).rarity(Rarity.UNCOMMON)));
 
-
     public static final RegistryObject<Item> STEEL_PICKAXE = ITEMS.register("steel_pickaxe",
             () -> new PickaxeItem(AseohaItemTiers.STEEL, 1, -2.8F, new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP)));
 
@@ -172,31 +175,29 @@ public class AseohaItems {
     public static final RegistryObject<Item> STEEL_SWORD = ITEMS.register("steel_sword",
             () -> new SwordItem(AseohaItemTiers.STEEL, 3, -2.4F, new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP)));
 
+    public static final RegistryObject<Item> STEEL_BOOTS = ARMOR_ITEMS.register("steel_boots",
+            () -> new ArmorItem(EnumArmorMaterials.STEEL, EquipmentSlotType.FEET, new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP)));
 
-    public static final RegistryObject<Item> STEEL_BOOTS = ITEMS.register("steel_boots",
-            () -> new ArmorItem(AseohaArmorMaterials.STEEL, EquipmentSlotType.FEET, new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP)));
+    public static final RegistryObject<Item> STEEL_LEGGINGS = ARMOR_ITEMS.register("steel_leggings",
+            () -> new ArmorItem(EnumArmorMaterials.STEEL, EquipmentSlotType.LEGS, new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP)));
 
-    public static final RegistryObject<Item> STEEL_LEGGINGS = ITEMS.register("steel_leggings",
-            () -> new ArmorItem(AseohaArmorMaterials.STEEL, EquipmentSlotType.LEGS, new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP)));
+    public static final RegistryObject<Item> STEEL_CHEST = ARMOR_ITEMS.register("steel_chestplate",
+            () -> new ArmorItem(EnumArmorMaterials.STEEL, EquipmentSlotType.CHEST, new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP)));
 
-    public static final RegistryObject<Item> STEEL_CHEST = ITEMS.register("steel_chestplate",
-            () -> new ArmorItem(AseohaArmorMaterials.STEEL, EquipmentSlotType.CHEST, new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP)));
+    public static final RegistryObject<Item> STEEL_HELMET = ARMOR_ITEMS.register("steel_helmet",
+            () -> new ArmorItem(EnumArmorMaterials.STEEL, EquipmentSlotType.HEAD, new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP)));
 
-    public static final RegistryObject<Item> STEEL_HELMET = ITEMS.register("steel_helmet",
-            () -> new ArmorItem(AseohaArmorMaterials.STEEL, EquipmentSlotType.HEAD, new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP)));
+    public static final RegistryObject<Item> DALEKANIUM_HELMET = ARMOR_ITEMS.register("dalekanium_helmet",
+            () -> new ArmorItem(EnumArmorMaterials.DALEKANIUM, EquipmentSlotType.HEAD, new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP)));
 
+    public static final RegistryObject<Item> DALEKANIUM_CHESTPLATE = ARMOR_ITEMS.register("dalekanium_chestplate",
+            () -> new ArmorItem(EnumArmorMaterials.DALEKANIUM, EquipmentSlotType.CHEST, new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP)));
 
-    public static final RegistryObject<Item> DALEKANIUM_HELMET = ITEMS.register("dalekanium_helmet",
-            () -> new ArmorItem(AseohaArmorMaterials.DALEKANIUM, EquipmentSlotType.HEAD, new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP)));
+    public static final RegistryObject<Item> DALEKANIUM_LEGGINGS = ARMOR_ITEMS.register("dalekanium_leggings",
+            () -> new ArmorItem(EnumArmorMaterials.DALEKANIUM, EquipmentSlotType.LEGS, new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP)));
 
-    public static final RegistryObject<Item> DALEKANIUM_CHESTPLATE = ITEMS.register("dalekanium_chestplate",
-            () -> new ArmorItem(AseohaArmorMaterials.DALEKANIUM, EquipmentSlotType.CHEST, new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP)));
-
-    public static final RegistryObject<Item> DALEKANIUM_LEGGINGS = ITEMS.register("dalekanium_leggings",
-            () -> new ArmorItem(AseohaArmorMaterials.DALEKANIUM, EquipmentSlotType.LEGS, new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP)));
-
-    public static final RegistryObject<Item> DALEKANIUM_BOOTS = ITEMS.register("dalekanium_boots",
-            () -> new ArmorItem(AseohaArmorMaterials.DALEKANIUM, EquipmentSlotType.FEET, new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP)));
+    public static final RegistryObject<Item> DALEKANIUM_BOOTS = ARMOR_ITEMS.register("dalekanium_boots",
+            () -> new ArmorItem(EnumArmorMaterials.DALEKANIUM, EquipmentSlotType.FEET, new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP)));
 
     public static final RegistryObject<Item> DALEKANIUM_PICKAXE = ITEMS.register("dalekanium_pickaxe",
             () -> new PickaxeItem(AseohaItemTiers.DALEKANIUM, 1, -2.8F, new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP)));
@@ -212,6 +213,9 @@ public class AseohaItems {
 
     public static final RegistryObject<Item> DALEKANIUM_SWORD = ITEMS.register("dalekanium_sword",
             () -> new SwordItem(AseohaItemTiers.DALEKANIUM, 3, -2.4F, new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP)));
+
+    public static final RegistryObject<Item> SCARF = ARMOR_ITEMS.register("scarf",
+            () -> new ScarfArmorItem(EnumArmorMaterials.SCARF, EquipmentSlotType.HEAD, new Item.Properties().tab(ItemGroup.TAB_COMBAT)));
 
 //    public static final RegistryObject<Item> SONIC_LASER = ITEMS.register("sonic_laser",
 //            ()-> new );

@@ -173,7 +173,7 @@ public class k9model <T extends k9> extends EntityModel<T> {
 
 	@Override
 	public void setupAnim(T t, float v, float v1, float v2, float v3, float v4) {
-		this.tail.zRot = (float) Math.toRadians(t.getTailAngle());
+		this.tail.xRot = (float) Math.toRadians(t.getTailAngle());
 	}
 
 	@Override

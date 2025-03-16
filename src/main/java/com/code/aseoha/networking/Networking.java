@@ -40,6 +40,7 @@ public class Networking {
         INSTANCE.registerMessage(iterator(), EOHInteractPacketC2S.class, EOHInteractPacketC2S::encode, EOHInteractPacketC2S::decode, EOHInteractPacketC2S::handle);
         INSTANCE.registerMessage(iterator(), PlayerItemRemovePacketC2S.class, PlayerItemRemovePacketC2S::encode, PlayerItemRemovePacketC2S::decode, PlayerItemRemovePacketC2S::handle);
         INSTANCE.registerMessage(iterator(), EnterRWFPacket.class, EnterRWFPacket::encode, EnterRWFPacket::decode, EnterRWFPacket::handle);
+        INSTANCE.registerMessage(iterator(), EOHSyncPacketC2S.class, EOHSyncPacketC2S::encode, EOHSyncPacketC2S::decode, EOHSyncPacketC2S::handle);
     }
 
     public static void sendToServer(Object msg) {

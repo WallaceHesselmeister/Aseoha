@@ -85,10 +85,10 @@ public class AseohaBlocks {
     /** Eye Of Harmony Blocks **/
 
     public static final RegistryObject<Block> ZERO_POINT_DWARF_STAR_ALLOY = registerBlock("zero_point_dwarf_star_alloy",
-            () -> setUpBlock(new Block(Block.Properties.of(Material.METAL).strength(10, 50F).lightLevel(BlockState -> 2).noOcclusion())));
+            () -> setUpBlock(new ZeroPointDwarfStarAlloyBlock()));
 
     public static final RegistryObject<Block> EYE_OF_HARMONY = registerBlock("eye_of_harmony",
-            () -> new EOH(Block.Properties.of(Material.METAL).strength(1200, 2400).lightLevel(BlockState -> 15).noOcclusion()));
+            () -> new EOH(Block.Properties.of(Material.METAL).strength(12f).lightLevel(BlockState -> 15).noOcclusion()));
 
     public static final RegistryObject<Block> HARMONIC_PILLAR = registerBlock("harmonic_pillar",
             () -> setUpBlock(new EOHPillar(Block.Properties.of(Material.METAL).strength(1.25F, 5.25F).lightLevel(BlockState -> 2).noOcclusion())));
@@ -101,7 +101,7 @@ public class AseohaBlocks {
             () -> setUpBlock(new Facing(AbstractBlock.Properties.of(Material.HEAVY_METAL).strength(1.25F, 5.25F).noOcclusion())));
 
     //P.S Yes I know it is spelt Handbrake not Handbreak.
-    public static RegistryObject<Block> HANDBREAK_CONTROL = registerModularBlock("handbreak_control",
+    public static RegistryObject<Block> HANDBRAKE_CONTROL = registerModularBlock("handbreak_control",
             () -> setUpBlock(new Handbreak(AbstractBlock.Properties.of(Material.HEAVY_METAL).strength(1.25F, 5.25F).noOcclusion())));
 
     public static RegistryObject<Block> INC_CONTROL = registerModularBlock("inc_control",

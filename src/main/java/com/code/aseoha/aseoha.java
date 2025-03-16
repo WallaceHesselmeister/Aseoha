@@ -2,6 +2,7 @@ package com.code.aseoha;
 import com.code.aseoha.DataGen.*;
 import com.code.aseoha.block.AseohaBlocks;
 import com.code.aseoha.client.Sounds;
+import com.code.aseoha.client.models.armor.ScarfModel;
 import com.code.aseoha.client.renderers.DavrosChairRenderer;
 import com.code.aseoha.client.renderers.blocks.EOHRenderer;
 import com.code.aseoha.client.renderers.console.*;
@@ -16,6 +17,7 @@ import com.code.aseoha.compat.NoProjectTARDISBlocks;
 import com.code.aseoha.entities.ModEntityTypes;
 import com.code.aseoha.items.AseohaItems;
 import com.code.aseoha.compat.NoTadditionsItems;
+import com.code.aseoha.items.armor.ScarfArmorItem;
 import com.code.aseoha.misc.AseohaDimensions;
 import com.code.aseoha.misc.Loot;
 import com.code.aseoha.WorkBench.WorkBenchRecipeHandler;
@@ -74,10 +76,14 @@ public class aseoha {
         ExteriorsRegistry.EXTERIORS.register(modBus);
         AseohaBlocks.register(modBus);
         AseohaItems.register(modBus);
+        AseohaItems.ARMOR_ITEMS.register(modBus);
+
         if (!(ModList.get().isLoaded("tadditions")))
             NoTadditionsItems.register(modBus);
+
         if(!(ModList.get().isLoaded("project_tardis")))
             NoProjectTARDISBlocks.BLOCKS.register(modBus);
+
         //ConsolesRegistry.CONSOLES.register(modBus);
         RegisterProtocols.PROTOCOLSREGISTER.register(modBus);
         ConsolesRegistry.CONSOLES.register(modBus);
@@ -179,7 +185,7 @@ public class aseoha {
             RenderTypeLookup.setRenderLayer(NoProjectTARDISBlocks.CORAL.get(), RenderType.cutout());
         RenderTypeLookup.setRenderLayer(AseohaBlocks.DIMENSIONAL_BUTTON.get(), RenderType.cutout());
         RenderTypeLookup.setRenderLayer(AseohaBlocks.FACING_CONTROL.get(), RenderType.cutout());
-        RenderTypeLookup.setRenderLayer(AseohaBlocks.HANDBREAK_CONTROL.get(), RenderType.cutout());
+        RenderTypeLookup.setRenderLayer(AseohaBlocks.HANDBRAKE_CONTROL.get(), RenderType.cutout());
         RenderTypeLookup.setRenderLayer(AseohaBlocks.INC_CONTROL.get(), RenderType.cutout());
         RenderTypeLookup.setRenderLayer(AseohaBlocks.RANDOMIZER_CONTROL.get(), RenderType.cutout());
         RenderTypeLookup.setRenderLayer(AseohaBlocks.REFUELER_CONTROL.get(), RenderType.cutout());

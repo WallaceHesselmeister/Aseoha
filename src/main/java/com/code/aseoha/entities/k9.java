@@ -4,6 +4,7 @@ package com.code.aseoha.entities;
 import com.code.aseoha.Constants;
 import com.code.aseoha.aseoha;
 import com.code.aseoha.misc.InventoryContainers;
+import lombok.Getter;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.*;
 import net.minecraft.entity.ai.attributes.AttributeModifierManager;
@@ -15,6 +16,7 @@ import net.minecraft.entity.passive.AnimalEntity;
 import net.minecraft.entity.passive.horse.LlamaEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
+import net.minecraft.entity.projectile.ProjectileEntity;
 import net.minecraft.inventory.Inventory;
 import net.minecraft.inventory.container.Container;
 import net.minecraft.inventory.container.INamedContainerProvider;
@@ -39,7 +41,9 @@ import net.tardis.mod.helper.TardisHelper;
 import net.tardis.mod.items.SonicItem;
 import net.tardis.mod.sounds.TSounds;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+import java.util.ArrayList;
 import java.util.Objects;
 
 import static com.code.aseoha.misc.NBTHelper.getInvNBT;
@@ -56,6 +60,8 @@ public class k9 extends RecycledWolf implements IAngerable, ISpaceImmuneEntity, 
     public boolean isDead = true;
     public byte power = 0;
     public int timer = 0;
+    @Getter
+    private ArrayList<LivingEntity> hitList = new ArrayList<>();
 //    private static float TailAngle;
 
 
@@ -200,6 +206,7 @@ public class k9 extends RecycledWolf implements IAngerable, ISpaceImmuneEntity, 
                         this.jumping = false;
                         this.navigation.stop();
                         this.setTarget((LivingEntity) null);
+                        this.hitList = new ArrayList<>();
                         return ActionResultType.SUCCESS;
                     }
                     return actionresulttype;
@@ -216,6 +223,7 @@ public class k9 extends RecycledWolf implements IAngerable, ISpaceImmuneEntity, 
                     this.tame(player);
                     this.navigation.stop();
                     this.setTarget((LivingEntity) null);
+                    this.hitList = new ArrayList<>();
                     this.setOrderedToSit(true);
                     this.level.broadcastEntityEvent(this, (byte) 7);
                 } else {
@@ -275,10 +283,7 @@ public class k9 extends RecycledWolf implements IAngerable, ISpaceImmuneEntity, 
 //    }
 //private static int timer = 0;
     public static void Talk(int text, PlayerEntity player, World worldIn) {
-        assert player != null;
-        TardisHelper.getConsoleInWorld(player.level);
-        Objects.requireNonNull(worldIn.getServer()).tell(new TickDelayedTask(1, () -> {
-
+        worldIn.getServer().tell(new TickDelayedTask(1, () -> {
             switch (text) {
                 case 1:
                     player.sendMessage(Constants.AffirmativeK9, player.getUUID());
@@ -303,7 +308,6 @@ public class k9 extends RecycledWolf implements IAngerable, ISpaceImmuneEntity, 
         super.addAdditionalSaveData(nbt);
         setInvNBT(this.inventory, nbt);
         nbt.putByte("Power", this.power);
-
     }
 
     @Override
@@ -322,13 +326,32 @@ public class k9 extends RecycledWolf implements IAngerable, ISpaceImmuneEntity, 
     }
 
     @Override
+    public void setTarget(@Nullable LivingEntity target) {
+        if (!this.getHitList().isEmpty())
+            while (this.getHitList().get(0) == null || !this.getHitList().get(0).isAlive()) // TODO: Stop being lazy replace this with a for loop
+                this.getHitList().remove(0);
+
+        if (this.getTarget() != null)
+            this.getHitList().add(0, this.getTarget());
+
+        super.setTarget(target);
+    }
+
+    @Override
     public boolean hurt(DamageSource source, float amount) {
-        if (source.getDirectEntity() instanceof PlayerEntity) {
-            PlayerEntity player = (PlayerEntity) source.getDirectEntity();
+        Entity entity = source.getDirectEntity();
+        if (source.getDirectEntity() instanceof ProjectileEntity) {
+            entity = ((ProjectileEntity) source.getDirectEntity()).getOwner();
+        }
+        if (entity instanceof PlayerEntity) {
+            PlayerEntity player = (PlayerEntity) entity;
             if (player.getMainHandItem().getItem() instanceof ToolItem && ((ToolItem) player.getMainHandItem().getItem()).getTier() == ItemTier.IRON) {
                 amount *= 1.5F;
             }
         }
+        if (entity != this.getOwner())
+            this.setTarget((LivingEntity) source.getDirectEntity());
+
 //        this.knockback(.1F, .1, .1);
         this.power -= (byte) amount;
         return super.hurt(source, amount);
@@ -363,7 +386,7 @@ public class k9 extends RecycledWolf implements IAngerable, ISpaceImmuneEntity, 
         if (this.isAngry()) {
             return 1.5393804F;
         } else {
-            return this.isTame() ? (0.55F - (100 - this.power) * 0.02F) * (float)Math.PI : ((float)Math.PI / 5F);
+            return this.isTame() ? (0.55F - (50 + this.power) * 0.2F) * (float) Math.PI : ((float) Math.PI / 5F);
         }
     }
 //    @OnlyIn(Dist.CLIENT)
