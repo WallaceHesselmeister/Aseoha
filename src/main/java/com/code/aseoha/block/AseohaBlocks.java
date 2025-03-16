@@ -82,6 +82,9 @@ public class AseohaBlocks {
     public static final RegistryObject<Block> WORKBENCH = registerBlock("workbench",
             () -> new WorkbenchBlock(Block.Properties.copy(Blocks.IRON_BLOCK).noOcclusion()));
 
+    public static final RegistryObject<Block> MOLECULAR_ASSEMBLER = registerBlock("molecular_assembler",
+            () -> new WorkbenchBlock(Block.Properties.copy(Blocks.IRON_BLOCK).noOcclusion()));
+
     /** Eye Of Harmony Blocks **/
 
     public static final RegistryObject<Block> ZERO_POINT_DWARF_STAR_ALLOY = registerBlock("zero_point_dwarf_star_alloy",

@@ -1,5 +1,6 @@
 package com.code.aseoha;
 import com.code.aseoha.DataGen.*;
+import com.code.aseoha.WorkBench.WorkBenchRecipe;
 import com.code.aseoha.block.AseohaBlocks;
 import com.code.aseoha.client.Sounds;
 import com.code.aseoha.client.models.armor.ScarfModel;

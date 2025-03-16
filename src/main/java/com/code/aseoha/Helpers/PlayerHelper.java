@@ -1,5 +1,6 @@
 package com.code.aseoha.Helpers;
 
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.item.ItemStack;
@@ -69,5 +70,12 @@ public class PlayerHelper {
             }
         });
         return atomic.get() != null && atomic.get();
+    }
+
+    public static float calculateNetHeadYaw(LivingEntity entity) {
+        float headYaw = entity.yHeadRot;    // Head rotation in degrees
+        float bodyYaw = entity.yBodyRot;    // Body rotation in degrees
+        float netHeadYaw = headYaw - bodyYaw;      // Raw difference
+        return MathHelper.wrapDegrees(netHeadYaw); // Normalize to [-180, 180]
     }
 }

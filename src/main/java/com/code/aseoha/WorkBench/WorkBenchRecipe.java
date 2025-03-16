@@ -1,14 +1,7 @@
 package com.code.aseoha.WorkBench;
 
-import net.minecraft.inventory.IInventory;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
-import net.minecraft.item.crafting.IRecipeSerializer;
 import net.minecraft.item.crafting.Ingredient;
-import net.minecraft.util.NonNullList;
-import net.minecraft.util.ResourceLocation;
-import net.minecraft.world.World;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -30,6 +23,22 @@ public class WorkBenchRecipe {
         this.Ingredients[1] = SecondIngredient;
         this.Ingredients[2] = ThirdIngredient;
         this.Ingredients[3] = FourthIngredient;
+    }
+
+    /**
+     * Specifies 4 ingredients + a result, if you want only say, 2 Ingredients, leave the rest as Items.AIR
+     * @param FirstIngredient 1st Ingredient
+     * @param SecondIngredient 2nd Ingredient
+     * @param ThirdIngredient 3rd Ingredient
+     * @param FourthIngredient 4th Ingredient
+     * @param Result The Recipes Result
+     */
+    public WorkBenchRecipe(Item FirstIngredient, Item SecondIngredient, Item ThirdIngredient, Item FourthIngredient, Item Result) {
+        this.Ingredients[0] = FirstIngredient;
+        this.Ingredients[1] = SecondIngredient;
+        this.Ingredients[2] = ThirdIngredient;
+        this.Ingredients[3] = FourthIngredient;
+        this.Result = Result;
     }
     public WorkBenchRecipe AddReceivingItem(Item Received){
         this.Result = Received;

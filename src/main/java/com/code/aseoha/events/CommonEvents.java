@@ -9,6 +9,7 @@ import com.code.aseoha.aseoha;
 import com.code.aseoha.client.Sounds;
 import com.code.aseoha.commands.Commands;
 import com.code.aseoha.data.DataPackVortex;
+import com.code.aseoha.data.DataPackWorkbenchRecipe;
 import com.code.aseoha.entities.k9;
 import com.code.aseoha.tileentities.consoles.CopperConsoleTile;
 import com.code.aseoha.upgrades.AutoStabilizer;
@@ -652,5 +653,6 @@ public class CommonEvents {
     @SubscribeEvent
     public static void AddDataPackReloadListeners(AddReloadListenerEvent event) {
         event.addListener(DataPackVortex.DATA_LOADER);
+        event.addListener(DataPackWorkbenchRecipe.DATA_LOADER);
     }
 }

@@ -3,6 +3,7 @@ package com.code.aseoha.block;
 import com.code.aseoha.aseoha;
 import com.code.aseoha.tileentities.AseohaTiles;
 import com.code.aseoha.tileentities.blocks.WorkbenchTile;
+import lombok.Getter;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.item.ItemEntity;
@@ -17,21 +18,21 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.BlockRayTraceResult;
 import net.minecraft.world.IBlockReader;
 import net.minecraft.world.World;
-import net.minecraft.world.server.ServerWorld;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 
 @SuppressWarnings("deprecation")
 public class WorkbenchBlock extends Block {
-    int size = 0;
+    @Getter
+    private int size = 0;
 
     public WorkbenchBlock(Properties props) {
         super(props);
     }
 
     @Override
-    public void onRemove(BlockState state, World world, BlockPos pos, BlockState state1, boolean flag) {
+    public void onRemove(@NotNull BlockState state, World world, @NotNull BlockPos pos, @NotNull BlockState state1, boolean flag) {
         TileEntity tile = world.getBlockEntity(pos);
         if (tile != null) {
             if (tile instanceof WorkbenchTile) {
@@ -59,24 +60,22 @@ public class WorkbenchBlock extends Block {
 
     @NotNull
     @Override
-    public ActionResultType use(@NotNull BlockState p_225533_1_, @NotNull World p_225533_2_, @NotNull BlockPos p_225533_3_, @NotNull PlayerEntity p_225533_4_, @NotNull Hand p_225533_5_, @NotNull BlockRayTraceResult p_225533_6_) {
-        TileEntity tile = p_225533_2_.getBlockEntity(p_225533_3_);
-        if ((WorkbenchTile) tile != null) {
-
-            if (tile instanceof WorkbenchTile) {
+    public ActionResultType use(@NotNull BlockState state, @NotNull World world, @NotNull BlockPos pos, @NotNull PlayerEntity player, @NotNull Hand hand, @NotNull BlockRayTraceResult blockRayTraceResult) {
+        TileEntity tile = world.getBlockEntity(pos);
+        if (tile instanceof WorkbenchTile) {
                 if (!((WorkbenchTile) tile).StoredItems.isEmpty())
                     for (int i = 0; i < ((WorkbenchTile) tile).StoredItems.size(); i++) {
                         if (!((WorkbenchTile) tile).StoredItems.get(i).equals(Items.AIR))
                             this.size++;
                     }
-                if (!p_225533_4_.isCrouching() && !p_225533_4_.getMainHandItem().isEmpty() && p_225533_4_.getMainHandItem().getItem() != Items.AIR) {
+                if (!player.isCrouching() && !player.getMainHandItem().isEmpty() && player.getMainHandItem().getItem() != Items.AIR) {
                     if (this.size < 4) {
-                        ((WorkbenchTile) tile).StoredItems.add(p_225533_4_.getMainHandItem().getItem());
-                        p_225533_4_.getMainHandItem().shrink(1);
+                        ((WorkbenchTile) tile).StoredItems.add(player.getMainHandItem().getItem());
+                        player.getMainHandItem().shrink(1);
                         return ActionResultType.CONSUME;
                     }
                 }
-                if (p_225533_4_.isCrouching() && !((WorkbenchTile) tile).StoredItems.isEmpty()) {
+                if (player.isCrouching() && !((WorkbenchTile) tile).StoredItems.isEmpty()) {
                     ArrayList<Items> itemsArrayList = new ArrayList<>();
 //                    for (int i = 0; i < 3; i++) {
 //                        if (((WorkbenchTile) tile).StoredItems.get(i) == null) {
@@ -86,17 +85,14 @@ public class WorkbenchBlock extends Block {
                     for(int i = 0; i < 4; i++){
                         if(((WorkbenchTile) tile).StoredItems.size() < 4) ((WorkbenchTile) tile).StoredItems.add(Items.AIR);
                     }
-                    if (aseoha.WorkBenchRecipeHandler.IsValidRecipeFromArrayList(((WorkbenchTile) tile).StoredItems)) {
-                        p_225533_4_.inventory.add(aseoha.WorkBenchRecipeHandler.GetRecipeResult(((WorkbenchTile) tile).StoredItems).getDefaultInstance());
+                    if (aseoha.WorkBenchRecipeHandler.IsValidRecipe(((WorkbenchTile) tile).StoredItems)) {
+                        player.inventory.add(aseoha.WorkBenchRecipeHandler.GetRecipeResult(((WorkbenchTile) tile).StoredItems).getDefaultInstance());
                         ((WorkbenchTile) tile).StoredItems.clear();
                         this.size = 0;
                         return ActionResultType.CONSUME;
                     }
                 }
             }
-
-
-        }
         return ActionResultType.FAIL;
     }
 }

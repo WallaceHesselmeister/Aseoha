@@ -30,7 +30,7 @@ public class WorkBenchRecipeWrapper {
     public static List<WorkBenchRecipeWrapper> getAllRecipes() {
         List<WorkBenchRecipeWrapper> recipes = new ArrayList<>();
         WorkBenchRecipeHandler handler = aseoha.WorkBenchRecipeHandler;
-        for(WorkBenchRecipe recipe : handler.RecipeList) {
+        for(WorkBenchRecipe recipe : handler.getRecipeList()) {
             recipes.add(new WorkBenchRecipeWrapper(
                     Arrays.asList(
                             Ingredient.of(recipe.Get().GetList().get(0)),
