@@ -140,7 +140,7 @@
   "sonic.aseoha.sonic_wiimote": "Wii",
   "sonic.aseoha.war_sonic": "War",
 
-  "item.aseoha.latinum_bar",: [
+  "item.aseoha.latinum_bar": [
     {
       "text": "Gold-Pressed Latinum Bar",
       "color": "#FFFF00"
