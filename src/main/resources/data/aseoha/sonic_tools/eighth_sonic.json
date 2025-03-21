@@ -1,11 +1,11 @@
 {
   "id": "aseoha:eighth_sonic",
   "models": {
-    "inactive": "aseoha:models/item/sonic/eighth_sonic",
-    "interaction":  "aseoha:models/item/sonic/eighth_sonic",
-    "overload":  "aseoha:models/item/sonic/eighth_sonic",
-    "scanning":  "aseoha:models/item/sonic/eighth_sonic",
-    "tardis":  "aseoha:models/item/sonic/eighth_sonic"
+    "inactive": "aseoha:item/sonic_tools/eighth_sonic",
+    "interaction":  "aseoha:item/sonic_tools/eighth_sonic",
+    "overload":  "aseoha:item/sonic_tools/eighth_sonic",
+    "scanning":  "aseoha:item/sonic_tools/eighth_sonic",
+    "tardis":  "aseoha:item/sonic_tools/eighth_sonic"
   },
   "loyalty": {
     "type": "NEUTRAL"

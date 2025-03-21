@@ -1,11 +1,11 @@
 {
   "id": "aseoha:chicken_sonic",
   "models": {
-    "inactive": "aseoha:models/item/sonic/chicken_inactive",
-    "interaction": "aseoha:models/item/sonic/chicken_interaction",
-    "overload": "aseoha:models/item/sonic//chicken_overload",
-    "scanning": "aseoha:models/item/sonic/chicken_scanning",
-    "tardis": "aseoha:models/item/sonic/chicken_tardis"
+    "inactive": "aseoha:item/sonic_tools/chicken_inactive",
+    "interaction": "aseoha:item/sonic_tools/chicken_interaction",
+    "overload": "aseoha:item/sonic_tools/chicken_overload",
+    "scanning": "aseoha:item/sonic_tools/chicken_scanning",
+    "tardis": "aseoha:item/sonic_tools/chicken_tardis"
   },
   "loyalty": {
     "type": "PILOT"

@@ -1,11 +1,11 @@
 {
   "id": "aseoha:do7",
   "models": {
-    "inactive": "aseoha:item/sonic/do7/inactive",
-    "interaction": "aseoha:item/sonic/do7/interaction",
-    "overload": "aseoha:item/sonic/d07/overload",
-    "scanning": "aseoha:item/sonic/do7/scanning",
-    "tardis": "aseoha:item/sonic/do7/tardis"
+    "inactive": "aseoha:item/sonic_tools/do7/inactive",
+    "interaction": "aseoha:item/sonic_tools/do7/interaction",
+    "overload": "aseoha:item/sonic_tools/do7/overload",
+    "scanning": "aseoha:item/sonic_tools/do7/scanning",
+    "tardis": "aseoha:item/sonic_tools/do7/tardis"
   },
   "rendering": {
     "position": {

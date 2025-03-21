@@ -1,11 +1,11 @@
 {
   "id": "aseoha:war_sonic",
   "models": {
-    "inactive":  "aseoha:models/item/sonic/war_sonic_inactive",
-    "interaction":  "aseoha:models/item/sonic/war_sonic_interactive",
-    "overload":  "aseoha:models/item/sonic/war_sonic_overload",
-    "scanning":  "aseoha:models/item/sonic/war_sonic_scanning",
-    "tardis":  "aseoha:models/item/sonic/war_sonic_tardis"
+    "inactive":  "aseoha:item/sonic_tools/war_sonic_inactive",
+    "interaction":  "aseoha:item/sonic_tools/war_sonic_interactive",
+    "overload":  "aseoha:item/sonic_tools/war_sonic_overload",
+    "scanning":  "aseoha:item/sonic_tools/war_sonic_scanning",
+    "tardis":  "aseoha:item/sonic_tools/war_sonic_tardis"
   },
   "loyalty": {
     "type": "NEUTRAL"

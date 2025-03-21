@@ -1,11 +1,11 @@
 {
   "id": "aseoha:sonic_coral2",
   "models": {
-    "inactive": "aseoha:item/sonic/sonic_coral2_inactive",
-    "interaction": "aseoha:item/sonic/sonic_coral2_interaction",
-    "overload": "aseoha:item/sonic/sonic_coral2_overload",
-    "scanning": "aseoha:item/sonic/sonic_coral2_scanning",
-    "tardis": "aseoha:item/sonic/sonic_coral2_tardis"
+    "inactive": "aseoha:item/sonic_tools/sonic_coral2_inactive",
+    "interaction": "aseoha:item/sonic_tools/sonic_coral2_interaction",
+    "overload": "aseoha:item/sonic_tools/sonic_coral2_overload",
+    "scanning": "aseoha:item/sonic_tools/sonic_coral2_scanning",
+    "tardis": "aseoha:item/sonic_tools/sonic_coral2_tardis"
   },
   "loyalty": {
     "type": "PILOT"

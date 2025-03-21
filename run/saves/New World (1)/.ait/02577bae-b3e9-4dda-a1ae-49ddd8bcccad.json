@@ -1,0 +1,284 @@
+{
+  "version": 1,
+  "uuid": "02577bae-b3e9-4dda-a1ae-49ddd8bcccad",
+  "desktop": {
+    "schema": "ait:coral",
+    "doorPos": {
+      "x": 31353,
+      "y": 14,
+      "z": 22140,
+      "rotation": 8
+    },
+    "corners": {
+      "first": {
+        "x": 31210,
+        "y": 0,
+        "z": 21985
+      },
+      "second": {
+        "x": 31466,
+        "y": 0,
+        "z": 22241
+      }
+    },
+    "consolePos": [
+      {
+        "x": 31353,
+        "y": 15,
+        "z": 22129
+      }
+    ]
+  },
+  "exterior": {
+    "exterior": "ait:exterior/capsule",
+    "variant": "ait:exterior/capsule/fire",
+    "id": "EXTERIOR"
+  },
+  "handlers": {
+    "TRAVEL": {
+      "animationTicks": 0,
+      "flightTicks": 0,
+      "targetTicks": 0,
+      "handbrake": true,
+      "autopilot": false,
+      "state": "LANDED",
+      "position": {
+        "dimension": {
+          "registry": "minecraft:dimension",
+          "value": "minecraft:overworld"
+        },
+        "pos": {
+          "x": -38,
+          "y": 70,
+          "z": -22
+        },
+        "rotation": 6
+      },
+      "destination": {
+        "dimension": {
+          "registry": "minecraft:dimension",
+          "value": "minecraft:overworld"
+        },
+        "pos": {
+          "x": -38,
+          "y": 70,
+          "z": -22
+        },
+        "rotation": 6
+      },
+      "previousPosition": {
+        "dimension": {
+          "registry": "minecraft:dimension",
+          "value": "minecraft:overworld"
+        },
+        "pos": {
+          "x": -38,
+          "y": 70,
+          "z": -22
+        },
+        "rotation": 6
+      },
+      "leaveBehind": false,
+      "crashing": false,
+      "antigravs": false,
+      "speed": 0,
+      "maxSpeed": 7,
+      "vGroundSearch": "CEILING",
+      "hGroundSearch": true,
+      "hammerUses": 0,
+      "id": "TRAVEL"
+    },
+    "DOOR": {
+      "locked": false,
+      "left": false,
+      "right": false,
+      "previouslyLocked": false,
+      "doorState": "FIRST",
+      "tempExteriorState": "CLOSED",
+      "tempInteriorState": "CLOSED",
+      "id": "DOOR"
+    },
+    "SONIC": {
+      "id": "SONIC"
+    },
+    "PERMISSIONS": {
+      "permissions": {},
+      "p19Loyalty": "COMPANION",
+      "id": "PERMISSIONS"
+    },
+    "LOYALTY": {
+      "data": {
+        "8fbcb74c-bd8d-3181-a022-3c858a10477d": {
+          "level": 100,
+          "type": "OWNER"
+        }
+      },
+      "id": "LOYALTY"
+    },
+    "ENGINE": {
+      "power": true,
+      "engineCorePos": {
+        "x": 0,
+        "y": 0
+      },
+      "id": "ENGINE"
+    },
+    "FLIGHT": {
+      "active": false,
+      "isFalling": false,
+      "id": "FLIGHT"
+    },
+    "BIOME": {
+      "type": "DEFAULT",
+      "id": "BIOME"
+    },
+    "SHIELDS": {
+      "isShielded": false,
+      "isVisuallyShielded": false,
+      "id": "SHIELDS"
+    },
+    "STATS": {
+      "tardisName": "Ubuntoo",
+      "playerCreatorName": "Player119",
+      "creationDate": "21 March 2025, 18:24",
+      "skybox": {
+        "registry": "minecraft:dimension",
+        "value": "ait:tardis_dimension"
+      },
+      "unlocks": [
+        "ait:dev",
+        "ait:exterior/booth/default",
+        "ait:exterior/easter_head/soul",
+        "ait:exterior/plinth/soul",
+        "ait:exterior/renegade/cabinet",
+        "ait:console/steam_gilded",
+        "ait:exterior/police_box/tokamak",
+        "ait:console/alnico_blue",
+        "ait:exterior/classic/definitive",
+        "ait:exterior/renegade/tron",
+        "ait:console/steam_cherry",
+        "ait:exterior/police_box/cherrywood",
+        "ait:console/toyota_blue",
+        "ait:exterior/booth/blue",
+        "ait:song",
+        "ait:exterior/police_box/coral",
+        "ait:crystalline",
+        "ait:mechanical",
+        "ait:console/toyota_legacy",
+        "ait:console/toyota",
+        "ait:console/hartnell_mint",
+        "ait:console/hartnell_kelt",
+        "ait:exterior/tardim/fire",
+        "ait:renaissance",
+        "ait:exterior/classic/shalka",
+        "ait:exterior/booth/soul",
+        "ait:console/coral_blue",
+        "ait:coral",
+        "ait:exterior/plinth/default",
+        "ait:console/hartnell_wooden",
+        "ait:exterior/easter_head/default",
+        "ait:exterior/plinth/fire",
+        "ait:exterior/police_box/default",
+        "ait:copper",
+        "ait:exterior/classic/yeti",
+        "ait:exterior/police_box/soul",
+        "ait:console/alnico",
+        "ait:exterior/easter_head/fire",
+        "ait:exterior/booth/fire",
+        "ait:exterior/classic/exile",
+        "ait:exterior/classic/hudolin",
+        "ait:exterior/tardim/soul",
+        "ait:exterior/bookshelf/default",
+        "ait:exterior/police_box/fire",
+        "ait:console/coral",
+        "ait:exterior/tardim/default",
+        "ait:exterior/booth/gilded",
+        "ait:exterior/classic/mint",
+        "ait:exterior/booth/vintage",
+        "ait:exterior/police_box/futuristic",
+        "ait:fob",
+        "ait:console/coral_white",
+        "ait:exterior/classic/ptored",
+        "ait:console/steam_steel",
+        "ait:console/steam",
+        "ait:exterior/classic/prime",
+        "ait:exterior/renegade/default"
+      ],
+      "security": false,
+      "hailMary": false,
+      "id": "STATS"
+    },
+    "CRASH_DATA": {
+      "state": "NORMAL",
+      "tardisRepairTicks": 0,
+      "id": "CRASH_DATA"
+    },
+    "WAYPOINTS": {
+      "hasCartridge": false,
+      "id": "WAYPOINTS"
+    },
+    "OVERGROWN": {
+      "overgrown": false,
+      "ticks": 0,
+      "id": "OVERGROWN"
+    },
+    "HUM": {
+      "id": "HUM"
+    },
+    "ALARMS": {
+      "enabled": false,
+      "hostilePresence": true,
+      "id": "ALARMS"
+    },
+    "RAINING": {
+      "rainFalling": false,
+      "id": "RAINING"
+    },
+    "LAVA_OUTSIDE": {
+      "lavaOutside": false,
+      "id": "LAVA_OUTSIDE"
+    },
+    "INTERIOR": {
+      "isRegenerating": false,
+      "queuedInterior": "minecraft:",
+      "clearedOldInterior": false,
+      "id": "INTERIOR"
+    },
+    "SEQUENCE": {
+      "ticks": 0,
+      "id": "SEQUENCE"
+    },
+    "MOOD": {
+      "priorityMoods": [
+        "JEALOUS",
+        "HOPEFUL",
+        "IMPASSIVE"
+      ],
+      "id": "MOOD"
+    },
+    "FUEL": {
+      "fuelCount": 49493.0,
+      "isRefueling": false,
+      "id": "FUEL"
+    },
+    "HADS": {
+      "enabled": false,
+      "inDanger": false,
+      "id": "HADS"
+    },
+    "SIEGE": {
+      "siegeTime": 0,
+      "active": false,
+      "texture": "ait:textures/blockentities/exteriors/siege_mode/siege_mode.png",
+      "id": "SIEGE"
+    },
+    "CLOAK": {
+      "isCloaked": false,
+      "id": "CLOAK"
+    },
+    "INCREMENT": {
+      "increment": 1,
+      "id": "INCREMENT"
+    }
+  }
+}
