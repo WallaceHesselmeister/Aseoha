@@ -1,0 +1,6 @@
+{
+  "parent": "aseoha:block/roundel/birch_planks_roundel",
+  "textures": {
+    "layer0": "aseoha:block/roundel/birch_planks_roundel"
+  }
+}

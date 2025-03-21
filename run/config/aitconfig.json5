@@ -1,0 +1,19 @@
+{
+	"MINIFY_JSON": false,
+	"WORLDS_BLACKLIST": [
+		{
+			"registry": "minecraft:dimension",
+			"value": "ait:time_vortex"
+		},
+		{
+			"registry": "minecraft:dimension",
+			"value": "ait:tardis_dimension"
+		}
+	],
+	"INTERIOR_HUM_VOLUME": 0.20000000298023224,
+	"CUSTOM_MENU": true,
+	"SHOW_EXPERIMENTAL_WARNING": false,
+	"ENVIRONMENT_PROJECTOR": true,
+	"DISABLE_CONSOLE_ANIMATIONS": false,
+	"DISABLE_LOYALTY_FOG": false
+}

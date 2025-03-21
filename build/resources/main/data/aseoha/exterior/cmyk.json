@@ -1,0 +1,7 @@
+{
+    "id": "aseoha:cmyk",
+    "category": "ait:exterior/police_box",
+    "parent": "ait:exterior/police_box/default",
+    "texture": "aseoha:textures/exterior/police_box_cmyk.png",
+    "emission": "aseoha:textures/exterior/police_box_cmyk_emission.png"
+}

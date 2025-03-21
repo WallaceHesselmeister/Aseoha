@@ -1,0 +1,145 @@
+{
+  "block.aseoha.acacia_planks_roundel": "Acacia Planks Roundel",
+  "block.aseoha.acacia_roundel_offset": "Acacia Planks Roundel Offset",
+  "block.aseoha.bamboo_planks_roundel": "Bamboo Planks Roundel",
+  "block.aseoha.base_roundel": "Base Roundel",
+  "block.aseoha.birch_planks_roundel": "Birch Planks Roundel",
+  "block.aseoha.black_concrete_hex_roundel": "Black Concrete Hexagonal Roundel",
+  "block.aseoha.black_concrete_roundel": "Black Concrete Roundel",
+  "block.aseoha.black_wool_roundel": "Black Wool Roundel",
+  "block.aseoha.blue_concrete_hex_roundel": "Blue Concrete Hexagonal Roundel",
+  "block.aseoha.blue_concrete_roundel": "Blue Concrete Roundel",
+  "block.aseoha.blue_wool_roundel": "Blue Wool Roundel",
+  "block.aseoha.brown_concrete_hex_roundel": "Brown Concrete Hexagonal Roundel",
+  "block.aseoha.clay_roundel": "Clay Roundel",
+  "block.aseoha.cyan_concrete_hex_roundel": "Cyan Concrete Hexagonal Roundel",
+  "block.aseoha.green_concrete_hex_roundel": "Green Concrete Hexagonal Roundel",
+  "block.aseoha.gray_concrete_hex_roundel": "Grey Concrete Hexagonal Roundel",
+  "block.aseoha.latinum_block": [
+    {
+      "text": "Block of Gold-Pressed Latinum",
+      "color": "#FFFF00"
+    }
+  ],
+  "item.aseoha.latinum_pick": [
+    {
+      "text": "Gold-Pressed Latinum Pickaxe",
+      "color": "#FFFF00"
+    }
+  ],
+  "item.aseoha.latinum_sword": [
+  {
+    "text": "Gold-Pressed Latinum Sword",
+    "color": "#FFFF00"
+  }
+],
+  "item.aseoha.latinum_shovel": [
+    {
+      "text": "Gold-Pressed Latinum Shovel",
+      "color": "#FFFF00"
+    }
+  ],
+  "item.aseoha.latinum_hoe": [
+    {
+      "text": "Gold-Pressed Latinum Hoe",
+      "color": "#FFFF00"
+    }
+  ],
+  "item.aseoha.latinum_leggings": [
+    {
+      "text": "Gold-Pressed Latinum Leggings",
+      "color": "#FFFF00"
+    }
+  ],
+  "item.aseoha.latinum_boots": [
+    {
+      "text": "Gold-Pressed Latinum Boots",
+      "color": "#FFFF00"
+    }
+  ],
+  "item.aseoha.latinum_helm": [
+    {
+      "text": "Gold-Pressed Latinum Helm",
+      "color": "#FFFF00"
+    }
+  ],
+  "item.aseoha.latinum_axe": [
+    {
+      "text": "Gold-Pressed Latinum Axe",
+      "color": "#FFFF00"
+    }
+  ],
+  "item.aseoha.latinum_chestplate": [
+    {
+      "text": "Gold-Pressed Latinum Chestplate",
+      "color": "#FFFF00"
+    }
+  ],
+  "block.aseoha.light_blue_concrete_hex_roundel": "Light Blue Concrete Hexagonal Roundel",
+  "block.aseoha.light_grey_concrete_hex_roundel": "Light Grey Concrete Hexagonal Roundel",
+  "block.aseoha.lime_concrete_hex_roundel": "Lime Concrete Hexagonal Roundel",
+  "block.aseoha.magenta_concrete_hex_roundel": "Magenta Concrete Hexagonal Roundel",
+  "block.aseoha.orange_concrete_hex_roundel": "Orange Concrete Hexagonal Roundel",
+  "block.aseoha.pink_concrete_hex_roundel": "Pink Concrete Hexagonal Roundel",
+  "block.aseoha.purple_concrete_hex_roundel": "Purple Concrete Hexagonal Roundel",
+  "block.aseoha.red_concrete_hex_roundel": "Red Concrete Hexagonal Roundel",
+  "block.aseoha.white_concrete_hex_roundel": "White Concrete Hexagonal Roundel",
+  "block.aseoha.yellow_concrete_hex_roundel": "Yellow Concrete Hexagonal Roundel",
+  "block.aseoha.roundel_cast": "Roundel Cast",
+  "desktop.aseoha.coppercoral": "Copper Coral",
+  "desktop.aseoha.toywardian": "Toywardian",
+  "exterior.aseoha.11": "Matt Smith",
+  "exterior.aseoha.11alt": "11th alternative",
+  "exterior.aseoha.12": "Peter Capaldi",
+  "exterior.aseoha.12alt": "Toyota - Clara Tribute",
+  "exterior.aseoha.13h": "13th",
+  "exterior.aseoha.2": "2nd",
+  "exterior.aseoha.3": "3rd",
+  "exterior.aseoha.4": "4th",
+  "exterior.aseoha.aisat": "aisat",
+  "exterior.aseoha.ambient": "Ambient",
+  "exterior.aseoha.azure": "Azure",
+  "exterior.aseoha.bb8": "BB-8",
+  "exterior.aseoha.billcipher": "Bill Cipher",
+  "exterior.aseoha.cf": "CF",
+  "exterior.aseoha.cherrywood": "Cherry Wood",
+  "exterior.aseoha.cmyk": "CMYK",
+  "exterior.aseoha.comic": "Comic",
+  "exterior.aseoha.coralalt": "Coral - Alternative",
+  "exterior.aseoha.coralwar": "Coral - Time War",
+  "exterior.aseoha.edwardian": "Edwardian",
+  "exterior.aseoha.edwardianblu": "Edwardian - Blue",
+  "exterior.aseoha.futurek6": "K6 Booth - Futuristic",
+  "exterior.aseoha.k6booth": "K6 Booth",
+  "exterior.aseoha.nate": "Nate",
+  "exterior.aseoha.synth": "Synthwave",
+  "exterior.aseoha.technicolour": "Technicolor",
+  "exterior.aseoha.tokacoral": "Tokacoral",
+  "exterior.aseoha.toywardianbox": "Toywardian",
+  "exterior.aseoha.toywardianfaded": "Toywardian - Faded",
+  "exterior.aseoha.vintage": "Vintage",
+  "item.aseoha.latinum_bar": [
+    {
+      "text": "Gold-Pressed Latinum Bar",
+      "color": "#FFFF00"
+    }
+  ],
+  "item.aseoha.latinum_brick": [
+    {
+      "text": "Gold-Pressed Latinum Brick",
+      "color": "#FFFF00"
+    }
+  ],
+  "item.aseoha.latinum_slip": [
+    {
+      "text": "Gold-Pressed Latinum Slip",
+      "color": "#FFFF00"
+    }
+  ],
+  "item.aseoha.roundel_mold": "Roundel Mold",
+  "itemGroup.aseoha.aseoha_item_group": "ASEOHA!",
+  "sonic.aseoha.d07": "D - 07 [ASEOHA!]",
+  "sonic.aseoha.mk2": "Mark II [ASEOHA!]",
+  "sonic.aseoha.mk4": "Mark IV [ASEOHA!]",
+  "tooltip.aseoha.latinum": "Incredibly valuable, maybe you can buy something with it?"
+}

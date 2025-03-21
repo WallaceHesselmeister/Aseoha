@@ -1,0 +1,6 @@
+{
+    "id": "aseoha:burntcapsule",
+    "category":"ait:exterior/capsule",
+    "parent": "ait:exterior/capsule/default",
+    "texture": "aseoha:textures/exterior/burnt_default.png"
+  }

@@ -1,0 +1,8 @@
+{
+  "variants":{
+      "facing=north": { "model": "aseoha:block/roundel/grey_concrete_hex_roundel", "uvlock": true },
+      "facing=east":  { "model": "aseoha:block/roundel/grey_concrete_hex_roundel", "y":  90, "uvlock": true },
+      "facing=south": { "model": "aseoha:block/roundel/grey_concrete_hex_roundel", "y": 180, "uvlock": true },
+      "facing=west":  { "model": "aseoha:block/roundel/grey_concrete_hex_roundel", "y": 270, "uvlock": true }
+  }
+}

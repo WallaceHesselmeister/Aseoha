@@ -1,0 +1,19 @@
+{
+  "display": {
+    "icon": {
+      "item": "aseoha:golden_potato"
+    },
+    "title": "aseoha, Amythest Expansion!",
+    "description": "Anywhere in time and space, where to start?",
+    "background": "aseoha:textures/block/hellbent/hellbent_roundel01.png",
+    "frame": "goal",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:tick"
+    }
+  }
+}

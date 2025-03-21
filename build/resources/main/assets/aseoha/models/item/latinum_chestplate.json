@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/generated",
+  "textures": {
+    "all": "aseoha:item/latinum/latinum_chestplate"
+  }
+}

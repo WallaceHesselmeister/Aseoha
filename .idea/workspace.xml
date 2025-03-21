@@ -4,30 +4,132 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9ee901da-190c-4d52-83a2-b4f218b1a0d5" name="Changes" comment="" />
+    <list default="true" id="9ee901da-190c-4d52-83a2-b4f218b1a0d5" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradlew" beforeDir="false" afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradlew.bat" beforeDir="false" afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/lang/en_us.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/lang/en_us.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/baker_alt_sonic_inactive.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/baker_alt_sonic_inactive.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/baker_alt_sonic_interactive.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/baker_alt_sonic_interactive.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/baker_alt_sonic_overload.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/baker_alt_sonic_overload.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/baker_alt_sonic_scanning.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/baker_alt_sonic_scanning.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/baker_alt_sonic_tardis.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/baker_alt_sonic_tardis.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/candy_cane_sonic.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/candy_cane_sonic.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/chicken_inactive.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/chicken_inactive.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/chicken_interaction.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/chicken_interaction.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/chicken_overload.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/chicken_overload.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/chicken_scanning.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/chicken_scanning.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/chicken_tardis.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/chicken_tardis.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/do7.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/do7.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/mk1.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/mk1.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/mk2.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/mk2.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/mk3.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/mk3.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/mk4.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/mk4.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/sonic_coral1_inactive.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/sonic_coral1_inactive.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/sonic_coral1_interaction.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/sonic_coral1_interaction.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/sonic_coral1_overload.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/sonic_coral1_overload.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/sonic_coral1_scanning.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/sonic_coral1_scanning.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/sonic_coral1_tardis.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/sonic_coral1_tardis.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/sonic_coral2_inactive.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/sonic_coral2_inactive.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/sonic_coral2_interaction.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/sonic_coral2_interaction.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/sonic_coral2_overload.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/sonic_coral2_overload.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/sonic_coral2_scanning.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/sonic_coral2_scanning.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/sonic_coral2_tardis.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/sonic_coral2_tardis.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/sonic_coral3_inactive.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/sonic_coral3_inactive.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/sonic_coral3_interaction.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/sonic_coral3_interaction.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/sonic_coral3_overload.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/sonic_coral3_overload.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/sonic_coral3_scanning.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/sonic_coral3_scanning.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/sonic_coral3_tardis.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/sonic_coral3_tardis.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/sonic_coral4_inactive.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/sonic_coral4_inactive.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/sonic_coral4_interaction.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/sonic_coral4_interaction.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/sonic_coral4_overload.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/sonic_coral4_overload.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/sonic_coral4_scanning.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/sonic_coral4_scanning.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/sonic_coral4_tardis.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/sonic_coral4_tardis.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/sonic_coral5_inactive.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/sonic_coral5_inactive.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/sonic_coral5_interaction.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/sonic_coral5_interaction.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/sonic_coral5_overload.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/sonic_coral5_overload.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/sonic_coral5_scanning.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/sonic_coral5_scanning.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/sonic_coral5_tardis.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/sonic_coral5_tardis.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/sonic_fourteenth.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/sonic_fourteenth.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/sonic_screwdriver.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/sonic_screwdriver.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/sonic_wiimote.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/sonic_wiimote.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/data/aseoha/sonic_tools/baker_alt_sonic.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/data/aseoha/sonic_tools/baker_alt_sonic.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/data/aseoha/sonic_tools/candy_cane_sonic.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/data/aseoha/sonic_tools/candy_cane_sonic.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/data/aseoha/sonic_tools/chicken_sonic.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/data/aseoha/sonic_tools/chicken_sonic.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/data/aseoha/sonic_tools/do7.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/data/aseoha/sonic_tools/do7.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/data/aseoha/sonic_tools/eighth_sonic.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/data/aseoha/sonic_tools/eighth_sonic.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/data/aseoha/sonic_tools/mk2.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/data/aseoha/sonic_tools/mk2.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/data/aseoha/sonic_tools/mk4.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/data/aseoha/sonic_tools/mk4.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/data/aseoha/sonic_tools/pertwee_sonic.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/data/aseoha/sonic_tools/pertwee_sonic.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/data/aseoha/sonic_tools/sonic_coral1.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/data/aseoha/sonic_tools/sonic_coral1.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/data/aseoha/sonic_tools/sonic_coral2.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/data/aseoha/sonic_tools/sonic_coral2.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/data/aseoha/sonic_tools/sonic_coral3.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/data/aseoha/sonic_tools/sonic_coral3.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/data/aseoha/sonic_tools/sonic_coral4.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/data/aseoha/sonic_tools/sonic_coral4.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/data/aseoha/sonic_tools/sonic_coral5.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/data/aseoha/sonic_tools/sonic_coral5.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/data/aseoha/sonic_tools/sonic_fourteen.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/data/aseoha/sonic_tools/sonic_fourteen.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/data/aseoha/sonic_tools/sonic_screwdriver.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/data/aseoha/sonic_tools/sonic_screwdriver.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/data/aseoha/sonic_tools/sonic_wiimote.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/data/aseoha/sonic_tools/sonic_wiimote.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/data/aseoha/sonic_tools/war_sonic.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/data/aseoha/sonic_tools/war_sonic.json" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="AseohaAIT" type="f1a62948:ProjectNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="AseohaAIT" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+              </path>
+              <path>
+                <item name="" type="6a2764b6:ExternalProjectsStructure$RootNode" />
+                <item name="AseohaAIT" type="f1a62948:ProjectNode" />
+                <item name="Tasks" type="e4a08cd1:TasksNode" />
+                <item name="fabric" type="c8890929:TasksNode$1" />
+              </path>
+            </expand>
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "Lt-DO7"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Lt-DO7&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/WallaceHesselmeister/Aseoha.git",
-    "accountId": "56d8766f-ab69-4d6c-a3e5-a1390bce6b86"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/WallaceHesselmeister/Aseoha.git&quot;,
+    &quot;accountId&quot;: &quot;56d8766f-ab69-4d6c-a3e5-a1390bce6b86&quot;
   }
-}]]></component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 3
-}]]></component>
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 3
+}</component>
   <component name="ProjectId" id="2uMGFeeP7eeLjGFxt5ipuc1Tofc" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -36,13 +138,43 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Gradle.AseohaAIT [runClient].executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
+    "git-widget-placeholder": "Fabric-1.20-AIT",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true"
   }
 }]]></component>
+  <component name="RunManager" selected="Gradle.AseohaAIT [runClient]">
+    <configuration name="AseohaAIT [runClient]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="runClient" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>true</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>false</RunAsTest>
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.AseohaAIT [runClient]" />
+      </list>
+    </recent_temporary>
+  </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">

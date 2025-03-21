@@ -1,0 +1,6 @@
+{
+	"parent": "aseoha:item/sonic/do7",
+	"textures": {
+		"0": "aseoha:item/sonic_tools/do7_inactive"
+	}
+}
