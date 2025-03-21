@@ -1,11 +1,11 @@
 {
   "id": "aseoha:sonic_fourteen",
   "models": {
-    "inactive":  "aseoha:item/sonic_tools/sonic_fourteen",
-    "interaction":  "aseoha:item/sonic_tools/sonic_fourteen",
-    "overload":  "aseoha:item/sonic_tools/sonic_fourteen",
-    "scanning":  "aseoha:item/sonic_tools/sonic_fourteen",
-    "tardis":  "aseoha:item/sonic_tools/sonic_fourteen"
+    "inactive":  "aseoha:models/item/sonic/sonic_fourteen",
+    "interaction":  "aseoha:models/item/sonic/sonic_fourteen",
+    "overload":  "aseoha:models/item/sonic/sonic_fourteen",
+    "scanning":  "aseoha:models/item/sonic/sonic_fourteen",
+    "tardis":  "aseoha:models/item/sonic/sonic_fourteen"
   },
   "loyalty": {
     "type": "NEUTRAL"

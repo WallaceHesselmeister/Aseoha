@@ -1,8 +1,8 @@
 {
 	"credit": "Made with Blockbench",
 	"textures": {
-		"0": "aseoha:item/sonic_tools/sonic_wiimote",
-		"particle": "aseoha:item/sonic_tools/sonic_wiimote"
+		"0": "aseoha:textures/item/sonic_tools/sonic_wiimote",
+		"particle": "aseoha:textures/item/sonic_tools/sonic_wiimote"
 	},
 	"elements": [
 		{

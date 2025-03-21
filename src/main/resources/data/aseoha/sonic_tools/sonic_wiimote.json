@@ -1,11 +1,11 @@
 {
   "id": "aseoha:sonic_wiimote",
   "models": {
-    "inactive":  "aseoha:item/sonic_tools/sonic_wiimote",
-    "interaction":  "aseoha:item/sonic_tools/sonic_wiimote",
-    "overload":  "aseoha:item/sonic_tools/sonic_wiimote",
-    "scanning":  "aseoha:item/sonic_tools/sonic_wiimote",
-    "tardis":  "aseoha:item/sonic_tools/sonic_wiimote"
+    "inactive":  "aseoha:models/item/sonic/sonic_wiimote",
+    "interaction":  "aseoha:models/item/sonic/sonic_wiimote",
+    "overload":  "aseoha:models/item/sonic/sonic_wiimote",
+    "scanning":  "aseoha:models/item/sonic/sonic_wiimote",
+    "tardis":  "aseoha:models/item/sonic/sonic_wiimote"
   },
   "loyalty": {
     "type": "NEUTRAL"

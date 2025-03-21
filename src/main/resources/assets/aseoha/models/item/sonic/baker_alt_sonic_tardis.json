@@ -2,8 +2,8 @@
 	"credit": "Made with Blockbench",
 	"texture_size": [32, 32],
 	"textures": {
-		"0": "aseoha:item/sonic_tools/fourthtardis",
-		"particle": "aseoha:item/sonic_tools/fourthtardis"
+		"0": "aseoha:textures/item/sonic_tools/fourthtardis",
+		"particle": "aseoha:textures/item/sonic_tools/fourthtardis"
 	},
 	"elements": [
 		{

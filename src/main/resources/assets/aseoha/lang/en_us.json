@@ -86,8 +86,11 @@
   "block.aseoha.white_concrete_hex_roundel": "White Concrete Hexagonal Roundel",
   "block.aseoha.yellow_concrete_hex_roundel": "Yellow Concrete Hexagonal Roundel",
   "block.aseoha.roundel_cast": "Roundel Cast",
+
+
   "desktop.aseoha.coppercoral": "Copper Coral",
   "desktop.aseoha.toywardian": "Toywardian",
+
   "exterior.aseoha.11": "Matt Smith",
   "exterior.aseoha.11alt": "11th alternative",
   "exterior.aseoha.12": "Peter Capaldi",
@@ -118,6 +121,12 @@
   "exterior.aseoha.toywardianbox": "Toywardian",
   "exterior.aseoha.toywardianfaded": "Toywardian - Faded",
   "exterior.aseoha.vintage": "Vintage",
+
+  "sonic.aseoha.d07": "D - 07 [ASEOHA!]",
+  "sonic.aseoha.mk2": "Mark II [ASEOHA!]",
+  "sonic.aseoha.mk4": "Mark IV [ASEOHA!]",
+
+
   "item.aseoha.latinum_bar": [
     {
       "text": "Gold-Pressed Latinum Bar",
@@ -138,8 +147,5 @@
   ],
   "item.aseoha.roundel_mold": "Roundel Mold",
   "itemGroup.aseoha.aseoha_item_group": "ASEOHA!",
-  "sonic.aseoha.d07": "D - 07 [ASEOHA!]",
-  "sonic.aseoha.mk2": "Mark II [ASEOHA!]",
-  "sonic.aseoha.mk4": "Mark IV [ASEOHA!]",
   "tooltip.aseoha.latinum": "Incredibly valuable, maybe you can buy something with it?"
 }

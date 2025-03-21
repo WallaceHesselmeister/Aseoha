@@ -2,7 +2,7 @@
 	"credit": "Made with Blockbench",
 	"texture_size": [64, 64],
 	"textures": {
-		"0": "aseoha:item/sonic_tools/mk3"
+		"0": "aseoha:textures/item/sonic_tools/mk3"
 	},
 	"elements": [
 		{

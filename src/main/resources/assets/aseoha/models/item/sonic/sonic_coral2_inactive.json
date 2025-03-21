@@ -2,8 +2,8 @@
 	"credit": "Made with Blockbench",
 	"texture_size": [32, 32],
 	"textures": {
-		"0": "aseoha:item/sonic_tools/sonic_coral2_inactive",
-		"particle": "aseoha:item/sonic_tools/sonic_coral2_inactive"
+		"0": "aseoha:textures/item/sonic_tools/sonic_coral2_inactive",
+		"particle": "aseoha:textures/item/sonic_tools/sonic_coral2_inactive"
 	},
 	"elements": [
 		{
