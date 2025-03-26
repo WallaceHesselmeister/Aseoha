@@ -7,11 +7,10 @@ import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.vertex.IVertexBuilder;
 import net.minecraft.client.renderer.entity.model.EntityModel;
 import net.minecraft.client.renderer.model.ModelRenderer;
-import net.minecraft.entity.Entity;
-import com.code.aseoha.entities.k9;
+import com.code.aseoha.entities.K9Entity;
 import net.minecraft.util.math.vector.Vector3f;
 
-public class k9model <T extends k9> extends EntityModel<T> {
+public class k9model <T extends K9Entity> extends EntityModel<T> {
 	private final ModelRenderer head;
 	private final ModelRenderer cube_r1;
 	private final ModelRenderer cube_r2;

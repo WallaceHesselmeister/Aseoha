@@ -10,8 +10,8 @@ package com.code.aseoha.entities;//package com.code.aseoha.entities;
 //import net.minecraft.world.World;
 //import net.tardis.api.space.entities.ISpaceImmuneEntity;
 //
-//public class k9 extends MobEntity implements ISpaceImmuneEntity {
-//    public k9(EntityType<? extends MobEntity> type, World worldIn) {super(type, worldIn);}
+//public class K9Entity extends MobEntity implements ISpaceImmuneEntity {
+//    public K9Entity(EntityType<? extends MobEntity> type, World worldIn) {super(type, worldIn);}
 //    public void tick() {
 //        super.tick();
 //    }
@@ -77,7 +77,7 @@ import java.util.Random;
  * Also this is the Entity class
  */
 @SuppressWarnings("deprecation")
-public class Walle extends k9 implements ISpaceImmuneEntity {
+public class Walle extends K9Entity implements ISpaceImmuneEntity {
     private static final DataParameter<Optional<BlockState>> DATA_CARRY_STATE;
 
     public Walle(EntityType<? extends RecycledWolf> type, World worldIn) {

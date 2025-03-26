@@ -1,6 +1,6 @@
 package com.code.aseoha.misc.Container;
 
-import com.code.aseoha.entities.k9;
+import com.code.aseoha.entities.K9Entity;
 import com.code.aseoha.misc.ScreenClientStuff;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.client.Minecraft;
@@ -29,13 +29,13 @@ public abstract class K9MonitorScreen extends Screen implements IMonitorGui {
 //    public K9MonitorScreen(ITextComponent titleIn) {
 //        super(titleIn);
 //    }
-    public K9MonitorScreen(k9 intK9) {
+    public K9MonitorScreen(K9Entity intK9) {
         super(TITLE);
         this.K9 = intK9;
     }
     protected ConsoleTile tile;
     private int id;
-    public k9 K9;
+    public K9Entity K9;
 
 
     protected void init() {

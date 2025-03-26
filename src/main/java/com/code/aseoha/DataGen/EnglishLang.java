@@ -64,8 +64,8 @@ public class EnglishLang extends LanguageProvider {
         add("aseoha.gui.coord.suggestion.default", "Set the Coordinate");
         add("aseoha.gui.coord.title", "TARDIS Coordinates");
         add("aseoha.gui.coord_set", "Confirm");
-        add("aseoha.K9Entity.container.screen", "K9 Interface");
-        add("aseoha.K9Entity.inventory", "K-9 Inventory");
+        add("aseoha.k9.container.screen", "K9 Interface");
+        add("aseoha.k9.inventory", "K-9 Inventory");
         add("aseoha.tardis.coor_x", "Set X Coordinate");
         add("aseoha.tardis.coord_x", "Set X Coordinate");
         add("aseoha.tardis.coord_y", "Set Y Coordinate");
@@ -181,7 +181,7 @@ public class EnglishLang extends LanguageProvider {
         add("console.custard.off", "Off");
         add("control.aseoha.coffeepot", "Coffee Pot");
         add("control.aseoha.wibbly_lever", "Wibbly Lever");
-        add("entity.aseoha.K9Entity", "K9");
+        add("entity.aseoha.k9", "K9");
         add("exterior.tardis.bluedoctor", "Blue Doctor Exterior");
         add("exterior.tardis.brackolin", "Brackolin Exterior");
         add("exterior.tardis.hartnell112", "1.12 Hartnell Exterior");

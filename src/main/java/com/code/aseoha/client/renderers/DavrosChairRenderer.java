@@ -2,15 +2,9 @@ package com.code.aseoha.client.renderers;
 
 import com.code.aseoha.aseoha;
 import com.code.aseoha.client.models.DavrosChairModel;
-import com.code.aseoha.client.models.k9model;
 import com.code.aseoha.entities.DavrosChair;
-import com.code.aseoha.entities.k9;
-import com.mojang.blaze3d.matrix.MatrixStack;
-import net.minecraft.client.renderer.IRenderTypeBuffer;
-import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererManager;
 import net.minecraft.client.renderer.entity.MobRenderer;
-import net.minecraft.entity.item.BoatEntity;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;

@@ -1244,7 +1244,7 @@
 	],
 	"groups": [
 		{
-			"name": "l",
+			"name": "base",
 			"origin": [0, 0, 0],
 			"color": 0,
 			"children": [

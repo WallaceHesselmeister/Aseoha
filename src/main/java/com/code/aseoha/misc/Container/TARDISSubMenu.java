@@ -3,7 +3,7 @@ package com.code.aseoha.misc.Container;
 import java.util.Objects;
 
 import com.code.aseoha.client.Sounds;
-import com.code.aseoha.entities.k9;
+import com.code.aseoha.entities.K9Entity;
 import com.code.aseoha.networking.Networking;
 import com.code.aseoha.networking.Packets.c2s.TakeOffFromClientPacketC2S;
 import com.code.aseoha.networking.Packets.c2s.ToggleLocksPacketC2S;
@@ -30,9 +30,9 @@ public class TARDISSubMenu extends MonitorScreen {
     @Setter
     @Getter
     private int index = 0;
-    private k9 K9;
+    private K9Entity K9;
 
-    public TARDISSubMenu(IMonitorGui mon, k9 interactedK9) {
+    public TARDISSubMenu(IMonitorGui mon, K9Entity interactedK9) {
         super(mon, "aseoha.tardis.submenu");
         this.K9 = interactedK9;
     }

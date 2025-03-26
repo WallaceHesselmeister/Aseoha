@@ -1,5 +1,7 @@
 package com.code.aseoha.block;
 
+import com.code.aseoha.Helpers.MiscHelper;
+import com.code.aseoha.WorkBench.WorkBenchRecipeHandler;
 import com.code.aseoha.aseoha;
 import com.code.aseoha.tileentities.AseohaTiles;
 import com.code.aseoha.tileentities.blocks.WorkbenchTile;
@@ -22,13 +24,21 @@ import org.jetbrains.annotations.NotNull;
 
 import java.util.ArrayList;
 
+@Getter
 @SuppressWarnings("deprecation")
 public class WorkbenchBlock extends Block {
-    @Getter
     private int size = 0;
 
     public WorkbenchBlock(Properties props) {
         super(props);
+    }
+
+    public void DropStored(World world, BlockPos pos, WorkbenchTile tile) {
+        for (Item item : tile.StoredItems) {
+            MiscHelper.DropItem(item, world, pos);
+        }
+        tile.StoredItems.clear();
+        this.size = 0;
     }
 
     @Override
@@ -36,13 +46,7 @@ public class WorkbenchBlock extends Block {
         TileEntity tile = world.getBlockEntity(pos);
         if (tile != null) {
             if (tile instanceof WorkbenchTile) {
-                for (Item item : ((WorkbenchTile) tile).StoredItems) {
-                    ItemStack stack = item.getDefaultInstance();
-                    ItemEntity itemEntity = new ItemEntity(world, pos.getX(), pos.getY(), pos.getZ(), stack);
-                    itemEntity.setDefaultPickUpDelay();
-                    world.addFreshEntity(itemEntity);
-                }
-                ((WorkbenchTile) tile).StoredItems.clear();
+                this.DropStored(world, pos, (WorkbenchTile) tile);
                 tile.setRemoved();
             }
         }
@@ -61,32 +65,31 @@ public class WorkbenchBlock extends Block {
     @NotNull
     @Override
     public ActionResultType use(@NotNull BlockState state, @NotNull World world, @NotNull BlockPos pos, @NotNull PlayerEntity player, @NotNull Hand hand, @NotNull BlockRayTraceResult blockRayTraceResult) {
-        if (hand.equals(Hand.OFF_HAND) || world.isClientSide) return ActionResultType.PASS;
+        if (hand.equals(Hand.OFF_HAND)) return ActionResultType.PASS;
 
         TileEntity tile = world.getBlockEntity(pos);
         if (tile instanceof WorkbenchTile) {
-            if (!((WorkbenchTile) tile).StoredItems.isEmpty())
-                for (int i = 0; i < ((WorkbenchTile) tile).StoredItems.size(); i++) {
-                    if (!((WorkbenchTile) tile).StoredItems.get(i).equals(Items.AIR))
-                        this.size++;
-                }
             if (!player.isCrouching() && !player.getMainHandItem().isEmpty() && player.getMainHandItem().getItem() != Items.AIR) {
                 if (this.size < 4) {
                     ((WorkbenchTile) tile).StoredItems.add(player.getMainHandItem().getItem());
                     player.getMainHandItem().shrink(1);
+                    if(!world.isClientSide)
+                        this.size++;
                     return ActionResultType.CONSUME;
                 }
             }
             if (player.isCrouching() && !((WorkbenchTile) tile).StoredItems.isEmpty()) {
-                for (int i = 0; i < 4; i++) {
-                    if (((WorkbenchTile) tile).StoredItems.size() < 4)
-                        ((WorkbenchTile) tile).StoredItems.add(Items.AIR);
-                }
                 if (aseoha.WorkBenchRecipeHandler.IsValidRecipe(((WorkbenchTile) tile).StoredItems)) {
-                    player.inventory.add(aseoha.WorkBenchRecipeHandler.GetRecipeResult(((WorkbenchTile) tile).StoredItems).getDefaultInstance());
+//                     Before it used to just give you the item, now it drops it above the table
+//                    player.inventory.add(aseoha.WorkBenchRecipeHandler.GetRecipeResult(((WorkbenchTile) tile).StoredItems).getDefaultInstance());
+                    Item result = WorkBenchRecipeHandler.GetDefault().GetRecipeResult(((WorkbenchTile) tile).StoredItems);
+                    MiscHelper.DropItem(result, world, pos.above());
                     ((WorkbenchTile) tile).StoredItems.clear();
                     this.size = 0;
                     return ActionResultType.CONSUME;
+                }
+                else {
+                    this.DropStored(world, pos, (WorkbenchTile) tile);
                 }
             }
         }

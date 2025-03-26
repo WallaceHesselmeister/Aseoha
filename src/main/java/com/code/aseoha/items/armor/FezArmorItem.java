@@ -32,9 +32,7 @@ public class FezArmorItem extends ArmorItem {
     @Override
     @SuppressWarnings("unchecked")
     public <A extends BipedModel<?>> A getArmorModel(LivingEntity entityLiving, ItemStack itemStack, EquipmentSlotType armorSlot, A _default) {
-        MODEL.getBone().xRot = _default.head.xRot;
-        MODEL.getBone().yRot = _default.head.yRot;
-        MODEL.getBone().zRot = _default.head.zRot;
+        MODEL.setupAnim(entityLiving, entityLiving.swingTime, 0, entityLiving.tickCount, PlayerHelper.calculateNetHeadYaw(entityLiving), entityLiving.xRot);
         return (A) MODEL;
     }
 }

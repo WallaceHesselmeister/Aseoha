@@ -22,6 +22,9 @@ public enum EnumArmorMaterials implements IArmorMaterial {
     SCARF("scarf", 25, new int[]{1, 1, 1, 1}, 15,
             SoundEvents.ARMOR_EQUIP_LEATHER, 1.0F, 0.0F, () -> Ingredient.of(Items.WHITE_WOOL)),
 
+    FEZ("fez", 25, new int[]{1, 1, 1, 1}, 15,
+            SoundEvents.ARMOR_EQUIP_LEATHER, 1.0F, 0.0F, () -> Ingredient.of(Items.WHITE_WOOL)),
+
     BOWTIE("bowtie", 25, new int[]{1, 1, 1, 1}, 15,
             SoundEvents.ARMOR_EQUIP_LEATHER, 1.0F, 0.0F, () -> Ingredient.of(Items.WHITE_WOOL)),
 

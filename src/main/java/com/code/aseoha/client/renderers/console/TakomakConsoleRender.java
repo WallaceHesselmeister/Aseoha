@@ -1,9 +1,7 @@
 package com.code.aseoha.client.renderers.console;
 
 import com.code.aseoha.aseoha;
-import com.code.aseoha.client.models.consoles.BattleConsole;
 import com.code.aseoha.client.models.consoles.TakomakModel;
-import com.code.aseoha.tileentities.consoles.BattleConsoleTile;
 import com.code.aseoha.tileentities.consoles.TakomakConsoleTile;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.client.Minecraft;

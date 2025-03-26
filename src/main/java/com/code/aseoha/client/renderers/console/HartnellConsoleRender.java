@@ -1,9 +1,7 @@
 package com.code.aseoha.client.renderers.console;
 
 import com.code.aseoha.aseoha;
-import com.code.aseoha.client.models.consoles.BattleConsole;
 import com.code.aseoha.client.models.consoles.HartnellModel;
-import com.code.aseoha.tileentities.consoles.BattleConsoleTile;
 import com.code.aseoha.tileentities.consoles.HartnellConsoleTile;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.client.Minecraft;

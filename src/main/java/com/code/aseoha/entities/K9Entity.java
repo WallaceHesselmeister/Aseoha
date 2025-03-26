@@ -37,7 +37,6 @@ import net.tardis.mod.artron.IArtronItemStackBattery;
 import net.tardis.mod.damagesources.TDamageSources;
 import net.tardis.mod.entity.TEntities;
 import net.tardis.mod.entity.projectiles.LaserEntity;
-import net.tardis.mod.helper.TardisHelper;
 import net.tardis.mod.items.SonicItem;
 import net.tardis.mod.sounds.TSounds;
 import org.jetbrains.annotations.NotNull;
@@ -54,7 +53,7 @@ import static com.code.aseoha.misc.ScreenClientStuff.OpenK9Screen;
  * @author Me <br />
  * K9! The Entity Class
  */
-public class k9 extends RecycledWolf implements IAngerable, ISpaceImmuneEntity, IRangedAttackMob {
+public class K9Entity extends RecycledWolf implements IAngerable, ISpaceImmuneEntity, IRangedAttackMob {
     private World world;
     private final Inventory inventory = new Inventory(36);
     public boolean isDead = true;
@@ -65,7 +64,7 @@ public class k9 extends RecycledWolf implements IAngerable, ISpaceImmuneEntity, 
 //    private static float TailAngle;
 
 
-    public k9(EntityType<? extends RecycledWolf> type, World worldIn) {
+    public K9Entity(EntityType<? extends RecycledWolf> type, World worldIn) {
         super(type, worldIn);
     }
 
@@ -117,7 +116,7 @@ public class k9 extends RecycledWolf implements IAngerable, ISpaceImmuneEntity, 
     private INamedContainerProvider createContainerProvider() {
         return new INamedContainerProvider() {
             public Container createMenu(int i, @NotNull PlayerInventory playerInventory, @NotNull PlayerEntity player) {
-                return new InventoryContainers(i, playerInventory, k9.this.inventory);
+                return new InventoryContainers(i, playerInventory, K9Entity.this.inventory);
             }
 
             @NotNull
@@ -200,12 +199,12 @@ public class k9 extends RecycledWolf implements IAngerable, ISpaceImmuneEntity, 
                 if (!(item instanceof IArtronItemStackBattery && !player.isCrouching())) {
                     ActionResultType actionresulttype = super.mobInteract(player, hand);
                     if (this.isOwnedBy(player)) {
-                        k9.Say("Power is at " + this.power, player, player.level); //TODO: Add power to the K9 Screen, distress signals, etc
+                        K9Entity.Say("Power is at " + this.power, player, player.level); //TODO: Add power to the K9 Screen, distress signals, etc
 //                        this.setOrderedToSit(!this.isOrderedToSit());
                         if (!this.isDead && !player.isCrouching() && this.level.isClientSide) OpenK9Screen(this);
                         this.jumping = false;
                         this.navigation.stop();
-                        this.setTarget((LivingEntity) null);
+                        this.setTarget(null);
                         this.hitList = new ArrayList<>();
                         return ActionResultType.SUCCESS;
                     }
@@ -222,9 +221,8 @@ public class k9 extends RecycledWolf implements IAngerable, ISpaceImmuneEntity, 
                 if (!ForgeEventFactory.onAnimalTame(this, player)) {
                     this.tame(player);
                     this.navigation.stop();
-                    this.setTarget((LivingEntity) null);
+                    this.setTarget(null);
                     this.hitList = new ArrayList<>();
-                    this.setOrderedToSit(true);
                     this.level.broadcastEntityEvent(this, (byte) 7);
                 } else {
                     this.level.broadcastEntityEvent(this, (byte) 6);
@@ -277,7 +275,7 @@ public class k9 extends RecycledWolf implements IAngerable, ISpaceImmuneEntity, 
 
     //    @Override
 //    public void tick() {
-//        k9.this.setTarget((LivingEntity)null);
+//        K9Entity.this.setTarget((LivingEntity)null);
 ////        world.getPlayerByUUID(this.getOwnerUUID()).
 //        super.tick();
 //    }
@@ -360,7 +358,7 @@ public class k9 extends RecycledWolf implements IAngerable, ISpaceImmuneEntity, 
 
     @Override
     public RecycledWolf getBreedOffspring(ServerWorld world, AgeableEntity ageableEntity) {
-        return (k9) null;
+        return null;
     }
 
     @Override

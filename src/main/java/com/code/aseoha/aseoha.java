@@ -6,6 +6,7 @@ import com.code.aseoha.client.Sounds;
 import com.code.aseoha.client.models.armor.ScarfModel;
 import com.code.aseoha.client.renderers.DavrosChairRenderer;
 import com.code.aseoha.client.renderers.blocks.EOHRenderer;
+import com.code.aseoha.client.renderers.blocks.WorkBenchRenderer;
 import com.code.aseoha.client.renderers.console.*;
 import com.code.aseoha.client.renderers.k9render;
 import com.code.aseoha.client.renderers.sky.BasicSkyProperty;
@@ -42,6 +43,7 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.ModList;
 import net.minecraftforge.fml.ModLoadingContext;
+import net.minecraftforge.fml.client.registry.ClientRegistry;
 import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.config.ModConfig;
@@ -229,7 +231,8 @@ public class aseoha {
         net.minecraftforge.fml.client.registry.ClientRegistry.bindTileEntityRenderer(AseohaTiles.console_custard.get(), CustardConsoleRenderer::new);
 
         RenderTypeLookup.setRenderLayer(AseohaBlocks.EYE_OF_HARMONY.get(), RenderType.cutout());
-        net.minecraftforge.fml.client.registry.ClientRegistry.bindTileEntityRenderer(AseohaTiles.EYE_OF_HARMONY.get(), EOHRenderer::new);
+        ClientRegistry.bindTileEntityRenderer(AseohaTiles.EYE_OF_HARMONY.get(), EOHRenderer::new);
+        ClientRegistry.bindTileEntityRenderer(AseohaTiles.WORKBENCH.get(), WorkBenchRenderer::new);
 
 //        RenderTypeLookup.setRenderLayer(ModBlocks.UPSIDEDOWN_ENGINE.get(), RenderType.translucent());
 //        ClientRegistry.bindTileEntityRenderer(AseohaTiles.UPSIDEDOWN_ENGINE.get(), UpsideDownEngineRenderer::new);

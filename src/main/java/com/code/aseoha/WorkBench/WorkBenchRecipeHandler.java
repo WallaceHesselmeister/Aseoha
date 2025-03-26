@@ -1,5 +1,6 @@
 package com.code.aseoha.WorkBench;
 
+import com.code.aseoha.aseoha;
 import com.code.aseoha.items.AseohaItems;
 import lombok.Getter;
 import net.minecraft.item.Item;
@@ -105,9 +106,6 @@ public class WorkBenchRecipeHandler {
                 return true;
         }
         return false;
-
-
-//        return this.RecipeList.contains(new WorkBenchRecipe(Ingredients.get(0), Ingredients.get(1), Ingredients.get(2), Ingredients.get(3)));
     }
 
     /**
@@ -134,9 +132,12 @@ public class WorkBenchRecipeHandler {
         Item FirstIngredient = Ingredient.get(0), SecondIngredient = Ingredient.get(1), ThirdIngredient = Ingredient.get(2), FourthIngredient = Ingredient.get(3);
         if (this.IsValidRecipe(FirstIngredient, SecondIngredient, ThirdIngredient, FourthIngredient)) {
             for (WorkBenchRecipe workBenchRecipe : this.RecipeList) {
-                if (Arrays.equals(workBenchRecipe.Ingredients, new Item[]{FirstIngredient, SecondIngredient, ThirdIngredient, FourthIngredient})) {
+                if (Arrays.asList(workBenchRecipe.Ingredients).contains(FirstIngredient) &&
+                        Arrays.asList(workBenchRecipe.Ingredients).contains(SecondIngredient) &&
+                        Arrays.asList(workBenchRecipe.Ingredients).contains(ThirdIngredient) &&
+                        Arrays.asList(workBenchRecipe.Ingredients).contains(FourthIngredient)
+                )
                     return workBenchRecipe.Result;
-                }
             }
         }
         return Items.DIRT;
@@ -144,7 +145,7 @@ public class WorkBenchRecipeHandler {
 
     /**
      * Check if this handler has all the recipes as provided handler and add any missing recipes, <br />
-     * This is so external mods can add more recipes using their own custom handler
+     * This is so external mods can add more recipes using their own custom handlers
      * @param Handler Handler with recipes to add to this handler
      */
     public void Sync(WorkBenchRecipeHandler Handler) {
@@ -152,5 +153,12 @@ public class WorkBenchRecipeHandler {
             if (!this.RecipeList.contains(Handler.RecipeList.get(i)))
                 this.RecipeList.add(Handler.RecipeList.get(i));
         }
+    }
+
+    /**
+     * @return The main Workbench Recipe Handler, {@link aseoha#WorkBenchRecipeHandler}
+     */
+    public static WorkBenchRecipeHandler GetDefault() {
+        return aseoha.WorkBenchRecipeHandler;
     }
 }

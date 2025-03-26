@@ -78,4 +78,8 @@ public class PlayerHelper {
         float netHeadYaw = headYaw - bodyYaw;      // Raw difference
         return MathHelper.wrapDegrees(netHeadYaw); // Normalize to [-180, 180]
     }
+
+    public static float getInterpolatedHeadPitch(LivingEntity entity, float partialTick) {
+        return entity.xRotO + (entity.xRot - entity.xRotO) * partialTick;
+    }
 }

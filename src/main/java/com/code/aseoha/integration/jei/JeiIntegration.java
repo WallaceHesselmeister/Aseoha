@@ -9,11 +9,13 @@ import mezz.jei.api.registration.IRecipeRegistration;
 import mezz.jei.api.registration.IRecipeCatalystRegistration;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
+import org.jetbrains.annotations.NotNull;
 
 @JeiPlugin
 public class JeiIntegration implements IModPlugin {
     public static final ResourceLocation PLUGIN_UID = new ResourceLocation(aseoha.MODID, "jei_plugin");
 
+    @NotNull
     @Override
     public ResourceLocation getPluginUid() {
         return PLUGIN_UID;

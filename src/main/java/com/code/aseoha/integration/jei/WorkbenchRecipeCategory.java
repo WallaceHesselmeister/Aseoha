@@ -26,7 +26,7 @@ public class WorkbenchRecipeCategory implements IRecipeCategory<WorkBenchRecipeW
 
     public WorkbenchRecipeCategory(IGuiHelper guiHelper) {
         ResourceLocation texture = new ResourceLocation(aseoha.MODID, "textures/gui/workbench.png");
-        this.background = guiHelper.createDrawable(texture, 0, 0, 178, 76);
+        this.background = guiHelper.createDrawable(texture, 4, 4, 159, 78);
 
         this.icon = guiHelper.createDrawableIngredient(new ItemStack(AseohaBlocks.WORKBENCH.get()));
         this.title = Constants.WORKBENCH_CATEGORY.getString();
@@ -70,20 +70,22 @@ public class WorkbenchRecipeCategory implements IRecipeCategory<WorkBenchRecipeW
     }
 
     @Override
-    public void setRecipe(IRecipeLayout recipeLayout, WorkBenchRecipeWrapper recipe, IIngredients ingredients) {
+    public void setRecipe(IRecipeLayout recipeLayout, @NotNull WorkBenchRecipeWrapper recipe, IIngredients ingredients) {
         IGuiItemStackGroup stacks = recipeLayout.getItemStacks();
 
         // Define slot positions based on your custom texture
-        stacks.init(0, true, 30, 34);
-        stacks.init(1, true, 48, 34);
-        stacks.init(2, true, 66, 34);
-        stacks.init(3, false, 116, 34); // Output slot
+        stacks.init(0, true, 7, 30);
+        stacks.init(1, true, 28, 30);
+        stacks.init(2, true, 49, 30);
+        stacks.init(3, true, 70, 30);
+        stacks.init(4, false, 127, 30); // Output slot
 
         // Set the items into the slots
         stacks.set(0, ingredients.getInputs(VanillaTypes.ITEM).get(0));
         stacks.set(1, ingredients.getInputs(VanillaTypes.ITEM).get(1));
         stacks.set(2, ingredients.getInputs(VanillaTypes.ITEM).get(2));
-        stacks.set(3, ingredients.getOutputs(VanillaTypes.ITEM).get(0));
+        stacks.set(3, ingredients.getInputs(VanillaTypes.ITEM).get(3));
+        stacks.set(4, ingredients.getOutputs(VanillaTypes.ITEM).get(0));
     }
 
     @Override
