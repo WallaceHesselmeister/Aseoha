@@ -89,7 +89,7 @@ public class WorkbenchBlock extends Block {
                     return ActionResultType.CONSUME;
                 }
                 else {
-                    this.DropStored(world, pos, (WorkbenchTile) tile);
+                    this.DropStored(world, pos.above(), (WorkbenchTile) tile);
                 }
             }
         }
