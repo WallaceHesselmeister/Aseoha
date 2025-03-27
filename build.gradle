@@ -172,14 +172,12 @@ dependencies {
     shadow(annotationProcessor("io.github.llamalad7:mixinextras-common:0.3.6")) // Mixin Extras
     implementation "org.spongepowered:mixin:${mixin_version}"
     /************************************ New TARDIS Mod *********************************************/
-//    implementation fg.deobf('com.gitlab.Spectre0987:TardisMod:1.5.4')
     implementation fg.deobf("curse.maven:new-tardis-mod-290247:3667066")
     /************************************ JEI *********************************************/
-//    implementation fg.deobf("curse.maven:jei-238222:5534622") // JEI
     compileOnly fg.deobf("mezz.jei:jei-1.16.5:7.7.1.153:api") // JEI API for compilation
     runtimeOnly fg.deobf("mezz.jei:jei-1.16.5:7.7.1.153") // Full JEI for runtime
     /************************************ Mekanism *********************************************/
-//    implementation fg.deobf("curse.maven:mekanism-268560:3659389") // Mekanism
+    implementation fg.deobf("curse.maven:mekanism-268560:3659389") // Mekanism
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
     /************************************ Temporal API *****************************************/
     implementation fg.deobf("curse.maven:temporalapi-1056469:5967827")
@@ -189,9 +187,9 @@ dependencies {
     /************************************ Cracker's Witherstorm *********************************************/
 //    implementation fg.deobf("curse.maven:crackers-wither-storm-mod-621405:4403153")
     /************************************ Temporal Additions ************************************************/
-//    implementation fg.deobf("curse.maven:t-additions-804564:5844290")
+    implementation fg.deobf("curse.maven:t-additions-804564:6090728")
     /************************************ GeckoLib **********************************************************/
-//    implementation fg.deobf("curse.maven:geckolib-388172:4182600")
+    implementation fg.deobf("curse.maven:geckolib-388172:4182600")
     /************************************ LomBok ************************************************************/
     compileOnly 'org.projectlombok:lombok:1.18.32'
     annotationProcessor 'org.projectlombok:lombok:1.18.32'
