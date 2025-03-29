@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "name": "aseoha:zero_point_dwarf_star_alloy",
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "aseoha:zero_point_dwarf_star_alloy"
+        }
+      ]
+    }
+  ]
+}

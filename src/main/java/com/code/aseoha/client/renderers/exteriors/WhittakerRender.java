@@ -1,8 +1,6 @@
 package com.code.aseoha.client.renderers.exteriors;
 
-import com.code.aseoha.client.models.exteriors.CapaldiExterior;
 import com.code.aseoha.client.models.exteriors.WhittakerModel;
-import com.code.aseoha.tileentities.exteriors.CapaldiTile;
 import com.code.aseoha.tileentities.exteriors.WhittakerTile;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.vertex.IVertexBuilder;

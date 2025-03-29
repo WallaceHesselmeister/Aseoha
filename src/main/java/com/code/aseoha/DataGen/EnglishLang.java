@@ -5,6 +5,7 @@ import com.code.aseoha.aseoha;
 import com.code.aseoha.block.AseohaBlocks;
 import com.code.aseoha.client.Sounds;
 import com.code.aseoha.items.AseohaItems;
+import com.code.aseoha.protocol.IsomorphicProtocol;
 import com.code.aseoha.protocol.RegisterProtocols;
 import com.code.aseoha.registries.AnimReg;
 import com.code.aseoha.registries.SoundSchemeRegister;
@@ -17,15 +18,24 @@ public class EnglishLang extends LanguageProvider {
         super(gen, aseoha.MODID, "en_us");
     }
 
-    @Override
     /**
      * THANKS JERYN!
      */
+    @Override
     protected void addTranslations() {
+        add("tooltip.aseoha.hammerspace_pouch", "Accesses the Attuned TARDIS's hammerspace Buffer");
+        add("tooltip.aseoha.hammerspace_pouch.second_line", "When used in off hand:");
+        add("tooltip.aseoha.hammerspace_pouch.third_line", "With Empty Main hand: Gives you the first item in the Hammerspace Buffer");
+        add("tooltip.aseoha.hammerspace_pouch.fourth_line", "Shifting With Empty Main hand: Gives you the first item (full stack) in the Hammerspace Buffer");
+        add("tooltip.aseoha.hammerspace_pouch.fifth_line", "With Item in Main hand: Puts the item in your main hand in the Hammerspace Buffer");
+        add("tooltip.aseoha.hammerspace_pouch.sixth_line", "Shifting With Item in Main hand: Puts the item (full stack) in your main hand in the Hammerspace Buffer");
         add("ars.piece.category.aseoha.ironclad", "Ironclad");
+        add(IsomorphicProtocol.TRANS_OFF.getKey(), "Turn Isomorphic Controls Off");
+        add(IsomorphicProtocol.TRANS_ON.getKey(), "Turn Isomorphic Controls On");
         add("ars.piece.category.aseoha.ironclad_corridor", "Corridors");
         add("ars.piece.category.aseoha.ironclad_corridor_tunnel", "Tunnel Corridors");
         add("ars.piece.category.aseoha.ironclad_rooms", "Rooms");
+        add(AseohaItems.HAMMER_SPACE_POUCH.get().getDescriptionId(), "Hammerspace Hyper-Tapper");
         add(Constants.WORKBENCH_CATEGORY.getKey(), "Workbench");
         add(AseohaBlocks.FAT_BLOCK.get().asItem().getDescriptionId(), "Fat Block");
 //        add(AseohaItems.MANUAL.get().getDescriptionId(), "Contains information on ASEOHA features");

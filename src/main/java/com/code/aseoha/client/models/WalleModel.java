@@ -608,7 +608,7 @@ public class WalleModel <T extends Walle> extends EntityModel<T> {//WalleModel e
 	@Override
 	public void renderToBuffer(MatrixStack matrixStack, IVertexBuilder buffer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha){
 		matrixStack.scale(0.745f, 0.745f, 0.745f);
-		matrixStack.translate(0f, 4.08f, 0);
+		matrixStack.translate(0f, 0f, 0);
 		base.render(matrixStack, buffer, packedLight, packedOverlay, red, green, blue, alpha);
 
 		//		TrackSuspension.render(matrixStack, buffer, packedLight, packedOverlay, red, green, blue, alpha);

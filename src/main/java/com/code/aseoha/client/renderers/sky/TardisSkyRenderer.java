@@ -142,7 +142,7 @@ public class TardisSkyRenderer implements ISkyRenderHandler {
          * Y just brings em up/down like normal
          */
         this.renderPlanet(bb, matrix4f, 0, 100, -80, 25, earth);   //3
-        this.renderPlanet(bb, matrix4f, 50, 15, -20, 30, mars);      //2
+        this.renderPlanet(bb, matrix4f, 0, 15, -200, 30, mars);      //2
         this.renderPlanet(bb, matrix4f, 20, 100, 0, 10, sun);       //1
     }
 

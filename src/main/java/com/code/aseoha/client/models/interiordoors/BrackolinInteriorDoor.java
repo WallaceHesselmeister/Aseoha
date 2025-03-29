@@ -90,8 +90,20 @@ public class BrackolinInteriorDoor extends AbstractInteriorDoorModel {
 
 		matrixStack.translate(0, .25, -0.5);
 		matrixStack.scale(1, 1, 1);
-		this.RightDoor.yRot = (float) Math.toRadians(EnumDoorTypes.BRACKOLIN.getRotationForState(door.getOpenState()));
-		this.LeftDoor.yRot = (float) Math.toRadians(EnumDoorTypes.BRACKOLIN.getRotationForState(door.getOpenState()));
+		EnumDoorState state = door.getOpenState();
+		switch (state) {
+			case ONE:
+				this.RightDoor.yRot = (float) Math.toRadians(EnumDoorTypes.BRACKOLIN.getRotationForState(EnumDoorState.ONE));
+				this.LeftDoor.yRot = (float) Math.toRadians(EnumDoorTypes.BRACKOLIN.getRotationForState(EnumDoorState.CLOSED));
+				break;
+			case BOTH:
+				this.RightDoor.yRot = (float) Math.toRadians(EnumDoorTypes.BRACKOLIN.getRotationForState(EnumDoorState.ONE));
+				this.LeftDoor.yRot = (float) Math.toRadians(EnumDoorTypes.BRACKOLIN.getRotationForState(EnumDoorState.BOTH));
+				break;
+			case CLOSED:
+				this.RightDoor.yRot = (float) Math.toRadians(EnumDoorTypes.BRACKOLIN.getRotationForState(EnumDoorState.CLOSED));
+				this.LeftDoor.yRot = (float) Math.toRadians(EnumDoorTypes.BRACKOLIN.getRotationForState(EnumDoorState.CLOSED));
+		}
 		this.LeftDoor.render(matrixStack, buffer, packedLight, packedOverlay);
 		this.RightDoor.render(matrixStack, buffer, packedLight, packedOverlay);
 //		this.renderDoorWhenClosed(door, matrixStack, buffer, packedLight, packedOverlay, this.RightDoor);
@@ -124,7 +136,7 @@ public class BrackolinInteriorDoor extends AbstractInteriorDoorModel {
 
 				info.setRenderPortal((matrix, buf) -> {
 					matrix.pushPose();
-					matrix.scale(0.5F, 0.5F, 0.5F);
+					matrix.scale(1F, 1F, 1F);
 					this.BOTI.render(matrix, buf.getBuffer(RenderType.entityCutout(getTexture())), packedLight, packedOverlay);
 					matrix.popPose();
 				});
