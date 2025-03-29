@@ -1,8 +1,8 @@
 package com.code.aseoha.events;
 
+import com.code.aseoha.Config;
 import com.code.aseoha.Helpers.IHelpWithConsole;
 import com.code.aseoha.Helpers.KeyboardHelper;
-import com.code.aseoha.Config;
 import com.code.aseoha.networking.Networking;
 import com.code.aseoha.networking.Packets.c2s.ExitRWFPacketC2S;
 import net.minecraft.client.Minecraft;

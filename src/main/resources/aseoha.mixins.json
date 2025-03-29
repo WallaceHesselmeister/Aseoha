@@ -36,6 +36,7 @@
     "TardisBottomBlockMixin",
     "TardisEntityMixin",
     "TardisTopBlockMixin",
+    "TardisWorldCapabilityMixin",
     "TeleportUtilMixin",
     "TwoBlockBasicExteriorMixin"
   ],

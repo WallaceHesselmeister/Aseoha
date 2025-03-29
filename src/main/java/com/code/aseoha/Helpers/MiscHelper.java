@@ -1,7 +1,6 @@
 package com.code.aseoha.Helpers;
 
 import com.code.aseoha.WorkBench.WorkBenchRecipe;
-import com.code.aseoha.aseoha;
 import com.code.aseoha.data.DataPackWorkbenchRecipe;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.settings.PointOfView;
@@ -13,6 +12,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
+import net.minecraftforge.items.ItemStackHandler;
 import net.minecraftforge.registries.ForgeRegistries;
 
 public class MiscHelper {
@@ -45,5 +45,15 @@ public class MiscHelper {
         ItemEntity itemEntity = new ItemEntity(world, dropPos.getX(), dropPos.getY(), dropPos.getZ(), stack);
         itemEntity.setDefaultPickUpDelay();
         world.addFreshEntity(itemEntity);
+    }
+
+    /**
+     * handler1 will get all the items from handler2
+     **/
+    public static void SyncHandlers(ItemStackHandler handler1, ItemStackHandler handler2) {
+        for(int i = 0; i < handler2.getSlots(); i++) {
+            if((i < handler1.getSlots()))
+                handler1.setStackInSlot(i, handler2.getStackInSlot(i));
+        }
     }
 }

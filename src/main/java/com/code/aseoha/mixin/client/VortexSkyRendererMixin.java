@@ -22,7 +22,7 @@ import static com.code.aseoha.aseoha.MODID;
 public class VortexSkyRendererMixin {
     @Shadow
     @Final
-    public static ResourceLocation TEXTURE = new ResourceLocation(MODID, "textures/vortex/vortex.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(MODID, "textures/vortex/vortex.png");
 
     @Inject(method = "render", at = @At("HEAD"), cancellable = true)
     private void onRender(int ticks, float partialTicks, MatrixStack matrixStack, ClientWorld world, Minecraft mc, CallbackInfo ci){

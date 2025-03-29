@@ -1,33 +1,40 @@
 package com.code.aseoha.tileentities.blocks;
 
-import java.util.*;
-
-import com.code.aseoha.block.AseohaBlocks;
 import com.code.aseoha.Helpers.IHelpWithConsole;
+import com.code.aseoha.block.AseohaBlocks;
 import com.code.aseoha.networking.Networking;
 import com.code.aseoha.networking.Packets.c2s.EOHSyncPacketC2S;
+import com.code.aseoha.tileentities.AseohaTiles;
+import com.code.aseoha.tileentities.blocks.misc.EOHEnergyStorage;
 import lombok.Getter;
 import lombok.Setter;
-import net.minecraft.block.*;
+import net.minecraft.block.BlockState;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.potion.EffectInstance;
 import net.minecraft.potion.Effects;
+import net.minecraft.tileentity.ITickableTileEntity;
+import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.Direction;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.ChunkPos;
+import net.minecraftforge.common.capabilities.Capability;
+import net.minecraftforge.common.capabilities.ICapabilityProvider;
+import net.minecraftforge.common.util.LazyOptional;
+import net.minecraftforge.energy.CapabilityEnergy;
 import net.minecraftforge.fml.server.ServerLifecycleHooks;
+import net.tardis.mod.helper.TardisHelper;
 import net.tardis.mod.helper.WorldHelper;
 import net.tardis.mod.tileentities.ConsoleTile;
-import com.code.aseoha.tileentities.AseohaTiles;
-import net.minecraft.tileentity.ITickableTileEntity;
-import net.minecraft.tileentity.TileEntity;
-import net.tardis.mod.helper.TardisHelper;
 import org.jetbrains.annotations.NotNull;
 
+import java.util.Iterator;
+import java.util.List;
 import java.util.Objects;
 
-public class EOHTile extends TileEntity implements ITickableTileEntity {
+public class EOHTile extends TileEntity implements ITickableTileEntity, ICapabilityProvider {
+    private final EOHEnergyStorage energyStorage = new EOHEnergyStorage(this.level);
     public EOHTile() {
         super(AseohaTiles.EYE_OF_HARMONY.get());
     }
@@ -98,6 +105,19 @@ public class EOHTile extends TileEntity implements ITickableTileEntity {
             ((IHelpWithConsole) this.consoleTile).Aseoha$SetEOHPillars(((byte) this.GetStabilizers()));
             this.HasStabilizerNear = this.GetStabilizers() > 0;
             this.consoleTile.updateClient();
+        }
+
+        for (Direction direction : Direction.values()) {
+            TileEntity neighbor = this.level.getBlockEntity(this.getBlockPos().offset(direction.getNormal()));
+            if (neighbor != null) {
+                neighbor.getCapability(CapabilityEnergy.ENERGY, direction.getOpposite()).ifPresent(energy -> {
+                    int energyToTransfer = Math.min(energyStorage.extractEnergy(20, true), energy.receiveEnergy(0, true));
+                    if (energyToTransfer > 0) {
+                        energyStorage.extractEnergy(energyToTransfer, false);
+                        energy.receiveEnergy(energyToTransfer, false);
+                    }
+                });
+            }
         }
 
         if (this.level.getGameTime() % 20 == 0)
@@ -239,15 +259,12 @@ public class EOHTile extends TileEntity implements ITickableTileEntity {
         }
     }
 
-//    public LazyOptional<IEnergyStorage> energy = LazyOptional.of(() -> EOHEnergyProvider.ENERGY.getDefaultInstance());
-
-//    @NotNull
-//    @Override
-//    public <T> LazyOptional<T> getCapability(@NotNull Capability<T> cap, @Nullable Direction side) {
-//        if (cap == CapabilityEnergy.ENERGY) {
-//            return energy.cast();
-//        }
-//        return super.getCapability(cap, side);
-//    }
-
+    @NotNull
+    @Override
+    public <T> LazyOptional<T> getCapability(@NotNull Capability<T> cap, Direction side) {
+        if (cap == CapabilityEnergy.ENERGY) {
+            return LazyOptional.of(() -> energyStorage).cast();
+        }
+        return super.getCapability(cap, side);
+    }
 }

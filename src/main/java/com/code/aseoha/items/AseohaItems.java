@@ -1,8 +1,8 @@
 package com.code.aseoha.items;
+
 import com.code.aseoha.client.Sounds;
 import com.code.aseoha.entities.ModEntityTypes;
 import com.code.aseoha.enums.EnumArmorMaterials;
-import com.code.aseoha.items.Materials.AseohaArmorMaterials;
 import com.code.aseoha.items.Materials.AseohaItemTiers;
 import com.code.aseoha.items.Upgrades.LightSpeedDrive;
 import com.code.aseoha.items.Upgrades.TesseractDrive;
@@ -58,6 +58,7 @@ public class AseohaItems {
 
     public static final RegistryObject<Item> LIGHTSPEED_DRIVE = ITEMS.register("upgrades/lightspeed_drive", () -> createItem(new LightSpeedDrive()));
 
+    public static final RegistryObject<HammerSpacePouch> HAMMER_SPACE_POUCH = ITEMS.register("hammer_space_pouch", HammerSpacePouch::new);
     //
 //    public static final RegistryObject<Item> MANUAL = ITEMS.register("manual",
 //            () -> new WrittenBookItem(new Item.Properties().tab(ModItemGroup.ASEOHA_GROUP)));
@@ -232,8 +233,8 @@ public class AseohaItems {
     public static final RegistryObject<Item> BOWTIE_BLUE = ARMOR_ITEMS.register("bowtie_blue",
             () -> new BowtieArmorItem(EnumArmorMaterials.BOWTIE, EquipmentSlotType.CHEST, new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP), "blue"));
 
-//    public static final RegistryObject<Item> SONIC_LASER = ITEMS.register("sonic_laser",
-//            ()-> new );
+    public static final RegistryObject<Item> SONIC_LASER = ITEMS.register("sonic_laser",
+            LaserSonic::new);
 
     public static <T extends Item> T createItem(T item) {
         return item;

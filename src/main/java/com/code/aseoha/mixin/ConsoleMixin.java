@@ -1,9 +1,9 @@
 package com.code.aseoha.mixin;
 
 import com.code.aseoha.Config;
+import com.code.aseoha.Helpers.IHelpWithConsole;
 import com.code.aseoha.Helpers.TARDISHelper;
 import com.code.aseoha.aseoha;
-import com.code.aseoha.Helpers.IHelpWithConsole;
 import com.code.aseoha.networking.Networking;
 import com.code.aseoha.networking.Packets.EnterRWFPacket;
 import com.code.aseoha.registries.ControlsRegistry;
@@ -201,7 +201,6 @@ public abstract class ConsoleMixin extends TileEntity implements ITickableTileEn
 
     @Inject(method = "load(Lnet/minecraft/block/BlockState;Lnet/minecraft/nbt/CompoundNBT;)V", at = @At("HEAD"))
     public void Aseoha$ConsoleRead(BlockState state, CompoundNBT compound, CallbackInfo ci) {
-        /** it's not pretty but it gets the job done **/
         if (compound.contains("hads"))
             this.Aseoha$Hads = compound.getBoolean("hads");
         if (compound.contains("eoh_timer"))
