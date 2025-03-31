@@ -60,4 +60,6 @@
 </ul>
 
 
-[contributors]([https://contrib.rocks/image?repo=corentinth/it-tools&refresh=1](https://contrib.rocks/image?repo=WallaceHesselmeister/Aseoha))]
+<a href="https://github.com/WallaceHesselmeister/Aseoha/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=WallaceHesselmeister/Aseoha" />
+</a>
