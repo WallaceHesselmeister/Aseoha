@@ -52,11 +52,12 @@
 <li>Plasticstraw, Jacob.K and Sheriff: Masters delight content! (Copper interior/Console)  </li>
 <li>VladStrDm for TARDIS Consoles Colorized</li>
 <li>Loqor for the Wall-E Model</li>
-
-[![contributors]([https://contrib.rocks/image?repo=corentinth/it-tools&refresh=1](https://contrib.rocks/image?repo=WallaceHesselmeister/Aseoha))]
 <li>TheVale for WhoviansRest and multiple assets</li>
 <li>Vixen, EntityHonsvick, Huw7000, 51%, Tsujii Ryoko, and C-7007, for interiors.  </li>
 <li>Jay, TheVale and mistersecret312 (along with others): helping a shit ton at 5-6AM.</li>
 <li>Jay/Jeryn/Suff99: Gallifrey stuff  </li>
 <li>Col. Mustard: The OG Bug pointer-outer</li>
 </ul>
+
+
+[![contributors]([https://contrib.rocks/image?repo=corentinth/it-tools&refresh=1](https://contrib.rocks/image?repo=WallaceHesselmeister/Aseoha))]
