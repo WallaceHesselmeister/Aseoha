@@ -65,6 +65,10 @@ import static com.code.aseoha.Helpers.IHelpWithMonitor.Aseoha$MonitorGetRot;
 @Mod.EventBusSubscriber(modid = aseoha.MODID, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class CommonEvents {
 
+    @SubscribeEvent
+    public static void onPlayerJoin(PlayerEvent.PlayerLoggedInEvent event) {
+            event.getPlayer().playSound(Sounds.MAJESTIC_TALE.get(), 1.0F, 1.0F); // Temporary disc, replace with registered sound
+    }
 
 //    @SubscribeEvent
 //    public void attachCapability(AttachCapabilitiesEvent<TileEntity> event)
