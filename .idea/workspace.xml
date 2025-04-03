@@ -4,30 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9ee901da-190c-4d52-83a2-b4f218b1a0d5" name="Changes" comment="fixed ait sonics">
-      <change afterPath="$PROJECT_DIR$/libs/ait.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/amblekit.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/libs/cloth-config-11.1.136-fabric.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/run/.fabric/processedMods/amblekit-1.1.8.93-1.20.1-beta-64b5720b4b825f21.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/run/.fabric/processedMods/cloth-config-11.1.136-64b5720b4b825f21.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/run/.fabric/processedMods/mixinextras-0.4.1-215bdc40eef77b8f.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/run/config/fabric/aitconfig.json5" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.10/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.10/checksums/checksums.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.10/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.10/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+    <list default="true" id="9ee901da-190c-4d52-83a2-b4f218b1a0d5" name="Changes" comment="codiak i uodated to new ait can u finish the porting off?">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/aseoha/textures/item/sonic_tools/sonic_fourteenth.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/gradle.properties" beforeDir="false" afterPath="$PROJECT_DIR$/gradle.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/ait/textures/blockentities/exteriors/classic/classic_definitive.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/ait/textures/blockentities/exteriors/classic/classic_definitive_emission.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/ait/textures/blockentities/exteriors/classic/classic_exile.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/ait/textures/blockentities/exteriors/classic/classic_hudolin.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/ait/textures/blockentities/exteriors/classic/classic_hudolin_emission.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/ait/textures/blockentities/exteriors/classic/classic_prime.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/ait/textures/blockentities/exteriors/classic/classic_yeti.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/ait/textures/blockentities/exteriors/police_box/police_box_coral.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/ait/textures/blockentities/exteriors/police_box/police_box_coral_emission.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -101,17 +79,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Gradle.AseohaAIT [runClient].executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "Fabric-1.20-AITv2",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/nitew/IdeaProjects/AseohaAIT/libs"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Gradle.AseohaAIT [runClient].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Fabric-1.20-AITv2&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/nitew/IdeaProjects/AseohaAIT/libs&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\nitew\IdeaProjects\AseohaAIT\libs" />
@@ -147,8 +125,8 @@
     <list>
       <item itemvalue="Application.Minecraft Client" />
       <item itemvalue="Application.Minecraft Server" />
-      <item itemvalue="Gradle.AseohaAIT [runClient]" />
       <item itemvalue="Application.Data Generation" />
+      <item itemvalue="Gradle.AseohaAIT [runClient]" />
     </list>
     <recent_temporary>
       <list>
@@ -206,7 +184,15 @@
       <option name="project" value="LOCAL" />
       <updated>1743699760849</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="codiak i uodated to new ait can u finish the porting off?">
+      <option name="closed" value="true" />
+      <created>1743700452932</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1743700452932</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -216,6 +202,7 @@
     <MESSAGE value="sonic tardis stuff" />
     <MESSAGE value="sonic" />
     <MESSAGE value="fixed ait sonics" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed ait sonics" />
+    <MESSAGE value="codiak i uodated to new ait can u finish the porting off?" />
+    <option name="LAST_COMMIT_MESSAGE" value="codiak i uodated to new ait can u finish the porting off?" />
   </component>
 </project>

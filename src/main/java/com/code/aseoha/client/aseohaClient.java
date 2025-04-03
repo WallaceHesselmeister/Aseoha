@@ -2,7 +2,7 @@ package com.code.aseoha.client;
 
 import com.code.aseoha.common.dimension.AseohaDimensions;
 import com.code.aseoha.common.dimension.sky.*;
-import loqor.ait.registry.impl.SequenceRegistry;
+import dev.amble.ait.registry.impl.SequenceRegistry;
 import net.fabricmc.api.ClientModInitializer;
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.fabricmc.fabric.api.client.networking.v1.C2SPlayChannelEvents;

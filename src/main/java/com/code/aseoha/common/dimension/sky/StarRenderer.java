@@ -1,8 +1,8 @@
 package com.code.aseoha.common.dimension.sky;
 
-import loqor.ait.client.models.decoration.TardisStarModel;
-import loqor.ait.client.renderers.AITRenderLayers;
-import loqor.ait.tardis.Tardis;
+import dev.amble.ait.client.models.decoration.TardisStarModel;
+import dev.amble.ait.client.renderers.AITRenderLayers;
+import dev.amble.ait.tardis.Tardis;
 import net.fabricmc.fabric.api.client.rendering.v1.WorldRenderContext;
 import net.minecraft.client.MinecraftClient;
 import net.minecraft.client.render.Camera;
