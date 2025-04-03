@@ -1,0 +1,22 @@
+{
+  "minecraft:recipes/decorations/crafting_table": {
+    "criteria": {
+      "unlock_right_away": "2025-04-03 17:57:43 +0100"
+    },
+    "done": true
+  },
+  "minecraft:ait/enter_tardis": {
+    "criteria": {
+      "enter_tardis": "2025-04-03 17:58:08 +0100"
+    },
+    "done": true
+  },
+  "minecraft:adventure/adventuring_time": {
+    "criteria": {
+      "minecraft:meadow": "2025-04-03 17:57:44 +0100",
+      "minecraft:plains": "2025-04-03 17:58:06 +0100"
+    },
+    "done": false
+  },
+  "DataVersion": 3465
+}

@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/AseohaAIT.client.iml" filepath="$PROJECT_DIR$/.idea/modules/AseohaAIT.client.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/AseohaAIT.main.iml" filepath="$PROJECT_DIR$/.idea/modules/AseohaAIT.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/AseohaAIT.test.iml" filepath="$PROJECT_DIR$/.idea/modules/AseohaAIT.test.iml" />
     </modules>
