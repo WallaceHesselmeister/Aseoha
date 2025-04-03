@@ -1,0 +1,13 @@
+{
+  "id": "aseoha:sonic_wiimote",
+  "models": {
+    "inactive":  "aseoha:item/sonic/sonic_wiimote",
+    "interaction":  "aseoha:item/sonic/sonic_wiimote",
+    "overload":  "aseoha:item/sonic/sonic_wiimote",
+    "scanning":  "aseoha:item/sonic/sonic_wiimote",
+    "tardis":  "aseoha:item/sonic/sonic_wiimote"
+  },
+  "loyalty": {
+    "type": "NEUTRAL"
+  }
+}

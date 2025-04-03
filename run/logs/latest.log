@@ -1,5 +1,5 @@
-[18:41:47] [main/INFO] (FabricLoader/GameProvider) Loading Minecraft 1.20.1 with Fabric Loader 0.16.0
-[18:41:47] [main/INFO] (FabricLoader) Loading 61 mods:
+[17:56:06] [main/INFO] (FabricLoader/GameProvider) Loading Minecraft 1.20.1 with Fabric Loader 0.16.0
+[17:56:06] [main/INFO] (FabricLoader) Loading 61 mods:
 	- ait 1.0.5.1348-1.20.1-release
 	- aseoha 1.0-1.20.1
 	- fabric-api 0.92.2+1.20.1
@@ -57,21 +57,22 @@
 	- fabric-transfer-api-v1 3.3.5+8dd72ea377
 	- fabric-transitive-access-wideners-v1 4.3.1+1802ada577
 	- fabricloader 0.16.0
-	- java 17
+	- java 21
 	- minecraft 1.20.1
 	- mixinextras 0.4.0
 	- owo 0.11.1+1.20
-[18:41:48] [main/INFO] (FabricLoader/Mixin) SpongePowered MIXIN Subsystem Version=0.8.7 Source=file:/C:/Users/nitew/.gradle/caches/modules-2/files-2.1/net.fabricmc/sponge-mixin/0.15.0+mixin.0.8.7/2ce1c5d57a061f3e259ec30b8b0cb2dc889c5156/sponge-mixin-0.15.0+mixin.0.8.7.jar Service=Knot/Fabric Env=CLIENT
-[18:41:48] [main/INFO] (FabricLoader/Mixin) Loaded Fabric development mappings for mixin remapper!
-[18:41:48] [main/INFO] (FabricLoader/Mixin) Compatibility level set to JAVA_16
-[18:41:48] [main/INFO] (FabricLoader/Mixin) Compatibility level set to JAVA_17
-[18:41:49] [main/WARN] (FabricLoader/Mixin) Error loading class: fr/catcore/server/translations/api/resource/language/SystemDelegatedLanguage (java.lang.ClassNotFoundException: fr/catcore/server/translations/api/resource/language/SystemDelegatedLanguage)
-[18:41:49] [main/WARN] (FabricLoader/Mixin) Error loading class: org/jetbrains/annotations/ApiStatus$Internal (java.lang.ClassNotFoundException: org/jetbrains/annotations/ApiStatus$Internal)
-[18:41:50] [main/INFO] (FabricLoader/MixinExtras|Service) Initializing MixinExtras via com.llamalad7.mixinextras.service.MixinExtrasServiceImpl(version=0.4.0).
-[18:42:01] [Datafixer Bootstrap/INFO] (Minecraft) 188 Datafixer optimizations took 258 milliseconds
-[18:42:06] [Render thread/WARN] (FabricLoader/Mixin) Error loading class: org/quiltmc/loader/impl/game/minecraft/Hooks (java.lang.ClassNotFoundException: org/quiltmc/loader/impl/game/minecraft/Hooks)
-[18:42:06] [Render thread/INFO] (Minecraft) Environment: authHost='https://authserver.mojang.com', accountsHost='https://api.mojang.com', sessionHost='https://sessionserver.mojang.com', servicesHost='https://api.minecraftservices.com', name='PROD'
-[18:42:07] [Render thread/ERROR] (Minecraft) Failed to verify authentication
+[17:56:07] [main/INFO] (FabricLoader/Mixin) SpongePowered MIXIN Subsystem Version=0.8.7 Source=file:/C:/Users/nitew/.gradle/caches/modules-2/files-2.1/net.fabricmc/sponge-mixin/0.15.0+mixin.0.8.7/2ce1c5d57a061f3e259ec30b8b0cb2dc889c5156/sponge-mixin-0.15.0+mixin.0.8.7.jar Service=Knot/Fabric Env=CLIENT
+[17:56:07] [main/INFO] (FabricLoader/Mixin) Loaded Fabric development mappings for mixin remapper!
+[17:56:07] [main/INFO] (FabricLoader/Mixin) Compatibility level set to JAVA_16
+[17:56:07] [main/INFO] (FabricLoader/Mixin) Compatibility level set to JAVA_17
+[17:56:08] [main/WARN] (FabricLoader/Mixin) Error loading class: fr/catcore/server/translations/api/resource/language/SystemDelegatedLanguage (java.lang.ClassNotFoundException: fr/catcore/server/translations/api/resource/language/SystemDelegatedLanguage)
+[17:56:09] [main/WARN] (FabricLoader/Mixin) Error loading class: org/jetbrains/annotations/ApiStatus$Internal (java.lang.ClassNotFoundException: org/jetbrains/annotations/ApiStatus$Internal)
+[17:56:12] [main/INFO] (FabricLoader/MixinExtras|Service) Initializing MixinExtras via com.llamalad7.mixinextras.service.MixinExtrasServiceImpl(version=0.4.0).
+[17:56:27] [Datafixer Bootstrap/INFO] (Minecraft) 188 Datafixer optimizations took 326 milliseconds
+[17:56:32] [Render thread/INFO] (Minecraft) [STDERR]: [LWJGL] [ThreadLocalUtil] Unsupported JNI version detected, this may result in a crash. Please inform LWJGL developers.
+[17:56:32] [Render thread/WARN] (FabricLoader/Mixin) Error loading class: org/quiltmc/loader/impl/game/minecraft/Hooks (java.lang.ClassNotFoundException: org/quiltmc/loader/impl/game/minecraft/Hooks)
+[17:56:33] [Render thread/INFO] (Minecraft) Environment: authHost='https://authserver.mojang.com', accountsHost='https://api.mojang.com', sessionHost='https://sessionserver.mojang.com', servicesHost='https://api.minecraftservices.com', name='PROD'
+[17:56:34] [Render thread/ERROR] (Minecraft) Failed to verify authentication
 com.mojang.authlib.exceptions.InvalidCredentialsException: Status: 401
 	at com.mojang.authlib.exceptions.MinecraftClientHttpException.toAuthenticationException(MinecraftClientHttpException.java:56) ~[authlib-4.0.43.jar:?]
 	at com.mojang.authlib.yggdrasil.YggdrasilUserApiService.fetchProperties(YggdrasilUserApiService.java:156) ~[authlib-4.0.43.jar:?]
@@ -89,69 +90,69 @@ Caused by: com.mojang.authlib.exceptions.MinecraftClientHttpException: Status: 4
 	at com.mojang.authlib.minecraft.client.MinecraftClient.get(MinecraftClient.java:48) ~[authlib-4.0.43.jar:?]
 	at com.mojang.authlib.yggdrasil.YggdrasilUserApiService.fetchProperties(YggdrasilUserApiService.java:129) ~[authlib-4.0.43.jar:?]
 	... 9 more
-[18:42:07] [Render thread/INFO] (Minecraft) Setting user: Player891
-[18:42:07] [Render thread/INFO] (Minecraft) [STDOUT]: C:\Users\nitew\IdeaProjects\AseohaAIT\run
-[18:42:08] [Render thread/INFO] (owo) chyz: How could you do this to me, Blod. I loved you like a guy I don't know in real life :(
-[18:42:08] [Render thread/INFO] (ait) CategoryRegistry was not initialized, Creating a new instance
-[18:42:08] [Render thread/INFO] (ait) ClientConsoleVariantRegistry was not initialized, Creating a new instance
-[18:42:08] [Render thread/INFO] (ait) ClientExteriorVariantRegistry was not initialized, Creating a new instance
-[18:42:10] [Render thread/INFO] (Indigo) [Indigo] Registering Indigo renderer!
-[18:42:10] [Render thread/INFO] (ait) Loaded ait:item/sonic/renaissance/inactive to the force-load list
-[18:42:10] [Render thread/INFO] (ait) Loaded ait:item/sonic/renaissance/interaction to the force-load list
-[18:42:10] [Render thread/INFO] (ait) Loaded ait:item/sonic/renaissance/overload to the force-load list
-[18:42:10] [Render thread/INFO] (ait) Loaded ait:item/sonic/renaissance/scanning to the force-load list
-[18:42:10] [Render thread/INFO] (ait) Loaded ait:item/sonic/renaissance/tardis to the force-load list
-[18:42:10] [Render thread/INFO] (ait) Loading sonic 'ait:renaissance' with models: Models[inactive=ait:item/sonic/renaissance/inactive, interaction=ait:item/sonic/renaissance/interaction, overload=ait:item/sonic/renaissance/overload, scanning=ait:item/sonic/renaissance/scanning, tardis=ait:item/sonic/renaissance/tardis]
-[18:42:10] [Render thread/INFO] (ait) Loaded ait:item/sonic/coral/inactive to the force-load list
-[18:42:10] [Render thread/INFO] (ait) Loaded ait:item/sonic/coral/interaction to the force-load list
-[18:42:10] [Render thread/INFO] (ait) Loaded ait:item/sonic/coral/overload to the force-load list
-[18:42:10] [Render thread/INFO] (ait) Loaded ait:item/sonic/coral/scanning to the force-load list
-[18:42:10] [Render thread/INFO] (ait) Loaded ait:item/sonic/coral/tardis to the force-load list
-[18:42:10] [Render thread/INFO] (ait) Loading sonic 'ait:coral' with models: Models[inactive=ait:item/sonic/coral/inactive, interaction=ait:item/sonic/coral/interaction, overload=ait:item/sonic/coral/overload, scanning=ait:item/sonic/coral/scanning, tardis=ait:item/sonic/coral/tardis]
-[18:42:10] [Render thread/INFO] (ait) Loaded ait:item/sonic/fob/inactive to the force-load list
-[18:42:10] [Render thread/INFO] (ait) Loaded ait:item/sonic/fob/interaction to the force-load list
-[18:42:10] [Render thread/INFO] (ait) Loaded ait:item/sonic/fob/overload to the force-load list
-[18:42:10] [Render thread/INFO] (ait) Loaded ait:item/sonic/fob/scanning to the force-load list
-[18:42:10] [Render thread/INFO] (ait) Loaded ait:item/sonic/fob/tardis to the force-load list
-[18:42:10] [Render thread/INFO] (ait) Loading sonic 'ait:fob' with models: Models[inactive=ait:item/sonic/fob/inactive, interaction=ait:item/sonic/fob/interaction, overload=ait:item/sonic/fob/overload, scanning=ait:item/sonic/fob/scanning, tardis=ait:item/sonic/fob/tardis]
-[18:42:10] [Render thread/INFO] (ait) Loaded ait:item/sonic/copper/inactive to the force-load list
-[18:42:10] [Render thread/INFO] (ait) Loaded ait:item/sonic/copper/interaction to the force-load list
-[18:42:10] [Render thread/INFO] (ait) Loaded ait:item/sonic/copper/overload to the force-load list
-[18:42:10] [Render thread/INFO] (ait) Loaded ait:item/sonic/copper/scanning to the force-load list
-[18:42:10] [Render thread/INFO] (ait) Loaded ait:item/sonic/copper/tardis to the force-load list
-[18:42:10] [Render thread/INFO] (ait) Loading sonic 'ait:copper' with models: Models[inactive=ait:item/sonic/copper/inactive, interaction=ait:item/sonic/copper/interaction, overload=ait:item/sonic/copper/overload, scanning=ait:item/sonic/copper/scanning, tardis=ait:item/sonic/copper/tardis]
-[18:42:10] [Render thread/INFO] (ait) Loaded ait:item/sonic/mechanical/inactive to the force-load list
-[18:42:10] [Render thread/INFO] (ait) Loaded ait:item/sonic/mechanical/interaction to the force-load list
-[18:42:10] [Render thread/INFO] (ait) Loaded ait:item/sonic/mechanical/overload to the force-load list
-[18:42:10] [Render thread/INFO] (ait) Loaded ait:item/sonic/mechanical/scanning to the force-load list
-[18:42:10] [Render thread/INFO] (ait) Loaded ait:item/sonic/mechanical/tardis to the force-load list
-[18:42:10] [Render thread/INFO] (ait) Loading sonic 'ait:mechanical' with models: Models[inactive=ait:item/sonic/mechanical/inactive, interaction=ait:item/sonic/mechanical/interaction, overload=ait:item/sonic/mechanical/overload, scanning=ait:item/sonic/mechanical/scanning, tardis=ait:item/sonic/mechanical/tardis]
-[18:42:10] [Render thread/INFO] (ait) Loaded ait:item/sonic/song/inactive to the force-load list
-[18:42:10] [Render thread/INFO] (ait) Loaded ait:item/sonic/song/interaction to the force-load list
-[18:42:10] [Render thread/INFO] (ait) Loaded ait:item/sonic/song/overload to the force-load list
-[18:42:10] [Render thread/INFO] (ait) Loaded ait:item/sonic/song/scanning to the force-load list
-[18:42:10] [Render thread/INFO] (ait) Loaded ait:item/sonic/song/tardis to the force-load list
-[18:42:10] [Render thread/INFO] (ait) Loading sonic 'ait:song' with models: Models[inactive=ait:item/sonic/song/inactive, interaction=ait:item/sonic/song/interaction, overload=ait:item/sonic/song/overload, scanning=ait:item/sonic/song/scanning, tardis=ait:item/sonic/song/tardis]
-[18:42:10] [Render thread/INFO] (ait) Loaded ait:item/sonic/prime/inactive to the force-load list
-[18:42:10] [Render thread/INFO] (ait) Loaded ait:item/sonic/prime/interaction to the force-load list
-[18:42:10] [Render thread/INFO] (ait) Loaded ait:item/sonic/prime/overload to the force-load list
-[18:42:10] [Render thread/INFO] (ait) Loaded ait:item/sonic/prime/scanning to the force-load list
-[18:42:10] [Render thread/INFO] (ait) Loaded ait:item/sonic/prime/tardis to the force-load list
-[18:42:10] [Render thread/INFO] (ait) Loading sonic 'ait:prime' with models: Models[inactive=ait:item/sonic/prime/inactive, interaction=ait:item/sonic/prime/interaction, overload=ait:item/sonic/prime/overload, scanning=ait:item/sonic/prime/scanning, tardis=ait:item/sonic/prime/tardis]
-[18:42:10] [Render thread/INFO] (ait) Loaded ait:item/sonic/crystalline/inactive to the force-load list
-[18:42:10] [Render thread/INFO] (ait) Loaded ait:item/sonic/crystalline/interaction to the force-load list
-[18:42:10] [Render thread/INFO] (ait) Loaded ait:item/sonic/crystalline/overload to the force-load list
-[18:42:10] [Render thread/INFO] (ait) Loaded ait:item/sonic/crystalline/scanning to the force-load list
-[18:42:10] [Render thread/INFO] (ait) Loaded ait:item/sonic/crystalline/tardis to the force-load list
-[18:42:10] [Render thread/INFO] (ait) Loading sonic 'ait:crystalline' with models: Models[inactive=ait:item/sonic/crystalline/inactive, interaction=ait:item/sonic/crystalline/interaction, overload=ait:item/sonic/crystalline/overload, scanning=ait:item/sonic/crystalline/scanning, tardis=ait:item/sonic/crystalline/tardis]
-[18:42:11] [Render thread/INFO] (owo) Services frozen by 'net.minecraft.client.MinecraftClient'
-[18:42:12] [Render thread/INFO] (Minecraft) Backend library: LWJGL version 3.3.2-snapshot
-[18:42:15] [Render thread/INFO] (Minecraft) Reloading ResourceManager: vanilla, fabric (fabric-key-binding-api-v1, fabric-transitive-access-wideners-v1, fabric-item-group-api-v1, fabric-networking-v0, aseoha, fabric-blockrenderlayer-v1, fabric-api-lookup-api-v1, fabric-dimensions-v1, fabric-data-generation-api-v1, fabric-command-api-v2, fabric-recipe-api-v1, fabric-message-api-v1, fabric-item-api-v1, fabric-model-loading-api-v1, fabric-events-interaction-v0, fabric-resource-loader-v0, fabric-keybindings-v0, fabric-crash-report-info-v1, fabric-client-tags-api-v1, owo, fabric-renderer-indigo, fabric-commands-v0, fabric-object-builder-api-v1, fabric-gametest-api-v1, fabric-transfer-api-v1, fabric-data-attachment-api-v1, ait, fabric-game-rule-api-v1, fabric-block-view-api-v2, fabric-networking-api-v1, fabric-screen-api-v1, fabric-events-lifecycle-v0, fabric-api, fabric-renderer-api-v1, fabric-content-registries-v0, fabric-registry-sync-v0, fabric-renderer-registries-v1, fabric-biome-api-v1, fabric-loot-api-v2, fabric-mining-level-api-v1, fabricloader, fabric-entity-events-v1, fabric-convention-tags-v1, fabric-models-v0, fabric-rendering-v0, fabric-api-base, fabric-block-api-v1, fabric-particles-v1, fabric-rendering-v1, fabric-rendering-data-attachment-v1, fabric-loot-tables-v1, fabric-sound-api-v1, fabric-resource-conditions-api-v1, fabric-command-api-v1, fabric-rendering-fluids-v1, fabric-screen-handler-api-v1, fabric-containers-v0, fabric-lifecycle-events-v1)
-[18:42:16] [Worker-Main-10/INFO] (Minecraft) Found unifont_all_no_pua-15.0.06.hex, loading
-[18:42:16] [Realms Notification Availability checker #1/INFO] (Minecraft) Could not authorize you against Realms server: Invalid session id
-[18:42:16] [Worker-Main-9/WARN] (Minecraft) Texture aseoha:item/latinum with size 29x33 limits mip level from 4 to 0
-[18:42:16] [Worker-Main-9/WARN] (Minecraft) minecraft:textures/atlas/blocks.png: dropping miplevel from 4 to 0, because of minimum power of two: 1
-[18:42:16] [Worker-Main-8/ERROR] (Minecraft) Failed to load model aseoha:models/item/sonic_tools/mk1.json
+[17:56:34] [Render thread/INFO] (Minecraft) Setting user: Player45
+[17:56:34] [Render thread/INFO] (ait) CategoryRegistry was not initialized, Creating a new instance
+[17:56:34] [Render thread/INFO] (ait) ClientConsoleVariantRegistry was not initialized, Creating a new instance
+[17:56:34] [Render thread/INFO] (ait) ClientExteriorVariantRegistry was not initialized, Creating a new instance
+[17:56:36] [Render thread/INFO] (owo) yes this is a tip
+[17:56:36] [Render thread/INFO] (Minecraft) [STDOUT]: C:\Users\nitew\IdeaProjects\AseohaAIT\run
+[17:56:37] [Render thread/INFO] (ait) Loaded ait:item/sonic/renaissance/inactive to the force-load list
+[17:56:37] [Render thread/INFO] (ait) Loaded ait:item/sonic/renaissance/interaction to the force-load list
+[17:56:37] [Render thread/INFO] (ait) Loaded ait:item/sonic/renaissance/overload to the force-load list
+[17:56:37] [Render thread/INFO] (ait) Loaded ait:item/sonic/renaissance/scanning to the force-load list
+[17:56:37] [Render thread/INFO] (ait) Loaded ait:item/sonic/renaissance/tardis to the force-load list
+[17:56:37] [Render thread/INFO] (ait) Loading sonic 'ait:renaissance' with models: Models[inactive=ait:item/sonic/renaissance/inactive, interaction=ait:item/sonic/renaissance/interaction, overload=ait:item/sonic/renaissance/overload, scanning=ait:item/sonic/renaissance/scanning, tardis=ait:item/sonic/renaissance/tardis]
+[17:56:37] [Render thread/INFO] (ait) Loaded ait:item/sonic/coral/inactive to the force-load list
+[17:56:37] [Render thread/INFO] (ait) Loaded ait:item/sonic/coral/interaction to the force-load list
+[17:56:37] [Render thread/INFO] (ait) Loaded ait:item/sonic/coral/overload to the force-load list
+[17:56:37] [Render thread/INFO] (ait) Loaded ait:item/sonic/coral/scanning to the force-load list
+[17:56:37] [Render thread/INFO] (ait) Loaded ait:item/sonic/coral/tardis to the force-load list
+[17:56:37] [Render thread/INFO] (ait) Loading sonic 'ait:coral' with models: Models[inactive=ait:item/sonic/coral/inactive, interaction=ait:item/sonic/coral/interaction, overload=ait:item/sonic/coral/overload, scanning=ait:item/sonic/coral/scanning, tardis=ait:item/sonic/coral/tardis]
+[17:56:37] [Render thread/INFO] (ait) Loaded ait:item/sonic/fob/inactive to the force-load list
+[17:56:37] [Render thread/INFO] (ait) Loaded ait:item/sonic/fob/interaction to the force-load list
+[17:56:37] [Render thread/INFO] (ait) Loaded ait:item/sonic/fob/overload to the force-load list
+[17:56:37] [Render thread/INFO] (ait) Loaded ait:item/sonic/fob/scanning to the force-load list
+[17:56:37] [Render thread/INFO] (ait) Loaded ait:item/sonic/fob/tardis to the force-load list
+[17:56:37] [Render thread/INFO] (ait) Loading sonic 'ait:fob' with models: Models[inactive=ait:item/sonic/fob/inactive, interaction=ait:item/sonic/fob/interaction, overload=ait:item/sonic/fob/overload, scanning=ait:item/sonic/fob/scanning, tardis=ait:item/sonic/fob/tardis]
+[17:56:37] [Render thread/INFO] (ait) Loaded ait:item/sonic/copper/inactive to the force-load list
+[17:56:37] [Render thread/INFO] (ait) Loaded ait:item/sonic/copper/interaction to the force-load list
+[17:56:37] [Render thread/INFO] (ait) Loaded ait:item/sonic/copper/overload to the force-load list
+[17:56:37] [Render thread/INFO] (ait) Loaded ait:item/sonic/copper/scanning to the force-load list
+[17:56:37] [Render thread/INFO] (ait) Loaded ait:item/sonic/copper/tardis to the force-load list
+[17:56:37] [Render thread/INFO] (ait) Loading sonic 'ait:copper' with models: Models[inactive=ait:item/sonic/copper/inactive, interaction=ait:item/sonic/copper/interaction, overload=ait:item/sonic/copper/overload, scanning=ait:item/sonic/copper/scanning, tardis=ait:item/sonic/copper/tardis]
+[17:56:37] [Render thread/INFO] (ait) Loaded ait:item/sonic/mechanical/inactive to the force-load list
+[17:56:37] [Render thread/INFO] (ait) Loaded ait:item/sonic/mechanical/interaction to the force-load list
+[17:56:37] [Render thread/INFO] (ait) Loaded ait:item/sonic/mechanical/overload to the force-load list
+[17:56:37] [Render thread/INFO] (ait) Loaded ait:item/sonic/mechanical/scanning to the force-load list
+[17:56:37] [Render thread/INFO] (ait) Loaded ait:item/sonic/mechanical/tardis to the force-load list
+[17:56:37] [Render thread/INFO] (ait) Loading sonic 'ait:mechanical' with models: Models[inactive=ait:item/sonic/mechanical/inactive, interaction=ait:item/sonic/mechanical/interaction, overload=ait:item/sonic/mechanical/overload, scanning=ait:item/sonic/mechanical/scanning, tardis=ait:item/sonic/mechanical/tardis]
+[17:56:37] [Render thread/INFO] (ait) Loaded ait:item/sonic/song/inactive to the force-load list
+[17:56:37] [Render thread/INFO] (ait) Loaded ait:item/sonic/song/interaction to the force-load list
+[17:56:37] [Render thread/INFO] (ait) Loaded ait:item/sonic/song/overload to the force-load list
+[17:56:37] [Render thread/INFO] (ait) Loaded ait:item/sonic/song/scanning to the force-load list
+[17:56:37] [Render thread/INFO] (ait) Loaded ait:item/sonic/song/tardis to the force-load list
+[17:56:37] [Render thread/INFO] (ait) Loading sonic 'ait:song' with models: Models[inactive=ait:item/sonic/song/inactive, interaction=ait:item/sonic/song/interaction, overload=ait:item/sonic/song/overload, scanning=ait:item/sonic/song/scanning, tardis=ait:item/sonic/song/tardis]
+[17:56:37] [Render thread/INFO] (ait) Loaded ait:item/sonic/prime/inactive to the force-load list
+[17:56:37] [Render thread/INFO] (ait) Loaded ait:item/sonic/prime/interaction to the force-load list
+[17:56:37] [Render thread/INFO] (ait) Loaded ait:item/sonic/prime/overload to the force-load list
+[17:56:37] [Render thread/INFO] (ait) Loaded ait:item/sonic/prime/scanning to the force-load list
+[17:56:37] [Render thread/INFO] (ait) Loaded ait:item/sonic/prime/tardis to the force-load list
+[17:56:37] [Render thread/INFO] (ait) Loading sonic 'ait:prime' with models: Models[inactive=ait:item/sonic/prime/inactive, interaction=ait:item/sonic/prime/interaction, overload=ait:item/sonic/prime/overload, scanning=ait:item/sonic/prime/scanning, tardis=ait:item/sonic/prime/tardis]
+[17:56:37] [Render thread/INFO] (ait) Loaded ait:item/sonic/crystalline/inactive to the force-load list
+[17:56:37] [Render thread/INFO] (ait) Loaded ait:item/sonic/crystalline/interaction to the force-load list
+[17:56:37] [Render thread/INFO] (ait) Loaded ait:item/sonic/crystalline/overload to the force-load list
+[17:56:37] [Render thread/INFO] (ait) Loaded ait:item/sonic/crystalline/scanning to the force-load list
+[17:56:37] [Render thread/INFO] (ait) Loaded ait:item/sonic/crystalline/tardis to the force-load list
+[17:56:37] [Render thread/INFO] (ait) Loading sonic 'ait:crystalline' with models: Models[inactive=ait:item/sonic/crystalline/inactive, interaction=ait:item/sonic/crystalline/interaction, overload=ait:item/sonic/crystalline/overload, scanning=ait:item/sonic/crystalline/scanning, tardis=ait:item/sonic/crystalline/tardis]
+[17:56:38] [Render thread/INFO] (Indigo) [Indigo] Registering Indigo renderer!
+[17:56:38] [Render thread/INFO] (owo) Services frozen by 'net.minecraft.client.MinecraftClient'
+[17:56:39] [Render thread/INFO] (Minecraft) Backend library: LWJGL version 3.3.2-snapshot
+[17:56:42] [Render thread/INFO] (Minecraft) Reloading ResourceManager: vanilla, fabric (fabric-blockrenderlayer-v1, fabric-item-group-api-v1, fabric-registry-sync-v0, fabric-screen-handler-api-v1, fabric-command-api-v1, fabric-block-view-api-v2, fabric-models-v0, ait, owo, fabric-biome-api-v1, fabric-commands-v0, fabric-recipe-api-v1, fabric-renderer-registries-v1, fabric-transfer-api-v1, fabric-model-loading-api-v1, fabric-data-attachment-api-v1, fabric-containers-v0, fabric-api-lookup-api-v1, fabric-content-registries-v0, fabric-keybindings-v0, fabric-item-api-v1, fabric-dimensions-v1, fabric-mining-level-api-v1, fabric-renderer-indigo, fabric-rendering-data-attachment-v1, fabric-crash-report-info-v1, fabric-block-api-v1, fabric-rendering-v0, fabricloader, fabric-networking-api-v1, fabric-events-lifecycle-v0, fabric-screen-api-v1, fabric-object-builder-api-v1, fabric-entity-events-v1, fabric-networking-v0, fabric-rendering-fluids-v1, fabric-renderer-api-v1, fabric-rendering-v1, fabric-data-generation-api-v1, fabric-transitive-access-wideners-v1, aseoha, fabric-lifecycle-events-v1, fabric-sound-api-v1, fabric-message-api-v1, fabric-command-api-v2, fabric-loot-api-v2, fabric-api, fabric-client-tags-api-v1, fabric-gametest-api-v1, fabric-resource-loader-v0, fabric-resource-conditions-api-v1, fabric-loot-tables-v1, fabric-convention-tags-v1, fabric-key-binding-api-v1, fabric-game-rule-api-v1, fabric-events-interaction-v0, fabric-api-base, fabric-particles-v1)
+[17:56:42] [Worker-Main-6/INFO] (Minecraft) Found unifont_all_no_pua-15.0.06.hex, loading
+[17:56:43] [Realms Notification Availability checker #1/INFO] (Minecraft) Could not authorize you against Realms server: Invalid session id
+[17:56:43] [Worker-Main-5/WARN] (Minecraft) Texture aseoha:item/latinum with size 29x33 limits mip level from 4 to 0
+[17:56:43] [Worker-Main-5/WARN] (Minecraft) minecraft:textures/atlas/blocks.png: dropping miplevel from 4 to 0, because of minimum power of two: 1
+[17:56:43] [Worker-Main-4/ERROR] (Minecraft) Failed to load model aseoha:models/item/sonic/mk1.json
 com.google.gson.JsonSyntaxException: java.io.EOFException: End of input at line 776 column 2 path $.textures
 	at com.google.gson.internal.Streams.parse(Streams.java:59) ~[gson-2.10.jar:?]
 	at com.google.gson.internal.bind.TreeTypeAdapter.read(TreeTypeAdapter.java:72) ~[gson-2.10.jar:?]
@@ -162,11 +163,11 @@ com.google.gson.JsonSyntaxException: java.io.EOFException: End of input at line 
 	at net.minecraft.client.render.model.BakedModelManager.method_45898(BakedModelManager.java:105) ~[minecraft-merged-8685b3a49c-1.20.1-net.fabricmc.yarn.1_20_1.1.20.1+build.10-v2.jar:?]
 	at java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1768) ~[?:?]
 	at java.util.concurrent.CompletableFuture$AsyncSupply.exec(CompletableFuture.java:1760) ~[?:?]
-	at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373) ~[?:?]
-	at java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182) ~[?:?]
-	at java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655) ~[?:?]
-	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622) ~[?:?]
-	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165) ~[?:?]
+	at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:387) ~[?:?]
+	at java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1312) ~[?:?]
+	at java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1843) ~[?:?]
+	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1808) ~[?:?]
+	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:188) ~[?:?]
 Caused by: java.io.EOFException: End of input at line 776 column 2 path $.textures
 	at com.google.gson.stream.JsonReader.nextNonWhitespace(JsonReader.java:1455) ~[gson-2.10.jar:?]
 	at com.google.gson.stream.JsonReader.doPeek(JsonReader.java:491) ~[gson-2.10.jar:?]
@@ -175,94 +176,94 @@ Caused by: java.io.EOFException: End of input at line 776 column 2 path $.textur
 	at com.google.gson.internal.bind.TypeAdapters$28.read(TypeAdapters.java:725) ~[gson-2.10.jar:?]
 	at com.google.gson.internal.Streams.parse(Streams.java:49) ~[gson-2.10.jar:?]
 	... 13 more
-[18:42:18] [Worker-Main-11/WARN] (Minecraft) Exception loading blockstate definition: 'aseoha:blockstates/brown_wool_roundel.json' missing model for variant: 'aseoha:brown_wool_roundel#'
-[18:42:18] [Worker-Main-11/WARN] (Minecraft) Exception loading blockstate definition: 'aseoha:blockstates/brown_concrete_roundel.json' missing model for variant: 'aseoha:brown_concrete_roundel#'
-[18:42:18] [Worker-Main-11/WARN] (Minecraft) Exception loading blockstate definition: 'aseoha:blockstates/cherry_planks_roundel.json' missing model for variant: 'aseoha:cherry_planks_roundel#'
-[18:42:18] [Worker-Main-11/WARN] (Minecraft) Exception loading blockstate definition: 'aseoha:blockstates/cobbled_deepslate_roundel.json' missing model for variant: 'aseoha:cobbled_deepslate_roundel#'
-[18:42:18] [Worker-Main-11/WARN] (Minecraft) Exception loading blockstate definition: 'aseoha:blockstates/cobblestone_roundel.json' missing model for variant: 'aseoha:cobblestone_roundel#'
-[18:42:18] [Worker-Main-11/WARN] (Minecraft) Exception loading blockstate definition: 'aseoha:blockstates/copper_block_roundel.json' missing model for variant: 'aseoha:copper_block_roundel#'
-[18:42:18] [Worker-Main-11/WARN] (Minecraft) Exception loading blockstate definition: 'aseoha:blockstates/crimson_planks_roundel.json' missing model for variant: 'aseoha:crimson_planks_roundel#'
-[18:42:18] [Worker-Main-11/WARN] (Minecraft) Exception loading blockstate definition: 'aseoha:blockstates/cut_copper_roundel.json' missing model for variant: 'aseoha:cut_copper_roundel#'
-[18:42:18] [Worker-Main-11/WARN] (Minecraft) Exception loading blockstate definition: 'aseoha:blockstates/cyan_concrete_roundel.json' missing model for variant: 'aseoha:cyan_concrete_roundel#'
-[18:42:18] [Worker-Main-11/WARN] (Minecraft) Exception loading blockstate definition: 'aseoha:blockstates/cyan_wool_roundel.json' missing model for variant: 'aseoha:cyan_wool_roundel#'
-[18:42:18] [Worker-Main-11/WARN] (Minecraft) Exception loading blockstate definition: 'aseoha:blockstates/dark_oak_planks_roundel.json' missing model for variant: 'aseoha:dark_oak_planks_roundel#'
-[18:42:18] [Worker-Main-11/WARN] (Minecraft) Exception loading blockstate definition: 'aseoha:blockstates/deepslate_roundel.json' missing model for variant: 'aseoha:deepslate_roundel#'
-[18:42:18] [Worker-Main-11/WARN] (Minecraft) Exception loading blockstate definition: 'aseoha:blockstates/exposed_copper_roundel.json' missing model for variant: 'aseoha:exposed_copper_roundel#'
-[18:42:18] [Worker-Main-11/WARN] (Minecraft) Exception loading blockstate definition: 'aseoha:blockstates/exposed_cut_copper_roundel.json' missing model for variant: 'aseoha:exposed_cut_copper_roundel#'
-[18:42:18] [Worker-Main-11/WARN] (Minecraft) Exception loading blockstate definition: 'aseoha:blockstates/gray_concrete_roundel.json' missing model for variant: 'aseoha:gray_concrete_roundel#'
-[18:42:18] [Worker-Main-11/WARN] (Minecraft) Exception loading blockstate definition: 'aseoha:blockstates/gray_wool_roundel.json' missing model for variant: 'aseoha:gray_wool_roundel#'
-[18:42:18] [Worker-Main-11/WARN] (Minecraft) Exception loading blockstate definition: 'aseoha:blockstates/green_concrete_roundel.json' missing model for variant: 'aseoha:green_concrete_roundel#'
-[18:42:18] [Worker-Main-11/WARN] (Minecraft) Exception loading blockstate definition: 'aseoha:blockstates/green_wool_roundel.json' missing model for variant: 'aseoha:green_wool_roundel#'
-[18:42:18] [Worker-Main-11/WARN] (Minecraft) Unable to load model: 'aseoha:block/roundel/pink_concrete_hex_roundel' referenced from: aseoha:pink_concrete_hex_roundel#facing=north: java.io.FileNotFoundException: aseoha:models/block/roundel/pink_concrete_hex_roundel.json
-[18:42:19] [Worker-Main-11/WARN] (Minecraft) Unable to load model: 'ait:block/button_control_block' referenced from: ait:button_control_block#facing=north: java.io.FileNotFoundException: ait:models/block/button_control_block.json
-[18:42:19] [Worker-Main-11/WARN] (Minecraft) Unable to load model: 'aseoha:cyan_wool_roundel#inventory' referenced from: aseoha:cyan_wool_roundel#inventory: java.io.FileNotFoundException: aseoha:models/item/cyan_wool_roundel.json
-[18:42:19] [Worker-Main-11/WARN] (Minecraft) Unable to load model: 'aseoha:cherry_planks_roundel#inventory' referenced from: aseoha:cherry_planks_roundel#inventory: java.io.FileNotFoundException: aseoha:models/item/cherry_planks_roundel.json
-[18:42:19] [Worker-Main-11/WARN] (Minecraft) Unable to load model: 'aseoha:cut_copper_roundel#inventory' referenced from: aseoha:cut_copper_roundel#inventory: java.io.FileNotFoundException: aseoha:models/item/cut_copper_roundel.json
-[18:42:19] [Worker-Main-11/WARN] (Minecraft) Unable to load model: 'aseoha:gray_concrete_roundel#inventory' referenced from: aseoha:gray_concrete_roundel#inventory: java.io.FileNotFoundException: aseoha:models/item/gray_concrete_roundel.json
-[18:42:19] [Worker-Main-11/WARN] (Minecraft) Unable to load model: 'aseoha:cyan_concrete_roundel#inventory' referenced from: aseoha:cyan_concrete_roundel#inventory: java.io.FileNotFoundException: aseoha:models/item/cyan_concrete_roundel.json
-[18:42:19] [Worker-Main-11/WARN] (Minecraft) Unable to load model: 'aseoha:dark_oak_planks_roundel#inventory' referenced from: aseoha:dark_oak_planks_roundel#inventory: java.io.FileNotFoundException: aseoha:models/item/dark_oak_planks_roundel.json
-[18:42:19] [Worker-Main-11/WARN] (Minecraft) Unable to load model: 'aseoha:copper_block_roundel#inventory' referenced from: aseoha:copper_block_roundel#inventory: java.io.FileNotFoundException: aseoha:models/item/copper_block_roundel.json
-[18:42:19] [Worker-Main-11/WARN] (Minecraft) Unable to load model: 'aseoha:exposed_copper_roundel#inventory' referenced from: aseoha:exposed_copper_roundel#inventory: java.io.FileNotFoundException: aseoha:models/item/exposed_copper_roundel.json
-[18:42:19] [Worker-Main-11/WARN] (Minecraft) Unable to load model: 'aseoha:gray_wool_roundel#inventory' referenced from: aseoha:gray_wool_roundel#inventory: java.io.FileNotFoundException: aseoha:models/item/gray_wool_roundel.json
-[18:42:19] [Worker-Main-11/WARN] (Minecraft) Unable to load model: 'aseoha:deepslate_roundel#inventory' referenced from: aseoha:deepslate_roundel#inventory: java.io.FileNotFoundException: aseoha:models/item/deepslate_roundel.json
-[18:42:19] [Worker-Main-11/WARN] (Minecraft) Unable to load model: 'aseoha:green_concrete_roundel#inventory' referenced from: aseoha:green_concrete_roundel#inventory: java.io.FileNotFoundException: aseoha:models/item/green_concrete_roundel.json
-[18:42:19] [Worker-Main-11/WARN] (Minecraft) Unable to load model: 'aseoha:brown_wool_roundel#inventory' referenced from: aseoha:brown_wool_roundel#inventory: java.io.FileNotFoundException: aseoha:models/item/brown_wool_roundel.json
-[18:42:19] [Worker-Main-11/WARN] (Minecraft) Unable to load model: 'aseoha:exposed_cut_copper_roundel#inventory' referenced from: aseoha:exposed_cut_copper_roundel#inventory: java.io.FileNotFoundException: aseoha:models/item/exposed_cut_copper_roundel.json
-[18:42:19] [Worker-Main-11/WARN] (Minecraft) Unable to load model: 'aseoha:latinum_elytra#inventory' referenced from: aseoha:latinum_elytra#inventory: java.io.FileNotFoundException: aseoha:models/item/latinum_elytra.json
-[18:42:19] [Worker-Main-11/WARN] (Minecraft) Unable to load model: 'aseoha:cobblestone_roundel#inventory' referenced from: aseoha:cobblestone_roundel#inventory: java.io.FileNotFoundException: aseoha:models/item/cobblestone_roundel.json
-[18:42:19] [Worker-Main-11/WARN] (Minecraft) Unable to load model: 'aseoha:brown_concrete_roundel#inventory' referenced from: aseoha:brown_concrete_roundel#inventory: java.io.FileNotFoundException: aseoha:models/item/brown_concrete_roundel.json
-[18:42:19] [Worker-Main-11/WARN] (Minecraft) Unable to load model: 'aseoha:green_wool_roundel#inventory' referenced from: aseoha:green_wool_roundel#inventory: java.io.FileNotFoundException: aseoha:models/item/green_wool_roundel.json
-[18:42:19] [Worker-Main-11/WARN] (Minecraft) Unable to load model: 'aseoha:cobbled_deepslate_roundel#inventory' referenced from: aseoha:cobbled_deepslate_roundel#inventory: java.io.FileNotFoundException: aseoha:models/item/cobbled_deepslate_roundel.json
-[18:42:19] [Worker-Main-11/WARN] (Minecraft) Unable to load model: 'aseoha:crimson_planks_roundel#inventory' referenced from: aseoha:crimson_planks_roundel#inventory: java.io.FileNotFoundException: aseoha:models/item/crimson_planks_roundel.json
-[18:42:19] [Worker-Main-11/WARN] (Minecraft) Unable to load model: 'aseoha:blue_crystal#inventory' referenced from: aseoha:blue_crystal#inventory: java.io.FileNotFoundException: aseoha:models/item/blue_crystal.json
-[18:42:20] [Worker-Main-11/WARN] (Minecraft) Missing textures in model ait:engine_core_block#waterlogged=true:
+[17:56:45] [Worker-Main-5/WARN] (Minecraft) Unable to load model: 'ait:block/button_control_block' referenced from: ait:button_control_block#facing=north: java.io.FileNotFoundException: ait:models/block/button_control_block.json
+[17:56:45] [Worker-Main-5/WARN] (Minecraft) Exception loading blockstate definition: 'aseoha:blockstates/brown_wool_roundel.json' missing model for variant: 'aseoha:brown_wool_roundel#'
+[17:56:45] [Worker-Main-5/WARN] (Minecraft) Exception loading blockstate definition: 'aseoha:blockstates/brown_concrete_roundel.json' missing model for variant: 'aseoha:brown_concrete_roundel#'
+[17:56:45] [Worker-Main-5/WARN] (Minecraft) Exception loading blockstate definition: 'aseoha:blockstates/cherry_planks_roundel.json' missing model for variant: 'aseoha:cherry_planks_roundel#'
+[17:56:45] [Worker-Main-5/WARN] (Minecraft) Exception loading blockstate definition: 'aseoha:blockstates/cobbled_deepslate_roundel.json' missing model for variant: 'aseoha:cobbled_deepslate_roundel#'
+[17:56:45] [Worker-Main-5/WARN] (Minecraft) Exception loading blockstate definition: 'aseoha:blockstates/cobblestone_roundel.json' missing model for variant: 'aseoha:cobblestone_roundel#'
+[17:56:45] [Worker-Main-5/WARN] (Minecraft) Exception loading blockstate definition: 'aseoha:blockstates/copper_block_roundel.json' missing model for variant: 'aseoha:copper_block_roundel#'
+[17:56:45] [Worker-Main-5/WARN] (Minecraft) Exception loading blockstate definition: 'aseoha:blockstates/crimson_planks_roundel.json' missing model for variant: 'aseoha:crimson_planks_roundel#'
+[17:56:45] [Worker-Main-5/WARN] (Minecraft) Exception loading blockstate definition: 'aseoha:blockstates/cut_copper_roundel.json' missing model for variant: 'aseoha:cut_copper_roundel#'
+[17:56:45] [Worker-Main-5/WARN] (Minecraft) Exception loading blockstate definition: 'aseoha:blockstates/cyan_concrete_roundel.json' missing model for variant: 'aseoha:cyan_concrete_roundel#'
+[17:56:45] [Worker-Main-5/WARN] (Minecraft) Exception loading blockstate definition: 'aseoha:blockstates/cyan_wool_roundel.json' missing model for variant: 'aseoha:cyan_wool_roundel#'
+[17:56:45] [Worker-Main-5/WARN] (Minecraft) Exception loading blockstate definition: 'aseoha:blockstates/dark_oak_planks_roundel.json' missing model for variant: 'aseoha:dark_oak_planks_roundel#'
+[17:56:45] [Worker-Main-5/WARN] (Minecraft) Exception loading blockstate definition: 'aseoha:blockstates/deepslate_roundel.json' missing model for variant: 'aseoha:deepslate_roundel#'
+[17:56:45] [Worker-Main-5/WARN] (Minecraft) Exception loading blockstate definition: 'aseoha:blockstates/exposed_copper_roundel.json' missing model for variant: 'aseoha:exposed_copper_roundel#'
+[17:56:45] [Worker-Main-5/WARN] (Minecraft) Exception loading blockstate definition: 'aseoha:blockstates/exposed_cut_copper_roundel.json' missing model for variant: 'aseoha:exposed_cut_copper_roundel#'
+[17:56:45] [Worker-Main-5/WARN] (Minecraft) Exception loading blockstate definition: 'aseoha:blockstates/gray_concrete_roundel.json' missing model for variant: 'aseoha:gray_concrete_roundel#'
+[17:56:45] [Worker-Main-5/WARN] (Minecraft) Exception loading blockstate definition: 'aseoha:blockstates/gray_wool_roundel.json' missing model for variant: 'aseoha:gray_wool_roundel#'
+[17:56:45] [Worker-Main-5/WARN] (Minecraft) Exception loading blockstate definition: 'aseoha:blockstates/green_concrete_roundel.json' missing model for variant: 'aseoha:green_concrete_roundel#'
+[17:56:45] [Worker-Main-5/WARN] (Minecraft) Exception loading blockstate definition: 'aseoha:blockstates/green_wool_roundel.json' missing model for variant: 'aseoha:green_wool_roundel#'
+[17:56:45] [Worker-Main-5/WARN] (Minecraft) Unable to load model: 'aseoha:block/roundel/pink_concrete_hex_roundel' referenced from: aseoha:pink_concrete_hex_roundel#facing=north: java.io.FileNotFoundException: aseoha:models/block/roundel/pink_concrete_hex_roundel.json
+[17:56:45] [Worker-Main-5/WARN] (Minecraft) Unable to load model: 'aseoha:cyan_wool_roundel#inventory' referenced from: aseoha:cyan_wool_roundel#inventory: java.io.FileNotFoundException: aseoha:models/item/cyan_wool_roundel.json
+[17:56:45] [Worker-Main-5/WARN] (Minecraft) Unable to load model: 'aseoha:cherry_planks_roundel#inventory' referenced from: aseoha:cherry_planks_roundel#inventory: java.io.FileNotFoundException: aseoha:models/item/cherry_planks_roundel.json
+[17:56:45] [Worker-Main-5/WARN] (Minecraft) Unable to load model: 'aseoha:cut_copper_roundel#inventory' referenced from: aseoha:cut_copper_roundel#inventory: java.io.FileNotFoundException: aseoha:models/item/cut_copper_roundel.json
+[17:56:45] [Worker-Main-5/WARN] (Minecraft) Unable to load model: 'aseoha:gray_concrete_roundel#inventory' referenced from: aseoha:gray_concrete_roundel#inventory: java.io.FileNotFoundException: aseoha:models/item/gray_concrete_roundel.json
+[17:56:45] [Worker-Main-5/WARN] (Minecraft) Unable to load model: 'aseoha:cyan_concrete_roundel#inventory' referenced from: aseoha:cyan_concrete_roundel#inventory: java.io.FileNotFoundException: aseoha:models/item/cyan_concrete_roundel.json
+[17:56:45] [Worker-Main-5/WARN] (Minecraft) Unable to load model: 'aseoha:dark_oak_planks_roundel#inventory' referenced from: aseoha:dark_oak_planks_roundel#inventory: java.io.FileNotFoundException: aseoha:models/item/dark_oak_planks_roundel.json
+[17:56:45] [Worker-Main-5/WARN] (Minecraft) Unable to load model: 'aseoha:copper_block_roundel#inventory' referenced from: aseoha:copper_block_roundel#inventory: java.io.FileNotFoundException: aseoha:models/item/copper_block_roundel.json
+[17:56:45] [Worker-Main-5/WARN] (Minecraft) Unable to load model: 'aseoha:exposed_copper_roundel#inventory' referenced from: aseoha:exposed_copper_roundel#inventory: java.io.FileNotFoundException: aseoha:models/item/exposed_copper_roundel.json
+[17:56:45] [Worker-Main-5/WARN] (Minecraft) Unable to load model: 'aseoha:gray_wool_roundel#inventory' referenced from: aseoha:gray_wool_roundel#inventory: java.io.FileNotFoundException: aseoha:models/item/gray_wool_roundel.json
+[17:56:45] [Worker-Main-5/WARN] (Minecraft) Unable to load model: 'aseoha:deepslate_roundel#inventory' referenced from: aseoha:deepslate_roundel#inventory: java.io.FileNotFoundException: aseoha:models/item/deepslate_roundel.json
+[17:56:45] [Worker-Main-5/WARN] (Minecraft) Unable to load model: 'aseoha:green_concrete_roundel#inventory' referenced from: aseoha:green_concrete_roundel#inventory: java.io.FileNotFoundException: aseoha:models/item/green_concrete_roundel.json
+[17:56:45] [Worker-Main-5/WARN] (Minecraft) Unable to load model: 'aseoha:brown_wool_roundel#inventory' referenced from: aseoha:brown_wool_roundel#inventory: java.io.FileNotFoundException: aseoha:models/item/brown_wool_roundel.json
+[17:56:45] [Worker-Main-5/WARN] (Minecraft) Unable to load model: 'aseoha:exposed_cut_copper_roundel#inventory' referenced from: aseoha:exposed_cut_copper_roundel#inventory: java.io.FileNotFoundException: aseoha:models/item/exposed_cut_copper_roundel.json
+[17:56:45] [Worker-Main-5/WARN] (Minecraft) Unable to load model: 'aseoha:latinum_elytra#inventory' referenced from: aseoha:latinum_elytra#inventory: java.io.FileNotFoundException: aseoha:models/item/latinum_elytra.json
+[17:56:45] [Worker-Main-5/WARN] (Minecraft) Unable to load model: 'aseoha:cobblestone_roundel#inventory' referenced from: aseoha:cobblestone_roundel#inventory: java.io.FileNotFoundException: aseoha:models/item/cobblestone_roundel.json
+[17:56:45] [Worker-Main-5/WARN] (Minecraft) Unable to load model: 'aseoha:brown_concrete_roundel#inventory' referenced from: aseoha:brown_concrete_roundel#inventory: java.io.FileNotFoundException: aseoha:models/item/brown_concrete_roundel.json
+[17:56:45] [Worker-Main-5/WARN] (Minecraft) Unable to load model: 'aseoha:green_wool_roundel#inventory' referenced from: aseoha:green_wool_roundel#inventory: java.io.FileNotFoundException: aseoha:models/item/green_wool_roundel.json
+[17:56:45] [Worker-Main-5/WARN] (Minecraft) Unable to load model: 'aseoha:cobbled_deepslate_roundel#inventory' referenced from: aseoha:cobbled_deepslate_roundel#inventory: java.io.FileNotFoundException: aseoha:models/item/cobbled_deepslate_roundel.json
+[17:56:45] [Worker-Main-5/WARN] (Minecraft) Unable to load model: 'aseoha:crimson_planks_roundel#inventory' referenced from: aseoha:crimson_planks_roundel#inventory: java.io.FileNotFoundException: aseoha:models/item/crimson_planks_roundel.json
+[17:56:45] [Worker-Main-5/WARN] (Minecraft) Unable to load model: 'aseoha:blue_crystal#inventory' referenced from: aseoha:blue_crystal#inventory: java.io.FileNotFoundException: aseoha:models/item/blue_crystal.json
+[17:56:46] [Worker-Main-9/WARN] (Minecraft) Missing textures in model ait:engine_core_block#waterlogged=true:
     minecraft:textures/atlas/blocks.png:minecraft:block/barrier
-[18:42:20] [Worker-Main-11/WARN] (Minecraft) Missing textures in model aseoha:gray_concrete_hex_roundel#facing=west:
+[17:56:46] [Worker-Main-9/WARN] (Minecraft) Missing textures in model aseoha:gray_concrete_hex_roundel#facing=west:
     minecraft:textures/atlas/blocks.png:aseoha:block/roundel/hexagonals/grey_concrete_hex_roundel
-[18:42:20] [Worker-Main-11/WARN] (Minecraft) Missing textures in model aseoha:light_grey_concrete_hex_roundel#facing=north:
+[17:56:46] [Worker-Main-9/WARN] (Minecraft) Missing textures in model aseoha:light_grey_concrete_hex_roundel#facing=north:
     minecraft:textures/atlas/blocks.png:aseoha:block/roundel/hexagonals/light_grey_concrete_hex_roundel
-[18:42:20] [Worker-Main-11/WARN] (Minecraft) Missing textures in model ait:console_generator#facing=south:
+[17:56:46] [Worker-Main-9/WARN] (Minecraft) Missing textures in model ait:console_generator#facing=south:
     minecraft:textures/atlas/blocks.png:minecraft:blockentities/console_generator/console_generator
-[18:42:20] [Worker-Main-11/WARN] (Minecraft) Missing textures in model aseoha:gray_concrete_hex_roundel#facing=east:
+[17:56:46] [Worker-Main-9/WARN] (Minecraft) Missing textures in model aseoha:gray_concrete_hex_roundel#facing=east:
     minecraft:textures/atlas/blocks.png:aseoha:block/roundel/hexagonals/grey_concrete_hex_roundel
-[18:42:20] [Worker-Main-11/WARN] (Minecraft) Missing textures in model ait:artron_collector_block#facing=west:
+[17:56:46] [Worker-Main-9/WARN] (Minecraft) Missing textures in model ait:artron_collector_block#facing=west:
     minecraft:textures/atlas/blocks.png:minecraft:blockentities/machines/artron_collector
-[18:42:20] [Worker-Main-11/WARN] (Minecraft) Missing textures in model aseoha:gray_concrete_hex_roundel#facing=north:
+[17:56:46] [Worker-Main-9/WARN] (Minecraft) Missing textures in model aseoha:gray_concrete_hex_roundel#facing=north:
     minecraft:textures/atlas/blocks.png:aseoha:block/roundel/hexagonals/grey_concrete_hex_roundel
-[18:42:20] [Worker-Main-11/WARN] (Minecraft) Missing textures in model ait:artron_collector_block#facing=north:
+[17:56:46] [Worker-Main-9/WARN] (Minecraft) Missing textures in model ait:artron_collector_block#facing=north:
     minecraft:textures/atlas/blocks.png:minecraft:blockentities/machines/artron_collector
-[18:42:20] [Worker-Main-11/WARN] (Minecraft) Missing textures in model ait:artron_collector_block#facing=east:
+[17:56:46] [Worker-Main-9/WARN] (Minecraft) Missing textures in model ait:artron_collector_block#facing=east:
     minecraft:textures/atlas/blocks.png:minecraft:blockentities/machines/artron_collector
-[18:42:20] [Worker-Main-11/WARN] (Minecraft) Missing textures in model ait:artron_collector_block#facing=south:
+[17:56:46] [Worker-Main-9/WARN] (Minecraft) Missing textures in model ait:artron_collector_block#facing=south:
     minecraft:textures/atlas/blocks.png:minecraft:blockentities/machines/artron_collector
-[18:42:20] [Worker-Main-11/WARN] (Minecraft) Missing textures in model aseoha:light_grey_concrete_hex_roundel#facing=south:
+[17:56:46] [Worker-Main-9/WARN] (Minecraft) Missing textures in model aseoha:light_grey_concrete_hex_roundel#facing=south:
     minecraft:textures/atlas/blocks.png:aseoha:block/roundel/hexagonals/light_grey_concrete_hex_roundel
-[18:42:20] [Worker-Main-11/WARN] (Minecraft) Missing textures in model aseoha:light_grey_concrete_hex_roundel#facing=east:
+[17:56:46] [Worker-Main-9/WARN] (Minecraft) Missing textures in model aseoha:light_grey_concrete_hex_roundel#facing=east:
     minecraft:textures/atlas/blocks.png:aseoha:block/roundel/hexagonals/light_grey_concrete_hex_roundel
-[18:42:20] [Worker-Main-11/WARN] (Minecraft) Missing textures in model aseoha:gray_concrete_hex_roundel#facing=south:
+[17:56:46] [Worker-Main-9/WARN] (Minecraft) Missing textures in model aseoha:gray_concrete_hex_roundel#facing=south:
     minecraft:textures/atlas/blocks.png:aseoha:block/roundel/hexagonals/grey_concrete_hex_roundel
-[18:42:20] [Worker-Main-11/WARN] (Minecraft) Missing textures in model aseoha:light_grey_concrete_hex_roundel#facing=west:
+[17:56:46] [Worker-Main-9/WARN] (Minecraft) Missing textures in model aseoha:light_grey_concrete_hex_roundel#facing=west:
     minecraft:textures/atlas/blocks.png:aseoha:block/roundel/hexagonals/light_grey_concrete_hex_roundel
-[18:42:20] [Render thread/WARN] (Minecraft) Missing sound for event: minecraft:item.goat_horn.play
-[18:42:20] [Render thread/WARN] (Minecraft) Missing sound for event: minecraft:entity.goat.screaming.horn_break
-[18:42:20] [Render thread/WARN] (Minecraft) Missing sound for event: ait:hop_demat
-[18:42:20] [Render thread/WARN] (Minecraft) Missing sound for event: ait:emerg_mat
-[18:42:20] [Render thread/INFO] (Minecraft) OpenAL initialized on device OpenAL Soft on Headphones (Realtek(R) Audio)
-[18:42:20] [Render thread/INFO] (Minecraft) Sound engine started
-[18:42:20] [Render thread/INFO] (Minecraft) Created: 2048x1024x0 minecraft:textures/atlas/blocks.png-atlas
-[18:42:20] [Render thread/INFO] (Minecraft) Created: 256x256x4 minecraft:textures/atlas/signs.png-atlas
-[18:42:20] [Render thread/INFO] (Minecraft) Created: 512x512x4 minecraft:textures/atlas/banner_patterns.png-atlas
-[18:42:20] [Render thread/INFO] (Minecraft) Created: 512x512x4 minecraft:textures/atlas/shield_patterns.png-atlas
-[18:42:20] [Render thread/INFO] (Minecraft) Created: 1024x1024x4 minecraft:textures/atlas/armor_trims.png-atlas
-[18:42:20] [Render thread/INFO] (Minecraft) Created: 256x256x4 minecraft:textures/atlas/chest.png-atlas
-[18:42:20] [Render thread/INFO] (Minecraft) Created: 128x64x4 minecraft:textures/atlas/decorated_pot.png-atlas
-[18:42:20] [Render thread/INFO] (Minecraft) Created: 512x256x4 minecraft:textures/atlas/shulker_boxes.png-atlas
-[18:42:21] [Render thread/INFO] (Minecraft) Created: 512x256x4 minecraft:textures/atlas/beds.png-atlas
-[18:42:21] [Render thread/WARN] (Minecraft) Shader rendertype_entity_translucent_emissive could not find sampler named Sampler2 in the specified shader program.
-[18:42:21] [Render thread/INFO] (Minecraft) Created: 256x256x0 minecraft:textures/atlas/particles.png-atlas
-[18:42:21] [Render thread/INFO] (Minecraft) Created: 256x256x0 minecraft:textures/atlas/paintings.png-atlas
-[18:42:21] [Render thread/INFO] (Minecraft) Created: 128x128x0 minecraft:textures/atlas/mob_effects.png-atlas
-[18:42:32] [Render thread/ERROR] (Minecraft) Parsing error loading recipe aseoha:smithing_table/latinum_shovel
+[17:56:46] [Render thread/WARN] (Minecraft) Missing sound for event: minecraft:item.goat_horn.play
+[17:56:46] [Render thread/WARN] (Minecraft) Missing sound for event: minecraft:entity.goat.screaming.horn_break
+[17:56:46] [Render thread/WARN] (Minecraft) Missing sound for event: ait:hop_demat
+[17:56:46] [Render thread/WARN] (Minecraft) Missing sound for event: ait:emerg_mat
+[17:56:46] [Render thread/INFO] (Minecraft) OpenAL initialized on device OpenAL Soft on Headphones (Realtek(R) Audio)
+[17:56:46] [Render thread/INFO] (Minecraft) Sound engine started
+[17:56:46] [Render thread/INFO] (Minecraft) Created: 2048x1024x0 minecraft:textures/atlas/blocks.png-atlas
+[17:56:46] [Render thread/INFO] (Minecraft) Created: 256x256x4 minecraft:textures/atlas/signs.png-atlas
+[17:56:46] [Render thread/INFO] (Minecraft) Created: 512x512x4 minecraft:textures/atlas/banner_patterns.png-atlas
+[17:56:46] [Render thread/INFO] (Minecraft) Created: 512x512x4 minecraft:textures/atlas/shield_patterns.png-atlas
+[17:56:46] [Render thread/INFO] (Minecraft) Created: 1024x1024x4 minecraft:textures/atlas/armor_trims.png-atlas
+[17:56:47] [Render thread/INFO] (Minecraft) Created: 256x256x4 minecraft:textures/atlas/chest.png-atlas
+[17:56:47] [Render thread/INFO] (Minecraft) Created: 128x64x4 minecraft:textures/atlas/decorated_pot.png-atlas
+[17:56:47] [Render thread/INFO] (Minecraft) Created: 512x256x4 minecraft:textures/atlas/beds.png-atlas
+[17:56:47] [Render thread/INFO] (Minecraft) Created: 512x256x4 minecraft:textures/atlas/shulker_boxes.png-atlas
+[17:56:47] [Render thread/WARN] (Minecraft) Shader rendertype_entity_translucent_emissive could not find sampler named Sampler2 in the specified shader program.
+[17:56:47] [Render thread/INFO] (Minecraft) Created: 256x256x0 minecraft:textures/atlas/particles.png-atlas
+[17:56:47] [Render thread/INFO] (Minecraft) Created: 256x256x0 minecraft:textures/atlas/paintings.png-atlas
+[17:56:47] [Render thread/INFO] (Minecraft) Created: 128x128x0 minecraft:textures/atlas/mob_effects.png-atlas
+[17:56:58] [Render thread/ERROR] (Minecraft) Parsing error loading recipe aseoha:smithing_table/latinum_shovel
 com.google.gson.JsonSyntaxException: Unknown item 'aseoha:latinum_upgrade'
 	at net.minecraft.recipe.ShapedRecipe.method_17878(ShapedRecipe.java:272) ~[minecraft-merged-8685b3a49c-1.20.1-net.fabricmc.yarn.1_20_1.1.20.1+build.10-v2.jar:?]
 	at java.util.Optional.orElseThrow(Optional.java:403) ~[?:?]
@@ -306,7 +307,7 @@ com.google.gson.JsonSyntaxException: Unknown item 'aseoha:latinum_upgrade'
 	at net.fabricmc.loader.impl.launch.knot.Knot.launch(Knot.java:74) ~[fabric-loader-0.16.0.jar:?]
 	at net.fabricmc.loader.impl.launch.knot.KnotClient.main(KnotClient.java:23) ~[fabric-loader-0.16.0.jar:?]
 	at net.fabricmc.devlaunchinjector.Main.main(Main.java:86) ~[dev-launch-injector-0.2.1+build.8.jar:?]
-[18:42:32] [Render thread/ERROR] (Minecraft) Parsing error loading recipe aseoha:smithing_table/latinum_hoe
+[17:56:58] [Render thread/ERROR] (Minecraft) Parsing error loading recipe aseoha:smithing_table/latinum_hoe
 com.google.gson.JsonSyntaxException: Unknown item 'aseoha:latinum_upgrade'
 	at net.minecraft.recipe.ShapedRecipe.method_17878(ShapedRecipe.java:272) ~[minecraft-merged-8685b3a49c-1.20.1-net.fabricmc.yarn.1_20_1.1.20.1+build.10-v2.jar:?]
 	at java.util.Optional.orElseThrow(Optional.java:403) ~[?:?]
@@ -350,7 +351,7 @@ com.google.gson.JsonSyntaxException: Unknown item 'aseoha:latinum_upgrade'
 	at net.fabricmc.loader.impl.launch.knot.Knot.launch(Knot.java:74) ~[fabric-loader-0.16.0.jar:?]
 	at net.fabricmc.loader.impl.launch.knot.KnotClient.main(KnotClient.java:23) ~[fabric-loader-0.16.0.jar:?]
 	at net.fabricmc.devlaunchinjector.Main.main(Main.java:86) ~[dev-launch-injector-0.2.1+build.8.jar:?]
-[18:42:32] [Render thread/ERROR] (Minecraft) Parsing error loading recipe aseoha:smithing_table/latinum_axe
+[17:56:58] [Render thread/ERROR] (Minecraft) Parsing error loading recipe aseoha:smithing_table/latinum_axe
 com.google.gson.JsonSyntaxException: Unknown item 'aseoha:latinum_upgrade'
 	at net.minecraft.recipe.ShapedRecipe.method_17878(ShapedRecipe.java:272) ~[minecraft-merged-8685b3a49c-1.20.1-net.fabricmc.yarn.1_20_1.1.20.1+build.10-v2.jar:?]
 	at java.util.Optional.orElseThrow(Optional.java:403) ~[?:?]
@@ -394,7 +395,7 @@ com.google.gson.JsonSyntaxException: Unknown item 'aseoha:latinum_upgrade'
 	at net.fabricmc.loader.impl.launch.knot.Knot.launch(Knot.java:74) ~[fabric-loader-0.16.0.jar:?]
 	at net.fabricmc.loader.impl.launch.knot.KnotClient.main(KnotClient.java:23) ~[fabric-loader-0.16.0.jar:?]
 	at net.fabricmc.devlaunchinjector.Main.main(Main.java:86) ~[dev-launch-injector-0.2.1+build.8.jar:?]
-[18:42:32] [Render thread/ERROR] (Minecraft) Parsing error loading recipe aseoha:smithing_table/latinum_sword
+[17:56:58] [Render thread/ERROR] (Minecraft) Parsing error loading recipe aseoha:smithing_table/latinum_sword
 com.google.gson.JsonSyntaxException: Unknown item 'aseoha:latinum_upgrade'
 	at net.minecraft.recipe.ShapedRecipe.method_17878(ShapedRecipe.java:272) ~[minecraft-merged-8685b3a49c-1.20.1-net.fabricmc.yarn.1_20_1.1.20.1+build.10-v2.jar:?]
 	at java.util.Optional.orElseThrow(Optional.java:403) ~[?:?]
@@ -438,7 +439,7 @@ com.google.gson.JsonSyntaxException: Unknown item 'aseoha:latinum_upgrade'
 	at net.fabricmc.loader.impl.launch.knot.Knot.launch(Knot.java:74) ~[fabric-loader-0.16.0.jar:?]
 	at net.fabricmc.loader.impl.launch.knot.KnotClient.main(KnotClient.java:23) ~[fabric-loader-0.16.0.jar:?]
 	at net.fabricmc.devlaunchinjector.Main.main(Main.java:86) ~[dev-launch-injector-0.2.1+build.8.jar:?]
-[18:42:32] [Render thread/ERROR] (Minecraft) Parsing error loading recipe aseoha:smithing_table/latinum_pick
+[17:56:58] [Render thread/ERROR] (Minecraft) Parsing error loading recipe aseoha:smithing_table/latinum_pick
 com.google.gson.JsonSyntaxException: Unknown item 'aseoha:latinum_upgrade'
 	at net.minecraft.recipe.ShapedRecipe.method_17878(ShapedRecipe.java:272) ~[minecraft-merged-8685b3a49c-1.20.1-net.fabricmc.yarn.1_20_1.1.20.1+build.10-v2.jar:?]
 	at java.util.Optional.orElseThrow(Optional.java:403) ~[?:?]
@@ -482,259 +483,351 @@ com.google.gson.JsonSyntaxException: Unknown item 'aseoha:latinum_upgrade'
 	at net.fabricmc.loader.impl.launch.knot.Knot.launch(Knot.java:74) ~[fabric-loader-0.16.0.jar:?]
 	at net.fabricmc.loader.impl.launch.knot.KnotClient.main(KnotClient.java:23) ~[fabric-loader-0.16.0.jar:?]
 	at net.fabricmc.devlaunchinjector.Main.main(Main.java:86) ~[dev-launch-injector-0.2.1+build.8.jar:?]
-[18:42:32] [Render thread/INFO] (Minecraft) Loaded 7 recipes
-[18:42:32] [Render thread/ERROR] (Minecraft) Parsing error loading custom advancement aseoha:foodmachine: Expected item to be an item, was unknown string 'aseoha:foodmachine_old'
-[18:42:32] [Render thread/ERROR] (Minecraft) Parsing error loading custom advancement aseoha:aseoha: Expected item to be an item, was unknown string 'aseoha:golden_potato'
-[18:42:32] [Render thread/ERROR] (Minecraft) Parsing error loading custom advancement aseoha:goldenpotato: Expected item to be an item, was unknown string 'aseoha:golden_potato'
-[18:42:32] [Render thread/ERROR] (Minecraft) Couldn't load advancement aseoha:skarofirstentry: Task Advancement{parentId=aseoha:aseoha, display=net.minecraft.advancement.AdvancementDisplay@211a8f9d, rewards=AdvancementRewards{experience=0, loot=[], recipes=[], function=net.minecraft.server.function.CommandFunction$LazyContainer@248baee0}, criteria={skarofirstentry=net.minecraft.advancement.AdvancementCriterion@252e9183}, requirements=[[skarofirstentry]], sends_telemetry_event=false}
-[18:42:32] [Render thread/ERROR] (Minecraft) Couldn't load advancement aseoha:gallifreyfirstentry: Task Advancement{parentId=aseoha:aseoha, display=net.minecraft.advancement.AdvancementDisplay@697c88ac, rewards=AdvancementRewards{experience=0, loot=[], recipes=[], function=net.minecraft.server.function.CommandFunction$LazyContainer@248baee0}, criteria={gallifreyfirstentry=net.minecraft.advancement.AdvancementCriterion@388fae89}, requirements=[[gallifreyfirstentry]], sends_telemetry_event=false}
-[18:42:32] [Render thread/ERROR] (Minecraft) Couldn't load advancement aseoha:trenzalorefirstentry: Task Advancement{parentId=aseoha:aseoha, display=net.minecraft.advancement.AdvancementDisplay@6f2a3a75, rewards=AdvancementRewards{experience=0, loot=[], recipes=[], function=net.minecraft.server.function.CommandFunction$LazyContainer@248baee0}, criteria={trenzalorefirstentry=net.minecraft.advancement.AdvancementCriterion@2a942aff}, requirements=[[trenzalorefirstentry]], sends_telemetry_event=false}
-[18:42:32] [Render thread/INFO] (Minecraft) Loaded 1309 advancements
-[18:42:32] [Render thread/INFO] (ait) Loaded datapack ait:sonic ait:copper
-[18:42:32] [Render thread/INFO] (ait) Loaded datapack ait:sonic ait:coral
-[18:42:32] [Render thread/INFO] (ait) Loaded datapack ait:sonic ait:crystalline
-[18:42:32] [Render thread/INFO] (ait) Loaded datapack ait:sonic ait:fob
-[18:42:32] [Render thread/INFO] (ait) Loaded datapack ait:sonic ait:mechanical
-[18:42:32] [Render thread/INFO] (ait) Loaded datapack ait:sonic ait:prime
-[18:42:32] [Render thread/INFO] (ait) Loaded datapack ait:sonic ait:renaissance
-[18:42:32] [Render thread/INFO] (ait) Loaded datapack ait:sonic ait:song
-[18:42:32] [Render thread/INFO] (ait) Loaded datapack ait:desktop ait:alnico
-[18:42:32] [Render thread/INFO] (ait) Loaded datapack ait:desktop ait:botanist
-[18:42:32] [Render thread/INFO] (ait) Loaded datapack ait:desktop ait:cave
-[18:42:32] [Render thread/INFO] (ait) Loaded datapack ait:desktop ait:copper
-[18:42:32] [Render thread/INFO] (ait) Loaded datapack ait:desktop aseoha:coppercoral
-[18:42:32] [Render thread/INFO] (ait) Loaded datapack ait:desktop ait:coral
-[18:42:32] [Render thread/INFO] (ait) Loaded datapack ait:desktop ait:crystalline
-[18:42:32] [Render thread/INFO] (ait) Loaded datapack ait:desktop aseoha:darkwardian
-[18:42:32] [Render thread/INFO] (ait) Loaded datapack ait:desktop ait:deco
-[18:42:32] [Render thread/INFO] (ait) Loaded datapack ait:desktop ait:hourglass
-[18:42:32] [Render thread/INFO] (ait) Loaded datapack ait:desktop ait:meridian
-[18:42:32] [Render thread/INFO] (ait) Loaded datapack ait:desktop ait:newbury
-[18:42:32] [Render thread/INFO] (ait) Loaded datapack ait:desktop ait:office
-[18:42:32] [Render thread/INFO] (ait) Loaded datapack ait:desktop aseoha:paradox
-[18:42:32] [Render thread/INFO] (ait) Loaded datapack ait:desktop ait:pristine
-[18:42:32] [Render thread/INFO] (ait) Loaded datapack ait:desktop ait:regal
-[18:42:32] [Render thread/INFO] (ait) Loaded datapack ait:desktop ait:timeless
-[18:42:32] [Render thread/INFO] (ait) Loaded datapack ait:desktop ait:tokamak
-[18:42:32] [Render thread/INFO] (ait) Loaded datapack ait:desktop ait:toyota
-[18:42:32] [Render thread/INFO] (ait) Loaded datapack ait:desktop aseoha:trenzaloremissy
-[18:42:32] [Render thread/INFO] (ait) Loaded datapack ait:desktop ait:type_40
-[18:42:32] [Render thread/INFO] (ait) Loaded datapack ait:desktop ait:victorian
-[18:42:32] [Render thread/INFO] (ait) Loaded datapack ait:desktop ait:vintage
-[18:42:32] [Render thread/INFO] (ait) Loaded datapack ait:desktop ait:war
-[18:42:32] [Render thread/INFO] (ait) Loaded datapack ait:machine_recipe ait:demat_circuit
-[18:42:33] [Render thread/INFO] (ait) Loaded datapack ait:exterior aseoha:11
-[18:42:33] [Render thread/INFO] (ait) Loaded datapack ait:exterior aseoha:11alt
-[18:42:33] [Render thread/INFO] (ait) Loaded datapack ait:exterior aseoha:12
-[18:42:33] [Render thread/INFO] (ait) Loaded datapack ait:exterior aseoha:12alt
-[18:42:33] [Render thread/INFO] (ait) Loaded datapack ait:exterior aseoha:13h
-[18:42:33] [Render thread/INFO] (ait) Loaded datapack ait:exterior aseoha:2
-[18:42:33] [Render thread/INFO] (ait) Loaded datapack ait:exterior aseoha:3
-[18:42:33] [Render thread/INFO] (ait) Loaded datapack ait:exterior aseoha:4
-[18:42:33] [Render thread/INFO] (ait) Loaded datapack ait:exterior aseoha:8
-[18:42:33] [Render thread/INFO] (ait) Loaded datapack ait:exterior aseoha:aisat
-[18:42:33] [Render thread/INFO] (ait) Loaded datapack ait:exterior aseoha:ambient
-[18:42:33] [Render thread/INFO] (ait) Loaded datapack ait:exterior aseoha:azure
-[18:42:33] [Render thread/INFO] (ait) Loaded datapack ait:exterior aseoha:bb8
-[18:42:33] [Render thread/INFO] (ait) Loaded datapack ait:exterior aseoha:billcipher
-[18:42:33] [Render thread/ERROR] (ait) Error decoding datapack exterior variant: DynamicException[No key emission in MapLike[{"id":"aseoha:burntcapsule","category":"ait:exterior/capsule","parent":"ait:exterior/capsule/default","texture":"aseoha:textures/exterior/burnt_default.png"}] Optional.empty]
-[18:42:33] [Render thread/INFO] (ait) Loaded datapack ait:exterior aseoha:cf
-[18:42:33] [Render thread/INFO] (ait) Loaded datapack ait:exterior aseoha:cmyk
-[18:42:33] [Render thread/INFO] (ait) Loaded datapack ait:exterior aseoha:comic
-[18:42:33] [Render thread/INFO] (ait) Loaded datapack ait:exterior aseoha:coralalt
-[18:42:33] [Render thread/INFO] (ait) Loaded datapack ait:exterior aseoha:edwardian
-[18:42:33] [Render thread/INFO] (ait) Loaded datapack ait:exterior aseoha:edwardianblu
-[18:42:33] [Render thread/INFO] (ait) Loaded datapack ait:exterior aseoha:glasgow
-[18:42:33] [Render thread/INFO] (ait) Loaded datapack ait:exterior aseoha:nate
-[18:42:33] [Render thread/INFO] (ait) Loaded datapack ait:exterior aseoha:synth
-[18:42:33] [Render thread/INFO] (ait) Loaded datapack ait:exterior aseoha:technicolour
-[18:42:33] [Render thread/INFO] (ait) Loaded datapack ait:exterior aseoha:tokacoral
-[18:42:33] [Render thread/INFO] (ait) Loaded datapack ait:exterior aseoha:toywardian
-[18:42:33] [Render thread/INFO] (ait) Loaded datapack ait:exterior aseoha:vintage
-[18:42:55] [Render thread/INFO] (BiomeModificationImpl) Applied 54 biome modifications to 54 of 73 new biomes in 52.60 ms
-[18:42:55] [Server thread/INFO] (Minecraft) Starting integrated minecraft server version 1.20.1
-[18:42:55] [Server thread/INFO] (Minecraft) Generating keypair
-[18:43:01] [Server thread/INFO] (Minecraft) Preparing start region for dimension minecraft:overworld
-[18:43:03] [Render thread/INFO] (Minecraft) Preparing spawn area: 0%
-[18:43:03] [Render thread/INFO] (Minecraft) Preparing spawn area: 0%
-[18:43:03] [Render thread/INFO] (Minecraft) Preparing spawn area: 0%
-[18:43:03] [Render thread/INFO] (Minecraft) Preparing spawn area: 0%
-[18:43:04] [Render thread/INFO] (Minecraft) Preparing spawn area: 0%
-[18:43:04] [Render thread/INFO] (Minecraft) Preparing spawn area: 0%
-[18:43:04] [Render thread/INFO] (Minecraft) Preparing spawn area: 0%
-[18:43:05] [Render thread/INFO] (Minecraft) Preparing spawn area: 0%
-[18:43:05] [Render thread/INFO] (Minecraft) Preparing spawn area: 0%
-[18:43:06] [Render thread/INFO] (Minecraft) Preparing spawn area: 0%
-[18:43:06] [Render thread/INFO] (Minecraft) Preparing spawn area: 1%
-[18:43:07] [Render thread/INFO] (Minecraft) Preparing spawn area: 2%
-[18:43:07] [Render thread/INFO] (Minecraft) Preparing spawn area: 3%
-[18:43:08] [Render thread/INFO] (Minecraft) Preparing spawn area: 3%
-[18:43:08] [Render thread/INFO] (Minecraft) Preparing spawn area: 4%
-[18:43:09] [Render thread/INFO] (Minecraft) Preparing spawn area: 5%
-[18:43:09] [Render thread/INFO] (Minecraft) Preparing spawn area: 6%
-[18:43:10] [Render thread/INFO] (Minecraft) Preparing spawn area: 8%
-[18:43:10] [Render thread/INFO] (Minecraft) Preparing spawn area: 9%
-[18:43:11] [Render thread/INFO] (Minecraft) Preparing spawn area: 10%
-[18:43:11] [Render thread/INFO] (Minecraft) Preparing spawn area: 11%
-[18:43:12] [Render thread/INFO] (Minecraft) Preparing spawn area: 13%
-[18:43:12] [Render thread/INFO] (Minecraft) Preparing spawn area: 15%
-[18:43:13] [Render thread/INFO] (Minecraft) Preparing spawn area: 17%
-[18:43:13] [Render thread/INFO] (Minecraft) Preparing spawn area: 17%
-[18:43:14] [Render thread/INFO] (Minecraft) Preparing spawn area: 20%
-[18:43:14] [Render thread/INFO] (Minecraft) Preparing spawn area: 22%
-[18:43:15] [Render thread/INFO] (Minecraft) Preparing spawn area: 24%
-[18:43:15] [Render thread/INFO] (Minecraft) Preparing spawn area: 25%
-[18:43:16] [Render thread/INFO] (Minecraft) Preparing spawn area: 27%
-[18:43:16] [Render thread/INFO] (Minecraft) Preparing spawn area: 30%
-[18:43:17] [Render thread/INFO] (Minecraft) Preparing spawn area: 32%
-[18:43:17] [Render thread/INFO] (Minecraft) Preparing spawn area: 34%
-[18:43:18] [Render thread/INFO] (Minecraft) Preparing spawn area: 37%
-[18:43:18] [Render thread/INFO] (Minecraft) Preparing spawn area: 39%
-[18:43:19] [Render thread/INFO] (Minecraft) Preparing spawn area: 42%
-[18:43:19] [Render thread/INFO] (Minecraft) Preparing spawn area: 43%
-[18:43:20] [Render thread/INFO] (Minecraft) Preparing spawn area: 48%
-[18:43:20] [Render thread/INFO] (Minecraft) Preparing spawn area: 49%
-[18:43:21] [Render thread/INFO] (Minecraft) Preparing spawn area: 51%
-[18:43:21] [Render thread/INFO] (Minecraft) Preparing spawn area: 56%
-[18:43:22] [Render thread/INFO] (Minecraft) Preparing spawn area: 58%
-[18:43:22] [Render thread/INFO] (Minecraft) Preparing spawn area: 61%
-[18:43:23] [Render thread/INFO] (Minecraft) Preparing spawn area: 63%
-[18:43:23] [Render thread/INFO] (Minecraft) Preparing spawn area: 65%
-[18:43:24] [Render thread/INFO] (Minecraft) Preparing spawn area: 67%
-[18:43:24] [Render thread/INFO] (Minecraft) Preparing spawn area: 68%
-[18:43:25] [Render thread/INFO] (Minecraft) Preparing spawn area: 70%
-[18:43:25] [Render thread/INFO] (Minecraft) Preparing spawn area: 72%
-[18:43:26] [Render thread/INFO] (Minecraft) Preparing spawn area: 75%
-[18:43:26] [Render thread/INFO] (Minecraft) Preparing spawn area: 76%
-[18:43:27] [Render thread/INFO] (Minecraft) Preparing spawn area: 79%
-[18:43:27] [Render thread/INFO] (Minecraft) Preparing spawn area: 83%
-[18:43:28] [Render thread/INFO] (Minecraft) Preparing spawn area: 84%
-[18:43:28] [Render thread/INFO] (Minecraft) Preparing spawn area: 87%
-[18:43:29] [Render thread/INFO] (Minecraft) Preparing spawn area: 88%
-[18:43:29] [Render thread/INFO] (Minecraft) Preparing spawn area: 90%
-[18:43:30] [Render thread/INFO] (Minecraft) Preparing spawn area: 92%
-[18:43:30] [Render thread/INFO] (Minecraft) Preparing spawn area: 95%
-[18:43:31] [Render thread/INFO] (Minecraft) Preparing spawn area: 97%
-[18:43:31] [Render thread/INFO] (Minecraft) Time elapsed: 29695 ms
-[18:43:31] [Server thread/ERROR] (ait) Failed to load rift chunk data!
-java.io.FileNotFoundException: C:\Users\nitew\IdeaProjects\AseohaAIT\run\saves\New World (2)\.ait_rift_chunk_data.json (The system cannot find the file specified)
+[17:56:58] [Render thread/INFO] (Minecraft) Loaded 7 recipes
+[17:56:58] [Render thread/ERROR] (Minecraft) Parsing error loading custom advancement aseoha:foodmachine: Expected item to be an item, was unknown string 'aseoha:foodmachine_old'
+[17:56:58] [Render thread/ERROR] (Minecraft) Parsing error loading custom advancement aseoha:aseoha: Expected item to be an item, was unknown string 'aseoha:golden_potato'
+[17:56:58] [Render thread/ERROR] (Minecraft) Parsing error loading custom advancement aseoha:goldenpotato: Expected item to be an item, was unknown string 'aseoha:golden_potato'
+[17:56:58] [Render thread/ERROR] (Minecraft) Couldn't load advancement aseoha:skarofirstentry: Task Advancement{parentId=aseoha:aseoha, display=net.minecraft.advancement.AdvancementDisplay@71769c47, rewards=AdvancementRewards{experience=0, loot=[], recipes=[], function=net.minecraft.server.function.CommandFunction$LazyContainer@241d942b}, criteria={skarofirstentry=net.minecraft.advancement.AdvancementCriterion@41518c1d}, requirements=[[skarofirstentry]], sends_telemetry_event=false}
+[17:56:58] [Render thread/ERROR] (Minecraft) Couldn't load advancement aseoha:gallifreyfirstentry: Task Advancement{parentId=aseoha:aseoha, display=net.minecraft.advancement.AdvancementDisplay@40f0721e, rewards=AdvancementRewards{experience=0, loot=[], recipes=[], function=net.minecraft.server.function.CommandFunction$LazyContainer@241d942b}, criteria={gallifreyfirstentry=net.minecraft.advancement.AdvancementCriterion@d8c3f79}, requirements=[[gallifreyfirstentry]], sends_telemetry_event=false}
+[17:56:58] [Render thread/ERROR] (Minecraft) Couldn't load advancement aseoha:trenzalorefirstentry: Task Advancement{parentId=aseoha:aseoha, display=net.minecraft.advancement.AdvancementDisplay@3a936909, rewards=AdvancementRewards{experience=0, loot=[], recipes=[], function=net.minecraft.server.function.CommandFunction$LazyContainer@241d942b}, criteria={trenzalorefirstentry=net.minecraft.advancement.AdvancementCriterion@5608fed5}, requirements=[[trenzalorefirstentry]], sends_telemetry_event=false}
+[17:56:58] [Render thread/INFO] (Minecraft) Loaded 1309 advancements
+[17:56:58] [Render thread/INFO] (ait) Loaded datapack ait:sonic aseoha:baker_alt
+[17:56:58] [Render thread/INFO] (ait) Loaded datapack ait:sonic aseoha:candy_cane_sonic
+[17:56:58] [Render thread/INFO] (ait) Loaded datapack ait:sonic aseoha:chicken_sonic
+[17:56:58] [Render thread/INFO] (ait) Loaded datapack ait:sonic ait:copper
+[17:56:58] [Render thread/INFO] (ait) Loaded datapack ait:sonic ait:coral
+[17:56:58] [Render thread/INFO] (ait) Loaded datapack ait:sonic ait:crystalline
+[17:56:58] [Render thread/INFO] (ait) Loaded datapack ait:sonic aseoha:do7
+[17:56:58] [Render thread/INFO] (ait) Loaded datapack ait:sonic aseoha:eighth_sonic
+[17:56:58] [Render thread/INFO] (ait) Loaded datapack ait:sonic ait:fob
+[17:56:58] [Render thread/INFO] (ait) Loaded datapack ait:sonic ait:mechanical
+[17:56:58] [Render thread/INFO] (ait) Loaded datapack ait:sonic aseoha:mk2
+[17:56:58] [Render thread/INFO] (ait) Loaded datapack ait:sonic aseoha:mk4
+[17:56:58] [Render thread/INFO] (ait) Loaded datapack ait:sonic aseoha:pertwee
+[17:56:58] [Render thread/INFO] (ait) Loaded datapack ait:sonic ait:prime
+[17:56:58] [Render thread/INFO] (ait) Loaded datapack ait:sonic ait:renaissance
+[17:56:58] [Render thread/INFO] (ait) Loaded datapack ait:sonic ait:song
+[17:56:58] [Render thread/INFO] (ait) Loaded datapack ait:sonic aseoha:sonic_coral1
+[17:56:58] [Render thread/INFO] (ait) Loaded datapack ait:sonic aseoha:sonic_coral2
+[17:56:58] [Render thread/INFO] (ait) Loaded datapack ait:sonic aseoha:sonic_coral3
+[17:56:58] [Render thread/INFO] (ait) Loaded datapack ait:sonic aseoha:sonic_coral4
+[17:56:58] [Render thread/INFO] (ait) Loaded datapack ait:sonic aseoha:sonic_coral5
+[17:56:58] [Render thread/INFO] (ait) Loaded datapack ait:sonic aseoha:sonic_fourteen
+[17:56:58] [Render thread/INFO] (ait) Loaded datapack ait:sonic aseoha:sonic_screwdriver
+[17:56:58] [Render thread/INFO] (ait) Loaded datapack ait:sonic aseoha:sonic_wiimote
+[17:56:58] [Render thread/INFO] (ait) Loaded datapack ait:sonic aseoha:war_sonic
+[17:56:58] [Render thread/INFO] (ait) Loaded datapack ait:desktop ait:alnico
+[17:56:58] [Render thread/INFO] (ait) Loaded datapack ait:desktop ait:botanist
+[17:56:58] [Render thread/INFO] (ait) Loaded datapack ait:desktop ait:cave
+[17:56:58] [Render thread/INFO] (ait) Loaded datapack ait:desktop ait:copper
+[17:56:58] [Render thread/INFO] (ait) Loaded datapack ait:desktop aseoha:coppercoral
+[17:56:58] [Render thread/INFO] (ait) Loaded datapack ait:desktop ait:coral
+[17:56:58] [Render thread/INFO] (ait) Loaded datapack ait:desktop ait:crystalline
+[17:56:58] [Render thread/INFO] (ait) Loaded datapack ait:desktop aseoha:darkwardian
+[17:56:58] [Render thread/INFO] (ait) Loaded datapack ait:desktop ait:deco
+[17:56:58] [Render thread/INFO] (ait) Loaded datapack ait:desktop ait:hourglass
+[17:56:58] [Render thread/INFO] (ait) Loaded datapack ait:desktop ait:meridian
+[17:56:58] [Render thread/INFO] (ait) Loaded datapack ait:desktop ait:newbury
+[17:56:58] [Render thread/INFO] (ait) Loaded datapack ait:desktop ait:office
+[17:56:58] [Render thread/INFO] (ait) Loaded datapack ait:desktop aseoha:paradox
+[17:56:58] [Render thread/INFO] (ait) Loaded datapack ait:desktop ait:pristine
+[17:56:58] [Render thread/INFO] (ait) Loaded datapack ait:desktop ait:regal
+[17:56:58] [Render thread/INFO] (ait) Loaded datapack ait:desktop ait:timeless
+[17:56:58] [Render thread/INFO] (ait) Loaded datapack ait:desktop ait:tokamak
+[17:56:58] [Render thread/INFO] (ait) Loaded datapack ait:desktop ait:toyota
+[17:56:58] [Render thread/INFO] (ait) Loaded datapack ait:desktop aseoha:trenzaloremissy
+[17:56:58] [Render thread/INFO] (ait) Loaded datapack ait:desktop ait:type_40
+[17:56:58] [Render thread/INFO] (ait) Loaded datapack ait:desktop ait:victorian
+[17:56:58] [Render thread/INFO] (ait) Loaded datapack ait:desktop ait:vintage
+[17:56:58] [Render thread/INFO] (ait) Loaded datapack ait:desktop ait:war
+[17:56:58] [Render thread/INFO] (ait) Loaded datapack ait:machine_recipe ait:demat_circuit
+[17:56:58] [Render thread/INFO] (ait) Loaded datapack ait:exterior aseoha:11
+[17:56:58] [Render thread/INFO] (ait) Loaded datapack ait:exterior aseoha:11alt
+[17:56:58] [Render thread/INFO] (ait) Loaded datapack ait:exterior aseoha:12
+[17:56:58] [Render thread/INFO] (ait) Loaded datapack ait:exterior aseoha:12alt
+[17:56:58] [Render thread/INFO] (ait) Loaded datapack ait:exterior aseoha:13h
+[17:56:58] [Render thread/INFO] (ait) Loaded datapack ait:exterior aseoha:2
+[17:56:58] [Render thread/INFO] (ait) Loaded datapack ait:exterior aseoha:3
+[17:56:58] [Render thread/INFO] (ait) Loaded datapack ait:exterior aseoha:4
+[17:56:58] [Render thread/INFO] (ait) Loaded datapack ait:exterior aseoha:8
+[17:56:58] [Render thread/INFO] (ait) Loaded datapack ait:exterior aseoha:aisat
+[17:56:58] [Render thread/INFO] (ait) Loaded datapack ait:exterior aseoha:ambient
+[17:56:58] [Render thread/INFO] (ait) Loaded datapack ait:exterior aseoha:azure
+[17:56:58] [Render thread/INFO] (ait) Loaded datapack ait:exterior aseoha:bb8
+[17:56:58] [Render thread/INFO] (ait) Loaded datapack ait:exterior aseoha:billcipher
+[17:56:58] [Render thread/ERROR] (ait) Error decoding datapack exterior variant: DynamicException[No key emission in MapLike[{"id":"aseoha:burntcapsule","category":"ait:exterior/capsule","parent":"ait:exterior/capsule/default","texture":"aseoha:textures/exterior/burnt_default.png"}] Optional.empty]
+[17:56:58] [Render thread/INFO] (ait) Loaded datapack ait:exterior aseoha:cf
+[17:56:58] [Render thread/INFO] (ait) Loaded datapack ait:exterior aseoha:cmyk
+[17:56:58] [Render thread/INFO] (ait) Loaded datapack ait:exterior aseoha:comic
+[17:56:58] [Render thread/INFO] (ait) Loaded datapack ait:exterior aseoha:coralalt
+[17:56:58] [Render thread/INFO] (ait) Loaded datapack ait:exterior aseoha:edwardian
+[17:56:58] [Render thread/INFO] (ait) Loaded datapack ait:exterior aseoha:edwardianblu
+[17:56:58] [Render thread/INFO] (ait) Loaded datapack ait:exterior aseoha:glasgow
+[17:56:58] [Render thread/INFO] (ait) Loaded datapack ait:exterior aseoha:nate
+[17:56:58] [Render thread/INFO] (ait) Loaded datapack ait:exterior aseoha:synth
+[17:56:58] [Render thread/INFO] (ait) Loaded datapack ait:exterior aseoha:technicolour
+[17:56:58] [Render thread/INFO] (ait) Loaded datapack ait:exterior aseoha:tokacoral
+[17:56:58] [Render thread/INFO] (ait) Loaded datapack ait:exterior aseoha:toywardian
+[17:56:58] [Render thread/INFO] (ait) Loaded datapack ait:exterior aseoha:vintage
+[17:57:04] [Render thread/INFO] (BiomeModificationImpl) Applied 54 biome modifications to 54 of 73 new biomes in 11.75 ms
+[17:57:04] [Server thread/INFO] (Minecraft) Starting integrated minecraft server version 1.20.1
+[17:57:04] [Server thread/INFO] (Minecraft) Generating keypair
+[17:57:10] [Server thread/INFO] (Minecraft) Preparing start region for dimension minecraft:overworld
+[17:57:11] [Render thread/INFO] (Minecraft) Preparing spawn area: 0%
+[17:57:11] [Render thread/INFO] (Minecraft) Preparing spawn area: 0%
+[17:57:12] [Render thread/INFO] (Minecraft) Preparing spawn area: 0%
+[17:57:12] [Render thread/INFO] (Minecraft) Preparing spawn area: 0%
+[17:57:12] [Render thread/INFO] (Minecraft) Preparing spawn area: 0%
+[17:57:13] [Render thread/INFO] (Minecraft) Preparing spawn area: 0%
+[17:57:13] [Render thread/INFO] (Minecraft) Preparing spawn area: 1%
+[17:57:14] [Render thread/INFO] (Minecraft) Preparing spawn area: 2%
+[17:57:14] [Render thread/INFO] (Minecraft) Preparing spawn area: 3%
+[17:57:15] [Render thread/INFO] (Minecraft) Preparing spawn area: 4%
+[17:57:15] [Render thread/INFO] (Minecraft) Preparing spawn area: 5%
+[17:57:16] [Render thread/INFO] (Minecraft) Preparing spawn area: 6%
+[17:57:16] [Render thread/INFO] (Minecraft) Preparing spawn area: 7%
+[17:57:17] [Render thread/INFO] (Minecraft) Preparing spawn area: 9%
+[17:57:17] [Render thread/INFO] (Minecraft) Preparing spawn area: 10%
+[17:57:18] [Render thread/INFO] (Minecraft) Preparing spawn area: 12%
+[17:57:18] [Render thread/INFO] (Minecraft) Preparing spawn area: 15%
+[17:57:19] [Render thread/INFO] (Minecraft) Preparing spawn area: 15%
+[17:57:19] [Render thread/INFO] (Minecraft) Preparing spawn area: 17%
+[17:57:20] [Render thread/INFO] (Minecraft) Preparing spawn area: 19%
+[17:57:21] [Render thread/INFO] (Minecraft) Preparing spawn area: 22%
+[17:57:21] [Render thread/INFO] (Minecraft) Preparing spawn area: 22%
+[17:57:21] [Render thread/INFO] (Minecraft) Preparing spawn area: 22%
+[17:57:22] [Render thread/INFO] (Minecraft) Preparing spawn area: 26%
+[17:57:22] [Render thread/INFO] (Minecraft) Preparing spawn area: 28%
+[17:57:23] [Render thread/INFO] (Minecraft) Preparing spawn area: 31%
+[17:57:23] [Render thread/INFO] (Minecraft) Preparing spawn area: 34%
+[17:57:24] [Render thread/INFO] (Minecraft) Preparing spawn area: 35%
+[17:57:24] [Render thread/INFO] (Minecraft) Preparing spawn area: 37%
+[17:57:25] [Render thread/INFO] (Minecraft) Preparing spawn area: 38%
+[17:57:25] [Render thread/INFO] (Minecraft) Preparing spawn area: 42%
+[17:57:26] [Render thread/INFO] (Minecraft) Preparing spawn area: 44%
+[17:57:26] [Render thread/INFO] (Minecraft) Preparing spawn area: 48%
+[17:57:27] [Render thread/INFO] (Minecraft) Preparing spawn area: 51%
+[17:57:27] [Render thread/INFO] (Minecraft) Preparing spawn area: 54%
+[17:57:30] [Render thread/INFO] (Minecraft) Preparing spawn area: 55%
+[17:57:30] [Render thread/INFO] (Minecraft) Preparing spawn area: 55%
+[17:57:30] [Render thread/INFO] (Minecraft) Preparing spawn area: 55%
+[17:57:30] [Render thread/INFO] (Minecraft) Preparing spawn area: 55%
+[17:57:30] [Render thread/INFO] (Minecraft) Preparing spawn area: 55%
+[17:57:30] [Render thread/INFO] (Minecraft) Preparing spawn area: 57%
+[17:57:31] [Render thread/INFO] (Minecraft) Preparing spawn area: 59%
+[17:57:31] [Render thread/INFO] (Minecraft) Preparing spawn area: 61%
+[17:57:32] [Render thread/INFO] (Minecraft) Preparing spawn area: 64%
+[17:57:32] [Render thread/INFO] (Minecraft) Preparing spawn area: 66%
+[17:57:33] [Render thread/INFO] (Minecraft) Preparing spawn area: 68%
+[17:57:33] [Render thread/INFO] (Minecraft) Preparing spawn area: 69%
+[17:57:34] [Render thread/INFO] (Minecraft) Preparing spawn area: 71%
+[17:57:34] [Render thread/INFO] (Minecraft) Preparing spawn area: 73%
+[17:57:36] [Render thread/INFO] (Minecraft) Preparing spawn area: 75%
+[17:57:36] [Render thread/INFO] (Minecraft) Preparing spawn area: 75%
+[17:57:36] [Render thread/INFO] (Minecraft) Preparing spawn area: 75%
+[17:57:36] [Render thread/INFO] (Minecraft) Preparing spawn area: 77%
+[17:57:37] [Render thread/INFO] (Minecraft) Preparing spawn area: 82%
+[17:57:37] [Render thread/INFO] (Minecraft) Preparing spawn area: 85%
+[17:57:38] [Render thread/INFO] (Minecraft) Preparing spawn area: 86%
+[17:57:38] [Render thread/INFO] (Minecraft) Preparing spawn area: 89%
+[17:57:39] [Render thread/INFO] (Minecraft) Preparing spawn area: 92%
+[17:57:39] [Render thread/INFO] (Minecraft) Preparing spawn area: 97%
+[17:57:39] [Server thread/ERROR] (ait) Failed to load rift chunk data!
+java.io.FileNotFoundException: C:\Users\nitew\IdeaProjects\AseohaAIT\run\saves\New World (6)\.ait_rift_chunk_data.json (The system cannot find the file specified)
 	at java.io.FileInputStream.open0(Native Method) ~[?:?]
-	at java.io.FileInputStream.open(FileInputStream.java:216) ~[?:?]
-	at java.io.FileInputStream.<init>(FileInputStream.java:157) ~[?:?]
-	at java.io.FileInputStream.<init>(FileInputStream.java:111) ~[?:?]
+	at java.io.FileInputStream.open(FileInputStream.java:213) ~[?:?]
+	at java.io.FileInputStream.<init>(FileInputStream.java:152) ~[?:?]
+	at java.io.FileInputStream.<init>(FileInputStream.java:106) ~[?:?]
 	at java.io.FileReader.<init>(FileReader.java:60) ~[?:?]
 	at loqor.ait.core.managers.RiftChunkManager.load(RiftChunkManager.java:128) ~[adventures-in-time-856138-5606907.jar:?]
 	at net.fabricmc.fabric.api.event.lifecycle.v1.ServerLifecycleEvents.lambda$static$2(ServerLifecycleEvents.java:49) ~[fabric-lifecycle-events-v1-2.2.22+1802ada577.jar:?]
-	at net.minecraft.server.MinecraftServer.handler$zon000$fabric-lifecycle-events-v1$afterSetupServer(MinecraftServer.java:4842) ~[minecraft-merged-8685b3a49c-1.20.1-net.fabricmc.yarn.1_20_1.1.20.1+build.10-v2.jar:?]
+	at net.minecraft.server.MinecraftServer.handler$zma000$fabric-lifecycle-events-v1$afterSetupServer(MinecraftServer.java:3342) ~[minecraft-merged-8685b3a49c-1.20.1-net.fabricmc.yarn.1_20_1.1.20.1+build.10-v2.jar:?]
 	at net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:650) ~[minecraft-merged-8685b3a49c-1.20.1-net.fabricmc.yarn.1_20_1.1.20.1+build.10-v2.jar:?]
 	at net.minecraft.server.MinecraftServer.method_29739(MinecraftServer.java:265) ~[minecraft-merged-8685b3a49c-1.20.1-net.fabricmc.yarn.1_20_1.1.20.1+build.10-v2.jar:?]
-	at java.lang.Thread.run(Thread.java:840) ~[?:?]
-[18:43:31] [Server thread/INFO] (Minecraft) Changing view distance to 12, from 10
-[18:43:31] [Server thread/INFO] (Minecraft) Changing simulation distance to 12, from 0
-[18:43:34] [Server thread/INFO] (Minecraft) Player891[local:E:09ccd2e4] logged in with entity id 345 at (-9.5, 66.0, -7.5)
-[18:43:34] [Netty Local Client IO #0/INFO] (ait) Read 8 ait:sonic from server
-[18:43:34] [Netty Local Client IO #0/INFO] (ait) Loaded ait:item/sonic/renaissance/inactive to the force-load list
-[18:43:34] [Netty Local Client IO #0/INFO] (ait) Loaded ait:item/sonic/renaissance/interaction to the force-load list
-[18:43:34] [Netty Local Client IO #0/INFO] (ait) Loaded ait:item/sonic/renaissance/overload to the force-load list
-[18:43:34] [Netty Local Client IO #0/INFO] (ait) Loaded ait:item/sonic/renaissance/scanning to the force-load list
-[18:43:34] [Netty Local Client IO #0/INFO] (ait) Loaded ait:item/sonic/renaissance/tardis to the force-load list
-[18:43:34] [Netty Local Client IO #0/INFO] (ait) Loading sonic 'ait:renaissance' with models: Models[inactive=ait:item/sonic/renaissance/inactive, interaction=ait:item/sonic/renaissance/interaction, overload=ait:item/sonic/renaissance/overload, scanning=ait:item/sonic/renaissance/scanning, tardis=ait:item/sonic/renaissance/tardis]
-[18:43:34] [Netty Local Client IO #0/INFO] (ait) Loaded ait:item/sonic/coral/inactive to the force-load list
-[18:43:34] [Netty Local Client IO #0/INFO] (ait) Loaded ait:item/sonic/coral/interaction to the force-load list
-[18:43:34] [Netty Local Client IO #0/INFO] (ait) Loaded ait:item/sonic/coral/overload to the force-load list
-[18:43:34] [Netty Local Client IO #0/INFO] (ait) Loaded ait:item/sonic/coral/scanning to the force-load list
-[18:43:34] [Netty Local Client IO #0/INFO] (ait) Loaded ait:item/sonic/coral/tardis to the force-load list
-[18:43:34] [Netty Local Client IO #0/INFO] (ait) Loading sonic 'ait:coral' with models: Models[inactive=ait:item/sonic/coral/inactive, interaction=ait:item/sonic/coral/interaction, overload=ait:item/sonic/coral/overload, scanning=ait:item/sonic/coral/scanning, tardis=ait:item/sonic/coral/tardis]
-[18:43:34] [Netty Local Client IO #0/INFO] (ait) Loaded ait:item/sonic/fob/inactive to the force-load list
-[18:43:34] [Netty Local Client IO #0/INFO] (ait) Loaded ait:item/sonic/fob/interaction to the force-load list
-[18:43:34] [Netty Local Client IO #0/INFO] (ait) Loaded ait:item/sonic/fob/overload to the force-load list
-[18:43:34] [Netty Local Client IO #0/INFO] (ait) Loaded ait:item/sonic/fob/scanning to the force-load list
-[18:43:34] [Netty Local Client IO #0/INFO] (ait) Loaded ait:item/sonic/fob/tardis to the force-load list
-[18:43:34] [Netty Local Client IO #0/INFO] (ait) Loading sonic 'ait:fob' with models: Models[inactive=ait:item/sonic/fob/inactive, interaction=ait:item/sonic/fob/interaction, overload=ait:item/sonic/fob/overload, scanning=ait:item/sonic/fob/scanning, tardis=ait:item/sonic/fob/tardis]
-[18:43:34] [Netty Local Client IO #0/INFO] (ait) Loaded ait:item/sonic/copper/inactive to the force-load list
-[18:43:34] [Netty Local Client IO #0/INFO] (ait) Loaded ait:item/sonic/copper/interaction to the force-load list
-[18:43:34] [Netty Local Client IO #0/INFO] (ait) Loaded ait:item/sonic/copper/overload to the force-load list
-[18:43:34] [Netty Local Client IO #0/INFO] (ait) Loaded ait:item/sonic/copper/scanning to the force-load list
-[18:43:34] [Netty Local Client IO #0/INFO] (ait) Loaded ait:item/sonic/copper/tardis to the force-load list
-[18:43:34] [Netty Local Client IO #0/INFO] (ait) Loading sonic 'ait:copper' with models: Models[inactive=ait:item/sonic/copper/inactive, interaction=ait:item/sonic/copper/interaction, overload=ait:item/sonic/copper/overload, scanning=ait:item/sonic/copper/scanning, tardis=ait:item/sonic/copper/tardis]
-[18:43:34] [Netty Local Client IO #0/INFO] (ait) Loaded ait:item/sonic/mechanical/inactive to the force-load list
-[18:43:34] [Netty Local Client IO #0/INFO] (ait) Loaded ait:item/sonic/mechanical/interaction to the force-load list
-[18:43:34] [Netty Local Client IO #0/INFO] (ait) Loaded ait:item/sonic/mechanical/overload to the force-load list
-[18:43:34] [Netty Local Client IO #0/INFO] (ait) Loaded ait:item/sonic/mechanical/scanning to the force-load list
-[18:43:34] [Netty Local Client IO #0/INFO] (ait) Loaded ait:item/sonic/mechanical/tardis to the force-load list
-[18:43:34] [Netty Local Client IO #0/INFO] (ait) Loading sonic 'ait:mechanical' with models: Models[inactive=ait:item/sonic/mechanical/inactive, interaction=ait:item/sonic/mechanical/interaction, overload=ait:item/sonic/mechanical/overload, scanning=ait:item/sonic/mechanical/scanning, tardis=ait:item/sonic/mechanical/tardis]
-[18:43:34] [Netty Local Client IO #0/INFO] (ait) Loaded ait:item/sonic/song/inactive to the force-load list
-[18:43:34] [Netty Local Client IO #0/INFO] (ait) Loaded ait:item/sonic/song/interaction to the force-load list
-[18:43:34] [Netty Local Client IO #0/INFO] (ait) Loaded ait:item/sonic/song/overload to the force-load list
-[18:43:34] [Netty Local Client IO #0/INFO] (ait) Loaded ait:item/sonic/song/scanning to the force-load list
-[18:43:34] [Netty Local Client IO #0/INFO] (ait) Loaded ait:item/sonic/song/tardis to the force-load list
-[18:43:34] [Netty Local Client IO #0/INFO] (ait) Loading sonic 'ait:song' with models: Models[inactive=ait:item/sonic/song/inactive, interaction=ait:item/sonic/song/interaction, overload=ait:item/sonic/song/overload, scanning=ait:item/sonic/song/scanning, tardis=ait:item/sonic/song/tardis]
-[18:43:34] [Netty Local Client IO #0/INFO] (ait) Loaded ait:item/sonic/prime/inactive to the force-load list
-[18:43:34] [Netty Local Client IO #0/INFO] (ait) Loaded ait:item/sonic/prime/interaction to the force-load list
-[18:43:34] [Netty Local Client IO #0/INFO] (ait) Loaded ait:item/sonic/prime/overload to the force-load list
-[18:43:34] [Netty Local Client IO #0/INFO] (ait) Loaded ait:item/sonic/prime/scanning to the force-load list
-[18:43:34] [Netty Local Client IO #0/INFO] (ait) Loaded ait:item/sonic/prime/tardis to the force-load list
-[18:43:34] [Netty Local Client IO #0/INFO] (ait) Loading sonic 'ait:prime' with models: Models[inactive=ait:item/sonic/prime/inactive, interaction=ait:item/sonic/prime/interaction, overload=ait:item/sonic/prime/overload, scanning=ait:item/sonic/prime/scanning, tardis=ait:item/sonic/prime/tardis]
-[18:43:34] [Netty Local Client IO #0/INFO] (ait) Loaded ait:item/sonic/crystalline/inactive to the force-load list
-[18:43:34] [Netty Local Client IO #0/INFO] (ait) Loaded ait:item/sonic/crystalline/interaction to the force-load list
-[18:43:34] [Netty Local Client IO #0/INFO] (ait) Loaded ait:item/sonic/crystalline/overload to the force-load list
-[18:43:34] [Netty Local Client IO #0/INFO] (ait) Loaded ait:item/sonic/crystalline/scanning to the force-load list
-[18:43:34] [Netty Local Client IO #0/INFO] (ait) Loaded ait:item/sonic/crystalline/tardis to the force-load list
-[18:43:34] [Netty Local Client IO #0/INFO] (ait) Loading sonic 'ait:crystalline' with models: Models[inactive=ait:item/sonic/crystalline/inactive, interaction=ait:item/sonic/crystalline/interaction, overload=ait:item/sonic/crystalline/overload, scanning=ait:item/sonic/crystalline/scanning, tardis=ait:item/sonic/crystalline/tardis]
-[18:43:34] [Netty Local Client IO #0/INFO] (ait) Read 26 ait:desktop from server
-[18:43:34] [Netty Local Client IO #0/INFO] (ait) Read 16 console variants from server
-[18:43:34] [Netty Local Client IO #0/INFO] (ait) Read 16 console variants from server
-[18:43:34] [Netty Local Client IO #0/INFO] (ait) Read 70 exterior variants from server
-[18:43:34] [Netty Local Client IO #0/INFO] (ait) Read 70 exterior variants from server
-[18:43:34] [Netty Local Client IO #0/INFO] (ait) Read 12 ait:categories from server
-[18:43:34] [Server thread/INFO] (Minecraft) Player891 joined the game
-[18:43:35] [Render thread/INFO] (Minecraft) Loaded 2 advancements
-[18:43:45] [Server thread/INFO] (Minecraft) Saving and pausing game...
-[18:43:45] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
-[18:43:45] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
-[18:43:45] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/aseoha:gallifrey
-[18:43:45] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/aseoha:mars
-[18:43:45] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/aseoha:trenzalore
-[18:43:45] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
-[18:43:45] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/aseoha:midnight
-[18:43:45] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/ait:time_vortex
-[18:43:45] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/aseoha:skaro
-[18:43:45] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/aseoha:new_earth
-[18:43:45] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/aseoha:raxicoricofallapatorious
-[18:43:45] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/ait:tardis_dimension
-[18:43:45] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/aseoha:klom
-[18:43:45] [Server thread/INFO] (Minecraft) Saving and pausing game...
-[18:43:45] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
-[18:43:46] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
-[18:43:46] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/aseoha:gallifrey
-[18:43:46] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/aseoha:mars
-[18:43:46] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/aseoha:trenzalore
-[18:43:46] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
-[18:43:46] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/aseoha:midnight
-[18:43:46] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/ait:time_vortex
-[18:43:46] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/aseoha:skaro
-[18:43:46] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/aseoha:new_earth
-[18:43:46] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/aseoha:raxicoricofallapatorious
-[18:43:46] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/ait:tardis_dimension
-[18:43:46] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/aseoha:klom
-[18:43:46] [Render thread/INFO] (Minecraft) [System] [CHAT] [Debug]: Reloaded resource packs
-[18:43:46] [Render thread/INFO] (Minecraft) Reloading ResourceManager: vanilla, fabric (fabric-key-binding-api-v1, fabric-transitive-access-wideners-v1, fabric-item-group-api-v1, fabric-networking-v0, aseoha, fabric-blockrenderlayer-v1, fabric-api-lookup-api-v1, fabric-dimensions-v1, fabric-data-generation-api-v1, fabric-command-api-v2, fabric-recipe-api-v1, fabric-message-api-v1, fabric-item-api-v1, fabric-model-loading-api-v1, fabric-events-interaction-v0, fabric-resource-loader-v0, fabric-keybindings-v0, fabric-crash-report-info-v1, fabric-client-tags-api-v1, owo, fabric-renderer-indigo, fabric-commands-v0, fabric-object-builder-api-v1, fabric-gametest-api-v1, fabric-transfer-api-v1, fabric-data-attachment-api-v1, ait, fabric-game-rule-api-v1, fabric-block-view-api-v2, fabric-networking-api-v1, fabric-screen-api-v1, fabric-events-lifecycle-v0, fabric-api, fabric-renderer-api-v1, fabric-content-registries-v0, fabric-registry-sync-v0, fabric-renderer-registries-v1, fabric-biome-api-v1, fabric-loot-api-v2, fabric-mining-level-api-v1, fabricloader, fabric-entity-events-v1, fabric-convention-tags-v1, fabric-models-v0, fabric-rendering-v0, fabric-api-base, fabric-block-api-v1, fabric-particles-v1, fabric-rendering-v1, fabric-rendering-data-attachment-v1, fabric-loot-tables-v1, fabric-sound-api-v1, fabric-resource-conditions-api-v1, fabric-command-api-v1, fabric-rendering-fluids-v1, fabric-screen-handler-api-v1, fabric-containers-v0, fabric-lifecycle-events-v1)
-[18:43:46] [Worker-Main-6/INFO] (Minecraft) Found unifont_all_no_pua-15.0.06.hex, loading
-[18:43:46] [Server thread/INFO] (Minecraft) Saving and pausing game...
-[18:43:46] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
-[18:43:46] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
-[18:43:46] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/aseoha:gallifrey
-[18:43:46] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/aseoha:mars
-[18:43:46] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/aseoha:trenzalore
-[18:43:46] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
-[18:43:46] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/aseoha:midnight
-[18:43:46] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/ait:time_vortex
-[18:43:46] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/aseoha:skaro
-[18:43:46] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/aseoha:new_earth
-[18:43:46] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/aseoha:raxicoricofallapatorious
-[18:43:46] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/ait:tardis_dimension
-[18:43:46] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/aseoha:klom
-[18:43:47] [Worker-Main-7/ERROR] (Minecraft) Failed to load model aseoha:models/item/sonic_tools/mk1.json
+	at java.lang.Thread.run(Thread.java:1583) ~[?:?]
+[17:57:39] [Render thread/INFO] (Minecraft) Time elapsed: 29311 ms
+[17:57:40] [Server thread/INFO] (Minecraft) Changing view distance to 12, from 10
+[17:57:40] [Server thread/INFO] (Minecraft) Changing simulation distance to 12, from 0
+[17:57:42] [Server thread/INFO] (Minecraft) Player45[local:E:466d588f] logged in with entity id 295 at (-0.5, 92.0, 1.5)
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Read 25 ait:sonic from server
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loaded ait:item/sonic/renaissance/inactive to the force-load list
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loaded ait:item/sonic/renaissance/interaction to the force-load list
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loaded ait:item/sonic/renaissance/overload to the force-load list
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loaded ait:item/sonic/renaissance/scanning to the force-load list
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loaded ait:item/sonic/renaissance/tardis to the force-load list
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loading sonic 'ait:renaissance' with models: Models[inactive=ait:item/sonic/renaissance/inactive, interaction=ait:item/sonic/renaissance/interaction, overload=ait:item/sonic/renaissance/overload, scanning=ait:item/sonic/renaissance/scanning, tardis=ait:item/sonic/renaissance/tardis]
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loaded ait:item/sonic/fob/inactive to the force-load list
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loaded ait:item/sonic/fob/interaction to the force-load list
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loaded ait:item/sonic/fob/overload to the force-load list
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loaded ait:item/sonic/fob/scanning to the force-load list
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loaded ait:item/sonic/fob/tardis to the force-load list
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loading sonic 'ait:fob' with models: Models[inactive=ait:item/sonic/fob/inactive, interaction=ait:item/sonic/fob/interaction, overload=ait:item/sonic/fob/overload, scanning=ait:item/sonic/fob/scanning, tardis=ait:item/sonic/fob/tardis]
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loaded aseoha:item/sonic/sonic_screwdriver to the force-load list
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loaded aseoha:item/sonic/sonic_screwdriver to the force-load list
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loaded aseoha:item/sonic/sonic_screwdriver to the force-load list
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loaded aseoha:item/sonic/sonic_screwdriver to the force-load list
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loaded aseoha:item/sonic/sonic_screwdriver to the force-load list
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loading sonic 'aseoha:sonic_screwdriver' with models: Models[inactive=aseoha:item/sonic/sonic_screwdriver, interaction=aseoha:item/sonic/sonic_screwdriver, overload=aseoha:item/sonic/sonic_screwdriver, scanning=aseoha:item/sonic/sonic_screwdriver, tardis=aseoha:item/sonic/sonic_screwdriver]
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loaded aseoha:item/sonic/pertwee_sonic_inactive to the force-load list
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loaded aseoha:item/sonic/pertwee_sonic_interactive to the force-load list
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loaded aseoha:item/sonic/pertwee_sonic_overload to the force-load list
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loaded aseoha:item/sonic/pertwee_sonic_scanning to the force-load list
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loaded aseoha:item/sonic/pertwee_sonic_tardis to the force-load list
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loading sonic 'aseoha:pertwee' with models: Models[inactive=aseoha:item/sonic/pertwee_sonic_inactive, interaction=aseoha:item/sonic/pertwee_sonic_interactive, overload=aseoha:item/sonic/pertwee_sonic_overload, scanning=aseoha:item/sonic/pertwee_sonic_scanning, tardis=aseoha:item/sonic/pertwee_sonic_tardis]
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loaded aseoha:item/sonic/sonic_coral2_inactive to the force-load list
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loaded aseoha:item/sonic/sonic_coral2_interaction to the force-load list
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loaded aseoha:item/sonic/sonic_coral2_overload to the force-load list
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loaded aseoha:item/sonic/sonic_coral2_scanning to the force-load list
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loaded aseoha:item/sonic/sonic_coral2_tardis to the force-load list
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loading sonic 'aseoha:sonic_coral2' with models: Models[inactive=aseoha:item/sonic/sonic_coral2_inactive, interaction=aseoha:item/sonic/sonic_coral2_interaction, overload=aseoha:item/sonic/sonic_coral2_overload, scanning=aseoha:item/sonic/sonic_coral2_scanning, tardis=aseoha:item/sonic/sonic_coral2_tardis]
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loaded aseoha:item/sonic/sonic_coral1_inactive to the force-load list
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loaded aseoha:item/sonic/sonic_coral1_interaction to the force-load list
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loaded aseoha:item/sonic/sonic_coral1_overload to the force-load list
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loaded aseoha:item/sonic/sonic_coral1_scanning to the force-load list
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loaded aseoha:item/sonic/sonic_coral1_tardis to the force-load list
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loading sonic 'aseoha:sonic_coral1' with models: Models[inactive=aseoha:item/sonic/sonic_coral1_inactive, interaction=aseoha:item/sonic/sonic_coral1_interaction, overload=aseoha:item/sonic/sonic_coral1_overload, scanning=aseoha:item/sonic/sonic_coral1_scanning, tardis=aseoha:item/sonic/sonic_coral1_tardis]
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loaded aseoha:item/sonic/candy_cane_sonic to the force-load list
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loaded aseoha:item/sonic/candy_cane_sonic to the force-load list
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loaded aseoha:item/sonic/candy_cane_sonic to the force-load list
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loaded aseoha:item/sonic/candy_cane_sonic to the force-load list
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loaded aseoha:item/sonic/candy_cane_sonic to the force-load list
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loading sonic 'aseoha:candy_cane_sonic' with models: Models[inactive=aseoha:item/sonic/candy_cane_sonic, interaction=aseoha:item/sonic/candy_cane_sonic, overload=aseoha:item/sonic/candy_cane_sonic, scanning=aseoha:item/sonic/candy_cane_sonic, tardis=aseoha:item/sonic/candy_cane_sonic]
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loaded ait:item/sonic/crystalline/inactive to the force-load list
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loaded ait:item/sonic/crystalline/interaction to the force-load list
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loaded ait:item/sonic/crystalline/overload to the force-load list
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loaded ait:item/sonic/crystalline/scanning to the force-load list
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loaded ait:item/sonic/crystalline/tardis to the force-load list
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loading sonic 'ait:crystalline' with models: Models[inactive=ait:item/sonic/crystalline/inactive, interaction=ait:item/sonic/crystalline/interaction, overload=ait:item/sonic/crystalline/overload, scanning=ait:item/sonic/crystalline/scanning, tardis=ait:item/sonic/crystalline/tardis]
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loaded aseoha:item/sonic/sonic_wiimote to the force-load list
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loaded aseoha:item/sonic/sonic_wiimote to the force-load list
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loaded aseoha:item/sonic/sonic_wiimote to the force-load list
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loaded aseoha:item/sonic/sonic_wiimote to the force-load list
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loaded aseoha:item/sonic/sonic_wiimote to the force-load list
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loading sonic 'aseoha:sonic_wiimote' with models: Models[inactive=aseoha:item/sonic/sonic_wiimote, interaction=aseoha:item/sonic/sonic_wiimote, overload=aseoha:item/sonic/sonic_wiimote, scanning=aseoha:item/sonic/sonic_wiimote, tardis=aseoha:item/sonic/sonic_wiimote]
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loaded aseoha:item/sonic/eighth_sonic to the force-load list
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loaded aseoha:item/sonic/eighth_sonic to the force-load list
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loaded aseoha:item/sonic/eighth_sonic to the force-load list
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loaded aseoha:item/sonic/eighth_sonic to the force-load list
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loaded aseoha:item/sonic/eighth_sonic to the force-load list
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loading sonic 'aseoha:eighth_sonic' with models: Models[inactive=aseoha:item/sonic/eighth_sonic, interaction=aseoha:item/sonic/eighth_sonic, overload=aseoha:item/sonic/eighth_sonic, scanning=aseoha:item/sonic/eighth_sonic, tardis=aseoha:item/sonic/eighth_sonic]
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loaded aseoha:item/sonic/mk4/inactive to the force-load list
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loaded aseoha:item/sonic/mk4/interaction to the force-load list
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loaded aseoha:item/sonic/mk4/overload to the force-load list
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loaded aseoha:item/sonic/mk4/scanning to the force-load list
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loaded aseoha:item/sonic/mk4/tardis to the force-load list
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loading sonic 'aseoha:mk4' with models: Models[inactive=aseoha:item/sonic/mk4/inactive, interaction=aseoha:item/sonic/mk4/interaction, overload=aseoha:item/sonic/mk4/overload, scanning=aseoha:item/sonic/mk4/scanning, tardis=aseoha:item/sonic/mk4/tardis]
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loaded aseoha:item/sonic/mk2/inactive to the force-load list
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loaded aseoha:item/sonic/mk2/interaction to the force-load list
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loaded aseoha:item/sonic/mk2/overload to the force-load list
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loaded aseoha:item/sonic/mk2/scanning to the force-load list
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loaded aseoha:item/sonic/mk2/tardis to the force-load list
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loading sonic 'aseoha:mk2' with models: Models[inactive=aseoha:item/sonic/mk2/inactive, interaction=aseoha:item/sonic/mk2/interaction, overload=aseoha:item/sonic/mk2/overload, scanning=aseoha:item/sonic/mk2/scanning, tardis=aseoha:item/sonic/mk2/tardis]
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loaded ait:item/sonic/copper/inactive to the force-load list
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loaded ait:item/sonic/copper/interaction to the force-load list
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loaded ait:item/sonic/copper/overload to the force-load list
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loaded ait:item/sonic/copper/scanning to the force-load list
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loaded ait:item/sonic/copper/tardis to the force-load list
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loading sonic 'ait:copper' with models: Models[inactive=ait:item/sonic/copper/inactive, interaction=ait:item/sonic/copper/interaction, overload=ait:item/sonic/copper/overload, scanning=ait:item/sonic/copper/scanning, tardis=ait:item/sonic/copper/tardis]
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loaded aseoha:item/sonic/baker_alt_sonic_inactive to the force-load list
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loaded aseoha:item/sonic/baker_alt_sonic_interactive to the force-load list
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loaded aseoha:item/sonic/baker_alt_sonic_overload to the force-load list
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loaded aseoha:item/sonic/baker_alt_sonic_scanning to the force-load list
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loaded aseoha:item/sonic/baker_alt_sonic_tardis to the force-load list
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loading sonic 'aseoha:baker_alt' with models: Models[inactive=aseoha:item/sonic/baker_alt_sonic_inactive, interaction=aseoha:item/sonic/baker_alt_sonic_interactive, overload=aseoha:item/sonic/baker_alt_sonic_overload, scanning=aseoha:item/sonic/baker_alt_sonic_scanning, tardis=aseoha:item/sonic/baker_alt_sonic_tardis]
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loaded aseoha:item/sonic/chicken_inactive to the force-load list
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loaded aseoha:item/sonic/chicken_interaction to the force-load list
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loaded aseoha:item/sonic/chicken_overload to the force-load list
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loaded aseoha:item/sonic/chicken_scanning to the force-load list
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loaded aseoha:item/sonic/chicken_tardis to the force-load list
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loading sonic 'aseoha:chicken_sonic' with models: Models[inactive=aseoha:item/sonic/chicken_inactive, interaction=aseoha:item/sonic/chicken_interaction, overload=aseoha:item/sonic/chicken_overload, scanning=aseoha:item/sonic/chicken_scanning, tardis=aseoha:item/sonic/chicken_tardis]
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loaded aseoha:item/sonic/do7/inactive to the force-load list
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loaded aseoha:item/sonic/do7/interaction to the force-load list
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loaded aseoha:item/sonic/do7/overload to the force-load list
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loaded aseoha:item/sonic/do7/scanning to the force-load list
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loaded aseoha:item/sonic/do7/tardis to the force-load list
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loading sonic 'aseoha:do7' with models: Models[inactive=aseoha:item/sonic/do7/inactive, interaction=aseoha:item/sonic/do7/interaction, overload=aseoha:item/sonic/do7/overload, scanning=aseoha:item/sonic/do7/scanning, tardis=aseoha:item/sonic/do7/tardis]
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loaded ait:item/sonic/song/inactive to the force-load list
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loaded ait:item/sonic/song/interaction to the force-load list
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loaded ait:item/sonic/song/overload to the force-load list
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loaded ait:item/sonic/song/scanning to the force-load list
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loaded ait:item/sonic/song/tardis to the force-load list
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loading sonic 'ait:song' with models: Models[inactive=ait:item/sonic/song/inactive, interaction=ait:item/sonic/song/interaction, overload=ait:item/sonic/song/overload, scanning=ait:item/sonic/song/scanning, tardis=ait:item/sonic/song/tardis]
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loaded aseoha:item/sonic/war_sonic_inactive to the force-load list
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loaded aseoha:item/sonic/war_sonic_interactive to the force-load list
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loaded aseoha:item/sonic/war_sonic_overload to the force-load list
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loaded aseoha:item/sonic/war_sonic_scanning to the force-load list
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loaded aseoha:item/sonic/war_sonic_tardis to the force-load list
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loading sonic 'aseoha:war_sonic' with models: Models[inactive=aseoha:item/sonic/war_sonic_inactive, interaction=aseoha:item/sonic/war_sonic_interactive, overload=aseoha:item/sonic/war_sonic_overload, scanning=aseoha:item/sonic/war_sonic_scanning, tardis=aseoha:item/sonic/war_sonic_tardis]
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loaded ait:item/sonic/coral/inactive to the force-load list
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loaded ait:item/sonic/coral/interaction to the force-load list
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loaded ait:item/sonic/coral/overload to the force-load list
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loaded ait:item/sonic/coral/scanning to the force-load list
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loaded ait:item/sonic/coral/tardis to the force-load list
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loading sonic 'ait:coral' with models: Models[inactive=ait:item/sonic/coral/inactive, interaction=ait:item/sonic/coral/interaction, overload=ait:item/sonic/coral/overload, scanning=ait:item/sonic/coral/scanning, tardis=ait:item/sonic/coral/tardis]
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loaded aseoha:item/sonic/sonic_fourteen to the force-load list
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loaded aseoha:item/sonic/sonic_fourteen to the force-load list
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loaded aseoha:item/sonic/sonic_fourteen to the force-load list
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loaded aseoha:item/sonic/sonic_fourteen to the force-load list
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loaded aseoha:item/sonic/sonic_fourteen to the force-load list
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loading sonic 'aseoha:sonic_fourteen' with models: Models[inactive=aseoha:item/sonic/sonic_fourteen, interaction=aseoha:item/sonic/sonic_fourteen, overload=aseoha:item/sonic/sonic_fourteen, scanning=aseoha:item/sonic/sonic_fourteen, tardis=aseoha:item/sonic/sonic_fourteen]
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loaded ait:item/sonic/mechanical/inactive to the force-load list
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loaded ait:item/sonic/mechanical/interaction to the force-load list
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loaded ait:item/sonic/mechanical/overload to the force-load list
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loaded ait:item/sonic/mechanical/scanning to the force-load list
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loaded ait:item/sonic/mechanical/tardis to the force-load list
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loading sonic 'ait:mechanical' with models: Models[inactive=ait:item/sonic/mechanical/inactive, interaction=ait:item/sonic/mechanical/interaction, overload=ait:item/sonic/mechanical/overload, scanning=ait:item/sonic/mechanical/scanning, tardis=ait:item/sonic/mechanical/tardis]
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loaded aseoha:item/sonic/sonic_coral4_inactive to the force-load list
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loaded aseoha:item/sonic/sonic_coral4_interaction to the force-load list
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loaded aseoha:item/sonic/sonic_coral4_overload to the force-load list
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loaded aseoha:item/sonic/sonic_coral4_scanning to the force-load list
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loaded aseoha:item/sonic/sonic_coral4_tardis to the force-load list
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loading sonic 'aseoha:sonic_coral4' with models: Models[inactive=aseoha:item/sonic/sonic_coral4_inactive, interaction=aseoha:item/sonic/sonic_coral4_interaction, overload=aseoha:item/sonic/sonic_coral4_overload, scanning=aseoha:item/sonic/sonic_coral4_scanning, tardis=aseoha:item/sonic/sonic_coral4_tardis]
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loaded aseoha:item/sonic/sonic_coral3_inactive to the force-load list
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loaded aseoha:item/sonic/sonic_coral3_interaction to the force-load list
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loaded aseoha:item/sonic/sonic_coral3_overload to the force-load list
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loaded aseoha:item/sonic/sonic_coral3_scanning to the force-load list
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loaded aseoha:item/sonic/sonic_coral3_tardis to the force-load list
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loading sonic 'aseoha:sonic_coral3' with models: Models[inactive=aseoha:item/sonic/sonic_coral3_inactive, interaction=aseoha:item/sonic/sonic_coral3_interaction, overload=aseoha:item/sonic/sonic_coral3_overload, scanning=aseoha:item/sonic/sonic_coral3_scanning, tardis=aseoha:item/sonic/sonic_coral3_tardis]
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loaded aseoha:item/sonic/sonic_coral5_inactive to the force-load list
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loaded aseoha:item/sonic/sonic_coral5_interaction to the force-load list
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loaded aseoha:item/sonic/sonic_coral5_overload to the force-load list
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loaded aseoha:item/sonic/sonic_coral5_scanning to the force-load list
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loaded aseoha:item/sonic/sonic_coral5_tardis to the force-load list
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loading sonic 'aseoha:sonic_coral5' with models: Models[inactive=aseoha:item/sonic/sonic_coral5_inactive, interaction=aseoha:item/sonic/sonic_coral5_interaction, overload=aseoha:item/sonic/sonic_coral5_overload, scanning=aseoha:item/sonic/sonic_coral5_scanning, tardis=aseoha:item/sonic/sonic_coral5_tardis]
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loaded ait:item/sonic/prime/inactive to the force-load list
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loaded ait:item/sonic/prime/interaction to the force-load list
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loaded ait:item/sonic/prime/overload to the force-load list
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loaded ait:item/sonic/prime/scanning to the force-load list
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loaded ait:item/sonic/prime/tardis to the force-load list
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Loading sonic 'ait:prime' with models: Models[inactive=ait:item/sonic/prime/inactive, interaction=ait:item/sonic/prime/interaction, overload=ait:item/sonic/prime/overload, scanning=ait:item/sonic/prime/scanning, tardis=ait:item/sonic/prime/tardis]
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Read 26 ait:desktop from server
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Read 16 console variants from server
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Read 16 console variants from server
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Read 70 exterior variants from server
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Read 70 exterior variants from server
+[17:57:42] [Netty Local Client IO #0/INFO] (ait) Read 12 ait:categories from server
+[17:57:42] [Server thread/INFO] (Minecraft) Player45 joined the game
+[17:57:43] [Render thread/INFO] (Minecraft) Loaded 2 advancements
+[17:57:51] [Render thread/INFO] (Minecraft) [System] [CHAT] [Debug]: Reloaded resource packs
+[17:57:51] [Render thread/INFO] (Minecraft) Reloading ResourceManager: vanilla, fabric (fabric-blockrenderlayer-v1, fabric-item-group-api-v1, fabric-registry-sync-v0, fabric-screen-handler-api-v1, fabric-command-api-v1, fabric-block-view-api-v2, fabric-models-v0, ait, owo, fabric-biome-api-v1, fabric-commands-v0, fabric-recipe-api-v1, fabric-renderer-registries-v1, fabric-transfer-api-v1, fabric-model-loading-api-v1, fabric-data-attachment-api-v1, fabric-containers-v0, fabric-api-lookup-api-v1, fabric-content-registries-v0, fabric-keybindings-v0, fabric-item-api-v1, fabric-dimensions-v1, fabric-mining-level-api-v1, fabric-renderer-indigo, fabric-rendering-data-attachment-v1, fabric-crash-report-info-v1, fabric-block-api-v1, fabric-rendering-v0, fabricloader, fabric-networking-api-v1, fabric-events-lifecycle-v0, fabric-screen-api-v1, fabric-object-builder-api-v1, fabric-entity-events-v1, fabric-networking-v0, fabric-rendering-fluids-v1, fabric-renderer-api-v1, fabric-rendering-v1, fabric-data-generation-api-v1, fabric-transitive-access-wideners-v1, aseoha, fabric-lifecycle-events-v1, fabric-sound-api-v1, fabric-message-api-v1, fabric-command-api-v2, fabric-loot-api-v2, fabric-api, fabric-client-tags-api-v1, fabric-gametest-api-v1, fabric-resource-loader-v0, fabric-resource-conditions-api-v1, fabric-loot-tables-v1, fabric-convention-tags-v1, fabric-key-binding-api-v1, fabric-game-rule-api-v1, fabric-events-interaction-v0, fabric-api-base, fabric-particles-v1)
+[17:57:51] [Worker-Main-2/INFO] (Minecraft) Found unifont_all_no_pua-15.0.06.hex, loading
+[17:57:51] [Server thread/INFO] (Minecraft) Saving and pausing game...
+[17:57:52] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
+[17:57:52] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/aseoha:new_earth
+[17:57:52] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/aseoha:skaro
+[17:57:52] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
+[17:57:52] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/ait:tardis_dimension
+[17:57:52] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/aseoha:raxicoricofallapatorious
+[17:57:52] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/ait:time_vortex
+[17:57:52] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/aseoha:midnight
+[17:57:52] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/aseoha:trenzalore
+[17:57:52] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
+[17:57:52] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/aseoha:klom
+[17:57:52] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/aseoha:mars
+[17:57:52] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/aseoha:gallifrey
+[17:57:52] [Worker-Main-6/WARN] (Minecraft) Texture aseoha:item/latinum with size 29x33 limits mip level from 4 to 0
+[17:57:52] [Worker-Main-6/WARN] (Minecraft) minecraft:textures/atlas/blocks.png: dropping miplevel from 4 to 0, because of minimum power of two: 1
+[17:57:52] [Worker-Main-5/ERROR] (Minecraft) Failed to load model aseoha:models/item/sonic/mk1.json
 com.google.gson.JsonSyntaxException: java.io.EOFException: End of input at line 776 column 2 path $.textures
 	at com.google.gson.internal.Streams.parse(Streams.java:59) ~[gson-2.10.jar:?]
 	at com.google.gson.internal.bind.TreeTypeAdapter.read(TreeTypeAdapter.java:72) ~[gson-2.10.jar:?]
@@ -745,11 +838,11 @@ com.google.gson.JsonSyntaxException: java.io.EOFException: End of input at line 
 	at net.minecraft.client.render.model.BakedModelManager.method_45898(BakedModelManager.java:105) ~[minecraft-merged-8685b3a49c-1.20.1-net.fabricmc.yarn.1_20_1.1.20.1+build.10-v2.jar:?]
 	at java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1768) ~[?:?]
 	at java.util.concurrent.CompletableFuture$AsyncSupply.exec(CompletableFuture.java:1760) ~[?:?]
-	at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373) ~[?:?]
-	at java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182) ~[?:?]
-	at java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655) ~[?:?]
-	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622) ~[?:?]
-	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165) ~[?:?]
+	at java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:387) ~[?:?]
+	at java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1312) ~[?:?]
+	at java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1843) ~[?:?]
+	at java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1808) ~[?:?]
+	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:188) ~[?:?]
 Caused by: java.io.EOFException: End of input at line 776 column 2 path $.textures
 	at com.google.gson.stream.JsonReader.nextNonWhitespace(JsonReader.java:1455) ~[gson-2.10.jar:?]
 	at com.google.gson.stream.JsonReader.doPeek(JsonReader.java:491) ~[gson-2.10.jar:?]
@@ -758,169 +851,210 @@ Caused by: java.io.EOFException: End of input at line 776 column 2 path $.textur
 	at com.google.gson.internal.bind.TypeAdapters$28.read(TypeAdapters.java:725) ~[gson-2.10.jar:?]
 	at com.google.gson.internal.Streams.parse(Streams.java:49) ~[gson-2.10.jar:?]
 	... 13 more
-[18:43:47] [Worker-Main-11/WARN] (Minecraft) Texture aseoha:item/latinum with size 29x33 limits mip level from 4 to 0
-[18:43:47] [Worker-Main-11/WARN] (Minecraft) minecraft:textures/atlas/blocks.png: dropping miplevel from 4 to 0, because of minimum power of two: 1
-[18:43:48] [Worker-Main-4/WARN] (Minecraft) Exception loading blockstate definition: 'aseoha:blockstates/brown_wool_roundel.json' missing model for variant: 'aseoha:brown_wool_roundel#'
-[18:43:48] [Worker-Main-4/WARN] (Minecraft) Exception loading blockstate definition: 'aseoha:blockstates/brown_concrete_roundel.json' missing model for variant: 'aseoha:brown_concrete_roundel#'
-[18:43:48] [Worker-Main-4/WARN] (Minecraft) Exception loading blockstate definition: 'aseoha:blockstates/cherry_planks_roundel.json' missing model for variant: 'aseoha:cherry_planks_roundel#'
-[18:43:48] [Worker-Main-4/WARN] (Minecraft) Exception loading blockstate definition: 'aseoha:blockstates/cobbled_deepslate_roundel.json' missing model for variant: 'aseoha:cobbled_deepslate_roundel#'
-[18:43:48] [Worker-Main-4/WARN] (Minecraft) Exception loading blockstate definition: 'aseoha:blockstates/cobblestone_roundel.json' missing model for variant: 'aseoha:cobblestone_roundel#'
-[18:43:48] [Worker-Main-4/WARN] (Minecraft) Exception loading blockstate definition: 'aseoha:blockstates/copper_block_roundel.json' missing model for variant: 'aseoha:copper_block_roundel#'
-[18:43:48] [Worker-Main-4/WARN] (Minecraft) Exception loading blockstate definition: 'aseoha:blockstates/crimson_planks_roundel.json' missing model for variant: 'aseoha:crimson_planks_roundel#'
-[18:43:48] [Worker-Main-4/WARN] (Minecraft) Exception loading blockstate definition: 'aseoha:blockstates/cut_copper_roundel.json' missing model for variant: 'aseoha:cut_copper_roundel#'
-[18:43:48] [Worker-Main-4/WARN] (Minecraft) Exception loading blockstate definition: 'aseoha:blockstates/cyan_concrete_roundel.json' missing model for variant: 'aseoha:cyan_concrete_roundel#'
-[18:43:48] [Worker-Main-4/WARN] (Minecraft) Exception loading blockstate definition: 'aseoha:blockstates/cyan_wool_roundel.json' missing model for variant: 'aseoha:cyan_wool_roundel#'
-[18:43:48] [Worker-Main-4/WARN] (Minecraft) Exception loading blockstate definition: 'aseoha:blockstates/dark_oak_planks_roundel.json' missing model for variant: 'aseoha:dark_oak_planks_roundel#'
-[18:43:48] [Worker-Main-4/WARN] (Minecraft) Exception loading blockstate definition: 'aseoha:blockstates/deepslate_roundel.json' missing model for variant: 'aseoha:deepslate_roundel#'
-[18:43:48] [Worker-Main-4/WARN] (Minecraft) Exception loading blockstate definition: 'aseoha:blockstates/exposed_copper_roundel.json' missing model for variant: 'aseoha:exposed_copper_roundel#'
-[18:43:48] [Worker-Main-4/WARN] (Minecraft) Exception loading blockstate definition: 'aseoha:blockstates/exposed_cut_copper_roundel.json' missing model for variant: 'aseoha:exposed_cut_copper_roundel#'
-[18:43:48] [Worker-Main-4/WARN] (Minecraft) Exception loading blockstate definition: 'aseoha:blockstates/gray_concrete_roundel.json' missing model for variant: 'aseoha:gray_concrete_roundel#'
-[18:43:48] [Worker-Main-4/WARN] (Minecraft) Exception loading blockstate definition: 'aseoha:blockstates/gray_wool_roundel.json' missing model for variant: 'aseoha:gray_wool_roundel#'
-[18:43:48] [Worker-Main-4/WARN] (Minecraft) Exception loading blockstate definition: 'aseoha:blockstates/green_concrete_roundel.json' missing model for variant: 'aseoha:green_concrete_roundel#'
-[18:43:48] [Worker-Main-4/WARN] (Minecraft) Exception loading blockstate definition: 'aseoha:blockstates/green_wool_roundel.json' missing model for variant: 'aseoha:green_wool_roundel#'
-[18:43:48] [Worker-Main-4/WARN] (Minecraft) Unable to load model: 'aseoha:block/roundel/pink_concrete_hex_roundel' referenced from: aseoha:pink_concrete_hex_roundel#facing=north: java.io.FileNotFoundException: aseoha:models/block/roundel/pink_concrete_hex_roundel.json
-[18:43:48] [Worker-Main-4/WARN] (Minecraft) Unable to load model: 'ait:block/button_control_block' referenced from: ait:button_control_block#facing=north: java.io.FileNotFoundException: ait:models/block/button_control_block.json
-[18:43:48] [Worker-Main-4/WARN] (Minecraft) Unable to load model: 'aseoha:cyan_wool_roundel#inventory' referenced from: aseoha:cyan_wool_roundel#inventory: java.io.FileNotFoundException: aseoha:models/item/cyan_wool_roundel.json
-[18:43:48] [Worker-Main-4/WARN] (Minecraft) Unable to load model: 'aseoha:cherry_planks_roundel#inventory' referenced from: aseoha:cherry_planks_roundel#inventory: java.io.FileNotFoundException: aseoha:models/item/cherry_planks_roundel.json
-[18:43:48] [Worker-Main-4/WARN] (Minecraft) Unable to load model: 'aseoha:cut_copper_roundel#inventory' referenced from: aseoha:cut_copper_roundel#inventory: java.io.FileNotFoundException: aseoha:models/item/cut_copper_roundel.json
-[18:43:48] [Worker-Main-4/WARN] (Minecraft) Unable to load model: 'aseoha:gray_concrete_roundel#inventory' referenced from: aseoha:gray_concrete_roundel#inventory: java.io.FileNotFoundException: aseoha:models/item/gray_concrete_roundel.json
-[18:43:48] [Worker-Main-4/WARN] (Minecraft) Unable to load model: 'aseoha:cyan_concrete_roundel#inventory' referenced from: aseoha:cyan_concrete_roundel#inventory: java.io.FileNotFoundException: aseoha:models/item/cyan_concrete_roundel.json
-[18:43:48] [Worker-Main-4/WARN] (Minecraft) Unable to load model: 'aseoha:dark_oak_planks_roundel#inventory' referenced from: aseoha:dark_oak_planks_roundel#inventory: java.io.FileNotFoundException: aseoha:models/item/dark_oak_planks_roundel.json
-[18:43:48] [Worker-Main-4/WARN] (Minecraft) Unable to load model: 'aseoha:copper_block_roundel#inventory' referenced from: aseoha:copper_block_roundel#inventory: java.io.FileNotFoundException: aseoha:models/item/copper_block_roundel.json
-[18:43:48] [Worker-Main-4/WARN] (Minecraft) Unable to load model: 'aseoha:exposed_copper_roundel#inventory' referenced from: aseoha:exposed_copper_roundel#inventory: java.io.FileNotFoundException: aseoha:models/item/exposed_copper_roundel.json
-[18:43:48] [Worker-Main-4/WARN] (Minecraft) Unable to load model: 'aseoha:gray_wool_roundel#inventory' referenced from: aseoha:gray_wool_roundel#inventory: java.io.FileNotFoundException: aseoha:models/item/gray_wool_roundel.json
-[18:43:48] [Worker-Main-4/WARN] (Minecraft) Unable to load model: 'aseoha:deepslate_roundel#inventory' referenced from: aseoha:deepslate_roundel#inventory: java.io.FileNotFoundException: aseoha:models/item/deepslate_roundel.json
-[18:43:48] [Worker-Main-4/WARN] (Minecraft) Unable to load model: 'aseoha:green_concrete_roundel#inventory' referenced from: aseoha:green_concrete_roundel#inventory: java.io.FileNotFoundException: aseoha:models/item/green_concrete_roundel.json
-[18:43:48] [Worker-Main-4/WARN] (Minecraft) Unable to load model: 'aseoha:brown_wool_roundel#inventory' referenced from: aseoha:brown_wool_roundel#inventory: java.io.FileNotFoundException: aseoha:models/item/brown_wool_roundel.json
-[18:43:48] [Worker-Main-4/WARN] (Minecraft) Unable to load model: 'aseoha:exposed_cut_copper_roundel#inventory' referenced from: aseoha:exposed_cut_copper_roundel#inventory: java.io.FileNotFoundException: aseoha:models/item/exposed_cut_copper_roundel.json
-[18:43:48] [Worker-Main-4/WARN] (Minecraft) Unable to load model: 'aseoha:latinum_elytra#inventory' referenced from: aseoha:latinum_elytra#inventory: java.io.FileNotFoundException: aseoha:models/item/latinum_elytra.json
-[18:43:48] [Worker-Main-4/WARN] (Minecraft) Unable to load model: 'aseoha:cobblestone_roundel#inventory' referenced from: aseoha:cobblestone_roundel#inventory: java.io.FileNotFoundException: aseoha:models/item/cobblestone_roundel.json
-[18:43:48] [Worker-Main-4/WARN] (Minecraft) Unable to load model: 'aseoha:brown_concrete_roundel#inventory' referenced from: aseoha:brown_concrete_roundel#inventory: java.io.FileNotFoundException: aseoha:models/item/brown_concrete_roundel.json
-[18:43:48] [Worker-Main-4/WARN] (Minecraft) Unable to load model: 'aseoha:green_wool_roundel#inventory' referenced from: aseoha:green_wool_roundel#inventory: java.io.FileNotFoundException: aseoha:models/item/green_wool_roundel.json
-[18:43:48] [Worker-Main-4/WARN] (Minecraft) Unable to load model: 'aseoha:cobbled_deepslate_roundel#inventory' referenced from: aseoha:cobbled_deepslate_roundel#inventory: java.io.FileNotFoundException: aseoha:models/item/cobbled_deepslate_roundel.json
-[18:43:48] [Worker-Main-4/WARN] (Minecraft) Unable to load model: 'aseoha:crimson_planks_roundel#inventory' referenced from: aseoha:crimson_planks_roundel#inventory: java.io.FileNotFoundException: aseoha:models/item/crimson_planks_roundel.json
-[18:43:48] [Worker-Main-4/WARN] (Minecraft) Unable to load model: 'aseoha:blue_crystal#inventory' referenced from: aseoha:blue_crystal#inventory: java.io.FileNotFoundException: aseoha:models/item/blue_crystal.json
-[18:43:49] [Worker-Main-4/WARN] (Minecraft) Missing textures in model ait:engine_core_block#waterlogged=true:
+[17:57:52] [Worker-Main-4/WARN] (Minecraft) Unable to load model: 'aseoha:item/sonic/sonic_fourteen' referenced from: aseoha:item/sonic/sonic_fourteen: java.io.FileNotFoundException: aseoha:models/item/sonic/sonic_fourteen.json
+[17:57:53] [Worker-Main-4/WARN] (Minecraft) Unable to load model: 'ait:block/button_control_block' referenced from: ait:button_control_block#facing=north: java.io.FileNotFoundException: ait:models/block/button_control_block.json
+[17:57:53] [Worker-Main-4/WARN] (Minecraft) Exception loading blockstate definition: 'aseoha:blockstates/brown_wool_roundel.json' missing model for variant: 'aseoha:brown_wool_roundel#'
+[17:57:53] [Worker-Main-4/WARN] (Minecraft) Exception loading blockstate definition: 'aseoha:blockstates/brown_concrete_roundel.json' missing model for variant: 'aseoha:brown_concrete_roundel#'
+[17:57:53] [Worker-Main-4/WARN] (Minecraft) Exception loading blockstate definition: 'aseoha:blockstates/cherry_planks_roundel.json' missing model for variant: 'aseoha:cherry_planks_roundel#'
+[17:57:53] [Worker-Main-4/WARN] (Minecraft) Exception loading blockstate definition: 'aseoha:blockstates/cobbled_deepslate_roundel.json' missing model for variant: 'aseoha:cobbled_deepslate_roundel#'
+[17:57:53] [Worker-Main-4/WARN] (Minecraft) Exception loading blockstate definition: 'aseoha:blockstates/cobblestone_roundel.json' missing model for variant: 'aseoha:cobblestone_roundel#'
+[17:57:53] [Worker-Main-4/WARN] (Minecraft) Exception loading blockstate definition: 'aseoha:blockstates/copper_block_roundel.json' missing model for variant: 'aseoha:copper_block_roundel#'
+[17:57:53] [Worker-Main-4/WARN] (Minecraft) Exception loading blockstate definition: 'aseoha:blockstates/crimson_planks_roundel.json' missing model for variant: 'aseoha:crimson_planks_roundel#'
+[17:57:53] [Worker-Main-4/WARN] (Minecraft) Exception loading blockstate definition: 'aseoha:blockstates/cut_copper_roundel.json' missing model for variant: 'aseoha:cut_copper_roundel#'
+[17:57:53] [Worker-Main-4/WARN] (Minecraft) Exception loading blockstate definition: 'aseoha:blockstates/cyan_concrete_roundel.json' missing model for variant: 'aseoha:cyan_concrete_roundel#'
+[17:57:53] [Worker-Main-4/WARN] (Minecraft) Exception loading blockstate definition: 'aseoha:blockstates/cyan_wool_roundel.json' missing model for variant: 'aseoha:cyan_wool_roundel#'
+[17:57:53] [Worker-Main-4/WARN] (Minecraft) Exception loading blockstate definition: 'aseoha:blockstates/dark_oak_planks_roundel.json' missing model for variant: 'aseoha:dark_oak_planks_roundel#'
+[17:57:53] [Worker-Main-4/WARN] (Minecraft) Exception loading blockstate definition: 'aseoha:blockstates/deepslate_roundel.json' missing model for variant: 'aseoha:deepslate_roundel#'
+[17:57:53] [Worker-Main-4/WARN] (Minecraft) Exception loading blockstate definition: 'aseoha:blockstates/exposed_copper_roundel.json' missing model for variant: 'aseoha:exposed_copper_roundel#'
+[17:57:53] [Worker-Main-4/WARN] (Minecraft) Exception loading blockstate definition: 'aseoha:blockstates/exposed_cut_copper_roundel.json' missing model for variant: 'aseoha:exposed_cut_copper_roundel#'
+[17:57:53] [Worker-Main-4/WARN] (Minecraft) Exception loading blockstate definition: 'aseoha:blockstates/gray_concrete_roundel.json' missing model for variant: 'aseoha:gray_concrete_roundel#'
+[17:57:53] [Worker-Main-4/WARN] (Minecraft) Exception loading blockstate definition: 'aseoha:blockstates/gray_wool_roundel.json' missing model for variant: 'aseoha:gray_wool_roundel#'
+[17:57:53] [Worker-Main-4/WARN] (Minecraft) Exception loading blockstate definition: 'aseoha:blockstates/green_concrete_roundel.json' missing model for variant: 'aseoha:green_concrete_roundel#'
+[17:57:53] [Worker-Main-4/WARN] (Minecraft) Exception loading blockstate definition: 'aseoha:blockstates/green_wool_roundel.json' missing model for variant: 'aseoha:green_wool_roundel#'
+[17:57:53] [Worker-Main-4/WARN] (Minecraft) Unable to load model: 'aseoha:block/roundel/pink_concrete_hex_roundel' referenced from: aseoha:pink_concrete_hex_roundel#facing=north: java.io.FileNotFoundException: aseoha:models/block/roundel/pink_concrete_hex_roundel.json
+[17:57:53] [Worker-Main-4/WARN] (Minecraft) Unable to load model: 'aseoha:cyan_wool_roundel#inventory' referenced from: aseoha:cyan_wool_roundel#inventory: java.io.FileNotFoundException: aseoha:models/item/cyan_wool_roundel.json
+[17:57:53] [Worker-Main-4/WARN] (Minecraft) Unable to load model: 'aseoha:cherry_planks_roundel#inventory' referenced from: aseoha:cherry_planks_roundel#inventory: java.io.FileNotFoundException: aseoha:models/item/cherry_planks_roundel.json
+[17:57:53] [Worker-Main-4/WARN] (Minecraft) Unable to load model: 'aseoha:cut_copper_roundel#inventory' referenced from: aseoha:cut_copper_roundel#inventory: java.io.FileNotFoundException: aseoha:models/item/cut_copper_roundel.json
+[17:57:53] [Worker-Main-4/WARN] (Minecraft) Unable to load model: 'aseoha:gray_concrete_roundel#inventory' referenced from: aseoha:gray_concrete_roundel#inventory: java.io.FileNotFoundException: aseoha:models/item/gray_concrete_roundel.json
+[17:57:53] [Worker-Main-4/WARN] (Minecraft) Unable to load model: 'aseoha:cyan_concrete_roundel#inventory' referenced from: aseoha:cyan_concrete_roundel#inventory: java.io.FileNotFoundException: aseoha:models/item/cyan_concrete_roundel.json
+[17:57:53] [Worker-Main-4/WARN] (Minecraft) Unable to load model: 'aseoha:dark_oak_planks_roundel#inventory' referenced from: aseoha:dark_oak_planks_roundel#inventory: java.io.FileNotFoundException: aseoha:models/item/dark_oak_planks_roundel.json
+[17:57:53] [Worker-Main-4/WARN] (Minecraft) Unable to load model: 'aseoha:copper_block_roundel#inventory' referenced from: aseoha:copper_block_roundel#inventory: java.io.FileNotFoundException: aseoha:models/item/copper_block_roundel.json
+[17:57:53] [Worker-Main-4/WARN] (Minecraft) Unable to load model: 'aseoha:exposed_copper_roundel#inventory' referenced from: aseoha:exposed_copper_roundel#inventory: java.io.FileNotFoundException: aseoha:models/item/exposed_copper_roundel.json
+[17:57:53] [Worker-Main-4/WARN] (Minecraft) Unable to load model: 'aseoha:gray_wool_roundel#inventory' referenced from: aseoha:gray_wool_roundel#inventory: java.io.FileNotFoundException: aseoha:models/item/gray_wool_roundel.json
+[17:57:53] [Worker-Main-4/WARN] (Minecraft) Unable to load model: 'aseoha:deepslate_roundel#inventory' referenced from: aseoha:deepslate_roundel#inventory: java.io.FileNotFoundException: aseoha:models/item/deepslate_roundel.json
+[17:57:53] [Worker-Main-4/WARN] (Minecraft) Unable to load model: 'aseoha:green_concrete_roundel#inventory' referenced from: aseoha:green_concrete_roundel#inventory: java.io.FileNotFoundException: aseoha:models/item/green_concrete_roundel.json
+[17:57:53] [Worker-Main-4/WARN] (Minecraft) Unable to load model: 'aseoha:brown_wool_roundel#inventory' referenced from: aseoha:brown_wool_roundel#inventory: java.io.FileNotFoundException: aseoha:models/item/brown_wool_roundel.json
+[17:57:53] [Worker-Main-4/WARN] (Minecraft) Unable to load model: 'aseoha:exposed_cut_copper_roundel#inventory' referenced from: aseoha:exposed_cut_copper_roundel#inventory: java.io.FileNotFoundException: aseoha:models/item/exposed_cut_copper_roundel.json
+[17:57:53] [Worker-Main-4/WARN] (Minecraft) Unable to load model: 'aseoha:latinum_elytra#inventory' referenced from: aseoha:latinum_elytra#inventory: java.io.FileNotFoundException: aseoha:models/item/latinum_elytra.json
+[17:57:53] [Worker-Main-4/WARN] (Minecraft) Unable to load model: 'aseoha:cobblestone_roundel#inventory' referenced from: aseoha:cobblestone_roundel#inventory: java.io.FileNotFoundException: aseoha:models/item/cobblestone_roundel.json
+[17:57:53] [Worker-Main-4/WARN] (Minecraft) Unable to load model: 'aseoha:brown_concrete_roundel#inventory' referenced from: aseoha:brown_concrete_roundel#inventory: java.io.FileNotFoundException: aseoha:models/item/brown_concrete_roundel.json
+[17:57:53] [Worker-Main-4/WARN] (Minecraft) Unable to load model: 'aseoha:green_wool_roundel#inventory' referenced from: aseoha:green_wool_roundel#inventory: java.io.FileNotFoundException: aseoha:models/item/green_wool_roundel.json
+[17:57:53] [Worker-Main-4/WARN] (Minecraft) Unable to load model: 'aseoha:cobbled_deepslate_roundel#inventory' referenced from: aseoha:cobbled_deepslate_roundel#inventory: java.io.FileNotFoundException: aseoha:models/item/cobbled_deepslate_roundel.json
+[17:57:53] [Worker-Main-4/WARN] (Minecraft) Unable to load model: 'aseoha:crimson_planks_roundel#inventory' referenced from: aseoha:crimson_planks_roundel#inventory: java.io.FileNotFoundException: aseoha:models/item/crimson_planks_roundel.json
+[17:57:53] [Worker-Main-4/WARN] (Minecraft) Unable to load model: 'aseoha:blue_crystal#inventory' referenced from: aseoha:blue_crystal#inventory: java.io.FileNotFoundException: aseoha:models/item/blue_crystal.json
+[17:57:54] [Worker-Main-4/WARN] (Minecraft) Missing textures in model ait:engine_core_block#waterlogged=true:
     minecraft:textures/atlas/blocks.png:minecraft:block/barrier
-[18:43:49] [Worker-Main-4/WARN] (Minecraft) Missing textures in model aseoha:gray_concrete_hex_roundel#facing=west:
+[17:57:54] [Worker-Main-4/WARN] (Minecraft) Missing textures in model aseoha:gray_concrete_hex_roundel#facing=east:
     minecraft:textures/atlas/blocks.png:aseoha:block/roundel/hexagonals/grey_concrete_hex_roundel
-[18:43:49] [Worker-Main-4/WARN] (Minecraft) Missing textures in model aseoha:light_grey_concrete_hex_roundel#facing=north:
+[17:57:54] [Worker-Main-4/WARN] (Minecraft) Missing textures in model aseoha:item/sonic/war_sonic_overload:
+    minecraft:textures/atlas/blocks.png:aseoha:item/sonic_tools/war_overload
+[17:57:54] [Worker-Main-4/WARN] (Minecraft) Missing textures in model aseoha:item/sonic/sonic_coral2_interaction:
+    minecraft:textures/atlas/blocks.png:aseoha:item/sonic_tools//sonic_coral2_interaction
+[17:57:54] [Worker-Main-4/WARN] (Minecraft) Missing textures in model aseoha:gray_concrete_hex_roundel#facing=north:
+    minecraft:textures/atlas/blocks.png:aseoha:block/roundel/hexagonals/grey_concrete_hex_roundel
+[17:57:54] [Worker-Main-4/WARN] (Minecraft) Missing textures in model ait:artron_collector_block#facing=north:
+    minecraft:textures/atlas/blocks.png:minecraft:blockentities/machines/artron_collector
+[17:57:54] [Worker-Main-4/WARN] (Minecraft) Missing textures in model aseoha:item/sonic/pertwee_sonic_inactive:
+    minecraft:textures/atlas/blocks.png:aseoha:item/sonic_tools/thirdinactive
+[17:57:54] [Worker-Main-4/WARN] (Minecraft) Missing textures in model aseoha:item/sonic/pertwee_sonic_interactive:
+    minecraft:textures/atlas/blocks.png:aseoha:item/sonic_tools/thirdinteractive
+[17:57:54] [Worker-Main-4/WARN] (Minecraft) Missing textures in model ait:artron_collector_block#facing=east:
+    minecraft:textures/atlas/blocks.png:minecraft:blockentities/machines/artron_collector
+[17:57:54] [Worker-Main-4/WARN] (Minecraft) Missing textures in model ait:artron_collector_block#facing=south:
+    minecraft:textures/atlas/blocks.png:minecraft:blockentities/machines/artron_collector
+[17:57:54] [Worker-Main-4/WARN] (Minecraft) Missing textures in model aseoha:item/sonic/pertwee_sonic_scanning:
+    minecraft:textures/atlas/blocks.png:aseoha:item/sonic_tools/thirdscan
+[17:57:54] [Worker-Main-4/WARN] (Minecraft) Missing textures in model aseoha:item/sonic/war_sonic_inactive:
+    minecraft:textures/atlas/blocks.png:aseoha:item/sonic_tools/war
+[17:57:54] [Worker-Main-4/WARN] (Minecraft) Missing textures in model aseoha:light_grey_concrete_hex_roundel#facing=east:
     minecraft:textures/atlas/blocks.png:aseoha:block/roundel/hexagonals/light_grey_concrete_hex_roundel
-[18:43:49] [Worker-Main-4/WARN] (Minecraft) Missing textures in model ait:console_generator#facing=south:
+[17:57:54] [Worker-Main-4/WARN] (Minecraft) Missing textures in model aseoha:gray_concrete_hex_roundel#facing=south:
+    minecraft:textures/atlas/blocks.png:aseoha:block/roundel/hexagonals/grey_concrete_hex_roundel
+[17:57:54] [Worker-Main-4/WARN] (Minecraft) Missing textures in model aseoha:item/sonic/war_sonic_tardis:
+    minecraft:textures/atlas/blocks.png:aseoha:item/sonic_tools/war_tardis
+[17:57:54] [Worker-Main-4/WARN] (Minecraft) Missing textures in model aseoha:light_grey_concrete_hex_roundel#facing=west:
+    minecraft:textures/atlas/blocks.png:aseoha:block/roundel/hexagonals/light_grey_concrete_hex_roundel
+[17:57:54] [Worker-Main-4/WARN] (Minecraft) Missing textures in model aseoha:item/sonic/war_sonic_scanning:
+    minecraft:textures/atlas/blocks.png:aseoha:item/sonic_tools/war_scanning
+[17:57:54] [Worker-Main-4/WARN] (Minecraft) Missing textures in model aseoha:item/sonic/pertwee_sonic_overload:
+    minecraft:textures/atlas/blocks.png:aseoha:item/sonic_tools/thirdoverload
+[17:57:54] [Worker-Main-4/WARN] (Minecraft) Missing textures in model aseoha:gray_concrete_hex_roundel#facing=west:
+    minecraft:textures/atlas/blocks.png:aseoha:block/roundel/hexagonals/grey_concrete_hex_roundel
+[17:57:54] [Worker-Main-4/WARN] (Minecraft) Missing textures in model aseoha:light_grey_concrete_hex_roundel#facing=north:
+    minecraft:textures/atlas/blocks.png:aseoha:block/roundel/hexagonals/light_grey_concrete_hex_roundel
+[17:57:54] [Worker-Main-4/WARN] (Minecraft) Missing textures in model aseoha:item/sonic/eighth_sonic:
+    minecraft:textures/atlas/blocks.png:aseoha:item/sonic_tools/eighth_sonic
+[17:57:54] [Worker-Main-4/WARN] (Minecraft) Missing textures in model ait:console_generator#facing=south:
     minecraft:textures/atlas/blocks.png:minecraft:blockentities/console_generator/console_generator
-[18:43:49] [Worker-Main-4/WARN] (Minecraft) Missing textures in model aseoha:gray_concrete_hex_roundel#facing=east:
-    minecraft:textures/atlas/blocks.png:aseoha:block/roundel/hexagonals/grey_concrete_hex_roundel
-[18:43:49] [Worker-Main-4/WARN] (Minecraft) Missing textures in model ait:artron_collector_block#facing=west:
+[17:57:54] [Worker-Main-4/WARN] (Minecraft) Missing textures in model ait:artron_collector_block#facing=west:
     minecraft:textures/atlas/blocks.png:minecraft:blockentities/machines/artron_collector
-[18:43:49] [Worker-Main-4/WARN] (Minecraft) Missing textures in model aseoha:gray_concrete_hex_roundel#facing=north:
-    minecraft:textures/atlas/blocks.png:aseoha:block/roundel/hexagonals/grey_concrete_hex_roundel
-[18:43:49] [Worker-Main-4/WARN] (Minecraft) Missing textures in model ait:artron_collector_block#facing=north:
-    minecraft:textures/atlas/blocks.png:minecraft:blockentities/machines/artron_collector
-[18:43:49] [Worker-Main-4/WARN] (Minecraft) Missing textures in model ait:artron_collector_block#facing=east:
-    minecraft:textures/atlas/blocks.png:minecraft:blockentities/machines/artron_collector
-[18:43:49] [Worker-Main-4/WARN] (Minecraft) Missing textures in model ait:artron_collector_block#facing=south:
-    minecraft:textures/atlas/blocks.png:minecraft:blockentities/machines/artron_collector
-[18:43:49] [Worker-Main-4/WARN] (Minecraft) Missing textures in model aseoha:light_grey_concrete_hex_roundel#facing=south:
+[17:57:54] [Worker-Main-4/WARN] (Minecraft) Missing textures in model aseoha:item/sonic/war_sonic_interactive:
+    minecraft:textures/atlas/blocks.png:aseoha:item/sonic_tools/war_interactive
+[17:57:54] [Worker-Main-4/WARN] (Minecraft) Missing textures in model aseoha:item/sonic/pertwee_sonic_tardis:
+    minecraft:textures/atlas/blocks.png:aseoha:item/sonic_tools/thirdtardis
+[17:57:54] [Worker-Main-4/WARN] (Minecraft) Missing textures in model aseoha:item/sonic/sonic_coral4_interaction:
+    minecraft:textures/atlas/blocks.png:aseoha:item/sonic_tools//sonic_coral4_interaction
+[17:57:54] [Worker-Main-4/WARN] (Minecraft) Missing textures in model aseoha:light_grey_concrete_hex_roundel#facing=south:
     minecraft:textures/atlas/blocks.png:aseoha:block/roundel/hexagonals/light_grey_concrete_hex_roundel
-[18:43:49] [Worker-Main-4/WARN] (Minecraft) Missing textures in model aseoha:light_grey_concrete_hex_roundel#facing=east:
-    minecraft:textures/atlas/blocks.png:aseoha:block/roundel/hexagonals/light_grey_concrete_hex_roundel
-[18:43:49] [Worker-Main-4/WARN] (Minecraft) Missing textures in model aseoha:gray_concrete_hex_roundel#facing=south:
-    minecraft:textures/atlas/blocks.png:aseoha:block/roundel/hexagonals/grey_concrete_hex_roundel
-[18:43:49] [Worker-Main-4/WARN] (Minecraft) Missing textures in model aseoha:light_grey_concrete_hex_roundel#facing=west:
-    minecraft:textures/atlas/blocks.png:aseoha:block/roundel/hexagonals/light_grey_concrete_hex_roundel
-[18:43:49] [Render thread/WARN] (Minecraft) Missing sound for event: minecraft:item.goat_horn.play
-[18:43:49] [Render thread/WARN] (Minecraft) Missing sound for event: minecraft:entity.goat.screaming.horn_break
-[18:43:49] [Render thread/WARN] (Minecraft) Missing sound for event: ait:hop_demat
-[18:43:49] [Render thread/WARN] (Minecraft) Missing sound for event: ait:emerg_mat
-[18:43:49] [Render thread/INFO] (Minecraft) OpenAL initialized on device OpenAL Soft on Headphones (Realtek(R) Audio)
-[18:43:49] [Render thread/INFO] (Minecraft) Sound engine started
-[18:43:49] [Render thread/INFO] (Minecraft) Created: 2048x1024x0 minecraft:textures/atlas/blocks.png-atlas
-[18:43:50] [Render thread/INFO] (Minecraft) Created: 256x256x4 minecraft:textures/atlas/signs.png-atlas
-[18:43:50] [Render thread/INFO] (Minecraft) Created: 512x512x4 minecraft:textures/atlas/banner_patterns.png-atlas
-[18:43:50] [Render thread/INFO] (Minecraft) Created: 512x512x4 minecraft:textures/atlas/shield_patterns.png-atlas
-[18:43:50] [Render thread/INFO] (Minecraft) Created: 1024x1024x4 minecraft:textures/atlas/armor_trims.png-atlas
-[18:43:50] [Render thread/INFO] (Minecraft) Created: 256x256x4 minecraft:textures/atlas/chest.png-atlas
-[18:43:50] [Render thread/INFO] (Minecraft) Created: 128x64x4 minecraft:textures/atlas/decorated_pot.png-atlas
-[18:43:50] [Render thread/INFO] (Minecraft) Created: 512x256x4 minecraft:textures/atlas/shulker_boxes.png-atlas
-[18:43:50] [Render thread/INFO] (Minecraft) Created: 512x256x4 minecraft:textures/atlas/beds.png-atlas
-[18:43:50] [Render thread/WARN] (Minecraft) Shader rendertype_entity_translucent_emissive could not find sampler named Sampler2 in the specified shader program.
-[18:43:51] [Render thread/INFO] (Minecraft) Created: 256x256x0 minecraft:textures/atlas/particles.png-atlas
-[18:43:51] [Render thread/INFO] (Minecraft) Created: 256x256x0 minecraft:textures/atlas/paintings.png-atlas
-[18:43:51] [Render thread/INFO] (Minecraft) Created: 128x128x0 minecraft:textures/atlas/mob_effects.png-atlas
-[18:43:54] [Render thread/INFO] (Minecraft) [System] [CHAT] Saved screenshot as 2025-03-21_18.43.54.png
-[18:44:02] [Server thread/WARN] (ait) Time taken to generate interior: 793
-[18:44:02] [Server thread/INFO] (ait) Built 99b5580a-b1a8-44bc-8d81-e69c390c7854 in 879ms
-[18:44:02] [Render thread/INFO] (Minecraft) [System] [CHAT] console.ait.steam_steel unlocked!
-[18:44:02] [Render thread/INFO] (Minecraft) [System] [CHAT] console.ait.toyota unlocked!
-[18:44:02] [Render thread/INFO] (Minecraft) [System] [CHAT] console.ait.steam unlocked!
-[18:44:02] [Render thread/INFO] (Minecraft) [System] [CHAT] console.ait.alnico unlocked!
-[18:44:02] [Render thread/INFO] (Minecraft) [System] [CHAT] console.ait.hartnell_wooden unlocked!
-[18:44:02] [Render thread/INFO] (Minecraft) [System] [CHAT] console.ait.hartnell_kelt unlocked!
-[18:44:02] [Render thread/INFO] (Minecraft) [System] [CHAT] console.ait.coral unlocked!
-[18:44:02] [Render thread/INFO] (Minecraft) [System] [CHAT] console.ait.alnico_blue unlocked!
-[18:44:02] [Render thread/INFO] (Minecraft) [System] [CHAT] exterior.ait.default unlocked!
-[18:44:02] [Render thread/INFO] (Minecraft) [System] [CHAT] exterior.ait.fire unlocked!
-[18:44:02] [Render thread/INFO] (Minecraft) [System] [CHAT] exterior.ait.vintage unlocked!
-[18:44:02] [Render thread/INFO] (Minecraft) [System] [CHAT] exterior.ait.soul unlocked!
-[18:44:02] [Render thread/INFO] (Minecraft) [System] [CHAT] exterior.ait.gilded unlocked!
-[18:44:02] [Render thread/INFO] (Minecraft) [System] [CHAT] exterior.ait.default unlocked!
-[18:44:02] [Render thread/INFO] (Minecraft) [System] [CHAT] exterior.ait.fire unlocked!
-[18:44:02] [Render thread/INFO] (Minecraft) [System] [CHAT] exterior.ait.default unlocked!
-[18:44:02] [Render thread/INFO] (Minecraft) [System] [CHAT] exterior.ait.soul unlocked!
-[18:44:02] [Render thread/INFO] (Minecraft) [System] [CHAT] exterior.ait.blue unlocked!
-[18:44:02] [Render thread/INFO] (Minecraft) [System] [CHAT] Renaissance unlocked!
-[18:44:02] [Render thread/INFO] (Minecraft) [System] [CHAT] Coral unlocked!
-[18:44:02] [Render thread/INFO] (Minecraft) [System] [CHAT] Song unlocked!
-[18:44:02] [Render thread/INFO] (Minecraft) [System] [CHAT] Crystalline unlocked!
-[18:44:02] [Render thread/INFO] (Minecraft) [System] [CHAT] console.ait.steam_cherry unlocked!
-[18:44:02] [Render thread/INFO] (Minecraft) [System] [CHAT] console.ait.steam_gilded unlocked!
-[18:44:02] [Render thread/INFO] (Minecraft) [System] [CHAT] console.ait.hartnell_mint unlocked!
-[18:44:02] [Render thread/INFO] (Minecraft) [System] [CHAT] console.ait.toyota_blue unlocked!
-[18:44:02] [Render thread/INFO] (Minecraft) [System] [CHAT] console.ait.toyota_legacy unlocked!
-[18:44:02] [Render thread/INFO] (Minecraft) [System] [CHAT] console.ait.coral_white unlocked!
-[18:44:02] [Render thread/INFO] (Minecraft) [System] [CHAT] console.ait.coral_blue unlocked!
-[18:44:02] [Render thread/INFO] (Minecraft) [System] [CHAT] Dev unlocked!
-[18:44:02] [Render thread/INFO] (Minecraft) [System] [CHAT] exterior.ait.mint unlocked!
-[18:44:02] [Render thread/INFO] (Minecraft) [System] [CHAT] exterior.ait.shalka unlocked!
-[18:44:02] [Render thread/INFO] (Minecraft) [System] [CHAT] exterior.ait.fire unlocked!
-[18:44:02] [Render thread/INFO] (Minecraft) [System] [CHAT] exterior.ait.soul unlocked!
-[18:44:02] [Render thread/INFO] (Minecraft) [System] [CHAT] exterior.ait.exile unlocked!
-[18:44:02] [Render thread/INFO] (Minecraft) [System] [CHAT] exterior.ait.hudolin unlocked!
-[18:44:02] [Render thread/INFO] (Minecraft) [System] [CHAT] exterior.ait.prime unlocked!
-[18:44:02] [Render thread/INFO] (Minecraft) [System] [CHAT] exterior.ait.cherrywood unlocked!
-[18:44:02] [Render thread/INFO] (Minecraft) [System] [CHAT] exterior.ait.coral unlocked!
-[18:44:02] [Render thread/INFO] (Minecraft) [System] [CHAT] exterior.ait.futuristic unlocked!
-[18:44:02] [Render thread/INFO] (Minecraft) [System] [CHAT] exterior.ait.fire unlocked!
-[18:44:02] [Render thread/INFO] (Minecraft) [System] [CHAT] exterior.ait.cabinet unlocked!
-[18:44:02] [Render thread/INFO] (Minecraft) [System] [CHAT] Tokamak unlocked!
-[18:44:02] [Render thread/INFO] (Minecraft) [System] [CHAT] exterior.ait.definitive unlocked!
-[18:44:02] [Render thread/INFO] (Minecraft) [System] [CHAT] exterior.ait.soul unlocked!
-[18:44:02] [Render thread/INFO] (Minecraft) [System] [CHAT] exterior.ait.tron unlocked!
-[18:44:02] [Render thread/INFO] (Minecraft) [System] [CHAT] exterior.ait.fire unlocked!
-[18:44:02] [Render thread/INFO] (Minecraft) [System] [CHAT] exterior.ait.yeti unlocked!
-[18:44:02] [Render thread/INFO] (Minecraft) [System] [CHAT] exterior.ait.default unlocked!
-[18:44:02] [Render thread/INFO] (Minecraft) [System] [CHAT] exterior.ait.default unlocked!
-[18:44:02] [Render thread/INFO] (Minecraft) [System] [CHAT] exterior.ait.default unlocked!
-[18:44:02] [Render thread/INFO] (Minecraft) [System] [CHAT] exterior.ait.default unlocked!
-[18:44:02] [Render thread/INFO] (Minecraft) [System] [CHAT] exterior.ait.ptored unlocked!
-[18:44:02] [Render thread/INFO] (Minecraft) [System] [CHAT] exterior.ait.soul unlocked!
-[18:44:02] [Render thread/INFO] (Minecraft) [System] [CHAT] Fob unlocked!
-[18:44:02] [Render thread/INFO] (Minecraft) [System] [CHAT] Copper unlocked!
-[18:44:02] [Render thread/INFO] (Minecraft) [System] [CHAT] Mechanical unlocked!
-[18:44:04] [Server thread/INFO] (Minecraft) Player891 has completed the challenge [How Does It Fit?]
-[18:44:05] [Server thread/INFO] (Minecraft) Saving and pausing game...
-[18:44:05] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
-[18:44:05] [Render thread/INFO] (Minecraft) [System] [CHAT] Player891 has completed the challenge [How Does It Fit?]
-[18:44:05] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
-[18:44:05] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/aseoha:gallifrey
-[18:44:05] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/aseoha:mars
-[18:44:05] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/aseoha:trenzalore
-[18:44:05] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
-[18:44:05] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/aseoha:midnight
-[18:44:05] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/ait:time_vortex
-[18:44:05] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/aseoha:skaro
-[18:44:05] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/aseoha:new_earth
-[18:44:05] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/aseoha:raxicoricofallapatorious
-[18:44:05] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/ait:tardis_dimension
-[18:44:05] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/aseoha:klom
-[18:44:05] [Render thread/INFO] (Minecraft) Loaded 4 advancements
+[17:57:55] [Render thread/WARN] (Minecraft) Missing sound for event: minecraft:item.goat_horn.play
+[17:57:55] [Render thread/WARN] (Minecraft) Missing sound for event: minecraft:entity.goat.screaming.horn_break
+[17:57:55] [Render thread/WARN] (Minecraft) Missing sound for event: ait:hop_demat
+[17:57:55] [Render thread/WARN] (Minecraft) Missing sound for event: ait:emerg_mat
+[17:57:55] [Render thread/INFO] (Minecraft) OpenAL initialized on device OpenAL Soft on Headphones (Realtek(R) Audio)
+[17:57:55] [Render thread/INFO] (Minecraft) Sound engine started
+[17:57:55] [Render thread/INFO] (Minecraft) Created: 2048x1024x0 minecraft:textures/atlas/blocks.png-atlas
+[17:57:55] [Render thread/INFO] (Minecraft) Created: 256x256x4 minecraft:textures/atlas/signs.png-atlas
+[17:57:56] [Render thread/INFO] (Minecraft) Created: 512x512x4 minecraft:textures/atlas/banner_patterns.png-atlas
+[17:57:56] [Render thread/INFO] (Minecraft) Created: 512x512x4 minecraft:textures/atlas/shield_patterns.png-atlas
+[17:57:56] [Render thread/INFO] (Minecraft) Created: 1024x1024x4 minecraft:textures/atlas/armor_trims.png-atlas
+[17:57:56] [Render thread/INFO] (Minecraft) Created: 256x256x4 minecraft:textures/atlas/chest.png-atlas
+[17:57:56] [Render thread/INFO] (Minecraft) Created: 128x64x4 minecraft:textures/atlas/decorated_pot.png-atlas
+[17:57:56] [Render thread/INFO] (Minecraft) Created: 512x256x4 minecraft:textures/atlas/beds.png-atlas
+[17:57:56] [Render thread/INFO] (Minecraft) Created: 512x256x4 minecraft:textures/atlas/shulker_boxes.png-atlas
+[17:57:56] [Render thread/WARN] (Minecraft) Shader rendertype_entity_translucent_emissive could not find sampler named Sampler2 in the specified shader program.
+[17:57:56] [Render thread/INFO] (Minecraft) Created: 256x256x0 minecraft:textures/atlas/particles.png-atlas
+[17:57:56] [Render thread/INFO] (Minecraft) Created: 256x256x0 minecraft:textures/atlas/paintings.png-atlas
+[17:57:57] [Render thread/INFO] (Minecraft) Created: 128x128x0 minecraft:textures/atlas/mob_effects.png-atlas
+[17:58:07] [Server thread/WARN] (ait) Time taken to generate interior: 739
+[17:58:07] [Server thread/INFO] (ait) Built 0f38edef-9e33-43bb-a95f-c47152c36d1e in 836ms
+[17:58:07] [Render thread/INFO] (Minecraft) [System] [CHAT] console.ait.steam_steel unlocked!
+[17:58:07] [Render thread/INFO] (Minecraft) [System] [CHAT] console.ait.toyota unlocked!
+[17:58:07] [Render thread/INFO] (Minecraft) [System] [CHAT] console.ait.steam unlocked!
+[17:58:07] [Render thread/INFO] (Minecraft) [System] [CHAT] console.ait.alnico unlocked!
+[17:58:07] [Render thread/INFO] (Minecraft) [System] [CHAT] console.ait.hartnell_wooden unlocked!
+[17:58:07] [Render thread/INFO] (Minecraft) [System] [CHAT] console.ait.hartnell_kelt unlocked!
+[17:58:07] [Render thread/INFO] (Minecraft) [System] [CHAT] console.ait.coral unlocked!
+[17:58:07] [Render thread/INFO] (Minecraft) [System] [CHAT] console.ait.alnico_blue unlocked!
+[17:58:07] [Render thread/INFO] (Minecraft) [System] [CHAT] exterior.ait.default unlocked!
+[17:58:07] [Render thread/INFO] (Minecraft) [System] [CHAT] exterior.ait.fire unlocked!
+[17:58:07] [Render thread/INFO] (Minecraft) [System] [CHAT] exterior.ait.vintage unlocked!
+[17:58:07] [Render thread/INFO] (Minecraft) [System] [CHAT] exterior.ait.soul unlocked!
+[17:58:07] [Render thread/INFO] (Minecraft) [System] [CHAT] exterior.ait.gilded unlocked!
+[17:58:07] [Render thread/INFO] (Minecraft) [System] [CHAT] exterior.ait.default unlocked!
+[17:58:07] [Render thread/INFO] (Minecraft) [System] [CHAT] exterior.ait.fire unlocked!
+[17:58:07] [Render thread/INFO] (Minecraft) [System] [CHAT] exterior.ait.default unlocked!
+[17:58:07] [Render thread/INFO] (Minecraft) [System] [CHAT] exterior.ait.soul unlocked!
+[17:58:07] [Render thread/INFO] (Minecraft) [System] [CHAT] exterior.ait.blue unlocked!
+[17:58:07] [Render thread/INFO] (Minecraft) [System] [CHAT] Renaissance unlocked!
+[17:58:07] [Render thread/INFO] (Minecraft) [System] [CHAT] The Sonic unlocked!
+[17:58:07] [Render thread/INFO] (Minecraft) [System] [CHAT] Pertwee unlocked!
+[17:58:07] [Render thread/INFO] (Minecraft) [System] [CHAT] Candy Cane unlocked!
+[17:58:07] [Render thread/INFO] (Minecraft) [System] [CHAT] Crystalline unlocked!
+[17:58:07] [Render thread/INFO] (Minecraft) [System] [CHAT] Wii unlocked!
+[17:58:07] [Render thread/INFO] (Minecraft) [System] [CHAT] McGann unlocked!
+[17:58:07] [Render thread/INFO] (Minecraft) [System] [CHAT] Baker unlocked!
+[17:58:07] [Render thread/INFO] (Minecraft) [System] [CHAT] Song unlocked!
+[17:58:07] [Render thread/INFO] (Minecraft) [System] [CHAT] War unlocked!
+[17:58:07] [Render thread/INFO] (Minecraft) [System] [CHAT] Coral unlocked!
+[17:58:07] [Render thread/INFO] (Minecraft) [System] [CHAT] 14th Sonic unlocked!
+[17:58:07] [Render thread/INFO] (Minecraft) [System] [CHAT] console.ait.steam_cherry unlocked!
+[17:58:07] [Render thread/INFO] (Minecraft) [System] [CHAT] console.ait.steam_gilded unlocked!
+[17:58:07] [Render thread/INFO] (Minecraft) [System] [CHAT] console.ait.hartnell_mint unlocked!
+[17:58:07] [Render thread/INFO] (Minecraft) [System] [CHAT] console.ait.toyota_blue unlocked!
+[17:58:07] [Render thread/INFO] (Minecraft) [System] [CHAT] console.ait.toyota_legacy unlocked!
+[17:58:07] [Render thread/INFO] (Minecraft) [System] [CHAT] console.ait.coral_white unlocked!
+[17:58:07] [Render thread/INFO] (Minecraft) [System] [CHAT] console.ait.coral_blue unlocked!
+[17:58:07] [Render thread/INFO] (Minecraft) [System] [CHAT] Dev unlocked!
+[17:58:07] [Render thread/INFO] (Minecraft) [System] [CHAT] exterior.ait.mint unlocked!
+[17:58:07] [Render thread/INFO] (Minecraft) [System] [CHAT] exterior.ait.shalka unlocked!
+[17:58:07] [Render thread/INFO] (Minecraft) [System] [CHAT] exterior.ait.fire unlocked!
+[17:58:07] [Render thread/INFO] (Minecraft) [System] [CHAT] exterior.ait.soul unlocked!
+[17:58:07] [Render thread/INFO] (Minecraft) [System] [CHAT] exterior.ait.exile unlocked!
+[17:58:07] [Render thread/INFO] (Minecraft) [System] [CHAT] exterior.ait.hudolin unlocked!
+[17:58:07] [Render thread/INFO] (Minecraft) [System] [CHAT] exterior.ait.prime unlocked!
+[17:58:07] [Render thread/INFO] (Minecraft) [System] [CHAT] exterior.ait.cherrywood unlocked!
+[17:58:07] [Render thread/INFO] (Minecraft) [System] [CHAT] exterior.ait.coral unlocked!
+[17:58:07] [Render thread/INFO] (Minecraft) [System] [CHAT] exterior.ait.futuristic unlocked!
+[17:58:07] [Render thread/INFO] (Minecraft) [System] [CHAT] exterior.ait.fire unlocked!
+[17:58:07] [Render thread/INFO] (Minecraft) [System] [CHAT] exterior.ait.cabinet unlocked!
+[17:58:07] [Render thread/INFO] (Minecraft) [System] [CHAT] Tokamak unlocked!
+[17:58:07] [Render thread/INFO] (Minecraft) [System] [CHAT] exterior.ait.definitive unlocked!
+[17:58:07] [Render thread/INFO] (Minecraft) [System] [CHAT] exterior.ait.soul unlocked!
+[17:58:07] [Render thread/INFO] (Minecraft) [System] [CHAT] exterior.ait.tron unlocked!
+[17:58:07] [Render thread/INFO] (Minecraft) [System] [CHAT] exterior.ait.fire unlocked!
+[17:58:07] [Render thread/INFO] (Minecraft) [System] [CHAT] exterior.ait.yeti unlocked!
+[17:58:07] [Render thread/INFO] (Minecraft) [System] [CHAT] exterior.ait.default unlocked!
+[17:58:07] [Render thread/INFO] (Minecraft) [System] [CHAT] exterior.ait.default unlocked!
+[17:58:07] [Render thread/INFO] (Minecraft) [System] [CHAT] exterior.ait.default unlocked!
+[17:58:07] [Render thread/INFO] (Minecraft) [System] [CHAT] exterior.ait.default unlocked!
+[17:58:07] [Render thread/INFO] (Minecraft) [System] [CHAT] exterior.ait.ptored unlocked!
+[17:58:07] [Render thread/INFO] (Minecraft) [System] [CHAT] exterior.ait.soul unlocked!
+[17:58:07] [Render thread/INFO] (Minecraft) [System] [CHAT] Fob unlocked!
+[17:58:07] [Render thread/INFO] (Minecraft) [System] [CHAT] Coral alt 2 unlocked!
+[17:58:07] [Render thread/INFO] (Minecraft) [System] [CHAT] Coral alt 1 unlocked!
+[17:58:07] [Render thread/INFO] (Minecraft) [System] [CHAT] Mark IV [ASEOHA!] unlocked!
+[17:58:07] [Render thread/INFO] (Minecraft) [System] [CHAT] Mark II [ASEOHA!] unlocked!
+[17:58:07] [Render thread/INFO] (Minecraft) [System] [CHAT] Copper unlocked!
+[17:58:07] [Render thread/INFO] (Minecraft) [System] [CHAT] Left's Sonic unlocked!
+[17:58:07] [Render thread/INFO] (Minecraft) [System] [CHAT] sonic.aseoha.do7 unlocked!
+[17:58:07] [Render thread/INFO] (Minecraft) [System] [CHAT] Mechanical unlocked!
+[17:58:07] [Render thread/INFO] (Minecraft) [System] [CHAT] Coral alt 4 unlocked!
+[17:58:07] [Render thread/INFO] (Minecraft) [System] [CHAT] Coral alt 3 unlocked!
+[17:58:07] [Render thread/INFO] (Minecraft) [System] [CHAT] Coral alt 5 unlocked!
+[17:58:08] [Server thread/INFO] (Minecraft) Player45 has completed the challenge [How Does It Fit?]
+[17:58:08] [Server thread/INFO] (Minecraft) Saving and pausing game...
+[17:58:08] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
+[17:58:08] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/aseoha:new_earth
+[17:58:08] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/aseoha:skaro
+[17:58:08] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
+[17:58:08] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/ait:tardis_dimension
+[17:58:08] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/aseoha:raxicoricofallapatorious
+[17:58:08] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/ait:time_vortex
+[17:58:08] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/aseoha:midnight
+[17:58:08] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/aseoha:trenzalore
+[17:58:08] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
+[17:58:08] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/aseoha:klom
+[17:58:08] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/aseoha:mars
+[17:58:08] [Server thread/INFO] (Minecraft) Saving chunks for level 'ServerLevel[New World]'/aseoha:gallifrey
+[17:58:09] [Render thread/INFO] (Minecraft) [System] [CHAT] Player45 has completed the challenge [How Does It Fit?]
+[17:58:09] [Render thread/INFO] (Minecraft) Loaded 4 advancements

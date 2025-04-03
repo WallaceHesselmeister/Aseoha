@@ -1,0 +1,13 @@
+{
+  "id": "aseoha:sonic_fourteen",
+  "models": {
+    "inactive":  "aseoha:item/sonic/sonic_fourteen",
+    "interaction":  "aseoha:item/sonic/sonic_fourteen",
+    "overload":  "aseoha:item/sonic/sonic_fourteen",
+    "scanning":  "aseoha:item/sonic/sonic_fourteen",
+    "tardis":  "aseoha:item/sonic/sonic_fourteen"
+  },
+  "loyalty": {
+    "type": "NEUTRAL"
+  }
+}

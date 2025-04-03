@@ -4,81 +4,238 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9ee901da-190c-4d52-83a2-b4f218b1a0d5" name="Changes" comment="sonic">
+    <list default="true" id="9ee901da-190c-4d52-83a2-b4f218b1a0d5" name="Changes" comment="fixed ait sonics">
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/eighth_sonic.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/pertwee_sonic_inactive.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/pertwee_sonic_interactive.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/pertwee_sonic_overload.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/pertwee_sonic_scanning.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/pertwee_sonic_tardis.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/war_sonic_inactive.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/war_sonic_interactive.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/war_sonic_overload.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/war_sonic_scanning.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/war_sonic_tardis.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/textures/item/sonic_tools/eighth_sonic.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/textures/item/sonic_tools/thirdinactive.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/textures/item/sonic_tools/thirdinteractive.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/textures/item/sonic_tools/thirdoverload.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/textures/item/sonic_tools/thirdscan.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/textures/item/sonic_tools/thirdtardis.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/textures/item/sonic_tools/war.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/textures/item/sonic_tools/war_interactive.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/textures/item/sonic_tools/war_overload.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/textures/item/sonic_tools/war_scanning.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/textures/item/sonic_tools/war_tardis.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.10/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.10/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.10/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.10/checksums/md5-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.10/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.10/checksums/sha1-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.10/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.10/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.10/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.10/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.10/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.10/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.10/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.10/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.8/checksums/checksums.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.8/checksums/md5-checksums.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.8/checksums/sha1-checksums.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.8/dependencies-accessors/gc.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.8/fileChanges/last-build.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.lock" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.8/gc.properties" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/loom-cache/launch.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/loom-cache/launch.cfg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/Minecraft_Client.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/Minecraft_Client.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/Minecraft_Server.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/Minecraft_Server.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/Aseoha-refmap.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/Aseoha-refmap.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/aseoha/lang/en_us.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/assets/aseoha/lang/en_us.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic/baker_alt_sonic_inactive.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic/baker_alt_sonic_inactive.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic/baker_alt_sonic_interactive.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic/baker_alt_sonic_interactive.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic/baker_alt_sonic_overload.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic/baker_alt_sonic_overload.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic/baker_alt_sonic_scanning.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic/baker_alt_sonic_scanning.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic/baker_alt_sonic_tardis.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic/baker_alt_sonic_tardis.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic/candy_cane_sonic.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic/candy_cane_sonic.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic/chicken_inactive.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic/chicken_inactive.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic/chicken_interaction.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic/chicken_interaction.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic/chicken_overload.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic/chicken_overload.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic/chicken_scanning.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic/chicken_scanning.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic/chicken_tardis.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic/chicken_tardis.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic/do7.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic/do7.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic/mk1.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic/mk1.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic/mk2.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic/mk2.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic/mk3.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic/mk3.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic/mk4.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic/mk4.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic/sonic_coral1_inactive.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic/sonic_coral1_inactive.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic/sonic_coral1_interaction.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic/sonic_coral1_interaction.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic/sonic_coral1_overload.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic/sonic_coral1_overload.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic/sonic_coral1_scanning.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic/sonic_coral1_scanning.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic/sonic_coral1_tardis.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic/sonic_coral1_tardis.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic/sonic_coral2_inactive.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic/sonic_coral2_inactive.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic/sonic_coral2_interaction.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic/sonic_coral2_interaction.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic/sonic_coral2_overload.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic/sonic_coral2_overload.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic/sonic_coral2_scanning.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic/sonic_coral2_scanning.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic/sonic_coral2_tardis.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic/sonic_coral2_tardis.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic/sonic_coral3_inactive.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic/sonic_coral3_inactive.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic/sonic_coral3_interaction.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic/sonic_coral3_interaction.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic/sonic_coral3_overload.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic/sonic_coral3_overload.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic/sonic_coral3_scanning.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic/sonic_coral3_scanning.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic/sonic_coral3_tardis.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic/sonic_coral3_tardis.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic/sonic_coral4_inactive.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic/sonic_coral4_inactive.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic/sonic_coral4_interaction.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic/sonic_coral4_interaction.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic/sonic_coral4_overload.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic/sonic_coral4_overload.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic/sonic_coral4_scanning.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic/sonic_coral4_scanning.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic/sonic_coral4_tardis.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic/sonic_coral4_tardis.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic/sonic_coral5_inactive.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic/sonic_coral5_inactive.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic/sonic_coral5_interaction.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic/sonic_coral5_interaction.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic/sonic_coral5_overload.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic/sonic_coral5_overload.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic/sonic_coral5_scanning.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic/sonic_coral5_scanning.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic/sonic_coral5_tardis.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic/sonic_coral5_tardis.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic/sonic_fourteenth.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic/sonic_fourteenth.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic/sonic_screwdriver.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic/sonic_screwdriver.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic/sonic_wiimote.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic/sonic_wiimote.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/data/aseoha/sonic_tools/baker_alt_sonic.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/data/aseoha/sonic_tools/baker_alt_sonic.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/data/aseoha/sonic_tools/candy_cane_sonic.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/data/aseoha/sonic_tools/candy_cane_sonic.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/data/aseoha/sonic_tools/chicken_sonic.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/data/aseoha/sonic_tools/chicken_sonic.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/data/aseoha/sonic_tools/do7.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/data/aseoha/sonic_tools/do7.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/data/aseoha/sonic_tools/eighth_sonic.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/data/aseoha/sonic_tools/eighth_sonic.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/data/aseoha/sonic_tools/mk2.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/data/aseoha/sonic_tools/mk2.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/data/aseoha/sonic_tools/mk4.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/data/aseoha/sonic_tools/mk4.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/data/aseoha/sonic_tools/pertwee_sonic.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/data/aseoha/sonic_tools/pertwee_sonic.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/data/aseoha/sonic_tools/sonic_coral1.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/data/aseoha/sonic_tools/sonic_coral1.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/data/aseoha/sonic_tools/sonic_coral2.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/data/aseoha/sonic_tools/sonic_coral2.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/data/aseoha/sonic_tools/sonic_coral3.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/data/aseoha/sonic_tools/sonic_coral3.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/data/aseoha/sonic_tools/sonic_coral4.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/data/aseoha/sonic_tools/sonic_coral4.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/data/aseoha/sonic_tools/sonic_coral5.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/data/aseoha/sonic_tools/sonic_coral5.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/data/aseoha/sonic_tools/sonic_fourteen.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/data/aseoha/sonic_tools/sonic_fourteen.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/data/aseoha/sonic_tools/sonic_screwdriver.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/data/aseoha/sonic_tools/sonic_screwdriver.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/data/aseoha/sonic_tools/sonic_wiimote.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/data/aseoha/sonic_tools/sonic_wiimote.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/data/aseoha/sonic_tools/war_sonic.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/data/aseoha/sonic_tools/war_sonic.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic_tools/baker_alt_sonic_inactive.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic_tools/baker_alt_sonic_interactive.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic_tools/baker_alt_sonic_overload.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic_tools/baker_alt_sonic_scanning.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic_tools/baker_alt_sonic_tardis.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic_tools/candy_cane_sonic.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic_tools/chicken_inactive.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic_tools/chicken_interaction.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic_tools/chicken_overload.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic_tools/chicken_scanning.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic_tools/chicken_tardis.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic_tools/do7.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic_tools/do7/inactive.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic_tools/do7/interaction.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic_tools/do7/overload.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic_tools/do7/scanning.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic_tools/do7/tardis.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic_tools/mk1.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic_tools/mk1/inactive.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic_tools/mk1/interaction.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic_tools/mk1/overload.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic_tools/mk1/scanning.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic_tools/mk1/tardis.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic_tools/mk2.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic_tools/mk2/inactive.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic_tools/mk2/interaction.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic_tools/mk2/overload.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic_tools/mk2/scanning.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic_tools/mk2/tardis.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic_tools/mk3.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic_tools/mk3/inactive.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic_tools/mk3/interaction.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic_tools/mk3/overload.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic_tools/mk3/scanning.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic_tools/mk3/tardis.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic_tools/mk4.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic_tools/mk4/inactive.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic_tools/mk4/interaction.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic_tools/mk4/overload.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic_tools/mk4/scanning.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic_tools/mk4/tardis.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic_tools/sonic_coral1_inactive.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic_tools/sonic_coral1_interaction.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic_tools/sonic_coral1_overload.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic_tools/sonic_coral1_scanning.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic_tools/sonic_coral1_tardis.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic_tools/sonic_coral2_inactive.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic_tools/sonic_coral2_interaction.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic_tools/sonic_coral2_overload.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic_tools/sonic_coral2_scanning.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic_tools/sonic_coral2_tardis.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic_tools/sonic_coral3_inactive.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic_tools/sonic_coral3_interaction.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic_tools/sonic_coral3_overload.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic_tools/sonic_coral3_scanning.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic_tools/sonic_coral3_tardis.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic_tools/sonic_coral4_inactive.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic_tools/sonic_coral4_interaction.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic_tools/sonic_coral4_overload.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic_tools/sonic_coral4_scanning.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic_tools/sonic_coral4_tardis.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic_tools/sonic_coral5_inactive.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic_tools/sonic_coral5_interaction.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic_tools/sonic_coral5_overload.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic_tools/sonic_coral5_scanning.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic_tools/sonic_coral5_tardis.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic_tools/sonic_fourteenth.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic_tools/sonic_screwdriver.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/item/sonic_tools/sonic_wiimote.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/aseoha/sonic_tools/baker_alt_sonic.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/aseoha/sonic_tools/candy_cane_sonic.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/aseoha/sonic_tools/chicken_sonic.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/aseoha/sonic_tools/do7.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/aseoha/sonic_tools/eighth_sonic.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/aseoha/sonic_tools/mk2.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/aseoha/sonic_tools/mk4.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/aseoha/sonic_tools/pertwee_sonic.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/aseoha/sonic_tools/sonic_coral1.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/aseoha/sonic_tools/sonic_coral2.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/aseoha/sonic_tools/sonic_coral3.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/aseoha/sonic_tools/sonic_coral4.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/aseoha/sonic_tools/sonic_coral5.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/aseoha/sonic_tools/sonic_fourteen.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/aseoha/sonic_tools/sonic_screwdriver.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/aseoha/sonic_tools/sonic_wiimote.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/aseoha/sonic_tools/war_sonic.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/resources/main/fabric.mod.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/fabric.mod.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run/config/aitconfig.json5" beforeDir="false" afterPath="$PROJECT_DIR$/run/config/aitconfig.json5" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run/config/fabric/indigo-renderer.properties" beforeDir="false" afterPath="$PROJECT_DIR$/run/config/fabric/indigo-renderer.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/debug-1.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/debug-1.log.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/debug-2.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/debug-2.log.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/debug-3.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/debug-3.log.gz" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run/logs/debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/debug.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run/logs/latest.log" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/latest.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run/usercache.json" beforeDir="false" afterPath="$PROJECT_DIR$/run/usercache.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/lang/en_us.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/lang/en_us.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic_tools/baker_alt_sonic_inactive.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/baker_alt_sonic_inactive.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic_tools/baker_alt_sonic_interactive.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/baker_alt_sonic_interactive.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic_tools/baker_alt_sonic_overload.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/baker_alt_sonic_overload.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic_tools/baker_alt_sonic_scanning.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/baker_alt_sonic_scanning.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic_tools/baker_alt_sonic_tardis.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/baker_alt_sonic_tardis.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic_tools/candy_cane_sonic.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/candy_cane_sonic.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic_tools/chicken_inactive.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/chicken_inactive.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic_tools/chicken_interaction.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/chicken_interaction.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic_tools/chicken_overload.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/chicken_overload.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic_tools/chicken_scanning.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/chicken_scanning.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic_tools/chicken_tardis.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/chicken_tardis.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic_tools/do7.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/do7.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic_tools/do7/inactive.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/do7/inactive.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic_tools/do7/interaction.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/do7/interaction.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic_tools/do7/overload.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/do7/overload.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic_tools/do7/scanning.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/do7/scanning.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic_tools/do7/tardis.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/do7/tardis.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic_tools/mk1.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/mk1.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic_tools/mk1/inactive.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/mk1/inactive.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic_tools/mk1/interaction.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/mk1/interaction.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic_tools/mk1/overload.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/mk1/overload.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic_tools/mk1/scanning.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/mk1/scanning.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic_tools/mk1/tardis.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/mk1/tardis.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic_tools/mk2.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/mk2.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic_tools/mk2/inactive.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/mk2/inactive.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic_tools/mk2/interaction.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/mk2/interaction.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic_tools/mk2/overload.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/mk2/overload.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic_tools/mk2/scanning.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/mk2/scanning.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic_tools/mk2/tardis.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/mk2/tardis.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic_tools/mk3.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/mk3.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic_tools/mk3/inactive.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/mk3/inactive.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic_tools/mk3/interaction.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/mk3/interaction.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic_tools/mk3/overload.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/mk3/overload.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic_tools/mk3/scanning.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/mk3/scanning.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic_tools/mk3/tardis.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/mk3/tardis.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic_tools/mk4.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/mk4.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic_tools/mk4/inactive.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/mk4/inactive.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic_tools/mk4/interaction.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/mk4/interaction.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic_tools/mk4/overload.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/mk4/overload.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic_tools/mk4/scanning.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/mk4/scanning.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic_tools/mk4/tardis.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/mk4/tardis.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic_tools/sonic_coral1_inactive.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/sonic_coral1_inactive.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic_tools/sonic_coral1_interaction.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/sonic_coral1_interaction.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic_tools/sonic_coral1_overload.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/sonic_coral1_overload.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic_tools/sonic_coral1_scanning.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/sonic_coral1_scanning.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic_tools/sonic_coral1_tardis.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/sonic_coral1_tardis.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic_tools/sonic_coral2_inactive.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/sonic_coral2_inactive.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic_tools/sonic_coral2_interaction.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/sonic_coral2_interaction.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic_tools/sonic_coral2_overload.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/sonic_coral2_overload.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic_tools/sonic_coral2_scanning.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/sonic_coral2_scanning.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic_tools/sonic_coral2_tardis.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/sonic_coral2_tardis.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic_tools/sonic_coral3_inactive.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/sonic_coral3_inactive.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic_tools/sonic_coral3_interaction.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/sonic_coral3_interaction.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic_tools/sonic_coral3_overload.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/sonic_coral3_overload.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic_tools/sonic_coral3_scanning.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/sonic_coral3_scanning.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic_tools/sonic_coral3_tardis.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/sonic_coral3_tardis.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic_tools/sonic_coral4_inactive.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/sonic_coral4_inactive.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic_tools/sonic_coral4_interaction.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/sonic_coral4_interaction.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic_tools/sonic_coral4_overload.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/sonic_coral4_overload.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic_tools/sonic_coral4_scanning.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/sonic_coral4_scanning.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic_tools/sonic_coral4_tardis.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/sonic_coral4_tardis.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic_tools/sonic_coral5_inactive.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/sonic_coral5_inactive.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic_tools/sonic_coral5_interaction.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/sonic_coral5_interaction.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic_tools/sonic_coral5_overload.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/sonic_coral5_overload.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic_tools/sonic_coral5_scanning.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/sonic_coral5_scanning.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic_tools/sonic_coral5_tardis.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/sonic_coral5_tardis.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic_tools/sonic_fourteenth.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/sonic_fourteenth.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic_tools/sonic_screwdriver.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/sonic_screwdriver.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic_tools/sonic_wiimote.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/sonic_wiimote.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/textures/item/sonic_tools/sonic_fourteenth.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/textures/item/sonic_tools/fourteenth.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/data/aseoha/sonic_tools/baker_alt_sonic.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/data/aseoha/sonic/baker_alt_sonic.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/data/aseoha/sonic_tools/candy_cane_sonic.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/data/aseoha/sonic/candy_cane_sonic.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/data/aseoha/sonic_tools/chicken_sonic.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/data/aseoha/sonic/chicken_sonic.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/data/aseoha/sonic_tools/do7.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/data/aseoha/sonic/do7.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/data/aseoha/sonic_tools/eighth_sonic.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/data/aseoha/sonic/eighth_sonic.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/data/aseoha/sonic_tools/mk2.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/data/aseoha/sonic/mk2.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/data/aseoha/sonic_tools/mk4.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/data/aseoha/sonic/mk4.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/data/aseoha/sonic_tools/pertwee_sonic.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/data/aseoha/sonic/pertwee_sonic.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/data/aseoha/sonic_tools/sonic_coral1.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/data/aseoha/sonic/sonic_coral1.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/data/aseoha/sonic_tools/sonic_coral2.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/data/aseoha/sonic/sonic_coral2.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/data/aseoha/sonic_tools/sonic_coral3.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/data/aseoha/sonic/sonic_coral3.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/data/aseoha/sonic_tools/sonic_coral4.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/data/aseoha/sonic/sonic_coral4.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/data/aseoha/sonic_tools/sonic_coral5.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/data/aseoha/sonic/sonic_coral5.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/data/aseoha/sonic_tools/sonic_fourteen.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/data/aseoha/sonic/sonic_fourteen.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/data/aseoha/sonic_tools/sonic_screwdriver.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/data/aseoha/sonic/sonic_screwdriver.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/data/aseoha/sonic_tools/sonic_wiimote.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/data/aseoha/sonic/sonic_wiimote.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/data/aseoha/sonic_tools/war_sonic.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/data/aseoha/sonic/war_sonic.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -124,7 +281,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="Architectury-1.20" />
+        <entry key="$PROJECT_DIR$" value="Fabric-1.20-AIT" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -145,7 +302,9 @@
   &quot;associatedIndex&quot;: 3
 }</component>
   <component name="ProjectId" id="2uMGFeeP7eeLjGFxt5ipuc1Tofc" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -155,11 +314,17 @@
     "Gradle.AseohaAIT [runClient].executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "Fabric-1.20-AIT",
+    "git-widget-placeholder": "Fabric-1.20-AITv2",
     "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true"
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/nitew/IdeaProjects/AseohaAIT/src/main/resources/assets/aseoha/textures/item/sonic_tools"
   }
 }]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\nitew\IdeaProjects\AseohaAIT\src\main\resources\assets\aseoha\models\item\sonic" />
+    </key>
+  </component>
   <component name="RunManager" selected="Gradle.AseohaAIT [runClient]">
     <configuration name="AseohaAIT [runClient]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
@@ -183,6 +348,11 @@
       <RunAsTest>false</RunAsTest>
       <method v="2" />
     </configuration>
+    <list>
+      <item itemvalue="Application.Minecraft Client" />
+      <item itemvalue="Application.Minecraft Server" />
+      <item itemvalue="Gradle.AseohaAIT [runClient]" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Gradle.AseohaAIT [runClient]" />
@@ -234,9 +404,13 @@
     <option name="localTasksCounter" value="5" />
     <servers />
   </component>
+  <component name="UnknownFeatures">
+    <option featureType="dependencySupport" implementationName="java:net.fabricmc:fabric-loader" />
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="sonic tardis stuff" />
     <MESSAGE value="sonic" />
-    <option name="LAST_COMMIT_MESSAGE" value="sonic" />
+    <MESSAGE value="fixed ait sonics" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed ait sonics" />
   </component>
 </project>
