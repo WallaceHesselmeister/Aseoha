@@ -1,6 +1,6 @@
 package com.code.aseoha.common.dimension.features;
 
-import loqor.ait.registry.impl.SequenceRegistry;
+import dev.amble.ait.registry.impl.SequenceRegistry;
 import net.fabricmc.fabric.mixin.registry.sync.RegistriesAccessor;
 import net.minecraft.registry.*;
 import net.minecraft.util.Identifier;
