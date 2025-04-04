@@ -1,6 +1,6 @@
 package com.code.aseoha.common;
 
-import loqor.ait.tardis.control.sequences.Sequence;
+//import dev.amble.ait.tardis.control.sequences.Sequence;
 import net.fabricmc.fabric.api.event.registry.FabricRegistryBuilder;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.SimpleRegistry;
