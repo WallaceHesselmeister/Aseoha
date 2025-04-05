@@ -16,7 +16,7 @@ repositories {
     // Loom adds the essential maven repositories to download Minecraft and libraries from automatically.
     // See https://docs.gradle.org/current/userguide/declaring_repositories.html
     // for more information about repositories.
-
+    maven { url 'https://maven.wispforest.io' }
     maven { url "https://jitpack.io"
         metadataSources {
             artifact() // Look directly for artifact
@@ -29,6 +29,7 @@ repositories {
 
 loom {
     splitEnvironmentSourceSets()
+    accessWidenerPath = file("src/main/resources/aseoha.accesswidener")
 }
 //accessWidenerPath = file("src/main/resources/ait-extras.accesswidener")
 
@@ -72,6 +73,10 @@ dependencies {
     include(modImplementation("com.github.DrTheodor:mc-queue:${project.queue_version}")) {
         exclude(group: "net.fabricmc.fabric-api")
     }
+
+    modImplementation "io.wispforest:owo-lib:${project.owo_version}"
+    // only if you plan to use owo-config
+    annotationProcessor "io.wispforest:owo-lib:${project.owo_version}"
 
 }
 
