@@ -5,6 +5,9 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/AseohaAIT.client.iml" filepath="$PROJECT_DIR$/.idea/modules/AseohaAIT.client.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/AseohaAIT.main.iml" filepath="$PROJECT_DIR$/.idea/modules/AseohaAIT.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/AseohaAIT.test.iml" filepath="$PROJECT_DIR$/.idea/modules/AseohaAIT.test.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/tama.aseoha.AseohaAIT.client.iml" filepath="$PROJECT_DIR$/.idea/modules/tama.aseoha.AseohaAIT.client.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/tama.aseoha.AseohaAIT.main.iml" filepath="$PROJECT_DIR$/.idea/modules/tama.aseoha.AseohaAIT.main.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/tama.aseoha.AseohaAIT.test.iml" filepath="$PROJECT_DIR$/.idea/modules/tama.aseoha.AseohaAIT.test.iml" />
     </modules>
   </component>
 </project>
