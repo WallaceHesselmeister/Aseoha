@@ -4,24 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9ee901da-190c-4d52-83a2-b4f218b1a0d5" name="Changes" comment="codiak i uodated to new ait can u finish the porting off?">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/data/aseoha/structures/interiors/alloy.nbt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/data/aseoha/structures/interiors/profit.nbt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/data/aseoha/structures/interiors/warmaster.nbt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.10/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.10/checksums/checksums.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/8.10/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.10/executionHistory/executionHistory.bin" afterDir="false" />
+    <list default="true" id="9ee901da-190c-4d52-83a2-b4f218b1a0d5" name="Changes" comment="Added AIT Interiors &lt;-- Mod not working yet needs fixing still">
       <change beforePath="$PROJECT_DIR$/.gradle/8.10/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.10/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.10/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.10/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.10/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.10/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.10/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.10/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/loom-cache/launch.cfg" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/loom-cache/launch.cfg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/loom-cache/log4j.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/loom-cache/log4j.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules/AseohaAIT.main.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules/AseohaAIT.main.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/Minecraft_Client.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/Minecraft_Client.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations/Minecraft_Server.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations/Minecraft_Server.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -85,17 +73,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Gradle.AseohaAIT [runClient].executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;Fabric-1.20-AITv2&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/nitew/IdeaProjects/AseohaAIT/libs&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Gradle.AseohaAIT [runClient].executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "Fabric-1.20-AITv2",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/nitew/IdeaProjects/AseohaAIT/src/main/resources/assets/aseoha/textures/desktop"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\nitew\IdeaProjects\AseohaAIT\src\main\resources\assets\aseoha\textures\desktop" />
@@ -202,7 +190,15 @@
       <option name="project" value="LOCAL" />
       <updated>1743700452932</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Added AIT Interiors &lt;-- Mod not working yet needs fixing still">
+      <option name="closed" value="true" />
+      <created>1743838612620</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1743838612620</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -213,6 +209,7 @@
     <MESSAGE value="sonic" />
     <MESSAGE value="fixed ait sonics" />
     <MESSAGE value="codiak i uodated to new ait can u finish the porting off?" />
-    <option name="LAST_COMMIT_MESSAGE" value="codiak i uodated to new ait can u finish the porting off?" />
+    <MESSAGE value="Added AIT Interiors &lt;-- Mod not working yet needs fixing still" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added AIT Interiors &lt;-- Mod not working yet needs fixing still" />
   </component>
 </project>

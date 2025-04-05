@@ -89,7 +89,12 @@
 
 
   "desktop.aseoha.coppercoral": "Copper Coral",
-  "desktop.aseoha.toywardian": "Toywardian",
+  "desktop.aseoha.alloy": "Alloy",
+  "desktop.aseoha.darkwardian": "Darkwardian",
+  "desktop.aseoha.paradox": "Time Paradox",
+  "desktop.aseoha.profit": "Profit",
+  "desktop.aseoha.trenzaloremissy": "Name Of Missy",
+  "desktop.aseoha.warmaster": "War Master",
 
   "exterior.aseoha.11": "Matt Smith",
   "exterior.aseoha.11alt": "11th alternative",
@@ -139,6 +144,7 @@
   "sonic.aseoha.sonic_screwdriver": "The Sonic",
   "sonic.aseoha.sonic_wiimote": "Wii",
   "sonic.aseoha.war_sonic": "War",
+  "sonic.aseoha.sonic_cane": "Copper Cane",
 
   "item.aseoha.latinum_bar": [
     {
