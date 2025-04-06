@@ -111,22 +111,19 @@
   "exterior.aseoha.bb8": "BB-8",
   "exterior.aseoha.billcipher": "Bill Cipher",
   "exterior.aseoha.cf": "CF",
-  "exterior.aseoha.cherrywood": "Cherry Wood",
   "exterior.aseoha.cmyk": "CMYK",
   "exterior.aseoha.comic": "Comic",
   "exterior.aseoha.coralalt": "Coral - Alternative",
   "exterior.aseoha.coralwar": "Coral - Time War",
   "exterior.aseoha.edwardian": "Edwardian",
   "exterior.aseoha.edwardianblu": "Edwardian - Blue",
-  "exterior.aseoha.futurek6": "K6 Booth - Futuristic",
-  "exterior.aseoha.k6booth": "K6 Booth",
   "exterior.aseoha.nate": "Nate",
   "exterior.aseoha.synth": "Synthwave",
   "exterior.aseoha.technicolour": "Technicolor",
   "exterior.aseoha.tokacoral": "Tokacoral",
   "exterior.aseoha.toywardianbox": "Toywardian",
-  "exterior.aseoha.toywardianfaded": "Toywardian - Faded",
   "exterior.aseoha.vintage": "Vintage",
+  "exterior.aseoha.burntcapsule": "Burnt Capsule",
 
   "sonic.aseoha.do7": "D - O7 [ASEOHA!]",
   "sonic.aseoha.mk2": "Mark II [ASEOHA!]",
@@ -146,6 +143,8 @@
   "sonic.aseoha.sonic_wiimote": "Wii",
   "sonic.aseoha.war_sonic": "War",
   "sonic.aseoha.sonic_cane": "Copper Cane",
+  "sonic.aseoha.mk1": "Mark I [ASEOHA!]",
+  "sonic.aseoha.mk3": "Mark III [ASEOHA!]",
 
   "item.aseoha.latinum_bar": [
     {
