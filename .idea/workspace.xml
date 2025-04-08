@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9ee901da-190c-4d52-83a2-b4f218b1a0d5" name="Changes" comment="fixed mk1 and mk3 sonics &lt;-- Mod not working yet needs fixing still">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/data/aseoha/desktop/cronos.json" afterDir="false" />
+    <list default="true" id="9ee901da-190c-4d52-83a2-b4f218b1a0d5" name="Changes" comment="Fixed an Exterior &lt;-- Mod not working yet needs fixing still">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,30 +68,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Gradle.AseohaAIT [runClient].executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "Fabric-1.20-AITv2",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/nitew/IdeaProjects/AseohaAIT/src/main/resources/data/aseoha/desktop"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Gradle.AseohaAIT [runClient].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;Fabric-1.20-AITv2&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/nitew/IdeaProjects/AseohaAIT/src/main/resources/data/aseoha/exterior&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\nitew\IdeaProjects\AseohaAIT\src\main\resources\data\aseoha\exterior" />
       <recent name="C:\Users\nitew\IdeaProjects\AseohaAIT\src\main\resources\data\aseoha\desktop" />
       <recent name="C:\Users\nitew\IdeaProjects\AseohaAIT\src\main\resources\data\aseoha\sonic" />
       <recent name="C:\Users\nitew\IdeaProjects\AseohaAIT\src\main\resources\assets\aseoha\textures\desktop" />
       <recent name="C:\Users\nitew\IdeaProjects\AseohaAIT\libs" />
-      <recent name="C:\Users\nitew\IdeaProjects\AseohaAIT\run\config\fabric" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\nitew\IdeaProjects\AseohaAIT\src\main\resources\assets\aseoha\models\item\sonic" />
-      <recent name="C:\Users\nitew\IdeaProjects\AseohaAIT\src\main\resources\assets\aseoha\textures\item\sonic_tools" />
       <recent name="C:\Users\nitew\IdeaProjects\AseohaAIT\src\main\resources\assets\aseoha\textures\desktop" />
       <recent name="C:\Users\nitew\IdeaProjects\AseohaAIT\src\main\resources\data\aseoha\structures\interiors" />
+      <recent name="C:\Users\nitew\IdeaProjects\AseohaAIT\src\main\resources\assets\aseoha\models\item\sonic" />
+      <recent name="C:\Users\nitew\IdeaProjects\AseohaAIT\src\main\resources\assets\aseoha\textures\item\sonic_tools" />
     </key>
   </component>
   <component name="RunManager" selected="Gradle.AseohaAIT [runClient]">
@@ -118,10 +118,10 @@
       <method v="2" />
     </configuration>
     <list>
+      <item itemvalue="Gradle.AseohaAIT [runClient]" />
+      <item itemvalue="Application.Data Generation" />
       <item itemvalue="Application.Minecraft Client" />
       <item itemvalue="Application.Minecraft Server" />
-      <item itemvalue="Application.Data Generation" />
-      <item itemvalue="Gradle.AseohaAIT [runClient]" />
     </list>
     <recent_temporary>
       <list>
@@ -219,7 +219,23 @@
       <option name="project" value="LOCAL" />
       <updated>1743960560434</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="The Cronos Desktop &lt;-- Mod not working yet needs fixing still">
+      <option name="closed" value="true" />
+      <created>1743960846645</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1743960846645</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Fixed an Exterior &lt;-- Mod not working yet needs fixing still">
+      <option name="closed" value="true" />
+      <created>1743961415178</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1743961415178</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -234,6 +250,8 @@
     <MESSAGE value="Added Copper Cane &lt;-- Mod not working yet needs fixing still" />
     <MESSAGE value="accidentally fixed some errors so imma comit so less errors for dj n codiak &lt;-- Mod not working yet needs fixing still" />
     <MESSAGE value="fixed mk1 and mk3 sonics &lt;-- Mod not working yet needs fixing still" />
-    <option name="LAST_COMMIT_MESSAGE" value="fixed mk1 and mk3 sonics &lt;-- Mod not working yet needs fixing still" />
+    <MESSAGE value="The Cronos Desktop &lt;-- Mod not working yet needs fixing still" />
+    <MESSAGE value="Fixed an Exterior &lt;-- Mod not working yet needs fixing still" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed an Exterior &lt;-- Mod not working yet needs fixing still" />
   </component>
 </project>
