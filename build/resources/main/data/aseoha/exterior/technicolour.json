@@ -1,7 +1,0 @@
-{
-    "id": "aseoha:technicolour",
-    "category": "ait:exterior/police_box",
-    "parent": "ait:exterior/police_box/default",
-    "texture": "aseoha:textures/exterior/police_box_technicolour.png",
-    "emission": "aseoha:textures/exterior/police_box_technicolour_emission.png"
-}

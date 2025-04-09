@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:item/handheld",
-  "textures": {
-    "layer0": "aseoha:item/latinum/latinum_shovel"
-  }
-}
