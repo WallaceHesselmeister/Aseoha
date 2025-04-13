@@ -1,6 +1,6 @@
 {
     "id": "aseoha:11alt",
-    "category": "ait:exterior/police_box",
+    "category": "aseoha:aseohaboxes",
     "parent": "ait:exterior/police_box/default",
     "texture": "aseoha:textures/exterior/police_box_11alt.png",
     "emission": "aseoha:textures/exterior/police_box_11alt_emission.png",

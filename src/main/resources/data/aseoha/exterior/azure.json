@@ -1,6 +1,6 @@
 {
     "id": "aseoha:azure",
-    "category": "ait:exterior/police_box",
+    "category": "aseoha:aseohaboxes",
     "parent": "ait:exterior/police_box/default",
     "texture": "aseoha:textures/exterior/police_box_azure.png",
     "emission": "aseoha:textures/exterior/police_box_azure_emission.png",

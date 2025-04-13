@@ -1,6 +1,6 @@
 {
     "id": "aseoha:4",
-    "category": "ait:exterior/classic",
+    "category": "aseoha:aseohaboxes",
     "parent": "ait:exterior/classic/yeti",
     "texture": "aseoha:textures/exterior/classic_4.png",
     "emission": "aseoha:textures/exterior/classic_4_emission.png",

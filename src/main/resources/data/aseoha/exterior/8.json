@@ -1,6 +1,6 @@
 {
     "id": "aseoha:8",
-    "category": "ait:exterior/classic",
+    "category": "aseoha:aseohaboxes",
     "parent": "ait:exterior/police_box/default",
     "texture": "aseoha:textures/exterior/police_box_8.png",
     "emission": "aseoha:textures/exterior/police_box_8_emission.png"

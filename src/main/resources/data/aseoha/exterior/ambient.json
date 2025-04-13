@@ -1,6 +1,6 @@
 {
     "id": "aseoha:ambient",
-    "category": "ait:exterior/police_box",
+    "category": "aseoha:aseohaboxes",
     "parent": "ait:exterior/police_box/default",
     "texture": "aseoha:textures/exterior/glasgow.png",
     "emission": "aseoha:textures/exterior/glasgow_emissive.png",

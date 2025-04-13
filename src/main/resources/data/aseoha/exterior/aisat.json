@@ -1,6 +1,6 @@
 {
     "id": "aseoha:aisat",
-    "category": "ait:exterior/classic",
+    "category": "aseoha:aseohaboxes",
     "parent": "ait:exterior/classic/prime",
     "texture": "aseoha:textures/exterior/aisat_prime.png",
     "emission": "aseoha:textures/exterior/aisat_prime_emission.png",

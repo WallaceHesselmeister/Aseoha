@@ -1,6 +1,6 @@
 {
     "id": "aseoha:nate",
-    "category": "ait:exterior/police_box",
+    "category": "aseoha:aseohaboxes",
     "parent": "ait:exterior/police_box/coral",
     "texture": "aseoha:textures/exterior/police_box_nate.png",
     "emission": "aseoha:textures/exterior/police_box_nate_emission.png",
