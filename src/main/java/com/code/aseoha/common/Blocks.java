@@ -6,7 +6,7 @@ import io.wispforest.owo.registration.reflect.BlockRegistryContainer;
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
-import net.minecraft.client.render.entity.model.ElytraEntityModel;
+
 import net.minecraft.item.BlockItem;
 import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;

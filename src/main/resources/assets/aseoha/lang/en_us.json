@@ -126,9 +126,9 @@
   "exterior.aseoha.vintage": "Vintage",
   "exterior.aseoha.burntcapsule": "Burnt Capsule",
 
-  "sonic.aseoha.do7": "D - O7 [ASEOHA!]",
-  "sonic.aseoha.mk2": "Mark II [ASEOHA!]",
-  "sonic.aseoha.mk4": "Mark IV [ASEOHA!]",
+  "sonic.aseoha.do7": "Chrome Mechanical",
+  "sonic.aseoha.mk2": "Mark II",
+  "sonic.aseoha.mk4": "Mark IV",
   "sonic.aseoha.candy_cane_sonic": "Candy Cane",
   "sonic.aseoha.baker_alt": "Baker",
   "sonic.aseoha.chicken_sonic": "Left's Sonic",
@@ -144,8 +144,8 @@
   "sonic.aseoha.sonic_wiimote": "Wii",
   "sonic.aseoha.war_sonic": "War",
   "sonic.aseoha.sonic_cane": "Copper Cane",
-  "sonic.aseoha.mk1": "Mark I [ASEOHA!]",
-  "sonic.aseoha.mk3": "Mark III [ASEOHA!]",
+  "sonic.aseoha.mk1": "Mark I",
+  "sonic.aseoha.mk3": "Mark III",
 
   "item.aseoha.latinum_bar": [
     {
