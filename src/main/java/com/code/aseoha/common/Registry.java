@@ -6,7 +6,7 @@ import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.SimpleRegistry;
 import net.minecraft.util.Identifier;
 
-public class Registry {
+public class Registry<B> {
     public static final SimpleRegistry REGISTRY = FabricRegistryBuilder.createSimple(RegistryKey.ofRegistry(new Identifier("aseoha", "sequence"))).buildAndRegister();
 
 }
