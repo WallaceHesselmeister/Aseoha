@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "xxx",
+    "xlx",
+    "xxx"
+  ],
+  "key": {
+    "x": {
+      "item": "minecraft:blaze_powder"
+    },
+    "l": {
+      "item": "minecraft:diamond_block"
+    }
+  },
+  "result": {
+    "item": "cataclysm:burning_ashes",
+    "count": 1
+  }
+}

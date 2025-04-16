@@ -1,0 +1,15 @@
+{
+  "type": "tardis:quantiscope",
+  "repair":false,
+  "ingredients":[
+    {"item":"minecraft:iron_ingot"},
+    {"item":"minecraft:blaze_powder"},
+    {"item":"regen:zinc"},
+    {"item":"minecraft:blaze_powder"},
+    {"item":"minecraft:iron_ingot"},
+    {"item":"minecraft:ender_pearl"}
+  ],
+  "result":{
+    "item":"regen:fobwatch"
+  }
+}
