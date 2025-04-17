@@ -4,7 +4,58 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9ee901da-190c-4d52-83a2-b4f218b1a0d5" name="Changes" comment="clean up" />
+    <list default="true" id="9ee901da-190c-4d52-83a2-b4f218b1a0d5" name="Changes" comment="Cleaning files and editing my stuff">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/lang/en_us.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/lang/en_us.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/baker_alt_sonic_inactive.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/baker_alt_sonic_interactive.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/baker_alt_sonic_overload.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/baker_alt_sonic_scanning.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/baker_alt_sonic_tardis.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/eighth_sonic.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/pertwee_sonic_inactive.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/pertwee_sonic_interactive.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/pertwee_sonic_overload.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/pertwee_sonic_scanning.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/pertwee_sonic_tardis.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/war_sonic_inactive.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/war_sonic_interactive.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/war_sonic_overload.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/war_sonic_scanning.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/war_sonic_tardis.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/textures/desktop/coppercoral.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/textures/desktop/darkwardian.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/textures/desktop/paradox.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/textures/desktop/trenzaloremissy.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/textures/item/sonic_tools/eighth_sonic.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/textures/item/sonic_tools/fourthinactive.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/textures/item/sonic_tools/fourthinteractive.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/textures/item/sonic_tools/fourthoverload.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/textures/item/sonic_tools/fourthscanning.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/textures/item/sonic_tools/fourthtardis.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/textures/item/sonic_tools/thirdinactive.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/textures/item/sonic_tools/thirdinteractive.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/textures/item/sonic_tools/thirdoverload.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/textures/item/sonic_tools/thirdscan.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/textures/item/sonic_tools/thirdtardis.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/textures/item/sonic_tools/war.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/textures/item/sonic_tools/war_interactive.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/textures/item/sonic_tools/war_overload.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/textures/item/sonic_tools/war_scanning.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/textures/item/sonic_tools/war_tardis.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/data/aseoha/desktop/copper.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/data/aseoha/desktop/darkwardian.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/data/aseoha/desktop/paradox.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/data/aseoha/desktop/trenzaloremissy.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/data/aseoha/sonic/baker_alt_sonic.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/data/aseoha/sonic/eighth_sonic.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/data/aseoha/sonic/pertwee_sonic.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/data/aseoha/sonic/war_sonic.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/data/aseoha/structures/interiors/coppercoral.nbt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/data/aseoha/structures/interiors/darkwardian.nbt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/data/aseoha/structures/interiors/paradox.nbt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/data/aseoha/structures/interiors/trenzaloremissy.nbt" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -86,22 +137,23 @@
     &quot;git-widget-placeholder&quot;: &quot;Fabric-1.20-AITv2&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/nitew/IdeaProjects/AseohaAIT/src/main/resources/data/aseoha/exterior&quot;
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/nitew/IdeaProjects/AseohaAIT/src/main/resources/data/aseoha/desktop&quot;
   }
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\nitew\IdeaProjects\AseohaAIT\src\main\resources\data\aseoha\desktop" />
+      <recent name="C:\Users\nitew\IdeaProjects\AseohaAIT\libs" />
       <recent name="C:\Users\nitew\IdeaProjects\AseohaAIT\src\main\resources\data\aseoha\exterior" />
       <recent name="C:\Users\nitew\IdeaProjects\AseohaAIT\src\main\resources\data\aseoha\sonic" />
       <recent name="C:\Users\nitew\IdeaProjects\AseohaAIT\src\main\resources\assets\aseoha\textures\desktop" />
-      <recent name="C:\Users\nitew\IdeaProjects\AseohaAIT\src\main\resources\data\aseoha\desktop" />
-      <recent name="C:\Users\nitew\IdeaProjects\AseohaAIT\libs" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\nitew\IdeaProjects\AseohaAIT\src\main\resources\assets\aseoha\textures\desktop" />
       <recent name="C:\Users\nitew\IdeaProjects\AseohaAIT\src\main\resources\data\aseoha\structures\interiors" />
+      <recent name="C:\Users\nitew\IdeaProjects\AseohaAIT\src\main\resources\assets\aseoha\textures\desktop" />
       <recent name="C:\Users\nitew\IdeaProjects\AseohaAIT\src\main\resources\assets\aseoha\models\item\sonic" />
-      <recent name="C:\Users\nitew\IdeaProjects\AseohaAIT\src\main\resources\assets\aseoha\textures\item\sonic_tools" />
+      <recent name="C:\Users\nitew\IdeaProjects\AseohaAIT\run\.fabric\processedMods" />
+      <recent name="C:\Users\nitew\IdeaProjects\AseohaAIT\src\main\resources\assets\aseoha\textures\exterior" />
     </key>
   </component>
   <component name="RunManager" selected="Gradle.AseohaAIT [runClient]">
@@ -317,7 +369,31 @@
       <option name="project" value="LOCAL" />
       <updated>1744575863611</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="clean up">
+      <option name="closed" value="true" />
+      <created>1744706238934</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1744706238934</updated>
+    </task>
+    <task id="LOCAL-00020" summary="whoever makes sonics please put pivot point in middle of sonic or i will off myself ... updated ait ver also codiak ur custom console doesnt fully work &lt;-- only power and sonic port work">
+      <option name="closed" value="true" />
+      <created>1744708656712</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1744708656712</updated>
+    </task>
+    <task id="LOCAL-00021" summary="Graveyard">
+      <option name="closed" value="true" />
+      <created>1744708849476</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1744708849476</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -351,6 +427,9 @@
     <MESSAGE value="Working build" />
     <MESSAGE value="fixed MK1 and 8" />
     <MESSAGE value="clean up" />
-    <option name="LAST_COMMIT_MESSAGE" value="clean up" />
+    <MESSAGE value="whoever makes sonics please put pivot point in middle of sonic or i will off myself ... updated ait ver also codiak ur custom console doesnt fully work &lt;-- only power and sonic port work" />
+    <MESSAGE value="Graveyard" />
+    <MESSAGE value="Cleaning files and editing my stuff" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cleaning files and editing my stuff" />
   </component>
 </project>
