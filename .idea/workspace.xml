@@ -5,56 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9ee901da-190c-4d52-83a2-b4f218b1a0d5" name="Changes" comment="Cleaning files and editing my stuff">
+      <change beforePath="$PROJECT_DIR$/.gradle/8.10/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.10/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.10/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.10/checksums/sha1-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/8.10/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.10/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/lang/en_us.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/lang/en_us.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/baker_alt_sonic_inactive.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/baker_alt_sonic_interactive.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/baker_alt_sonic_overload.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/baker_alt_sonic_scanning.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/baker_alt_sonic_tardis.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/eighth_sonic.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/pertwee_sonic_inactive.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/pertwee_sonic_interactive.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/pertwee_sonic_overload.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/pertwee_sonic_scanning.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/pertwee_sonic_tardis.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/war_sonic_inactive.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/war_sonic_interactive.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/war_sonic_overload.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/war_sonic_scanning.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/item/sonic/war_sonic_tardis.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/textures/desktop/coppercoral.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/textures/desktop/darkwardian.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/textures/desktop/paradox.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/textures/desktop/trenzaloremissy.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/textures/item/sonic_tools/eighth_sonic.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/textures/item/sonic_tools/fourthinactive.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/textures/item/sonic_tools/fourthinteractive.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/textures/item/sonic_tools/fourthoverload.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/textures/item/sonic_tools/fourthscanning.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/textures/item/sonic_tools/fourthtardis.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/textures/item/sonic_tools/thirdinactive.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/textures/item/sonic_tools/thirdinteractive.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/textures/item/sonic_tools/thirdoverload.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/textures/item/sonic_tools/thirdscan.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/textures/item/sonic_tools/thirdtardis.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/textures/item/sonic_tools/war.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/textures/item/sonic_tools/war_interactive.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/textures/item/sonic_tools/war_overload.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/textures/item/sonic_tools/war_scanning.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/textures/item/sonic_tools/war_tardis.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/aseoha/desktop/copper.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/aseoha/desktop/darkwardian.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/aseoha/desktop/paradox.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/aseoha/desktop/trenzaloremissy.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/aseoha/sonic/baker_alt_sonic.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/aseoha/sonic/eighth_sonic.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/aseoha/sonic/pertwee_sonic.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/aseoha/sonic/war_sonic.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/aseoha/structures/interiors/coppercoral.nbt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/aseoha/structures/interiors/darkwardian.nbt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/aseoha/structures/interiors/paradox.nbt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/data/aseoha/structures/interiors/trenzaloremissy.nbt" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -121,7 +76,7 @@
   &quot;associatedIndex&quot;: 3
 }</component>
   <component name="ProjectId" id="2uMGFeeP7eeLjGFxt5ipuc1Tofc" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+  <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="ProjectViewState">
@@ -393,7 +348,15 @@
       <option name="project" value="LOCAL" />
       <updated>1744708849476</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="Cleaning files and editing my stuff">
+      <option name="closed" value="true" />
+      <created>1744924647573</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1744924647573</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="UnknownFeatures">
