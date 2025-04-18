@@ -1,0 +1,14 @@
+{
+  "type": "tardis:quantiscope",
+  "repair":false,
+  "ingredients":[
+    {"item":"minecraft:netherite_ingot"},
+    {"item":"aseoha:engine"},
+    {"item":"minecraft:nether_star"},
+    {"item":"aseoha:upgrades/engine_booster"},
+    {"item":"tardis:circuits"}
+  ],
+  "result":{
+    "item":"aseoha:upgrades/lightspeed_drive"
+  }
+}
