@@ -52,11 +52,11 @@ public class AseohaItems {
 
     public static final RegistryObject<Item> ATRIUM_UPGRADE = ITEMS.register("upgrades/atrium", () -> createItem(new TardisPartItem((new Item.Properties()).tab(AseohaItemGroups.ASEOHA_GROUP), TardisConstants.Part.PartType.UPGRADE, false, false, TardisConstants.Translations.CHAMELEON_CIRCUIT)));
 
-    public static final RegistryObject<Item> WARP_DRIVE = ITEMS.register("upgrades/warp_drive", () -> createItem(new WarpDrive()));
+    public static final RegistryObject<Item> WARP_DRIVE = ITEMS.register("upgrades/warp_drive", WarpDrive::new);
 
-    public static final RegistryObject<Item> TESSERACT_DRIVE = ITEMS.register("upgrades/tesseract_drive", () -> createItem(new TesseractDrive()));
+    public static final RegistryObject<Item> TESSERACT_DRIVE = ITEMS.register("upgrades/tesseract_drive", TesseractDrive::new);
 
-    public static final RegistryObject<Item> LIGHTSPEED_DRIVE = ITEMS.register("upgrades/lightspeed_drive", () -> createItem(new LightSpeedDrive()));
+    public static final RegistryObject<Item> LIGHTSPEED_DRIVE = ITEMS.register("upgrades/lightspeed_drive", LightSpeedDrive::new);
 
     public static final RegistryObject<HammerSpacePouch> HAMMER_SPACE_POUCH = ITEMS.register("hammer_space_pouch", HammerSpacePouch::new);
     //

@@ -29,11 +29,11 @@ public class RegisterUpgrades extends UpgradeRegistry {
 
     public static final RegistryObject<UpgradeEntry> ENGINE_BOOSTER = UPGRADES.register("engine_booster", () -> setupUpgrade(EngineBoost::new, (Item) AseohaItems.ENGINE_BOOSTER.get(), FlightSubsystem.class));
 
-    public static final RegistryObject<UpgradeEntry> TESSERACT_DRIVE = UPGRADES.register("tesseract_drive", () -> setupUpgrade(TesseractDriveUpgrade::new, (Item) AseohaItems.TESSERACT_DRIVE.get(), FlightSubsystem.class));
+    public static final RegistryObject<UpgradeEntry> TESSERACT_DRIVE = UPGRADES.register("tesseract_drive", () -> setupUpgrade(TesseractDriveUpgrade::new, AseohaItems.TESSERACT_DRIVE.get(), FlightSubsystem.class));
 
-    public static final RegistryObject<UpgradeEntry> WARP_DRIVE = UPGRADES.register("warp_drive", () -> setupUpgrade(WarpDriveUpgrade::new, (Item) AseohaItems.WARP_DRIVE.get(), FlightSubsystem.class));
+    public static final RegistryObject<UpgradeEntry> WARP_DRIVE = UPGRADES.register("warp_drive", () -> setupUpgrade(WarpDriveUpgrade::new, AseohaItems.WARP_DRIVE.get(), FlightSubsystem.class));
 
-    public static final RegistryObject<UpgradeEntry> LIGHTSPEED_DRIVE = UPGRADES.register("lightspeed_drive", () -> setupUpgrade(LightspeedDrive::new, (Item) AseohaItems.LIGHTSPEED_DRIVE.get(), FlightSubsystem.class));
+    public static final RegistryObject<UpgradeEntry> LIGHTSPEED_DRIVE = UPGRADES.register("lightspeed_drive", () -> setupUpgrade(LightspeedDrive::new, AseohaItems.LIGHTSPEED_DRIVE.get(), FlightSubsystem.class));
 
 //    public static final RegistryObject<UpgradeEntry> AUTO_STABILISER = UPGRADES.register("auto_stabiliser", () -> {
 //        return setupUpgrade(EngineBoost::new, (Item) ModItems.AUTO_STABILISER.get(), FlightSubsystem.class);
