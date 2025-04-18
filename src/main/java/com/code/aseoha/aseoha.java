@@ -1,9 +1,12 @@
 package com.code.aseoha;
+
 import com.code.aseoha.DataGen.*;
-import com.code.aseoha.WorkBench.WorkBenchRecipe;
+import com.code.aseoha.WorkBench.WorkBenchRecipeHandler;
 import com.code.aseoha.block.AseohaBlocks;
+import com.code.aseoha.capabilities.IOverworldCapability;
+import com.code.aseoha.capabilities.OverworldCapability;
+import com.code.aseoha.capabilities.OverworldCapabilityStorage;
 import com.code.aseoha.client.Sounds;
-import com.code.aseoha.client.models.armor.ScarfModel;
 import com.code.aseoha.client.renderers.DavrosChairRenderer;
 import com.code.aseoha.client.renderers.blocks.EOHRenderer;
 import com.code.aseoha.client.renderers.blocks.WorkBenchRenderer;
@@ -16,20 +19,18 @@ import com.code.aseoha.client.renderers.sky.RaxicoricofallapitoriusSkyProperty;
 import com.code.aseoha.client.renderers.wallerender;
 import com.code.aseoha.commands.Commands;
 import com.code.aseoha.compat.NoProjectTARDISBlocks;
+import com.code.aseoha.compat.NoTadditionsItems;
 import com.code.aseoha.entities.ModEntityTypes;
 import com.code.aseoha.items.AseohaItems;
-import com.code.aseoha.compat.NoTadditionsItems;
-import com.code.aseoha.items.armor.ScarfArmorItem;
 import com.code.aseoha.misc.AseohaDimensions;
 import com.code.aseoha.misc.Loot;
-import com.code.aseoha.WorkBench.WorkBenchRecipeHandler;
 import com.code.aseoha.misc.VortexVariant;
-import com.code.aseoha.threads.K9TickThread;
-import com.code.aseoha.threads.LivingTickThread;
-import com.code.aseoha.threads.TickThread;
 import com.code.aseoha.networking.Networking;
 import com.code.aseoha.protocol.RegisterProtocols;
 import com.code.aseoha.registries.*;
+import com.code.aseoha.threads.K9TickThread;
+import com.code.aseoha.threads.LivingTickThread;
+import com.code.aseoha.threads.TickThread;
 import com.code.aseoha.tileentities.AseohaTiles;
 import com.code.aseoha.upgrades.RegisterUpgrades;
 import com.code.aseoha.world.biome.surface.SurfaceBuilder;
@@ -38,6 +39,7 @@ import net.minecraft.client.renderer.RenderTypeLookup;
 import net.minecraft.client.world.DimensionRenderInfo;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.common.capabilities.CapabilityManager;
 import net.minecraftforge.common.data.ExistingFileHelper;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -134,6 +136,12 @@ public class aseoha {
     }
 
     private void setup(final FMLCommonSetupEvent event) {
+        CapabilityManager.INSTANCE.register(
+                IOverworldCapability.class,
+                new OverworldCapabilityStorage(),
+                OverworldCapability::new
+        );
+
         event.enqueueWork(() -> {
             livingTickThread.start();
             k9TickThread.start();

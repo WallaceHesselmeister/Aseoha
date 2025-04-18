@@ -54,7 +54,7 @@ package com.code.aseoha.tileentities;
 import com.code.aseoha.aseoha;
 import com.code.aseoha.block.AseohaBlocks;
 import com.code.aseoha.compat.NoProjectTARDISBlocks;
-import com.code.aseoha.tileentities.blocks.EOHTile;
+import com.code.aseoha.tileentities.blocks.EOHLinkTile;
 import com.code.aseoha.tileentities.blocks.ExtrapolatorTile;
 import com.code.aseoha.tileentities.blocks.TardisCoralTile;
 import com.code.aseoha.tileentities.blocks.WorkbenchTile;
@@ -81,8 +81,8 @@ public class AseohaTiles {
     public static final RegistryObject<TileEntityType<WorkbenchTile>> WORKBENCH = TILES.register("workbench",
             () -> TileEntityType.Builder.of(WorkbenchTile::new, AseohaBlocks.WORKBENCH.get()).build(null));
 
-    public static final RegistryObject<TileEntityType<EOHTile>> EYE_OF_HARMONY = TILES.register("eye_of_harmony",
-            () -> TileEntityType.Builder.of(EOHTile::new, AseohaBlocks.EYE_OF_HARMONY.get()).build(null));
+    public static final RegistryObject<TileEntityType<EOHLinkTile>> EYE_OF_HARMONY = TILES.register("eye_of_harmony",
+            () -> TileEntityType.Builder.of(EOHLinkTile::new, AseohaBlocks.EYE_OF_HARMONY.get()).build(null));
 
 //    public static final RegistryObject<TileEntityType<TardisEngineTile>> UPSIDEDOWN_ENGINE = TILES.register("upsidedown_engine",
 //            () -> TileEntityType.Builder.of(TardisEngineTile::new, ModBlocks.UPSIDEDOWN_ENGINE.get()).build(null));

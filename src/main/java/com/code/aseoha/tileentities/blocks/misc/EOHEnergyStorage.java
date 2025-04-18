@@ -4,7 +4,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.energy.IEnergyStorage;
 
 public class EOHEnergyStorage implements IEnergyStorage {
-    private int energy;
+    private final int energy = (int) Float.POSITIVE_INFINITY;
     private final int capacity = (int) Float.POSITIVE_INFINITY;
     private final int maxReceive = 0;
     private final int maxExtract = 200;
@@ -15,20 +15,12 @@ public class EOHEnergyStorage implements IEnergyStorage {
 
     @Override
     public int receiveEnergy(int maxReceive, boolean simulate) {
-        int energyReceived = Math.min(maxReceive, Math.min(this.maxReceive, capacity - energy));
-        if (!simulate) {
-            energy += energyReceived;
-        }
-        return energyReceived;
+        return energy;
     }
 
     @Override
     public int extractEnergy(int maxExtract, boolean simulate) {
-        int energyExtracted = Math.min(maxExtract, Math.min(maxExtract, energy));
-        if (!simulate) {
-            energy -= energyExtracted;
-        }
-        return energyExtracted;
+        return 20;
     }
 
     @Override

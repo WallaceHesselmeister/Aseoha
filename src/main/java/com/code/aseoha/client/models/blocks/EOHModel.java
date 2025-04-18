@@ -1,19 +1,18 @@
 package com.code.aseoha.client.models.blocks;
 
-import com.code.aseoha.tileentities.blocks.EOHTile;
+import com.code.aseoha.tileentities.blocks.EOHLinkTile;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.vertex.IVertexBuilder;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.entity.model.EntityModel;
 import net.minecraft.client.renderer.model.ModelRenderer;
 import net.minecraft.entity.Entity;
-import net.minecraftforge.api.distmarker.OnlyIn;
 import net.tardis.mod.client.models.TileModel;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Objects;
 
-public class EOHModel extends EntityModel<Entity> implements TileModel<EOHTile> {
+public class EOHModel extends EntityModel<Entity> implements TileModel<EOHLinkTile> {
     private final ModelRenderer base;
     private final ModelRenderer Projector;
     private final ModelRenderer projecter3;
@@ -170,7 +169,7 @@ public class EOHModel extends EntityModel<Entity> implements TileModel<EOHTile> 
     }
 
     @Override
-    public void render(EOHTile tileEntity, float scale, MatrixStack matrixStack, IVertexBuilder buffer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha) {
+    public void render(EOHLinkTile tileEntity, float scale, MatrixStack matrixStack, IVertexBuilder buffer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha) {
         this.Star1.yRot = (float) Math.toRadians(Objects.requireNonNull(tileEntity.getLevel()).getGameTime() % 360);
         this.Star2.yRot = -(float) Math.toRadians(Objects.requireNonNull(tileEntity.getLevel()).getGameTime() % 360);
         this.Star1.xRot = (float) Math.toRadians(Objects.requireNonNull(tileEntity.getLevel()).getGameTime() % 360);

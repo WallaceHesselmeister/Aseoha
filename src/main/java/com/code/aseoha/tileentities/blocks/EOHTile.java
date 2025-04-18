@@ -3,42 +3,30 @@ package com.code.aseoha.tileentities.blocks;
 import com.code.aseoha.Helpers.IHelpWithConsole;
 import com.code.aseoha.block.AseohaBlocks;
 import com.code.aseoha.networking.Networking;
-import com.code.aseoha.networking.Packets.c2s.EOHSyncPacketC2S;
+import com.code.aseoha.networking.Packets.s2c.EOHSyncPacketS2C;
 import com.code.aseoha.tileentities.AseohaTiles;
 import com.code.aseoha.tileentities.blocks.misc.EOHEnergyStorage;
 import lombok.Getter;
 import lombok.Setter;
 import net.minecraft.block.BlockState;
-import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.nbt.CompoundNBT;
-import net.minecraft.potion.EffectInstance;
-import net.minecraft.potion.Effects;
-import net.minecraft.tileentity.ITickableTileEntity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.Direction;
-import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.ChunkPos;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.capabilities.ICapabilityProvider;
 import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.energy.CapabilityEnergy;
-import net.minecraftforge.fml.server.ServerLifecycleHooks;
-import net.tardis.mod.helper.TardisHelper;
-import net.tardis.mod.helper.WorldHelper;
 import net.tardis.mod.tileentities.ConsoleTile;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.Iterator;
-import java.util.List;
-import java.util.Objects;
 
-public class EOHTile extends TileEntity implements ITickableTileEntity, ICapabilityProvider {
+public class EOHTile extends TileEntity implements ICapabilityProvider {
     private final EOHEnergyStorage energyStorage = new EOHEnergyStorage(this.level);
     public EOHTile() {
         super(AseohaTiles.EYE_OF_HARMONY.get());
     }
-
 
     /**
      * This is used to get the time the Eye has NOT had a stabilizer for
@@ -75,65 +63,14 @@ public class EOHTile extends TileEntity implements ITickableTileEntity, ICapabil
     @Override
     public void onLoad() {
         super.onLoad();
+        assert this.level != null;
         if(this.level.isClientSide) return;
-        Networking.sendToDimension(this.level.dimension(), new EOHSyncPacketC2S());
+        Networking.sendToDimension(this.level.dimension(), new EOHSyncPacketS2C());
     }
 
-    /**
-     * Okay so how this SHOULD work is after 5 minutes, the EOH starts causing some time-space distortion (after giving you a few nasty effects) and at 8 minutes "overheats" AKA Shuts Off, you can keep it on with NO side effects by having a "Harmonic Stabilizer" within 10 blocks of the EOH.
-     * TODO: Add nasty side effects and get em working
-     */
-    @Override
-    public void tick() {
-        this.Update();
-        if(!this.level.isClientSide)
-            WorldHelper.forceChunkVanillaIfNotLoaded(ServerLifecycleHooks.getCurrentServer().getLevel(this.level.dimension()), new ChunkPos(this.getBlockPos().getX() / 16, this.getBlockPos().getZ() / 16));
-        this.consoleTile = TardisHelper.getConsoleInWorld(Objects.requireNonNull(this.getLevel())).orElse(null);
-        if (this.consoleTile == null) return;
-        if (!((IHelpWithConsole) this.consoleTile).Aseoha$GetHasEOH())
-            ((IHelpWithConsole) this.consoleTile).Aseoha$SetHasEOH(true);
-
-        if (((IHelpWithConsole) this.consoleTile).Aseoha$GetEOH() == null)
-            ((IHelpWithConsole) this.consoleTile).Aseoha$SetEOH(this);
-
-        this.active = this.hasStar;
-
-        if (this.active) {
-            ((IHelpWithConsole) this.consoleTile).Aseoha$SetEOHTimer(this.timer);
-
-            // Check for Harmonic Pillars
-            ((IHelpWithConsole) this.consoleTile).Aseoha$SetEOHPillars(((byte) this.GetStabilizers()));
-            this.HasStabilizerNear = this.GetStabilizers() > 0;
-            this.consoleTile.updateClient();
-        }
-
-        for (Direction direction : Direction.values()) {
-            TileEntity neighbor = this.level.getBlockEntity(this.getBlockPos().offset(direction.getNormal()));
-            if (neighbor != null) {
-                neighbor.getCapability(CapabilityEnergy.ENERGY, direction.getOpposite()).ifPresent(energy -> {
-                    int energyToTransfer = Math.min(energyStorage.extractEnergy(20, true), energy.receiveEnergy(0, true));
-                    if (energyToTransfer > 0) {
-                        energyStorage.extractEnergy(energyToTransfer, false);
-                        energy.receiveEnergy(energyToTransfer, false);
-                    }
-                });
-            }
-        }
-
-        if (this.level.getGameTime() % 20 == 0)
-            if (this.Mark) {
-                this.setChanged();
-                ((IHelpWithConsole) this.consoleTile).Aseoha$SetEOHActive(this.active);
-                ((IHelpWithConsole) this.consoleTile).Aseoha$SetEOH(this);
-                ((IHelpWithConsole) this.consoleTile).Aseoha$SetEOHOverheated(this.IsOverheated);
-                ((IHelpWithConsole) this.consoleTile).Aseoha$SetEOHTimer(this.timer);
-                ((IHelpWithConsole) this.consoleTile).Aseoha$SetEOHPillars((byte) this.GetStabilizers());
-                this.Mark = !this.Mark;
-            }
-    }
 
     @Deprecated
-    public boolean GetStabilizer() {
+    public boolean GetPillar() {
         for (Iterator<BlockPos> iterator = BlockPos.withinManhattanStream(new BlockPos(this.getBlockPos().getX(), this.getBlockPos().getY() + 10, this.getBlockPos().getZ()), 10, 11, 10).iterator(); iterator.hasNext(); ) {
             assert this.level != null;
             if (this.level.getBlockState(iterator.next()).getBlock() == AseohaBlocks.HARMONIC_PILLAR.get())
@@ -143,7 +80,7 @@ public class EOHTile extends TileEntity implements ITickableTileEntity, ICapabil
         return false;
     }
 
-    public int GetStabilizers() {
+    public int GetPillars() {
         int stabs = 0;
         for (Iterator<BlockPos> iterator = BlockPos.withinManhattanStream(new BlockPos(this.getBlockPos().getX(), this.getBlockPos().getY() + 10, this.getBlockPos().getZ()), 10, 11, 10).iterator(); iterator.hasNext(); ) {
             assert this.level != null;
@@ -195,68 +132,6 @@ public class EOHTile extends TileEntity implements ITickableTileEntity, ICapabil
             this.requestModelDataUpdate();
         }
         super.setRemoved();
-    }
-
-    public void Activate() {
-        this.active = true;
-        this.hasStar = true;
-        this.Mark = true;
-        WorldHelper.forceChunkVanillaIfNotLoaded(ServerLifecycleHooks.getCurrentServer().getLevel(this.level.dimension()), new ChunkPos(this.getBlockPos().getX() / 16, this.getBlockPos().getZ() / 16));
-        if (this.consoleTile == null) return;
-        ((IHelpWithConsole) this.consoleTile).Aseoha$SetEOHActive(true);
-        ((IHelpWithConsole) this.consoleTile).Aseoha$SetEOH(this);
-        this.consoleTile.updateArtronValues();
-    }
-
-    public void Update() {
-        if (this.consoleTile == null) return;
-        if (this.active) {
-            ((IHelpWithConsole) this.consoleTile).Aseoha$SetEOHActive(true);
-            this.timer++;
-        }
-        if (this.timer != 0 && this.GetStabilizers() > 3) {
-            this.timer = 0;
-            this.IsOverheated = false;
-            ((IHelpWithConsole) this.consoleTile).Aseoha$SetEOHOverheated(false);
-            this.Mark = true;
-        }
-        if (this.timer > 9600) {
-            this.IsOverheated = true;
-            ((IHelpWithConsole) this.consoleTile).Aseoha$SetEOHOverheated(true);
-            this.Mark = true;
-        }
-    }
-
-    public void SideEffects() {
-        if (!this.IsOverheated || !this.HasStabilizerNear) {
-            if (this.timer > 6000) {
-                assert this.level != null;
-                List<PlayerEntity> PlayerList = this.level.getEntitiesOfClass(PlayerEntity.class, new AxisAlignedBB(this.worldPosition).inflate(1000));
-                for (PlayerEntity player : PlayerList) {
-                    player.addEffect(new EffectInstance(Effects.CONFUSION, 20, 20));
-                }
-            }
-            if (this.timer > 7200) {
-                assert this.level != null;
-                List<PlayerEntity> PlayerList = this.level.getEntitiesOfClass(PlayerEntity.class, new AxisAlignedBB(this.worldPosition).inflate(1000));
-                for (PlayerEntity player : PlayerList) {
-                    player.addEffect(new EffectInstance(Effects.POISON, 20, 20));
-                }
-            }
-
-            if (this.timer > 8400) {
-                List<PlayerEntity> PlayerList = this.level.getEntitiesOfClass(PlayerEntity.class, new AxisAlignedBB(this.worldPosition).inflate(1000));
-                for (PlayerEntity player : PlayerList) {
-                    player.addEffect(new EffectInstance(Effects.BLINDNESS, 20, 20, true, true, true));
-                }
-            }
-            if (this.timer > 9600) {
-                List<PlayerEntity> PlayerList = this.level.getEntitiesOfClass(PlayerEntity.class, new AxisAlignedBB(this.worldPosition).inflate(1000));
-                for (int i = 0; i < PlayerList.size(); i++) {
-                    this.IsOverheated = true;
-                }
-            }
-        }
     }
 
     @NotNull
