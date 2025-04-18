@@ -1,0 +1,14 @@
+{
+  "type": "tardis:quantiscope",
+  "repair":false,
+  "ingredients":[
+    {"item":"minecraft:blaze_powder"},
+    {"item":"aseoha:steel_ingot"},
+    {"item":"tardis:circuits"},
+    {"item":"tardis:artron_battery"},
+    {"item":"minecraft:redstone_block"}
+  ],
+  "result":{
+    "item":"tardis:earthshock_gun"
+  }
+}
