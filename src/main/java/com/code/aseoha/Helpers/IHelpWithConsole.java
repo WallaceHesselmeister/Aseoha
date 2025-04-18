@@ -1,6 +1,6 @@
 package com.code.aseoha.Helpers;
 
-import com.code.aseoha.tileentities.blocks.EOHTile;
+import com.code.aseoha.tileentities.blocks.EOHLinkTile;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.world.World;
 import net.tardis.mod.entity.TardisEntity;
@@ -45,9 +45,9 @@ public interface IHelpWithConsole {
 
     void Aseoha$SetRealWorldFlight(boolean rwf);
 
-    EOHTile Aseoha$GetEOH();
+    EOHLinkTile Aseoha$GetEOH();
 
-    void Aseoha$SetEOH(EOHTile eoh);
+    void Aseoha$SetEOH(EOHLinkTile eoh);
 
     void Aseoha$SetHasEOH(boolean eoh);
 

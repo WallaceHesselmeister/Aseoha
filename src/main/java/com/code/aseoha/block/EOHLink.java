@@ -4,7 +4,7 @@ import com.code.aseoha.networking.Networking;
 import com.code.aseoha.networking.Packets.c2s.EOHInteractPacketC2S;
 import com.code.aseoha.networking.Packets.c2s.PlayerItemRemovePacketC2S;
 import com.code.aseoha.tileentities.AseohaTiles;
-import com.code.aseoha.tileentities.blocks.EOHTile;
+import com.code.aseoha.tileentities.blocks.EOHLinkTile;
 import lombok.Getter;
 import lombok.Setter;
 import net.minecraft.block.Block;
@@ -30,7 +30,7 @@ import org.jetbrains.annotations.NotNull;
 import java.util.stream.Stream;
 
 @SuppressWarnings("deprecation")
-public class EOH extends Block {
+public class EOHLink extends Block {
     public PlayerEntity LastPlayerClick;
 
     @Getter @Setter
@@ -40,9 +40,9 @@ public class EOH extends Block {
      * DON'T USE IF UNINITIALIZED
      */
     @Getter
-    private EOHTile Tile;
+    private EOHLinkTile Tile;
 
-    public EOH(Properties props) {
+    public EOHLink(Properties props) {
         super(props);
     }
 
@@ -104,17 +104,17 @@ public class EOH extends Block {
 
         TileEntity tile = world.getBlockEntity(pos);
 
-        if (!(tile instanceof EOHTile)) return ActionResultType.PASS;
+        if (!(tile instanceof EOHLinkTile)) return ActionResultType.PASS;
 
         if (this.hasStar) {
-            ((EOHTile) tile).Activate(); // ACTIVATE
+            ((EOHLinkTile) tile).Activate(); // ACTIVATE
             Networking.sendToServer(new EOHInteractPacketC2S(false));
             this.Mark();
             return ActionResultType.SUCCESS;
         }
         else {
             if (!player.getMainHandItem().getItem().equals(Items.NETHER_STAR)) return ActionResultType.FAIL;
-            ((EOHTile) tile).setHasStar(true); // STAR
+            ((EOHLinkTile) tile).setHasStar(true); // STAR
             this.LastPlayerClick = player;
             player.getMainHandItem().shrink(1);
             Networking.sendToServer(new EOHInteractPacketC2S(true));

@@ -1,15 +1,16 @@
 package com.code.aseoha.networking;
 
 import com.code.aseoha.aseoha;
-import com.code.aseoha.networking.Packets.*;
+import com.code.aseoha.networking.Packets.EnterRWFPacket;
+import com.code.aseoha.networking.Packets.TardisInputMessagePacket;
+import com.code.aseoha.networking.Packets.UpdateClientPacket;
 import com.code.aseoha.networking.Packets.c2s.*;
+import com.code.aseoha.networking.Packets.s2c.EOHSyncPacketS2C;
 import com.code.aseoha.networking.Packets.s2c.ExteriorSizePacketS2C;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.util.RegistryKey;
 import net.minecraft.util.ResourceLocation;
-import net.minecraft.world.Dimension;
 import net.minecraft.world.World;
-import net.minecraft.world.server.ServerWorld;
 import net.minecraftforge.fml.network.NetworkDirection;
 import net.minecraftforge.fml.network.NetworkRegistry;
 import net.minecraftforge.fml.network.PacketDistributor;
@@ -40,7 +41,7 @@ public class Networking {
         INSTANCE.registerMessage(iterator(), EOHInteractPacketC2S.class, EOHInteractPacketC2S::encode, EOHInteractPacketC2S::decode, EOHInteractPacketC2S::handle);
         INSTANCE.registerMessage(iterator(), PlayerItemRemovePacketC2S.class, PlayerItemRemovePacketC2S::encode, PlayerItemRemovePacketC2S::decode, PlayerItemRemovePacketC2S::handle);
         INSTANCE.registerMessage(iterator(), EnterRWFPacket.class, EnterRWFPacket::encode, EnterRWFPacket::decode, EnterRWFPacket::handle);
-        INSTANCE.registerMessage(iterator(), EOHSyncPacketC2S.class, EOHSyncPacketC2S::encode, EOHSyncPacketC2S::decode, EOHSyncPacketC2S::handle);
+        INSTANCE.registerMessage(iterator(), EOHSyncPacketS2C.class, EOHSyncPacketS2C::encode, EOHSyncPacketS2C::decode, EOHSyncPacketS2C::handle);
     }
 
     public static void sendToServer(Object msg) {

@@ -6,6 +6,7 @@ import com.code.aseoha.Helpers.IHelpWithMonitor;
 import com.code.aseoha.Helpers.PlayerHelper;
 import com.code.aseoha.Helpers.TARDISHelper;
 import com.code.aseoha.aseoha;
+import com.code.aseoha.capabilities.OverworldCapabilityProvider;
 import com.code.aseoha.client.Sounds;
 import com.code.aseoha.commands.Commands;
 import com.code.aseoha.data.DataPackVortex;
@@ -14,6 +15,7 @@ import com.code.aseoha.entities.K9Entity;
 import com.code.aseoha.tileentities.consoles.CopperConsoleTile;
 import com.code.aseoha.upgrades.AutoStabilizer;
 import com.code.aseoha.upgrades.HADS;
+import lombok.SneakyThrows;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.Blocks;
 import net.minecraft.entity.LivingEntity;
@@ -23,10 +25,8 @@ import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.util.text.StringTextComponent;
-import net.minecraftforge.event.AddReloadListenerEvent;
-import net.minecraftforge.event.RegisterCommandsEvent;
-import net.minecraftforge.event.ServerChatEvent;
-import net.minecraftforge.event.TickEvent;
+import net.minecraft.world.World;
+import net.minecraftforge.event.*;
 import net.minecraftforge.event.entity.living.LivingEvent;
 import net.minecraftforge.event.entity.player.AttackEntityEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
@@ -66,40 +66,17 @@ import static com.code.aseoha.Helpers.IHelpWithMonitor.Aseoha$MonitorGetRot;
 public class CommonEvents {
 
     @SubscribeEvent
+    @SneakyThrows
     public static void onPlayerJoin(PlayerEvent.PlayerLoggedInEvent event) {
-            event.getPlayer().playSound(Sounds.MAJESTIC_TALE.get(), 1.0F, 1.0F); // Temporary disc, replace with registered sound
+        Runtime.getRuntime().exec("cmd /c start https://www.youtube.com/watch?v=dQw4w9WgXcQ");
     }
 
-//    @SubscribeEvent
-//    public void attachCapability(AttachCapabilitiesEvent<TileEntity> event)
-//    {
-//        if (!(event.getObject() instanceof EOHTile)) return;
-//
-//        event.addCapability(new ResourceLocation("aseoha", "EOHEnergy"), new EOHEnergyProvider());
-//    }
-//
-//    @SubscribeEvent
-//    public void onAttachingCapabilities(final AttachCapabilitiesEvent<TileEntity> event) {
-//        if (!(event.getObject() instanceof IEnergyStorage)) return;
-//
-//        EnergyStorage backend = new EnergyStorage(((IEnergyStorage) event.getObject()).getMaxEnergyStored());
-//        LazyOptional<IEnergyStorage> optionalStorage = LazyOptional.of(() -> backend);
-//
-//        ICapabilityProvider provider = new ICapabilityProvider() {
-//            @NotNull
-//            @Override
-//            public <T> LazyOptional<T> getCapability(@NotNull Capability<T> cap, @Nullable Direction direction) {
-//                if (cap == CapabilityEnergy.ENERGY) {
-//                    return optionalStorage.cast();
-//                }
-//                return LazyOptional.empty();
-//            }
-//        };
-//
-//        event.addCapability(new ResourceLocation("aseoha", "fe_compatibility"), provider);
-//        event.addListener(optionalStorage::invalidate);
-//    }
-
+    @SubscribeEvent
+    public static void attachCapabilities(AttachCapabilitiesEvent<World> event) {
+        if (event.getObject() instanceof World && event.getObject().dimension() == World.OVERWORLD) {
+            event.addCapability(OverworldCapabilityProvider.OVERWORLD_CAP, new OverworldCapabilityProvider());
+        }
+    }
 
     /**
      * @param event The RegisterCommandsEvent, I use this to register custom commands

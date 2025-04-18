@@ -15,7 +15,6 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
-
 import net.tardis.mod.blocks.ArsEggBlock;
 import net.tardis.mod.blocks.RoundelBlock;
 import net.tardis.mod.blocks.exteriors.ExteriorBlock;
@@ -91,7 +90,7 @@ public class AseohaBlocks {
             () -> setUpBlock(new ZeroPointDwarfStarAlloyBlock()));
 
     public static final RegistryObject<Block> EYE_OF_HARMONY = registerBlock("eye_of_harmony",
-            () -> new EOH(Block.Properties.of(Material.METAL).strength(12f).lightLevel(BlockState -> 15).noOcclusion()));
+            () -> new EOHLink(Block.Properties.of(Material.METAL).strength(12f).lightLevel(BlockState -> 15).noOcclusion()));
 
     public static final RegistryObject<Block> HARMONIC_PILLAR = registerBlock("harmonic_pillar",
             () -> setUpBlock(new EOHPillar(Block.Properties.of(Material.METAL).strength(1.25F, 5.25F).lightLevel(BlockState -> 2).noOcclusion())));

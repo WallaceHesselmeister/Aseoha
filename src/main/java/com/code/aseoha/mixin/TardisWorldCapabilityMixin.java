@@ -34,31 +34,31 @@ public abstract class TardisWorldCapabilityMixin implements IHelpWithTardisCap, 
     @Shadow(remap = false)
     private World world;
 
-    @Shadow
+    @Shadow(remap = false)
     public PanelInventory northInv;
 
-    @Shadow
+    @Shadow(remap = false)
     public PanelInventory eastInv;
 
-    @Shadow
+    @Shadow(remap = false)
     public PanelInventory southInv;
 
-    @Shadow
+    @Shadow(remap = false)
     public PanelInventory westInv;
 
-    @Shadow
+    @Shadow(remap = false)
     private TardisEnergy power;
 
-    @Shadow
+    @Shadow(remap = false)
     private ItemStackHandler itemBuffer;
 
-    @Shadow
+    @Shadow(remap = false)
     private String name;
 
-    @Shadow
+    @Shadow(remap = false)
     private AttunementHandler attunementHandler;
 
-    @Shadow
+    @Shadow(remap = false)
     private InteriorEffectsHandler effectsHandler;
 
     @Inject(method = "<init>", at = @At("TAIL"))

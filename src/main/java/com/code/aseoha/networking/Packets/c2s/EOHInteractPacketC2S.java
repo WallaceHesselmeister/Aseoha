@@ -1,7 +1,7 @@
 package com.code.aseoha.networking.Packets.c2s;
 
 import com.code.aseoha.Helpers.IHelpWithConsole;
-import com.code.aseoha.block.EOH;
+import com.code.aseoha.block.EOHLink;
 import net.minecraft.network.PacketBuffer;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.world.server.ServerWorld;
@@ -40,7 +40,7 @@ public class EOHInteractPacketC2S {
                 TileEntity te = world.getBlockEntity(TardisHelper.TARDIS_POS);
                 if (te instanceof ConsoleTile) {
                     ConsoleTile consoleTile = (ConsoleTile) te;
-                    EOH eoh = ((IHelpWithConsole) consoleTile).Aseoha$GetEOH().getBlockState().getBlock() instanceof EOH ? (EOH) ((IHelpWithConsole) consoleTile).Aseoha$GetEOH().getBlockState().getBlock() : null;
+                    EOHLink eoh = ((IHelpWithConsole) consoleTile).Aseoha$GetEOH().getBlockState().getBlock() instanceof EOHLink ? (EOHLink) ((IHelpWithConsole) consoleTile).Aseoha$GetEOH().getBlockState().getBlock() : null;
                     if (eoh == null) return;
                     if (mes.intType) {
                         eoh.setHasStar(true);
@@ -52,7 +52,7 @@ public class EOHInteractPacketC2S {
             }
 
         });
-        ((NetworkEvent.Context) ctx.get()).setPacketHandled(true);
+        ctx.get().setPacketHandled(true);
     }
 
 

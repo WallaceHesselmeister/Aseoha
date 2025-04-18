@@ -7,7 +7,7 @@ import com.code.aseoha.aseoha;
 import com.code.aseoha.networking.Networking;
 import com.code.aseoha.networking.Packets.EnterRWFPacket;
 import com.code.aseoha.registries.ControlsRegistry;
-import com.code.aseoha.tileentities.blocks.EOHTile;
+import com.code.aseoha.tileentities.blocks.EOHLinkTile;
 import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;
@@ -153,7 +153,7 @@ public abstract class ConsoleMixin extends TileEntity implements ITickableTileEn
 //    private ConsoleTile Aseoha$ConsoleTile;
 
     @Unique
-    public EOHTile Aseoha$EOH;
+    public EOHLinkTile Aseoha$EOH;
 
     @Override
     public boolean Aseoha$GetEOHActive() {
@@ -359,7 +359,7 @@ public abstract class ConsoleMixin extends TileEntity implements ITickableTileEn
     }
 
     @Override
-    public void Aseoha$SetEOH(EOHTile eoh) {
+    public void Aseoha$SetEOH(EOHLinkTile eoh) {
         this.Aseoha$EOH = eoh;
     }
 
@@ -384,7 +384,7 @@ public abstract class ConsoleMixin extends TileEntity implements ITickableTileEn
     }
 
     @Override
-    public EOHTile Aseoha$GetEOH() {
+    public EOHLinkTile Aseoha$GetEOH() {
         return this.Aseoha$EOH;
     }
 
