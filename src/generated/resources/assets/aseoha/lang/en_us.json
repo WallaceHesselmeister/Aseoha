@@ -211,6 +211,7 @@
   "item.aseoha.upgrades.engine_booster": "Engine Boosters Upgrade",
   "item.aseoha.upgrades.hads": "HADS Upgrade",
   "item.aseoha.walle_spawn_egg": "Wall-E",
+  "item.aseoha.upgrades.lightspeed_drive": "Light Speed Drive Upgrade",
   "itemGroup.aseoha": "ASEOHA Main Tab",
   "itemGroup.aseoha_food": "ASEOHA Food",
   "itemGroup.aseoha_modular": "ASEOHA Modular Console",
@@ -429,5 +430,7 @@
   "tooltip.aseoha.undeadlocker": "Un-Deadlocks a TARDIS",
   "tooltip.item.info.reenabled": "This was Re-Enabled by ASEOHA!",
   "tooltip.part.upgrades/atrium.description": "Takes blocks with the TARDIS exterior \nConsult the ASEOHA Manual for more information",
-  "tooltip.part.upgrades/dynamic_coordinates.description": "Makes the TARDIS monitor update flight position while flying"
+  "tooltip.part.upgrades/dynamic_coordinates.description": "Makes the TARDIS monitor update flight position while flying",
+  "tooltip.part.upgrades/engine_booster.description": "The Engine Boosters cut flight time in half, they do this by filtering and ultra-pressurising the engine exhaust and feeding it back through the intake of the Trans-Temporal speed links",
+  "tooltip.part.upgrades/lightspeed_drive.description": "Greatly increases the speed at which your tardis can traverse the time vortex, allowing you to reach you destination in record time"
 }
