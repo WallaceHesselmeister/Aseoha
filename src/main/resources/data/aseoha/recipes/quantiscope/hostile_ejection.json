@@ -1,0 +1,14 @@
+{
+  "type": "tardis:quantiscope",
+  "repair":false,
+  "ingredients":[
+    {"item":"minecraft:activator_rail"},
+    {"item":"minecraft:redstone_dust"},
+    {"item":"tardis:air_lock"},
+    {"item":"tardis:circuits"},
+    {"item":"tardis:blank_upgrade"}
+  ],
+  "result":{
+    "item":"aseoha:upgrades/hostile_ejection"
+  }
+}
