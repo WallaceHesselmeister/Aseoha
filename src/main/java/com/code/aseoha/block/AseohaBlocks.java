@@ -1,5 +1,6 @@
 package com.code.aseoha.block;
 
+import com.code.aseoha.backport.ntm.block.RailingBlock;
 import com.code.aseoha.block.backport.AzaleaBlock;
 import com.code.aseoha.block.control.*;
 import com.code.aseoha.items.AseohaItemGroups;
@@ -540,6 +541,12 @@ public class AseohaBlocks {
             () -> new Block(AbstractBlock.Properties.of(IRON).strength(1.25F, 5.25F)));
 
 
+
+    // 1.20 NTM BACKPORT
+
+    public static final RegistryObject<RailingBlock> RAILING_STEAM = registerBlock("decoration/railing_steam", RailingBlock::create);
+    public static final RegistryObject<RailingBlock> RAILING_TUNGSTEN = registerBlock("decoration/railing_tungsten", RailingBlock::create);
+    public static final RegistryObject<RailingBlock> RAILING_ALABASTER = registerBlock("decoration/railing_alabaster", RailingBlock::create);
 
 
 

@@ -24,7 +24,7 @@ public class IsomorphicProtocol extends Protocol {
     }
 
     public TranslationTextComponent getDisplayName(ConsoleTile tile) {
-        return ((IHelpWithConsole) tile).Aseoha$GetIsomorphic() ? TRANS_ON : TRANS_OFF;
+        return !((IHelpWithConsole) tile).Aseoha$GetIsomorphic() ? TRANS_ON : TRANS_OFF;
     }
 
     @Override

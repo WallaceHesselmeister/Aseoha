@@ -1,0 +1,64 @@
+{
+  "variants": {
+    "facing=east,is_angled=false,right=false": {
+      "model": "aseoha:block/decoration/railing_steam",
+      "y": 90
+    },
+    "facing=east,is_angled=false,right=true": {
+      "model": "aseoha:block/decoration/railing_steam_right",
+      "y": 90
+    },
+    "facing=east,is_angled=true,right=false": {
+      "model": "aseoha:block/decoration/railing_steam_angled",
+      "y": 90
+    },
+    "facing=east,is_angled=true,right=true": {
+      "model": "aseoha:block/decoration/railing_steam_angled_right",
+      "y": 90
+    },
+    "facing=north,is_angled=false,right=false": {
+      "model": "aseoha:block/decoration/railing_steam"
+    },
+    "facing=north,is_angled=false,right=true": {
+      "model": "aseoha:block/decoration/railing_steam_right"
+    },
+    "facing=north,is_angled=true,right=false": {
+      "model": "aseoha:block/decoration/railing_steam_angled"
+    },
+    "facing=north,is_angled=true,right=true": {
+      "model": "aseoha:block/decoration/railing_steam_angled_right"
+    },
+    "facing=south,is_angled=false,right=false": {
+      "model": "aseoha:block/decoration/railing_steam",
+      "y": 180
+    },
+    "facing=south,is_angled=false,right=true": {
+      "model": "aseoha:block/decoration/railing_steam_right",
+      "y": 180
+    },
+    "facing=south,is_angled=true,right=false": {
+      "model": "aseoha:block/decoration/railing_steam_angled",
+      "y": 180
+    },
+    "facing=south,is_angled=true,right=true": {
+      "model": "aseoha:block/decoration/railing_steam_angled_right",
+      "y": 180
+    },
+    "facing=west,is_angled=false,right=false": {
+      "model": "aseoha:block/decoration/railing_steam",
+      "y": 270
+    },
+    "facing=west,is_angled=false,right=true": {
+      "model": "aseoha:block/decoration/railing_steam_right",
+      "y": 270
+    },
+    "facing=west,is_angled=true,right=false": {
+      "model": "aseoha:block/decoration/railing_steam_angled",
+      "y": 270
+    },
+    "facing=west,is_angled=true,right=true": {
+      "model": "aseoha:block/decoration/railing_steam_angled_right",
+      "y": 270
+    }
+  }
+}

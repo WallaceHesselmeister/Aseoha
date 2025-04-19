@@ -27,6 +27,8 @@ public class RegisterUpgrades extends UpgradeRegistry {
 
     public static final RegistryObject<UpgradeEntry> ATRIUM_UPGRADE = UPGRADES.register("atrium_upgrade", () -> setupUpgrade(Atrium::new, (Item) AseohaItems.ATRIUM_UPGRADE.get(), FlightSubsystem.class));
 
+    public static final RegistryObject<UpgradeEntry> EJECT_HOSTILES = UPGRADES.register("eject_hostiles", () -> setupUpgrade(Atrium::new, (Item) AseohaItems.ATRIUM_UPGRADE.get(), FlightSubsystem.class));
+
     public static final RegistryObject<UpgradeEntry> ENGINE_BOOSTER = UPGRADES.register("engine_booster", () -> setupUpgrade(EngineBoost::new, (Item) AseohaItems.ENGINE_BOOSTER.get(), FlightSubsystem.class));
 
     public static final RegistryObject<UpgradeEntry> TESSERACT_DRIVE = UPGRADES.register("tesseract_drive", () -> setupUpgrade(TesseractDriveUpgrade::new, AseohaItems.TESSERACT_DRIVE.get(), FlightSubsystem.class));

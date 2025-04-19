@@ -1,51 +1,32 @@
 package com.code.aseoha.upgrades;
 
-import java.util.*;
-import java.util.Map.Entry;
-import java.util.function.Supplier;
-import java.util.stream.StreamSupport;
-
-import javax.annotation.Nullable;
-
-import com.code.aseoha.aseoha;
-import com.code.aseoha.networking.Networking;
-import com.code.aseoha.networking.Packets.UpdateClientPacket;
 import net.minecraft.block.*;
-import net.minecraft.client.Minecraft;
-import net.minecraft.data.TagsProvider;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.nbt.INBT;
 import net.minecraft.nbt.ListNBT;
 import net.minecraft.nbt.NBTUtil;
-import net.minecraft.state.properties.BlockStateProperties;
-import net.minecraft.tags.ITag;
-import net.minecraft.tags.Tag;
-import net.minecraft.util.RegistryKey;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.concurrent.TickDelayedTask;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 import net.minecraftforge.common.Tags;
-import net.minecraftforge.common.data.ForgeBlockTagsProvider;
 import net.minecraftforge.common.util.Constants;
 import net.minecraftforge.common.util.INBTSerializable;
-import net.minecraftforge.fml.network.PacketDistributor;
-import net.minecraftforge.registries.IForgeRegistry;
 import net.tardis.mod.Tardis;
 import net.tardis.mod.blocks.TBlocks;
-import net.tardis.mod.blocks.exteriors.ExteriorBlock;
-import net.tardis.mod.controls.YControl;
 import net.tardis.mod.misc.IDontBreak;
 import net.tardis.mod.registries.ExteriorRegistry;
 import net.tardis.mod.subsystem.ChameleonSubsystem;
-import net.tardis.mod.subsystem.StabilizerSubsystem;
 import net.tardis.mod.subsystem.Subsystem;
 import net.tardis.mod.tileentities.ConsoleTile;
 import net.tardis.mod.tileentities.IMultiblock;
 import net.tardis.mod.tileentities.console.misc.MonitorOverride;
 import net.tardis.mod.upgrades.Upgrade;
 import net.tardis.mod.upgrades.UpgradeEntry;
+
+import javax.annotation.Nullable;
+import java.util.*;
+import java.util.Map.Entry;
 
 public class Atrium extends Upgrade implements INBTSerializable<CompoundNBT> {
     public boolean GetIsSafeToLand() {
@@ -85,6 +66,11 @@ public class Atrium extends Upgrade implements INBTSerializable<CompoundNBT> {
         if (this.getConsole() != null && this.getConsole().getExteriorType() == ExteriorRegistry.DISGUISE.get())
             return false;
         return this.isUsable();
+    }
+
+    @Override
+    public boolean isUsable() {
+        return super.isUsable() && this.getConsole().getSubsystem(ChameleonSubsystem.class).isPresent();
     }
 
     public void recalculateSize() {
