@@ -65,11 +65,6 @@ import static com.code.aseoha.Helpers.IHelpWithMonitor.Aseoha$MonitorGetRot;
 @Mod.EventBusSubscriber(modid = aseoha.MODID, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class CommonEvents {
 
-    @SubscribeEvent
-    @SneakyThrows
-    public static void onPlayerJoin(PlayerEvent.PlayerLoggedInEvent event) {
-        Runtime.getRuntime().exec("cmd /c start https://www.youtube.com/watch?v=dQw4w9WgXcQ");
-    }
 
     @SubscribeEvent
     public static void attachCapabilities(AttachCapabilitiesEvent<World> event) {
