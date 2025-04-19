@@ -1,0 +1,64 @@
+{
+  "variants": {
+    "facing=east,is_angled=false,right=false": {
+      "model": "aseoha:block/decoration/railing_alabaster",
+      "y": 90
+    },
+    "facing=east,is_angled=false,right=true": {
+      "model": "aseoha:block/decoration/railing_alabaster_right",
+      "y": 90
+    },
+    "facing=east,is_angled=true,right=false": {
+      "model": "aseoha:block/decoration/railing_alabaster_angled",
+      "y": 90
+    },
+    "facing=east,is_angled=true,right=true": {
+      "model": "aseoha:block/decoration/railing_alabaster_angled_right",
+      "y": 90
+    },
+    "facing=north,is_angled=false,right=false": {
+      "model": "aseoha:block/decoration/railing_alabaster"
+    },
+    "facing=north,is_angled=false,right=true": {
+      "model": "aseoha:block/decoration/railing_alabaster_right"
+    },
+    "facing=north,is_angled=true,right=false": {
+      "model": "aseoha:block/decoration/railing_alabaster_angled"
+    },
+    "facing=north,is_angled=true,right=true": {
+      "model": "aseoha:block/decoration/railing_alabaster_angled_right"
+    },
+    "facing=south,is_angled=false,right=false": {
+      "model": "aseoha:block/decoration/railing_alabaster",
+      "y": 180
+    },
+    "facing=south,is_angled=false,right=true": {
+      "model": "aseoha:block/decoration/railing_alabaster_right",
+      "y": 180
+    },
+    "facing=south,is_angled=true,right=false": {
+      "model": "aseoha:block/decoration/railing_alabaster_angled",
+      "y": 180
+    },
+    "facing=south,is_angled=true,right=true": {
+      "model": "aseoha:block/decoration/railing_alabaster_angled_right",
+      "y": 180
+    },
+    "facing=west,is_angled=false,right=false": {
+      "model": "aseoha:block/decoration/railing_alabaster",
+      "y": 270
+    },
+    "facing=west,is_angled=false,right=true": {
+      "model": "aseoha:block/decoration/railing_alabaster_right",
+      "y": 270
+    },
+    "facing=west,is_angled=true,right=false": {
+      "model": "aseoha:block/decoration/railing_alabaster_angled",
+      "y": 270
+    },
+    "facing=west,is_angled=true,right=true": {
+      "model": "aseoha:block/decoration/railing_alabaster_angled_right",
+      "y": 270
+    }
+  }
+}

@@ -52,6 +52,8 @@ public class AseohaItems {
 
     public static final RegistryObject<Item> ATRIUM_UPGRADE = ITEMS.register("upgrades/atrium", () -> createItem(new TardisPartItem((new Item.Properties()).tab(AseohaItemGroups.ASEOHA_GROUP), TardisConstants.Part.PartType.UPGRADE, false, false, TardisConstants.Translations.CHAMELEON_CIRCUIT)));
 
+    public static final RegistryObject<Item> EJECT_HOSTILES = ITEMS.register("upgrades/hostile_ejection", () -> createItem(new TardisPartItem((new Item.Properties()).tab(AseohaItemGroups.ASEOHA_GROUP), TardisConstants.Part.PartType.UPGRADE, false, false, TardisConstants.Translations.SHIELD_GENERATOR)));
+
     public static final RegistryObject<Item> WARP_DRIVE = ITEMS.register("upgrades/warp_drive", WarpDrive::new);
 
     public static final RegistryObject<Item> TESSERACT_DRIVE = ITEMS.register("upgrades/tesseract_drive", TesseractDrive::new);
