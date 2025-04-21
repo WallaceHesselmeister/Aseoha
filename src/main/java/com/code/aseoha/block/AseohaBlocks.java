@@ -190,9 +190,102 @@ public class AseohaBlocks {
     public static final RegistryObject<Block> FAT_BLOCK = registerBlock("fat_block",
             () -> new Block(AbstractBlock.Properties.of(Material.CLAY, MaterialColor.CLAY).strength(0.3F).sound(SoundType.SAND)));
 
+    /****************************  MATIRIAL_BLOCKS  *************************/
+
+    public static final RegistryObject<Block> STEEL_BLOCK = registerBlock("steel_block",
+            () -> new Block(AbstractBlock.Properties.of(Material.STONE, MaterialColor.CLAY).strength(1.0F).sound(SoundType.STONE)));
+
+    public static final RegistryObject<Block> DALEKANIUM_BLOCK = registerBlock("dalekanium_block",
+            () -> new Block(AbstractBlock.Properties.of(Material.STONE, MaterialColor.CLAY).strength(1.0F).sound(SoundType.STONE)));
+
+    public static final RegistryObject<Block> PURE_DALEKANIUM_BLOCK = registerBlock("pure_dalekanium_block",
+            () -> new Block(AbstractBlock.Properties.of(Material.STONE, MaterialColor.CLAY).strength(1.0F).sound(SoundType.STONE)));
+
+    public static final RegistryObject<Block> CARBON_STEEL_BLOCK = registerBlock("carbon_steel_block",
+            () -> new Block(AbstractBlock.Properties.of(Material.STONE, MaterialColor.CLAY).strength(1.0F).sound(SoundType.STONE)));
+            
+    public static final RegistryObject<Block> METALERT_BLOCK = registerBlock("metalert_block",
+            () -> new Block(AbstractBlock.Properties.of(Material.STONE, MaterialColor.CLAY).strength(1.0F).sound(SoundType.STONE)));
+
+    public static final RegistryObject<Block> LATINUM_BLOCK = registerBlock("latinum_block",
+            () -> new Block(AbstractBlock.Properties.of(Material.STONE, MaterialColor.CLAY).strength(1.0F).sound(SoundType.STONE)));
+
+    /****************************  CRYSTALINE_BLOCKS  *************************/
+
+    public static final RegistryObject<Block> PURE_CRYSTALINE = registerBlock("pure_crystaline",
+            () -> new Block(AbstractBlock.Properties.of(Material.STONE, MaterialColor.CLAY).strength(1.0F).sound(SoundType.STONE)));
+
+    public static final RegistryObject<Block> PURE_CRYSTALINE_ORE = registerBlock("pure_crystaline_ore",
+            () -> new Block(AbstractBlock.Properties.of(Material.STONE, MaterialColor.CLAY).strength(1.0F).sound(SoundType.STONE)));
+
+    public static final RegistryObject<Block> CRYSTALINE_ORE = registerBlock("crystaline_ore",
+            () -> new Block(AbstractBlock.Properties.of(Material.STONE, MaterialColor.CLAY).strength(1.0F).sound(SoundType.STONE)));
+
+    public static final RegistryObject<Block> CRYSTALINE = registerBlock("crystaline",
+            () -> new Block(AbstractBlock.Properties.of(Material.STONE, MaterialColor.CLAY).strength(1.0F).sound(SoundType.STONE)));
+
+    /****************************  ORES  *************************/
+
+    public static final RegistryObject<Block> STEEL_ORE = registerBlock("steel_ore",
+            () -> new Block(AbstractBlock.Properties.of(Material.STONE, MaterialColor.CLAY).strength(1.0F).sound(SoundType.STONE)));
+
+    public static final RegistryObject<Block> pure_dalekanium_ore = registerBlock("pure_dalekanium_ore",
+            () -> new Block(AbstractBlock.Properties.of(Material.STONE, MaterialColor.CLAY).strength(1.0F).sound(SoundType.STONE)));
+
+    public static final RegistryObject<Block> METALERT_ORE = registerBlock("metalert_ore",
+            () -> new Block(AbstractBlock.Properties.of(Material.STONE, MaterialColor.CLAY).strength(1.0F).sound(SoundType.STONE)));
+
+    public static final RegistryObject<Block> CARBON_STEEL_ORE = registerBlock("carbon_steel_ore",
+            () -> new Block(AbstractBlock.Properties.of(Material.STONE, MaterialColor.CLAY).strength(1.0F).sound(SoundType.STONE)));
+
+    public static final RegistryObject<Block> DALEKANIUM_ORE = registerBlock("dalekanium_ore",
+            () -> new Block(AbstractBlock.Properties.of(Material.STONE, MaterialColor.CLAY).strength(1.0F).sound(SoundType.STONE)));     
+
     /****************************  ALABASTER  *************************/
 
     public static final RegistryObject<Block> ALABASTER_PIPES = registerBlock("alabaster_pipes",
+            () -> new Block(AbstractBlock.Properties.of(Material.STONE).strength(0.3F).sound(SoundType.STONE)));
+
+    public static final RegistryObject<Block> HOLO_ENERGY = registerBlock("holo_energy",
+            () -> new Block(AbstractBlock.Properties.of(Material.STONE).strength(0.3F).sound(SoundType.STONE)));
+
+    public static final RegistryObject<Block> ALABASTER_PLATE = registerBlock("alabaster_plate",
+            () -> new Block(AbstractBlock.Properties.of(Material.STONE).strength(0.3F).sound(SoundType.STONE)));
+
+    public static final RegistryObject<Block> ALABASTER_PLATE_SMALL = registerBlock("alabaster_plate_small",
+            () -> new Block(AbstractBlock.Properties.of(Material.STONE).strength(0.3F).sound(SoundType.STONE)));
+
+    public static final RegistryObject<Block> ALABASTER_SCREEN = registerBlock("alabaster_screen",
+            () -> new Block(AbstractBlock.Properties.of(Material.STONE).strength(0.3F).sound(SoundType.STONE)));
+
+    public static final RegistryObject<Block> ALABASTER_BLUE_RUNNER_LIGHTS = registerBlock("alabaster_blue_runner_lights",
+            () -> new Block(AbstractBlock.Properties.of(Material.STONE).strength(0.3F).sound(SoundType.STONE)));
+
+    public static final RegistryObject<Block> LANDING_PAD = registerBlock("landing_pad",
+            () -> new Block(AbstractBlock.Properties.of(Material.STONE).strength(0.3F).sound(SoundType.STONE)));
+
+    public static final RegistryObject<Block> TECH_FLOOR_DARK_PATTERN = registerBlock("tech_floor_dark_pattern",
+            () -> new Block(AbstractBlock.Properties.of(Material.STONE).strength(0.3F).sound(SoundType.STONE)));
+
+    public static final RegistryObject<Block> TECH_FLOOR_DARK_PIPES = registerBlock("tech_floor_dark_pipes",
+            () -> new Block(AbstractBlock.Properties.of(Material.STONE).strength(0.3F).sound(SoundType.STONE)));
+
+    public static final RegistryObject<Block> TECH_FLOOR_DARK_PLATE = registerBlock("tech_floor_dark_plate",
+            () -> new Block(AbstractBlock.Properties.of(Material.STONE).strength(0.3F).sound(SoundType.STONE)));
+
+    public static final RegistryObject<Block> TECH_FLOOR_PLATE = registerBlock("tech_floor_plate",
+            () -> new Block(AbstractBlock.Properties.of(Material.STONE).strength(0.3F).sound(SoundType.STONE)));
+
+    public static final RegistryObject<Block> TECH_WALL_01_DARK = registerBlock("tech_wall_01_dark",
+            () -> new Block(AbstractBlock.Properties.of(Material.STONE).strength(0.3F).sound(SoundType.STONE)));
+
+    public static final RegistryObject<Block> TECH_WALL_DARK_BLANK = registerBlock("tech_wall_dark_blank",
+            () -> new Block(AbstractBlock.Properties.of(Material.STONE).strength(0.3F).sound(SoundType.STONE)));
+
+    public static final RegistryObject<Block> TECH_WALL_DARK_RUNNER_LIGHTS = registerBlock("tech_wall_dark_runner_lights",
+            () -> new Block(AbstractBlock.Properties.of(Material.STONE).strength(0.3F).sound(SoundType.STONE)));
+
+    public static final RegistryObject<Block> TRANSDUCTION_BARRIER_OFF = registerBlock("transduction_barrier_off",
             () -> new Block(AbstractBlock.Properties.of(Material.STONE).strength(0.3F).sound(SoundType.STONE)));
 
     /****************************  1.20 BACKPORTED  *************************/

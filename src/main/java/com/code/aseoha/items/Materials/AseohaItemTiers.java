@@ -26,6 +26,9 @@ public enum AseohaItemTiers implements IItemTier {
     PURE_DALEKANIUM(4, 3000, 6.0F, 5.5F, 15,
                   () -> Ingredient.of(AseohaItems.PURE_DALEKANIUM_INGOT.get())),
 
+    LATINUM(4, 3000, 6.0F, 5.5F, 15,
+                  () -> Ingredient.of(AseohaItems.LATINUM_INGOT.get())),
+
     CANDY_CANE(0, 32, 12.0F, 0.0F, 22,
             () -> Ingredient.of(AseohaItems.STEEL_INGOT.get()));
 

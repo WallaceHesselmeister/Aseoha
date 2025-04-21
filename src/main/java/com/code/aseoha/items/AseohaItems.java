@@ -193,6 +193,18 @@ public class AseohaItems {
     public static final RegistryObject<Item> CARBON_STEEL_INGOT = ITEMS.register("carbon_steel_ingot",
             ()-> new Item(new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP).stacksTo(64).rarity(Rarity.RARE)));
 
+    public static final RegistryObject<Item> LATINUM_INGOT = ITEMS.register("latinum_ingot",
+            ()-> new Item(new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP).stacksTo(64).rarity(Rarity.RARE)));
+
+    public static final RegistryObject<Item> LATINUM_BAR = ITEMS.register("latinum_bar",
+            ()-> new Item(new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP).stacksTo(64).rarity(Rarity.RARE)));
+
+    public static final RegistryObject<Item> LATINUM_BRICK = ITEMS.register("latinum_brick",
+            ()-> new Item(new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP).stacksTo(64).rarity(Rarity.RARE)));
+
+    public static final RegistryObject<Item> LATINUM_STRIP = ITEMS.register("latinum_strip",
+            ()-> new Item(new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP).stacksTo(64).rarity(Rarity.RARE)));
+
     public static final RegistryObject<Item> CONTROL_MOLD = ITEMS.register("control_mold",
             ()-> new Item(new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP).stacksTo(1).rarity(Rarity.UNCOMMON)));
 
@@ -345,6 +357,33 @@ public class AseohaItems {
 
     public static final RegistryObject<Item> PURE_DALEKANIUM_SWORD = ITEMS.register("pure_dalekanium_sword",
             () -> new SwordItem(AseohaItemTiers.PURE_DALEKANIUM, 3, -2.4F, new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP)));
+
+    public static final RegistryObject<Item> LATINUM_HELMET = ARMOR_ITEMS.register("latinum_helmet",
+            () -> new ArmorItem(EnumArmorMaterials.LATINUM, EquipmentSlotType.HEAD, new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP)));
+
+    public static final RegistryObject<Item> LATINUM_CHESTPLATE = ARMOR_ITEMS.register("latinum_chestplate",
+            () -> new ArmorItem(EnumArmorMaterials.LATINUM, EquipmentSlotType.CHEST, new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP)));
+
+    public static final RegistryObject<Item> LATINUM_LEGGINGS = ARMOR_ITEMS.register("latinum_leggings",
+            () -> new ArmorItem(EnumArmorMaterials.LATINUM, EquipmentSlotType.LEGS, new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP)));
+
+    public static final RegistryObject<Item> LATINUM_BOOTS = ARMOR_ITEMS.register("latinum_boots",
+            () -> new ArmorItem(EnumArmorMaterials.LATINUM, EquipmentSlotType.FEET, new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP)));
+
+    public static final RegistryObject<Item> LATINUM_PICKAXE = ITEMS.register("latinum_pickaxe",
+            () -> new PickaxeItem(AseohaItemTiers.LATINUM, 1, -2.8F, new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP)));
+
+    public static final RegistryObject<Item> LATINUM_SHOVEL = ITEMS.register("latinum_shovel",
+            () -> new ShovelItem(AseohaItemTiers.LATINUM, 1, -3.0F, new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP)));
+
+    public static final RegistryObject<Item> LATINUM_AXE = ITEMS.register("latinum_axe",
+            () -> new AxeItem(AseohaItemTiers.LATINUM, 7, -3.2F, new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP)));
+
+    public static final RegistryObject<Item> LATINUM_HOE = ITEMS.register("latinum_hoe",
+            () -> new HoeItem(AseohaItemTiers.LATINUM, 1, -2.0F, new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP)));
+
+    public static final RegistryObject<Item> LATINUM_SWORD = ITEMS.register("latinum_sword",
+            () -> new SwordItem(AseohaItemTiers.LATINUM, 3, -2.4F, new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP)));
 
     public static final RegistryObject<Item> SCARF = ARMOR_ITEMS.register("scarf",
             () -> new ScarfArmorItem(EnumArmorMaterials.SCARF, EquipmentSlotType.HEAD, new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP)));

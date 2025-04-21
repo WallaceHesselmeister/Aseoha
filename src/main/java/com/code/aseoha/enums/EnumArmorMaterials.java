@@ -40,6 +40,9 @@ public enum EnumArmorMaterials implements IArmorMaterial {
     PURE_DALEKANIUM("pure_dalekanium", 25, new int[] { 3, 6, 7, 2 }, 10,
             SoundEvents.ARMOR_EQUIP_IRON, 1.0f, 0.5f, () -> Ingredient.of(AseohaItems.PURE_DALEKANIUM_INGOT.get())),
 
+    LATINUM("latinum", 25, new int[] { 3, 6, 7, 2 }, 10,
+            SoundEvents.ARMOR_EQUIP_IRON, 1.0f, 0.5f, () -> Ingredient.of(AseohaItems.LATINUM_INGOT.get())),
+
     METALERT("metalert", 25, new int[] { 3, 6, 7, 2 }, 10,
             SoundEvents.ARMOR_EQUIP_IRON, 1.0f, 0.5f, () -> Ingredient.of(AseohaItems.METALERT_INGOT.get()));
 
@@ -92,7 +95,7 @@ public enum EnumArmorMaterials implements IArmorMaterial {
 
     @Override
     public String getName() {
-        return name;
+    return "aseoha:" + name;
     }
 
     @Override
