@@ -1,0 +1,6 @@
+{
+  "parent":"block/cube_all",
+  "textures":{
+    "all":"aseoha:block/alabaster/tech_wall_dark_blank"
+  }
+}
