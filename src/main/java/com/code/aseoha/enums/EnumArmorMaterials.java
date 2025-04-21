@@ -32,7 +32,16 @@ public enum EnumArmorMaterials implements IArmorMaterial {
             SoundEvents.ARMOR_EQUIP_IRON, 1.0f, 0.5f, () -> Ingredient.of(AseohaItems.STEEL_INGOT.get())),
 
     DALEKANIUM("dalekanium", 25, new int[] { 4, 7, 9, 2 }, 20,
-            SoundEvents.ARMOR_EQUIP_IRON, 1.0f, 0.5f, () -> Ingredient.of(AseohaItems.DALEKANIUM_INGOT.get()));
+            SoundEvents.ARMOR_EQUIP_IRON, 1.0f, 0.5f, () -> Ingredient.of(AseohaItems.DALEKANIUM_INGOT.get())),
+
+    CARBON_STEEL("carbon_steel", 25, new int[] { 3, 6, 7, 2 }, 10,
+            SoundEvents.ARMOR_EQUIP_IRON, 1.0f, 0.5f, () -> Ingredient.of(AseohaItems.CARBON_STEEL_INGOT.get())),
+
+    PURE_DALEKANIUM("pure_dalekanium", 25, new int[] { 3, 6, 7, 2 }, 10,
+            SoundEvents.ARMOR_EQUIP_IRON, 1.0f, 0.5f, () -> Ingredient.of(AseohaItems.PURE_DALEKANIUM_INGOT.get())),
+
+    METALERT("metalert", 25, new int[] { 3, 6, 7, 2 }, 10,
+            SoundEvents.ARMOR_EQUIP_IRON, 1.0f, 0.5f, () -> Ingredient.of(AseohaItems.METALERT_INGOT.get()));
 
     private static final int[] HEALTH_PER_SLOT = new int[]{13, 15, 16, 13};
     private final String name;

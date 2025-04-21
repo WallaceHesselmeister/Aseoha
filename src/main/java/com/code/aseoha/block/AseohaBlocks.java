@@ -190,6 +190,11 @@ public class AseohaBlocks {
     public static final RegistryObject<Block> FAT_BLOCK = registerBlock("fat_block",
             () -> new Block(AbstractBlock.Properties.of(Material.CLAY, MaterialColor.CLAY).strength(0.3F).sound(SoundType.SAND)));
 
+    /****************************  ALABASTER  *************************/
+
+    public static final RegistryObject<Block> ALABASTER_PIPES = registerBlock("alabaster_pipes",
+            () -> new Block(AbstractBlock.Properties.of(Material.STONE).strength(0.3F).sound(SoundType.STONE)));
+
     /****************************  1.20 BACKPORTED  *************************/
     public static final RegistryObject<Block> OCHRE_FROGLIGHT = registerBlock("ochre_froglight",
             () -> new RotatedPillarBlock(AbstractBlock.Properties.of(Material.STONE).strength(0.3F).lightLevel(maxLightLevel).noOcclusion()));

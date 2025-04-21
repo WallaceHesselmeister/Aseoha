@@ -133,13 +133,52 @@ public class AseohaItems {
     public static final RegistryObject<Item> BLUE_CRYSTAL_SHARD = ITEMS.register("blue_crystal_shard",
             ()-> new Item(new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP).rarity(Rarity.RARE).fireResistant()));
 
+    public static final RegistryObject<Item> CRYSTALINE_SHARD = ITEMS.register("crystaline_shard",
+            ()-> new Item(new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP).rarity(Rarity.RARE).fireResistant()));
+
+    public static final RegistryObject<Item> PURE_CRYSTALINE_SHARD = ITEMS.register("pure_crystaline_shard",
+            ()-> new Item(new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP).rarity(Rarity.RARE).fireResistant()));
+
     public static final RegistryObject<Item> BLUE_CRYSTAL_PILE = ITEMS.register("blue_crystal_pile",
+            ()-> new Item(new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP).rarity(Rarity.RARE).fireResistant()));
+
+    public static final RegistryObject<Item> CRYSTALINE_PILE = ITEMS.register("crystaline_pile",
+            ()-> new Item(new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP).rarity(Rarity.RARE).fireResistant()));
+
+    public static final RegistryObject<Item> PURE_CRYSTALINE_PILE = ITEMS.register("pure_crystaline_pile",
             ()-> new Item(new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP).rarity(Rarity.RARE).fireResistant()));
 
     public static final RegistryObject<Item> BLUE_CRYSTAL_NUGGET = ITEMS.register("blue_crystal_nugget",
             ()-> new Item(new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP).rarity(Rarity.RARE).fireResistant()));
 
+    public static final RegistryObject<Item> CRYSTALINE_NUGGET = ITEMS.register("crystaline_nugget",
+            ()-> new Item(new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP).rarity(Rarity.RARE).fireResistant()));
+
+    public static final RegistryObject<Item> PURE_CRYSTALINE_NUGGET = ITEMS.register("pure_crystaline_nugget",
+            ()-> new Item(new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP).rarity(Rarity.RARE).fireResistant()));
+
+    public static final RegistryObject<Item> DALEKANIUM_NUGGET = ITEMS.register("dalekanium_nugget",
+            ()-> new Item(new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP).stacksTo(64).rarity(Rarity.RARE)));
+
+    public static final RegistryObject<Item> CARBON_STEEL_NUGGET = ITEMS.register("carbon_steel_nugget",
+            ()-> new Item(new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP).stacksTo(64).rarity(Rarity.RARE)));
+
+    public static final RegistryObject<Item> METALERT_NUGGET = ITEMS.register("metalert_nugget",
+            ()-> new Item(new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP).stacksTo(64).rarity(Rarity.RARE)));
+
+    public static final RegistryObject<Item> PURE_DALEKANIUM_NUGGET = ITEMS.register("pure_dalekanium_nugget",
+            ()-> new Item(new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP).stacksTo(64).rarity(Rarity.RARE)));
+
     public static final RegistryObject<Item> BLUE_CRYSTAL_INGOT = ITEMS.register("blue_crystal_ingot",
+            ()-> new Item(new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP).rarity(Rarity.RARE).fireResistant()));
+
+    public static final RegistryObject<Item> PURE_CRYSTALINE_INGOT = ITEMS.register("pure_crystaline_ingot",
+            ()-> new Item(new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP).rarity(Rarity.RARE).fireResistant()));
+
+    public static final RegistryObject<Item> METALERT_INGOT = ITEMS.register("metalert_ingot",
+            ()-> new Item(new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP).rarity(Rarity.RARE).fireResistant()));
+
+    public static final RegistryObject<Item> PURE_DALEKANIUM_INGOT = ITEMS.register("pure_dalekanium_ingot",
             ()-> new Item(new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP).rarity(Rarity.RARE).fireResistant()));
 
     public static final RegistryObject<Item> STEEL_INGOT = ITEMS.register("steel_ingot",
@@ -147,6 +186,12 @@ public class AseohaItems {
 
     public static final RegistryObject<Item> DALEKANIUM_INGOT = ITEMS.register("dalekanium_ingot",
             ()-> new Item(new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP).rarity(Rarity.UNCOMMON)));
+
+    public static final RegistryObject<Item> CRYSTALINE_INGOT = ITEMS.register("crystaline_ingot",
+            ()-> new Item(new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP).stacksTo(64).rarity(Rarity.RARE)));
+
+    public static final RegistryObject<Item> CARBON_STEEL_INGOT = ITEMS.register("carbon_steel_ingot",
+            ()-> new Item(new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP).stacksTo(64).rarity(Rarity.RARE)));
 
     public static final RegistryObject<Item> CONTROL_MOLD = ITEMS.register("control_mold",
             ()-> new Item(new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP).stacksTo(1).rarity(Rarity.UNCOMMON)));
@@ -219,6 +264,87 @@ public class AseohaItems {
 
     public static final RegistryObject<Item> DALEKANIUM_SWORD = ITEMS.register("dalekanium_sword",
             () -> new SwordItem(AseohaItemTiers.DALEKANIUM, 3, -2.4F, new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP)));
+
+    public static final RegistryObject<Item> CARBON_STEEL_HELMET = ARMOR_ITEMS.register("carbon_steel_helmet",
+            () -> new ArmorItem(EnumArmorMaterials.CARBON_STEEL, EquipmentSlotType.HEAD, new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP)));
+
+    public static final RegistryObject<Item> CARBON_STEEL_CHESTPLATE = ARMOR_ITEMS.register("carbon_steel_chestplate",
+            () -> new ArmorItem(EnumArmorMaterials.CARBON_STEEL, EquipmentSlotType.CHEST, new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP)));
+
+    public static final RegistryObject<Item> CARBON_STEEL_LEGGINGS = ARMOR_ITEMS.register("carbon_steel_leggings",
+            () -> new ArmorItem(EnumArmorMaterials.CARBON_STEEL, EquipmentSlotType.LEGS, new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP)));
+
+    public static final RegistryObject<Item> CARBON_STEEL_BOOTS = ARMOR_ITEMS.register("carbon_steel_boots",
+            () -> new ArmorItem(EnumArmorMaterials.CARBON_STEEL, EquipmentSlotType.FEET, new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP)));
+
+    public static final RegistryObject<Item> CARBON_STEEL_PICKAXE = ITEMS.register("carbon_steel_pickaxe",
+            () -> new PickaxeItem(AseohaItemTiers.CARBON_STEEL, 1, -2.8F, new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP)));
+
+    public static final RegistryObject<Item> CARBON_STEEL_SHOVEL = ITEMS.register("carbon_steel_shovel",
+            () -> new ShovelItem(AseohaItemTiers.CARBON_STEEL, 1, -3.0F, new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP)));
+
+    public static final RegistryObject<Item> CARBON_STEEL_AXE = ITEMS.register("carbon_steel_axe",
+            () -> new AxeItem(AseohaItemTiers.CARBON_STEEL, 7, -3.2F, new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP)));
+
+    public static final RegistryObject<Item> CARBON_STEEL_HOE = ITEMS.register("carbon_steel_hoe",
+            () -> new HoeItem(AseohaItemTiers.CARBON_STEEL, 1, -2.0F, new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP)));
+
+    public static final RegistryObject<Item> CARBON_STEEL_SWORD = ITEMS.register("carbon_steel_sword",
+            () -> new SwordItem(AseohaItemTiers.CARBON_STEEL, 3, -2.4F, new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP)));
+
+    public static final RegistryObject<Item> METALERT_HELMET = ARMOR_ITEMS.register("metalert_helmet",
+            () -> new ArmorItem(EnumArmorMaterials.METALERT, EquipmentSlotType.HEAD, new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP)));
+
+    public static final RegistryObject<Item> METALERT_CHESTPLATE = ARMOR_ITEMS.register("metalert_chestplate",
+            () -> new ArmorItem(EnumArmorMaterials.METALERT, EquipmentSlotType.CHEST, new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP)));
+
+    public static final RegistryObject<Item> METALERT_LEGGINGS = ARMOR_ITEMS.register("metalert_leggings",
+            () -> new ArmorItem(EnumArmorMaterials.METALERT, EquipmentSlotType.LEGS, new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP)));
+
+    public static final RegistryObject<Item> METALERT_BOOTS = ARMOR_ITEMS.register("metalert_boots",
+            () -> new ArmorItem(EnumArmorMaterials.METALERT, EquipmentSlotType.FEET, new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP)));
+
+    public static final RegistryObject<Item> METALERT_PICKAXE = ITEMS.register("metalert_pickaxe",
+            () -> new PickaxeItem(AseohaItemTiers.METALERT, 1, -2.8F, new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP)));
+
+    public static final RegistryObject<Item> METALERT_SHOVEL = ITEMS.register("metalert_shovel",
+            () -> new ShovelItem(AseohaItemTiers.METALERT, 1, -3.0F, new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP)));
+
+    public static final RegistryObject<Item> METALERT_AXE = ITEMS.register("metalert_axe",
+            () -> new AxeItem(AseohaItemTiers.METALERT, 7, -3.2F, new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP)));
+
+    public static final RegistryObject<Item> METALERT_HOE = ITEMS.register("metalert_hoe",
+            () -> new HoeItem(AseohaItemTiers.METALERT, 1, -2.0F, new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP)));
+
+    public static final RegistryObject<Item> METALERT_SWORD = ITEMS.register("metalert_sword",
+            () -> new SwordItem(AseohaItemTiers.METALERT, 3, -2.4F, new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP)));
+
+    public static final RegistryObject<Item> PURE_DALEKANIUM_HELMET = ARMOR_ITEMS.register("pure_dalekanium_helmet",
+            () -> new ArmorItem(EnumArmorMaterials.PURE_DALEKANIUM, EquipmentSlotType.HEAD, new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP)));
+
+    public static final RegistryObject<Item> PURE_DALEKANIUM_CHESTPLATE = ARMOR_ITEMS.register("pure_dalekanium_chestplate",
+            () -> new ArmorItem(EnumArmorMaterials.PURE_DALEKANIUM, EquipmentSlotType.CHEST, new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP)));
+
+    public static final RegistryObject<Item> PURE_DALEKANIUM_LEGGINGS = ARMOR_ITEMS.register("pure_dalekanium_leggings",
+            () -> new ArmorItem(EnumArmorMaterials.PURE_DALEKANIUM, EquipmentSlotType.LEGS, new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP)));
+
+    public static final RegistryObject<Item> PURE_DALEKANIUM_BOOTS = ARMOR_ITEMS.register("pure_dalekanium_boots",
+            () -> new ArmorItem(EnumArmorMaterials.PURE_DALEKANIUM, EquipmentSlotType.FEET, new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP)));
+
+    public static final RegistryObject<Item> PURE_DALEKANIUM_PICKAXE = ITEMS.register("pure_dalekanium_pickaxe",
+            () -> new PickaxeItem(AseohaItemTiers.PURE_DALEKANIUM, 1, -2.8F, new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP)));
+
+    public static final RegistryObject<Item> PURE_DALEKANIUM_SHOVEL = ITEMS.register("pure_dalekanium_shovel",
+            () -> new ShovelItem(AseohaItemTiers.PURE_DALEKANIUM, 1, -3.0F, new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP)));
+
+    public static final RegistryObject<Item> PURE_DALEKANIUM_AXE = ITEMS.register("pure_dalekanium_axe",
+            () -> new AxeItem(AseohaItemTiers.PURE_DALEKANIUM, 7, -3.2F, new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP)));
+
+    public static final RegistryObject<Item> PURE_DALEKANIUM_HOE = ITEMS.register("pure_dalekanium_hoe",
+            () -> new HoeItem(AseohaItemTiers.PURE_DALEKANIUM, 1, -2.0F, new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP)));
+
+    public static final RegistryObject<Item> PURE_DALEKANIUM_SWORD = ITEMS.register("pure_dalekanium_sword",
+            () -> new SwordItem(AseohaItemTiers.PURE_DALEKANIUM, 3, -2.4F, new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP)));
 
     public static final RegistryObject<Item> SCARF = ARMOR_ITEMS.register("scarf",
             () -> new ScarfArmorItem(EnumArmorMaterials.SCARF, EquipmentSlotType.HEAD, new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP)));
