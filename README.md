@@ -1,7 +1,7 @@
 <h1 id="aseoha-all-seeing-eye-of-harmony-additions-">ASEOHA (All Seeing Eye Of Harmony Additions)</h1>
 <h6 id="aseoha-adds-everything-from-tardis-consoles-colorized-and-whovians-rest-">ASEOHA Adds everything from TARDIS Consoles Colorized, and Whovians Rest!</h6>
 <hr>
-<img src="https://media.forgecdn.net/attachments/1009/12/2024-11-06_00.png" alt="Picture showing off ASEOHA blocks, items, and exteriors.">
+<img src="[Image](https://wsrv.nl/?url=https%3A%2F%2Fmedia.forgecdn.net%2Fattachments%2Fdescription%2F1006434%2Fdescription_9df67a15-a76d-427d-a73b-9bc4abcf7ef7.png&n=-1)" alt="Picture showing off ASEOHA blocks, items, and exteriors.">
 <p>(Join the discord to hang out and get informed! <a href="https://discord.gg/AAxEnCHQQd">Click me!</a>)</p>
 <hr>
 <h2 id="what-is-aseoha-">What is ASEOHA?</h2>
