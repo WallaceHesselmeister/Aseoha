@@ -28,8 +28,11 @@ public class ModelRegistry {
         ClientRegistry.bindTileEntityRenderer(AseohaTiles.EXTERIOR_CORAL.get(), CoralRenderer::new);
         EnumDoorTypes.CORAL.setInteriorDoorModel(new CoralInteriorDoor());
 
-        ClientRegistry.bindTileEntityRenderer(AseohaTiles.EXTERIOR_COLIN_RICHMOND.get(), ColinRichmondRender::new);
+        ClientRegistry.bindTileEntityRenderer(AseohaTiles.EXTERIOR_COLIN_RICHMOND.get(), ColinRichmondRenderer::new);
         EnumDoorTypes.COLIN_RICHMOND.setInteriorDoorModel(new CoralInteriorDoor());
+
+        ClientRegistry.bindTileEntityRenderer(AseohaTiles.exterior_alfiehudolin.get(), AlfieHudolinRender::new);
+
 
         ClientRegistry.bindTileEntityRenderer(AseohaTiles.exterior_brackolin.get(), BrackolinRender::new);
         EnumDoorTypes.BRACKOLIN.setInteriorDoorModel(new BrackolinInteriorDoor());

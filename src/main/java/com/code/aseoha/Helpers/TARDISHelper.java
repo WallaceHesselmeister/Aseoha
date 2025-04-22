@@ -4,7 +4,9 @@ import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.*;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.*;
+import net.minecraft.util.ActionResult;
+import net.minecraft.util.Direction;
+import net.minecraft.util.Hand;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -140,7 +142,6 @@ public class TARDISHelper {
     public static ActionResult MakeItemKey(PlayerEntity playerIn, Hand handIn, KeyItem keyItem){
         ItemStack stack = playerIn.getItemInHand(handIn);
         if (stack.getItem() instanceof KeyItem) {
-            if (playerIn.isCrouching()) {
                 if (handIn == Hand.MAIN_HAND) {
                     ItemStack offHandItem = playerIn.getOffhandItem();
                     if (!(
@@ -161,7 +162,6 @@ public class TARDISHelper {
                         }
                     }
                 }
-            }
         }
         return ActionResult.fail(stack);
     }

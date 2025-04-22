@@ -2,7 +2,7 @@ package com.code.aseoha.mixin;
 
 import com.code.aseoha.Helpers.TARDISHelper;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.item.*;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.ResourceLocation;
@@ -34,7 +34,8 @@ public abstract class KeyMixin extends ConsoleBoundWithTooltipItem {
      */
     @Inject(method = "use", at = @At("HEAD"))
     private void use(World worldIn, PlayerEntity playerIn, Hand handIn, CallbackInfoReturnable<ActionResult<ItemStack>> cir) {
-        TARDISHelper.MakeItemKey(playerIn, handIn, this.Aseoha$getKey());
+        if(playerIn.isCrouching())
+            TARDISHelper.MakeItemKey(playerIn, handIn, this.Aseoha$getKey());
     }
 
     @Unique

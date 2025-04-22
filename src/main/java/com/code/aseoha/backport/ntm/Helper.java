@@ -173,6 +173,7 @@ public class Helper {
         tag.put(name, list);
     }
 
+    @SuppressWarnings("unchecked")
     public static <T, N extends INBT> List<T> readListNBT(@Nullable CompoundNBT tag, @Nullable String name, int tagType, Function<N, T> reader){
         final List<T> list = new ArrayList<>();
         if(tag == null || name == null || !tag.contains(name)){

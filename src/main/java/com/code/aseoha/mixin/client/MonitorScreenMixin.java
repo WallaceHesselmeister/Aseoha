@@ -1,4 +1,4 @@
-package com.code.aseoha.mixin;
+package com.code.aseoha.mixin.client;
 
 import com.code.aseoha.Helpers.IHelpWithConsole;
 import com.code.aseoha.Helpers.PlayerHelper;

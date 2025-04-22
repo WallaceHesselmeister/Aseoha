@@ -1,6 +1,6 @@
 package com.code.aseoha.DataGen;
 
-import com.code.aseoha.aseoha;
+import com.code.aseoha.block.AseohaBlocks;
 import com.google.gson.*;
 import net.minecraft.block.Block;
 import net.minecraft.block.SlabBlock;
@@ -10,7 +10,7 @@ import net.minecraft.data.IDataProvider;
 import net.minecraft.data.LootTableProvider;
 import net.minecraft.item.Items;
 import net.minecraft.util.ResourceLocation;
-import net.minecraftforge.registries.ForgeRegistries;
+import net.minecraftforge.fml.RegistryObject;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.IOException;
@@ -46,17 +46,15 @@ public class BlockLootTableGen extends LootTableProvider {
 
         Path path = this.generator.getOutputFolder();
 
-        for (Block block : ForgeRegistries.BLOCKS) {
-            if (block.getRegistryName().getNamespace().contentEquals(aseoha.MODID)) {
-                if (block.asItem() != null && block.asItem() != Items.AIR) {
-                    if (block instanceof SlabBlock) {
-                        this.generateSelfSlabTable(block, cache, path);
+        for (RegistryObject<Block> block : AseohaBlocks.BLOCKS.getEntries()) {
+                if (block.get().asItem() != Items.AIR) {
+                    if (block.get() instanceof SlabBlock) {
+                        this.generateSelfSlabTable(block.get(), cache, path);
                     } else {
-                        this.generateSelfTable(block, cache, path);
+                        this.generateSelfTable(block.get(), cache, path);
                     }
                 }
             }
-        }
 
     }
 

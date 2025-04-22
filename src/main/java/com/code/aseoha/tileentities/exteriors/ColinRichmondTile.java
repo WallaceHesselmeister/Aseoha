@@ -1,17 +1,18 @@
 package com.code.aseoha.tileentities.exteriors;
 
-import com.code.aseoha.aseoha;
+import com.code.aseoha.texturevariants.TextureVariants;
 import com.code.aseoha.tileentities.AseohaTiles;
 import net.minecraft.state.properties.BlockStateProperties;
 import net.minecraft.util.math.AxisAlignedBB;
-import net.tardis.mod.misc.TexVariant;
 import net.tardis.mod.tileentities.exteriors.ExteriorTile;
 
-public class ColinRichmondExteriorTile extends ExteriorTile {
+public class ColinRichmondTile extends ExteriorTile {
 
     public static final AxisAlignedBB RENDER = new AxisAlignedBB(-1, -1, -1, 2, 2, 2);
-    public ColinRichmondExteriorTile() {
+
+    public ColinRichmondTile() {
         super(AseohaTiles.EXTERIOR_COLIN_RICHMOND.get());
+        this.setVariants(TextureVariants.COLIN_RICHMOND);
     }
 
      @Override

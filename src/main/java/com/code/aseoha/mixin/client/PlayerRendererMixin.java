@@ -1,4 +1,4 @@
-package com.code.aseoha.mixin;
+package com.code.aseoha.mixin.client;
 
 import com.code.aseoha.entities.DavrosChair;
 import net.minecraft.client.entity.player.AbstractClientPlayerEntity;

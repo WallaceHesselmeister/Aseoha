@@ -3,6 +3,7 @@ package com.code.aseoha.protocol;
 import com.code.aseoha.Helpers.PlayerHelper;
 import com.code.aseoha.upgrades.HostileEjection;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.util.concurrent.TickDelayedTask;
 import net.minecraft.util.math.AxisAlignedBB;
@@ -20,7 +21,7 @@ public class EjectProtocol extends Protocol {
     public void call(World world, PlayerEntity playerIn, ConsoleTile console) {
         boolean present = console.getUpgrade(HostileEjection.class).isPresent();
         if (present) {
-            List<Entity> entities = console.getLevel().getEntitiesOfClass(Entity.class, new AxisAlignedBB(console.getBlockPos()).inflate(128));
+            List<Entity> entities = console.getLevel().getEntitiesOfClass(LivingEntity.class, new AxisAlignedBB(console.getBlockPos()).inflate(128));
             if(console.getUpgrade(HostileEjection.class).orElse(null).isActivated()) {
                     ExteriorTile ext = console.getExteriorType().getExteriorTile(console);
                     if (ext != null) {

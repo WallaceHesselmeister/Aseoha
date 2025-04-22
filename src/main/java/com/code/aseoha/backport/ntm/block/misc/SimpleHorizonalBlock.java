@@ -15,6 +15,7 @@ import net.minecraft.world.IBlockReader;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+@SuppressWarnings("deprecation")
 public class SimpleHorizonalBlock extends Block {
 
     public static DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
@@ -29,6 +30,7 @@ public class SimpleHorizonalBlock extends Block {
         this.shape = new DirectionalVoxelShape(defaultShape);
         return this;
     }
+    @NotNull
     @Override
     public VoxelShape getShape(@NotNull BlockState state, @NotNull IBlockReader worldIn, @NotNull BlockPos pos, @NotNull ISelectionContext context) {
         if(this.shape == null)
@@ -38,23 +40,25 @@ public class SimpleHorizonalBlock extends Block {
 
     @Nullable
     @Override
-    public BlockState getStateForPlacement(BlockItemUseContext pContext) {
+    public BlockState getStateForPlacement(@NotNull BlockItemUseContext pContext) {
         return super.getStateForPlacement(pContext)
                 .setValue(FACING, pContext.getHorizontalDirection().getOpposite());
     }
 
 
     @Override
-    protected void createBlockStateDefinition(StateContainer.Builder<Block, BlockState> pBuilder) {
+    protected void createBlockStateDefinition(@NotNull StateContainer.Builder<Block, BlockState> pBuilder) {
         super.createBlockStateDefinition(pBuilder);
         pBuilder.add(FACING);
     }
 
+    @NotNull
     @Override
     public BlockState rotate(BlockState pState, Rotation pRotation) {
         return pState.setValue(BlockStateProperties.HORIZONTAL_FACING, pRotation.rotate(pState.getValue(BlockStateProperties.HORIZONTAL_FACING)));
     }
 
+    @NotNull
     @Override
     public BlockState mirror(BlockState state, Mirror mirror) {
         return state.setValue(BlockStateProperties.HORIZONTAL_FACING, mirror.mirror(state.getValue(BlockStateProperties.HORIZONTAL_FACING)));

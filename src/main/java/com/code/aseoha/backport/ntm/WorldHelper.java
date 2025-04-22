@@ -83,6 +83,7 @@ public class WorldHelper {
         return getRandomBlockPos(pos, rand, radius, radius);
     }
 
+    @SuppressWarnings("unchecked")
     public static <T extends TileEntity> Optional<T> getClosest(World level, BlockPos pos, int radius, TileEntityType<T> type) {
 
         pos = pos.immutable();

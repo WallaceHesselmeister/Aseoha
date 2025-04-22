@@ -1,9 +1,7 @@
 package com.code.aseoha.client.renderers.exteriors;
 
 import com.code.aseoha.client.models.exteriors.SutekhTardisModel;
-import com.code.aseoha.client.models.exteriors.mk_two_capaldi;
 import com.code.aseoha.tileentities.exteriors.SutekhTardisTile;
-import com.code.aseoha.tileentities.exteriors.mk2_capaldi;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.vertex.IVertexBuilder;
 import net.minecraft.client.renderer.IRenderTypeBuffer;

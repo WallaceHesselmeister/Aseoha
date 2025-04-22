@@ -85,6 +85,10 @@ public class AseohaBlocks {
     public static final RegistryObject<Block> MOLECULAR_ASSEMBLER = registerBlock("molecular_assembler",
             () -> new WorkbenchBlock(Block.Properties.copy(Blocks.IRON_BLOCK).noOcclusion()));
 
+    public static final RegistryObject<ArtronConverterFEAUBlock> ARTRON_CONVERTER_FE_AU = registerBlock("artron_converter_fe_au", () -> new ArtronConverterFEAUBlock(AbstractBlock.Properties.of(Material.METAL).strength(1.25F).sound(SoundType.METAL)));
+
+    public static final RegistryObject<ArtronConverterAUFEBlock> ARTRON_CONVERTER_AU_FE = registerBlock("artron_converter_au_fe", () -> new ArtronConverterAUFEBlock(AbstractBlock.Properties.of(Material.METAL).strength(1.25F).sound(SoundType.METAL)));
+
     /** Eye Of Harmony Blocks **/
 
     public static final RegistryObject<Block> ZERO_POINT_DWARF_STAR_ALLOY = registerBlock("zero_point_dwarf_star_alloy",

@@ -6,8 +6,6 @@ import com.code.aseoha.block.AseohaBlocks;
 import com.code.aseoha.client.Sounds;
 import com.code.aseoha.items.AseohaItems;
 import com.code.aseoha.protocol.IsomorphicProtocol;
-import com.code.aseoha.protocol.RegisterProtocols;
-import com.code.aseoha.registries.AnimReg;
 import com.code.aseoha.registries.SoundSchemeRegister;
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.common.data.LanguageProvider;
@@ -23,6 +21,11 @@ public class EnglishLang extends LanguageProvider {
      */
     @Override
     protected void addTranslations() {
+        add(AseohaBlocks.RAILING_STEAM.get(), "Brass Railings");
+        add(AseohaBlocks.RAILING_ALABASTER.get(), "Alabaster Railings");
+        add(AseohaBlocks.RAILING_TUNGSTEN.get(), "Tungsten Railings");
+        add("tooltip.aseoha.acfeau.purpose", "Converts Forge Energy to Artron Energy.");
+        add("tooltip.aseoha.acaufe.purpose", "Converts Artron Energy to Forge Energy.");
         add("tooltip.aseoha.hammerspace_pouch", "Accesses the Attuned TARDIS's hammerspace Buffer");
         add("tooltip.aseoha.hammerspace_pouch.second_line", "When used in off hand:");
         add("tooltip.aseoha.hammerspace_pouch.third_line", "With Empty Main hand: Gives you the first item in the Hammerspace Buffer");
@@ -428,6 +431,7 @@ public class EnglishLang extends LanguageProvider {
         add("tooltip.item.info.reenabled", "This was Re-Enabled by ASEOHA!");
         add("tooltip.part.upgrades/atrium.description", "Takes blocks with the TARDIS exterior \nConsult the ASEOHA Manual for more information");
         add("tooltip.part.upgrades/dynamic_coordinates.description", "Makes the TARDIS monitor update flight position while flying");
+        add("tooltip.part.upgrades/hostile_ejection.description", "Allows the \"Eject Timeship Occupants\" protocol to eject hostile mobs");
         add("item.aseoha.upgrades.dynamic_coordinates", "Dynamic Coordinates Upgrade");
         add("block.aseoha.gallifrey_sand", "Gallifreyan Sand");
         add("block.aseoha.skaro_sand", "Skaro Sand");

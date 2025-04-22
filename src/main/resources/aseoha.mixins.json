@@ -1,14 +1,16 @@
 {
   "client": [
-    "MonitorScreenMixin",
-    "PlayerRendererMixin",
-    "TTExterior",
     "client.AtriumBlockMixin",
     "client.BOTIRendererMixin",
     "client.BOTIWorldMixin",
+    "client.CommunicatorControlMixin",
     "client.ExtRenderMixin",
+    "client.MonitorControlMixin",
+    "client.MonitorScreenMixin",
+    "client.PlayerRendererMixin",
     "client.ServerWorldInfoMixin",
     "client.TardisSkyPropertyMixin",
+    "client.TelepathicCircuitMixin",
     "client.VortexSkyRendererMixin"
   ],
   "compatibilityLevel": "JAVA_8",
@@ -38,6 +40,7 @@
     "TardisTopBlockMixin",
     "TardisWorldCapabilityMixin",
     "TeleportUtilMixin",
+    "TTExterior",
     "TwoBlockBasicExteriorMixin"
   ],
   "package": "com.code.aseoha.mixin",

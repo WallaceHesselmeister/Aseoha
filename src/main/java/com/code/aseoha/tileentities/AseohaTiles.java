@@ -54,10 +54,7 @@ package com.code.aseoha.tileentities;
 import com.code.aseoha.aseoha;
 import com.code.aseoha.block.AseohaBlocks;
 import com.code.aseoha.compat.NoProjectTARDISBlocks;
-import com.code.aseoha.tileentities.blocks.EOHLinkTile;
-import com.code.aseoha.tileentities.blocks.ExtrapolatorTile;
-import com.code.aseoha.tileentities.blocks.TardisCoralTile;
-import com.code.aseoha.tileentities.blocks.WorkbenchTile;
+import com.code.aseoha.tileentities.blocks.*;
 import com.code.aseoha.tileentities.consoles.*;
 import com.code.aseoha.tileentities.exteriors.*;
 import com.google.common.base.Supplier;
@@ -80,6 +77,10 @@ public class AseohaTiles {
 
     public static final RegistryObject<TileEntityType<WorkbenchTile>> WORKBENCH = TILES.register("workbench",
             () -> TileEntityType.Builder.of(WorkbenchTile::new, AseohaBlocks.WORKBENCH.get()).build(null));
+
+    public static final RegistryObject<TileEntityType<ArtronConverterFEAUTile>> ARTRON_CONVERTER_FE_AU = TILES.register("artron_converter_fe_au", () -> registerTiles(ArtronConverterFEAUTile::new, AseohaBlocks.ARTRON_CONVERTER_FE_AU.get()));
+    public static final RegistryObject<TileEntityType<ArtronConverterAUFETile>> ARTRON_CONVERTER_AU_FE = TILES.register("artron_converter_au_fe", () -> registerTiles(ArtronConverterAUFETile::new, AseohaBlocks.ARTRON_CONVERTER_AU_FE.get()));
+
 
     public static final RegistryObject<TileEntityType<EOHLinkTile>> EYE_OF_HARMONY = TILES.register("eye_of_harmony",
             () -> TileEntityType.Builder.of(EOHLinkTile::new, AseohaBlocks.EYE_OF_HARMONY.get()).build(null));
@@ -106,8 +107,8 @@ public class AseohaTiles {
             TILES.register("exterior_mcgann", () -> registerTiles(McGannTile::new,
                     AseohaBlocks.exterior_mcgann.get()));
 
-    public static final RegistryObject<TileEntityType<ColinRichmondExteriorTile>> EXTERIOR_COLIN_RICHMOND =
-            TILES.register("exterior_colin_richmond", () -> registerTiles(ColinRichmondExteriorTile::new,
+    public static final RegistryObject<TileEntityType<ColinRichmondTile>> EXTERIOR_COLIN_RICHMOND =
+            TILES.register("exterior_colin_richmond", () -> registerTiles(ColinRichmondTile::new,
                     AseohaBlocks.EXTERIOR_COLIN_RICHMOND.get()));
 
     public static final RegistryObject<TileEntityType<WhittakerTile>> EXTERIOR_WHITTAKER =
@@ -206,6 +207,8 @@ public class AseohaTiles {
     public static final RegistryObject<TileEntityType<CustardConsoleTile>> console_custard =
             TILES.register("console_custard", () ->registerTiles(CustardConsoleTile::new,
                     AseohaBlocks.console_custard.get()));
+
+
 
     private static <T extends TileEntity> TileEntityType<T> registerTiles(Supplier<T> tile, Block... validBlock) {
         TileEntityType<T> type = TileEntityType.Builder.of(tile, validBlock).build(null);

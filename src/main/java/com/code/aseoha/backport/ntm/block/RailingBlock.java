@@ -42,12 +42,12 @@ public class RailingBlock extends SimpleHorizonalBlock {
 
     
     @Override
-    public @Nullable BlockState getStateForPlacement(BlockItemUseContext pContext) {
+    public @Nullable BlockState getStateForPlacement(@NotNull BlockItemUseContext pContext) {
         return setRightFromPlacement(stateBasedOnWorld(super.getStateForPlacement(pContext), pContext.getLevel(), pContext.getClickedPos()), pContext);
     }
 
     @Override
-    protected void createBlockStateDefinition(StateContainer.Builder<Block, BlockState> pBuilder) {
+    protected void createBlockStateDefinition(@NotNull StateContainer.Builder<Block, BlockState> pBuilder) {
         super.createBlockStateDefinition(pBuilder);
         pBuilder.add(IS_ANGLED, RIGHT);
     }
@@ -65,6 +65,7 @@ public class RailingBlock extends SimpleHorizonalBlock {
         return original.setValue(IS_ANGLED, false);
     }
 
+    @NotNull
     @Override
     public VoxelShape getShape(@NotNull BlockState state, @NotNull IBlockReader worldIn, @NotNull BlockPos pos, @NotNull ISelectionContext context) {
         return state.getValue(RIGHT) ?
@@ -72,8 +73,9 @@ public class RailingBlock extends SimpleHorizonalBlock {
                 LEFT_SHAPE.getShapeFor(state.getValue(BlockStateProperties.HORIZONTAL_FACING));
     }
 
+    @SuppressWarnings("deprecation")
     @Override
-    public void neighborChanged(BlockState pState, World pLevel, BlockPos pPos, Block pNeighborBlock, BlockPos pNeighborPos, boolean pMovedByPiston) {
+    public void neighborChanged(@NotNull BlockState pState, @NotNull World pLevel, @NotNull BlockPos pPos, @NotNull Block pNeighborBlock, @NotNull BlockPos pNeighborPos, boolean pMovedByPiston) {
         super.neighborChanged(pState, pLevel, pPos, pNeighborBlock, pNeighborPos, pMovedByPiston);
         BlockState newState = stateBasedOnWorld(pState, pLevel, pPos);
         if(!newState.equals(pState))
