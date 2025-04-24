@@ -68,7 +68,7 @@ minecraft {
     runs {
         client {
             workingDirectory project.file('run')
-            arg "-mixin.config=aseoha.mixins.json -mixin.config=aseoha.tacompat.mixins.json"
+            arg "-mixin.config=aseoha.mixins.json"
             property 'mixin.env.remapRefMap', 'true'
             property 'mixin.env.refMapRemappingFile', "${buildDir}/createSrgToMcp/output.srg"
             // Recommended logging data for a userdev environment

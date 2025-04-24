@@ -54,6 +54,7 @@ import net.minecraftforge.fml.event.lifecycle.*;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.spongepowered.asm.mixin.Mixins;
 
 import java.util.ArrayList;
 import java.util.stream.Collectors;
@@ -76,6 +77,8 @@ public class aseoha {
 
 
     public aseoha() {
+
+        Mixins.addConfiguration("aseoha.tacompat.mixins.json");
         IEventBus modBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         STStructures.DEFERRED_REGISTRY_STRUCTURE.register(modBus);

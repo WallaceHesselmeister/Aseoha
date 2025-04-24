@@ -10,5 +10,5 @@
   ],
   "package": "com.code.aseoha.integration.tadditions.mixin",
   "refmap": "aseoha.tacompat.refmap.json",
-  "required": true
+  "required": false
 }
