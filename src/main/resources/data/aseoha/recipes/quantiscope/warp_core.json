@@ -1,0 +1,14 @@
+{
+  "type": "tardis:quantiscope",
+  "repair":false,
+  "ingredients":[
+    {"item":"tardis:subsystem/dematerialisation_circuit"},
+    {"item":"aseoha:netherite_reinforced_circuits"},
+    {"item":"minecraft:diamond_block"},
+    {"item":"aseoha:netherite_reinforced_circuits"},
+    {"item":"tardis:subsystem/stabilizer"}
+  ],
+  "result":{
+    "item":"aseoha:warp_core"
+  }
+}

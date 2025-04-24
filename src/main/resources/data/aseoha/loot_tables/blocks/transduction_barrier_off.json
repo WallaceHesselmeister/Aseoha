@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "name": "aseoha:transduction_barrier_off",
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "aseoha:transduction_barrier_off"
+        }
+      ]
+    }
+  ]
+}

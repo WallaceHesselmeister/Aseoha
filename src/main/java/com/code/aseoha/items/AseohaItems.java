@@ -217,6 +217,12 @@ public class AseohaItems {
     public static final RegistryObject<Item> HAMMER = ITEMS.register("hammer",
             ()-> new Item(new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP).stacksTo(1).rarity(Rarity.RARE).fireResistant()));
 
+    public static final RegistryObject<Item> WARP_CORE = ITEMS.register("warp_core",
+            ()-> new Item(new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP).stacksTo(16).rarity(Rarity.RARE).fireResistant()));
+
+    public static final RegistryObject<Item> NETHERITE_REINFORCED_CIRCUITS = ITEMS.register("netherite_reinforced_circuits",
+            ()-> new Item(new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP).stacksTo(64).rarity(Rarity.RARE).fireResistant()));
+
     public static final RegistryObject<Item> CANDY_CANE = ITEMS.register("candy_cane",
             () -> new Item((new Item.Properties()).food(new Food.Builder().nutrition(4).saturationMod(0.7F).build()).tab(AseohaItemGroups.ASEOHA_FOOD_GROUP).rarity(Rarity.UNCOMMON)));
 

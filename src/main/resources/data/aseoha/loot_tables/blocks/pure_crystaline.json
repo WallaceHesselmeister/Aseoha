@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "name": "aseoha:pure_crystaline",
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "aseoha:pure_crystaline"
+        }
+      ]
+    }
+  ]
+}

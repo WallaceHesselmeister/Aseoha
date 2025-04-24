@@ -3,8 +3,8 @@
     "icon": {
       "item": "aseoha:upgrades/warp_drive"
     },
-    "title": "*Almost, Instant",
-    "description": "Obtain a light speed drive upgrade to traverse the time vortex faster than ever before",
+    "title": "Ultimate speeds",
+    "description": "Obtain a warp drive upgrade to traverse the time vortex in the blink of an eye",
     "frame": "challenge",
     "show_toast": true,
     "announce_to_chat": true,
@@ -17,7 +17,7 @@
       "conditions": {
         "items": [
           {
-            "item": "aseoha:upgrades/lightspeed_drive"
+            "item": "aseoha:upgrades/warp_drive"
           }
         ]
       }

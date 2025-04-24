@@ -144,6 +144,7 @@ minecraft {
 }
 mixin {
     add sourceSets.main, "${mod_id}.refmap.json"
+    add sourceSets.main, "${mod_id}.tacompat.refmap.json"
     disableOverwriteChecker = true
 }
 
@@ -162,7 +163,7 @@ repositories {
 }
 
 //dependencies {}
-dependencies {
+def var = dependencies {
     // Specify the version of Minecraft to use, If this is any group other then 'net.minecraft' it is assumed
     // that the dep is a ForgeGradle 'patcher' dependency. And it's patches will be applied.
     // The userdev artifact is  a special name and will get all sorts of transformations applied to it.
@@ -184,6 +185,10 @@ dependencies {
     /************************************ Create *********************************************/
     implementation fg.deobf("curse.maven:create-328085:3536025")
     implementation fg.deobf("curse.maven:flywheel-486392:3535459")
+    implementation fg.deobf("curse.maven:embeddium-908741:5322311")
+    implementation fg.deobf("curse.maven:rubidium-extra-654373:4823321")
+    implementation fg.deobf("curse.maven:jade-324717:3910873")
+    //implementation fg.deobf("curse.maven:essential-mod-546670:6403733")
     /************************************ Cracker's Witherstorm *********************************************/
 //    implementation fg.deobf("curse.maven:crackers-wither-storm-mod-621405:4403153")
     /************************************ Temporal Additions ************************************************/
@@ -212,6 +217,7 @@ dependencies {
     // http://www.gradle.org/docs/current/userguide/dependency_management.html
 
 }
+var
 shadowJar {
     configurations = [project.configurations.shadow]
     relocate("com.llamalad7.mixinextras", "com.code.aseoha.mixin.mixinextras")
@@ -238,8 +244,8 @@ jar {
                 "MixinConfigs": "aseoha.mixins.json,aseoha.tacompat.mixins.json"
         ])
     }
-    rename 'mixin.refmap.json', 'aseoha.mixin-refmap.json'
-    rename 'mixin.tacompat.refmap.json', 'aseoha.tacompat.mixin-refmap.json'
+    rename 'aseoha.refmap.json', 'aseoha.mixin-refmap.json'
+    rename 'aseoha.tacompat.refmap.json', 'aseoha.tacompat.mixin-refmap.json'
 }
 
 // Example configuration to allow publishing using the maven-publish task
