@@ -1,5 +1,7 @@
 package com.code.aseoha;
 
+import net.minecraft.item.crafting.IRecipeSerializer;
+import net.minecraft.item.crafting.SmithingRecipe;
 import net.minecraft.util.RegistryKey;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.Registry;
@@ -26,4 +28,7 @@ public class Constants {
     public static final TranslationTextComponent TOOLTIP_REENABLED = new TranslationTextComponent("tooltip.item.info.reenabled");
 //    public static final ITag.INamedTag<Item> BOOKSHELF_BOOKS = bind("bookshelf_books");
     public final static String waysOfSayingK9[] = {"k9", "k-9", "k 9"};
+
+    IRecipeSerializer<SmithingRecipe> WORKBENCH = IRecipeSerializer.register("aseoha_workbench", new SmithingRecipe.Serializer());
+
 }

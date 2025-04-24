@@ -6,6 +6,6 @@ import net.minecraft.item.Items;
 
 public class WorkBenchRecipeReg {
     public void Register(){
-        aseoha.WorkBenchRecipeHandler.AddRecipe(Items.RED_DYE, Items.BOOK, null, null, AseohaItems.MANUAL.get());
+        aseoha.WorkBenchRecipeHandler.AddRecipe(Items.GREEN_DYE, Items.BOOK, null, null, AseohaItems.MANUAL.get());
     }
 }

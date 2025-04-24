@@ -1,7 +1,6 @@
 package com.code.aseoha.WorkBench;
 
 import lombok.AllArgsConstructor;
-import lombok.Getter;
 import net.minecraft.item.Item;
 import net.minecraft.item.crafting.Ingredient;
 

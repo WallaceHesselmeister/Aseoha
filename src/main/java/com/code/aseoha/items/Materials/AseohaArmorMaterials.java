@@ -32,15 +32,25 @@ public enum AseohaArmorMaterials implements IArmorMaterial {
     private final float knockbackResistance;
     private final LazyValue<Ingredient> repairIngredient;
 
-    AseohaArmorMaterials(String p_i231593_3_, int p_i231593_4_, int[] p_i231593_5_, int p_i231593_6_, SoundEvent p_i231593_7_, float p_i231593_8_, float p_i231593_9_, Supplier<Ingredient> p_i231593_10_) {
-        this.name = p_i231593_3_;
-        this.durabilityMultiplier = p_i231593_4_;
-        this.slotProtections = p_i231593_5_;
-        this.enchantmentValue = p_i231593_6_;
-        this.sound = p_i231593_7_;
-        this.toughness = p_i231593_8_;
-        this.knockbackResistance = p_i231593_9_;
-        this.repairIngredient = new LazyValue<>(p_i231593_10_);
+    /**
+     * @param name The ID of the armor material, keep it lowecase letters and _ only, no numbers or special characters
+     * @param durability The base durability of the armor material
+     * @param protectionPerSlot An int array defined as such: new int[] { head, chest, legs, feet }
+     * @param enchantmentValue The enchantment value of the armor material, gold has a very high enchantment value, which is why it's easy to get good enchants
+     * @param sound The sound event played when the armor is equipped
+     * @param toughness The toughness of the armor material, dunno what this does google it or mess around with it or smth, TODO: figure out toughness value
+     * @param knockbackResistance The knockback resistance of the material, higher = less knockback on the player, I think the max is like 1.0f or smth
+     * @param repairIngredient The ingredient used to repair the armor, example: () -> Ingredient.of(Items.DIAMOND), if you're using a mod item add .get() after the item, like this () -> Ingredient.of(AseohaItems.DALEKANIUM_INGOT.get()))
+     **/
+    AseohaArmorMaterials(String name, int durability, int[] protectionPerSlot, int enchantmentValue, SoundEvent sound, float toughness, float knockbackResistance, Supplier<Ingredient> repairIngredient) {
+        this.name = name;
+        this.durabilityMultiplier = durability;
+        this.slotProtections = protectionPerSlot;
+        this.enchantmentValue = enchantmentValue;
+        this.sound = sound;
+        this.toughness = toughness;
+        this.knockbackResistance = knockbackResistance;
+        this.repairIngredient = new LazyValue<>(repairIngredient);
     }
 
 

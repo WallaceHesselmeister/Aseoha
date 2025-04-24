@@ -68,7 +68,7 @@ minecraft {
     runs {
         client {
             workingDirectory project.file('run')
-            arg "-mixin.config=aseoha.mixins.json"
+            arg "-mixin.config=aseoha.mixins.json -mixin.config=aseoha.tacompat.mixins.json"
             property 'mixin.env.remapRefMap', 'true'
             property 'mixin.env.refMapRemappingFile', "${buildDir}/createSrgToMcp/output.srg"
             // Recommended logging data for a userdev environment
@@ -144,6 +144,7 @@ minecraft {
 }
 mixin {
     add sourceSets.main, "${mod_id}.refmap.json"
+    add sourceSets.main, "${mod_id}.tacompat.refmap.json"
     disableOverwriteChecker = true
 }
 
@@ -235,10 +236,11 @@ jar {
                 "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ"),
                 "TweakClass": "org.spongepowered.asm.launch.MixinTweaker",
                 "TweakOrder": 0,
-                "MixinConfigs": "aseoha.mixins.json"
+                "MixinConfigs": "aseoha.mixins.json,aseoha.tacompat.mixins.json"
         ])
     }
-    rename 'mixin.refmap.json', 'aseoha.mixin-refmap.json'
+    rename 'aseoha.refmap.json', 'aseoha.mixin-refmap.json'
+    rename 'aseoha.tacompat.refmap.json', 'aseoha.tacompat.mixin-refmap.json'
 }
 
 // Example configuration to allow publishing using the maven-publish task

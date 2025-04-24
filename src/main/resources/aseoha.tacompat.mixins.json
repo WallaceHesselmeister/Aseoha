@@ -1,0 +1,14 @@
+{
+  "compatibilityLevel": "JAVA_8",
+  "injectors": {
+    "defaultRequire": 0,
+    "maxShiftBy": 5
+  },
+  "minVersion": "0.8",
+  "mixins": [
+    "CommonEventsMixin"
+  ],
+  "package": "com.code.aseoha.integration.tadditions.mixin",
+  "refmap": "aseoha.tacompat.refmap.json",
+  "required": true
+}

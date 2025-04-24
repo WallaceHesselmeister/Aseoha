@@ -21,6 +21,7 @@ import com.code.aseoha.commands.Commands;
 import com.code.aseoha.compat.NoProjectTARDISBlocks;
 import com.code.aseoha.compat.NoTadditionsItems;
 import com.code.aseoha.entities.ModEntityTypes;
+import com.code.aseoha.integration.tadditions.TAWorkbenchRecipes;
 import com.code.aseoha.items.AseohaItems;
 import com.code.aseoha.misc.AseohaDimensions;
 import com.code.aseoha.misc.Loot;
@@ -86,7 +87,7 @@ public class aseoha {
         if (!(ModList.get().isLoaded("tadditions")))
             NoTadditionsItems.register(modBus);
 
-        if(!(ModList.get().isLoaded("project_tardis")))
+        if(!(ModList.get().isLoaded("project_tardis") || ModList.get().isLoaded("sidrat")))
             NoProjectTARDISBlocks.BLOCKS.register(modBus);
 
         //ConsolesRegistry.CONSOLES.register(modBus);
@@ -155,6 +156,8 @@ public class aseoha {
 
             SurfaceBuilder.registerConfiguredSurfaceBuilders();
             WorkBenchRecipeHandler.Init();
+            if(ModList.get().isLoaded("tadditions"))
+                TAWorkbenchRecipes.Init();
         });
         // some preinit code
 //        LOGGER.info("HELLO FROM PREINIT");
@@ -297,21 +300,19 @@ public class aseoha {
             generator.addProvider(new BlockLootTableGen(generator));
             generator.addProvider(new LootGen(generator));
             generator.addProvider(new RecipeGen(generator));
-//            generator.addProvider(new BlockStateGen(generator));;
             generator.addProvider(new ItemTagsGen(generator, blockTags, fileHelper));
+            generator.addProvider(new ItemModelGenerator(generator, aseoha.MODID, fileHelper));
 //            if (reports) {
 //                generator.addProvider(new BiomeProvider(generator));
 //            }
         }
     }
 
-//    @OnlyIn(Dist.DEDICATED_SERVER)
     public static void SendDebugToServer(String DebugMessage) {
         if (Config.SERVER.DebugMode.get() && Dist.DEDICATED_SERVER.isDedicatedServer())
             System.out.println("[ASEOHA Debug] " + DebugMessage);
     }
 
-//    @OnlyIn(Dist.CLIENT)
     public static void SendDebugToClient(String DebugMessage) {
         if (Config.COMMON.DebugMode.get() && Dist.CLIENT.isClient())
             System.out.println("[ASEOHA Debug] " + DebugMessage);

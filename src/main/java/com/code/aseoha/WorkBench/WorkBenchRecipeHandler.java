@@ -11,7 +11,7 @@ import java.util.Arrays;
 
 public class WorkBenchRecipeHandler {
     @Getter
-    private ArrayList<WorkBenchRecipe> RecipeList = new ArrayList<>();
+    private final ArrayList<WorkBenchRecipe> RecipeList = new ArrayList<>();
 
     public void Init() {
         this.AddRecipe(Items.GREEN_DYE, Items.BOOK, null, null, AseohaItems.MANUAL.get());
