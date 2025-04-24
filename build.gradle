@@ -144,7 +144,6 @@ minecraft {
 }
 mixin {
     add sourceSets.main, "${mod_id}.refmap.json"
-    add sourceSets.main, "${mod_id}.tacompat.refmap.json"
     disableOverwriteChecker = true
 }
 
@@ -239,8 +238,8 @@ jar {
                 "MixinConfigs": "aseoha.mixins.json,aseoha.tacompat.mixins.json"
         ])
     }
-    rename 'aseoha.refmap.json', 'aseoha.mixin-refmap.json'
-    rename 'aseoha.tacompat.refmap.json', 'aseoha.tacompat.mixin-refmap.json'
+    rename 'mixin.refmap.json', 'aseoha.mixin-refmap.json'
+    rename 'mixin.tacompat.refmap.json', 'aseoha.tacompat.mixin-refmap.json'
 }
 
 // Example configuration to allow publishing using the maven-publish task

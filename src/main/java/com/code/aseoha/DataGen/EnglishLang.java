@@ -7,6 +7,7 @@ import com.code.aseoha.client.Sounds;
 import com.code.aseoha.items.AseohaItems;
 import com.code.aseoha.protocol.IsomorphicProtocol;
 import com.code.aseoha.registries.SoundSchemeRegister;
+import net.minecraft.data.DataGenerator;
 import net.minecraftforge.common.data.LanguageProvider;
 
 public class EnglishLang extends LanguageProvider {
