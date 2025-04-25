@@ -77,8 +77,6 @@ public class aseoha {
 
 
     public aseoha() {
-
-        Mixins.addConfiguration("aseoha.tacompat.mixins.json");
         IEventBus modBus = FMLJavaModLoadingContext.get().getModEventBus();
 
         STStructures.DEFERRED_REGISTRY_STRUCTURE.register(modBus);
@@ -87,10 +85,12 @@ public class aseoha {
         AseohaItems.register(modBus);
         AseohaItems.ARMOR_ITEMS.register(modBus);
 
-        if (!(ModList.get().isLoaded("tadditions")))
+        if (!(ModList.get().isLoaded("tadditions"))) {
             NoTadditionsItems.register(modBus);
+            Mixins.addConfiguration("aseoha.tacompat.mixins.json");
+        }
 
-        if(!(ModList.get().isLoaded("project_tardis") || ModList.get().isLoaded("sidrat")))
+        if (!(ModList.get().isLoaded("project_tardis") || ModList.get().isLoaded("sidrat")))
             NoProjectTARDISBlocks.BLOCKS.register(modBus);
 
         //ConsolesRegistry.CONSOLES.register(modBus);
@@ -159,7 +159,7 @@ public class aseoha {
 
             SurfaceBuilder.registerConfiguredSurfaceBuilders();
             WorkBenchRecipeHandler.Init();
-            if(ModList.get().isLoaded("tadditions"))
+            if (ModList.get().isLoaded("tadditions"))
                 TAWorkbenchRecipes.Init();
         });
         // some preinit code
@@ -198,7 +198,7 @@ public class aseoha {
         RenderTypeLookup.setRenderLayer(AseohaBlocks.COATRACK.get(), RenderType.cutout());
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// COOL BLOCKS
         RenderTypeLookup.setRenderLayer(AseohaBlocks.foodmachine_old.get(), RenderType.solid());
-        if(!ModList.get().isLoaded("project-tardis"))
+        if (!ModList.get().isLoaded("project-tardis"))
             RenderTypeLookup.setRenderLayer(NoProjectTARDISBlocks.CORAL.get(), RenderType.cutout());
         RenderTypeLookup.setRenderLayer(AseohaBlocks.DIMENSIONAL_BUTTON.get(), RenderType.cutout());
         RenderTypeLookup.setRenderLayer(AseohaBlocks.FACING_CONTROL.get(), RenderType.cutout());
@@ -272,7 +272,6 @@ public class aseoha {
     }
 
 
-
     private void processIMC(final InterModProcessEvent event) {
         // some example code to receive and process InterModComms from other mods
         LOGGER.info("Got IMC {}", event.getIMCStream().
@@ -337,12 +336,12 @@ public class aseoha {
         if(event.getWorld() instanceof ServerWorld){
             ServerWorld serverWorld = (ServerWorld)event.getWorld();
 */
-            /*
-             * Skip Terraforged's chunk generator as they are a special case of a mod locking down their chunkgenerator.
-             * They will handle your structure spacing for your if you add to WorldGenRegistries.NOISE_GENERATOR_SETTINGS in your structure's registration.
-             * This here is done with reflection as this tutorial is not about setting up and using Mixins.
-             * If you are using mixins, you can call the codec method with an invoker mixin instead of using reflection.
-             */
+/*
+ * Skip Terraforged's chunk generator as they are a special case of a mod locking down their chunkgenerator.
+ * They will handle your structure spacing for your if you add to WorldGenRegistries.NOISE_GENERATOR_SETTINGS in your structure's registration.
+ * This here is done with reflection as this tutorial is not about setting up and using Mixins.
+ * If you are using mixins, you can call the codec method with an invoker mixin instead of using reflection.
+ */
     /*
             try {
                 if(GETCODEC_METHOD == null) GETCODEC_METHOD = ObfuscationReflectionHelper.findMethod(ChunkGenerator.class, "func_230347_a_");
@@ -353,11 +352,11 @@ public class aseoha {
                 aseoha.LOGGER.error("Was unable to check if " + serverWorld.dimension().location() + " is using Terraforged's ChunkGenerator.");
             }
 */
-            /*
-             * Prevent spawning our structure in Vanilla's superflat world as
-             * people seem to want their superflat worlds free of modded structures.
-             * Also that vanilla superflat is really tricky and buggy to work with in my experience.
-             */
+/*
+ * Prevent spawning our structure in Vanilla's superflat world as
+ * people seem to want their superflat worlds free of modded structures.
+ * Also that vanilla superflat is really tricky and buggy to work with in my experience.
+ */
     /*
             if(serverWorld.getChunkSource().getGenerator() instanceof FlatChunkGenerator &&
                     serverWorld.dimension().equals(World.OVERWORLD)){
@@ -370,14 +369,14 @@ public class aseoha {
             }
 */
 
-            /*   6tt
-             * putIfAbsent so people can override the spacing with dimension datapacks themselves if they wish to customize spacing more precisely per dimension.
-             * Requires AccessTransformer (see resources/META-INF/accesstransformer.cfg)
-             *
-             * NOTE: if you add per-dimension spacing configs, you can't use putIfAbsent as WorldGenRegistries.NOISE_GENERATOR_SETTINGS in FMLCommonSetupEvent
-             * already added your default structure spacing to some dimensions. You would need to override the spacing with .put(...)
-             * And if you want to do dimension blacklisting, you need to remove the spacing entry entirely from the map below to prevent generation safely.
-             */
+/*   6tt
+ * putIfAbsent so people can override the spacing with dimension datapacks themselves if they wish to customize spacing more precisely per dimension.
+ * Requires AccessTransformer (see resources/META-INF/accesstransformer.cfg)
+ *
+ * NOTE: if you add per-dimension spacing configs, you can't use putIfAbsent as WorldGenRegistries.NOISE_GENERATOR_SETTINGS in FMLCommonSetupEvent
+ * already added your default structure spacing to some dimensions. You would need to override the spacing with .put(...)
+ * And if you want to do dimension blacklisting, you need to remove the spacing entry entirely from the map below to prevent generation safely.
+ */
     /*
             if(serverWorld.dimension().equals(NEWEARTH)){
             aseoha.LOGGER.info("NEW EARTH");

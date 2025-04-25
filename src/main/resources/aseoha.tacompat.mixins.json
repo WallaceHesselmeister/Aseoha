@@ -1,9 +1,5 @@
 {
   "compatibilityLevel": "JAVA_8",
-  "injectors": {
-    "defaultRequire": 0,
-    "maxShiftBy": 5
-  },
   "minVersion": "0.8",
   "mixins": [
     "CommonEventsMixin"

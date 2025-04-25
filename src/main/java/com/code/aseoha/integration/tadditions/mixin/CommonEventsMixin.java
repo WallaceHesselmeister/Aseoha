@@ -33,8 +33,8 @@ public class CommonEventsMixin {
      * @author codiak540
      * @reason prevent TA from executing anything onServerTick, it tends to NullPointer and we do what they're trying to anyway
      */
-    @Overwrite(remap = false)
     @SubscribeEvent
+    @Overwrite(remap = false)
     public static void onServerTick(TickEvent.ServerTickEvent event) {
     }
 

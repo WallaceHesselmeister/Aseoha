@@ -2,12 +2,12 @@
   "type": "minecraft:block",
   "pools": [
     {
-      "name": "aseoha:tardis_coral",
+      "name": "aseoha:artron_converter_fe_au",
       "rolls": 1,
       "entries": [
         {
           "type": "minecraft:item",
-          "name": "aseoha:tardis_coral"
+          "name": "aseoha:artron_converter_fe_au"
         }
       ]
     }

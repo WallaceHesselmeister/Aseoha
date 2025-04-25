@@ -1,4 +1,3 @@
-// src/main/java/com/yourname/modname/ModMaterials.java
 package com.code.aseoha.enums;
 
 import com.code.aseoha.items.AseohaItems;
@@ -9,6 +8,7 @@ import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.SoundEvents;
 import net.minecraftforge.common.util.Lazy;
+import org.jetbrains.annotations.NotNull;
 
 import java.util.function.Supplier;
 
@@ -83,16 +83,19 @@ public enum EnumArmorMaterials implements IArmorMaterial {
         return enchantmentValue;
     }
 
+    @NotNull
     @Override
     public SoundEvent getEquipSound() {
         return sound;
     }
 
+    @NotNull
     @Override
     public Ingredient getRepairIngredient() {
         return repairIngredient.get();
     }
 
+    @NotNull
     @Override
     public String getName() {
     return "aseoha:" + name;

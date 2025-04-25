@@ -66,12 +66,12 @@ public enum AseohaArmorMaterials implements IArmorMaterial {
     }
 
 
-    public int getDurabilityForSlot(EquipmentSlotType p_200896_1_) {
-        return HEALTH_PER_SLOT[p_200896_1_.getIndex()] * this.durabilityMultiplier;
+    public int getDurabilityForSlot(EquipmentSlotType type) {
+        return HEALTH_PER_SLOT[type.getIndex()] * this.durabilityMultiplier;
     }
 
-    public int getDefenseForSlot(EquipmentSlotType p_200902_1_) {
-        return this.slotProtections[p_200902_1_.getIndex()];
+    public int getDefenseForSlot(EquipmentSlotType type) {
+        return this.slotProtections[type.getIndex()];
     }
 
     public int getEnchantmentValue() {
