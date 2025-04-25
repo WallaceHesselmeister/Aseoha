@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "xxx",
+    "x x",
+    "x x"
+  ],
+  "key": {
+    "x": {
+      "item": "aseoha:pure_dalekanium_ingot"
+    }
+  },
+  "result": {
+    "item": "aseoha:pure_dalekanium_leggings",
+    "count": 1
+  }
+}

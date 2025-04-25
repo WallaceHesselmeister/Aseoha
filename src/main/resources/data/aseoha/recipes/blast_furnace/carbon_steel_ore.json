@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": {
+    "item": "aseoha:carbon_steel_ore"
+  },
+  "result": "aseoha:carbon_steel_ingot",
+  "experience": 3.0,
+  "cookingtime": 350
+}

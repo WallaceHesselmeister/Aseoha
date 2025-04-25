@@ -7,16 +7,16 @@
   ],
   "key": {
     "x": {
-      "item": "tardis:artron_battery_medium"
+      "item": "tardis:artron_battery_high"
     },
     "z": {
-      "item": "tardis:artron_capacitor_mid"
+      "item": "tardis:artron_capacitor_high"
     },
     "v": {
       "item": "aseoha:netherite_reinforced_circuits"
     },
     "c": {
-      "item": "minecraft:netherite_scrap"
+      "item": "minecraft:diamond_block"
     }
   },
   "result": {

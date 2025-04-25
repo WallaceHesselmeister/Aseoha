@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "x x",
+    "xxx",
+    "xxx"
+  ],
+  "key": {
+    "x": {
+      "item": "aseoha:metalert_ingot"
+    }
+  },
+  "result": {
+    "item": "aseoha:metalert_chestplate",
+    "count": 1
+  }
+}
