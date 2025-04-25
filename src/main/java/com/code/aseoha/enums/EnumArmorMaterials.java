@@ -28,6 +28,18 @@ public enum EnumArmorMaterials implements IArmorMaterial {
     BOWTIE("bowtie", 25, new int[]{1, 1, 1, 1}, 15,
             SoundEvents.ARMOR_EQUIP_LEATHER, 1.0F, 0.0F, () -> Ingredient.of(Items.WHITE_WOOL)),
 
+    STARFLEET("starfleet", 25, new int[]{1, 1, 1, 1}, 15,
+            SoundEvents.ARMOR_EQUIP_LEATHER, 1.0F, 0.0F, () -> Ingredient.of(Items.WHITE_WOOL)),
+
+    STARFLEET_COMMANDER("starfleet_commander", 25, new int[]{1, 1, 1, 1}, 15,
+            SoundEvents.ARMOR_EQUIP_LEATHER, 1.0F, 0.0F, () -> Ingredient.of(Items.WHITE_WOOL)),
+
+    STARFLEET_SCIENCE("starfleet_science", 25, new int[]{1, 1, 1, 1}, 15,
+            SoundEvents.ARMOR_EQUIP_LEATHER, 1.0F, 0.0F, () -> Ingredient.of(Items.WHITE_WOOL)),
+
+    STARFLEET_OPERATIONS("starfleet_operations", 25, new int[]{1, 1, 1, 1}, 15,
+            SoundEvents.ARMOR_EQUIP_LEATHER, 1.0F, 0.0F, () -> Ingredient.of(Items.WHITE_WOOL)),
+
     STEEL("steel", 25, new int[] { 3, 6, 7, 3 }, 10,
             SoundEvents.ARMOR_EQUIP_IRON, 0.0f, 0.0f, () -> Ingredient.of(AseohaItems.STEEL_INGOT.get())),
 

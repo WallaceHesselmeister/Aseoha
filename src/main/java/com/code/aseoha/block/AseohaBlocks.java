@@ -243,7 +243,10 @@ public class AseohaBlocks {
             () -> new Block(AbstractBlock.Properties.of(Material.STONE, MaterialColor.CLAY).strength(1.0F).sound(SoundType.STONE)));
 
     public static final RegistryObject<Block> DALEKANIUM_ORE = registerBlock("dalekanium_ore",
-            () -> new Block(AbstractBlock.Properties.of(Material.STONE, MaterialColor.CLAY).strength(1.0F).sound(SoundType.STONE)));     
+            () -> new Block(AbstractBlock.Properties.of(Material.STONE, MaterialColor.CLAY).strength(1.0F).sound(SoundType.STONE))); 
+
+    public static final RegistryObject<Block> LATINUM_ORE = registerBlock("latinum_ore",
+            () -> new Block(AbstractBlock.Properties.of(Material.STONE, MaterialColor.CLAY).strength(1.0F).sound(SoundType.STONE)));    
 
     /****************************  ALABASTER  *************************/
 

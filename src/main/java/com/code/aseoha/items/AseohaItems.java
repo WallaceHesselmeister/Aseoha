@@ -397,6 +397,21 @@ public class AseohaItems {
     public static final RegistryObject<Item> LATINUM_SWORD = ITEMS.register("latinum_sword",
             () -> new SwordItem(AseohaItemTiers.LATINUM, 3, -2.4F, new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP)));
 
+    public static final RegistryObject<Item> STARFLEETCOMMANDER_TUNIC = ARMOR_ITEMS.register("starfleet_commander_tunic",
+            () -> new ArmorItem(EnumArmorMaterials.STARFLEET_COMMANDER, EquipmentSlotType.CHEST, new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP)));
+            
+    public static final RegistryObject<Item> STARFLEET_OPERATIONS_TUNIC = ARMOR_ITEMS.register("starfleet_operations_tunic",
+            () -> new ArmorItem(EnumArmorMaterials.STARFLEET_OPERATIONS, EquipmentSlotType.CHEST, new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP)));
+
+    public static final RegistryObject<Item> STARFLEET_SCIENCE_TUNIC = ARMOR_ITEMS.register("starfleet_science_tunic",
+            () -> new ArmorItem(EnumArmorMaterials.STARFLEET_SCIENCE, EquipmentSlotType.CHEST, new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP)));
+
+    public static final RegistryObject<Item> STARFLEET_LEGGINGS = ARMOR_ITEMS.register("starfleet_leggings",
+            () -> new ArmorItem(EnumArmorMaterials.STARFLEET, EquipmentSlotType.LEGS, new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP)));
+
+    public static final RegistryObject<Item> STARFLEET_BOOTS = ARMOR_ITEMS.register("starfleet_boots",
+            () -> new ArmorItem(EnumArmorMaterials.STARFLEET, EquipmentSlotType.FEET, new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP)));
+
     public static final RegistryObject<Item> SCARF = ARMOR_ITEMS.register("scarf",
             () -> new ScarfArmorItem(EnumArmorMaterials.SCARF, EquipmentSlotType.HEAD, new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP)));
 
