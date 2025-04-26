@@ -1,0 +1,13 @@
+{
+  "id": "aseoha:sonic_screwdriver",
+  "models": {
+    "inactive":  "aseoha:item/sonic/sonic_screwdriver",
+    "interaction":  "aseoha:item/sonic/sonic_screwdriver",
+    "overload":  "aseoha:item/sonic/sonic_screwdriver",
+    "scanning":  "aseoha:item/sonic/sonic_screwdriver",
+    "tardis":  "aseoha:item/sonic/sonic_screwdriver"
+  },
+  "loyalty": {
+    "type": "NEUTRAL"
+  }
+}

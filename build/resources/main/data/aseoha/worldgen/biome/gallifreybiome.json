@@ -1,0 +1,66 @@
+{
+  "temperature": 0.5,
+  "downfall": 0.5,
+  "temperature_modifier": "frozen",
+  "effects": {
+    "sky_color": 14854265,
+    "fog_color": 14854265,
+    "water_color": 15645605,
+    "water_fog_color": 15967105,
+    "foliage_color": 14538698,
+    "grass_color": 10634503
+  },
+  "spawners": {
+    "monster": [],
+    "creature": [],
+    "ambient": [],
+    "water_creature": [],
+    "water_ambient": [],
+    "misc": []
+  },
+  "spawn_costs": {},
+  "carvers": {
+    "air": [
+      "minecraft:cave",
+      "minecraft:canyon"
+    ]
+  },
+  "features": [
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [
+      "minecraft:ore_diorite_upper",
+      "minecraft:ore_diorite_lower",
+      "minecraft:ore_coal_upper",
+      "minecraft:ore_coal_lower",
+      "minecraft:ore_iron_upper",
+      "minecraft:ore_iron_middle",
+      "minecraft:ore_iron_small",
+      "minecraft:ore_gold",
+      "minecraft:ore_gold_lower",
+      "minecraft:ore_redstone",
+      "minecraft:ore_redstone_lower",
+      "minecraft:ore_diamond",
+      "minecraft:ore_diamond_large",
+      "minecraft:ore_diamond_buried",
+      "minecraft:ore_lapis",
+      "minecraft:ore_lapis_buried"
+    ],
+    [
+      "minecraft:pile_snow"
+    ],
+    [],
+    [
+      "minecraft:patch_grass_forest"
+    ],
+    [
+      "minecraft:trees_flower_forest",
+      "minecraft:freeze_top_layer"
+    ]
+  ],
+  "has_precipitation": true
+}

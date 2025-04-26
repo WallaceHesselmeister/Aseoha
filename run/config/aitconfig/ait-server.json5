@@ -1,0 +1,14 @@
+{
+	"MINIFY_JSON": false,
+	"GHOST_MONUMENT": true,
+	"LOCK_DIMENSIONS": true,
+	"RWF_ENABLED": true,
+	"TNT_CAN_TELEPORT_THROUGH_DOOR": true,
+	"WORLDS_BLACKLIST": [],
+	"TRAVEL_BLACKLIST": [
+		"ait:time_vortex"
+	],
+	"TRAVEL_PER_TICK": 2,
+	"SEND_BULK": true,
+	"MAX_TARDISES": -1
+}

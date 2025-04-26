@@ -1,0 +1,175 @@
+[00:56:00] [main/INFO] (FabricLoader/GameProvider) Loading Minecraft 1.20.1 with Fabric Loader 0.16.10
+[00:56:00] [main/INFO] (FabricLoader) Loading 54 mods:
+	- ait 1.2.0-1.20.1-beta
+	- amblekit 1.1.8-1.20.1-beta
+	- aseoha 1.0-1.20.1
+	- cloth-basic-math 0.6.1
+	- cloth-config 11.1.136
+	- fabric-api 0.92.5+1.20.1
+	- fabric-api-base 0.4.32+1802ada577
+	- fabric-api-lookup-api-v1 1.6.37+1802ada577
+	- fabric-biome-api-v1 13.0.14+1802ada577
+	- fabric-block-api-v1 1.0.12+1802ada577
+	- fabric-block-view-api-v2 1.0.3+924f046a77
+	- fabric-command-api-v1 1.2.35+f71b366f77
+	- fabric-command-api-v2 2.2.14+1802ada577
+	- fabric-commands-v0 0.2.52+df3654b377
+	- fabric-containers-v0 0.1.66+df3654b377
+	- fabric-content-registries-v0 4.0.13+1802ada577
+	- fabric-convention-tags-v1 1.5.6+1802ada577
+	- fabric-crash-report-info-v1 0.2.20+1802ada577
+	- fabric-data-attachment-api-v1 1.0.2+de0fd6d177
+	- fabric-data-generation-api-v1 12.3.6+1802ada577
+	- fabric-dimensions-v1 2.1.55+1802ada577
+	- fabric-entity-events-v1 1.6.1+1c78457f77
+	- fabric-events-interaction-v0 0.6.4+13a40c6677
+	- fabric-events-lifecycle-v0 0.2.64+df3654b377
+	- fabric-game-rule-api-v1 1.0.41+1802ada577
+	- fabric-gametest-api-v1 1.2.15+1802ada577
+	- fabric-item-api-v1 2.1.29+1802ada577
+	- fabric-item-group-api-v1 4.0.14+1802ada577
+	- fabric-lifecycle-events-v1 2.2.23+1802ada577
+	- fabric-loot-api-v2 1.2.3+1802ada577
+	- fabric-loot-tables-v1 1.1.47+9e7660c677
+	- fabric-message-api-v1 5.1.10+1802ada577
+	- fabric-mining-level-api-v1 2.1.52+1802ada577
+	- fabric-networking-api-v1 1.3.13+13a40c6677
+	- fabric-networking-v0 0.3.53+df3654b377
+	- fabric-object-builder-api-v1 11.1.5+e35120df77
+	- fabric-particles-v1 1.1.3+1802ada577
+	- fabric-recipe-api-v1 1.0.23+1802ada577
+	- fabric-registry-sync-v0 2.3.5+1802ada577
+	- fabric-rendering-data-attachment-v1 0.3.39+92a0d36777
+	- fabric-rendering-fluids-v1 3.0.29+1802ada577
+	- fabric-resource-conditions-api-v1 2.3.9+1802ada577
+	- fabric-resource-loader-v0 0.11.12+fb82e9d777
+	- fabric-screen-handler-api-v1 1.3.32+1802ada577
+	- fabric-transfer-api-v1 3.3.6+8dd72ea377
+	- fabric-transitive-access-wideners-v1 4.3.2+1802ada577
+	- fabricloader 0.16.10
+	- java 21
+	- minecraft 1.20.1
+	- mixinextras 0.4.1
+	- multidim 2.0.0
+	- owo 0.11.1+1.20
+	- queue 1.0.2-1.20
+	- scheduler 1.0.0
+[00:56:01] [main/INFO] (FabricLoader/Mixin) SpongePowered MIXIN Subsystem Version=0.8.7 Source=file:/C:/Users/nitew/.gradle/caches/modules-2/files-2.1/net.fabricmc/sponge-mixin/0.15.4+mixin.0.8.7/6a12aacc794f1078458433116e9ed42c1cc98096/sponge-mixin-0.15.4+mixin.0.8.7.jar Service=Knot/Fabric Env=SERVER
+[00:56:01] [main/INFO] (FabricLoader/Mixin) Loaded Fabric development mappings for mixin remapper!
+[00:56:01] [main/INFO] (FabricLoader/Mixin) Compatibility level set to JAVA_16
+[00:56:01] [main/INFO] (FabricLoader/Mixin) Compatibility level set to JAVA_17
+[00:56:03] [main/WARN] (FabricLoader/Mixin) Error loading class: fr/catcore/server/translations/api/resource/language/SystemDelegatedLanguage (java.lang.ClassNotFoundException: fr/catcore/server/translations/api/resource/language/SystemDelegatedLanguage)
+[00:56:03] [main/INFO] (FabricLoader/MixinExtras|Service) Initializing MixinExtras via com.llamalad7.mixinextras.service.MixinExtrasServiceImpl(version=0.4.1).
+[00:56:04] [main/WARN] (FabricLoader/Mixin) Error loading class: org/quiltmc/loader/impl/game/minecraft/Hooks (java.lang.ClassNotFoundException: org/quiltmc/loader/impl/game/minecraft/Hooks)
+[00:56:19] [main/INFO] (ait) CategoryRegistry was not initialized, Creating a new instance
+[00:56:20] [main/INFO] (ait) Registering criterion: ait:root
+[00:56:20] [main/INFO] (ait) Registering criterion: ait:takeoff
+[00:56:20] [main/INFO] (ait) Registering criterion: ait:crash
+[00:56:20] [main/INFO] (ait) Registering criterion: ait:break_vegetation
+[00:56:20] [main/INFO] (ait) Registering criterion: ait:place_coral
+[00:56:20] [main/INFO] (ait) Registering criterion: ait:place_energizer
+[00:56:20] [main/INFO] (ait) Registering criterion: ait:enter_tardis
+[00:56:20] [main/INFO] (ait) Registering criterion: ait:redecorate
+[00:56:20] [main/INFO] (ait) Registering criterion: ait:forced_entry
+[00:56:20] [main/INFO] (ait) Registering criterion: ait:sonic_wood
+[00:56:20] [main/INFO] (ait) Registering criterion: ait:pilot_high
+[00:56:20] [main/INFO] (ait) Registering criterion: ait:reach_pilot
+[00:56:20] [main/INFO] (ait) Registering criterion: ait:reach_owner
+[00:56:20] [main/INFO] (ait) Registering criterion: ait:enable_subsystem
+[00:56:20] [main/INFO] (ait) Registering criterion: ait:repair_subsystem
+[00:56:20] [main/INFO] (ait) Registering criterion: ait:engines_phase
+[00:56:20] [main/INFO] (ait) Registering criterion: ait:brand_new
+[00:56:20] [main/INFO] (ait) Initializing Tardis Criterions
+[00:56:20] [main/INFO] (owo) make a man a mod, he'll be enteratined for a few minutes - teach a man to mod, and he'll mald till the end of time
+[00:56:20] [main/INFO] (owo) Services frozen by 'net.minecraft.server.Main'
+[00:56:20] [main/INFO] (FabricDataGenHelper) Running data generator for ait
+[00:56:21] [main/INFO] (Minecraft) Starting provider: Adventures In Time/Language (en_us)
+[00:56:21] [main/WARN] (Minecraft) Failed to add existing language file! (en_us) | 
+java.lang.RuntimeException: Existing translation key found - screen.ait.security.leave_behind - Duplicate will be ignored.
+	at net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider.lambda$run$0(FabricLanguageProvider.java:87) ~[fabric-data-generation-api-v1-common-12.3.6+1802ada577.jar:?]
+	at net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider$TranslationBuilder.add(FabricLanguageProvider.java:236) ~[fabric-data-generation-api-v1-common-12.3.6+1802ada577.jar:?]
+	at dev.amble.lib.datagen.lang.AmbleLanguageProvider.lambda$generateTranslations$0(AmbleLanguageProvider.java:44) ~[modkit-v1.1.8.jar:?]
+	at java.util.Optional.ifPresent(Optional.java:178) ~[?:?]
+	at dev.amble.lib.datagen.lang.AmbleLanguageProvider.generateTranslations(AmbleLanguageProvider.java:42) ~[modkit-v1.1.8.jar:?]
+	at net.fabricmc.fabric.api.datagen.v1.provider.FabricLanguageProvider.run(FabricLanguageProvider.java:82) ~[fabric-data-generation-api-v1-common-12.3.6+1802ada577.jar:?]
+	at net.minecraft.data.DataCache.run(DataCache.java:190) ~[minecraft-common-87998ce4e2-1.20.1-net.fabricmc.yarn.1_20_1.1.20.1+build.10-v2.jar:?]
+	at net.minecraft.data.DataGenerator.method_46563(DataGenerator.java:52) ~[minecraft-common-87998ce4e2-1.20.1-net.fabricmc.yarn.1_20_1.1.20.1+build.10-v2.jar:?]
+	at java.util.LinkedHashMap.forEach(LinkedHashMap.java:986) ~[?:?]
+	at net.minecraft.data.DataGenerator.run(DataGenerator.java:45) ~[minecraft-common-87998ce4e2-1.20.1-net.fabricmc.yarn.1_20_1.1.20.1+build.10-v2.jar:?]
+	at net.fabricmc.fabric.impl.datagen.FabricDataGenHelper.runInternal(FabricDataGenHelper.java:145) ~[fabric-data-generation-api-v1-common-12.3.6+1802ada577.jar:?]
+	at net.fabricmc.fabric.impl.datagen.FabricDataGenHelper.run(FabricDataGenHelper.java:89) ~[fabric-data-generation-api-v1-common-12.3.6+1802ada577.jar:?]
+	at net.minecraft.server.Main.handler$zdf000$fabric-data-generation-api-v1$main(Main.java:1035) ~[minecraft-common-87998ce4e2-1.20.1-net.fabricmc.yarn.1_20_1.1.20.1+build.10-v2.jar:?]
+	at net.minecraft.server.Main.main(Main.java:115) ~[minecraft-common-87998ce4e2-1.20.1-net.fabricmc.yarn.1_20_1.1.20.1+build.10-v2.jar:?]
+	at net.fabricmc.loader.impl.game.minecraft.MinecraftGameProvider.launch(MinecraftGameProvider.java:480) ~[fabric-loader-0.16.10.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.Knot.launch(Knot.java:74) ~[fabric-loader-0.16.10.jar:?]
+	at net.fabricmc.loader.impl.launch.knot.KnotServer.main(KnotServer.java:23) ~[fabric-loader-0.16.10.jar:?]
+	at net.fabricmc.devlaunchinjector.Main.main(Main.java:86) ~[dev-launch-injector-0.2.1+build.8.jar:?]
+[00:56:21] [main/INFO] (Minecraft) Adventures In Time/Language (en_us) finished after 74 ms
+[00:56:21] [main/INFO] (Minecraft) Starting provider: Adventures In Time/Language (en_uk)
+[00:56:21] [main/INFO] (Minecraft) Adventures In Time/Language (en_uk) finished after 15 ms
+[00:56:21] [main/INFO] (Minecraft) Starting provider: Adventures In Time/Language (fr_ca)
+[00:56:21] [main/INFO] (Minecraft) Adventures In Time/Language (fr_ca) finished after 3 ms
+[00:56:21] [main/INFO] (Minecraft) Starting provider: Adventures In Time/Language (fr_fr)
+[00:56:21] [main/INFO] (Minecraft) Adventures In Time/Language (fr_fr) finished after 3 ms
+[00:56:21] [main/INFO] (Minecraft) Starting provider: Adventures In Time/Language (es_ar)
+[00:56:21] [main/INFO] (Minecraft) Adventures In Time/Language (es_ar) finished after 4 ms
+[00:56:21] [main/INFO] (Minecraft) Starting provider: Adventures In Time/Language (es_cl)
+[00:56:21] [main/INFO] (Minecraft) Adventures In Time/Language (es_cl) finished after 2 ms
+[00:56:21] [main/INFO] (Minecraft) Starting provider: Adventures In Time/Language (es_ec)
+[00:56:21] [main/INFO] (Minecraft) Adventures In Time/Language (es_ec) finished after 3 ms
+[00:56:21] [main/INFO] (Minecraft) Starting provider: Adventures In Time/Language (es_es)
+[00:56:21] [main/INFO] (Minecraft) Adventures In Time/Language (es_es) finished after 3 ms
+[00:56:21] [main/INFO] (Minecraft) Starting provider: Adventures In Time/Language (es_mx)
+[00:56:21] [main/INFO] (Minecraft) Adventures In Time/Language (es_mx) finished after 3 ms
+[00:56:21] [main/INFO] (Minecraft) Starting provider: Adventures In Time/Language (es_uy)
+[00:56:21] [main/INFO] (Minecraft) Adventures In Time/Language (es_uy) finished after 3 ms
+[00:56:21] [main/INFO] (Minecraft) Starting provider: Adventures In Time/Language (es_ve)
+[00:56:21] [main/INFO] (Minecraft) Adventures In Time/Language (es_ve) finished after 3 ms
+[00:56:21] [main/INFO] (Minecraft) Starting provider: Adventures In Time/Language (en_au)
+[00:56:21] [main/INFO] (Minecraft) Adventures In Time/Language (en_au) finished after 10 ms
+[00:56:21] [main/INFO] (Minecraft) Starting provider: Adventures In Time/Language (en_ca)
+[00:56:21] [main/INFO] (Minecraft) Adventures In Time/Language (en_ca) finished after 11 ms
+[00:56:21] [main/INFO] (Minecraft) Starting provider: Adventures In Time/Language (en_gb)
+[00:56:21] [main/INFO] (Minecraft) Adventures In Time/Language (en_gb) finished after 10 ms
+[00:56:21] [main/INFO] (Minecraft) Starting provider: Adventures In Time/Language (en_nz)
+[00:56:21] [main/INFO] (Minecraft) Adventures In Time/Language (en_nz) finished after 8 ms
+[00:56:21] [main/INFO] (Minecraft) Starting provider: Adventures In Time/Language (de_de)
+[00:56:21] [main/INFO] (Minecraft) Adventures In Time/Language (de_de) finished after 2 ms
+[00:56:21] [main/INFO] (Minecraft) Starting provider: Adventures In Time/Language (de_at)
+[00:56:21] [main/INFO] (Minecraft) Adventures In Time/Language (de_at) finished after 3 ms
+[00:56:21] [main/INFO] (Minecraft) Starting provider: Adventures In Time/Language (de_ch)
+[00:56:21] [main/INFO] (Minecraft) Adventures In Time/Language (de_ch) finished after 3 ms
+[00:56:21] [main/INFO] (Minecraft) Starting provider: Adventures In Time/Language (nds_de)
+[00:56:21] [main/INFO] (Minecraft) Adventures In Time/Language (nds_de) finished after 2 ms
+[00:56:21] [main/INFO] (Minecraft) Starting provider: Adventures In Time/Language (pt_br)
+[00:56:21] [main/INFO] (Minecraft) Adventures In Time/Language (pt_br) finished after 10 ms
+[00:56:21] [main/INFO] (Minecraft) Starting provider: Adventures In Time/Language (ru_ru)
+[00:56:21] [main/INFO] (Minecraft) Adventures In Time/Language (ru_ru) finished after 5 ms
+[00:56:21] [main/INFO] (Minecraft) Starting provider: Adventures In Time/Language (uk_ua)
+[00:56:21] [main/INFO] (Minecraft) Adventures In Time/Language (uk_ua) finished after 10 ms
+[00:56:21] [main/INFO] (Minecraft) Starting provider: Adventures In Time/Tags for minecraft:item
+[00:56:21] [main/INFO] (Minecraft) Adventures In Time/Tags for minecraft:item finished after 308 ms
+[00:56:21] [main/INFO] (Minecraft) Starting provider: Adventures In Time/Tags for minecraft:block
+[00:56:21] [main/INFO] (Minecraft) Adventures In Time/Tags for minecraft:block finished after 39 ms
+[00:56:21] [main/INFO] (Minecraft) Starting provider: Adventures In Time/Tags for minecraft:game_event
+[00:56:21] [main/INFO] (Minecraft) Adventures In Time/Tags for minecraft:game_event finished after 6 ms
+[00:56:21] [main/INFO] (Minecraft) Starting provider: Adventures In Time/Tags for minecraft:painting_variant
+[00:56:21] [main/INFO] (Minecraft) Adventures In Time/Tags for minecraft:painting_variant finished after 5 ms
+[00:56:21] [main/INFO] (Minecraft) Starting provider: Adventures In Time/Tags for minecraft:entity_type
+[00:56:21] [main/INFO] (Minecraft) Adventures In Time/Tags for minecraft:entity_type finished after 5 ms
+[00:56:21] [main/INFO] (Minecraft) Starting provider: Adventures In Time/Recipes
+[00:56:21] [main/INFO] (Minecraft) Adventures In Time/Recipes finished after 246 ms
+[00:56:21] [main/INFO] (Minecraft) Starting provider: Adventures In Time/Model Definitions
+[00:56:22] [main/INFO] (Minecraft) Adventures In Time/Model Definitions finished after 484 ms
+[00:56:22] [main/INFO] (Minecraft) Starting provider: Adventures In Time/Sound Definitions
+[00:56:22] [main/INFO] (Minecraft) Adventures In Time/Sound Definitions finished after 9 ms
+[00:56:22] [main/INFO] (Minecraft) Starting provider: Adventures In Time/Advancements
+[00:56:22] [main/INFO] (Minecraft) Adventures In Time/Advancements finished after 149 ms
+[00:56:22] [main/INFO] (Minecraft) Starting provider: Adventures In Time/Block Loot Tables
+[00:56:22] [main/INFO] (Minecraft) Adventures In Time/Block Loot Tables finished after 280 ms
+[00:56:22] [main/INFO] (Minecraft) Starting provider: Adventures In Time/Tags for minecraft:point_of_interest_type
+[00:56:22] [main/INFO] (Minecraft) Adventures In Time/Tags for minecraft:point_of_interest_type finished after 4 ms
+[00:56:22] [main/INFO] (Minecraft) Starting provider: Adventures In Time/AIT World Generator
+[00:56:23] [main/INFO] (Minecraft) Adventures In Time/AIT World Generator finished after 74 ms
+[00:56:23] [main/INFO] (Minecraft) All providers took: 1837 ms
+[00:56:23] [main/INFO] (Minecraft) Caching: total files: 834, old count: 0, new count: 835, removed stale: 0, written: 834
