@@ -4,51 +4,887 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9ee901da-190c-4d52-83a2-b4f218b1a0d5" name="Changes" comment="gradle update">
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/blockstates/black_wool_roundel.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/blockstates/cherry_planks_roundel.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/blockstates/cobbled_deepslate_roundel.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/blockstates/cobblestone_roundel.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/blockstates/copper_roundel.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/blockstates/crimson_planks_roundel.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/blockstates/cut_copper_roundel.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/blockstates/cyan_concrete_roundel.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/blockstates/cyan_wool_roundel.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/blockstates/dark_oak_planks_roundel.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/blockstates/deepslate_roundel.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/blockstates/exposed_copper_roundel.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/blockstates/exposed_cut_copper_roundel.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/blockstates/gray_concrete_roundel.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/blockstates/gray_wool_roundel.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/blockstates/green_concrete_roundel.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/blockstates/green_wool_roundel.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/blockstates/yellow_wool_roundel.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/block/roundel/cherry_planks_roundel.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/block/roundel/cobbled_deepslate_roundel.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/block/roundel/cobblestone_roundel.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/block/roundel/copper_roundel.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/block/roundel/crimson_planks_roundel.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/block/roundel/cut_copper_roundel.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/block/roundel/cyan_concrete_roundel.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/block/roundel/cyan_wool_roundel.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/block/roundel/dark_oak_planks_roundel.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/block/roundel/deepslate_roundel.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/block/roundel/exposed_copper_roundel.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/block/roundel/exposed_cut_copper_roundel.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/block/roundel/gray_concrete_roundel.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/block/roundel/gray_wool_roundel.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/block/roundel/green_concrete_roundel.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/block/roundel/green_wool_roundel.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/block/roundel/yellow_wool_roundel.json" afterDir="false" />
+    <list default="true" id="9ee901da-190c-4d52-83a2-b4f218b1a0d5" name="Changes" comment="Unsucessful fix of roundels but adds more roundel files which makes it a much easier fix for whoever does it">
       <change beforePath="$PROJECT_DIR$/.gradle/8.10/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.10/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.10/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.10/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.10/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.10/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.10/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.10/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/block/roundel/black_wool_roundel.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/block/roundel/black_wool_roundel.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/block/roundel/blue_wool_roundel.json" beforeDir="false" afterPath="$PROJECT_DIR$/build/resources/main/assets/aseoha/models/block/roundel/blue_wool_roundel.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/datagen/logs/debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/build/datagen/logs/debug.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/datagen/logs/latest.log" beforeDir="false" afterPath="$PROJECT_DIR$/build/datagen/logs/latest.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/.cache/084dabebd49a2665b67695ccf2afb56cd3dbd743" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/.cache/0fd3c303f2f791d40bd227c4fc6eb0e1d2b5f876" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/.cache/1d5f2afbe1d585be0c4e72d0d8f49138b92a8dd3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/.cache/386ef8f8e2dfd3e6fcaeb400a92af9cdc794830b" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/.cache/387c63ae33f7052095ca2527f1800b608ef36a3c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/.cache/52b004156e9cef3c8d8798dc15312790e6f238f8" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/.cache/651bece397b8f6638ab01e2de712c0d4881014a8" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/.cache/665fbd8153a38f5f6b6af3bc555c3989325dd569" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/.cache/7c5da75d95ac8659223c0bf105c66c01d0c21f7c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/.cache/872542414a7bea19273d494a817b5774f6695e88" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/.cache/888510d288936054c5bbf424fd4062ce1bb53e51" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/.cache/9008e01654cb383fd9f72f0c53bf0e1447ab3b9f" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/.cache/94b6646f62fbbb9359c15cbb37c75308280b58e5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/.cache/9b99fbad3bcb150e458dfee4f10bce4620c2ccbb" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/.cache/a7abda1646c642f680d0ccc6d516f30211341b46" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/.cache/a7e19ad88acf4c9a19243e3839e70cbda939fedf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/.cache/b1ec5c457e43875f5e255d632850ce45556f77a6" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/.cache/b68e61f9458b471d336d68efaf767840bcf93fef" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/.cache/bceb74049d9eb76dba535bb3164f10b9e411277c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/.cache/bed751030ffb79a7addb2842793fbd9d5c3bceb2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/.cache/c40946543e7b0bca443927a52ddb4c5a750c33d3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/.cache/c7b7815a04bd55ebb81d68654f6663bc50952a11" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/.cache/c9ff5da11c0985fba6644dfe7e8ab277b8270600" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/.cache/cf12bd79acc2684ffa4c274a4e8ca15e709ad27a" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/.cache/d9c404124a42a90c139da6d581482f9f60331e9d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/.cache/db2fe9a7d402f6b8b554ffe1aaed56702789639b" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/.cache/e1120cadb56443b1b1072eac8409e5dab2dc79cd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/.cache/e2019c3fda6219f012e25c6a7278f010f5351cd7" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/.cache/e701b557168c5356c5f9612db2d972f2f4f33aa6" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/.cache/e8520acdb2d31c485ede1a9372b2a0d5e49bca6b" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/.cache/edbc88dfbf2f819e26489ef7acc489b4b10bd31b" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/.cache/f1e800b0d405e785d6e5c6e5d73d8091b6e6ec9d" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/.cache/faafcae57d5b59b547ab835ef6730503c81f3269" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/.cache/fdb80a03cc019ee5c5a0233780ecb3e6c1acb5b3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/blockstates/anorthosite.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/blockstates/anorthosite_brick_slab.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/blockstates/anorthosite_brick_stairs.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/blockstates/anorthosite_brick_wall.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/blockstates/anorthosite_bricks.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/blockstates/anorthosite_coal_ore.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/blockstates/anorthosite_copper_ore.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/blockstates/anorthosite_diamond_ore.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/blockstates/anorthosite_emerald_ore.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/blockstates/anorthosite_gold_ore.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/blockstates/anorthosite_iron_ore.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/blockstates/anorthosite_lapis_ore.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/blockstates/anorthosite_redstone_ore.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/blockstates/anorthosite_slab.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/blockstates/anorthosite_stairs.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/blockstates/anorthosite_wall.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/blockstates/console.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/blockstates/door_block.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/blockstates/exterior_block.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/blockstates/fabricator.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/blockstates/martian_brick_slab.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/blockstates/martian_brick_stairs.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/blockstates/martian_brick_wall.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/blockstates/martian_bricks.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/blockstates/martian_coal_ore.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/blockstates/martian_cobblestone.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/blockstates/martian_cobblestone_slab.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/blockstates/martian_cobblestone_stairs.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/blockstates/martian_cobblestone_wall.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/blockstates/martian_copper_ore.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/blockstates/martian_diamond_ore.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/blockstates/martian_emerald_ore.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/blockstates/martian_gold_ore.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/blockstates/martian_iron_ore.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/blockstates/martian_lapis_ore.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/blockstates/martian_redstone_ore.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/blockstates/martian_sandstone.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/blockstates/martian_sandstone_brick_slab.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/blockstates/martian_sandstone_brick_stairs.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/blockstates/martian_sandstone_brick_wall.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/blockstates/martian_sandstone_bricks.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/blockstates/martian_sandstone_slab.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/blockstates/martian_sandstone_stairs.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/blockstates/martian_sandstone_wall.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/blockstates/martian_stone.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/blockstates/martian_stone_button.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/blockstates/martian_stone_pressure_plate.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/blockstates/martian_stone_slab.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/blockstates/martian_stone_stairs.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/blockstates/martian_stone_wall.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/blockstates/moon_sandstone.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/blockstates/moon_sandstone_brick_slab.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/blockstates/moon_sandstone_brick_stairs.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/blockstates/moon_sandstone_brick_wall.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/blockstates/moon_sandstone_bricks.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/blockstates/moon_sandstone_slab.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/blockstates/moon_sandstone_stairs.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/blockstates/moon_sandstone_wall.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/blockstates/mossy_martian_cobblestone.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/blockstates/mossy_martian_cobblestone_slab.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/blockstates/mossy_martian_cobblestone_stairs.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/blockstates/mossy_martian_cobblestone_wall.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/blockstates/polished_anorthosite.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/blockstates/polished_anorthosite_slab.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/blockstates/polished_anorthosite_stairs.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/blockstates/polished_martian_stone.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/blockstates/polished_martian_stone_slab.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/blockstates/polished_martian_stone_stairs.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/blockstates/smooth_anorthosite.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/blockstates/smooth_anorthosite_slab.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/blockstates/smooth_martian_stone.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/blockstates/smooth_martian_stone_slab.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/blockstates/tardis_coral_block.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/blockstates/tardis_coral_fan.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/blockstates/tardis_coral_slab.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/blockstates/tardis_coral_stairs.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/blockstates/tardis_coral_wall_fan.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/lang/de_at.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/lang/de_ch.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/lang/de_de.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/lang/en_au.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/lang/en_ca.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/lang/en_gb.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/lang/en_nz.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/lang/en_uk.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/lang/en_us.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/lang/es_ar.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/lang/es_cl.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/lang/es_ec.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/lang/es_es.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/lang/es_mx.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/lang/es_uy.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/lang/es_ve.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/lang/fr_ca.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/lang/fr_fr.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/lang/nds_de.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/lang/pt_br.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/lang/ru_ru.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/lang/uk_ua.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/anorthosite.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/anorthosite_brick_slab.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/anorthosite_brick_slab_top.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/anorthosite_brick_stairs.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/anorthosite_brick_stairs_inner.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/anorthosite_brick_stairs_outer.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/anorthosite_brick_wall_inventory.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/anorthosite_brick_wall_post.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/anorthosite_brick_wall_side.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/anorthosite_brick_wall_side_tall.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/anorthosite_bricks.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/anorthosite_coal_ore.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/anorthosite_copper_ore.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/anorthosite_diamond_ore.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/anorthosite_emerald_ore.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/anorthosite_gold_ore.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/anorthosite_iron_ore.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/anorthosite_lapis_ore.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/anorthosite_redstone_ore.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/anorthosite_slab.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/anorthosite_slab_top.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/anorthosite_stairs.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/anorthosite_stairs_inner.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/anorthosite_stairs_outer.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/anorthosite_wall_inventory.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/anorthosite_wall_post.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/anorthosite_wall_side.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/anorthosite_wall_side_tall.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/exterior_block.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/martian_brick_slab.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/martian_brick_slab_top.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/martian_brick_stairs.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/martian_brick_stairs_inner.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/martian_brick_stairs_outer.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/martian_brick_wall_inventory.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/martian_brick_wall_post.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/martian_brick_wall_side.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/martian_brick_wall_side_tall.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/martian_bricks.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/martian_coal_ore.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/martian_cobblestone.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/martian_cobblestone_slab.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/martian_cobblestone_slab_top.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/martian_cobblestone_stairs.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/martian_cobblestone_stairs_inner.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/martian_cobblestone_stairs_outer.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/martian_cobblestone_wall_inventory.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/martian_cobblestone_wall_post.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/martian_cobblestone_wall_side.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/martian_cobblestone_wall_side_tall.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/martian_copper_ore.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/martian_diamond_ore.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/martian_emerald_ore.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/martian_gold_ore.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/martian_iron_ore.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/martian_lapis_ore.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/martian_redstone_ore.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/martian_sandstone.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/martian_sandstone_brick_slab.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/martian_sandstone_brick_slab_top.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/martian_sandstone_brick_stairs.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/martian_sandstone_brick_stairs_inner.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/martian_sandstone_brick_stairs_outer.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/martian_sandstone_brick_wall_inventory.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/martian_sandstone_brick_wall_post.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/martian_sandstone_brick_wall_side.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/martian_sandstone_brick_wall_side_tall.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/martian_sandstone_bricks.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/martian_sandstone_slab.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/martian_sandstone_slab_top.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/martian_sandstone_stairs.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/martian_sandstone_stairs_inner.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/martian_sandstone_stairs_outer.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/martian_sandstone_wall_inventory.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/martian_sandstone_wall_post.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/martian_sandstone_wall_side.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/martian_sandstone_wall_side_tall.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/martian_stone.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/martian_stone_button.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/martian_stone_button_inventory.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/martian_stone_button_pressed.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/martian_stone_pressure_plate.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/martian_stone_pressure_plate_down.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/martian_stone_slab.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/martian_stone_slab_top.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/martian_stone_stairs.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/martian_stone_stairs_inner.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/martian_stone_stairs_outer.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/martian_stone_wall_inventory.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/martian_stone_wall_post.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/martian_stone_wall_side.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/martian_stone_wall_side_tall.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/moon_sandstone.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/moon_sandstone_brick_slab.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/moon_sandstone_brick_slab_top.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/moon_sandstone_brick_stairs.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/moon_sandstone_brick_stairs_inner.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/moon_sandstone_brick_stairs_outer.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/moon_sandstone_brick_wall_inventory.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/moon_sandstone_brick_wall_post.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/moon_sandstone_brick_wall_side.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/moon_sandstone_brick_wall_side_tall.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/moon_sandstone_bricks.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/moon_sandstone_slab.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/moon_sandstone_slab_top.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/moon_sandstone_stairs.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/moon_sandstone_stairs_inner.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/moon_sandstone_stairs_outer.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/moon_sandstone_wall_inventory.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/moon_sandstone_wall_post.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/moon_sandstone_wall_side.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/moon_sandstone_wall_side_tall.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/mossy_martian_cobblestone.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/mossy_martian_cobblestone_slab.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/mossy_martian_cobblestone_slab_top.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/mossy_martian_cobblestone_stairs.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/mossy_martian_cobblestone_stairs_inner.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/mossy_martian_cobblestone_stairs_outer.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/mossy_martian_cobblestone_wall_inventory.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/mossy_martian_cobblestone_wall_post.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/mossy_martian_cobblestone_wall_side.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/mossy_martian_cobblestone_wall_side_tall.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/polished_anorthosite.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/polished_anorthosite_slab.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/polished_anorthosite_slab_top.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/polished_anorthosite_stairs.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/polished_anorthosite_stairs_inner.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/polished_anorthosite_stairs_outer.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/polished_martian_stone.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/polished_martian_stone_slab.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/polished_martian_stone_slab_top.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/polished_martian_stone_stairs.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/polished_martian_stone_stairs_inner.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/polished_martian_stone_stairs_outer.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/smooth_anorthosite.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/smooth_anorthosite_slab.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/smooth_anorthosite_slab_top.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/smooth_martian_stone.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/smooth_martian_stone_slab.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/smooth_martian_stone_slab_top.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/tardis_coral_block.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/tardis_coral_fan.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/tardis_coral_slab.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/tardis_coral_slab_top.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/tardis_coral_stairs.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/tardis_coral_stairs_inner.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/tardis_coral_stairs_outer.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/block/tardis_coral_wall_fan.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/item/anorthosite.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/item/anorthosite_axe.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/item/anorthosite_brick_slab.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/item/anorthosite_brick_stairs.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/item/anorthosite_brick_wall.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/item/anorthosite_bricks.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/item/anorthosite_coal_ore.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/item/anorthosite_copper_ore.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/item/anorthosite_diamond_ore.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/item/anorthosite_emerald_ore.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/item/anorthosite_gold_ore.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/item/anorthosite_hoe.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/item/anorthosite_iron_ore.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/item/anorthosite_lapis_ore.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/item/anorthosite_pickaxe.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/item/anorthosite_redstone_ore.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/item/anorthosite_shovel.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/item/anorthosite_slab.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/item/anorthosite_stairs.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/item/anorthosite_sword.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/item/anorthosite_wall.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/item/astral_map.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/item/console.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/item/door_block.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/item/fabricator.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/item/martian_brick_slab.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/item/martian_brick_stairs.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/item/martian_brick_wall.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/item/martian_bricks.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/item/martian_coal_ore.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/item/martian_cobblestone.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/item/martian_cobblestone_slab.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/item/martian_cobblestone_stairs.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/item/martian_cobblestone_wall.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/item/martian_copper_ore.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/item/martian_diamond_ore.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/item/martian_emerald_ore.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/item/martian_gold_ore.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/item/martian_iron_ore.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/item/martian_lapis_ore.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/item/martian_redstone_ore.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/item/martian_sandstone.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/item/martian_sandstone_brick_slab.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/item/martian_sandstone_brick_stairs.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/item/martian_sandstone_brick_wall.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/item/martian_sandstone_bricks.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/item/martian_sandstone_slab.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/item/martian_sandstone_stairs.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/item/martian_sandstone_wall.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/item/martian_stone.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/item/martian_stone_axe.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/item/martian_stone_button.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/item/martian_stone_hoe.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/item/martian_stone_pickaxe.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/item/martian_stone_pressure_plate.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/item/martian_stone_shovel.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/item/martian_stone_slab.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/item/martian_stone_stairs.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/item/martian_stone_sword.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/item/martian_stone_wall.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/item/moon_sandstone.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/item/moon_sandstone_brick_slab.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/item/moon_sandstone_brick_stairs.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/item/moon_sandstone_brick_wall.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/item/moon_sandstone_bricks.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/item/moon_sandstone_slab.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/item/moon_sandstone_stairs.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/item/moon_sandstone_wall.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/item/mossy_martian_cobblestone.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/item/mossy_martian_cobblestone_slab.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/item/mossy_martian_cobblestone_stairs.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/item/mossy_martian_cobblestone_wall.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/item/polished_anorthosite.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/item/polished_anorthosite_slab.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/item/polished_anorthosite_stairs.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/item/polished_martian_stone.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/item/polished_martian_stone_slab.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/item/polished_martian_stone_stairs.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/item/smooth_anorthosite.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/item/smooth_anorthosite_slab.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/item/smooth_martian_stone.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/item/smooth_martian_stone_slab.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/item/spacesuit_boots.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/item/spacesuit_boots_amethyst_trim.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/item/spacesuit_boots_copper_trim.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/item/spacesuit_boots_diamond_trim.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/item/spacesuit_boots_emerald_trim.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/item/spacesuit_boots_gold_trim.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/item/spacesuit_boots_iron_darker_trim.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/item/spacesuit_boots_lapis_trim.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/item/spacesuit_boots_netherite_trim.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/item/spacesuit_boots_quartz_trim.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/item/spacesuit_boots_redstone_trim.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/item/spacesuit_chestplate.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/item/spacesuit_chestplate_amethyst_trim.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/item/spacesuit_chestplate_copper_trim.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/item/spacesuit_chestplate_diamond_trim.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/item/spacesuit_chestplate_emerald_trim.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/item/spacesuit_chestplate_gold_trim.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/item/spacesuit_chestplate_iron_darker_trim.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/item/spacesuit_chestplate_lapis_trim.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/item/spacesuit_chestplate_netherite_trim.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/item/spacesuit_chestplate_quartz_trim.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/item/spacesuit_chestplate_redstone_trim.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/item/spacesuit_helmet.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/item/spacesuit_helmet_amethyst_trim.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/item/spacesuit_helmet_copper_trim.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/item/spacesuit_helmet_diamond_trim.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/item/spacesuit_helmet_emerald_trim.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/item/spacesuit_helmet_gold_trim.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/item/spacesuit_helmet_iron_darker_trim.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/item/spacesuit_helmet_lapis_trim.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/item/spacesuit_helmet_netherite_trim.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/item/spacesuit_helmet_quartz_trim.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/item/spacesuit_helmet_redstone_trim.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/item/spacesuit_leggings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/item/spacesuit_leggings_amethyst_trim.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/item/spacesuit_leggings_copper_trim.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/item/spacesuit_leggings_diamond_trim.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/item/spacesuit_leggings_emerald_trim.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/item/spacesuit_leggings_gold_trim.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/item/spacesuit_leggings_iron_darker_trim.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/item/spacesuit_leggings_lapis_trim.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/item/spacesuit_leggings_netherite_trim.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/item/spacesuit_leggings_quartz_trim.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/item/spacesuit_leggings_redstone_trim.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/item/tardis_coral_block.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/item/tardis_coral_fan.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/item/tardis_coral_slab.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/models/item/tardis_coral_stairs.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/assets/ait/sounds.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/advancements/recipes/brewing/zeiton_dust.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/advancements/recipes/building_blocks/anorthosite_bricks_to_martian_brick_slab_stonecutting.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/advancements/recipes/building_blocks/anorthosite_bricks_to_martian_brick_stairs_stonecutting.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/advancements/recipes/building_blocks/anorthosite_bricks_to_martian_brick_wall_stonecutting.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/advancements/recipes/building_blocks/anorthosite_to_anorthosite_brick_slab_stonecutting.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/advancements/recipes/building_blocks/anorthosite_to_anorthosite_brick_stairs_stonecutting.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/advancements/recipes/building_blocks/anorthosite_to_anorthosite_brick_wall_stonecutting.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/advancements/recipes/building_blocks/anorthosite_to_anorthosite_bricks_stonecutting.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/advancements/recipes/building_blocks/anorthosite_to_anorthosite_slab_stonecutting.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/advancements/recipes/building_blocks/anorthosite_to_anorthosite_stairs_stonecutting.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/advancements/recipes/building_blocks/anorthosite_to_anorthosite_wall_stonecutting.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/advancements/recipes/building_blocks/anorthosite_to_chiseled_anorthosite_stonecutting.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/advancements/recipes/building_blocks/compact_zeiton.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/advancements/recipes/building_blocks/martian_bricks_to_martian_brick_slab_stonecutting.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/advancements/recipes/building_blocks/martian_bricks_to_martian_brick_stairs_stonecutting.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/advancements/recipes/building_blocks/martian_bricks_to_martian_brick_wall_stonecutting.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/advancements/recipes/building_blocks/martian_cobblestone_to_martian_cobblestone_slab_stonecutting.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/advancements/recipes/building_blocks/martian_cobblestone_to_martian_cobblestone_stairs_stonecutting.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/advancements/recipes/building_blocks/martian_cobblestone_to_martian_cobblestone_wall_stonecutting.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/advancements/recipes/building_blocks/martian_sandstone_bricks_to_chiseled_martian_sandstone_stonecutting.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/advancements/recipes/building_blocks/martian_sandstone_bricks_to_martian_sandstone_brick_slab_stonecutting.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/advancements/recipes/building_blocks/martian_sandstone_bricks_to_martian_sandstone_brick_stairs_stonecutting.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/advancements/recipes/building_blocks/martian_sandstone_bricks_to_martian_sandstone_brick_wall_stonecutting.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/advancements/recipes/building_blocks/martian_sandstone_to_chiseled_martian_sandstone_stonecutting.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/advancements/recipes/building_blocks/martian_sandstone_to_martian_sandstone_bricks_stonecutting.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/advancements/recipes/building_blocks/martian_sandstone_to_martian_sandstone_pillar_stonecutting.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/advancements/recipes/building_blocks/martian_sandstone_to_martian_sandstone_slab_stonecutting.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/advancements/recipes/building_blocks/martian_sandstone_to_martian_sandstone_stairs_stonecutting.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/advancements/recipes/building_blocks/martian_sandstone_to_martian_sandstone_wall_stonecutting.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/advancements/recipes/building_blocks/martian_stone_slab.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/advancements/recipes/building_blocks/martian_stone_stairs.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/advancements/recipes/building_blocks/martian_stone_to_chiseled_martian_stone_stonecutting.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/advancements/recipes/building_blocks/martian_stone_to_martian_brick_slab_stonecutting.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/advancements/recipes/building_blocks/martian_stone_to_martian_brick_stairs_stonecutting.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/advancements/recipes/building_blocks/martian_stone_to_martian_brick_wall_stonecutting.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/advancements/recipes/building_blocks/martian_stone_to_martian_bricks_stonecutting.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/advancements/recipes/building_blocks/martian_stone_to_martian_stone_slab_stonecutting.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/advancements/recipes/building_blocks/martian_stone_to_martian_stone_stairs_stonecutting.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/advancements/recipes/building_blocks/martian_stone_wall.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/advancements/recipes/building_blocks/moon_sandstone_bricks_to_chiseled_moon_sandstone_stonecutting.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/advancements/recipes/building_blocks/moon_sandstone_bricks_to_moon_sandstone_brick_slab_stonecutting.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/advancements/recipes/building_blocks/moon_sandstone_bricks_to_moon_sandstone_brick_stairs_stonecutting.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/advancements/recipes/building_blocks/moon_sandstone_bricks_to_moon_sandstone_brick_wall_stonecutting.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/advancements/recipes/building_blocks/moon_sandstone_to_chiseled_moon_sandstone_stonecutting.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/advancements/recipes/building_blocks/moon_sandstone_to_moon_sandstone_bricks_stonecutting.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/advancements/recipes/building_blocks/moon_sandstone_to_moon_sandstone_pillar_stonecutting.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/advancements/recipes/building_blocks/moon_sandstone_to_moon_sandstone_slab_stonecutting.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/advancements/recipes/building_blocks/moon_sandstone_to_moon_sandstone_stairs_stonecutting.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/advancements/recipes/building_blocks/moon_sandstone_to_moon_sandstone_wall_stonecutting.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/advancements/recipes/building_blocks/mossy_martian_cobblestone_to_mossy_martian_cobblestone_slab_stonecutting.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/advancements/recipes/building_blocks/mossy_martian_cobblestone_to_mossy_martian_cobblestone_stairs_stonecutting.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/advancements/recipes/building_blocks/polished_anorthosite_to_polished_anorthosite_slab_stonecutting.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/advancements/recipes/building_blocks/polished_anorthosite_to_polished_anorthosite_stairs_stonecutting.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/advancements/recipes/building_blocks/polished_martian_stone_to_polished_martian_stone_slab_stonecutting.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/advancements/recipes/building_blocks/polished_martian_stone_to_polished_martian_stone_stairs_stonecutting.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/advancements/recipes/building_blocks/smooth_anorthosite_to_smooth_anorthosite_slab_stonecutting.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/advancements/recipes/building_blocks/smooth_martian_stone_to_smooth_martian_stone_slab_stonecutting.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/advancements/recipes/building_blocks/zeiton_block.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/advancements/recipes/building_blocks/zeiton_cobble.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/advancements/recipes/decorations/flag.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/advancements/recipes/decorations/gallifrey_falls_painting.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/advancements/recipes/decorations/plaque_block.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/advancements/recipes/decorations/spacesuit_boots.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/advancements/recipes/decorations/spacesuit_chestplate.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/advancements/recipes/decorations/spacesuit_helmet.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/advancements/recipes/decorations/spacesuit_leggings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/advancements/recipes/decorations/trenzalore_painting.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/advancements/recipes/misc/charged_zeiton_crystal.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/advancements/recipes/misc/classic_key_upgrade_smithing_template.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/advancements/recipes/misc/console_generator.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/advancements/recipes/misc/coral_cage.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/advancements/recipes/misc/detector_block.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/advancements/recipes/misc/door_block.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/advancements/recipes/misc/fabric.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/advancements/recipes/misc/gold_key_upgrade_smithing_template.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/advancements/recipes/misc/netherite_key_upgrade_smithing_template.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/advancements/recipes/misc/plasmic_material.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/advancements/recipes/misc/superheated_zeiton.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/advancements/recipes/redstone/cable_block.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/advancements/recipes/redstone/environment_projector.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/advancements/recipes/redstone/fabricator.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/advancements/recipes/redstone/full_cable_block.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/advancements/recipes/redstone/hazandra.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/advancements/recipes/redstone/hyperion_core_shaft.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/advancements/recipes/redstone/monitor_block.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/advancements/recipes/redstone/redstone_control.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/advancements/recipes/redstone/transwarp_resonator.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/advancements/recipes/redstone/wall_monitor_block.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/advancements/recipes/tools/anorthosite_axe.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/advancements/recipes/tools/anorthosite_hoe.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/advancements/recipes/tools/anorthosite_pickaxe.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/advancements/recipes/tools/anorthosite_shovel.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/advancements/recipes/tools/anorthosite_sword.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/advancements/recipes/tools/artron_collector.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/advancements/recipes/tools/artron_collector_block.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/advancements/recipes/tools/classic_key_smithing.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/advancements/recipes/tools/coral_plant.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/advancements/recipes/tools/faceless_respirator.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/advancements/recipes/tools/generic_subsystem.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/advancements/recipes/tools/gold_key_smithing.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/advancements/recipes/tools/hammer.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/advancements/recipes/tools/hypercube.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/advancements/recipes/tools/iron_key.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/advancements/recipes/tools/landing_pad.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/advancements/recipes/tools/martian_stone_axe.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/advancements/recipes/tools/martian_stone_hoe.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/advancements/recipes/tools/martian_stone_pickaxe.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/advancements/recipes/tools/martian_stone_shovel.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/advancements/recipes/tools/martian_stone_sword.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/advancements/recipes/tools/matrix_energizer.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/advancements/recipes/tools/netherite_key_smithing.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/advancements/recipes/tools/orthogonal_engine_filter.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/advancements/recipes/tools/oxygenator_block.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/advancements/recipes/tools/photon_accelerator.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/advancements/recipes/tools/power_converter.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/advancements/recipes/tools/psychpaper.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/advancements/recipes/tools/remote_item.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/advancements/recipes/tools/respirator.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/advancements/recipes/tools/rift_scanner.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/advancements/recipes/tools/waypoint_bank.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/advancements/recipes/tools/waypoint_cartridge.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/loot_tables/blocks/anorthosite.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/loot_tables/blocks/anorthosite_brick_slab.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/loot_tables/blocks/anorthosite_brick_stairs.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/loot_tables/blocks/anorthosite_brick_wall.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/loot_tables/blocks/anorthosite_bricks.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/loot_tables/blocks/anorthosite_coal_ore.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/loot_tables/blocks/anorthosite_copper_ore.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/loot_tables/blocks/anorthosite_diamond_ore.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/loot_tables/blocks/anorthosite_emerald_ore.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/loot_tables/blocks/anorthosite_gold_ore.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/loot_tables/blocks/anorthosite_iron_ore.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/loot_tables/blocks/anorthosite_lapis_ore.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/loot_tables/blocks/anorthosite_pillar.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/loot_tables/blocks/anorthosite_redstone_ore.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/loot_tables/blocks/anorthosite_slab.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/loot_tables/blocks/anorthosite_stairs.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/loot_tables/blocks/anorthosite_wall.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/loot_tables/blocks/artron_collector_block.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/loot_tables/blocks/astral_map.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/loot_tables/blocks/budding_zeiton.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/loot_tables/blocks/cable_block.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/loot_tables/blocks/chiseled_anorthosite.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/loot_tables/blocks/chiseled_martian_sandstone.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/loot_tables/blocks/chiseled_martian_stone.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/loot_tables/blocks/chiseled_moon_sandstone.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/loot_tables/blocks/compact_zeiton.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/loot_tables/blocks/console_generator.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/loot_tables/blocks/coral_plant.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/loot_tables/blocks/cracked_anorthosite_bricks.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/loot_tables/blocks/cracked_martian_bricks.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/loot_tables/blocks/cracked_martian_sandstone.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/loot_tables/blocks/cracked_martian_sandstone_bricks.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/loot_tables/blocks/cracked_moon_sandstone.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/loot_tables/blocks/cracked_moon_sandstone_bricks.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/loot_tables/blocks/detector_block.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/loot_tables/blocks/door_block.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/loot_tables/blocks/engine_block.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/loot_tables/blocks/environment_projector.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/loot_tables/blocks/fabricator.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/loot_tables/blocks/flag.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/loot_tables/blocks/full_cable_block.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/loot_tables/blocks/generic_subsystem.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/loot_tables/blocks/infested_martian_cobblestone.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/loot_tables/blocks/infested_martian_stone.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/loot_tables/blocks/landing_pad.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/loot_tables/blocks/large_zeiton_bud.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/loot_tables/blocks/machine_casing.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/loot_tables/blocks/martian_brick_slab.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/loot_tables/blocks/martian_brick_stairs.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/loot_tables/blocks/martian_brick_wall.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/loot_tables/blocks/martian_bricks.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/loot_tables/blocks/martian_coal_ore.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/loot_tables/blocks/martian_cobblestone.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/loot_tables/blocks/martian_cobblestone_slab.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/loot_tables/blocks/martian_cobblestone_stairs.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/loot_tables/blocks/martian_cobblestone_wall.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/loot_tables/blocks/martian_copper_ore.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/loot_tables/blocks/martian_diamond_ore.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/loot_tables/blocks/martian_emerald_ore.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/loot_tables/blocks/martian_gold_ore.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/loot_tables/blocks/martian_iron_ore.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/loot_tables/blocks/martian_lapis_ore.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/loot_tables/blocks/martian_pillar.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/loot_tables/blocks/martian_redstone_ore.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/loot_tables/blocks/martian_sand.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/loot_tables/blocks/martian_sandstone.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/loot_tables/blocks/martian_sandstone_brick_slab.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/loot_tables/blocks/martian_sandstone_brick_stairs.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/loot_tables/blocks/martian_sandstone_brick_wall.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/loot_tables/blocks/martian_sandstone_bricks.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/loot_tables/blocks/martian_sandstone_pillar.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/loot_tables/blocks/martian_sandstone_slab.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/loot_tables/blocks/martian_sandstone_stairs.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/loot_tables/blocks/martian_sandstone_wall.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/loot_tables/blocks/martian_stone.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/loot_tables/blocks/martian_stone_button.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/loot_tables/blocks/martian_stone_pressure_plate.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/loot_tables/blocks/martian_stone_slab.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/loot_tables/blocks/martian_stone_stairs.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/loot_tables/blocks/martian_stone_wall.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/loot_tables/blocks/matrix_energizer.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/loot_tables/blocks/medium_zeiton_bud.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/loot_tables/blocks/monitor_block.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/loot_tables/blocks/moon_sandstone.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/loot_tables/blocks/moon_sandstone_brick_slab.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/loot_tables/blocks/moon_sandstone_brick_stairs.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/loot_tables/blocks/moon_sandstone_brick_wall.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/loot_tables/blocks/moon_sandstone_bricks.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/loot_tables/blocks/moon_sandstone_pillar.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/loot_tables/blocks/moon_sandstone_slab.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/loot_tables/blocks/moon_sandstone_stairs.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/loot_tables/blocks/moon_sandstone_wall.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/loot_tables/blocks/mossy_martian_cobblestone.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/loot_tables/blocks/mossy_martian_cobblestone_slab.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/loot_tables/blocks/mossy_martian_cobblestone_stairs.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/loot_tables/blocks/mossy_martian_cobblestone_wall.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/loot_tables/blocks/oxygenator_block.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/loot_tables/blocks/plaque_block.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/loot_tables/blocks/polished_anorthosite.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/loot_tables/blocks/polished_anorthosite_slab.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/loot_tables/blocks/polished_anorthosite_stairs.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/loot_tables/blocks/polished_martian_sandstone.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/loot_tables/blocks/polished_martian_stone.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/loot_tables/blocks/polished_martian_stone_slab.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/loot_tables/blocks/polished_martian_stone_stairs.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/loot_tables/blocks/polished_moon_sandstone.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/loot_tables/blocks/power_converter.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/loot_tables/blocks/radio.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/loot_tables/blocks/redstone_control_block.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/loot_tables/blocks/regolith.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/loot_tables/blocks/small_zeiton_bud.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/loot_tables/blocks/smooth_anorthosite.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/loot_tables/blocks/smooth_anorthosite_slab.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/loot_tables/blocks/smooth_martian_stone.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/loot_tables/blocks/smooth_martian_stone_slab.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/loot_tables/blocks/tardis_coral_block.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/loot_tables/blocks/tardis_coral_fan.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/loot_tables/blocks/tardis_coral_slab.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/loot_tables/blocks/tardis_coral_stairs.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/loot_tables/blocks/tardis_coral_wall_fan.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/loot_tables/blocks/wall_monitor_block.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/loot_tables/blocks/waypoint_bank.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/loot_tables/blocks/zeiton_block.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/loot_tables/blocks/zeiton_cluster.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/loot_tables/blocks/zeiton_cobble.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/recipes/anorthosite_axe.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/recipes/anorthosite_bricks_to_martian_brick_slab_stonecutting.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/recipes/anorthosite_bricks_to_martian_brick_stairs_stonecutting.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/recipes/anorthosite_bricks_to_martian_brick_wall_stonecutting.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/recipes/anorthosite_hoe.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/recipes/anorthosite_pickaxe.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/recipes/anorthosite_shovel.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/recipes/anorthosite_sword.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/recipes/anorthosite_to_anorthosite_brick_slab_stonecutting.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/recipes/anorthosite_to_anorthosite_brick_stairs_stonecutting.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/recipes/anorthosite_to_anorthosite_brick_wall_stonecutting.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/recipes/anorthosite_to_anorthosite_bricks_stonecutting.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/recipes/anorthosite_to_anorthosite_slab_stonecutting.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/recipes/anorthosite_to_anorthosite_stairs_stonecutting.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/recipes/anorthosite_to_anorthosite_wall_stonecutting.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/recipes/anorthosite_to_chiseled_anorthosite_stonecutting.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/recipes/artron_collector.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/recipes/artron_collector_block.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/recipes/cable_block.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/recipes/charged_zeiton_crystal.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/recipes/classic_key_smithing.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/recipes/classic_key_upgrade_smithing_template.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/recipes/compact_zeiton.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/recipes/console_generator.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/recipes/coral_cage.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/recipes/coral_plant.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/recipes/detector_block.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/recipes/door_block.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/recipes/environment_projector.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/recipes/fabric.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/recipes/fabricator.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/recipes/faceless_respirator.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/recipes/flag.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/recipes/full_cable_block.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/recipes/gallifrey_falls_painting.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/recipes/generic_subsystem.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/recipes/gold_key_smithing.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/recipes/gold_key_upgrade_smithing_template.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/recipes/hammer.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/recipes/hazandra.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/recipes/hypercube.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/recipes/hyperion_core_shaft.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/recipes/iron_key.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/recipes/landing_pad.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/recipes/martian_bricks_to_martian_brick_slab_stonecutting.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/recipes/martian_bricks_to_martian_brick_stairs_stonecutting.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/recipes/martian_bricks_to_martian_brick_wall_stonecutting.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/recipes/martian_cobblestone_to_martian_cobblestone_slab_stonecutting.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/recipes/martian_cobblestone_to_martian_cobblestone_stairs_stonecutting.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/recipes/martian_cobblestone_to_martian_cobblestone_wall_stonecutting.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/recipes/martian_sandstone_bricks_to_chiseled_martian_sandstone_stonecutting.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/recipes/martian_sandstone_bricks_to_martian_sandstone_brick_slab_stonecutting.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/recipes/martian_sandstone_bricks_to_martian_sandstone_brick_stairs_stonecutting.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/recipes/martian_sandstone_bricks_to_martian_sandstone_brick_wall_stonecutting.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/recipes/martian_sandstone_to_chiseled_martian_sandstone_stonecutting.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/recipes/martian_sandstone_to_martian_sandstone_bricks_stonecutting.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/recipes/martian_sandstone_to_martian_sandstone_pillar_stonecutting.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/recipes/martian_sandstone_to_martian_sandstone_slab_stonecutting.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/recipes/martian_sandstone_to_martian_sandstone_stairs_stonecutting.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/recipes/martian_sandstone_to_martian_sandstone_wall_stonecutting.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/recipes/martian_stone_axe.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/recipes/martian_stone_hoe.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/recipes/martian_stone_pickaxe.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/recipes/martian_stone_shovel.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/recipes/martian_stone_slab.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/recipes/martian_stone_stairs.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/recipes/martian_stone_sword.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/recipes/martian_stone_to_chiseled_martian_stone_stonecutting.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/recipes/martian_stone_to_martian_brick_slab_stonecutting.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/recipes/martian_stone_to_martian_brick_stairs_stonecutting.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/recipes/martian_stone_to_martian_brick_wall_stonecutting.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/recipes/martian_stone_to_martian_bricks_stonecutting.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/recipes/martian_stone_to_martian_stone_slab_stonecutting.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/recipes/martian_stone_to_martian_stone_stairs_stonecutting.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/recipes/martian_stone_wall.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/recipes/matrix_energizer.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/recipes/monitor_block.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/recipes/moon_sandstone_bricks_to_chiseled_moon_sandstone_stonecutting.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/recipes/moon_sandstone_bricks_to_moon_sandstone_brick_slab_stonecutting.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/recipes/moon_sandstone_bricks_to_moon_sandstone_brick_stairs_stonecutting.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/recipes/moon_sandstone_bricks_to_moon_sandstone_brick_wall_stonecutting.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/recipes/moon_sandstone_to_chiseled_moon_sandstone_stonecutting.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/recipes/moon_sandstone_to_moon_sandstone_bricks_stonecutting.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/recipes/moon_sandstone_to_moon_sandstone_pillar_stonecutting.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/recipes/moon_sandstone_to_moon_sandstone_slab_stonecutting.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/recipes/moon_sandstone_to_moon_sandstone_stairs_stonecutting.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/recipes/moon_sandstone_to_moon_sandstone_wall_stonecutting.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/recipes/mossy_martian_cobblestone_to_mossy_martian_cobblestone_slab_stonecutting.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/recipes/mossy_martian_cobblestone_to_mossy_martian_cobblestone_stairs_stonecutting.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/recipes/netherite_key_smithing.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/recipes/netherite_key_upgrade_smithing_template.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/recipes/orthogonal_engine_filter.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/recipes/oxygenator_block.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/recipes/photon_accelerator.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/recipes/plaque_block.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/recipes/plasmic_material.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/recipes/polished_anorthosite_to_polished_anorthosite_slab_stonecutting.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/recipes/polished_anorthosite_to_polished_anorthosite_stairs_stonecutting.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/recipes/polished_martian_stone_to_polished_martian_stone_slab_stonecutting.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/recipes/polished_martian_stone_to_polished_martian_stone_stairs_stonecutting.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/recipes/power_converter.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/recipes/psychpaper.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/recipes/redstone_control.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/recipes/remote_item.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/recipes/respirator.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/recipes/rift_scanner.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/recipes/smooth_anorthosite_to_smooth_anorthosite_slab_stonecutting.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/recipes/smooth_martian_stone_to_smooth_martian_stone_slab_stonecutting.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/recipes/spacesuit_boots.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/recipes/spacesuit_chestplate.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/recipes/spacesuit_helmet.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/recipes/spacesuit_leggings.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/recipes/superheated_zeiton.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/recipes/transwarp_resonator.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/recipes/trenzalore_painting.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/recipes/wall_monitor_block.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/recipes/waypoint_bank.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/recipes/waypoint_cartridge.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/recipes/zeiton_block.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/recipes/zeiton_cobble.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/recipes/zeiton_dust.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/tags/blocks/fluid_link_can_connect.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/tags/blocks/sonic_interactable.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/tags/entity_types/boss.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/tags/entity_types/non_dismountable.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/tags/game_events/matrix_can_listen.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/tags/items/cluster_max_harvestables.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/tags/items/full_respirators.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/tags/items/half_respirators.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/tags/items/is_tardis_fuel.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/tags/items/key.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/tags/items/no_bop.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/tags/items/repairs_subsystem.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/tags/items/sonic_item.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/worldgen/configured_feature/anorthosite_coal_ore.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/worldgen/configured_feature/anorthosite_copper_ore.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/worldgen/configured_feature/anorthosite_diamond_ore.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/worldgen/configured_feature/anorthosite_emerald_ore.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/worldgen/configured_feature/anorthosite_gold_ore.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/worldgen/configured_feature/anorthosite_iron_ore.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/worldgen/configured_feature/anorthosite_lapis_ore.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/worldgen/configured_feature/anorthosite_redstone_ore.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/worldgen/configured_feature/martian_coal_ore.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/worldgen/configured_feature/martian_copper_ore.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/worldgen/configured_feature/martian_diamond_ore.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/worldgen/configured_feature/martian_emerald_ore.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/worldgen/configured_feature/martian_gold_ore.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/worldgen/configured_feature/martian_iron_ore.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/worldgen/configured_feature/martian_lapis_ore.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/worldgen/configured_feature/martian_redstone_ore.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/worldgen/placed_feature/anorthosite_coal_ore_placed.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/worldgen/placed_feature/anorthosite_copper_ore_placed.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/worldgen/placed_feature/anorthosite_diamond_ore_placed.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/worldgen/placed_feature/anorthosite_emerald_ore_placed.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/worldgen/placed_feature/anorthosite_gold_ore_placed.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/worldgen/placed_feature/anorthosite_iron_ore_placed.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/worldgen/placed_feature/anorthosite_lapis_ore_placed.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/worldgen/placed_feature/anorthosite_redstone_ore_placed.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/worldgen/placed_feature/martian_coal_ore_placed.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/worldgen/placed_feature/martian_copper_ore_placed.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/worldgen/placed_feature/martian_diamond_ore_placed.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/worldgen/placed_feature/martian_emerald_ore_placed.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/worldgen/placed_feature/martian_gold_ore_placed.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/worldgen/placed_feature/martian_iron_ore_placed.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/worldgen/placed_feature/martian_lapis_ore_placed.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/ait/worldgen/placed_feature/martian_redstone_ore_placed.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/minecraft/advancements/ait/bonding.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/minecraft/advancements/ait/brand_new.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/minecraft/advancements/ait/break_growth.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/minecraft/advancements/ait/classic_key.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/minecraft/advancements/ait/enable_subsystem.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/minecraft/advancements/ait/engines_phase.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/minecraft/advancements/ait/enter_mars.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/minecraft/advancements/ait/enter_moon.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/minecraft/advancements/ait/enter_tardis.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/minecraft/advancements/ait/first_crash.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/minecraft/advancements/ait/first_demat.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/minecraft/advancements/ait/forced_entry.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/minecraft/advancements/ait/gold_key.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/minecraft/advancements/ait/iron_key.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/minecraft/advancements/ait/netherite_key.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/minecraft/advancements/ait/owner_ship.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/minecraft/advancements/ait/place_coral.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/minecraft/advancements/ait/place_energizer.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/minecraft/advancements/ait/planet_root.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/minecraft/advancements/ait/pui.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/minecraft/advancements/ait/redecorate.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/minecraft/advancements/ait/repair_subsystem.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/minecraft/advancements/ait/root.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/minecraft/advancements/ait/ultimate_counter.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/minecraft/tags/blocks/coal_ores.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/minecraft/tags/blocks/copper_ores.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/minecraft/tags/blocks/diamond_ores.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/minecraft/tags/blocks/dirt.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/minecraft/tags/blocks/dragon_immune.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/minecraft/tags/blocks/emerald_ores.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/minecraft/tags/blocks/gold_ores.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/minecraft/tags/blocks/iron_ores.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/minecraft/tags/blocks/lapis_ores.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/minecraft/tags/blocks/mineable/pickaxe.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/minecraft/tags/blocks/needs_diamond_tool.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/minecraft/tags/blocks/needs_iron_tool.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/minecraft/tags/blocks/needs_stone_tool.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/minecraft/tags/blocks/redstone_ores.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/minecraft/tags/blocks/walls.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/minecraft/tags/blocks/wither_immune.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/minecraft/tags/items/creeper_drop_music_discs.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/minecraft/tags/items/trimmable_armor.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/minecraft/tags/painting_variant/placeable.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/resources/main/data/minecraft/tags/point_of_interest_type/acquirable_job_site.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/run/config/fabric/indigo-renderer.properties" beforeDir="false" afterPath="$PROJECT_DIR$/run/config/fabric/indigo-renderer.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/2025-04-26-1.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/2025-04-26-1.log.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/2025-04-26-2.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/2025-04-26-2.log.gz" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/run/logs/2025-04-26-3.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/2025-04-26-3.log.gz" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run/logs/debug-1.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/debug-1.log.gz" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run/logs/debug-2.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/debug-2.log.gz" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run/logs/debug-3.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/debug-3.log.gz" afterDir="false" />
@@ -56,44 +892,45 @@
       <change beforePath="$PROJECT_DIR$/run/logs/debug-5.log.gz" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/debug-5.log.gz" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run/logs/debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/debug.log" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run/logs/latest.log" beforeDir="false" afterPath="$PROJECT_DIR$/run/logs/latest.log" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/saves/New World (13)/.ait/a5a619dd-757f-45c6-bdff-971faaa7723c.json" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/New World (13)/.ait/a5a619dd-757f-45c6-bdff-971faaa7723c.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/saves/New World (13)/DIM-1/data/raids.dat" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/New World (13)/DIM-1/data/raids.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/saves/New World (13)/DIM1/data/raids_end.dat" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/New World (13)/DIM1/data/raids_end.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/saves/New World (13)/data/raids.dat" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/New World (13)/data/raids.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/saves/New World (13)/dimensions/ait-tardis/624091c4-2a3c-476a-ad71-f9ca2cf7ebff/data/raids.dat" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/New World (13)/dimensions/ait-tardis/624091c4-2a3c-476a-ad71-f9ca2cf7ebff/data/raids.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/saves/New World (13)/dimensions/ait-tardis/a5a619dd-757f-45c6-bdff-971faaa7723c/data/raids.dat" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/New World (13)/dimensions/ait-tardis/a5a619dd-757f-45c6-bdff-971faaa7723c/data/raids.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/saves/New World (13)/dimensions/ait-tardis/a5a619dd-757f-45c6-bdff-971faaa7723c/entities/r.0.0.mca" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/New World (13)/dimensions/ait-tardis/a5a619dd-757f-45c6-bdff-971faaa7723c/entities/r.0.0.mca" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/saves/New World (13)/dimensions/ait-tardis/a5a619dd-757f-45c6-bdff-971faaa7723c/region/r.-1.-1.mca" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/New World (13)/dimensions/ait-tardis/a5a619dd-757f-45c6-bdff-971faaa7723c/region/r.-1.-1.mca" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/saves/New World (13)/dimensions/ait-tardis/a5a619dd-757f-45c6-bdff-971faaa7723c/region/r.-1.0.mca" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/New World (13)/dimensions/ait-tardis/a5a619dd-757f-45c6-bdff-971faaa7723c/region/r.-1.0.mca" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/saves/New World (13)/dimensions/ait-tardis/a5a619dd-757f-45c6-bdff-971faaa7723c/region/r.0.-1.mca" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/New World (13)/dimensions/ait-tardis/a5a619dd-757f-45c6-bdff-971faaa7723c/region/r.0.-1.mca" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/saves/New World (13)/dimensions/ait-tardis/a5a619dd-757f-45c6-bdff-971faaa7723c/region/r.0.0.mca" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/New World (13)/dimensions/ait-tardis/a5a619dd-757f-45c6-bdff-971faaa7723c/region/r.0.0.mca" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/saves/New World (13)/dimensions/ait/mars/data/raids.dat" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/New World (13)/dimensions/ait/mars/data/raids.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/saves/New World (13)/dimensions/ait/moon/data/raids.dat" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/New World (13)/dimensions/ait/moon/data/raids.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/saves/New World (13)/dimensions/ait/space/data/raids.dat" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/New World (13)/dimensions/ait/space/data/raids.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/saves/New World (13)/dimensions/ait/tardis_dimension_type/data/raids.dat" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/New World (13)/dimensions/ait/tardis_dimension_type/data/raids.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/saves/New World (13)/dimensions/ait/time_vortex/data/raids.dat" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/New World (13)/dimensions/ait/time_vortex/data/raids.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/saves/New World (13)/dimensions/aseoha/gallifrey/data/raids.dat" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/New World (13)/dimensions/aseoha/gallifrey/data/raids.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/saves/New World (13)/dimensions/aseoha/klom/data/raids.dat" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/New World (13)/dimensions/aseoha/klom/data/raids.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/saves/New World (13)/dimensions/aseoha/midnight/data/raids.dat" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/New World (13)/dimensions/aseoha/midnight/data/raids.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/saves/New World (13)/dimensions/aseoha/new_earth/data/raids.dat" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/New World (13)/dimensions/aseoha/new_earth/data/raids.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/saves/New World (13)/dimensions/aseoha/raxicoricofallapatorious/data/raids.dat" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/New World (13)/dimensions/aseoha/raxicoricofallapatorious/data/raids.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/saves/New World (13)/dimensions/aseoha/skaro/data/raids.dat" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/New World (13)/dimensions/aseoha/skaro/data/raids.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/saves/New World (13)/dimensions/aseoha/skaro/entities/r.-1.0.mca" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/New World (13)/dimensions/aseoha/skaro/entities/r.-1.0.mca" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/saves/New World (13)/dimensions/aseoha/skaro/region/r.-1.0.mca" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/New World (13)/dimensions/aseoha/skaro/region/r.-1.0.mca" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/saves/New World (13)/dimensions/aseoha/trenzalore/data/raids.dat" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/New World (13)/dimensions/aseoha/trenzalore/data/raids.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/saves/New World (13)/entities/r.-1.-1.mca" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/New World (13)/entities/r.-1.-1.mca" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/saves/New World (13)/entities/r.-1.0.mca" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/New World (13)/entities/r.-1.0.mca" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/saves/New World (13)/level.dat" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/New World (13)/level.dat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/saves/New World (13)/level.dat_old" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/New World (13)/level.dat_old" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/saves/New World (13)/region/r.-1.-1.mca" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/New World (13)/region/r.-1.-1.mca" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/saves/New World (13)/region/r.-1.0.mca" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/New World (13)/region/r.-1.0.mca" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/saves/New World (13)/region/r.-2.-1.mca" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/New World (13)/region/r.-2.-1.mca" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/saves/New World (13)/region/r.-2.0.mca" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/New World (13)/region/r.-2.0.mca" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/saves/New World (13)/region/r.0.-1.mca" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/New World (13)/region/r.0.-1.mca" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/run/saves/New World (13)/region/r.0.0.mca" beforeDir="false" afterPath="$PROJECT_DIR$/run/saves/New World (13)/region/r.0.0.mca" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run/usercache.json" beforeDir="false" afterPath="$PROJECT_DIR$/run/usercache.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/block/roundel/black_wool_roundel.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/block/roundel/black_wool_roundel.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/block/roundel/blue_wool_roundel.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/assets/aseoha/models/block/roundel/blue_wool_roundel.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/generated/.cache/084dabebd49a2665b67695ccf2afb56cd3dbd743" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/generated/.cache/084dabebd49a2665b67695ccf2afb56cd3dbd743" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/generated/.cache/0fd3c303f2f791d40bd227c4fc6eb0e1d2b5f876" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/generated/.cache/0fd3c303f2f791d40bd227c4fc6eb0e1d2b5f876" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/generated/.cache/1d5f2afbe1d585be0c4e72d0d8f49138b92a8dd3" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/generated/.cache/1d5f2afbe1d585be0c4e72d0d8f49138b92a8dd3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/generated/.cache/386ef8f8e2dfd3e6fcaeb400a92af9cdc794830b" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/generated/.cache/386ef8f8e2dfd3e6fcaeb400a92af9cdc794830b" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/generated/.cache/387c63ae33f7052095ca2527f1800b608ef36a3c" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/generated/.cache/387c63ae33f7052095ca2527f1800b608ef36a3c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/generated/.cache/52b004156e9cef3c8d8798dc15312790e6f238f8" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/generated/.cache/52b004156e9cef3c8d8798dc15312790e6f238f8" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/generated/.cache/651bece397b8f6638ab01e2de712c0d4881014a8" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/generated/.cache/651bece397b8f6638ab01e2de712c0d4881014a8" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/generated/.cache/665fbd8153a38f5f6b6af3bc555c3989325dd569" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/generated/.cache/665fbd8153a38f5f6b6af3bc555c3989325dd569" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/generated/.cache/7c5da75d95ac8659223c0bf105c66c01d0c21f7c" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/generated/.cache/7c5da75d95ac8659223c0bf105c66c01d0c21f7c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/generated/.cache/872542414a7bea19273d494a817b5774f6695e88" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/generated/.cache/872542414a7bea19273d494a817b5774f6695e88" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/generated/.cache/888510d288936054c5bbf424fd4062ce1bb53e51" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/generated/.cache/888510d288936054c5bbf424fd4062ce1bb53e51" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/generated/.cache/9008e01654cb383fd9f72f0c53bf0e1447ab3b9f" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/generated/.cache/9008e01654cb383fd9f72f0c53bf0e1447ab3b9f" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/generated/.cache/94b6646f62fbbb9359c15cbb37c75308280b58e5" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/generated/.cache/94b6646f62fbbb9359c15cbb37c75308280b58e5" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/generated/.cache/9b99fbad3bcb150e458dfee4f10bce4620c2ccbb" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/generated/.cache/9b99fbad3bcb150e458dfee4f10bce4620c2ccbb" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/generated/.cache/a7abda1646c642f680d0ccc6d516f30211341b46" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/generated/.cache/a7abda1646c642f680d0ccc6d516f30211341b46" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/generated/.cache/a7e19ad88acf4c9a19243e3839e70cbda939fedf" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/generated/.cache/a7e19ad88acf4c9a19243e3839e70cbda939fedf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/generated/.cache/b1ec5c457e43875f5e255d632850ce45556f77a6" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/generated/.cache/b1ec5c457e43875f5e255d632850ce45556f77a6" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/generated/.cache/b68e61f9458b471d336d68efaf767840bcf93fef" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/generated/.cache/b68e61f9458b471d336d68efaf767840bcf93fef" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/generated/.cache/bceb74049d9eb76dba535bb3164f10b9e411277c" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/generated/.cache/bceb74049d9eb76dba535bb3164f10b9e411277c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/generated/.cache/bed751030ffb79a7addb2842793fbd9d5c3bceb2" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/generated/.cache/bed751030ffb79a7addb2842793fbd9d5c3bceb2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/generated/.cache/c40946543e7b0bca443927a52ddb4c5a750c33d3" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/generated/.cache/c40946543e7b0bca443927a52ddb4c5a750c33d3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/generated/.cache/c7b7815a04bd55ebb81d68654f6663bc50952a11" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/generated/.cache/c7b7815a04bd55ebb81d68654f6663bc50952a11" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/generated/.cache/c9ff5da11c0985fba6644dfe7e8ab277b8270600" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/generated/.cache/c9ff5da11c0985fba6644dfe7e8ab277b8270600" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/generated/.cache/cf12bd79acc2684ffa4c274a4e8ca15e709ad27a" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/generated/.cache/cf12bd79acc2684ffa4c274a4e8ca15e709ad27a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/generated/.cache/d9c404124a42a90c139da6d581482f9f60331e9d" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/generated/.cache/d9c404124a42a90c139da6d581482f9f60331e9d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/generated/.cache/db2fe9a7d402f6b8b554ffe1aaed56702789639b" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/generated/.cache/db2fe9a7d402f6b8b554ffe1aaed56702789639b" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/generated/.cache/e1120cadb56443b1b1072eac8409e5dab2dc79cd" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/generated/.cache/e1120cadb56443b1b1072eac8409e5dab2dc79cd" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/generated/.cache/e2019c3fda6219f012e25c6a7278f010f5351cd7" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/generated/.cache/e2019c3fda6219f012e25c6a7278f010f5351cd7" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/generated/.cache/e701b557168c5356c5f9612db2d972f2f4f33aa6" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/generated/.cache/e701b557168c5356c5f9612db2d972f2f4f33aa6" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/generated/.cache/e8520acdb2d31c485ede1a9372b2a0d5e49bca6b" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/generated/.cache/e8520acdb2d31c485ede1a9372b2a0d5e49bca6b" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/generated/.cache/edbc88dfbf2f819e26489ef7acc489b4b10bd31b" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/generated/.cache/edbc88dfbf2f819e26489ef7acc489b4b10bd31b" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/generated/.cache/f1e800b0d405e785d6e5c6e5d73d8091b6e6ec9d" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/generated/.cache/f1e800b0d405e785d6e5c6e5d73d8091b6e6ec9d" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/generated/.cache/faafcae57d5b59b547ab835ef6730503c81f3269" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/generated/.cache/faafcae57d5b59b547ab835ef6730503c81f3269" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/generated/.cache/fdb80a03cc019ee5c5a0233780ecb3e6c1acb5b3" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/generated/.cache/fdb80a03cc019ee5c5a0233780ecb3e6c1acb5b3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/generated/data/minecraft/tags/blocks/mineable/pickaxe.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/generated/data/minecraft/tags/blocks/mineable/pickaxe.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/generated/data/minecraft/tags/blocks/needs_diamond_tool.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/generated/data/minecraft/tags/blocks/needs_diamond_tool.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/generated/data/minecraft/tags/blocks/needs_iron_tool.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/generated/data/minecraft/tags/blocks/needs_iron_tool.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/generated/data/minecraft/tags/blocks/needs_stone_tool.json" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/generated/data/minecraft/tags/blocks/needs_stone_tool.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -495,7 +1332,15 @@
       <option name="project" value="LOCAL" />
       <updated>1744926414154</updated>
     </task>
-    <option name="localTasksCounter" value="26" />
+    <task id="LOCAL-00026" summary="Unsucessful fix of roundels but adds more roundel files which makes it a much easier fix for whoever does it">
+      <option name="closed" value="true" />
+      <created>1745627912227</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1745627912227</updated>
+    </task>
+    <option name="localTasksCounter" value="27" />
     <servers />
   </component>
   <component name="UnknownFeatures">
@@ -534,6 +1379,7 @@
     <MESSAGE value="Cleaning files and editing my stuff" />
     <MESSAGE value="Cleaning files" />
     <MESSAGE value="gradle update" />
-    <option name="LAST_COMMIT_MESSAGE" value="gradle update" />
+    <MESSAGE value="Unsucessful fix of roundels but adds more roundel files which makes it a much easier fix for whoever does it" />
+    <option name="LAST_COMMIT_MESSAGE" value="Unsucessful fix of roundels but adds more roundel files which makes it a much easier fix for whoever does it" />
   </component>
 </project>
