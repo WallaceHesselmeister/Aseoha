@@ -1,0 +1,13 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "aseoha:block/roundel/exposed_cut_copper_roundel",
+    "up": "aseoha:block/roundel/exposed_cut_copper_roundel",
+    "north": "aseoha:block/roundel/exposed_cut_copper_roundel",
+    "east": "aseoha:block/roundel/exposed_cut_copper_roundel",
+    "south": "aseoha:block/roundel/exposed_cut_copper_roundel",
+    "west": "aseoha:block/roundel/exposed_cut_copper_roundel",
+    "particle": "aseoha:block/roundel/exposed_cut_copper_roundel"
+  },
+  "render_type": "solid"
+}

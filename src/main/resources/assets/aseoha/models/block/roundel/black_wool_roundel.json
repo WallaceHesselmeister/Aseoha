@@ -1,6 +1,13 @@
 {
-  "parent":"block/cube_all",
-  "textures":{
-    "all":"aseoha:block/roundel/black_wool_roundel"
-  }
+  "parent": "block/cube",
+  "textures": {
+    "down": "aseoha:block/roundel/black_wool_roundel",
+    "up": "aseoha:block/roundel/black_wool_roundel",
+    "north": "aseoha:block/roundel/black_wool_roundel",
+    "east": "aseoha:block/roundel/black_wool_roundel",
+    "south": "aseoha:block/roundel/black_wool_roundel",
+    "west": "aseoha:block/roundel/black_wool_roundel",
+    "particle": "aseoha:block/roundel/black_wool_roundel"
+  },
+  "render_type": "solid"
 }

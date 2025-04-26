@@ -118,6 +118,10 @@
         "575973e5-e497-3cb3-bb63-d114ffcff0b1": {
           "level": 500,
           "type": "OWNER"
+        },
+        "86e39a76-f063-3bee-9e1a-270f7c5ebf9f": {
+          "level": 126,
+          "type": "NEUTRAL"
         }
       },
       "messageEnabled": true,
@@ -341,7 +345,7 @@
       "id": "MOOD"
     },
     "FUEL": {
-      "fuel": 49645.0,
+      "fuel": 49270.0,
       "refueling": false,
       "power": true,
       "id": "FUEL"

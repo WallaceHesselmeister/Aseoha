@@ -1,0 +1,13 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "aseoha:block/roundel/dark_oak_planks_roundel",
+    "up": "aseoha:block/roundel/dark_oak_planks_roundel",
+    "north": "aseoha:block/roundel/dark_oak_planks_roundel",
+    "east": "aseoha:block/roundel/dark_oak_planks_roundel",
+    "south": "aseoha:block/roundel/dark_oak_planks_roundel",
+    "west": "aseoha:block/roundel/dark_oak_planks_roundel",
+    "particle": "aseoha:block/roundel/dark_oak_planks_roundel"
+  },
+  "render_type": "solid"
+}

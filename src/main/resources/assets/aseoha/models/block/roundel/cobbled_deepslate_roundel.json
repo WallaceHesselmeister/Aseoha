@@ -1,0 +1,13 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "aseoha:block/roundel/cobbled_deepslate_roundel",
+    "up": "aseoha:block/roundel/cobbled_deepslate_roundel",
+    "north": "aseoha:block/roundel/cobbled_deepslate_roundel",
+    "east": "aseoha:block/roundel/cobbled_deepslate_roundel",
+    "south": "aseoha:block/roundel/cobbled_deepslate_roundel",
+    "west": "aseoha:block/roundel/cobbled_deepslate_roundel",
+    "particle": "aseoha:block/roundel/cobbled_deepslate_roundel"
+  },
+  "render_type": "solid"
+}
