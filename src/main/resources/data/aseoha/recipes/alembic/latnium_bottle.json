@@ -1,0 +1,12 @@
+{
+    "type": "tardis:alembic",
+	"water": 1000,
+	"ingredient":{
+		"item":"aseoha:latinum_ore",
+		"count": 1
+	},
+	"result":{
+		"special":"aseoha:latinum",
+		"count": 1
+	}
+}

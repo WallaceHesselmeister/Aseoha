@@ -3,6 +3,7 @@ package com.code.aseoha.items;
 import com.code.aseoha.client.Sounds;
 import com.code.aseoha.entities.ModEntityTypes;
 import com.code.aseoha.enums.EnumArmorMaterials;
+import com.code.aseoha.fluid.ModFluids;
 import com.code.aseoha.items.Materials.AseohaItemTiers;
 import com.code.aseoha.items.Upgrades.LightSpeedDrive;
 import com.code.aseoha.items.Upgrades.TesseractDrive;
@@ -198,6 +199,12 @@ public class AseohaItems {
 
     public static final RegistryObject<Item> LATINUM_BAR = ITEMS.register("latinum_bar",
             ()-> new Item(new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP).stacksTo(64).rarity(Rarity.RARE)));
+
+    public static final RegistryObject<Item> LATINUM_BOTTLE = ITEMS.register("latinum_bottle",
+            ()-> new Item(new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP).stacksTo(16).rarity(Rarity.RARE)));
+
+    public static final RegistryObject<Item> LATINUM_BUCKET = ITEMS.register("latinum_bucket",
+            ()-> new BucketItem(() -> ModFluids.LATINUM_FLUID.get(),new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP).stacksTo(1).rarity(Rarity.RARE)));
 
     public static final RegistryObject<Item> LATINUM_BRICK = ITEMS.register("latinum_brick",
             ()-> new Item(new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP).stacksTo(64).rarity(Rarity.RARE)));

@@ -21,6 +21,7 @@ import com.code.aseoha.commands.Commands;
 import com.code.aseoha.compat.NoProjectTARDISBlocks;
 import com.code.aseoha.compat.NoTadditionsItems;
 import com.code.aseoha.entities.ModEntityTypes;
+import com.code.aseoha.fluid.ModFluids;
 import com.code.aseoha.integration.tadditions.TAWorkbenchRecipes;
 import com.code.aseoha.items.AseohaItems;
 import com.code.aseoha.misc.AseohaDimensions;
@@ -84,6 +85,7 @@ public class aseoha {
         AseohaBlocks.register(modBus);
         AseohaItems.register(modBus);
         AseohaItems.ARMOR_ITEMS.register(modBus);
+        ModFluids.register(modBus);
 
         if (!(ModList.get().isLoaded("tadditions"))) {
             NoTadditionsItems.register(modBus);
@@ -219,6 +221,10 @@ public class aseoha {
         RenderTypeLookup.setRenderLayer(AseohaBlocks.AZALEA_LEAVES.get(), RenderType.cutout());
         RenderTypeLookup.setRenderLayer(AseohaBlocks.HARMONIC_PILLAR.get(), RenderType.translucent());
         RenderTypeLookup.setRenderLayer(AseohaBlocks.WORKBENCH.get(), RenderType.cutout());
+
+        RenderTypeLookup.setRenderLayer(ModFluids.LATINUM_FLUID.get(), RenderType.translucent());
+        RenderTypeLookup.setRenderLayer(ModFluids.LATINUM_FLOWING.get(), RenderType.translucent());
+        RenderTypeLookup.setRenderLayer(ModFluids.LATINUM_BLOCK.get(), RenderType.translucent());
 
 
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////// CONSOLES
