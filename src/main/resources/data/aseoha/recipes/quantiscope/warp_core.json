@@ -4,7 +4,7 @@
   "ingredients":[
     {"item":"tardis:subsystem/dematerialisation_circuit"},
     {"item":"aseoha:netherite_reinforced_circuits"},
-    {"item":"minecraft:nether_star"},
+    {"item":"aseoha:star_infused_netherite_ingot"},
     {"item":"aseoha:netherite_reinforced_circuits"},
     {"item":"tardis:subsystem/stabilizer"}
   ],

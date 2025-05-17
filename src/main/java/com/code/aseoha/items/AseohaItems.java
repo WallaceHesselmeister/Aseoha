@@ -227,6 +227,9 @@ public class AseohaItems {
     public static final RegistryObject<Item> WARP_CORE = ITEMS.register("warp_core",
             ()-> new Item(new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP).stacksTo(16).rarity(Rarity.RARE).fireResistant()));
 
+    public static final RegistryObject<Item> STAR_INFUSED_NETHERITE_INGOT = ITEMS.register("star_infused_netherite_ingot",
+            ()-> new Item(new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP).stacksTo(16).rarity(Rarity.RARE).fireResistant()));
+
     public static final RegistryObject<Item> NETHERITE_REINFORCED_CIRCUITS = ITEMS.register("netherite_reinforced_circuits",
             ()-> new Item(new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP).stacksTo(64).rarity(Rarity.RARE).fireResistant()));
 

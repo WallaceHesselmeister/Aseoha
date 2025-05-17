@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "axa",
+    "xvx",
+    "axa"
+  ],
+  "key": {
+    "x": {
+      "item": "minecraft:nether_star"
+    },
+    "v": {
+      "item": "minecraft:netherite_ingot"
+    },
+    "a": {
+      "item": "aseoha:phaser_power_cell"
+    }
+  },
+  "result": {
+    "item": "aseoha:star_infused_netherite_ingot"
+  }
+}
