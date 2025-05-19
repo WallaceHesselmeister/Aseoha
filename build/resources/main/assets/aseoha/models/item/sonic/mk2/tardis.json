@@ -1,6 +1,0 @@
-{
-	"parent": "aseoha:item/sonic/mk2",
-	"textures": {
-		"0": "aseoha:item/sonic_tools/mk2_tardis"
-	}
-}

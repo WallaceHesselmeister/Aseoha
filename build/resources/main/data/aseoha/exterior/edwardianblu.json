@@ -1,7 +1,0 @@
-{
-    "id": "aseoha:edwardianblu",
-    "category": "aseoha:aseohaboxes",
-    "parent": "ait:exterior/classic/hudolin",
-    "texture": "aseoha:textures/exterior/edwardianblu.png",
-    "emission": "aseoha:textures/exterior/edwardianblu_emission.png"
-}

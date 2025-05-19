@@ -78,6 +78,9 @@ dependencies {
     // only if you plan to use owo-config
     annotationProcessor "io.wispforest:owo-lib:${project.owo_version}"
 
+    include(implementation "net.objecthunter:exp4j:0.4.8") {
+    }
+
 }
 
 

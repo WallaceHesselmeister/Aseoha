@@ -1,6 +1,0 @@
-{
-  "id": "aseoha:copper_crystal",
-  "parent": "ait:console/copper",
-  "texture": "aseoha:textures/copper_crystal.png",
-  "emission": "aseoha:textures/copper_crystal_emission.png"
-}

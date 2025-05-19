@@ -1,6 +1,0 @@
-{
-	"parent": "aseoha:item/sonic/mk3",
-	"textures": {
-		"0": "aseoha:item/sonic_tools/mk3_inactive"
-	}
-}

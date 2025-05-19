@@ -1,0 +1,21 @@
+{
+  "minecraft:ait/root": {
+    "criteria": {
+      "root": "2025-04-26 01:07:48 +0100"
+    },
+    "done": true
+  },
+  "minecraft:recipes/decorations/crafting_table": {
+    "criteria": {
+      "unlock_right_away": "2025-04-26 01:07:49 +0100"
+    },
+    "done": true
+  },
+  "minecraft:recipes/misc/red_dye_from_poppy": {
+    "criteria": {
+      "has_poppy": "2025-04-26 01:07:49 +0100"
+    },
+    "done": true
+  },
+  "DataVersion": 3465
+}
