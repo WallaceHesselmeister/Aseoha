@@ -1,0 +1,13 @@
+{
+  "parent": "block/cube",
+  "textures": {
+    "down": "aseoha:block/roundel/gray_concrete_roundel",
+    "up": "aseoha:block/roundel/gray_concrete_roundel",
+    "north": "aseoha:block/roundel/gray_concrete_roundel",
+    "east": "aseoha:block/roundel/gray_concrete_roundel",
+    "south": "aseoha:block/roundel/gray_concrete_roundel",
+    "west": "aseoha:block/roundel/gray_concrete_roundel",
+    "particle": "aseoha:block/roundel/gray_concrete_roundel"
+  },
+  "render_type": "solid"
+}
