@@ -26,7 +26,9 @@ import net.minecraft.util.*;
 import net.minecraft.util.concurrent.TickDelayedTask;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.vector.Vector3d;
-import net.minecraft.util.text.*;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.StringTextComponent;
+import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 import net.minecraftforge.api.distmarker.Dist;
@@ -177,10 +179,11 @@ public class K9Entity extends RecycledWolf implements IAngerable, ISpaceImmuneEn
     //******************************* Honestly, I can barely read half of this, need to clean it ****************************************//
     @NotNull
     @Override
-    public ActionResultType mobInteract(PlayerEntity player, @NotNull Hand hand) {
+    public ActionResultType interact(PlayerEntity player, @NotNull Hand hand) {
         ItemStack itemstack = player.getItemInHand(hand);
         Item item = itemstack.getItem();
         if (this.level.isClientSide) {
+            if (!this.isDead && !player.isCrouching()) OpenK9Screen(this);
             boolean flag = this.isOwnedBy(player) || this.isTame() || item == Items.IRON_INGOT && !this.isTame() && !this.isAngry();
             return flag ? ActionResultType.CONSUME : ActionResultType.PASS;
         } else {
@@ -201,7 +204,6 @@ public class K9Entity extends RecycledWolf implements IAngerable, ISpaceImmuneEn
                     if (this.isOwnedBy(player)) {
                         K9Entity.Say("Power is at " + this.power, player, player.level); //TODO: Add power to the K9 Screen, distress signals, etc
 //                        this.setOrderedToSit(!this.isOrderedToSit());
-                        if (!this.isDead && !player.isCrouching() && this.level.isClientSide) OpenK9Screen(this);
                         this.jumping = false;
                         this.navigation.stop();
                         this.setTarget(null);
@@ -325,7 +327,7 @@ public class K9Entity extends RecycledWolf implements IAngerable, ISpaceImmuneEn
 
     @Override
     public void setTarget(@Nullable LivingEntity target) {
-        if (!this.getHitList().isEmpty())
+        if (!this.getHitList().isEmpty() && this.getHitList().size() > 0)
             while (this.getHitList().get(0) == null || !this.getHitList().get(0).isAlive()) // TODO: Stop being lazy replace this with a for loop
                 this.getHitList().remove(0);
 

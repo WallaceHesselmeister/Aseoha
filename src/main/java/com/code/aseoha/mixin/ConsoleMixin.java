@@ -45,6 +45,7 @@ import net.tardis.mod.tileentities.ConsoleTile;
 import net.tardis.mod.tileentities.console.misc.ExteriorPropertyManager;
 import net.tardis.mod.tileentities.console.misc.SparkingLevel;
 import net.tardis.mod.tileentities.exteriors.ExteriorTile;
+import org.jetbrains.annotations.NotNull;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
 import org.spongepowered.asm.mixin.Shadow;
@@ -54,7 +55,6 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-import javax.annotation.Nullable;
 import java.util.Optional;
 
 @Mixin(value = ConsoleTile.class)
@@ -78,10 +78,6 @@ public abstract class ConsoleMixin extends TileEntity implements ITickableTileEn
 
     @Shadow(remap = false)
     public abstract RegistryKey<World> getDestinationDimension();
-
-    @Shadow(remap = false)
-    @Nullable
-    public abstract TardisEntity getEntity();
 
     @Shadow(remap = false)
     private BlockPos destination;
@@ -539,12 +535,23 @@ public abstract class ConsoleMixin extends TileEntity implements ITickableTileEn
     @Inject(method = "crash(Lnet/tardis/mod/misc/CrashType;)V", at = @At("HEAD"), remap = false)
     private void Aseoha$Crash(CrashType type, CallbackInfo ci) {
 //        this.Aseoha$StopRide(false);
-        this.getEntity().ejectPassengers();
+        if(this.getEntity() != null)
+            this.getEntity().ejectPassengers();
     }
 
     @Override
     public TardisEntity Aseoha$GetTardisEntity() {
         return this.tardisEntity != null ? this.tardisEntity : new TardisEntity(this.getLevel());
+    }
+
+    /**
+     * @author Codiak540
+     * @reason Prevent null TEntity
+     */
+    @NotNull
+    @Overwrite(remap = false)
+    public TardisEntity getEntity() {
+        return Aseoha$GetTardisEntity();
     }
 
     @Override

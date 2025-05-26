@@ -18,7 +18,7 @@ public abstract class PlayerRendererMixin extends LivingRenderer<AbstractClientP
         super(p_i50965_1_, p_i50965_2_, p_i50965_3_);
     }
 
-    @Inject(method = "setModelProperties(Lnet/minecraft/client/entity/player/AbstractClientPlayerEntity;)V", at = @At("TAIL"))
+    @Inject(method = "Lnet/minecraft/client/renderer/entity/PlayerRenderer;setModelProperties(Lnet/minecraft/client/entity/player/AbstractClientPlayerEntity;)V", at = @At("TAIL"), remap = true)
     public void Aseoha$SetModelProps(AbstractClientPlayerEntity p_177137_1_, CallbackInfo ci) {
         PlayerModel<AbstractClientPlayerEntity> playermodel = this.getModel();
         if (p_177137_1_.getVehicle() instanceof DavrosChair) {

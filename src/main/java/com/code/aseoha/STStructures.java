@@ -1,9 +1,10 @@
 package com.code.aseoha;
 
 import com.code.aseoha.world.structure.structures.BarnStructure;
+import com.code.aseoha.world.structure.structures.CyberConversionShip;
+import com.code.aseoha.world.structure.structures.RoadStructure;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
-import com.code.aseoha.world.structure.structures.RoadStructure;
 import net.minecraft.util.registry.WorldGenRegistries;
 import net.minecraft.world.gen.feature.NoFeatureConfig;
 import net.minecraft.world.gen.feature.structure.Structure;
@@ -46,7 +47,8 @@ public class STStructures {
      */
     public static final RegistryObject<Structure<NoFeatureConfig>> ROAD = DEFERRED_REGISTRY_STRUCTURE.register("road", () -> (new RoadStructure(NoFeatureConfig.CODEC)));
 //    public static final RegistryObject<Structure<NoFeatureConfig>> GRIDLOCK = DEFERRED_REGISTRY_STRUCTURE.register("gridlock", () -> (new RoadStructure(NoFeatureConfig.CODEC)));
-    public static final RegistryObject<Structure<NoFeatureConfig>> BARN_ONE = DEFERRED_REGISTRY_STRUCTURE.register("barn_one", () -> (new BarnStructure(NoFeatureConfig.CODEC)));
+public static final RegistryObject<Structure<NoFeatureConfig>> BARN_ONE = DEFERRED_REGISTRY_STRUCTURE.register("barn_one", () -> (new BarnStructure(NoFeatureConfig.CODEC)));
+    public static final RegistryObject<Structure<NoFeatureConfig>> CYBER_CONVERSION_SHIP = DEFERRED_REGISTRY_STRUCTURE.register("cyber_conversion_ship", () -> (new CyberConversionShip(NoFeatureConfig.CODEC)));
 //    public static final RegistryObject<Structure<NoFeatureConfig>> CITADEL = DEFERRED_REGISTRY_STRUCTURE.register("citadel", () -> (new CitadelStructure(NoFeatureConfig.CODEC)));
 
     /**
@@ -76,6 +78,14 @@ public class STStructures {
                 new StructureSeparationSettings(20 /* average distance apart in chunks between spawn attempts */,
                         16 /* minimum distance apart in chunks between spawn attempts. MUST BE LESS THAN ABOVE VALUE*/,
                         913457679 /* this modifies the seed of the structure so no two structures always spawn over each-other. Make this large and unique. */),
+                true);
+
+
+        setupMapSpacingAndLand(
+                CYBER_CONVERSION_SHIP.get(), /* The instance of the structure */
+                new StructureSeparationSettings(700 /* average distance apart in chunks between spawn attempts */,
+                        400 /* minimum distance apart in chunks between spawn attempts. MUST BE LESS THAN ABOVE VALUE*/,
+                        458753779 /* this modifies the seed of the structure so no two structures always spawn over each-other. Make this large and unique. */),
                 true);
 
 //        setupMapSpacingAndLand(

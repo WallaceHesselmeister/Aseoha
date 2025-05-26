@@ -1419,6 +1419,7 @@
     ]
   ],
   "starts": [
+    "aseoha:cyber_conversion_ship",
     {
       "config": {
         "start_pool": {

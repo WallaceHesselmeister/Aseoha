@@ -76,6 +76,8 @@ public class EOHLinkTile extends TileEntity implements ITickableTileEntity, ICap
         super.onLoad();
         assert this.level != null;
         if(this.level.isClientSide) return;
+        this.setChanged();
+        this.Mark = true;
         Networking.sendToDimension(this.level.dimension(), new EOHSyncPacketS2C());
     }
 
@@ -129,7 +131,7 @@ public class EOHLinkTile extends TileEntity implements ITickableTileEntity, ICap
                 ((IHelpWithConsole) this.consoleTile).Aseoha$SetEOHOverheated(this.IsOverheated);
                 ((IHelpWithConsole) this.consoleTile).Aseoha$SetEOHTimer(this.timer);
                 ((IHelpWithConsole) this.consoleTile).Aseoha$SetEOHPillars((byte) this.GetPillars());
-                this.Mark = !this.Mark;
+                this.Mark = false;
             }
     }
 
@@ -152,7 +154,7 @@ public class EOHLinkTile extends TileEntity implements ITickableTileEntity, ICap
                 stabs++;
             else if (!iterator.hasNext()) {
                 this.numberOfPillars = stabs;
-                stabs = 0; // Set it to 0 so next time round it doesn't add onto the already existing stabs amount, idk how/why but it DOES do that
+                stabs = 0; // Set it to 0 so next time round it doesn't add onto the already existing stabs amount
                 return this.numberOfPillars;
             }
         }
@@ -268,5 +270,17 @@ public class EOHLinkTile extends TileEntity implements ITickableTileEntity, ICap
             return LazyOptional.of(() -> energyStorage).cast();
         }
         return super.getCapability(cap, side);
+    }
+
+    @NotNull
+    @Override
+    public CompoundNBT getUpdateTag() {
+        CompoundNBT nbt = super.getUpdateTag();
+        return this.save(nbt);
+    }
+
+    @Override
+    public void handleUpdateTag(BlockState state, CompoundNBT tag) {
+        this.load(state, tag);
     }
 }

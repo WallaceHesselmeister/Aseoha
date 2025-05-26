@@ -204,7 +204,7 @@ public class AseohaItems {
             ()-> new Item(new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP).stacksTo(16).rarity(Rarity.RARE)));
 
     public static final RegistryObject<Item> LATINUM_BUCKET = ITEMS.register("latinum_bucket",
-            ()-> new BucketItem(() -> ModFluids.LATINUM_FLUID.get(),new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP).stacksTo(1).rarity(Rarity.RARE)));
+            ()-> new BucketItem(ModFluids.LATINUM, new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP).craftRemainder(Items.BUCKET).stacksTo(1).rarity(Rarity.RARE)));
 
     public static final RegistryObject<Item> LATINUM_BRICK = ITEMS.register("latinum_brick",
             ()-> new Item(new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP).stacksTo(64).rarity(Rarity.RARE)));

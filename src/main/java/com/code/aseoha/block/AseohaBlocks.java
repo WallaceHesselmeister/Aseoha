@@ -295,6 +295,21 @@ public class AseohaBlocks {
     public static final RegistryObject<Block> TRANSDUCTION_BARRIER_OFF = registerBlock("transduction_barrier_off",
             () -> new Block(AbstractBlock.Properties.of(Material.STONE).strength(0.3F).sound(SoundType.STONE)));
 
+    /****************************  Particle Accelerator *********************/
+
+    // TODO: Texture these, and code the particle accelerator
+    public static final RegistryObject<Block> COLLISION_CHAMBER = registerBlock("collision_chamber",
+            () -> new Block(AbstractBlock.Properties.of(Material.METAL).strength(50.0F).sound(SoundType.METAL)));
+
+    public static final RegistryObject<Block> ELECTROMAGNETIC_COIL = registerBlock("electromagnetic_coil",
+            () -> new Block(AbstractBlock.Properties.of(Material.METAL).strength(50.0F).sound(SoundType.METAL)));
+
+    public static final RegistryObject<Block> INJECTOR = registerBlock("injector",
+            () -> new Block(AbstractBlock.Properties.of(Material.METAL).strength(50.0F).sound(SoundType.METAL)));
+
+    public static final RegistryObject<Block> CRYOGENIC_COOLER = registerBlock("cryogenic_cooler",
+            () -> new Block(AbstractBlock.Properties.of(Material.METAL).strength(50.0F).sound(SoundType.METAL)));
+
     /****************************  1.20 BACKPORTED  *************************/
     public static final RegistryObject<Block> OCHRE_FROGLIGHT = registerBlock("ochre_froglight",
             () -> new RotatedPillarBlock(AbstractBlock.Properties.of(Material.STONE).strength(0.3F).lightLevel(maxLightLevel).noOcclusion()));

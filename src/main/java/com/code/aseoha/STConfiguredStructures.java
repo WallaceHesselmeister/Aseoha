@@ -13,6 +13,7 @@ public class STConfiguredStructures {
      */
     public static StructureFeature<?, ?> CONFIGURED_ROAD = STStructures.ROAD.get().configured(IFeatureConfig.NONE);
     public static StructureFeature<?, ?> CONFIGURED_BARN_ONE = STStructures.BARN_ONE.get().configured(IFeatureConfig.NONE);
+    public static StructureFeature<?, ?> CONFIGURED_CYBER_CONVERSION_SHIP = STStructures.CYBER_CONVERSION_SHIP.get().configured(IFeatureConfig.NONE);
 //    public static StructureFeature<?, ?> CONFIGURED_CITADEL = STStructures.CITADEL.get().configured(IFeatureConfig.NONE);
 
     /**
@@ -25,6 +26,7 @@ public class STConfiguredStructures {
         Registry<StructureFeature<?, ?>> registry = WorldGenRegistries.CONFIGURED_STRUCTURE_FEATURE;
         Registry.register(registry, new ResourceLocation(aseoha.MODID, "road"), CONFIGURED_ROAD);
         Registry.register(registry, new ResourceLocation(aseoha.MODID, "barn_one"), CONFIGURED_BARN_ONE);
+        Registry.register(registry, new ResourceLocation(aseoha.MODID, "cyber_conversion_ship"), CONFIGURED_CYBER_CONVERSION_SHIP);
 //        Registry.register(registry, new ResourceLocation(aseoha.MODID, "citadel"), CONFIGURED_CITADEL);
 
         /* Ok so, this part may be hard to grasp but basically, just add your structure to this to
@@ -44,6 +46,7 @@ public class STConfiguredStructures {
          */
         FlatGenerationSettings.STRUCTURE_FEATURES.put(STStructures.ROAD.get(), CONFIGURED_ROAD);
         FlatGenerationSettings.STRUCTURE_FEATURES.put(STStructures.BARN_ONE.get(), CONFIGURED_BARN_ONE);
+        FlatGenerationSettings.STRUCTURE_FEATURES.put(STStructures.CYBER_CONVERSION_SHIP.get(), CONFIGURED_CYBER_CONVERSION_SHIP);
 //        FlatGenerationSettings.STRUCTURE_FEATURES.put(STStructures.CITADEL.get(), CONFIGURED_CITADEL);
     }
 }

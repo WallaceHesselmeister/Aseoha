@@ -29,8 +29,8 @@ import org.jetbrains.annotations.NotNull;
 import java.util.List;
 
 
-public class Clean_CyberConversion_shipStructure extends Structure<NoFeatureConfig> {
-    public Clean_CyberConversion_shipStructure(Codec<NoFeatureConfig> codec) {
+public class CyberConversionShip extends Structure<NoFeatureConfig> {
+    public CyberConversionShip(Codec<NoFeatureConfig> codec) {
         super(codec);
     }
 
@@ -193,7 +193,7 @@ public class Clean_CyberConversion_shipStructure extends Structure<NoFeatureConf
                             // "resources/data/structure_tutorial/worldgen/template_pool/run_down_house/start_pool.json"
                             // This is why your pool files must be in "data/<modid>/worldgen/template_pool/<the path to the pool here>"
                             // because the game automatically will check in worldgen/template_pool for the pools.
-                            .get(new ResourceLocation(aseoha.MODID, "clean_cyberconversion_ship")),
+                            .get(new ResourceLocation(aseoha.MODID, "cyber_conversion_ship")),
 
                             // How many pieces outward from center can a recursive jigsaw structure spawn.
                             // Our structure is only 1 piece outward and isn't recursive so any value of 1 or more doesn't change anything.
