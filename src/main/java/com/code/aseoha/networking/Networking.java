@@ -1,11 +1,19 @@
 package com.code.aseoha.networking;
 
 import com.code.aseoha.aseoha;
-import com.code.aseoha.networking.Packets.*;
+import com.code.aseoha.networking.Packets.EnterRWFPacket;
+import com.code.aseoha.networking.Packets.TardisInputMessagePacket;
+import com.code.aseoha.networking.Packets.UpdateClientPacket;
+import com.code.aseoha.networking.Packets.c2s.*;
+import com.code.aseoha.networking.Packets.s2c.EOHSyncPacketS2C;
+import com.code.aseoha.networking.Packets.s2c.ExteriorSizePacketS2C;
 import net.minecraft.entity.player.ServerPlayerEntity;
+import net.minecraft.util.RegistryKey;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.world.World;
 import net.minecraftforge.fml.network.NetworkDirection;
 import net.minecraftforge.fml.network.NetworkRegistry;
+import net.minecraftforge.fml.network.PacketDistributor;
 import net.minecraftforge.fml.network.simple.SimpleChannel;
 
 /**
@@ -22,17 +30,18 @@ public class Networking {
     );
 
     public static void init() {
-        INSTANCE.registerMessage(iterator(), TakeOffFromClientPacket.class, TakeOffFromClientPacket::encode, TakeOffFromClientPacket::decode, TakeOffFromClientPacket::handle);
-        INSTANCE.registerMessage(iterator(), ToggleLocksPacket.class, ToggleLocksPacket::encode, ToggleLocksPacket::decode, ToggleLocksPacket::handle);
-        INSTANCE.registerMessage(iterator(), SetCoordsPacket.class, SetCoordsPacket::encode, SetCoordsPacket::decode, SetCoordsPacket::handle);
-        INSTANCE.registerMessage(iterator(), ExitRWFPacket.class, ExitRWFPacket::encode, ExitRWFPacket::decode, ExitRWFPacket::handle);
-        INSTANCE.registerMessage(iterator(), UpdateControlsPacket.class, UpdateControlsPacket::encode, UpdateControlsPacket::decode, UpdateControlsPacket::handle);
+        INSTANCE.registerMessage(iterator(), TakeOffFromClientPacketC2S.class, TakeOffFromClientPacketC2S::encode, TakeOffFromClientPacketC2S::decode, TakeOffFromClientPacketC2S::handle);
+        INSTANCE.registerMessage(iterator(), ToggleLocksPacketC2S.class, ToggleLocksPacketC2S::encode, ToggleLocksPacketC2S::decode, ToggleLocksPacketC2S::handle);
+        INSTANCE.registerMessage(iterator(), SetCoordsPacketC2S.class, SetCoordsPacketC2S::encode, SetCoordsPacketC2S::decode, SetCoordsPacketC2S::handle);
+        INSTANCE.registerMessage(iterator(), ExitRWFPacketC2S.class, ExitRWFPacketC2S::encode, ExitRWFPacketC2S::decode, ExitRWFPacketC2S::handle);
+        INSTANCE.registerMessage(iterator(), UpdateControlsPacketC2S.class, UpdateControlsPacketC2S::encode, UpdateControlsPacketC2S::decode, UpdateControlsPacketC2S::handle);
         INSTANCE.registerMessage(iterator(), UpdateClientPacket.class, UpdateClientPacket::encode, UpdateClientPacket::decode, UpdateClientPacket::handle);
-        INSTANCE.registerMessage(iterator(), ExteriorSizePacket.class, ExteriorSizePacket::encode, ExteriorSizePacket::decode, ExteriorSizePacket::handle);
+        INSTANCE.registerMessage(iterator(), ExteriorSizePacketS2C.class, ExteriorSizePacketS2C::encode, ExteriorSizePacketS2C::decode, ExteriorSizePacketS2C::handle);
         INSTANCE.registerMessage(iterator(), TardisInputMessagePacket.class, TardisInputMessagePacket::encode, TardisInputMessagePacket::decode, TardisInputMessagePacket::handle);
-        INSTANCE.registerMessage(iterator(), EOHInteractPacket.class, EOHInteractPacket::encode, EOHInteractPacket::decode, EOHInteractPacket::handle);
-        INSTANCE.registerMessage(iterator(), PlayerItemRemovePacket.class, PlayerItemRemovePacket::encode, PlayerItemRemovePacket::decode, PlayerItemRemovePacket::handle);
+        INSTANCE.registerMessage(iterator(), EOHInteractPacketC2S.class, EOHInteractPacketC2S::encode, EOHInteractPacketC2S::decode, EOHInteractPacketC2S::handle);
+        INSTANCE.registerMessage(iterator(), PlayerItemRemovePacketC2S.class, PlayerItemRemovePacketC2S::encode, PlayerItemRemovePacketC2S::decode, PlayerItemRemovePacketC2S::handle);
         INSTANCE.registerMessage(iterator(), EnterRWFPacket.class, EnterRWFPacket::encode, EnterRWFPacket::decode, EnterRWFPacket::handle);
+        INSTANCE.registerMessage(iterator(), EOHSyncPacketS2C.class, EOHSyncPacketS2C::encode, EOHSyncPacketS2C::decode, EOHSyncPacketS2C::handle);
     }
 
     public static void sendToServer(Object msg) {
@@ -42,6 +51,12 @@ public class Networking {
     public static void sendToClient(ServerPlayerEntity Player, Object msg) {
         INSTANCE.sendTo(msg, Player.connection.connection, NetworkDirection.PLAY_TO_CLIENT);
     }
+
+    public static void sendToDimension(RegistryKey<World> dimension, Object msg) {
+        INSTANCE.send(
+                PacketDistributor.DIMENSION.with(() -> dimension),
+                msg
+        );}
 
     /**
      * @return This returns the current id+1, that way we always get a unique ID

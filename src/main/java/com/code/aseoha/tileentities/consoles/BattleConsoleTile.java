@@ -30,25 +30,25 @@ public class BattleConsoleTile extends ConsoleTile {
         //Done
         this.controlOverrides.put(FacingControl.class, new ControlOverride(new Vector3d(0.235, 1.969, 0.623), EntitySize.scalable(0.25F, 0.25F)));
         //Done
-        this.controlOverrides.put(StabilizerControl.class, new ControlOverride(new Vector3d(-0.515, .5, 0.697), EntitySize.scalable(0.1875F, 0.2575F)));
+        this.controlOverrides.put(StabilizerControl.class, new ControlOverride(new Vector3d(-0.45f, 0.95f, -0.27f), EntitySize.scalable(0.1875F, 0.2575F)));
         //Done
-        this.controlOverrides.put(TelepathicControl.class, new ControlOverride(new Vector3d(-0.593, .5, 0.381), EntitySize.scalable(0.5F, 0.5F)));
+        this.controlOverrides.put(TelepathicControl.class, new ControlOverride(new Vector3d(-0.48f, 0.92f, 0.58f), EntitySize.scalable(0.5F, 0.5F)));
         //Done
-        this.controlOverrides.put(CommunicatorControl.class, new ControlOverride(new Vector3d(-0.5, 0.475, -0.4), EntitySize.scalable(0.1875F, 0.1875F)));
+        this.controlOverrides.put(CommunicatorControl.class, new ControlOverride(new Vector3d(0.11f, 0.97f, 0.34f), EntitySize.scalable(0.1875F, 0.1875F)));
         //Done
-        this.controlOverrides.put(RefuelerControl.class, new ControlOverride(new Vector3d(0, 0.52, -0.9), EntitySize.scalable(0.25F, 0.075F)));
+        this.controlOverrides.put(RefuelerControl.class, new ControlOverride(new Vector3d(0.57f, 1.11f, 0.13f), EntitySize.scalable(0.25F, 0.075F)));
         //Done
-        this.controlOverrides.put(RandomiserControl.class, new ControlOverride(new Vector3d(-0.65, 0.5, 0.125), EntitySize.scalable(0.15F, 0.15F)));
+        this.controlOverrides.put(RandomiserControl.class, new ControlOverride(new Vector3d(0.11f, 0.92f, 0.63f), EntitySize.scalable(0.15F, 0.15F)));
         //Done
-        this.controlOverrides.put(HandbrakeControl.class, new ControlOverride(new Vector3d(0.633, 0.6, 0.152), EntitySize.scalable(0.125F, 0.16F)));
+        this.controlOverrides.put(HandbrakeControl.class, new ControlOverride(new Vector3d(0.76f, 1.00f, 0.26f), EntitySize.scalable(0.125F, 0.16F)));
         //Done
         this.controlOverrides.put(DoorControl.class, new ControlOverride(new Vector3d(0.199, .5, -0.574), EntitySize.scalable(0.125F, 0.18F)));
         //Done
-        this.controlOverrides.put(IncModControl.class, new ControlOverride(new Vector3d(-0.19, 0.7, -0.56), EntitySize.scalable(0.12F, 0.1F)));
+        this.controlOverrides.put(IncModControl.class, new ControlOverride(new Vector3d(0.00f, 1.08f, -0.61f), EntitySize.scalable(0.12F, 0.1F)));
         //Done
         this.controlOverrides.put(DimensionControl.class, new ControlOverride(new Vector3d(0.7, 0.55, -0.4), EntitySize.scalable(0.3F, 0.3F)));
         //Done
-        this.controlOverrides.put(LandingTypeControl.class, new ControlOverride(new Vector3d(0.03, 0.7, -0.56), EntitySize.scalable(0.12F, 0.1F)));
+        this.controlOverrides.put(LandingTypeControl.class, new ControlOverride(new Vector3d(-0.64f, 0.87f, -0.38f), EntitySize.scalable(0.12F, 0.1F)));
 
         this.controlOverrides.put(SonicPortControl.class, new ControlOverride(new Vector3d(-0.4, 0.6, -0.1), EntitySize.scalable(0.15F, 0.15F)));
         //Done
@@ -58,13 +58,13 @@ public class BattleConsoleTile extends ConsoleTile {
         //Done
         this.controlOverrides.put(ZControl.class, new ControlOverride(new Vector3d(-0.19, 0.55, -0.75), EntitySize.scalable(0.12F, 0.1F)));
 
-        this.controlOverrides.put(ThrottleControl.class, new ControlOverride(new Vector3d(0.58, 0.5, 0.575), EntitySize.scalable(0.3F, 0.35F)));
+        this.controlOverrides.put(ThrottleControl.class, new ControlOverride(new Vector3d(0.53f, 1.08f, 0.49f), EntitySize.scalable(0.3F, 0.35F)));
         //Done
-        this.controlOverrides.put(FastReturnControl.class, new ControlOverride(new Vector3d(0.23, 0.7, -0.56), EntitySize.scalable(0.12F, 0.1F)));
+        this.controlOverrides.put(FastReturnControl.class, new ControlOverride(new Vector3d(0.19f, 1.14f, -0.53f), EntitySize.scalable(0.12F, 0.1F)));
 
-        this.controlOverrides.put(CoffeePot.class, new ControlOverride(new Vector3d(0.004, .6, -1.038),EntitySize.scalable(0.0625F, 0.0625F)));
+        this.controlOverrides.put(CoffeePot.class, new ControlOverride(new Vector3d(-0.19f, 1.14f, -0.53f),EntitySize.scalable(0.0625F, 0.0625F)));
 
-        this.controlOverrides.put(WibblyLever.class, new ControlOverride(new Vector3d(0.004, .6, -1.038),EntitySize.scalable(0.0625F, 0.0625F)));
+        this.controlOverrides.put(WibblyLever.class, new ControlOverride(new Vector3d(0, 0, 0),EntitySize.scalable(0, 0)));
 
 //       this.controlOverrides.put(MonitorControl.class, new ControlOverride(new Vector3d(0.4,0.3,0.2),EntitySize.scalable(0.3125F, 0.3125F)));
     }

@@ -144,6 +144,7 @@ minecraft {
 }
 mixin {
     add sourceSets.main, "${mod_id}.refmap.json"
+    add sourceSets.main, "${mod_id}.tacompat.refmap.json"
     disableOverwriteChecker = true
 }
 
@@ -158,10 +159,11 @@ repositories {
     mavenCentral()
     maven { url 'https://jitpack.io' }
     maven { url "https://cursemaven.com" }
+    maven { url "https://dvs1.progwml6.com/files/maven/" } // JEI Maven
 }
 
 //dependencies {}
-dependencies {
+def var = dependencies {
     // Specify the version of Minecraft to use, If this is any group other then 'net.minecraft' it is assumed
     // that the dep is a ForgeGradle 'patcher' dependency. And it's patches will be applied.
     // The userdev artifact is  a special name and will get all sorts of transformations applied to it.
@@ -171,21 +173,33 @@ dependencies {
     shadow(annotationProcessor("io.github.llamalad7:mixinextras-common:0.3.6")) // Mixin Extras
     implementation "org.spongepowered:mixin:${mixin_version}"
     /************************************ New TARDIS Mod *********************************************/
-//    implementation fg.deobf('com.gitlab.Spectre0987:TardisMod:1.5.4')
     implementation fg.deobf("curse.maven:new-tardis-mod-290247:3667066")
     /************************************ JEI *********************************************/
-    implementation fg.deobf("curse.maven:jei-238222:5534622") // JEI
+    compileOnly fg.deobf("mezz.jei:jei-1.16.5:7.7.1.153:api") // JEI API for compilation
+    runtimeOnly fg.deobf("mezz.jei:jei-1.16.5:7.7.1.153") // Full JEI for runtime
     /************************************ Mekanism *********************************************/
-//    implementation fg.deobf("curse.maven:mekanism-268560:3659389") // Mekanism
+    implementation fg.deobf("curse.maven:mekanism-268560:3659389") // Mekanism
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlin_version"
     /************************************ Temporal API *****************************************/
     implementation fg.deobf("curse.maven:temporalapi-1056469:5967827")
+    /************************************ Create *********************************************/
+    implementation fg.deobf("curse.maven:create-328085:3536025")
+    implementation fg.deobf("curse.maven:flywheel-486392:3535459")
+    ////////////////// Disable these when running datagen ////////////////////
+//    implementation fg.deobf("curse.maven:embeddium-908741:5322311")
+//    implementation fg.deobf("curse.maven:rubidium-extra-654373:4823321")
+    //////////////////////////////////////////////////////////////////////////
+    implementation fg.deobf("curse.maven:jade-324717:3910873")
+    //implementation fg.deobf("curse.maven:essential-mod-546670:6403733")
     /************************************ Cracker's Witherstorm *********************************************/
 //    implementation fg.deobf("curse.maven:crackers-wither-storm-mod-621405:4403153")
     /************************************ Temporal Additions ************************************************/
-//    implementation fg.deobf("curse.maven:t-additions-804564:5844290")
+    implementation fg.deobf("curse.maven:t-additions-804564:6090728")
     /************************************ GeckoLib **********************************************************/
-//    implementation fg.deobf("curse.maven:geckolib-388172:4182600")
+    implementation fg.deobf("curse.maven:geckolib-388172:4182600")
+    /************************************ LomBok ************************************************************/
+    compileOnly 'org.projectlombok:lombok:1.18.32'
+    annotationProcessor 'org.projectlombok:lombok:1.18.32'
     // You may put jars on which you depend on in ./libs or you may define them like so..
     // compile "some.group:artifact:version:classifier"
     // compile "some.group:artifact:version"
@@ -205,6 +219,7 @@ dependencies {
     // http://www.gradle.org/docs/current/userguide/dependency_management.html
 
 }
+var
 shadowJar {
     configurations = [project.configurations.shadow]
     relocate("com.llamalad7.mixinextras", "com.code.aseoha.mixin.mixinextras")
@@ -228,10 +243,11 @@ jar {
                 "Implementation-Timestamp": new Date().format("yyyy-MM-dd'T'HH:mm:ssZ"),
                 "TweakClass": "org.spongepowered.asm.launch.MixinTweaker",
                 "TweakOrder": 0,
-                "MixinConfigs": "aseoha.mixins.json"
+                "MixinConfigs": "aseoha.mixins.json,aseoha.tacompat.mixins.json"
         ])
     }
-    rename 'mixin.refmap.json', 'aseoha.mixin-refmap.json'
+    rename 'aseoha.refmap.json', 'aseoha.mixin-refmap.json'
+    rename 'aseoha.tacompat.refmap.json', 'aseoha.tacompat.mixin-refmap.json'
 }
 
 // Example configuration to allow publishing using the maven-publish task

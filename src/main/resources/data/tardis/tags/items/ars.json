@@ -57,6 +57,22 @@
     "aseoha:toyota_upper_wall_pattern_top_middle",
     "aseoha:toyota_upper_wall_pattern_top_right",
     "aseoha:hb_pole",
-    "aseoha:hb_hex"
+    "aseoha:hammer",
+    "aseoha:jelly_baby/red",
+    "aseoha:alabaster_pipes",
+    "aseoha:alabaster_plate",
+    "aseoha:alabaster_plate_small",
+    "aseoha:alabaster_screen",
+    "aseoha:alabaster_blue_runner_lights",
+    "aseoha:decoration/railing_alabaster",
+    "aseoha:decoration/railing_tungsten",
+    "aseoha:decoration/railing_steam",
+    "aseoha:hb_hex",
+    "aseoha:hb_roundel01",
+    "aseoha:hb_roundel02",
+    "aseoha:hb_roundel03",
+    "aseoha:decoration/railing_steam",
+    "aseoha:decoration/railing_alabaster",
+    "aseoha:decoration/railing_tungsten"
   ]
 }

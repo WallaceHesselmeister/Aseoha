@@ -13,7 +13,7 @@ import net.minecraftforge.fml.common.Mod;
 public class EventBus {
     @SubscribeEvent
     public static void addEntityAttributes(EntityAttributeCreationEvent event) {
-        event.put(ModEntityTypes.K9.get(), k9.setCustomAttributes().build());
+        event.put(ModEntityTypes.K9.get(), K9Entity.setCustomAttributes().build());
         event.put(ModEntityTypes.WALLE.get(), Walle.setCustomAttributes().build());
         event.put(ModEntityTypes.DAVROS_CHAIR.get(), DavrosChair.setCustomAttributes().build());
     }

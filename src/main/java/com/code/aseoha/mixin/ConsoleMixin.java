@@ -1,13 +1,13 @@
 package com.code.aseoha.mixin;
 
 import com.code.aseoha.Config;
+import com.code.aseoha.Helpers.IHelpWithConsole;
 import com.code.aseoha.Helpers.TARDISHelper;
 import com.code.aseoha.aseoha;
-import com.code.aseoha.Helpers.IHelpWithConsole;
 import com.code.aseoha.networking.Networking;
 import com.code.aseoha.networking.Packets.EnterRWFPacket;
 import com.code.aseoha.registries.ControlsRegistry;
-import com.code.aseoha.tileentities.blocks.EOHTile;
+import com.code.aseoha.tileentities.blocks.EOHLinkTile;
 import com.llamalad7.mixinextras.injector.ModifyExpressionValue;
 import net.minecraft.block.BlockState;
 import net.minecraft.entity.Entity;
@@ -45,6 +45,7 @@ import net.tardis.mod.tileentities.ConsoleTile;
 import net.tardis.mod.tileentities.console.misc.ExteriorPropertyManager;
 import net.tardis.mod.tileentities.console.misc.SparkingLevel;
 import net.tardis.mod.tileentities.exteriors.ExteriorTile;
+import org.jetbrains.annotations.NotNull;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Overwrite;
 import org.spongepowered.asm.mixin.Shadow;
@@ -54,7 +55,6 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
-import javax.annotation.Nullable;
 import java.util.Optional;
 
 @Mixin(value = ConsoleTile.class)
@@ -78,10 +78,6 @@ public abstract class ConsoleMixin extends TileEntity implements ITickableTileEn
 
     @Shadow(remap = false)
     public abstract RegistryKey<World> getDestinationDimension();
-
-    @Shadow(remap = false)
-    @Nullable
-    public abstract TardisEntity getEntity();
 
     @Shadow(remap = false)
     private BlockPos destination;
@@ -153,7 +149,7 @@ public abstract class ConsoleMixin extends TileEntity implements ITickableTileEn
 //    private ConsoleTile Aseoha$ConsoleTile;
 
     @Unique
-    public EOHTile Aseoha$EOH;
+    public EOHLinkTile Aseoha$EOH;
 
     @Override
     public boolean Aseoha$GetEOHActive() {
@@ -201,7 +197,6 @@ public abstract class ConsoleMixin extends TileEntity implements ITickableTileEn
 
     @Inject(method = "load(Lnet/minecraft/block/BlockState;Lnet/minecraft/nbt/CompoundNBT;)V", at = @At("HEAD"))
     public void Aseoha$ConsoleRead(BlockState state, CompoundNBT compound, CallbackInfo ci) {
-        /** it's not pretty but it gets the job done **/
         if (compound.contains("hads"))
             this.Aseoha$Hads = compound.getBoolean("hads");
         if (compound.contains("eoh_timer"))
@@ -360,7 +355,7 @@ public abstract class ConsoleMixin extends TileEntity implements ITickableTileEn
     }
 
     @Override
-    public void Aseoha$SetEOH(EOHTile eoh) {
+    public void Aseoha$SetEOH(EOHLinkTile eoh) {
         this.Aseoha$EOH = eoh;
     }
 
@@ -385,7 +380,7 @@ public abstract class ConsoleMixin extends TileEntity implements ITickableTileEn
     }
 
     @Override
-    public EOHTile Aseoha$GetEOH() {
+    public EOHLinkTile Aseoha$GetEOH() {
         return this.Aseoha$EOH;
     }
 
@@ -540,12 +535,23 @@ public abstract class ConsoleMixin extends TileEntity implements ITickableTileEn
     @Inject(method = "crash(Lnet/tardis/mod/misc/CrashType;)V", at = @At("HEAD"), remap = false)
     private void Aseoha$Crash(CrashType type, CallbackInfo ci) {
 //        this.Aseoha$StopRide(false);
-        this.getEntity().ejectPassengers();
+        if(this.getEntity() != null)
+            this.getEntity().ejectPassengers();
     }
 
     @Override
     public TardisEntity Aseoha$GetTardisEntity() {
         return this.tardisEntity != null ? this.tardisEntity : new TardisEntity(this.getLevel());
+    }
+
+    /**
+     * @author Codiak540
+     * @reason Prevent null TEntity
+     */
+    @NotNull
+    @Overwrite(remap = false)
+    public TardisEntity getEntity() {
+        return Aseoha$GetTardisEntity();
     }
 
     @Override

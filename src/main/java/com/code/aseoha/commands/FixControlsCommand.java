@@ -1,7 +1,7 @@
 package com.code.aseoha.commands;
 
 import com.code.aseoha.networking.Networking;
-import com.code.aseoha.networking.Packets.UpdateControlsPacket;
+import com.code.aseoha.networking.Packets.c2s.UpdateControlsPacketC2S;
 import com.mojang.brigadier.Command;
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.builder.ArgumentBuilder;
@@ -21,7 +21,7 @@ public class FixControlsCommand extends TCommand {
             TardisHelper.getConsoleInWorld(source.getLevel()).ifPresent((consoleTile) -> {
                 consoleTile.removeControls();
                 consoleTile.getOrCreateControls();
-                Networking.sendToServer(new UpdateControlsPacket(Objects.requireNonNull(consoleTile.getLevel()).dimension().getRegistryName()));
+                Networking.sendToServer(new UpdateControlsPacketC2S(Objects.requireNonNull(consoleTile.getLevel()).dimension().getRegistryName()));
 //                Network.sendToServer(new ConsoleChangeMessage(consoleTile.getType().getRegistryName()));
                 consoleTile.updateClient();
             });

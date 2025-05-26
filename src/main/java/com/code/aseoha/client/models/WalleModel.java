@@ -3,15 +3,11 @@ package com.code.aseoha.client.models;// Made with Blockbench 4.10.3
 // Paste this class into your mod and generate all required imports
 
 
-import com.code.aseoha.aseoha;
 import com.code.aseoha.entities.Walle;
-import com.code.aseoha.entities.k9;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.vertex.IVertexBuilder;
 import net.minecraft.client.renderer.entity.model.EntityModel;
 import net.minecraft.client.renderer.model.ModelRenderer;
-import net.minecraft.entity.Entity;
-import net.minecraft.util.math.vector.Vector3f;
 
 public class WalleModel <T extends Walle> extends EntityModel<T> {//WalleModel extends EntityModel<Entity> {
 	private final ModelRenderer base;
@@ -612,11 +608,8 @@ public class WalleModel <T extends Walle> extends EntityModel<T> {//WalleModel e
 	@Override
 	public void renderToBuffer(MatrixStack matrixStack, IVertexBuilder buffer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha){
 		matrixStack.scale(0.745f, 0.745f, 0.745f);
-		matrixStack.translate(0f, 4.08f, 0);
+		matrixStack.translate(0f, 0.5f, 0);
 		base.render(matrixStack, buffer, packedLight, packedOverlay, red, green, blue, alpha);
-
-		//		TrackSuspension.render(matrixStack, buffer, packedLight, packedOverlay, red, green, blue, alpha);
-		// 		Tracks.render(matrixStack, buffer, packedLight, packedOverlay, red, green, blue, alpha);
 	}
 
 	public void render(MatrixStack matrixStack, IVertexBuilder buffer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha) {
@@ -643,7 +636,4 @@ public class WalleModel <T extends Walle> extends EntityModel<T> {//WalleModel e
 		RightTrack.y -= 1F;
 
 	}
-
-
-
 }

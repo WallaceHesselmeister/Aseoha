@@ -1,11 +1,11 @@
 package com.code.aseoha.DataGen;
 
+import com.code.aseoha.Constants;
 import com.code.aseoha.aseoha;
 import com.code.aseoha.block.AseohaBlocks;
 import com.code.aseoha.client.Sounds;
 import com.code.aseoha.items.AseohaItems;
-import com.code.aseoha.protocol.RegisterProtocols;
-import com.code.aseoha.registries.AnimReg;
+import com.code.aseoha.protocol.IsomorphicProtocol;
 import com.code.aseoha.registries.SoundSchemeRegister;
 import net.minecraft.data.DataGenerator;
 import net.minecraftforge.common.data.LanguageProvider;
@@ -16,11 +16,30 @@ public class EnglishLang extends LanguageProvider {
         super(gen, aseoha.MODID, "en_us");
     }
 
-    @Override
     /**
      * THANKS JERYN!
      */
+    @Override
     protected void addTranslations() {
+        add(AseohaBlocks.RAILING_STEAM.get(), "Brass Railings");
+        add(AseohaBlocks.RAILING_ALABASTER.get(), "Alabaster Railings");
+        add(AseohaBlocks.RAILING_TUNGSTEN.get(), "Tungsten Railings");
+        add("tooltip.aseoha.acfeau.purpose", "Converts Forge Energy to Artron Energy.");
+        add("tooltip.aseoha.acaufe.purpose", "Converts Artron Energy to Forge Energy.");
+        add("tooltip.aseoha.hammerspace_pouch", "Accesses the Attuned TARDIS's hammerspace Buffer");
+        add("tooltip.aseoha.hammerspace_pouch.second_line", "When used in off hand:");
+        add("tooltip.aseoha.hammerspace_pouch.third_line", "With Empty Main hand: Gives you the first item in the Hammerspace Buffer");
+        add("tooltip.aseoha.hammerspace_pouch.fourth_line", "Shifting With Empty Main hand: Gives you the first item (full stack) in the Hammerspace Buffer");
+        add("tooltip.aseoha.hammerspace_pouch.fifth_line", "With Item in Main hand: Puts the item in your main hand in the Hammerspace Buffer");
+        add("tooltip.aseoha.hammerspace_pouch.sixth_line", "Shifting With Item in Main hand: Puts the item (full stack) in your main hand in the Hammerspace Buffer");
+        add("ars.piece.category.aseoha.ironclad", "Ironclad");
+        add(IsomorphicProtocol.TRANS_OFF.getKey(), "Turn Isomorphic Controls Off");
+        add(IsomorphicProtocol.TRANS_ON.getKey(), "Turn Isomorphic Controls On");
+        add("ars.piece.category.aseoha.ironclad_corridor", "Corridors");
+        add("ars.piece.category.aseoha.ironclad_corridor_tunnel", "Tunnel Corridors");
+        add("ars.piece.category.aseoha.ironclad_rooms", "Rooms");
+        add(AseohaItems.HAMMER_SPACE_POUCH.get().getDescriptionId(), "Hammerspace Hyper-Tapper");
+        add(Constants.WORKBENCH_CATEGORY.getKey(), "Workbench");
         add(AseohaBlocks.FAT_BLOCK.get().asItem().getDescriptionId(), "Fat Block");
 //        add(AseohaItems.MANUAL.get().getDescriptionId(), "Contains information on ASEOHA features");
         add(AseohaItems.GINGERBREAD_CYBERMAN.get().getDescriptionId(), "Gingerbread Cyber-Man");
@@ -58,8 +77,8 @@ public class EnglishLang extends LanguageProvider {
         add("aseoha.gui.coord.suggestion.default", "Set the Coordinate");
         add("aseoha.gui.coord.title", "TARDIS Coordinates");
         add("aseoha.gui.coord_set", "Confirm");
-        add("aseoha.K9Entity.container.screen", "K9 Interface");
-        add("aseoha.K9Entity.inventory", "K-9 Inventory");
+        add("aseoha.k9.container.screen", "K9 Interface");
+        add("aseoha.k9.inventory", "K-9 Inventory");
         add("aseoha.tardis.coor_x", "Set X Coordinate");
         add("aseoha.tardis.coord_x", "Set X Coordinate");
         add("aseoha.tardis.coord_y", "Set Y Coordinate");
@@ -175,7 +194,7 @@ public class EnglishLang extends LanguageProvider {
         add("console.custard.off", "Off");
         add("control.aseoha.coffeepot", "Coffee Pot");
         add("control.aseoha.wibbly_lever", "Wibbly Lever");
-        add("entity.aseoha.K9Entity", "K9");
+        add("entity.aseoha.k9", "K9");
         add("exterior.tardis.bluedoctor", "Blue Doctor Exterior");
         add("exterior.tardis.brackolin", "Brackolin Exterior");
         add("exterior.tardis.hartnell112", "1.12 Hartnell Exterior");
@@ -412,6 +431,7 @@ public class EnglishLang extends LanguageProvider {
         add("tooltip.item.info.reenabled", "This was Re-Enabled by ASEOHA!");
         add("tooltip.part.upgrades/atrium.description", "Takes blocks with the TARDIS exterior \nConsult the ASEOHA Manual for more information");
         add("tooltip.part.upgrades/dynamic_coordinates.description", "Makes the TARDIS monitor update flight position while flying");
+        add("tooltip.part.upgrades/hostile_ejection.description", "Allows the \"Eject Timeship Occupants\" protocol to eject hostile mobs");
         add("item.aseoha.upgrades.dynamic_coordinates", "Dynamic Coordinates Upgrade");
         add("block.aseoha.gallifrey_sand", "Gallifreyan Sand");
         add("block.aseoha.skaro_sand", "Skaro Sand");
@@ -428,6 +448,7 @@ public class EnglishLang extends LanguageProvider {
 
     /**
      * Made to accept Item#toString(), remove the minecraft:item@modid, and capitalize every first letter of every word
+     *
      * @param text Item#toString()
      * @return Item#toString() without minecraft:item@modid and every first letter of every word capitalized
      */
@@ -445,7 +466,7 @@ public class EnglishLang extends LanguageProvider {
         /**
          * Find any characters coming after a space char and replace it with the uppercase variant
          */
-        for(int i = 0; i < text.length(); i++) {
+        for (int i = 0; i < text.length(); i++) {
             if (text.substring(i, i + 1).contains(" "))
                 text = text.replace(text.substring(i, i + 2), text.substring(i, i + 2).toUpperCase());
         }

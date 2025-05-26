@@ -3,21 +3,13 @@ package com.code.aseoha.client.models.exteriors;// Made with Blockbench 4.11.1
 // Paste this class into your mod and generate all required imports
 
 
-import com.code.aseoha.client.renderers.exteriors.BrackolinRender;
 import com.code.aseoha.enums.EnumDoorTypes;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import com.mojang.blaze3d.vertex.IVertexBuilder;
-import net.minecraft.client.renderer.RenderType;
-import net.minecraft.client.renderer.entity.model.EntityModel;
 import net.minecraft.client.renderer.model.ModelRenderer;
 import net.minecraft.entity.Entity;
-import net.minecraft.util.math.vector.Vector3f;
 import net.tardis.mod.client.models.exteriors.ExteriorModel;
-import net.tardis.mod.client.renderers.boti.BOTIRenderer;
-import net.tardis.mod.client.renderers.boti.PortalInfo;
-import net.tardis.mod.client.renderers.exteriors.ExteriorRenderer;
 import net.tardis.mod.enums.EnumDoorState;
-import net.tardis.mod.helper.WorldHelper;
 import net.tardis.mod.tileentities.exteriors.ExteriorTile;
 
 public class mk_two_capaldi extends ExteriorModel {

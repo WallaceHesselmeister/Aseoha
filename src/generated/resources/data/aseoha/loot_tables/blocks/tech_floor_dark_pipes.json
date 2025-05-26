@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "name": "aseoha:tech_floor_dark_pipes",
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "aseoha:tech_floor_dark_pipes"
+        }
+      ]
+    }
+  ]
+}

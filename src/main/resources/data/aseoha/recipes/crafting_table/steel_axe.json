@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " xx",
+    " vx",
+    " v "
+  ],
+  "key": {
+    "x": {
+      "item": "aseoha:steel_ingot"
+    },
+    "v": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "aseoha:steel_axe"
+  }
+}

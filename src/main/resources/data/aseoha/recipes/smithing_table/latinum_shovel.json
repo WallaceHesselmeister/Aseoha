@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:smithing",
+  "base": {
+    "item": "minecraft:netherite_shovel"
+  },
+  "addition": {
+    "item": "aseoha:latinum_bar"
+  },
+  "result": {
+    "item": "aseoha:latinum_shovel"
+  }
+}

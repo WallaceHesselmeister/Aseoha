@@ -1,10 +1,8 @@
 package com.code.aseoha.client.renderers.console;
 
 import com.code.aseoha.aseoha;
-import com.code.aseoha.client.models.consoles.BattleConsole;
-import com.code.aseoha.client.models.consoles.BrackolinConsole;
+import com.code.aseoha.client.models.consoles.BattleConsoleModel;
 import com.code.aseoha.tileentities.consoles.BattleConsoleTile;
-import com.code.aseoha.tileentities.consoles.BrackolinConsoleTile;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.IRenderTypeBuffer;
@@ -17,23 +15,20 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.vector.Vector3f;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
-import net.tardis.mod.controls.MonitorControl;
-import net.tardis.mod.helper.Helper;
-
-import static com.code.aseoha.client.renderers.exteriors.BrackolinRender.TEXT;
+import org.jetbrains.annotations.NotNull;
 
 @OnlyIn(Dist.CLIENT)
 public class BattleConsoleRender extends TileEntityRenderer<BattleConsoleTile> {
 
 	public static final ResourceLocation TEXTURE = new ResourceLocation(aseoha.MODID, "textures/consoles/battle.png");
-	public static final BattleConsole MODEL = new BattleConsole();
+	public static final BattleConsoleModel MODEL = new BattleConsoleModel();
 
 	public BattleConsoleRender(TileEntityRendererDispatcher rendererDispatcherIn) {
 		super(rendererDispatcherIn);
 	}
 
 	@Override
-	public void render(BattleConsoleTile tileEntityIn, float partialTicks, MatrixStack matrixStackIn, IRenderTypeBuffer bufferIn, int combinedLightIn, int combinedOverlayIn) {
+	public void render(@NotNull BattleConsoleTile tileEntityIn, float partialTicks, MatrixStack matrixStackIn, IRenderTypeBuffer bufferIn, int combinedLightIn, int combinedOverlayIn) {
 		matrixStackIn.pushPose();
 		float scale = 0.0625F;
 		matrixStackIn.scale((float) 1.15, (float) 1.15, (float) 1.15);

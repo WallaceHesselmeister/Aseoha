@@ -1,0 +1,14 @@
+{
+  "type": "tardis:quantiscope",
+  "repair":false,
+  "ingredients":[
+    {"item":"tardis:sonic"},
+    {"item":"tardis:artron_battery_high"},
+    {"item":"tardis:earthshock_gun"},
+    {"item":"aseoha:steel_ingot"},
+    {"item":"tardis:circuits"}
+  ],
+  "result":{
+    "item":"aseoha:sonic_laser"
+  }
+}

@@ -1,5 +1,7 @@
 package com.code.aseoha;
 
+import net.minecraft.item.crafting.IRecipeSerializer;
+import net.minecraft.item.crafting.SmithingRecipe;
 import net.minecraft.util.RegistryKey;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.registry.Registry;
@@ -17,6 +19,7 @@ public class Constants {
     public final static RegistryKey<Biome> GALLIFREY_BIOME = RegistryKey.create(Registry.BIOME_REGISTRY, new ResourceLocation("aseoha", "gallifrey_biome"));
     public final static RegistryKey<Biome> GALLIFREY_DESERT_BIOME = RegistryKey.create(Registry.BIOME_REGISTRY, new ResourceLocation("aseoha", "gallifrey_desert"));
 
+    public final static TranslationTextComponent WORKBENCH_CATEGORY = new TranslationTextComponent("aseoha.jei.category.workbench");
     public final static RegistryKey<Biome> REDLANDS_TAIGA_BIOME = RegistryKey.create(Registry.BIOME_REGISTRY, new ResourceLocation("aseoha", "redlands_taiga"));
     public final static RegistryKey<World> MIDNIGHT = RegistryKey.create(Registry.DIMENSION_REGISTRY, new ResourceLocation("aseoha", "midnight"));
     public final static ITextComponent AffirmativeK9 = new StringTextComponent("[K9] Affirmative, Master!");
@@ -25,4 +28,7 @@ public class Constants {
     public static final TranslationTextComponent TOOLTIP_REENABLED = new TranslationTextComponent("tooltip.item.info.reenabled");
 //    public static final ITag.INamedTag<Item> BOOKSHELF_BOOKS = bind("bookshelf_books");
     public final static String waysOfSayingK9[] = {"k9", "k-9", "k 9"};
+
+    IRecipeSerializer<SmithingRecipe> WORKBENCH = IRecipeSerializer.register("aseoha_workbench", new SmithingRecipe.Serializer());
+
 }

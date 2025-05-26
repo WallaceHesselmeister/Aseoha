@@ -1,0 +1,26 @@
+{
+  "display": {
+    "icon": {
+      "item": "aseoha:upgrades/warp_drive"
+    },
+    "title": "*Almost, Instant",
+    "description": "Obtain a light speed drive upgrade to traverse the time vortex faster than ever before",
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "aseoha:aseoha",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "aseoha:upgrades/lightspeed_drive"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -4,7 +4,7 @@ import com.code.aseoha.Helpers.IHelpWithConsole;
 import com.code.aseoha.Helpers.IHelpWithExterior;
 import com.code.aseoha.misc.PassNotNull;
 import com.code.aseoha.networking.Networking;
-import com.code.aseoha.networking.Packets.ExteriorSizePacket;
+import com.code.aseoha.networking.Packets.s2c.ExteriorSizePacketS2C;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.ServerPlayerEntity;
 import net.minecraft.util.text.TranslationTextComponent;
@@ -34,7 +34,7 @@ public class ShrinkProtocol extends Protocol {
 
         ((IHelpWithConsole) console).Aseoha$SetExteriorSize(sw);
         ((IHelpWithExterior) ext).Aseoha$SetScale(sw);
-        Networking.sendToClient((ServerPlayerEntity) playerIn, new ExteriorSizePacket(
+        Networking.sendToClient((ServerPlayerEntity) playerIn, new ExteriorSizePacketS2C(
                 PassNotNull.NotNullWorldRegKey(console.getLevel().dimension(), world.dimension()).getRegistryName(), sw));
     }
 

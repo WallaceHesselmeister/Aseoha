@@ -1,7 +1,7 @@
 package com.code.aseoha.client.renderers.blocks;
 
 import com.code.aseoha.client.models.blocks.EOHModel;
-import com.code.aseoha.tileentities.blocks.EOHTile;
+import com.code.aseoha.tileentities.blocks.EOHLinkTile;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.IRenderTypeBuffer;
@@ -18,7 +18,7 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 import org.jetbrains.annotations.NotNull;
 
 @OnlyIn(Dist.CLIENT)
-public class EOHRenderer extends TileEntityRenderer<EOHTile> {
+public class EOHRenderer extends TileEntityRenderer<EOHLinkTile> {
     public static ResourceLocation TEXTURE = new ResourceLocation("aseoha", "textures/block/eoh.png");
 
     private EOHModel MODEL = new EOHModel();
@@ -28,7 +28,7 @@ public class EOHRenderer extends TileEntityRenderer<EOHTile> {
     }
 
     @Override
-    public void render(@NotNull EOHTile eohTile, float v, MatrixStack matrixStackIn, IRenderTypeBuffer iRenderTypeBuffer, int i, int i1) {
+    public void render(@NotNull EOHLinkTile eohTile, float v, MatrixStack matrixStackIn, IRenderTypeBuffer iRenderTypeBuffer, int i, int i1) {
         matrixStackIn.pushPose();
         float scale = 0.0625F;
         matrixStackIn.scale((float) 1, (float) 1, (float) 1);
@@ -42,7 +42,7 @@ public class EOHRenderer extends TileEntityRenderer<EOHTile> {
         matrixStackIn.translate(0.5, 3, 0.5);
         matrixStackIn.scale(1, 1, 1);
         matrixStackIn.mulPose(Vector3f.YP.rotationDegrees(90));
-        if (!eohTile.active && eohTile.GetHasStar())
+        if (!eohTile.active && eohTile.isHasStar())
             Minecraft.getInstance().getItemRenderer().renderStatic(Items.NETHER_STAR.getDefaultInstance(), ItemCameraTransforms.TransformType.NONE, i, i1, matrixStackIn, iRenderTypeBuffer);
         matrixStackIn.popPose();
     }

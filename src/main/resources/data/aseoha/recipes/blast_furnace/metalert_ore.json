@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": {
+    "item": "aseoha:metalert_ore"
+  },
+  "result": "aseoha:metalert_ingot",
+  "experience": 3.0,
+  "cookingtime": 350
+}

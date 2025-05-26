@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": {
+    "item": "aseoha:dalekanium_ore"
+  },
+  "result": "aseoha:dalekanium_ingot",
+  "experience": 3.0,
+  "cookingtime": 350
+}

@@ -59,6 +59,23 @@ public class TextureVariants {
 
 
     public static final TexVariant[] ALFIEHUDOLIN = {new TexVariant(new ResourceLocation(aseoha.MODID,"textures/exteriors/alfiehudolin.png"), "exteriors.alfiehudolin.default")};//new TexVariant[]{new TexVariant("coral", "tardis.common.normal")};
+
+    public static final TexVariant[] COLIN_RICHMOND = {
+            new TexVariant(new ResourceLocation(aseoha.MODID,"textures/exteriors/colin_richmond/rtd_9.png"), "exteriors.colin_richmond.rtd.9"),
+            new TexVariant(new ResourceLocation(aseoha.MODID,"textures/exteriors/colin_richmond/rtd_9_bw.png"), "exteriors.colin_richmond.rtd.9.bw"),
+            new TexVariant(new ResourceLocation(aseoha.MODID,"textures/exteriors/colin_richmond/rtd_10.png"), "exteriors.colin_richmond.rtd.10"),
+            new TexVariant(new ResourceLocation(aseoha.MODID,"textures/exteriors/colin_richmond/rtd_10.png"), "exteriors.colin_richmond.rtd.10.bw"),
+            new TexVariant(new ResourceLocation(aseoha.MODID,"textures/exteriors/colin_richmond/rtd_war.png"), "exteriors.colin_richmond.rtd.war"),
+            new TexVariant(new ResourceLocation(aseoha.MODID,"textures/exteriors/colin_richmond/mof_11a.png"), "exteriors.colin_richmond.mof.11a"),
+            new TexVariant(new ResourceLocation(aseoha.MODID,"textures/exteriors/colin_richmond/mof_11b.png"), "exteriors.colin_richmond.mof.11b"),
+            new TexVariant(new ResourceLocation(aseoha.MODID,"textures/exteriors/colin_richmond/mof_11c.png"), "exteriors.colin_richmond.mof.11c"),
+            new TexVariant(new ResourceLocation(aseoha.MODID,"textures/exteriors/colin_richmond/mof_12a.png"), "exteriors.colin_richmond.mof.12a"),
+            new TexVariant(new ResourceLocation(aseoha.MODID,"textures/exteriors/colin_richmond/mof_12b.png"), "exteriors.colin_richmond.mof.12b"),
+            new TexVariant(new ResourceLocation(aseoha.MODID,"textures/exteriors/colin_richmond/custom_edwardian.png"), "exteriors.colin_richmond.custom.edwardian"),
+            new TexVariant(new ResourceLocation(aseoha.MODID,"textures/exteriors/colin_richmond/custom_isy.png"), "exteriors.colin_richmond.custom.isy"),
+            new TexVariant(new ResourceLocation(aseoha.MODID,"textures/exteriors/colin_richmond/custom_km9.png"), "exteriors.colin_richmond.custom.km9"),
+            new TexVariant(new ResourceLocation(aseoha.MODID,"textures/exteriors/colin_richmond/custom_wgm.png"), "exteriors.colin_richmond.custom.wgm"),
+    };
 //    public TextureVariants() {}
 
 public static final TexVariant[] COPPER = {//new TexVariant[]{

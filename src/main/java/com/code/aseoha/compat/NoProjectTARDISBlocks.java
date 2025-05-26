@@ -19,7 +19,6 @@ public class NoProjectTARDISBlocks {
     public static final DeferredRegister<Block> BLOCKS
             = DeferredRegister.create(ForgeRegistries.BLOCKS, MODID);
 
-
     public static final RegistryObject<Block> CORAL = registerBlock("tardis_coral",
             () -> new Coral(Block.Properties.copy(Blocks.IRON_BLOCK).noOcclusion()));
 

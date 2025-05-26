@@ -1,5 +1,5 @@
 package com.code.aseoha.client.renderers;
-import com.code.aseoha.entities.k9;
+import com.code.aseoha.entities.K9Entity;
 import com.code.aseoha.client.models.k9model;
 import com.code.aseoha.aseoha;
 
@@ -10,7 +10,7 @@ import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
 @OnlyIn(Dist.CLIENT)
-public class k9render extends MobRenderer<k9, k9model<k9>>
+public class k9render extends MobRenderer<K9Entity, k9model<K9Entity>>
 {
     protected static final ResourceLocation TEXTURE =
             new ResourceLocation(aseoha.MODID, "textures/entity/k9.png");
@@ -20,7 +20,7 @@ public class k9render extends MobRenderer<k9, k9model<k9>>
     }
 
     @Override
-    public ResourceLocation getTextureLocation(k9 k9) {
+    public ResourceLocation getTextureLocation(K9Entity k9) {
         return TEXTURE;
     }
 }

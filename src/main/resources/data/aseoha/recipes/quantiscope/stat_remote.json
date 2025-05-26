@@ -1,0 +1,14 @@
+{
+  "type": "tardis:quantiscope",
+  "repair":false,
+  "ingredients":[
+    {"item":"minecraft:netherite_ingot"},
+    {"item":"tardis:circuits"},
+    {"item":"tardis:subsystem/interstitial_antenna"},
+    {"item":"minecraft:redstone_block"},
+    {"item":"minecraft:netherite_ingot"}
+  ],
+  "result":{
+    "item":"tardis:stattenheim_remote"
+  }
+}

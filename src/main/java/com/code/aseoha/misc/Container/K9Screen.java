@@ -1,7 +1,7 @@
 package com.code.aseoha.misc.Container;
 
 import com.code.aseoha.aseoha;
-import com.code.aseoha.entities.k9;
+import com.code.aseoha.entities.K9Entity;
 import com.mojang.blaze3d.matrix.MatrixStack;
 import net.minecraft.client.Minecraft;
 import net.minecraft.util.ResourceLocation;
@@ -14,12 +14,12 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 
 @OnlyIn(Dist.CLIENT)
 public class K9Screen extends K9MonitorScreen {
-    public static final ResourceLocation TEXTURE = new ResourceLocation(aseoha.MODID, "textures/gui/monitors/k9.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(aseoha.MODID, "textures/gui/monitors/K9Entity.png");
 
     /**
      * This is here for emotional support for java
      */
-    public K9Screen(k9 intK9){
+    public K9Screen(K9Entity intK9){
         super(intK9);
     }
     @Override

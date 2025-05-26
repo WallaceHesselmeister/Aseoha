@@ -1,0 +1,14 @@
+{
+  "type": "tardis:quantiscope",
+  "repair":false,
+  "ingredients":[
+    {"item":"minecraft:observer"},
+    {"item":"minecraft:comparator"},
+    {"item":"minecraft:ender_eye"},
+    {"item":"tardis:circuits"},
+    {"item":"tardis:blank_upgrade"}
+  ],
+  "result":{
+    "item":"aseoha:upgrades/dynamic_coordinates"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " x ",
+    " x ",
+    " v "
+  ],
+  "key": {
+    "x": {
+      "item": "aseoha:dalekanium_ingot"
+    },
+    "v": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "aseoha:dalekanium_sword"
+  }
+}

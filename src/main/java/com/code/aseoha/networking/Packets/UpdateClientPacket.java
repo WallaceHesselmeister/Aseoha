@@ -30,19 +30,14 @@ public class UpdateClientPacket {
     }
 
     public static void handle(UpdateClientPacket mes, @NotNull Supplier<NetworkEvent.Context> ctx) {
-        ((NetworkEvent.Context) ctx.get()).enqueueWork(() -> {
-            ServerWorld world = Objects.requireNonNull(((NetworkEvent.Context) ctx.get()).getSender()).getLevel();
-            if (WorldHelper.areDimensionTypesSame(world, TDimensions.DimensionTypes.TARDIS_TYPE)) {
-                TileEntity te = world.getBlockEntity(TardisHelper.TARDIS_POS);
-                if (te instanceof ConsoleTile) {
-                    if (((ConsoleTile) te) != null) {
-                        ((ConsoleTile) te).updateClient();
-                    }
-                }
+        ctx.get().enqueueWork(() -> {
+            ServerWorld world = Objects.requireNonNull(ctx.get().getSender()).getLevel();
+            if (!WorldHelper.areDimensionTypesSame(world, TDimensions.DimensionTypes.TARDIS_TYPE)) return;
+            TileEntity te = world.getBlockEntity(TardisHelper.TARDIS_POS);
+            if (te instanceof ConsoleTile) {
+                ((ConsoleTile) te).updateClient();
             }
         });
-        ((NetworkEvent.Context) ctx.get()).setPacketHandled(true);
+        ctx.get().setPacketHandled(true);
     }
-
-
 }
