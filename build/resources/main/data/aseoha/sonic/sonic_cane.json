@@ -1,0 +1,13 @@
+{
+  "id": "aseoha:sonic_cane",
+  "models": {
+    "inactive":  "aseoha:item/sonic/cane_inactive",
+    "interaction":  "aseoha:item/sonic/cane_interactive",
+    "overload":  "aseoha:item/sonic/cane_overload",
+    "scanning":  "aseoha:item/sonic/cane_scanning",
+    "tardis":  "aseoha:item/sonic/cane_tardis"
+  },
+  "loyalty": {
+    "type": "NEUTRAL"
+  }
+}
