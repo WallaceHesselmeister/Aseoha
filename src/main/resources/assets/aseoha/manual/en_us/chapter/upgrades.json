@@ -3,6 +3,9 @@
   "pages": [
     "aseoha:upgrades/upgrades_intro",
     "aseoha:upgrades/engine_boosters",
+    "aseoha:upgrades/light_speed_drive",
+    "aseoha:upgrades/tesseract_drive",
+    "aseoha:upgrades/warp_drive",
     "aseoha:upgrades/dynamic_coordinates",
     "aseoha:upgrades/atrium"
   ]
