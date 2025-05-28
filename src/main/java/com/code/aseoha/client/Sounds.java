@@ -66,6 +66,15 @@ public class Sounds {
     public static final RegistryObject<SoundEvent> MAJESTIC_TALE = SOUNDS.register("majestic_tale", () -> {
         return setupSound("majestic_tale");
     });
+    public static final RegistryObject<SoundEvent> CYBER_ARMY = SOUNDS.register("cyber_army", () -> {
+        return setupSound("cyber_army");
+    });
+    public static final RegistryObject<SoundEvent> CYBERMEN = SOUNDS.register("cybermen", () -> {
+        return setupSound("cybermen");
+    });
+    public static final RegistryObject<SoundEvent> IDIOT_BOX = SOUNDS.register("idiot_box", () -> {
+        return setupSound("idiot_box");
+    });
 
     public static final RegistryObject<SoundEvent> AFFIRMATIVE_MASTER = SOUNDS.register("affirmative_master", () -> {
         return setupSound("affirmative_master");

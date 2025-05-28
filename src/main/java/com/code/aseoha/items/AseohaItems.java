@@ -221,6 +221,15 @@ public class AseohaItems {
     public static final RegistryObject<Item> MAJESTIC_TALE_DISC = ITEMS.register("majestic_tale_disc",
             () -> new MusicDiscItem(1, Sounds.MAJESTIC_TALE, new Item.Properties().stacksTo(1).tab(AseohaItemGroups.ASEOHA_GROUP)));
 
+    public static final RegistryObject<Item> CYBER_ARMY_DISC = ITEMS.register("cyber_army_disc",
+            () -> new MusicDiscItem(1, Sounds.CYBER_ARMY, new Item.Properties().stacksTo(1).tab(AseohaItemGroups.ASEOHA_GROUP)));
+
+    public static final RegistryObject<Item> CYBERMEN_DISC = ITEMS.register("cybermen_disc",
+            () -> new MusicDiscItem(1, Sounds.CYBERMEN, new Item.Properties().stacksTo(1).tab(AseohaItemGroups.ASEOHA_GROUP)));
+
+    public static final RegistryObject<Item> IDIOT_BOX_DISC = ITEMS.register("idiot_box_disc",
+            () -> new MusicDiscItem(1, Sounds.IDIOT_BOX, new Item.Properties().stacksTo(1).tab(AseohaItemGroups.ASEOHA_GROUP)));
+
     public static final RegistryObject<Item> HAMMER = ITEMS.register("hammer",
             ()-> new Item(new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP).stacksTo(1).rarity(Rarity.RARE).fireResistant()));
 

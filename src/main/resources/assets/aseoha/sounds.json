@@ -55,6 +55,32 @@
       }
     ]
   },
+  "cyber_army": {
+    "sounds": [
+      {
+        "name": "aseoha:aseoha/cyber_army",
+        "stream": true
+      }
+    ]
+  },
+  "cybermen": {
+    "sounds": [
+      {
+          "name": "aseoha:aseoha/cybermen",
+          "stream": true
+      }
+    ]
+  },
+    "idiot_box": {
+      "sounds": [
+        {
+          "name": "aseoha:aseoha/idiot_box",
+          "stream": true
+        }
+      ]
+    },
+
+
   "throttle_blast": {
     "category": "block",
     "subtitle": "aseoha.subtitle.time_blast",
