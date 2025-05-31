@@ -203,6 +203,9 @@ public class AseohaItems {
     public static final RegistryObject<Item> LATINUM_BOTTLE = ITEMS.register("latinum_bottle",
             ()-> new Item(new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP).stacksTo(16).rarity(Rarity.RARE)));
 
+    public static final RegistryObject<Item> HUON_BOTTLE = ITEMS.register("huon_bottle",
+            ()-> new Item(new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP).stacksTo(16).rarity(Rarity.RARE)));
+
     public static final RegistryObject<Item> LATINUM_BUCKET = ITEMS.register("latinum_bucket",
             ()-> new BucketItem(ModFluids.LATINUM, new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP).craftRemainder(Items.BUCKET).stacksTo(1).rarity(Rarity.RARE)));
 

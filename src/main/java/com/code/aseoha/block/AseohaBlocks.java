@@ -246,7 +246,10 @@ public class AseohaBlocks {
             () -> new Block(AbstractBlock.Properties.of(Material.STONE, MaterialColor.CLAY).strength(1.0F).sound(SoundType.STONE))); 
 
     public static final RegistryObject<Block> LATINUM_ORE = registerBlock("latinum_ore",
-            () -> new Block(AbstractBlock.Properties.of(Material.STONE, MaterialColor.CLAY).strength(1.0F).sound(SoundType.STONE)));    
+            () -> new Block(AbstractBlock.Properties.of(Material.STONE, MaterialColor.CLAY).strength(1.0F).sound(SoundType.STONE)));
+
+    public static final RegistryObject<Block> HUON_CRYSTAL = registerBlock("huon_crystal",
+            () -> new Block(AbstractBlock.Properties.of(Material.STONE, MaterialColor.COLOR_YELLOW).strength(1.0F).sound(SoundType.STONE)));
 
     /****************************  ALABASTER  *************************/
 
@@ -294,6 +297,7 @@ public class AseohaBlocks {
 
     public static final RegistryObject<Block> TRANSDUCTION_BARRIER_OFF = registerBlock("transduction_barrier_off",
             () -> new Block(AbstractBlock.Properties.of(Material.STONE).strength(0.3F).sound(SoundType.STONE)));
+
 
     /****************************  Particle Accelerator *********************/
 
