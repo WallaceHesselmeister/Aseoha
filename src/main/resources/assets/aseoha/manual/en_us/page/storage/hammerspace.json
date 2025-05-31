@@ -1,4 +1,4 @@
 {
   "type":"normal",
-  "text":"Hammerpace Hyper - Tapper\nThis item is used to access the Attuned TARDIS's hammerspace Buffer, which is a storage system that allows you to store items in a special buffer that can be accessed from anywhere in the TARDIS.\n\nTo use the Hammerspace Hyper - Tapper, simply hold it in your offhand and right-click. This will open the Hammerspace Buffer GUI, where you can see the items stored in the buffer and interact with them.\n\nYou can also use the Hammerspace Hyper - Tapper to store items in the buffer by holding an item in your main hand and right-clicking while holding the Hammerspace Hyper - Tapper in your offhand. This will store the item in the buffer, allowing you to access it later.\n\nNote: The Hammerspace Hyper - Tapper can only be used with Attuned TARDISes."
+  "text":"Hammerpace Hyper - Tapper\nThis item is used to access the Attuned TARDIS's hammerspace Buffer, allowing the user to stow away and retreive items from it even while not in the tardis itself\nNote: The Hammerspace Hyper - Tapper can only be used with Attuned TARDISes."
 }
