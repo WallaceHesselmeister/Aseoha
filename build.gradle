@@ -153,6 +153,16 @@ dependencies {
 
 //    implementation fg.deobf("curse.maven:new-tardis-mod-290247:6041678")
 	implementation fg.deobf("curse.maven:new-tardis-mod-290247:6649501")
+	implementation fg.deobf("curse.maven:create-328085:6641603")
+	implementation fg.deobf("curse.maven:create-connected-947914:6650193")
+	implementation fg.deobf("curse.maven:embeddium-908741:5681725")
+	implementation fg.deobf("curse.maven:free-cam-557076:4643128")
+	implementation fg.deobf("curse.maven:controlling-250398:4646682")
+	implementation fg.deobf("curse.maven:searchables-858542:5284015")
+	implementation fg.deobf("curse.maven:configured-457570:5180900")
+	implementation fg.deobf("curse.maven:xaeros-minimap-263420:6515024")
+	implementation fg.deobf("curse.maven:xaeros-world-map-317780:6538337")
+	implementation fg.deobf("curse.maven:jei-238222:6600311")
 
 //	implementation fg.deobf("curse.maven:building-gadgets-298187:5358453")
 
