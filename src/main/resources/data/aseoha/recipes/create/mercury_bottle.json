@@ -1,0 +1,13 @@
+{
+  "ingredients" : [ {
+    "item" : "minecraft:glass_bottle"
+  }, {
+    "amount" : 500,
+    "fluid" : "tardis:mercury",
+    "nbt" : { }
+  } ],
+  "results" : [ {
+    "item" : "tardis:mercury_bottle"
+  } ],
+  "type" : "create:filling"
+}

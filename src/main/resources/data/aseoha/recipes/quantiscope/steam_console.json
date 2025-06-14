@@ -1,0 +1,16 @@
+{
+  "main_component" : {
+    "item" : "minecraft:copper_nugget"
+  },
+  "other_ingredients" : [ {
+    "item" : "tardis:exo_circuits"
+  }, {
+    "item" : "minecraft:copper_nugget"
+  }, {
+    "item" : "minecraft:copper_nugget"
+  } ],
+  "result" : {
+    "item" : "tardis:steam_console"
+  },
+  "type" : "tardis:quantiscope/crafting"
+}

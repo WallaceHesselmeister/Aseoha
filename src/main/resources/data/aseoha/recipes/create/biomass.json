@@ -1,0 +1,14 @@
+{
+  "heatRequirement" : "heated",
+  "ingredients" : [ {
+    "tag" : "tardis:biomass"
+  }, {
+    "amount" : 100,
+    "fluid" : "minecraft:water"
+  } ],
+  "results" : [ {
+    "amount" : 50,
+    "fluid" : "tardis:biomass"
+  } ],
+  "type" : "create:mixing"
+}

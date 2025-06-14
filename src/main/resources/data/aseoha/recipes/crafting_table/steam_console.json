@@ -1,0 +1,10 @@
+{
+  "ingredients" : [ {
+    "item" : "tardis:steam_console"
+  } ],
+  "result" : {
+    "count" : 1,
+    "item" : "tardis:neuveau_console"
+  },
+  "type" : "minecraft:crafting_shapeless"
+}

@@ -1,0 +1,14 @@
+{
+  "heatRequirement" : "heated",
+  "ingredients" : [ {
+    "item" : "tardis:cinnabar"
+  }, {
+    "amount" : 500,
+    "fluid" : "minecraft:water"
+  } ],
+  "results" : [ {
+    "amount" : 250,
+    "fluid" : "tardis:mercury"
+  } ],
+  "type" : "create:mixing"
+}

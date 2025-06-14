@@ -1,0 +1,10 @@
+{
+  "ingredients" : [ {
+    "item" : "tardis:galvanic_console"
+  } ],
+  "result" : {
+    "count" : 1,
+    "item" : "tardis:nemo_console"
+  },
+  "type" : "minecraft:crafting_shapeless"
+}
