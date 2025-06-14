@@ -1,14 +1,10 @@
 {
-  "type": "minecraft:block",
-  "pools": [
-    {
-      "rolls": 1,
-      "entries": [
-        {
-          "type": "minecraft:item",
-          "name": "aseoha:facing_control"
-        }
-      ]
-    }
-  ]
+  "pools" : [ {
+    "entries" : [ {
+      "name" : "aseoha:facing_control",
+      "type" : "minecraft:item"
+    } ],
+    "rolls" : 1
+  } ],
+  "type" : "minecraft:block"
 }

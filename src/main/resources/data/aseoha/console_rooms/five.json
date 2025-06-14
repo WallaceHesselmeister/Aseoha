@@ -1,10 +1,10 @@
 {
-  "structure_resource_location":"aseoha:five",
-  "display_name":"Lodge",
-  "x_offset":16,
-  "y_offset":2,
-  "z_offset":16,
-  "using_remote_image":false,
-  "remote_image_url":"",
-  "image_resource_location":"aseoha:preview_lodge.png"
+  "display_name" : "Lodge",
+  "image_resource_location" : "aseoha:preview_lodge.png",
+  "remote_image_url" : "",
+  "structure_resource_location" : "aseoha:five",
+  "using_remote_image" : false,
+  "x_offset" : 16,
+  "y_offset" : 2,
+  "z_offset" : 16
 }

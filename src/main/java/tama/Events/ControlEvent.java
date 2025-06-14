@@ -1,3 +1,4 @@
+/* (C) TAMA Studios 2025 */
 package tama.Events;
 
 import net.minecraft.world.entity.Entity;
@@ -5,7 +6,6 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.eventbus.api.Cancelable;
 import net.minecraftforge.eventbus.api.Event;
 import net.tardis.mod.cap.level.ITardisLevel;
-
 
 public class ControlEvent extends Event {
 

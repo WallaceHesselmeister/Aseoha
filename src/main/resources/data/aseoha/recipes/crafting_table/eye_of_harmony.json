@@ -1,28 +1,24 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "fxf",
-    "xzx",
-    "crc"
-  ],
-  "key": {
-    "x": {
-      "item": "minecraft:glass_pane"
+  "key" : {
+    "c" : {
+      "item" : "tardis:circuits"
     },
-    "z": {
-      "item": "aseoha:blue_crystal"
+    "f" : {
+      "item" : "minecraft:redstone_lamp"
     },
-    "r": {
-      "item": "minecraft:redstone"
+    "r" : {
+      "item" : "minecraft:redstone"
     },
-    "f": {
-      "item": "minecraft:redstone_lamp"
+    "x" : {
+      "item" : "minecraft:glass_pane"
     },
-    "c": {
-      "item": "tardis:circuits"
+    "z" : {
+      "item" : "aseoha:blue_crystal"
     }
   },
-  "result": {
-    "item": "aseoha:eye_of_harmony"
-  }
+  "pattern" : [ "fxf", "xzx", "crc" ],
+  "result" : {
+    "item" : "aseoha:eye_of_harmony"
+  },
+  "type" : "minecraft:crafting_shaped"
 }

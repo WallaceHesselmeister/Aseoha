@@ -1,10 +1,10 @@
 {
-  "structure_resource_location":"aseoha:valeyard_interior",
-  "display_name":"Valeyard Studios",
-  "x_offset":10,
-  "y_offset":9,
-  "z_offset":30,
-  "using_remote_image":false,
-  "remote_image_url":"https://imgur.com/b563wg1",
-  "image_resource_location":"aseoha:textures/gui/interior/valeyard_interior.png"
+  "display_name" : "Valeyard Studios",
+  "image_resource_location" : "aseoha:textures/gui/interior/valeyard_interior.png",
+  "remote_image_url" : "https://imgur.com/b563wg1",
+  "structure_resource_location" : "aseoha:valeyard_interior",
+  "using_remote_image" : false,
+  "x_offset" : 10,
+  "y_offset" : 9,
+  "z_offset" : 30
 }

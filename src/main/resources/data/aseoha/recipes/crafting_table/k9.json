@@ -1,32 +1,28 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "pattern": [
-    " d ",
-    "Xb#",
-    "#gN"
-  ],
-  "key": {
-    "#": {
-      "item": "minecraft:iron_ingot"
+  "key" : {
+    "#" : {
+      "item" : "minecraft:iron_ingot"
     },
-    "g": {
-      "item": "minecraft:netherite_scrap"
+    "N" : {
+      "item" : "minecraft:redstone_block"
     },
-    "N": {
-      "item": "minecraft:redstone_block"
+    "X" : {
+      "item" : "minecraft:gold_ingot"
     },
-    "X": {
-      "item": "minecraft:gold_ingot"
+    "b" : {
+      "item" : "tardis:artron_battery_medium"
     },
-    "b": {
-      "item": "tardis:artron_battery_medium"
+    "d" : {
+      "item" : "minecraft:daylight_detector"
     },
-    "d": {
-      "item": "minecraft:daylight_detector"
+    "g" : {
+      "item" : "minecraft:netherite_scrap"
     }
   },
-  "result": {
-    "item": "aseoha:k9_spawn_egg",
-    "count": 1
-  }
+  "pattern" : [ " d ", "Xb#", "#gN" ],
+  "result" : {
+    "count" : 1,
+    "item" : "aseoha:k9_spawn_egg"
+  },
+  "type" : "minecraft:crafting_shaped"
 }

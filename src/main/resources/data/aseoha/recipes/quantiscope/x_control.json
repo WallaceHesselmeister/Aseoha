@@ -1,12 +1,14 @@
 {
-  "type": "tardis:quantiscope",
-  "repair":false,
-  "ingredients":[
-    {"item":"minecraft:redstone"},
-    {"item":"aseoha:control_mold"},
-    {"item":"minecraft:stone_button"}
-  ],
-  "result":{
-    "item":"aseoha:x_control"
-  }
+  "ingredients" : [ {
+    "item" : "minecraft:redstone"
+  }, {
+    "item" : "aseoha:control_mold"
+  }, {
+    "item" : "minecraft:stone_button"
+  } ],
+  "repair" : false,
+  "result" : {
+    "item" : "aseoha:x_control"
+  },
+  "type" : "tardis:quantiscope"
 }

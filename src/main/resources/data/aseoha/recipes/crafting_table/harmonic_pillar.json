@@ -1,22 +1,18 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "pattern": [
-    " x ",
-    " G ",
-    " g "
-  ],
-  "key": {
-    "x": {
-      "item": "minecraft:glass"
+  "key" : {
+    "G" : {
+      "item" : "minecraft:gold_block"
     },
-    "G": {
-      "item": "minecraft:gold_block"
+    "g" : {
+      "item" : "minecraft:gold_ingot"
     },
-    "g": {
-      "item": "minecraft:gold_ingot"
+    "x" : {
+      "item" : "minecraft:glass"
     }
   },
-  "result": {
-    "item": "aseoha:harmonic_pillar"
-  }
+  "pattern" : [ " x ", " G ", " g " ],
+  "result" : {
+    "item" : "aseoha:harmonic_pillar"
+  },
+  "type" : "minecraft:crafting_shaped"
 }

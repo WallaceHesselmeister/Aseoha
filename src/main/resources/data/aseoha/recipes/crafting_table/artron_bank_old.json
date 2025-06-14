@@ -1,23 +1,19 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "#g#",
-    "gNg",
-    "#g#"
-  ],
-  "key": {
-    "#": {
-      "item": "tardis:xion_crystal"
+  "key" : {
+    "#" : {
+      "item" : "tardis:xion_crystal"
     },
-    "g": {
-      "item": "minecraft:gold_ingot"
+    "N" : {
+      "item" : "minecraft:diamond"
     },
-    "N": {
-      "item": "minecraft:diamond"
+    "g" : {
+      "item" : "minecraft:gold_ingot"
     }
   },
-  "result": {
-    "item": "aseoha:artron_bank_old",
-    "count": 1
-  }
+  "pattern" : [ "#g#", "gNg", "#g#" ],
+  "result" : {
+    "count" : 1,
+    "item" : "aseoha:artron_bank_old"
+  },
+  "type" : "minecraft:crafting_shaped"
 }

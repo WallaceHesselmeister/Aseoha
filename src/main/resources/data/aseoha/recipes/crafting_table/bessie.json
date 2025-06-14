@@ -1,29 +1,25 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "   ",
-    "gXP",
-    "#Ng"
-  ],
-  "key": {
-    "#": {
-      "item": "minecraft:netherite_scrap"
+  "key" : {
+    "#" : {
+      "item" : "minecraft:netherite_scrap"
     },
-    "g": {
-      "item": "minecraft:gold_ingot"
+    "N" : {
+      "item" : "aseoha:engine"
     },
-    "N": {
-      "item": "aseoha:engine"
+    "P" : {
+      "item" : "minecraft:glass_pane"
     },
-    "X": {
-      "item": "minecraft:leather"
+    "X" : {
+      "item" : "minecraft:leather"
     },
-    "P": {
-      "item": "minecraft:glass_pane"
+    "g" : {
+      "item" : "minecraft:gold_ingot"
     }
   },
-  "result": {
-    "item": "aseoha:bessie_spawn_egg",
-    "count": 1
-  }
+  "pattern" : [ "   ", "gXP", "#Ng" ],
+  "result" : {
+    "count" : 1,
+    "item" : "aseoha:bessie_spawn_egg"
+  },
+  "type" : "minecraft:crafting_shaped"
 }

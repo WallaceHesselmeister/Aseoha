@@ -1,18 +1,16 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "group": "aseoha_food",
-  "pattern": [
-    "ES"
-  ],
-  "key": {
-    "E": {
-      "item": "minecraft:sugar"
+  "group" : "aseoha_food",
+  "key" : {
+    "E" : {
+      "item" : "minecraft:sugar"
     },
-    "S": {
-      "item": "minecraft:red_dye"
+    "S" : {
+      "item" : "minecraft:red_dye"
     }
   },
-  "result": {
-    "item": "aseoha:jelly_baby/red"
-  }
+  "pattern" : [ "ES" ],
+  "result" : {
+    "item" : "aseoha:jelly_baby/red"
+  },
+  "type" : "minecraft:crafting_shaped"
 }

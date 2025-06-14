@@ -1,12 +1,14 @@
 {
-  "type": "tardis:quantiscope",
-  "repair":false,
-  "ingredients":[
-    {"item":"minecraft:redstone"},
-    {"item":"aseoha:control_mold"},
-    {"item":"minecraft:comparator"}
-  ],
-  "result":{
-    "item":"aseoha:randomizer_control"
-  }
+  "ingredients" : [ {
+    "item" : "minecraft:redstone"
+  }, {
+    "item" : "aseoha:control_mold"
+  }, {
+    "item" : "minecraft:comparator"
+  } ],
+  "repair" : false,
+  "result" : {
+    "item" : "aseoha:randomizer_control"
+  },
+  "type" : "tardis:quantiscope"
 }

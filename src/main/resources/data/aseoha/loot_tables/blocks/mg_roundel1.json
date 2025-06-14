@@ -1,15 +1,11 @@
 {
-  "type": "minecraft:block",
-  "pools": [
-    {
-      "name": "aseoha:mg_roundel1",
-      "rolls": 1,
-      "entries": [
-        {
-          "type": "minecraft:item",
-          "name": "aseoha:mg_roundel1"
-        }
-      ]
-    }
-  ]
+  "pools" : [ {
+    "entries" : [ {
+      "name" : "aseoha:mg_roundel1",
+      "type" : "minecraft:item"
+    } ],
+    "name" : "aseoha:mg_roundel1",
+    "rolls" : 1
+  } ],
+  "type" : "minecraft:block"
 }

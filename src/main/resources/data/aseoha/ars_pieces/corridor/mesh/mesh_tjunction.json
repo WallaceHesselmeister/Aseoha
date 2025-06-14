@@ -1,7 +1,7 @@
 {
-  "structure_resource_location":"aseoha:mesh_tjunction",
-  "display_name":"Mesh T-Junction",
-  "x_offset":8,
-  "y_offset":3,
-  "z_offset":15
+  "display_name" : "Mesh T-Junction",
+  "structure_resource_location" : "aseoha:mesh_tjunction",
+  "x_offset" : 8,
+  "y_offset" : 3,
+  "z_offset" : 15
 }

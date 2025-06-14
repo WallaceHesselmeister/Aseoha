@@ -1,12 +1,14 @@
 {
-  "type": "tardis:quantiscope",
-  "repair":false,
-  "ingredients":[
-    {"item":"minecraft:redstone"},
-    {"item":"aseoha:control_mold"},
-    {"item":"minecraft:redstone_torch"}
-  ],
-  "result":{
-    "item":"aseoha:inc_control"
-  }
+  "ingredients" : [ {
+    "item" : "minecraft:redstone"
+  }, {
+    "item" : "aseoha:control_mold"
+  }, {
+    "item" : "minecraft:redstone_torch"
+  } ],
+  "repair" : false,
+  "result" : {
+    "item" : "aseoha:inc_control"
+  },
+  "type" : "tardis:quantiscope"
 }

@@ -1,14 +1,10 @@
 {
-  "type": "minecraft:block",
-  "pools": [
-    {
-      "rolls": 1,
-      "entries": [
-        {
-          "type": "minecraft:item",
-          "name": "aseoha:toyota_lower_hexagon_left_blank"
-        }
-      ]
-    }
-  ]
+  "pools" : [ {
+    "entries" : [ {
+      "name" : "aseoha:toyota_lower_hexagon_left_blank",
+      "type" : "minecraft:item"
+    } ],
+    "rolls" : 1
+  } ],
+  "type" : "minecraft:block"
 }

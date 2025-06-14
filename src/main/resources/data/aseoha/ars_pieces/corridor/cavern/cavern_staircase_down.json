@@ -1,7 +1,7 @@
 {
-  "structure_resource_location":"aseoha:cavern_staircase_down",
-  "display_name":"Cavern Staircase Down",
-  "x_offset":2,
-  "y_offset":11,
-  "z_offset":26
+  "display_name" : "Cavern Staircase Down",
+  "structure_resource_location" : "aseoha:cavern_staircase_down",
+  "x_offset" : 2,
+  "y_offset" : 11,
+  "z_offset" : 26
 }

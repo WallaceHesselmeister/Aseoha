@@ -1,20 +1,20 @@
 {
-  "fly": {
-    "sound": {
-      "sound_id": "aseoha:chiptune_flightloop"
+  "fly" : {
+    "sound" : {
+      "sound_id" : "aseoha:chiptune_flightloop"
     },
-    "time": 60
+    "time" : 60
   },
-  "land": {
-    "sound": {
-      "sound_id": "aseoha:chiptune_landing"
+  "land" : {
+    "sound" : {
+      "sound_id" : "aseoha:chiptune_landing"
     },
-    "time": 380
+    "time" : 380
   },
-  "takeoff": {
-    "sound": {
-      "sound_id": "aseoha:chiptune_takeoff"
+  "takeoff" : {
+    "sound" : {
+      "sound_id" : "aseoha:chiptune_takeoff"
     },
-    "time": 320
+    "time" : 320
   }
 }

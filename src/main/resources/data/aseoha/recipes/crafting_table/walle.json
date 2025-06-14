@@ -1,26 +1,22 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "pattern": [
-    " N ",
-    "XdX",
-    "XbX"
-  ],
-  "key": {
-    "N": {
-      "item": "minecraft:iron_block"
+  "key" : {
+    "N" : {
+      "item" : "minecraft:iron_block"
     },
-    "X": {
-      "item": "minecraft:gold_ingot"
+    "X" : {
+      "item" : "minecraft:gold_ingot"
     },
-    "b": {
-      "item": "tardis:artron_battery_medium"
+    "b" : {
+      "item" : "tardis:artron_battery_medium"
     },
-    "d": {
-      "item": "minecraft:chest"
+    "d" : {
+      "item" : "minecraft:chest"
     }
   },
-  "result": {
-    "item": "aseoha:walle_spawn_egg",
-    "count": 1
-  }
+  "pattern" : [ " N ", "XdX", "XbX" ],
+  "result" : {
+    "count" : 1,
+    "item" : "aseoha:walle_spawn_egg"
+  },
+  "type" : "minecraft:crafting_shaped"
 }

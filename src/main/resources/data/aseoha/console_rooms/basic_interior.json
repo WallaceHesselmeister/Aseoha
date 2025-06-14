@@ -1,10 +1,10 @@
 {
-  "structure_resource_location":"aseoha:basic_interior",
-  "display_name":"\u00A7f[FlatCake] Basic",
-  "x_offset":9,
-  "y_offset":1,
-  "z_offset":29,
-  "using_remote_image":false,
-  "remote_image_url":"",
-  "image_resource_location":"aseoha:basic.png"
+  "display_name" : "§f[FlatCake] Basic",
+  "image_resource_location" : "aseoha:basic.png",
+  "remote_image_url" : "",
+  "structure_resource_location" : "aseoha:basic_interior",
+  "using_remote_image" : false,
+  "x_offset" : 9,
+  "y_offset" : 1,
+  "z_offset" : 29
 }

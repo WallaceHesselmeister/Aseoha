@@ -1,15 +1,11 @@
 {
-  "type": "minecraft:block",
-  "pools": [
-    {
-      "name": "aseoha:gallifrey_sand",
-      "rolls": 1,
-      "entries": [
-        {
-          "type": "minecraft:item",
-          "name": "aseoha:gallifrey_sand"
-        }
-      ]
-    }
-  ]
+  "pools" : [ {
+    "entries" : [ {
+      "name" : "aseoha:gallifrey_sand",
+      "type" : "minecraft:item"
+    } ],
+    "name" : "aseoha:gallifrey_sand",
+    "rolls" : 1
+  } ],
+  "type" : "minecraft:block"
 }

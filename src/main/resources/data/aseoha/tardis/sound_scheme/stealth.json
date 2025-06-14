@@ -1,20 +1,20 @@
 {
-  "fly": {
-    "sound": {
-      "sound_id": "aseoha:empty"
+  "fly" : {
+    "sound" : {
+      "sound_id" : "aseoha:empty"
     },
-    "time": 40
+    "time" : 40
   },
-  "land": {
-    "sound": {
-      "sound_id": "aseoha:empty"
+  "land" : {
+    "sound" : {
+      "sound_id" : "aseoha:empty"
     },
-    "time": 224
+    "time" : 224
   },
-  "takeoff": {
-    "sound": {
-      "sound_id": "aseoha:empty"
+  "takeoff" : {
+    "sound" : {
+      "sound_id" : "aseoha:empty"
     },
-    "time": 366
+    "time" : 366
   }
 }

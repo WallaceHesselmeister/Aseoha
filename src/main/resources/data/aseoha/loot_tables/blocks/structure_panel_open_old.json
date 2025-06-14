@@ -1,14 +1,10 @@
 {
-  "type": "minecraft:block",
-  "pools": [
-    {
-      "rolls": 1,
-      "entries": [
-        {
-          "type": "minecraft:item",
-          "name": "aseoha:structure_panel_open_old"
-        }
-      ]
-    }
-  ]
+  "pools" : [ {
+    "entries" : [ {
+      "name" : "aseoha:structure_panel_open_old",
+      "type" : "minecraft:item"
+    } ],
+    "rolls" : 1
+  } ],
+  "type" : "minecraft:block"
 }

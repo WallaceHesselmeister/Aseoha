@@ -1,17 +1,13 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "xxx",
-    "xxx",
-    "xxx"
-  ],
-  "key": {
-    "x": {
-      "item": "aseoha:blue_crystal_nugget"
+  "key" : {
+    "x" : {
+      "item" : "aseoha:blue_crystal_nugget"
     }
   },
-  "result": {
-    "item": "aseoha:blue_crystal_ingot",
-    "count": 1
-  }
+  "pattern" : [ "xxx", "xxx", "xxx" ],
+  "result" : {
+    "count" : 1,
+    "item" : "aseoha:blue_crystal_ingot"
+  },
+  "type" : "minecraft:crafting_shaped"
 }

@@ -1,7 +1,7 @@
 {
-  "structure_resource_location":"aseoha:cavern_library",
-  "display_name":"Cavern Library",
-  "x_offset":7,
-  "y_offset":7,
-  "z_offset":24
+  "display_name" : "Cavern Library",
+  "structure_resource_location" : "aseoha:cavern_library",
+  "x_offset" : 7,
+  "y_offset" : 7,
+  "z_offset" : 24
 }

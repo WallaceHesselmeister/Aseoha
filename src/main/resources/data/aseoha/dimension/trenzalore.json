@@ -1,24 +1,22 @@
 {
-  "type": "aseoha:trenzalore",
-  "generator": {
-    "type": "minecraft:noise",
-    "settings": "aseoha:trenzalore",
-    "biome_source": {
-      "type": "minecraft:multi_noise",
-      "biomes": [
-        {
-          "biome": "aseoha:trenzalorebiome",
-          "parameters": {
-            "temperature": 0,
-            "humidity": 0,
-            "continentalness": 0,
-            "erosion": 0,
-            "weirdness": 0,
-            "depth": 0,
-            "offset": 0
-          }
+  "generator" : {
+    "biome_source" : {
+      "biomes" : [ {
+        "biome" : "aseoha:trenzalorebiome",
+        "parameters" : {
+          "continentalness" : 0,
+          "depth" : 0,
+          "erosion" : 0,
+          "humidity" : 0,
+          "offset" : 0,
+          "temperature" : 0,
+          "weirdness" : 0
         }
-      ]
-    }
-  }
+      } ],
+      "type" : "minecraft:multi_noise"
+    },
+    "settings" : "aseoha:trenzalore",
+    "type" : "minecraft:noise"
+  },
+  "type" : "aseoha:trenzalore"
 }

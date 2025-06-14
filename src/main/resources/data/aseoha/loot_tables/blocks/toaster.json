@@ -1,15 +1,11 @@
 {
-  "type": "minecraft:block",
-  "pools": [
-    {
-      "name": "aseoha:toaster",
-      "rolls": 1,
-      "entries": [
-        {
-          "type": "minecraft:item",
-          "name": "aseoha:toaster"
-        }
-      ]
-    }
-  ]
+  "pools" : [ {
+    "entries" : [ {
+      "name" : "aseoha:toaster",
+      "type" : "minecraft:item"
+    } ],
+    "name" : "aseoha:toaster",
+    "rolls" : 1
+  } ],
+  "type" : "minecraft:block"
 }

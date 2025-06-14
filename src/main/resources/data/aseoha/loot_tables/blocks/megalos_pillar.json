@@ -1,14 +1,10 @@
 {
-  "type": "minecraft:block",
-  "pools": [
-    {
-      "rolls": 1,
-      "entries": [
-        {
-          "type": "minecraft:item",
-          "name": "aseoha:meglos_pillar"
-        }
-      ]
-    }
-  ]
+  "pools" : [ {
+    "entries" : [ {
+      "name" : "aseoha:meglos_pillar",
+      "type" : "minecraft:item"
+    } ],
+    "rolls" : 1
+  } ],
+  "type" : "minecraft:block"
 }

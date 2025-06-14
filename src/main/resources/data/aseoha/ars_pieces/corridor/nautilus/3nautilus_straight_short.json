@@ -1,7 +1,7 @@
 {
-  "structure_resource_location":"aseoha:nautilus_straight_short_corridor",
-  "display_name":"Nautilus Short Straight",
-  "x_offset":5,
-  "y_offset":4,
-  "z_offset":11
+  "display_name" : "Nautilus Short Straight",
+  "structure_resource_location" : "aseoha:nautilus_straight_short_corridor",
+  "x_offset" : 5,
+  "y_offset" : 4,
+  "z_offset" : 11
 }

@@ -1,23 +1,19 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "pattern": [
-    "NgN",
-    "gXg",
-    "NgN"
-  ],
-  "key": {
-    "g": {
-      "item": "minecraft:clay_ball"
+  "key" : {
+    "N" : {
+      "item" : "minecraft:quartz"
     },
-    "N": {
-      "item": "minecraft:quartz"
+    "X" : {
+      "item" : "tardis:circuit_paste"
     },
-    "X": {
-      "item": "tardis:circuit_paste"
+    "g" : {
+      "item" : "minecraft:clay_ball"
     }
   },
-  "result": {
-    "item": "aseoha:control_mold",
-    "count": 1
-  }
+  "pattern" : [ "NgN", "gXg", "NgN" ],
+  "result" : {
+    "count" : 1,
+    "item" : "aseoha:control_mold"
+  },
+  "type" : "minecraft:crafting_shaped"
 }

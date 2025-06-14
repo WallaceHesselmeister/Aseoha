@@ -1,10 +1,10 @@
 {
-  "structure_resource_location":"aseoha:four",
-  "display_name":"Study",
-  "x_offset":11,
-  "y_offset":2,
-  "z_offset":8,
-  "using_remote_image":false,
-  "remote_image_url":"",
-  "image_resource_location":"aseoha:preview_study.png"
+  "display_name" : "Study",
+  "image_resource_location" : "aseoha:preview_study.png",
+  "remote_image_url" : "",
+  "structure_resource_location" : "aseoha:four",
+  "using_remote_image" : false,
+  "x_offset" : 11,
+  "y_offset" : 2,
+  "z_offset" : 8
 }

@@ -1,15 +1,11 @@
 {
-  "type": "minecraft:block",
-  "pools": [
-    {
-      "name": "aseoha:mangrove_planks",
-      "rolls": 1,
-      "entries": [
-        {
-          "type": "minecraft:item",
-          "name": "aseoha:mangrove_planks"
-        }
-      ]
-    }
-  ]
+  "pools" : [ {
+    "entries" : [ {
+      "name" : "aseoha:mangrove_planks",
+      "type" : "minecraft:item"
+    } ],
+    "name" : "aseoha:mangrove_planks",
+    "rolls" : 1
+  } ],
+  "type" : "minecraft:block"
 }

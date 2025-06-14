@@ -1,15 +1,13 @@
 {
-  "name": "aseoha:barn_one",
-  "fallback": "aseoha:barn_one",
-  "elements": [
-    {
-      "weight": 1,
-      "element": {
-        "element_type": "minecraft:single_pool_element",
-        "projection": "rigid",
-        "location": "aseoha:barn_one",
-        "processors": "minecraft:bastion_generic_degradation"
-      }
-    }
-  ]
+  "elements" : [ {
+    "element" : {
+      "element_type" : "minecraft:single_pool_element",
+      "location" : "aseoha:barn_one",
+      "processors" : "minecraft:bastion_generic_degradation",
+      "projection" : "rigid"
+    },
+    "weight" : 1
+  } ],
+  "fallback" : "aseoha:barn_one",
+  "name" : "aseoha:barn_one"
 }

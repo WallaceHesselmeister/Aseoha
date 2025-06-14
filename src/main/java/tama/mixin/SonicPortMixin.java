@@ -1,3 +1,4 @@
+/* (C) TAMA Studios 2025 */
 package tama.mixin;
 
 import net.minecraft.world.InteractionHand;
@@ -21,12 +22,21 @@ public abstract class SonicPortMixin extends Control<ControlDataItemStack> {
         super(type);
     }
 
-    @Inject(method = "onUse(Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/world/InteractionHand;Lnet/tardis/mod/cap/level/ITardisLevel;)Lnet/minecraft/world/InteractionResult;",
-            at = @At(value = "INVOKE", target = "Lnet/minecraft/world/entity/player/Player;setItemInHand(Lnet/minecraft/world/InteractionHand;Lnet/minecraft/world/item/ItemStack;)V", shift = At.Shift.BEFORE), cancellable = true)
-    public void Aseoha$OnAddedToPort(Player player, InteractionHand hand, ITardisLevel level, CallbackInfoReturnable<InteractionResult> cir) {
-        ControlEvent.SonicInsertEvent event = new ControlEvent.SonicInsertEvent(level, player, player.getItemInHand(hand));
+    @Inject(
+            method =
+                    "onUse(Lnet/minecraft/world/entity/player/Player;Lnet/minecraft/world/InteractionHand;Lnet/tardis/mod/cap/level/ITardisLevel;)Lnet/minecraft/world/InteractionResult;",
+            at =
+                    @At(
+                            value = "INVOKE",
+                            target =
+                                    "Lnet/minecraft/world/entity/player/Player;setItemInHand(Lnet/minecraft/world/InteractionHand;Lnet/minecraft/world/item/ItemStack;)V",
+                            shift = At.Shift.BEFORE),
+            cancellable = true)
+    public void Aseoha$OnAddedToPort(
+            Player player, InteractionHand hand, ITardisLevel level, CallbackInfoReturnable<InteractionResult> cir) {
+        ControlEvent.SonicInsertEvent event =
+                new ControlEvent.SonicInsertEvent(level, player, player.getItemInHand(hand));
         MinecraftForge.EVENT_BUS.post(event);
-        if (event.isCanceled())
-            cir.setReturnValue(InteractionResult.FAIL);
+        if (event.isCanceled()) cir.setReturnValue(InteractionResult.FAIL);
     }
 }

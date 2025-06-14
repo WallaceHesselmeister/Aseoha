@@ -1,3 +1,4 @@
+/* (C) TAMA Studios 2025 */
 package tama.Capabilities;
 
 import net.minecraft.core.BlockPos;
@@ -42,7 +43,8 @@ public class ControlDiscCapability implements IControlDiscCapability {
 
     public void deserializeNBT(CompoundTag tag) {
         if (tag.contains("level")) {
-            this.boundLevel = Optional.of(ResourceKey.create(Registries.DIMENSION, new ResourceLocation(tag.getString("level"))));
+            this.boundLevel =
+                    Optional.of(ResourceKey.create(Registries.DIMENSION, new ResourceLocation(tag.getString("level"))));
         }
         if (tag.contains("posX") && tag.contains("posY") && tag.contains("posZ")) {
             BlockPos pos = new BlockPos(tag.getInt("posX"), tag.getInt("posY"), tag.getInt("posZ"));
@@ -70,4 +72,3 @@ public class ControlDiscCapability implements IControlDiscCapability {
         return this.blockPos;
     }
 }
-

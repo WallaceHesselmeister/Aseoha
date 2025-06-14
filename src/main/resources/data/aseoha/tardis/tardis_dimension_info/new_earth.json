@@ -1,8 +1,8 @@
 {
-  "can_travel_to": true,
-  "dimension_type": "aseoha:newearth_type",
-  "must_be_unlocked": false,
-  "must_land_inside": false,
-  "name": "New (15x) Earth",
-  "travel_distance": 400
+  "can_travel_to" : true,
+  "dimension_type" : "aseoha:newearth_type",
+  "must_be_unlocked" : false,
+  "must_land_inside" : false,
+  "name" : "New (15x) Earth",
+  "travel_distance" : 400
 }

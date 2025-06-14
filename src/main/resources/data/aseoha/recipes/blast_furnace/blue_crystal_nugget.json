@@ -1,9 +1,9 @@
 {
-  "type": "minecraft:blasting",
-  "ingredient": {
-    "item": "aseoha:blue_crystal_pile"
+  "cookingtime" : 200,
+  "experience" : 0.9,
+  "ingredient" : {
+    "item" : "aseoha:blue_crystal_pile"
   },
-  "result": "aseoha:blue_crystal_nugget",
-  "experience": 0.9,
-  "cookingtime": 200
+  "result" : "aseoha:blue_crystal_nugget",
+  "type" : "minecraft:blasting"
 }

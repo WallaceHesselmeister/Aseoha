@@ -1,34 +1,23 @@
 {
-  "parent": "minecraft:recipes/root",
-  "rewards": {
-    "recipes": [
-      "aseoha:jelly_baby/red"
-    ]
-  },
-  "criteria": {
-    "has_crafting_table": {
-      "trigger": "minecraft:inventory_changed",
-      "conditions": {
-        "items": [
-          {
-            "items": [
-              "minecraft:sugar"
-            ]
-          }
-        ]
-      }
+  "criteria" : {
+    "has_crafting_table" : {
+      "conditions" : {
+        "items" : [ {
+          "items" : [ "minecraft:sugar" ]
+        } ]
+      },
+      "trigger" : "minecraft:inventory_changed"
     },
-    "has_the_recipe": {
-      "trigger": "minecraft:recipe_unlocked",
-      "conditions": {
-        "recipe": "aseoha:jelly_baby/red"
-      }
+    "has_the_recipe" : {
+      "conditions" : {
+        "recipe" : "aseoha:jelly_baby/red"
+      },
+      "trigger" : "minecraft:recipe_unlocked"
     }
   },
-  "requirements": [
-    [
-      "has_crafting_table",
-      "has_the_recipe"
-    ]
-  ]
+  "parent" : "minecraft:recipes/root",
+  "requirements" : [ [ "has_crafting_table", "has_the_recipe" ] ],
+  "rewards" : {
+    "recipes" : [ "aseoha:jelly_baby/red" ]
+  }
 }

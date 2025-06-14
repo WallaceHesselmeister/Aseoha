@@ -1,15 +1,11 @@
 {
-  "type": "minecraft:block",
-  "pools": [
-    {
-      "name": "aseoha:azalea",
-      "rolls": 1,
-      "entries": [
-        {
-          "type": "minecraft:item",
-          "name": "aseoha:azalea"
-        }
-      ]
-    }
-  ]
+  "pools" : [ {
+    "entries" : [ {
+      "name" : "aseoha:azalea",
+      "type" : "minecraft:item"
+    } ],
+    "name" : "aseoha:azalea",
+    "rolls" : 1
+  } ],
+  "type" : "minecraft:block"
 }

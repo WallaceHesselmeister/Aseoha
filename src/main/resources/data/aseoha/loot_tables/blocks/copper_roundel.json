@@ -1,15 +1,11 @@
 {
-  "type": "minecraft:block",
-  "pools": [
-    {
-      "name": "aseoha:copper_roundel",
-      "rolls": 1,
-      "entries": [
-        {
-          "type": "minecraft:item",
-          "name": "aseoha:copper_roundel"
-        }
-      ]
-    }
-  ]
+  "pools" : [ {
+    "entries" : [ {
+      "name" : "aseoha:copper_roundel",
+      "type" : "minecraft:item"
+    } ],
+    "name" : "aseoha:copper_roundel",
+    "rolls" : 1
+  } ],
+  "type" : "minecraft:block"
 }

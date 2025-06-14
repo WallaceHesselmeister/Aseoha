@@ -1,3 +1,4 @@
+/* (C) TAMA Studios 2025 */
 package tama.Capabilities.Interfaces;
 
 import net.minecraft.core.BlockPos;

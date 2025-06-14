@@ -1,8 +1,8 @@
 {
-  "can_travel_to": true,
-  "dimension_type": "aseoha:gallifrey",
-  "must_be_unlocked": true,
-  "must_land_inside": false,
-  "name": "Gallifrey",
-  "travel_distance": 400
+  "can_travel_to" : true,
+  "dimension_type" : "aseoha:gallifrey",
+  "must_be_unlocked" : true,
+  "must_land_inside" : false,
+  "name" : "Gallifrey",
+  "travel_distance" : 400
 }

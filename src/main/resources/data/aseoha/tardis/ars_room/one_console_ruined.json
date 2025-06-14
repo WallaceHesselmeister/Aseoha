@@ -1,9 +1,9 @@
 {
-  "type": "room",
-  "canBeRemoved": true,
-  "extra_unlocks": [],
-  "generates_naturally": true,
-  "parent": "aseoha:one_console",
-  "roomLocation": "aseoha:rooms/ruined/console/one",
-  "y_offset": 0
+  "canBeRemoved" : true,
+  "extra_unlocks" : [ ],
+  "generates_naturally" : true,
+  "parent" : "aseoha:one_console",
+  "roomLocation" : "aseoha:rooms/ruined/console/one",
+  "type" : "room",
+  "y_offset" : 0
 }

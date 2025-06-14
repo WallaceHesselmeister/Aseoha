@@ -1,10 +1,8 @@
 {
-  "conditions": [
-    {
-      "condition": "forge:loot_table_id",
-      "loot_table_id": "minecraft:chests/end_city_treasure"
-    }
-  ],
-  "chance": 50,
-  "type": "aseoha:aseoha_rare_loot"
+  "chance" : 50,
+  "conditions" : [ {
+    "condition" : "forge:loot_table_id",
+    "loot_table_id" : "minecraft:chests/end_city_treasure"
+  } ],
+  "type" : "aseoha:aseoha_rare_loot"
 }

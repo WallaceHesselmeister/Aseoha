@@ -1,4 +1,7 @@
+/* (C) TAMA Studios 2025 */
 package tama;
+
+import static tama.aseoha.MODID;
 
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
@@ -15,13 +18,9 @@ import tama.Client.Models.Consoles.HartnellConsoleModel;
 import tama.TileEntities.ConsoleRegistry;
 import tama.TileEntities.ExteriorRegistry;
 
-import static tama.aseoha.MODID;
-
 @Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class ClientRegistry {
-    /**
-     * Setup rendering
-     **/
+    /** Setup rendering */
     @SubscribeEvent
     public static void registerModel(EntityRenderersEvent.RegisterLayerDefinitions event) {
         ExteriorRegistry.registerModels(event);
@@ -40,18 +39,21 @@ public class ClientRegistry {
     }
 
     public static void registerSpecialItemModels() {
-        SpecialItemRenderer.register(new ModelHolder<>((stack) -> stack.getItem() ==
-                ForgeRegistries.ITEMS.getValue(ConsoleRegistry.BRACKOLIN_CONSOLE_BLOCK.getId()),
+        SpecialItemRenderer.register(new ModelHolder<>(
+                (stack) -> stack.getItem()
+                        == ForgeRegistries.ITEMS.getValue(ConsoleRegistry.BRACKOLIN_CONSOLE_BLOCK.getId()),
                 (modelSet) -> new BrackolinConsoleModel<>(modelSet.bakeLayer(BrackolinConsoleModel.LAYER_LOCATION)),
                 new ResourceLocation(MODID, "textures/consoles/brackolin.png")));
 
-        SpecialItemRenderer.register(new ModelHolder<>((stack) -> stack.getItem() ==
-                ForgeRegistries.ITEMS.getValue(ConsoleRegistry.COPPER_CONSOLE_BLOCK.getId()),
+        SpecialItemRenderer.register(new ModelHolder<>(
+                (stack) ->
+                        stack.getItem() == ForgeRegistries.ITEMS.getValue(ConsoleRegistry.COPPER_CONSOLE_BLOCK.getId()),
                 (modelSet) -> new CopperConsoleModel<>(modelSet.bakeLayer(CopperConsoleModel.LAYER_LOCATION)),
                 new ResourceLocation(MODID, "textures/consoles/copper.png")));
 
-        SpecialItemRenderer.register(new ModelHolder<>((stack) -> stack.getItem() ==
-                ForgeRegistries.ITEMS.getValue(ConsoleRegistry.HARTNELL_CONSOLE_BLOCK.getId()),
+        SpecialItemRenderer.register(new ModelHolder<>(
+                (stack) -> stack.getItem()
+                        == ForgeRegistries.ITEMS.getValue(ConsoleRegistry.HARTNELL_CONSOLE_BLOCK.getId()),
                 (modelSet) -> new HartnellConsoleModel<>(modelSet.bakeLayer(HartnellConsoleModel.LAYER_LOCATION)),
                 new ResourceLocation(MODID, "textures/consoles/hartnell.png")));
     }

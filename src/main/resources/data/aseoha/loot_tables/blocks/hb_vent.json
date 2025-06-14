@@ -1,15 +1,11 @@
 {
-  "type": "minecraft:block",
-  "pools": [
-    {
-      "name": "aseoha:hb_vent",
-      "rolls": 1,
-      "entries": [
-        {
-          "type": "minecraft:item",
-          "name": "aseoha:hb_vent"
-        }
-      ]
-    }
-  ]
+  "pools" : [ {
+    "entries" : [ {
+      "name" : "aseoha:hb_vent",
+      "type" : "minecraft:item"
+    } ],
+    "name" : "aseoha:hb_vent",
+    "rolls" : 1
+  } ],
+  "type" : "minecraft:block"
 }

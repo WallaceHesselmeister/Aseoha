@@ -1,14 +1,14 @@
 {
-  "config": {
-    "top_material": {
-      "Name": "aseoha:trenzalore_sand"
+  "config" : {
+    "top_material" : {
+      "Name" : "aseoha:trenzalore_sand"
     },
-    "under_material": {
-      "Name": "minecraft:stone"
+    "under_material" : {
+      "Name" : "minecraft:stone"
     },
-    "underwater_material": {
-      "Name": "minecraft:stone"
+    "underwater_material" : {
+      "Name" : "minecraft:stone"
     }
   },
-  "type": "minecraft:default"
+  "type" : "minecraft:default"
 }

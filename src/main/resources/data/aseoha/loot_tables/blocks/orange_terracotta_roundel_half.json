@@ -1,15 +1,11 @@
 {
-  "type": "minecraft:block",
-  "pools": [
-    {
-      "name": "aseoha:orange_terracotta_roundel_half",
-      "rolls": 1,
-      "entries": [
-        {
-          "type": "minecraft:item",
-          "name": "aseoha:orange_terracotta_roundel_half"
-        }
-      ]
-    }
-  ]
+  "pools" : [ {
+    "entries" : [ {
+      "name" : "aseoha:orange_terracotta_roundel_half",
+      "type" : "minecraft:item"
+    } ],
+    "name" : "aseoha:orange_terracotta_roundel_half",
+    "rolls" : 1
+  } ],
+  "type" : "minecraft:block"
 }

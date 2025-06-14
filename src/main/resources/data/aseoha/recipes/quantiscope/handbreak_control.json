@@ -1,12 +1,14 @@
 {
-  "type": "tardis:quantiscope",
-  "repair":false,
-  "ingredients":[
-    {"item":"minecraft:redstone"},
-    {"item":"aseoha:control_mold"},
-    {"item":"minecraft:lever"}
-  ],
-  "result":{
-    "item":"aseoha:handbreak_control"
-  }
+  "ingredients" : [ {
+    "item" : "minecraft:redstone"
+  }, {
+    "item" : "aseoha:control_mold"
+  }, {
+    "item" : "minecraft:lever"
+  } ],
+  "repair" : false,
+  "result" : {
+    "item" : "aseoha:handbreak_control"
+  },
+  "type" : "tardis:quantiscope"
 }

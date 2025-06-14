@@ -1,10 +1,10 @@
 {
-  "structure_resource_location":"aseoha:six",
-  "display_name":"Aquatic",
-  "x_offset":18,
-  "y_offset":3,
-  "z_offset":18,
-  "using_remote_image":false,
-  "remote_image_url":"",
-  "image_resource_location":"aseoha:preview_aquatic.png"
+  "display_name" : "Aquatic",
+  "image_resource_location" : "aseoha:preview_aquatic.png",
+  "remote_image_url" : "",
+  "structure_resource_location" : "aseoha:six",
+  "using_remote_image" : false,
+  "x_offset" : 18,
+  "y_offset" : 3,
+  "z_offset" : 18
 }

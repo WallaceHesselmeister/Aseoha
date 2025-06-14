@@ -1,77 +1,32 @@
 {
-  "temperature": 0.5,
-  "downfall": 0.2,
-  "temperature_modifier": "frozen",
-  "effects": {
-    "sky_color": 14854265,
-    "fog_color": 14854265,
-    "water_color": 15645605,
-    "water_fog_color": 15967105,
-    "foliage_color": 14538698,
-    "grass_color": 10634503
+  "carvers" : {
+    "air" : [ "minecraft:cave", "minecraft:canyon" ]
   },
-  "spawners": {
-    "monster": [
-      {
-        "type": "minecraft:illusioner",
-        "weight": 3,
-        "minCount": 0,
-        "maxCount": 2
-      }
-    ],
-    "creature": [],
-    "ambient": [],
-    "water_creature": [],
-    "water_ambient": [],
-    "misc": []
+  "downfall" : 0.2,
+  "effects" : {
+    "fog_color" : 14854265,
+    "foliage_color" : 14538698,
+    "grass_color" : 10634503,
+    "sky_color" : 14854265,
+    "water_color" : 15645605,
+    "water_fog_color" : 15967105
   },
-  "spawn_costs": {},
-  "carvers": {
-    "air": [
-      "minecraft:cave",
-      "minecraft:canyon"
-    ]
+  "features" : [ [ ], [ ], [ ], [ ], [ ], [ ], [ "minecraft:ore_diorite_upper", "minecraft:ore_diorite_lower", "minecraft:ore_coal_upper", "minecraft:ore_coal_lower", "minecraft:ore_iron_upper", "minecraft:ore_iron_middle", "minecraft:ore_iron_small", "minecraft:ore_gold", "minecraft:ore_gold_lower", "minecraft:ore_redstone", "minecraft:ore_redstone_lower", "minecraft:ore_diamond", "minecraft:ore_diamond_large", "minecraft:ore_diamond_buried", "minecraft:ore_lapis", "minecraft:ore_lapis_buried" ], [ "minecraft:pile_snow" ], [ ], [ "minecraft:patch_grass_forest" ], [ "minecraft:oak_bees_002", "minecraft:oak_bees_0002", "minecraft:fancy_oak_bees_0002", "minecraft:fancy_oak_checked", "minecraft:oak", "minecraft:freeze_top_layer" ] ],
+  "has_precipitation" : false,
+  "spawn_costs" : { },
+  "spawners" : {
+    "ambient" : [ ],
+    "creature" : [ ],
+    "misc" : [ ],
+    "monster" : [ {
+      "maxCount" : 2,
+      "minCount" : 0,
+      "type" : "minecraft:illusioner",
+      "weight" : 3
+    } ],
+    "water_ambient" : [ ],
+    "water_creature" : [ ]
   },
-  "features": [
-    [],
-    [],
-    [],
-    [],
-    [],
-    [],
-    [
-      "minecraft:ore_diorite_upper",
-      "minecraft:ore_diorite_lower",
-      "minecraft:ore_coal_upper",
-      "minecraft:ore_coal_lower",
-      "minecraft:ore_iron_upper",
-      "minecraft:ore_iron_middle",
-      "minecraft:ore_iron_small",
-      "minecraft:ore_gold",
-      "minecraft:ore_gold_lower",
-      "minecraft:ore_redstone",
-      "minecraft:ore_redstone_lower",
-      "minecraft:ore_diamond",
-      "minecraft:ore_diamond_large",
-      "minecraft:ore_diamond_buried",
-      "minecraft:ore_lapis",
-      "minecraft:ore_lapis_buried"
-    ],
-    [
-      "minecraft:pile_snow"
-    ],
-    [],
-    [
-      "minecraft:patch_grass_forest"
-    ],
-    [
-      "minecraft:oak_bees_002",
-      "minecraft:oak_bees_0002",
-      "minecraft:fancy_oak_bees_0002",
-      "minecraft:fancy_oak_checked",
-      "minecraft:oak",
-      "minecraft:freeze_top_layer"
-    ]
-  ],
-  "has_precipitation": true
+  "temperature" : 0.5,
+  "temperature_modifier" : "frozen"
 }

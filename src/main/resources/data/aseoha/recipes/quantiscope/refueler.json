@@ -1,12 +1,14 @@
 {
-  "type": "tardis:quantiscope",
-  "repair":false,
-  "ingredients":[
-    {"item":"minecraft:redstone"},
-    {"item":"aseoha:control_mold"},
-    {"item":"minecraft:oak_button"}
-  ],
-  "result":{
-    "item":"aseoha:refueler_control"
-  }
+  "ingredients" : [ {
+    "item" : "minecraft:redstone"
+  }, {
+    "item" : "aseoha:control_mold"
+  }, {
+    "item" : "minecraft:oak_button"
+  } ],
+  "repair" : false,
+  "result" : {
+    "item" : "aseoha:refueler_control"
+  },
+  "type" : "tardis:quantiscope"
 }

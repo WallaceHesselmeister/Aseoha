@@ -1,10 +1,10 @@
 {
-  "structure_resource_location":"aseoha:hellbent_interior",
-  "display_name":"Hellbent",
-  "x_offset":15,
-  "y_offset":2,
-  "z_offset":30,
-  "using_remote_image":false,
-  "remote_image_url":"https://i.imgur.com/9MjrsH9.png",
-  "image_resource_location":"aseoha:hellbent.png"
+  "display_name" : "Hellbent",
+  "image_resource_location" : "aseoha:hellbent.png",
+  "remote_image_url" : "https://i.imgur.com/9MjrsH9.png",
+  "structure_resource_location" : "aseoha:hellbent_interior",
+  "using_remote_image" : false,
+  "x_offset" : 15,
+  "y_offset" : 2,
+  "z_offset" : 30
 }

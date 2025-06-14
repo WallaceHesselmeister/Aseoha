@@ -1,10 +1,10 @@
 {
-  "structure_resource_location":"aseoha:astronomer",
-  "display_name":"Astronomer",
-  "x_offset":23,
-  "y_offset":10,
-  "z_offset":30,
-  "using_remote_image":false,
-  "remote_image_url":"https://github.com/WallaceHesselmeister/WallaceHesselmeister.github.io/blob/main/Ast.png?raw=true",
-  "image_resource_location":"aseoha:ast.png"
+  "display_name" : "Astronomer",
+  "image_resource_location" : "aseoha:ast.png",
+  "remote_image_url" : "https://github.com/WallaceHesselmeister/WallaceHesselmeister.github.io/blob/main/Ast.png?raw=true",
+  "structure_resource_location" : "aseoha:astronomer",
+  "using_remote_image" : false,
+  "x_offset" : 23,
+  "y_offset" : 10,
+  "z_offset" : 30
 }

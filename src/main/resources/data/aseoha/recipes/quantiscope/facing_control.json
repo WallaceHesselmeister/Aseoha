@@ -1,12 +1,14 @@
 {
-  "type": "tardis:quantiscope",
-  "repair":false,
-  "ingredients":[
-    {"item":"minecraft:redstone"},
-    {"item":"aseoha:control_mold"},
-    {"item":"minecraft:lantern"}
-  ],
-  "result":{
-    "item":"aseoha:facing_control"
-  }
+  "ingredients" : [ {
+    "item" : "minecraft:redstone"
+  }, {
+    "item" : "aseoha:control_mold"
+  }, {
+    "item" : "minecraft:lantern"
+  } ],
+  "repair" : false,
+  "result" : {
+    "item" : "aseoha:facing_control"
+  },
+  "type" : "tardis:quantiscope"
 }

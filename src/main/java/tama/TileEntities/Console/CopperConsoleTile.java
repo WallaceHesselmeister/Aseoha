@@ -1,8 +1,8 @@
+/* (C) TAMA Studios 2025 */
 package tama.TileEntities.Console;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.level.block.state.BlockState;
-import net.tardis.mod.blockentities.TileRegistry;
 import net.tardis.mod.blockentities.consoles.ConsoleTile;
 import tama.TileEntities.ConsoleRegistry;
 

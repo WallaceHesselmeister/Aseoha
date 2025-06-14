@@ -1,10 +1,10 @@
 {
-  "structure_resource_location":"aseoha:13th_crystal_interior",
-  "display_name":"Crystaline",
-  "x_offset":29,
-  "y_offset":3,
-  "z_offset":30,
-  "using_remote_image":false,
-  "remote_image_url":"https://cdn.discordapp.com/attachments/800384530787336212/913116769890217994/2021-11-24_17.16.03.png",
-  "image_resource_location":"aseoha:crystaline.png"
+  "display_name" : "Crystaline",
+  "image_resource_location" : "aseoha:crystaline.png",
+  "remote_image_url" : "https://cdn.discordapp.com/attachments/800384530787336212/913116769890217994/2021-11-24_17.16.03.png",
+  "structure_resource_location" : "aseoha:13th_crystal_interior",
+  "using_remote_image" : false,
+  "x_offset" : 29,
+  "y_offset" : 3,
+  "z_offset" : 30
 }

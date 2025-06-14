@@ -1,3 +1,4 @@
+/* (C) TAMA Studios 2025 */
 package tama.Client.Renderers.Exteriors;
 
 import net.minecraft.client.model.geom.EntityModelSet;
@@ -10,10 +11,11 @@ import net.tardis.mod.client.renderers.exteriors.ExteriorRenderer;
 import tama.Client.Models.Exteriors.RTD9ExteriorModel;
 import tama.aseoha;
 
-public class RTD9ExteriorRenderer<T extends ExteriorTile, M extends BasicTileHierarchicalModel<T> & IExteriorModel<T>> extends ExteriorRenderer<T, M> {
+public class RTD9ExteriorRenderer<T extends ExteriorTile, M extends BasicTileHierarchicalModel<T> & IExteriorModel<T>>
+        extends ExteriorRenderer<T, M> {
 
-    public static final ResourceLocation TEXTURE = new ResourceLocation(aseoha.MODID, "textures/exteriors/colin_richmond/rtd_9.png");
-
+    public static final ResourceLocation TEXTURE =
+            new ResourceLocation(aseoha.MODID, "textures/exteriors/colin_richmond/rtd_9.png");
 
     public RTD9ExteriorRenderer(BlockEntityRendererProvider.Context context) {
         super(context);

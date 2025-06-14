@@ -1,10 +1,10 @@
 {
-  "structure_resource_location":"aseoha:catherine_interior",
-  "display_name":"Catherine",
-  "x_offset":17,
-  "y_offset":6,
-  "z_offset":31,
-  "using_remote_image":false,
-  "remote_image_url":"https://cdn.discordapp.com/attachments/1000641776836673576/1188346573034369116/DaTardis.PNG",
-  "image_resource_location":"aseoha:catherine.png"
+  "display_name" : "Catherine",
+  "image_resource_location" : "aseoha:catherine.png",
+  "remote_image_url" : "https://cdn.discordapp.com/attachments/1000641776836673576/1188346573034369116/DaTardis.PNG",
+  "structure_resource_location" : "aseoha:catherine_interior",
+  "using_remote_image" : false,
+  "x_offset" : 17,
+  "y_offset" : 6,
+  "z_offset" : 31
 }

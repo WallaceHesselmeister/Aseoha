@@ -1,3 +1,4 @@
+/* (C) TAMA Studios 2025 */
 package tama.Items.Armor;
 
 import net.minecraft.client.model.geom.ModelPart;
@@ -12,7 +13,7 @@ import tama.Client.Renderers.Armor.ScarfRenderer;
 
 import static tama.aseoha.MODID;
 
-public class ScarfItem extends ModdedArmorItem{
+public class ScarfItem extends ModdedArmorItem {
     public ScarfItem(ArmorMaterial pMaterial, Type pType, Properties pProperties) {
         super(pMaterial, pType, pProperties);
     }

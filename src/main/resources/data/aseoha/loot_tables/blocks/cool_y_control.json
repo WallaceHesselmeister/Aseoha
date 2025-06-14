@@ -1,15 +1,11 @@
 {
-  "type": "minecraft:block",
-  "pools": [
-    {
-      "name": "aseoha:cool_y_control",
-      "rolls": 1,
-      "entries": [
-        {
-          "type": "minecraft:item",
-          "name": "aseoha:cool_y_control"
-        }
-      ]
-    }
-  ]
+  "pools" : [ {
+    "entries" : [ {
+      "name" : "aseoha:cool_y_control",
+      "type" : "minecraft:item"
+    } ],
+    "name" : "aseoha:cool_y_control",
+    "rolls" : 1
+  } ],
+  "type" : "minecraft:block"
 }

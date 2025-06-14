@@ -1,3 +1,4 @@
+/* (C) TAMA Studios 2025 */
 package tama.Entities;
 
 import net.minecraft.server.level.ServerLevel;
@@ -10,6 +11,7 @@ import net.tardis.mod.entity.CarExteriorEntity;
 
 public class CarTrunkEntityPart<T extends CarExteriorEntity> extends net.tardis.mod.entity.CarTrunkEntityPart {
     final EntityDimensions size;
+
     public CarTrunkEntityPart(CarExteriorEntity parent, float size) {
         super(parent, size);
         this.size = EntityDimensions.fixed(size, size);
@@ -23,13 +25,19 @@ public class CarTrunkEntityPart<T extends CarExteriorEntity> extends net.tardis.
     }
 
     public InteractionResult interact(Player pPlayer, InteractionHand pHand) {
-        return ((CarExteriorEntity)this.getParent()).getDoorHandler().onInteract(pPlayer, pPlayer.getItemInHand(pHand), pHand).isSuccess() ? InteractionResult.sidedSuccess(pPlayer.level.isClientSide()) : InteractionResult.PASS;
+        return ((CarExteriorEntity) this.getParent())
+                        .getDoorHandler()
+                        .onInteract(pPlayer, pPlayer.getItemInHand(pHand), pHand)
+                        .isSuccess()
+                ? InteractionResult.sidedSuccess(pPlayer.level().isClientSide())
+                : InteractionResult.PASS;
     }
 
     public void tick() {
         super.tick();
-        if (((CarExteriorEntity) this.getParent()).cachedTardis != null && !this.level.isClientSide()) {
-            ((CarExteriorEntity) this.getParent()).getTeleportHandler().tick((ServerLevel) this.getLevel());
+        if (((CarExteriorEntity) this.getParent()).cachedTardis != null
+                && !this.level().isClientSide()) {
+            ((CarExteriorEntity) this.getParent()).getTeleportHandler().tick((ServerLevel) this.level());
         }
     }
 

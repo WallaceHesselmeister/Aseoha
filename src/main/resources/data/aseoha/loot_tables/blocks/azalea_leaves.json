@@ -1,15 +1,11 @@
 {
-  "type": "minecraft:block",
-  "pools": [
-    {
-      "name": "aseoha:azalea_leaves",
-      "rolls": 1,
-      "entries": [
-        {
-          "type": "minecraft:item",
-          "name": "aseoha:azalea_leaves"
-        }
-      ]
-    }
-  ]
+  "pools" : [ {
+    "entries" : [ {
+      "name" : "aseoha:azalea_leaves",
+      "type" : "minecraft:item"
+    } ],
+    "name" : "aseoha:azalea_leaves",
+    "rolls" : 1
+  } ],
+  "type" : "minecraft:block"
 }

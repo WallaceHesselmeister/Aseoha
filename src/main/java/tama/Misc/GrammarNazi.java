@@ -1,3 +1,4 @@
+/* (C) TAMA Studios 2025 */
 package tama.Misc;
 
 import net.minecraft.core.BlockPos;
@@ -8,6 +9,7 @@ import static tama.aseoha.MODID;
 
 /**
  * This is for functions related to string manipulation
+ *
  * @version 2.3
  */
 public class GrammarNazi {
@@ -17,7 +19,14 @@ public class GrammarNazi {
      * @return The ID of a Block
      */
     public static String IDFromBlock(Block block) {
-        return block.toString().replaceAll("aseoha:", "").replaceAll("minecraft:", "").replace("{", "").replace("}", "").replace(":", "").toLowerCase().substring(5);
+        return block.toString()
+                .replaceAll("aseoha:", "")
+                .replaceAll("minecraft:", "")
+                .replace("{", "")
+                .replace("}", "")
+                .replace(":", "")
+                .toLowerCase()
+                .substring(5);
     }
 
     /**
@@ -42,14 +51,16 @@ public class GrammarNazi {
     }
 
     /**
-     * Made to accept Item#toString(), remove the minecraft:item@modid, and capitalize every first letter of every word
-     * @param text Item#toString()
-     * @return Item#toString() without minecraft:item@modid and every first letter of every word capitalized
+     * Made to accept Item#toString(), remove the minecraft:item@modid, and
+     * capitalize every first letter of every word
+     *
+     * @param text
+     *            Item#toString()
+     * @return Item#toString() without minecraft:item@modid and every first letter
+     *         of every word capitalized
      */
     public static String CleanItemString(String text) {
-        /**
-         * remove minecraft:item@modid
-         */
+        /** remove minecraft:item@modid */
         text = text.replace("minecraft:item@" + MODID + ":", "");
         return CapitalizeFirstLetters(ScoreToSpace(text));
     }
@@ -60,19 +71,19 @@ public class GrammarNazi {
     public static String CapitalizeFirstLetters(String text) {
         String firstLetter = text.substring(0, 1).toUpperCase();
         /**
-         * Find any characters coming after a space char and replace it with the uppercase variant
+         * Find any characters coming after a space char and replace it with the
+         * uppercase variant
          */
-        for(int i = 0; i < text.length(); i++) {
+        for (int i = 0; i < text.length(); i++) {
             if (text.substring(i, i + 1).contains(" "))
-                text = text.replace(text.substring(i, i + 2), text.substring(i, i + 2).toUpperCase());
+                text = text.replace(
+                        text.substring(i, i + 2), text.substring(i, i + 2).toUpperCase());
         }
         return firstLetter + text.substring(1);
     }
 
-    /**
-     * Replace _ chars with space chars
-     */
-    public static String ScoreToSpace(String text){
+    /** Replace _ chars with space chars */
+    public static String ScoreToSpace(String text) {
         return text.replace("_", " ");
     }
 }

@@ -1,3 +1,4 @@
+/* (C) TAMA Studios 2025 */
 package tama.mixin;
 
 import net.minecraft.client.gui.screens.Screen;

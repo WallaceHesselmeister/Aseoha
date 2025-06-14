@@ -1,10 +1,8 @@
 {
-  "conditions": [
-    {
-      "condition": "forge:loot_table_id",
-      "loot_table_id": "minecraft:chests/stronghold_library"
-    }
-  ],
-  "chance": 20,
-  "type": "aseoha:aseoha_uncommon_loot"
+  "chance" : 20,
+  "conditions" : [ {
+    "condition" : "forge:loot_table_id",
+    "loot_table_id" : "minecraft:chests/stronghold_library"
+  } ],
+  "type" : "aseoha:aseoha_uncommon_loot"
 }

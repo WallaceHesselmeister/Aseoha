@@ -1,10 +1,10 @@
 {
-  "structure_resource_location":"aseoha:three",
-  "display_name":"Grey Matter",
-  "x_offset":17,
-  "y_offset":2,
-  "z_offset":16,
-  "using_remote_image":false,
-  "remote_image_url":"",
-  "image_resource_location":"aseoha:preview_greymatter.png"
+  "display_name" : "Grey Matter",
+  "image_resource_location" : "aseoha:preview_greymatter.png",
+  "remote_image_url" : "",
+  "structure_resource_location" : "aseoha:three",
+  "using_remote_image" : false,
+  "x_offset" : 17,
+  "y_offset" : 2,
+  "z_offset" : 16
 }

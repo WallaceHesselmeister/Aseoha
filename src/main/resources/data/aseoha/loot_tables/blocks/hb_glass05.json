@@ -1,15 +1,11 @@
 {
-  "type": "minecraft:block",
-  "pools": [
-    {
-      "name": "aseoha:hb_glass05",
-      "rolls": 1,
-      "entries": [
-        {
-          "type": "minecraft:item",
-          "name": "aseoha:hb_glass05"
-        }
-      ]
-    }
-  ]
+  "pools" : [ {
+    "entries" : [ {
+      "name" : "aseoha:hb_glass05",
+      "type" : "minecraft:item"
+    } ],
+    "name" : "aseoha:hb_glass05",
+    "rolls" : 1
+  } ],
+  "type" : "minecraft:block"
 }

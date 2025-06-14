@@ -1,7 +1,7 @@
 {
-  "structure_resource_location":"aseoha:cavern_corridor_left",
-  "display_name":"Cavern Left Corner",
-  "x_offset":4,
-  "y_offset":2,
-  "z_offset":7
+  "display_name" : "Cavern Left Corner",
+  "structure_resource_location" : "aseoha:cavern_corridor_left",
+  "x_offset" : 4,
+  "y_offset" : 2,
+  "z_offset" : 7
 }

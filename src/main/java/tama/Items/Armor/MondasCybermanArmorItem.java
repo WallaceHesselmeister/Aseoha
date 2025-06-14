@@ -1,3 +1,4 @@
+/* (C) TAMA Studios 2025 */
 package tama.Items.Armor;
 
 import net.minecraft.client.model.geom.ModelPart;
@@ -12,14 +13,16 @@ import tama.Client.Renderers.Armor.MondasCybermanArmorRenderer;
 
 import static tama.aseoha.MODID;
 
-public class MondasCybermanArmorItem extends ModdedArmorItem{
+public class MondasCybermanArmorItem extends ModdedArmorItem {
     public MondasCybermanArmorItem(ArmorMaterial pMaterial, Type pType, Properties pProperties) {
         super(pMaterial, pType, pProperties);
     }
 
     @Override
     protected ModelPart getRenderer(LivingEntity living, ItemStack stack, EquipmentSlot slot) {
-        return new MondasCybermanArmorRenderer<>(MondasCybermanArmorModel::createBodyLayer, MondasCybermanArmorModel::new).makeArmorParts(slot);
+        return new MondasCybermanArmorRenderer<>(
+                        MondasCybermanArmorModel::createBodyLayer, MondasCybermanArmorModel::new)
+                .makeArmorParts(slot);
     }
 
     @Override

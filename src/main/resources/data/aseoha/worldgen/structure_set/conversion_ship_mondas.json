@@ -1,14 +1,12 @@
 {
-  "structures": [
-    {
-      "structure": "aseoha:conversion_ship_mondas",
-      "weight": 1
-    }
-  ],
-  "placement": {
-    "type": "minecraft:random_spread",
-    "spacing": 10,
-    "separation": 7,
-    "salt": 4536207470
-  }
+  "placement" : {
+    "salt" : 4536207470,
+    "separation" : 7,
+    "spacing" : 10,
+    "type" : "minecraft:random_spread"
+  },
+  "structures" : [ {
+    "structure" : "aseoha:conversion_ship_mondas",
+    "weight" : 1
+  } ]
 }

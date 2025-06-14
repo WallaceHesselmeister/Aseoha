@@ -1,19 +1,19 @@
 {
-  "display": {
-    "icon": {
-      "item": "aseoha:golden_potato"
-    },
-    "title": "ASEOHA",
-    "description": "Anywhere in time and space, where to start?",
-    "background": "aseoha:textures/block/hellbent/hellbent_roundel01.png",
-    "frame": "goal",
-    "show_toast": true,
-    "announce_to_chat": true,
-    "hidden": false
-  },
-  "criteria": {
-    "requirement": {
-      "trigger": "minecraft:tick"
+  "criteria" : {
+    "requirement" : {
+      "trigger" : "minecraft:tick"
     }
+  },
+  "display" : {
+    "announce_to_chat" : true,
+    "background" : "aseoha:textures/block/hellbent/hellbent_roundel01.png",
+    "description" : "Anywhere in time and space, where to start?",
+    "frame" : "goal",
+    "hidden" : false,
+    "icon" : {
+      "item" : "aseoha:golden_potato"
+    },
+    "show_toast" : true,
+    "title" : "ASEOHA"
   }
 }

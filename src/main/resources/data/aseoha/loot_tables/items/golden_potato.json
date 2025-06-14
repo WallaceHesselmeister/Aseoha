@@ -1,9 +1,7 @@
 {
-  "type": "minecraft:item",
-  "pools": [
-    {
-      "rolls": 1,
-      "entries": []
-    }
-  ]
+  "pools" : [ {
+    "entries" : [ ],
+    "rolls" : 1
+  } ],
+  "type" : "minecraft:item"
 }

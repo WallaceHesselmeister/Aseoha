@@ -1,22 +1,22 @@
 {
-  "display": {
-    "icon": {
-      "item": "aseoha:skaro_sand"
-    },
-    "title": "Skaro! You've brought me to Skaro.",
-    "description": "Enter Skaro for the first time!",
-    "frame": "challenge",
-    "show_toast": true,
-    "announce_to_chat": true,
-    "hidden": false
-  },
-  "parent": "aseoha:aseoha",
-  "criteria": {
-    "skarofirstentry": {
-      "trigger": "minecraft:changed_dimension",
-      "conditions": {
-        "to": "aseoha:skaro"
-      }
+  "criteria" : {
+    "skarofirstentry" : {
+      "conditions" : {
+        "to" : "aseoha:skaro"
+      },
+      "trigger" : "minecraft:changed_dimension"
     }
-  }
+  },
+  "display" : {
+    "announce_to_chat" : true,
+    "description" : "Enter Skaro for the first time!",
+    "frame" : "challenge",
+    "hidden" : false,
+    "icon" : {
+      "item" : "aseoha:skaro_sand"
+    },
+    "show_toast" : true,
+    "title" : "Skaro! You've brought me to Skaro."
+  },
+  "parent" : "aseoha:aseoha"
 }

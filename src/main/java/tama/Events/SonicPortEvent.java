@@ -1,3 +1,4 @@
+/* (C) TAMA Studios 2025 */
 package tama.Events;
 
 import net.minecraft.world.entity.Entity;

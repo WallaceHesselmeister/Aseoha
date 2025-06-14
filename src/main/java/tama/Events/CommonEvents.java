@@ -1,3 +1,4 @@
+/* (C) TAMA Studios 2025 */
 package tama.Events;
 
 import net.minecraft.core.BlockPos;
@@ -15,21 +16,24 @@ public class CommonEvents {
 
     @SubscribeEvent
     public static void OnSonicInsert(ControlEvent.SonicInsertEvent event) {
-        /** If the item being inserted is Minecraft's Music Disc 11 **/
+        /** If the item being inserted is Minecraft's Music Disc 11 * */
         if (event.getItem().getItem().equals(Items.MUSIC_DISC_11)) {
-            /** Unlock Trenzalore, Set destination, and take off **/
+            /** Unlock Trenzalore, Set destination, and take off * */
             event.getTARDIS().getUnlockHandler().unlock(Dimensions.TRENZALORE_TYPE);
-            event.getTARDIS().setDestination(new SpaceTimeCoord(Dimensions.TRENZALORE, new BlockPos(0, 64, 0), Direction.NORTH));
+            event.getTARDIS()
+                    .setDestination(new SpaceTimeCoord(Dimensions.TRENZALORE, new BlockPos(0, 64, 0), Direction.NORTH));
             event.getTARDIS().takeoff();
         }
     }
 
-//    @SubscribeEvent
-//    public static void OnWorldTick(ArrowEv event) {
-//        event.level.getServer().getLevel(event.level.dimension()).getAllEntities().forEach((entity -> {
-//            if(entity instanceof Projectile projectile) {
-//                projectile.blockPosition().
-//            }
-//        }));
-//    }
+    // @SubscribeEvent
+    // public static void OnWorldTick(ArrowEv event) {
+    //
+    // event.level.getServer().getLevel(event.level.dimension()).getAllEntities().forEach((entity
+    // -> {
+    // if(entity instanceof Projectile projectile) {
+    // projectile.blockPosition().
+    // }
+    // }));
+    // }
 }

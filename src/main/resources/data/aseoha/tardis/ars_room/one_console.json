@@ -1,8 +1,8 @@
 {
-  "type": "room",
-  "canBeRemoved": true,
-  "extra_unlocks": [],
-  "generates_naturally": false,
-  "roomLocation": "aseoha:rooms/console/one",
-  "y_offset": 0
+  "canBeRemoved" : true,
+  "extra_unlocks" : [ ],
+  "generates_naturally" : false,
+  "roomLocation" : "aseoha:rooms/console/one",
+  "type" : "room",
+  "y_offset" : 0
 }

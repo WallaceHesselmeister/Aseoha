@@ -1,27 +1,28 @@
 {
-  "display": {
-    "icon": {
-      "item": "aseoha:foodmachine_old"
-    },
-    "title": "Feed the Hungry",
-    "description": "Obtain a Food Machine",
-    "background": "",
-    "frame": "challenge",
-    "show_toast": true,
-    "announce_to_chat": true,
-    "hidden": false
-  },
-  "parent": "aseoha:aseoha",
-  "criteria": {
-    "requirement": {
-      "trigger": "minecraft:placed_block",
-      "conditions": {
-        "item": {
-          "items": [
-            "aseoha:foodmachine_old"
-          ]
-        }
-      }
+  "criteria" : {
+    "requirement" : {
+      "conditions" : {
+        "location" : [ {
+          "condition" : "minecraft:match_tool",
+          "predicate" : {
+            "items" : [ "aseoha:foodmachine_old" ]
+          }
+        } ]
+      },
+      "trigger" : "minecraft:placed_block"
     }
-  }
+  },
+  "display" : {
+    "announce_to_chat" : true,
+    "background" : "",
+    "description" : "Obtain a Food Machine",
+    "frame" : "challenge",
+    "hidden" : false,
+    "icon" : {
+      "item" : "aseoha:foodmachine_old"
+    },
+    "show_toast" : true,
+    "title" : "Feed the Hungry"
+  },
+  "parent" : "aseoha:aseoha"
 }

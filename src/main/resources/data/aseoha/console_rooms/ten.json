@@ -1,10 +1,10 @@
 {
-  "structure_resource_location":"aseoha:ten",
-  "display_name":"Explorer",
-  "x_offset":23,
-  "y_offset":2,
-  "z_offset":20,
-  "using_remote_image":false,
-  "remote_image_url":"",
-  "image_resource_location":"aseoha:preview_explorer.png"
+  "display_name" : "Explorer",
+  "image_resource_location" : "aseoha:preview_explorer.png",
+  "remote_image_url" : "",
+  "structure_resource_location" : "aseoha:ten",
+  "using_remote_image" : false,
+  "x_offset" : 23,
+  "y_offset" : 2,
+  "z_offset" : 20
 }

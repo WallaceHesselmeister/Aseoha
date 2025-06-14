@@ -1,3 +1,4 @@
+/* (C) TAMA Studios 2025 */
 package tama.TileEntities.Exterior;
 
 import net.minecraft.core.BlockPos;

@@ -1,8 +1,8 @@
 {
-  "type": "corridor",
-  "canBeRemoved": true,
-  "extra_unlocks": [],
-  "generates_naturally": false,
-  "roomLocation": "aseoha:corridors/mesh_corridor",
-  "y_offset": 0
+  "canBeRemoved" : true,
+  "extra_unlocks" : [ ],
+  "generates_naturally" : false,
+  "roomLocation" : "aseoha:corridors/mesh_corridor",
+  "type" : "corridor",
+  "y_offset" : 0
 }
