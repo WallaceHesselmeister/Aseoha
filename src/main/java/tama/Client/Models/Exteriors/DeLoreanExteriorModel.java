@@ -9,12 +9,15 @@ import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 import net.tardis.mod.entity.CarExteriorEntity;
 import net.tardis.mod.helpers.WorldHelper;
 import org.jetbrains.annotations.NotNull;
 import org.joml.Vector3f;
 import tama.aseoha;
 
+@OnlyIn(Dist.CLIENT)
 public class DeLoreanExteriorModel<T extends CarExteriorEntity> extends HierarchicalModel<T> {
     // This layer location should be baked with EntityRendererProvider.Context in
     // the entity renderer

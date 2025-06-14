@@ -1,15 +1,13 @@
 /* (C) TAMA Studios 2025 */
 package tama.TileEntities;
 
-import static tama.TileEntities.TileRegistry.TYPES;
-import static tama.aseoha.MODID;
-
 import com.mojang.datafixers.types.Type;
-import java.util.function.Supplier;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.*;
@@ -33,6 +31,11 @@ import tama.Registries.Entities;
 import tama.TileEntities.Exterior.RTD9ExteriorTile;
 import tama.TileEntities.Exterior.WardrobeExteriorTile;
 import tama.aseoha;
+
+import java.util.function.Supplier;
+
+import static tama.TileEntities.TileRegistry.TYPES;
+import static tama.aseoha.MODID;
 
 public class ExteriorRegistry {
 
@@ -94,6 +97,7 @@ public class ExteriorRegistry {
         return BlockEntityType.Builder.of(factory, blocks).build((Type) null);
     }
 
+    @OnlyIn(Dist.CLIENT)
     public static void registerModels(EntityRenderersEvent.@NotNull RegisterLayerDefinitions event) {
         event.registerLayerDefinition(RTD9ExteriorModel.LAYER_LOCATION, RTD9ExteriorModel::createBodyLayer);
 
@@ -102,6 +106,7 @@ public class ExteriorRegistry {
         event.registerLayerDefinition(DeLoreanExteriorModel.LAYER_LOCATION, DeLoreanExteriorModel::createBodyLayer);
     }
 
+    @OnlyIn(Dist.CLIENT)
     public static void registerRenderers(EntityRenderersEvent.@NotNull RegisterRenderers event) {
         event.registerBlockEntityRenderer(ExteriorRegistry.RTD_9_EXTERIOR_TILE.get(), RTD9ExteriorRenderer::new);
         event.registerBlockEntityRenderer(ExteriorRegistry.WARDROBE_EXTERIOR_TILE.get(), WardrobeExteriorRenderer::new);
@@ -112,6 +117,7 @@ public class ExteriorRegistry {
                         context, new DeLoreanExteriorModel<>(context.bakeLayer(DeLoreanExteriorModel.LAYER_LOCATION))));
     }
 
+    @OnlyIn(Dist.CLIENT)
     public static void RegisterBrokenExteriorRenderers() {
         BrokenExteriorRenderer.register(new ModelHolder<>(
                 type -> type == RTD_9_EXTERIOR.get(),

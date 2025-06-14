@@ -9,6 +9,8 @@ import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 import net.tardis.mod.blockentities.exteriors.ExteriorTile;
 import net.tardis.mod.client.animations.exterior.PoliceBoxExteriorAnimation;
 import net.tardis.mod.client.models.BaseTileHierarchicalModel;
@@ -16,6 +18,7 @@ import net.tardis.mod.client.models.exteriors.IExteriorModel;
 import org.jetbrains.annotations.NotNull;
 import tama.aseoha;
 
+@OnlyIn(Dist.CLIENT)
 public class RTD9ExteriorModel<T extends ExteriorTile> extends BaseTileHierarchicalModel<T>
         implements IExteriorModel<T> {
     // This layer location should be baked with EntityRendererProvider.Context in

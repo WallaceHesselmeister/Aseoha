@@ -7,6 +7,8 @@ import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.BlockEntityType;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -73,12 +75,14 @@ public class ConsoleRegistry {
         return BlockEntityType.Builder.of(factory, blocks).build((Type) null);
     }
 
+    @OnlyIn(Dist.CLIENT)
     public static void registerModel(EntityRenderersEvent.RegisterLayerDefinitions event) {
         event.registerLayerDefinition(CopperConsoleModel.LAYER_LOCATION, CopperConsoleModel::createBodyLayer);
         event.registerLayerDefinition(BrackolinConsoleModel.LAYER_LOCATION, BrackolinConsoleModel::createBodyLayer);
         event.registerLayerDefinition(HartnellConsoleModel.LAYER_LOCATION, HartnellConsoleModel::createBodyLayer);
     }
 
+    @OnlyIn(Dist.CLIENT)
     public static void registerRenderers(EntityRenderersEvent.RegisterRenderers event) {
         event.registerBlockEntityRenderer(
                 COPPER_CONSOLE_TILE.get(),

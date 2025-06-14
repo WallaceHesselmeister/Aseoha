@@ -9,6 +9,8 @@ import net.minecraft.client.renderer.entity.EntityRenderer;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 import net.tardis.mod.client.animations.demat.DematAnimation;
 import net.tardis.mod.client.renderers.exteriors.ExteriorRenderer;
 import net.tardis.mod.entity.CarExteriorEntity;
@@ -16,6 +18,7 @@ import net.tardis.mod.misc.enums.MatterState;
 import org.jetbrains.annotations.NotNull;
 import tama.aseoha;
 
+@OnlyIn(Dist.CLIENT)
 public class DeLoreanExteriorRenderer<T extends CarExteriorEntity, M extends HierarchicalModel<T>>
         extends EntityRenderer<T> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(aseoha.MODID, "textures/entity/delorean.png");

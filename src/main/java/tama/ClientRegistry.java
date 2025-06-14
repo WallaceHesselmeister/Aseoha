@@ -1,10 +1,9 @@
 /* (C) TAMA Studios 2025 */
 package tama;
 
-import static tama.aseoha.MODID;
-
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.client.event.EntityRenderersEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -17,6 +16,8 @@ import tama.Client.Models.Consoles.CopperConsoleModel;
 import tama.Client.Models.Consoles.HartnellConsoleModel;
 import tama.TileEntities.ConsoleRegistry;
 import tama.TileEntities.ExteriorRegistry;
+
+import static tama.aseoha.MODID;
 
 @Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class ClientRegistry {
@@ -38,6 +39,7 @@ public class ClientRegistry {
         event.enqueueWork(ClientRegistry::registerSpecialItemModels);
     }
 
+    @OnlyIn(Dist.CLIENT)
     public static void registerSpecialItemModels() {
         SpecialItemRenderer.register(new ModelHolder<>(
                 (stack) -> stack.getItem()
