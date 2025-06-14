@@ -10,12 +10,12 @@ import net.minecraft.client.model.geom.builders.*;
 import net.minecraft.resources.ResourceLocation;
 import net.tardis.mod.blockentities.exteriors.ExteriorTile;
 import net.tardis.mod.client.animations.exterior.PoliceBoxExteriorAnimation;
-import net.tardis.mod.client.models.BasicTileHierarchicalModel;
+import net.tardis.mod.client.models.BaseTileHierarchicalModel;
 import net.tardis.mod.client.models.exteriors.IExteriorModel;
 import org.jetbrains.annotations.NotNull;
 import tama.aseoha;
 
-public class WardrobeExteriorModel<T extends ExteriorTile> extends BasicTileHierarchicalModel<T>
+public class WardrobeExteriorModel<T extends ExteriorTile> extends BaseTileHierarchicalModel<T>
         implements IExteriorModel<T> {
     // This layer location should be baked with EntityRendererProvider.Context in
     // the entity renderer

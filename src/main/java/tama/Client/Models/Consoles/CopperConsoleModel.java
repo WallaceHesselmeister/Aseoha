@@ -16,7 +16,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.tardis.mod.cap.Capabilities;
 import net.tardis.mod.cap.level.ITardisLevel;
 import net.tardis.mod.client.animations.AnimationHelper;
-import net.tardis.mod.client.models.BasicTileHierarchicalModel;
+import net.tardis.mod.client.models.BaseTileHierarchicalModel;
 import net.tardis.mod.client.models.consoles.IAdditionalConsoleRenderData;
 import net.tardis.mod.control.ControlType;
 import net.tardis.mod.control.datas.ControlDataBool;
@@ -29,7 +29,7 @@ import tama.aseoha;
 
 import java.util.Optional;
 
-public class CopperConsoleModel<T extends CopperConsoleTile> extends BasicTileHierarchicalModel<T>
+public class CopperConsoleModel<T extends CopperConsoleTile> extends BaseTileHierarchicalModel<T>
         implements IAdditionalConsoleRenderData {
     // This layer location should be baked with EntityRendererProvider.Context in
     // the entity renderer
