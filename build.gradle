@@ -152,12 +152,11 @@ dependencies {
 	minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
 
 //    implementation fg.deobf("curse.maven:new-tardis-mod-290247:6041678")
-	implementation fg.deobf("curse.maven:new-tardis-mod-290247:6047914")
+	implementation fg.deobf("curse.maven:new-tardis-mod-290247:6649501")
 
+//	implementation fg.deobf("curse.maven:building-gadgets-298187:5358453")
 
-	implementation fg.deobf("curse.maven:building-gadgets-298187:5358453")
-
-	implementation fg.deobf("curse.maven:worldedit-225608:4445118")
+//	implementation fg.deobf("curse.maven:worldedit-225608:4445118")
 	// Example mod dependency with JEI - using fg.deobf() ensures the dependency is remapped to your development mappings
 	// The JEI API is declared for compile time use, while the full JEI artifact is used at runtime
 //     compileOnly fg.deobf("mezz.jei:jei-${minecraft_version}-common-api:${jei_version}")
