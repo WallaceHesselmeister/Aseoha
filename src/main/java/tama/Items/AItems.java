@@ -13,6 +13,7 @@ import net.tardis.mod.item.ManualItem;
 import net.tardis.mod.item.tools.SonicItem;
 import tama.Items.Armor.MondasCybermanArmorItem;
 import tama.Items.Armor.ScarfItem;
+import tama.RoundelRemote;
 import tama.World.Dimensions;
 
 import static tama.aseoha.MODID;
@@ -33,6 +34,9 @@ public class AItems {
 
     public static final RegistryObject<Item> AUTHORIZED_CONTROL_DISC = ITEMS.register(
             "authorized_control_disc", () -> new AuthorizedControlDisc((new Item.Properties()).rarity(Rarity.COMMON)));
+
+    public static final RegistryObject<Item> ROUNDEL_REMOTE = ITEMS.register(
+            "roundel_remote", () -> new RoundelRemote((new Item.Properties()).rarity(Rarity.COMMON)));
 
     public static final RegistryObject<Item> CANDY_CANE_SONIC =
             ITEMS.register("candy_cane_sonic", () -> new SonicItem(new Item.Properties().rarity(Rarity.UNCOMMON)));
