@@ -15,7 +15,8 @@ import tama.aseoha;
 
 @Mod.EventBusSubscriber(modid = aseoha.MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class ATabs {
-    public static DeferredRegister<CreativeModeTab> TABS = DeferredRegister.create(Registries.CREATIVE_MODE_TAB, aseoha.MODID);
+    public static DeferredRegister<CreativeModeTab> TABS =
+            DeferredRegister.create(Registries.CREATIVE_MODE_TAB, aseoha.MODID);
 
     public static RegistryObject<CreativeModeTab> MAIN = TABS.register("main", () -> CreativeModeTab.builder()
             .icon(() -> new ItemStack(Roundels.COPPER_ROUNDEL.get()))
@@ -33,10 +34,7 @@ public class ATabs {
 
     @SubscribeEvent
     public static void addItemsEvent(BuildCreativeModeTabContentsEvent event) {
-        if (event.getTab() == MAIN.get())
-            AItems.ITEMS.getEntries().forEach(event::accept);
-        else if (event.getTab() == FOOD.get())
-            AItems.FOOD_ITEMS.getEntries().forEach(event::accept);
-
+        if (event.getTab() == MAIN.get()) AItems.ITEMS.getEntries().forEach(event::accept);
+        else if (event.getTab() == FOOD.get()) AItems.FOOD_ITEMS.getEntries().forEach(event::accept);
     }
 }
