@@ -14,6 +14,7 @@ import net.tardis.mod.client.renderers.SpecialItemRenderer;
 import tama.Client.Models.Consoles.BrackolinConsoleModel;
 import tama.Client.Models.Consoles.CopperConsoleModel;
 import tama.Client.Models.Consoles.HartnellConsoleModel;
+import tama.Client.Models.Consoles.ported.ToyotaConsoleModel;
 import tama.TileEntities.ConsoleRegistry;
 import tama.TileEntities.ExteriorRegistry;
 
@@ -52,6 +53,12 @@ public class ClientRegistry {
                         stack.getItem() == ForgeRegistries.ITEMS.getValue(ConsoleRegistry.COPPER_CONSOLE_BLOCK.getId()),
                 (modelSet) -> new CopperConsoleModel<>(modelSet.bakeLayer(CopperConsoleModel.LAYER_LOCATION)),
                 new ResourceLocation(MODID, "textures/consoles/copper.png")));
+
+        SpecialItemRenderer.register(new ModelHolder<>(
+                (stack) ->
+                        stack.getItem() == ForgeRegistries.ITEMS.getValue(ConsoleRegistry.TOYOTA_CONSOLE_BLOCK.getId()),
+                (modelSet) -> new ToyotaConsoleModel<>(modelSet.bakeLayer(ToyotaConsoleModel.LAYER_LOCATION)),
+                new ResourceLocation(MODID, "textures/consoles/toyota.png")));
 
         SpecialItemRenderer.register(new ModelHolder<>(
                 (stack) -> stack.getItem()

@@ -1,3 +1,4 @@
+/* (C) TAMA Studios 2025 */
 package tama.Controls;
 
 import net.minecraft.core.BlockPos;
@@ -32,7 +33,10 @@ public class LightSwitchControl extends Control<ControlDataNone> {
         if (hand == InteractionHand.MAIN_HAND) {
             if (!level.isClient()) {
                 this.range = RoundelRemote.cycle(this.range);
-                player.displayClientMessage(Component.literal("§fRange set to " + this.range.name().toLowerCase() + " (" + this.range.getRange() + ")"), true);
+                player.displayClientMessage(
+                        Component.literal("§fRange set to " + this.range.name().toLowerCase() + " ("
+                                + this.range.getRange() + ")"),
+                        true);
             }
 
             return InteractionResult.sidedSuccess(player.level().isClientSide);
@@ -44,12 +48,14 @@ public class LightSwitchControl extends Control<ControlDataNone> {
     public InteractionResult onPunch(Player player, ITardisLevel level) {
         if (!level.isClient()) {
             this.swatch = !this.swatch;
-            for(int x = -range.range / 2; x < range.range / 2; x++) {
-                for(int y = -range.range / 2; y < range.range / 2; y++) {
-                    for(int z = -range.range / 2; z < range.range / 2; z++) {
+            for (int x = -range.range / 2; x < range.range / 2; x++) {
+                for (int y = -range.range / 2; y < range.range / 2; y++) {
+                    for (int z = -range.range / 2; z < range.range / 2; z++) {
                         BlockPos relativePos = player.blockPosition().offset(x, y, z);
-                        if(level.getLevel().getBlockState(relativePos).getBlock() instanceof RoundelBlock) {
-                            BlockState state = level.getLevel().getBlockState(relativePos).setValue(RoundelBlock.IS_LIT, this.swatch);
+                        if (level.getLevel().getBlockState(relativePos).getBlock() instanceof RoundelBlock) {
+                            BlockState state = level.getLevel()
+                                    .getBlockState(relativePos)
+                                    .setValue(RoundelBlock.IS_LIT, this.swatch);
                             level.getLevel().setBlockAndUpdate(relativePos, state);
                         }
                     }

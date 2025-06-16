@@ -11,17 +11,17 @@ import net.tardis.mod.client.animations.AnimationHelper;
 import net.tardis.mod.client.models.consoles.IAdditionalConsoleRenderData;
 import net.tardis.mod.client.renderers.WorldText;
 import net.tardis.mod.client.renderers.consoles.ConsoleRenderer;
-import tama.Client.Models.Consoles.CopperConsoleModel;
-import tama.TileEntities.Console.CopperConsoleTile;
+import tama.Client.Models.Consoles.ported.ToyotaConsoleModel;
+import tama.TileEntities.Console.ToyotaConsoleTile;
 
-public class CopperConsoleRenderer extends ConsoleRenderer<CopperConsoleTile, CopperConsoleModel<CopperConsoleTile>> {
+public class ToyotaConsoleRenderer extends ConsoleRenderer<ToyotaConsoleTile, ToyotaConsoleModel<ToyotaConsoleTile>> {
 
     final WorldText text =
             new WorldText(4.75F / 16.0F, 2.4F / 16.0F).minXScale(0.1F).withColor(0xFFFFFF);
 
-    public CopperConsoleRenderer(
+    public ToyotaConsoleRenderer(
             BlockEntityRendererProvider.Context context,
-            CopperConsoleModel<CopperConsoleTile> model,
+            ToyotaConsoleModel<ToyotaConsoleTile> model,
             ResourceLocation tex) {
         super(context, model, tex);
     }
@@ -29,7 +29,7 @@ public class CopperConsoleRenderer extends ConsoleRenderer<CopperConsoleTile, Co
     @Override
     public void renderAdditionalData(
             ITardisLevel tardis,
-            CopperConsoleTile console,
+            ToyotaConsoleTile console,
             float partialTicks,
             PoseStack pose,
             MultiBufferSource source,
@@ -48,7 +48,7 @@ public class CopperConsoleRenderer extends ConsoleRenderer<CopperConsoleTile, Co
     @Override
     public void renderExtra(
             ITardisLevel level,
-            CopperConsoleTile console,
+            ToyotaConsoleTile console,
             float partialTicks,
             PoseStack pose,
             MultiBufferSource source,
@@ -59,9 +59,9 @@ public class CopperConsoleRenderer extends ConsoleRenderer<CopperConsoleTile, Co
         pose.pushPose();
         model.root().translateAndRotate(pose);
         AnimationHelper.translateToCenter(
-                pose, AnimationHelper.translateTo(pose, model.root(), "base/monitor/bone140_r1/screen"));
+                pose, AnimationHelper.translateTo(pose, model.root(), "components/north_east/bone180/monitor_glow"));
         // pose.mulPose(Axis.XN.rotationDegrees(6));
-        pose.scale(0.6f, 0.6f, 0.6f);
+        pose.scale(1.4f, 1.4f, 1.4f);
         pose.translate(-(text.width / 2), -(text.height / 2), 0.01);
         text.renderText(BaseMonitorTile.gatherWorldText(level), pose, source);
         pose.popPose();

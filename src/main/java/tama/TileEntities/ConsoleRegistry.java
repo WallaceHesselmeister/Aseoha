@@ -19,12 +19,15 @@ import net.tardis.mod.item.SpecialBlockItem;
 import tama.Client.Models.Consoles.BrackolinConsoleModel;
 import tama.Client.Models.Consoles.CopperConsoleModel;
 import tama.Client.Models.Consoles.HartnellConsoleModel;
+import tama.Client.Models.Consoles.ported.ToyotaConsoleModel;
 import tama.Client.Renderers.Consoles.BrackolinConsoleRenderer;
 import tama.Client.Renderers.Consoles.CopperConsoleRenderer;
 import tama.Client.Renderers.Consoles.HartnellConsoleRenderer;
+import tama.Client.Renderers.Consoles.ToyotaConsoleRenderer;
 import tama.TileEntities.Console.BrackolinConsoleTile;
 import tama.TileEntities.Console.CopperConsoleTile;
 import tama.TileEntities.Console.HartnellConsoleTile;
+import tama.TileEntities.Console.ToyotaConsoleTile;
 
 import java.util.function.Supplier;
 
@@ -45,6 +48,9 @@ public class ConsoleRegistry {
     public static final RegistryObject<ConsoleBlock> COPPER_CONSOLE_BLOCK;
     public static final RegistryObject<BlockEntityType<CopperConsoleTile>> COPPER_CONSOLE_TILE;
 
+    public static final RegistryObject<ConsoleBlock> TOYOTA_CONSOLE_BLOCK;
+    public static final RegistryObject<BlockEntityType<ToyotaConsoleTile>> TOYOTA_CONSOLE_TILE;
+
     public static final RegistryObject<ConsoleBlock> BRACKOLIN_CONSOLE_BLOCK;
     public static final RegistryObject<BlockEntityType<BrackolinConsoleTile>> BRACKOLIN_CONSOLE_TILE;
 
@@ -58,6 +64,11 @@ public class ConsoleRegistry {
                 registerWithItemSpecial("console/copper", () -> new ConsoleBlock(ConsoleRegistry.COPPER_CONSOLE_TILE));
         COPPER_CONSOLE_TILE =
                 TYPES.register("console/copper", () -> create(CopperConsoleTile::new, COPPER_CONSOLE_BLOCK.get()));
+
+        TOYOTA_CONSOLE_BLOCK =
+                registerWithItemSpecial("console/toyota", () -> new ConsoleBlock(ConsoleRegistry.TOYOTA_CONSOLE_TILE));
+        TOYOTA_CONSOLE_TILE =
+                TYPES.register("console/toyota", () -> create(ToyotaConsoleTile::new, TOYOTA_CONSOLE_BLOCK.get()));
 
         BRACKOLIN_CONSOLE_BLOCK = registerWithItemSpecial(
                 "console/brackolin", () -> new ConsoleBlock(ConsoleRegistry.BRACKOLIN_CONSOLE_TILE));
@@ -78,6 +89,7 @@ public class ConsoleRegistry {
     @OnlyIn(Dist.CLIENT)
     public static void registerModel(EntityRenderersEvent.RegisterLayerDefinitions event) {
         event.registerLayerDefinition(CopperConsoleModel.LAYER_LOCATION, CopperConsoleModel::createBodyLayer);
+        event.registerLayerDefinition(ToyotaConsoleModel.LAYER_LOCATION, ToyotaConsoleModel::createBodyLayer);
         event.registerLayerDefinition(BrackolinConsoleModel.LAYER_LOCATION, BrackolinConsoleModel::createBodyLayer);
         event.registerLayerDefinition(HartnellConsoleModel.LAYER_LOCATION, HartnellConsoleModel::createBodyLayer);
     }
@@ -90,6 +102,13 @@ public class ConsoleRegistry {
                         context,
                         new CopperConsoleModel<>(context.bakeLayer(CopperConsoleModel.LAYER_LOCATION)),
                         new ResourceLocation(MODID, "textures/consoles/copper.png")));
+
+        event.registerBlockEntityRenderer(
+                TOYOTA_CONSOLE_TILE.get(),
+                context -> new ToyotaConsoleRenderer(
+                        context,
+                        new ToyotaConsoleModel<>(context.bakeLayer(ToyotaConsoleModel.LAYER_LOCATION)),
+                        new ResourceLocation(MODID, "textures/consoles/toyota.png")));
 
         event.registerBlockEntityRenderer(
                 BRACKOLIN_CONSOLE_TILE.get(),

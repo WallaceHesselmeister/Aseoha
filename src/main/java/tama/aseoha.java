@@ -3,7 +3,6 @@ package tama;
 
 import com.mojang.logging.LogUtils;
 import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.fml.common.Mod;
@@ -18,6 +17,7 @@ import static tama.Blocks.ABlocks.BLOCKS;
 import static tama.Items.AItems.FOOD_ITEMS;
 import static tama.Items.AItems.ITEMS;
 import static tama.Items.ATabs.TABS;
+import static tama.Registries.ControlRegistry.CONTROLS;
 import static tama.TileEntities.TileRegistry.TYPES;
 
 @Mod(aseoha.MODID)
@@ -30,17 +30,16 @@ public class aseoha {
 
     public aseoha() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
-
         TABS.register(modEventBus);
         BLOCKS.register(modEventBus);
         ITEMS.register(modEventBus);
         FOOD_ITEMS.register(modEventBus);
         TYPES.register(modEventBus);
+        CONTROLS.register(modEventBus);
         Roundels.register(modEventBus);
         Entities.TYPES.register(modEventBus);
         ExteriorRegistry.RegisterAll(modEventBus);
         ConsoleRegistry.Register(modEventBus);
         DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> ExteriorRegistry::RegisterBrokenExteriorRenderers);
-        MinecraftForge.EVENT_BUS.register(this);
     }
 }

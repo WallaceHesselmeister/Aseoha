@@ -1975,7 +1975,7 @@ public class BrackolinConsoleModel<T extends BrackolinConsoleTile> extends BaseT
             this.animate(
                     tardis.getControlDataOrCreate(ControlRegistry.RANDOMIZER.get())
                             .getUseAnimationState(),
-                    CopperConsoleModel.CopperConsoleModelAnimation.RANDOMIZER,
+                    BrackolinAnimation.RANDOMIZER,
                     ageInTicks);
             this.animate(
                     tardis.getControlDataOrCreate(ControlRegistry.X.get()).getUseAnimationState(),
@@ -1989,12 +1989,6 @@ public class BrackolinConsoleModel<T extends BrackolinConsoleTile> extends BaseT
                     tardis.getControlDataOrCreate(ControlRegistry.Z.get()).getUseAnimationState(),
                     BrackolinAnimation.Z,
                     ageInTicks);
-            //
-            // this.animate(tardis.getControlDataOrCreate(ControlRegistry.HANDBRAKE.get()).getUseAnimationState(),
-            // BrackolinAnimation.BRAKE, ageInTicks);
-            //
-            // this.animate(tardis.getControlDataOrCreate(ControlRegistry.DIMENSIONS.get()).getUseAnimationState(),
-            // BrackolinAnimation.DIMENSION, ageInTicks);
             this.animate(
                     tardis.getControlDataOrCreate(ControlRegistry.DOOR.get()).getUseAnimationState(),
                     BrackolinAnimation.DOOR,
@@ -2008,12 +2002,26 @@ public class BrackolinConsoleModel<T extends BrackolinConsoleTile> extends BaseT
                             .getUseAnimationState(),
                     BrackolinAnimation.FAST_RETURN,
                     ageInTicks);
-            //
-            // this.animate(tardis.getControlDataOrCreate(ControlRegistry.REFUELER.get()).getUseAnimationState(),
-            // CopperConsoleModel.CopperConsoleModelAnimation.REFUEL_ON, ageInTicks);
-            //
-            // this.animate(tardis.getControlDataOrCreate(ControlRegistry.STABILIZERS.get()).getUseAnimationState(),
-            // CopperConsoleModel.CopperConsoleModelAnimation.STABILIZER, ageInTicks);
+            this.animate(
+                    tardis.getControlDataOrCreate(ControlRegistry.INCREMENT.get())
+                            .getUseAnimationState(),
+                    BrackolinAnimation.INCREMENT,
+                    ageInTicks);
+            this.animate(
+                    tardis.getControlDataOrCreate(ControlRegistry.REFUELER.get())
+                            .getUseAnimationState(),
+                    BrackolinAnimation.REFUEL,
+                    ageInTicks);
+            this.animate(
+                    tardis.getControlDataOrCreate(ControlRegistry.TELEPATHICS.get())
+                            .getUseAnimationState(),
+                    BrackolinAnimation.TELEPATHIC,
+                    ageInTicks);
+            this.animate(
+                    tardis.getControlDataOrCreate(ControlRegistry.LANDING_TYPE.get())
+                            .getUseAnimationState(),
+                    BrackolinAnimation.VERTICAL_LANDING,
+                    ageInTicks);
 
             BrackolinAnimation.animateConditional(tardis, this, ageInTicks);
         });
