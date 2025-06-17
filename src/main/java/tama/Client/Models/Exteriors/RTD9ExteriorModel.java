@@ -1985,8 +1985,8 @@ public class RTD9ExteriorModel<T extends ExteriorTile> extends BaseTileHierarchi
             float alpha) {
         poseStack.pushPose();
 
-        poseStack.scale(0.35f, 0.35f, 0.35f);
-        poseStack.translate(0f, 2.91f, 0f);
+        poseStack.scale(0.5f, 0.5f, 0.5f);
+        poseStack.translate(0f, 1.62, 0f);
         this.RightEmmisives.yRot = this.RightDoor.yRot;
         this.LeftEmmisives.yRot = this.LeftDoor.yRot;
         Shell.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
