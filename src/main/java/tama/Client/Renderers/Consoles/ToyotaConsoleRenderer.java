@@ -6,30 +6,28 @@ import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
 import net.minecraft.resources.ResourceLocation;
 import net.tardis.mod.blockentities.BaseMonitorTile;
+import net.tardis.mod.blockentities.consoles.ConsoleTile;
 import net.tardis.mod.cap.level.ITardisLevel;
 import net.tardis.mod.client.animations.AnimationHelper;
 import net.tardis.mod.client.models.consoles.IAdditionalConsoleRenderData;
 import net.tardis.mod.client.renderers.WorldText;
 import net.tardis.mod.client.renderers.consoles.ConsoleRenderer;
 import tama.Client.Models.Consoles.ported.ToyotaConsoleModel;
-import tama.TileEntities.Console.ToyotaConsoleTile;
 
-public class ToyotaConsoleRenderer extends ConsoleRenderer<ToyotaConsoleTile, ToyotaConsoleModel<ToyotaConsoleTile>> {
+public class ToyotaConsoleRenderer extends ConsoleRenderer<ConsoleTile, ToyotaConsoleModel<ConsoleTile>> {
 
     final WorldText text =
             new WorldText(4.75F / 16.0F, 2.4F / 16.0F).minXScale(0.1F).withColor(0xFFFFFF);
 
     public ToyotaConsoleRenderer(
-            BlockEntityRendererProvider.Context context,
-            ToyotaConsoleModel<ToyotaConsoleTile> model,
-            ResourceLocation tex) {
+            BlockEntityRendererProvider.Context context, ToyotaConsoleModel<ConsoleTile> model, ResourceLocation tex) {
         super(context, model, tex);
     }
 
     @Override
     public void renderAdditionalData(
             ITardisLevel tardis,
-            ToyotaConsoleTile console,
+            ConsoleTile console,
             float partialTicks,
             PoseStack pose,
             MultiBufferSource source,
@@ -48,7 +46,7 @@ public class ToyotaConsoleRenderer extends ConsoleRenderer<ToyotaConsoleTile, To
     @Override
     public void renderExtra(
             ITardisLevel level,
-            ToyotaConsoleTile console,
+            ConsoleTile console,
             float partialTicks,
             PoseStack pose,
             MultiBufferSource source,

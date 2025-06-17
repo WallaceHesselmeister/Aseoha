@@ -1,5 +1,5 @@
 {
-  "console" : "aseoha:console/toyota",
+  "console" : "aseoha:console/toyota_violet",
   "controls" : {
     "aseoha:light_switch" : {
       "offset" : [ 0.20625, 0.984375, -1.21875 ],

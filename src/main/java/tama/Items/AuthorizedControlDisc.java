@@ -10,8 +10,8 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
+import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.capabilities.ICapabilityProvider;
-import net.tardis.mod.cap.GenericProvider;
 import net.tardis.mod.cap.level.ITardisLevel;
 import net.tardis.mod.item.ISonicPortAction;
 import net.tardis.mod.misc.SpaceTimeCoord;
@@ -19,18 +19,21 @@ import net.tardis.mod.registry.ControlRegistry;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import tama.Capabilities.Capabilities;
-import tama.Capabilities.ControlDiscCapability;
+import tama.Capabilities.ControlDiscProvider;
 import tama.Capabilities.Interfaces.IControlDiscCapability;
 import tama.Misc.GrammarNazi;
 
 import java.util.List;
+import java.util.function.Supplier;
 
 public class AuthorizedControlDisc extends Item implements ISonicPortAction {
+    private final Supplier<Capability<IControlDiscCapability>> controlDiscCap;
     BlockPos blockPos;
     Level level;
 
     public AuthorizedControlDisc(Properties p_41383_) {
         super(p_41383_.stacksTo(1));
+        this.controlDiscCap = () -> Capabilities.CONTROL_DISC;
     }
 
     @Override
@@ -40,7 +43,7 @@ public class AuthorizedControlDisc extends Item implements ISonicPortAction {
         ItemStack itemStack = useOnContext.getItemInHand();
         this.level = useOnContext.getLevel();
         this.blockPos = useOnContext.getClickedPos();
-        itemStack.getCapability(Capabilities.CONTROL_DISC).ifPresent(cap -> {
+        itemStack.getCapability(controlDiscCap.get()).ifPresent(cap -> {
             cap.setDiscLevel(this.level.dimension());
             cap.setDiscBlockPos(this.blockPos);
         });
@@ -49,8 +52,7 @@ public class AuthorizedControlDisc extends Item implements ISonicPortAction {
 
     @Override
     public @Nullable ICapabilityProvider initCapabilities(ItemStack stack, @Nullable CompoundTag nbt) {
-        final GenericProvider<IControlDiscCapability, CompoundTag, IControlDiscCapability> provider =
-                new GenericProvider<>(Capabilities.CONTROL_DISC, new ControlDiscCapability(stack));
+        ControlDiscProvider provider = new ControlDiscProvider(stack);
         if (nbt != null) {
             provider.deserializeNBT(nbt);
         }
@@ -63,7 +65,7 @@ public class AuthorizedControlDisc extends Item implements ISonicPortAction {
             @Nullable Level pLevel,
             @NotNull List<Component> tooltip,
             @NotNull TooltipFlag pIsAdvanced) {
-        pStack.getCapability(Capabilities.CONTROL_DISC).ifPresent(tool -> {
+        pStack.getCapability(controlDiscCap.get()).ifPresent(tool -> {
             tool.getDiscLevel()
                     .ifPresent(key -> tooltip.add(Component.nullToEmpty("Level set to: "
                             + key.location().toString().replace(key.location().getNamespace() + ":", ""))));
@@ -76,7 +78,7 @@ public class AuthorizedControlDisc extends Item implements ISonicPortAction {
 
     @Override
     public ItemStack onAddedToPort(ItemStack itemStack, ITardisLevel iTardisLevel) {
-        itemStack.getCapability(Capabilities.CONTROL_DISC).ifPresent(cap -> {
+        itemStack.getCapability(controlDiscCap.get()).ifPresent(cap -> {
             if (cap.getDiscBlockPos().isEmpty() && cap.getDiscLevel().isEmpty()) return;
             iTardisLevel.setDestination(new SpaceTimeCoord(
                     cap.getDiscLevel().get(), cap.getDiscBlockPos().get()));

@@ -10,15 +10,16 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
 import tama.Blocks.Roundels;
 import tama.Registries.Entities;
-import tama.TileEntities.ConsoleRegistry;
+import tama.TileEntities.ConsoleBlocks;
+import tama.TileEntities.ExteriorBlocks;
 import tama.TileEntities.ExteriorRegistry;
+import tama.TileEntities.TileRegistry;
 
 import static tama.Blocks.ABlocks.BLOCKS;
 import static tama.Items.AItems.FOOD_ITEMS;
 import static tama.Items.AItems.ITEMS;
 import static tama.Items.ATabs.TABS;
 import static tama.Registries.ControlRegistry.CONTROLS;
-import static tama.TileEntities.TileRegistry.TYPES;
 
 @Mod(aseoha.MODID)
 @SuppressWarnings("removal")
@@ -26,20 +27,21 @@ public class aseoha {
 
     public static final String MODID = "aseoha";
 
-    private static final Logger LOGGER = LogUtils.getLogger();
+    public static final Logger LOGGER = LogUtils.getLogger();
 
     public aseoha() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
-        TABS.register(modEventBus);
-        BLOCKS.register(modEventBus);
         ITEMS.register(modEventBus);
+        TABS.register(modEventBus);
         FOOD_ITEMS.register(modEventBus);
-        TYPES.register(modEventBus);
-        CONTROLS.register(modEventBus);
+        BLOCKS.register(modEventBus);
+        ConsoleBlocks.Register(modEventBus);
         Roundels.register(modEventBus);
         Entities.TYPES.register(modEventBus);
-        ExteriorRegistry.RegisterAll(modEventBus);
-        ConsoleRegistry.Register(modEventBus);
-        DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> ExteriorRegistry::RegisterBrokenExteriorRenderers);
+        ExteriorBlocks.EXTERIOR_BLOCKS.register(modEventBus);
+        TileRegistry.TYPES.register(modEventBus);
+        ExteriorRegistry.EXTERIORS.register(modEventBus);
+        CONTROLS.register(modEventBus);
+        DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> ClientRegistry::RegisterBrokenExteriorRenderers);
     }
 }

@@ -15,18 +15,19 @@ import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
 import net.minecraft.resources.ResourceLocation;
+import net.tardis.mod.blockentities.consoles.ConsoleTile;
 import net.tardis.mod.cap.Capabilities;
 import net.tardis.mod.cap.level.ITardisLevel;
 import net.tardis.mod.client.animations.AnimationHelper;
 import net.tardis.mod.client.models.BaseTileHierarchicalModel;
 import net.tardis.mod.control.datas.ControlDataBool;
 import net.tardis.mod.control.datas.ControlDataFloat;
+import net.tardis.mod.control.datas.ControlDataNone;
 import net.tardis.mod.registry.ControlRegistry;
 import org.joml.Vector3f;
-import tama.TileEntities.Console.ToyotaConsoleTile;
 import tama.aseoha;
 
-public class ToyotaConsoleModel<T extends ToyotaConsoleTile> extends BaseTileHierarchicalModel<T> {
+public class ToyotaConsoleModel<T extends ConsoleTile> extends BaseTileHierarchicalModel<T> {
     // This layer location should be baked with EntityRendererProvider.Context in the entity renderer and passed into
     // this model's constructor
     public static final ModelLayerLocation LAYER_LOCATION =
@@ -2556,10 +2557,10 @@ public class ToyotaConsoleModel<T extends ToyotaConsoleTile> extends BaseTileHie
                     tardis.getControlDataOrCreate(ControlRegistry.Z.get()).getUseAnimationState(),
                     ToyotaConsoleModelAnimation.Z,
                     ageInTicks);
-//            this.animate(
-//                    tardis.getControlDataOrCreate(ControlRegistry.DOOR.get()).getUseAnimationState(),
-//                    ToyotaConsoleModelAnimation.DOOR_SWITCH_UP,
-//                    ageInTicks);
+            //            this.animate(
+            //                    tardis.getControlDataOrCreate(ControlRegistry.DOOR.get()).getUseAnimationState(),
+            //                    ToyotaConsoleModelAnimation.DOOR_SWITCH_UP,
+            //                    ageInTicks);
 
             this.animate(
                     tardis.getControlDataOrCreate(ControlRegistry.FACING.get()).getUseAnimationState(),
@@ -3130,7 +3131,11 @@ public class ToyotaConsoleModel<T extends ToyotaConsoleTile> extends BaseTileHie
         public static void animateConditional(ITardisLevel tardis, ToyotaConsoleModel<?> model, float ageInTicks) {
             final ControlDataFloat throttle = tardis.getControlDataOrCreate(ControlRegistry.THROTTLE.get());
             final ControlDataBool handbrake = tardis.getControlDataOrCreate(ControlRegistry.HANDBRAKE.get());
-            boolean door = tardis.getInteriorManager().getDoorHandler().getDoorState().isOpen();
+            final ControlDataBool light =
+                    tardis.getControlDataOrCreate(tama.Registries.ControlRegistry.LIGHT_SWITCH.get());
+            final ControlDataNone door = (ControlDataNone) tardis.getControlDataOrCreate(ControlRegistry.DOOR.get());
+            boolean doorBool =
+                    tardis.getInteriorManager().getDoorHandler().getDoorState().isOpen();
 
             model.getAnyDescendantWithName("throttle_rotate_X80")
                     .ifPresent(control -> control.offsetRotation(AnimationHelper.getSteppedRotation(
@@ -3152,12 +3157,22 @@ public class ToyotaConsoleModel<T extends ToyotaConsoleTile> extends BaseTileHie
                             20,
                             new Vector3f(0, 1, 0)))));
 
+            model.getAnyDescendantWithName("door2_rotate_x_100")
+                    .ifPresent(control -> control.offsetRotation(new Vector3f(AnimationHelper.getSteppedRotation(
+                            door,
+                            100,
+                            (!doorBool ? 1 : 0),
+                            (doorBool ? 1 : 0),
+                            ageInTicks,
+                            20,
+                            new Vector3f(1, 0, 0)))));
+
             model.getAnyDescendantWithName("door_rotate_x_100")
                     .ifPresent(control -> control.offsetRotation(new Vector3f(AnimationHelper.getSteppedRotation(
-                            handbrake,
+                            light,
                             100,
-                            (!door ? 1 : 0),
-                            (door ? 1 : 0),
+                            (!light.get() ? 1 : 0),
+                            (light.get() ? 1 : 0),
                             ageInTicks,
                             20,
                             new Vector3f(1, 0, 0)))));

@@ -12,16 +12,15 @@ import net.tardis.mod.block.RoundelBlock;
 import net.tardis.mod.cap.level.ITardisLevel;
 import net.tardis.mod.control.Control;
 import net.tardis.mod.control.ControlType;
+import net.tardis.mod.control.datas.ControlDataBool;
 import net.tardis.mod.control.datas.ControlDataFloat;
-import net.tardis.mod.control.datas.ControlDataNone;
 import net.tardis.mod.sound.SoundRegistry;
 import tama.RoundelRemote;
 
-public class LightSwitchControl extends Control<ControlDataNone> {
+public class LightSwitchControl extends Control<ControlDataBool> {
     public RoundelRemote.Range range = RoundelRemote.Range.LONGEST;
-    public boolean swatch = false;
 
-    public LightSwitchControl(ControlType<ControlDataNone> type) {
+    public LightSwitchControl(ControlType<ControlDataBool> type) {
         super(type);
     }
 
@@ -46,8 +45,10 @@ public class LightSwitchControl extends Control<ControlDataNone> {
     }
 
     public InteractionResult onPunch(Player player, ITardisLevel level) {
+        if (this.getData(level).get() == null) this.getData(level).set(false);
+
         if (!level.isClient()) {
-            this.swatch = !this.swatch;
+            this.getData(level).set(!this.getData(level).get());
             for (int x = -range.range / 2; x < range.range / 2; x++) {
                 for (int y = -range.range / 2; y < range.range / 2; y++) {
                     for (int z = -range.range / 2; z < range.range / 2; z++) {
@@ -55,7 +56,9 @@ public class LightSwitchControl extends Control<ControlDataNone> {
                         if (level.getLevel().getBlockState(relativePos).getBlock() instanceof RoundelBlock) {
                             BlockState state = level.getLevel()
                                     .getBlockState(relativePos)
-                                    .setValue(RoundelBlock.IS_LIT, this.swatch);
+                                    .setValue(
+                                            RoundelBlock.IS_LIT,
+                                            this.getData(level).get());
                             level.getLevel().setBlockAndUpdate(relativePos, state);
                         }
                     }
@@ -64,5 +67,10 @@ public class LightSwitchControl extends Control<ControlDataNone> {
         }
 
         return InteractionResult.sidedSuccess(level.isClient());
+    }
+
+    @Override
+    public ControlDataBool getData(ITardisLevel tardis) {
+        return super.getData(tardis);
     }
 }

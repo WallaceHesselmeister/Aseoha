@@ -1,0 +1,3 @@
+hartnell.json{
+  "parent": "minecraft:builtin/entity"
+}
