@@ -2,8 +2,6 @@
 package tama.TileEntities;
 
 import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.IForgeRegistry;
-import net.minecraftforge.registries.RegistryBuilder;
 import net.minecraftforge.registries.RegistryObject;
 import net.tardis.mod.entity.CarExteriorEntity;
 import net.tardis.mod.exterior.EntityExterior;
@@ -13,8 +11,6 @@ import net.tardis.mod.helpers.Helper;
 import tama.Registries.Entities;
 import tama.aseoha;
 
-import java.util.function.Supplier;
-
 public class ExteriorRegistry {
 
     public ExteriorRegistry() {}
@@ -23,8 +19,6 @@ public class ExteriorRegistry {
     /** Exterior Deferred Register */
     public static final DeferredRegister<ExteriorType> EXTERIORS =
             DeferredRegister.create(Helper.createRL("exterior"), aseoha.MODID);
-
-    public static final Supplier<IForgeRegistry<ExteriorType>> REGISTRY = EXTERIORS.makeRegistry(RegistryBuilder::new);
 
     // Blocks, Tiles, and Exteriors
 

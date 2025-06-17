@@ -31,17 +31,17 @@ public class aseoha {
 
     public aseoha() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
-        ITEMS.register(modEventBus);
-        TABS.register(modEventBus);
         FOOD_ITEMS.register(modEventBus);
         BLOCKS.register(modEventBus);
-        ConsoleBlocks.Register(modEventBus);
         Roundels.register(modEventBus);
         Entities.TYPES.register(modEventBus);
+        ConsoleBlocks.Register(modEventBus);
         ExteriorBlocks.EXTERIOR_BLOCKS.register(modEventBus);
         TileRegistry.TYPES.register(modEventBus);
         ExteriorRegistry.EXTERIORS.register(modEventBus);
         CONTROLS.register(modEventBus);
         DistExecutor.unsafeRunWhenOn(Dist.CLIENT, () -> ClientRegistry::RegisterBrokenExteriorRenderers);
+        ITEMS.register(modEventBus);
+        TABS.register(modEventBus);
     }
 }

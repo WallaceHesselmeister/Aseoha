@@ -33,6 +33,10 @@ public class CommonEvents {
     @SubscribeEvent
     public static void OnWorldTick(TickEvent.LevelTickEvent event) {
         if (event.phase != TickEvent.Phase.END) return;
+        if (event.level.isClientSide) return;
+        if (event.level.getServer() == null) return;
+        if (event.level.getServer().getLevel(event.level.dimension()) == null) return;
+        if (event.level.getServer() == null) return;
         event.level
                 .getServer()
                 .getLevel(event.level.dimension())
