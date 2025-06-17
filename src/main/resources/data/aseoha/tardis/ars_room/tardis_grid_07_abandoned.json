@@ -2,7 +2,7 @@
   "canBeRemoved" : true,
   "extra_unlocks" : [ ],
   "generates_naturally" : true,
-  "parent" : "aseoha:corridors/tardis_grid_07",
+  "parent" : "aseoha:tardis_grid_07",
   "roomLocation" : "aseoha:corridors/tardis_grid_07_abandoned",
   "type" : "corridor",
   "y_offset" : -1
