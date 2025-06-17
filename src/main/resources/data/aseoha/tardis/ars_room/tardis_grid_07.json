@@ -1,0 +1,8 @@
+{
+  "canBeRemoved" : true,
+  "extra_unlocks" : [ ],
+  "generates_naturally" : false,
+  "roomLocation" : "aseoha:corridors/tardis_grid_07",
+  "type" : "corridor",
+  "y_offset" : -1
+}
