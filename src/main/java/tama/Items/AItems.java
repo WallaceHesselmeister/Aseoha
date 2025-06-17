@@ -32,9 +32,8 @@ public class AItems {
                             .build())
                     .rarity(Rarity.UNCOMMON)));
 
-    //    public static final RegistryObject<Item> AUTHORIZED_CONTROL_DISC = ITEMS.register(
-    //            "authorized_control_disc", () -> new AuthorizedControlDisc((new
-    // Item.Properties()).rarity(Rarity.COMMON)));
+    public static final RegistryObject<Item> AUTHORIZED_CONTROL_DISC = ITEMS.register(
+            "authorized_control_disc", () -> new AuthorizedControlDisc((new Item.Properties()).rarity(Rarity.COMMON)));
 
     public static final RegistryObject<Item> ROUNDEL_REMOTE =
             ITEMS.register("roundel_remote", () -> new RoundelRemote((new Item.Properties()).rarity(Rarity.COMMON)));
