@@ -2639,7 +2639,7 @@ public class ToyotaConsoleModel<T extends ConsoleTile> extends BaseTileHierarchi
     }
 
     public static class ToyotaConsoleModelAnimation {
-        public static final AnimationDefinition ROTOR = AnimationDefinition.Builder.withLength(2.0F)
+        public static final AnimationDefinition ROTOR = AnimationDefinition.Builder.withLength(4.0F)
                 .looping()
                 .addAnimation(
                         "rotor_top_translate_8",
@@ -2664,15 +2664,15 @@ public class ToyotaConsoleModel<T extends ConsoleTile> extends BaseTileHierarchi
                                 new Keyframe(
                                         0.0F,
                                         KeyframeAnimations.posVec(0.0F, 0.0F, 0.0F),
-                                        AnimationChannel.Interpolations.LINEAR),
-                                new Keyframe(
-                                        1.0F,
-                                        KeyframeAnimations.posVec(0.0F, -14.0F, 0.0F),
-                                        AnimationChannel.Interpolations.LINEAR),
+                                        AnimationChannel.Interpolations.CATMULLROM),
                                 new Keyframe(
                                         2.0F,
+                                        KeyframeAnimations.posVec(0.0F, -14.0F, 0.0F),
+                                        AnimationChannel.Interpolations.CATMULLROM),
+                                new Keyframe(
+                                        4.0F,
                                         KeyframeAnimations.posVec(0.0F, 0.0F, 0.0F),
-                                        AnimationChannel.Interpolations.LINEAR)))
+                                        AnimationChannel.Interpolations.CATMULLROM)))
                 .build();
 
         public static final AnimationDefinition DOOR_SWITCH_UP = AnimationDefinition.Builder.withLength(0.25F)
@@ -3161,10 +3161,10 @@ public class ToyotaConsoleModel<T extends ConsoleTile> extends BaseTileHierarchi
                     .ifPresent(control -> control.offsetRotation(new Vector3f(AnimationHelper.getSteppedRotation(
                             door,
                             100,
-                            (!doorBool ? 1 : 0),
-                            (doorBool ? 1 : 0),
+                            (doorBool ? 2 : 0),
+                            (!doorBool ? 2 : 0),
                             ageInTicks,
-                            20,
+                            0,
                             new Vector3f(1, 0, 0)))));
 
             model.getAnyDescendantWithName("door_rotate_x_100")
@@ -3174,7 +3174,7 @@ public class ToyotaConsoleModel<T extends ConsoleTile> extends BaseTileHierarchi
                             (!light.get() ? 1 : 0),
                             (light.get() ? 1 : 0),
                             ageInTicks,
-                            20,
+                            0,
                             new Vector3f(1, 0, 0)))));
         }
     }

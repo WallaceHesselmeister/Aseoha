@@ -1,0 +1,10 @@
+{
+  "pools" : [ {
+    "entries" : [ {
+      "name" : "aseoha:console/brackolin",
+      "type" : "minecraft:item"
+    } ],
+    "rolls" : 1
+  } ],
+  "type" : "minecraft:block"
+}

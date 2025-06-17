@@ -1,10 +1,10 @@
 {
   "ingredients" : [ {
-    "item" : "tardis:neutron_console"
+    "item" : "aseoha:console/toyota"
   } ],
   "result" : {
     "count" : 1,
-    "item" : "tardis:steam_console"
+    "item" : "aseoha:console/toyota_violet"
   },
   "type" : "minecraft:crafting_shapeless"
 }

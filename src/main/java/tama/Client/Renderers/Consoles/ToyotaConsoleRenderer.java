@@ -2,6 +2,7 @@
 package tama.Client.Renderers.Consoles;
 
 import com.mojang.blaze3d.vertex.PoseStack;
+import com.mojang.math.Axis;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
 import net.minecraft.resources.ResourceLocation;
@@ -34,13 +35,6 @@ public class ToyotaConsoleRenderer extends ConsoleRenderer<ConsoleTile, ToyotaCo
             int packedLight,
             int packedOverlay,
             IAdditionalConsoleRenderData data) {
-        // pose.pushPose();
-        // pose.translate(0.35, 0.3, -0.19);
-        // super.renderAdditionalData(tardis, console, partialTicks, pose, source,
-        // packedLight,
-        // packedOverlay,
-        // data);
-        // pose.popPose();
     }
 
     @Override
@@ -58,9 +52,12 @@ public class ToyotaConsoleRenderer extends ConsoleRenderer<ConsoleTile, ToyotaCo
         model.root().translateAndRotate(pose);
         AnimationHelper.translateToCenter(
                 pose, AnimationHelper.translateTo(pose, model.root(), "components/north_east/bone180/monitor_glow"));
-        // pose.mulPose(Axis.XN.rotationDegrees(6));
-        pose.scale(1.4f, 1.4f, 1.4f);
-        pose.translate(-(text.width / 2), -(text.height / 2), 0.01);
+        pose.mulPose(Axis.YN.rotationDegrees(180));
+        pose.mulPose(Axis.XN.rotationDegrees(90));
+        pose.scale(2f, 2f, 2f);
+        pose.translate(-(text.width / 2), -(text.height / 2), 0);
+        pose.translate(0.05, -0.05, 0.476);
+
         text.renderText(BaseMonitorTile.gatherWorldText(level), pose, source);
         pose.popPose();
     }

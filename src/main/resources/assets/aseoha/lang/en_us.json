@@ -215,6 +215,8 @@
   "command.aseoha.book.given": "Gave Manual",
   "command.aseoha.controls.fixed": "Re-Positioned Console Controls",
   "console.aseoha.brackolin": "Brackolin Console",
+  "console.aseoha.toyota": "Toyota Console",
+  "console.aseoha.toyota_violet": "Toyota Console (Violet)",
   "console.custard.blue": "Blue",
   "console.custard.default": "Default",
   "console.custard.off": "Off",
