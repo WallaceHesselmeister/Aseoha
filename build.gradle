@@ -97,6 +97,7 @@ dependencies {
 	implementation fg.deobf("curse.maven:xaeros-minimap-263420:6515024")
 	implementation fg.deobf("curse.maven:xaeros-world-map-317780:6538337")
 	implementation fg.deobf("curse.maven:jei-238222:6600311")
+	implementation fg.deobf("curse.maven:worldedit-225608:4586218")
 
 	annotationProcessor "org.spongepowered:mixin:${mixin_version}:processor"
 }
