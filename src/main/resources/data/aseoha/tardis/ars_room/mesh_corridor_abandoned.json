@@ -3,7 +3,7 @@
   "extra_unlocks" : [ ],
   "generates_naturally" : true,
   "parent" : "aseoha:mesh_corridor",
-  "roomLocation" : "aseoha:corridors/mesh_corridor",
+  "roomLocation" : "aseoha:corridors/mesh_corridor_abandoned",
   "type" : "corridor",
   "y_offset" : 0
 }
