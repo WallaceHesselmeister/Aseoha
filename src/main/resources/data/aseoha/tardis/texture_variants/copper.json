@@ -1,0 +1,7 @@
+{
+  "for" : {
+    "location" : "aseoha:console/copper",
+    "registry" : "minecraft:block_entity_type"
+  },
+  "texture" : "aseoha:textures/consoles/copper.png"
+}

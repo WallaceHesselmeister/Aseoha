@@ -56,9 +56,8 @@
     "aseoha:toyota_upper_wall_pattern_top_left",
     "aseoha:toyota_upper_wall_pattern_top_middle",
     "aseoha:toyota_upper_wall_pattern_top_right",
-    "aseoha:hb_pole",
-    "aseoha:hb_hex",
     "aseoha:console/copper",
-    "aseoha:console/brackolin"
+    "aseoha:console/brackolin",
+    "aseoha:console/toyota"
   ]
 }

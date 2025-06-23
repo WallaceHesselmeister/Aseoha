@@ -20,4 +20,11 @@ public class ExteriorBlocks {
 
     public static final RegistryObject<ExteriorBlock> WARDROBE_EXTERIOR_BLOCK = ExteriorBlocks.EXTERIOR_BLOCKS.register(
             "exterior/wardrobe", () -> new ExteriorBlock(TileRegistry.WARDROBE_EXTERIOR_TILE));
+
+    public static final RegistryObject<ExteriorBlock> CAPALDI_EXTERIOR_BLOCK = ExteriorBlocks.EXTERIOR_BLOCKS.register(
+            "exterior/capaldi", () -> new ExteriorBlock(TileRegistry.CAPALDI_EXTERIOR_TILE));
+
+    public static final RegistryObject<ExteriorBlock> HARTNELL112_EXTERIOR_BLOCK =
+            ExteriorBlocks.EXTERIOR_BLOCKS.register(
+                    "exterior/hartnell112", () -> new ExteriorBlock(TileRegistry.HARTNELL112_EXTERIOR_TILE));
 }

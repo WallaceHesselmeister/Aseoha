@@ -34,8 +34,7 @@ public class ToyotaConsoleRenderer extends ConsoleRenderer<ConsoleTile, ToyotaCo
             MultiBufferSource source,
             int packedLight,
             int packedOverlay,
-            IAdditionalConsoleRenderData data) {
-    }
+            IAdditionalConsoleRenderData data) {}
 
     @Override
     public void renderExtra(

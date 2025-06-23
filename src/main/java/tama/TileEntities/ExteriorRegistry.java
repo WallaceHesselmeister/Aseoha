@@ -26,6 +26,10 @@ public class ExteriorRegistry {
 
     public static final RegistryObject<ExteriorType> WARDROBE_EXTERIOR;
 
+    public static final RegistryObject<ExteriorType> CAPALDI_EXTERIOR;
+
+    public static final RegistryObject<ExteriorType> HARTNELL112_EXTERIOR;
+
     public static final RegistryObject<ExteriorType> DELOREAN_TIME_MACHINE;
 
     // Define everything
@@ -47,5 +51,17 @@ public class ExteriorRegistry {
                 "delorean",
                 () -> new ExteriorType((type, tardis) -> new EntityExterior(
                         type, tardis, level -> new CarExteriorEntity(Entities.DELOREAN_TIME_MACHINE.get(), level))));
+
+        CAPALDI_EXTERIOR = EXTERIORS.register(
+                "capaldi",
+                () -> new ExteriorType((type, tardis) -> new TileExterior(
+                        type, tardis, ExteriorBlocks.CAPALDI_EXTERIOR_BLOCK.get().defaultBlockState())));
+
+        HARTNELL112_EXTERIOR = EXTERIORS.register(
+                "hartnell112",
+                () -> new ExteriorType((type, tardis) -> new TileExterior(
+                        type,
+                        tardis,
+                        ExteriorBlocks.HARTNELL112_EXTERIOR_BLOCK.get().defaultBlockState())));
     }
 }

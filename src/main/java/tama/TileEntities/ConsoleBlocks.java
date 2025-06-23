@@ -29,6 +29,8 @@ public class ConsoleBlocks {
             "console/toyota_violet", () -> new ConsoleBlock(TileRegistry.TOYOTA_CONSOLE_TILE_VIOLET));
     public static final RegistryObject<ConsoleBlock> BRACKOLIN_CONSOLE_BLOCK =
             registerWithItemSpecial("console/brackolin", () -> new ConsoleBlock(TileRegistry.BRACKOLIN_CONSOLE_TILE));
+    public static final RegistryObject<ConsoleBlock> TOKAMAK_CONSOLE_BLOCK =
+            registerWithItemSpecial("console/tokamak", () -> new ConsoleBlock(TileRegistry.TOKAMAK_CONSOLE_TILE));
     public static final RegistryObject<ConsoleBlock> HARTNELL_CONSOLE_BLOCK =
             registerWithItemSpecial("console/hartnell", () -> new ConsoleBlock(TileRegistry.HARTNELL_CONSOLE_TILE));
 

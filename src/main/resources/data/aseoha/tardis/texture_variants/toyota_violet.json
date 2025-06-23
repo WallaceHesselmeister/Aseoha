@@ -1,0 +1,7 @@
+{
+  "for" : {
+    "location" : "aseoha:console/toyota",
+    "registry" : "minecraft:block_entity_type"
+  },
+  "texture" : "aseoha:textures/consoles/toyota_violet.png"
+}

@@ -1,0 +1,16 @@
+{
+  "group" : "aseoha_main",
+  "key" : {
+    "E" : {
+      "item" : "tardis:decoration/roundels/misc/alabaster_full"
+    },
+    "S" : {
+      "item" : "minecraft:stone_button"
+    }
+  },
+  "pattern" : [ "ES" ],
+  "result" : {
+    "item" : "aseoha:roundel_remote"
+  },
+  "type" : "minecraft:crafting_shaped"
+}

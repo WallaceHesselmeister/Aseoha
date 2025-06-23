@@ -28,6 +28,8 @@ import tama.TileEntities.Console.HartnellConsoleTile;
 
 import java.util.Optional;
 
+import static tama.aseoha.MODID;
+
 public class HartnellConsoleModel<T extends HartnellConsoleTile> extends BaseTileHierarchicalModel<T>
         implements IAdditionalConsoleRenderData {
     // This layer location should be baked with EntityRendererProvider.Context in
@@ -35,7 +37,7 @@ public class HartnellConsoleModel<T extends HartnellConsoleTile> extends BaseTil
     // and passed into
     // this model's constructor
     public static final ModelLayerLocation LAYER_LOCATION =
-            new ModelLayerLocation(new ResourceLocation("modid", "hartnellmodel"), "main");
+            new ModelLayerLocation(new ResourceLocation(MODID, "hartnellmodel"), "main");
     private final ModelPart Console;
     private final ModelPart BaseGrid;
     private final ModelPart cube_r1;

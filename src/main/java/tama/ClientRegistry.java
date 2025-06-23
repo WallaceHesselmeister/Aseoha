@@ -11,23 +11,21 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.tardis.mod.client.ModelHolder;
+import net.tardis.mod.client.models.exteriors.interior_door.TTCapsuleInteriorDoorModel;
 import net.tardis.mod.client.renderers.SpecialItemRenderer;
 import net.tardis.mod.client.renderers.tiles.BrokenExteriorRenderer;
+import net.tardis.mod.client.renderers.tiles.ChameleonInteriorDoorRenderer;
+import net.tardis.mod.client.renderers.tiles.InteriorDoorRender;
+import net.tardis.mod.helpers.Helper;
 import org.jetbrains.annotations.NotNull;
 import tama.Client.Models.Consoles.BrackolinConsoleModel;
 import tama.Client.Models.Consoles.CopperConsoleModel;
 import tama.Client.Models.Consoles.HartnellConsoleModel;
+import tama.Client.Models.Consoles.TokamakConsoleModel;
 import tama.Client.Models.Consoles.ported.ToyotaConsoleModel;
-import tama.Client.Models.Exteriors.DeLoreanExteriorModel;
-import tama.Client.Models.Exteriors.RTD9ExteriorModel;
-import tama.Client.Models.Exteriors.WardrobeExteriorModel;
-import tama.Client.Renderers.Consoles.BrackolinConsoleRenderer;
-import tama.Client.Renderers.Consoles.CopperConsoleRenderer;
-import tama.Client.Renderers.Consoles.HartnellConsoleRenderer;
-import tama.Client.Renderers.Consoles.ToyotaConsoleRenderer;
-import tama.Client.Renderers.Exteriors.DeLoreanExteriorRenderer;
-import tama.Client.Renderers.Exteriors.RTD9ExteriorRenderer;
-import tama.Client.Renderers.Exteriors.WardrobeExteriorRenderer;
+import tama.Client.Models.Exteriors.*;
+import tama.Client.Renderers.Consoles.*;
+import tama.Client.Renderers.Exteriors.*;
 import tama.Items.AItems;
 import tama.Registries.Entities;
 import tama.TileEntities.ConsoleBlocks;
@@ -58,6 +56,7 @@ public class ClientRegistry {
     @SubscribeEvent
     public static void ClientSetup(FMLClientSetupEvent event) {
         event.enqueueWork(ClientRegistry::registerSpecialItemModels);
+        registerDoors();
     }
 
     @OnlyIn(Dist.CLIENT)
@@ -91,13 +90,36 @@ public class ClientRegistry {
                         stack.getItem() == ForgeRegistries.ITEMS.getValue(ConsoleBlocks.HARTNELL_CONSOLE_BLOCK.getId()),
                 (modelSet) -> new HartnellConsoleModel<>(modelSet.bakeLayer(HartnellConsoleModel.LAYER_LOCATION)),
                 new ResourceLocation(MODID, "textures/consoles/hartnell.png")));
+
+        SpecialItemRenderer.register(new ModelHolder<>(
+                (stack) ->
+                        stack.getItem() == ForgeRegistries.ITEMS.getValue(ConsoleBlocks.TOKAMAK_CONSOLE_BLOCK.getId()),
+                (modelSet) -> new TokamakConsoleModel<>(modelSet.bakeLayer(TokamakConsoleModel.LAYER_LOCATION)),
+                new ResourceLocation(MODID, "textures/consoles/tokamak.png")));
+    }
+
+    public static void registerDoors() {
+        ChameleonInteriorDoorRenderer.registerChameleonDoor(
+                ExteriorRegistry.RTD_9_EXTERIOR.get(),
+                new InteriorDoorRender<>(
+                        Helper.createRL("textures/tiles/interiordoor/ttcapsule.png"),
+                        (context) -> new TTCapsuleInteriorDoorModel<>(
+                                context.bakeLayer(TTCapsuleInteriorDoorModel.LAYER_LOCATION))));
+        ChameleonInteriorDoorRenderer.registerChameleonDoor(
+                ExteriorRegistry.WARDROBE_EXTERIOR.get(),
+                new InteriorDoorRender<>(
+                        Helper.createRL("textures/tiles/interiordoor/ttcapsule.png"),
+                        (context) -> new TTCapsuleInteriorDoorModel<>(
+                                context.bakeLayer(TTCapsuleInteriorDoorModel.LAYER_LOCATION))));
     }
 
     @OnlyIn(Dist.CLIENT)
     public static void registerExteriorRenderers(EntityRenderersEvent.@NotNull RegisterRenderers event) {
         event.registerBlockEntityRenderer(TileRegistry.RTD_9_EXTERIOR_TILE.get(), RTD9ExteriorRenderer::new);
         event.registerBlockEntityRenderer(TileRegistry.WARDROBE_EXTERIOR_TILE.get(), WardrobeExteriorRenderer::new);
-
+        event.registerBlockEntityRenderer(TileRegistry.CAPALDI_EXTERIOR_TILE.get(), CapaldiExteriorRenderer::new);
+        event.registerBlockEntityRenderer(
+                TileRegistry.HARTNELL112_EXTERIOR_TILE.get(), Hartnell112ExteriorRenderer::new);
         event.registerEntityRenderer(
                 Entities.DELOREAN_TIME_MACHINE.get(),
                 context -> new DeLoreanExteriorRenderer<>(
@@ -120,6 +142,16 @@ public class ClientRegistry {
                 type -> type == ExteriorRegistry.DELOREAN_TIME_MACHINE.get(),
                 set -> new DeLoreanExteriorModel<>(set.bakeLayer(DeLoreanExteriorModel.LAYER_LOCATION)),
                 new ResourceLocation(aseoha.MODID, "textures/entity/delorean.png")));
+
+        BrokenExteriorRenderer.register(new ModelHolder<>(
+                type -> type == ExteriorRegistry.CAPALDI_EXTERIOR.get(),
+                set -> new CapaldiExteriorModel<>(set.bakeLayer(CapaldiExteriorModel.LAYER_LOCATION)),
+                new ResourceLocation(aseoha.MODID, "textures/entity/mk2/mk2_tennant.png")));
+
+        BrokenExteriorRenderer.register(new ModelHolder<>(
+                type -> type == ExteriorRegistry.HARTNELL112_EXTERIOR.get(),
+                set -> new Hartnell112Exterior<>(set.bakeLayer(Hartnell112Exterior.LAYER_LOCATION)),
+                new ResourceLocation(aseoha.MODID, "textures/entity/convert/hartnell.png")));
     }
 
     @OnlyIn(Dist.CLIENT)
@@ -127,6 +159,10 @@ public class ClientRegistry {
         event.registerLayerDefinition(RTD9ExteriorModel.LAYER_LOCATION, RTD9ExteriorModel::createBodyLayer);
 
         event.registerLayerDefinition(WardrobeExteriorModel.LAYER_LOCATION, WardrobeExteriorModel::createBodyLayer);
+
+        event.registerLayerDefinition(CapaldiExteriorModel.LAYER_LOCATION, CapaldiExteriorModel::createBodyLayer);
+
+        event.registerLayerDefinition(Hartnell112Exterior.LAYER_LOCATION, Hartnell112Exterior::createBodyLayer);
 
         event.registerLayerDefinition(DeLoreanExteriorModel.LAYER_LOCATION, DeLoreanExteriorModel::createBodyLayer);
     }
@@ -137,6 +173,7 @@ public class ClientRegistry {
         event.registerLayerDefinition(ToyotaConsoleModel.LAYER_LOCATION, ToyotaConsoleModel::createBodyLayer);
         event.registerLayerDefinition(BrackolinConsoleModel.LAYER_LOCATION, BrackolinConsoleModel::createBodyLayer);
         event.registerLayerDefinition(HartnellConsoleModel.LAYER_LOCATION, HartnellConsoleModel::createBodyLayer);
+        event.registerLayerDefinition(TokamakConsoleModel.LAYER_LOCATION, TokamakConsoleModel::createBodyLayer);
     }
 
     @OnlyIn(Dist.CLIENT)
@@ -175,6 +212,13 @@ public class ClientRegistry {
                         context,
                         new HartnellConsoleModel<>(context.bakeLayer(HartnellConsoleModel.LAYER_LOCATION)),
                         new ResourceLocation(MODID, "textures/consoles/hartnell.png")));
+
+        event.registerBlockEntityRenderer(
+                TileRegistry.TOKAMAK_CONSOLE_TILE.get(),
+                context -> new TokamakConsoleRenderer(
+                        context,
+                        new TokamakConsoleModel<>(context.bakeLayer(TokamakConsoleModel.LAYER_LOCATION)),
+                        new ResourceLocation(MODID, "textures/consoles/tokamak.png")));
     }
 
     @SubscribeEvent
