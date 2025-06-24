@@ -1,0 +1,9 @@
+{
+  "canBeRemoved" : true,
+  "extra_unlocks" : [ ],
+  "generates_naturally" : true,
+  "parent" : "aseoha:grand_library",
+  "roomLocation" : "aseoha:rooms/grand_library_abandoned",
+  "type" : "room",
+  "y_offset" : 0
+}
