@@ -55,7 +55,9 @@ public class ExteriorRegistry {
         CAPALDI_EXTERIOR = EXTERIORS.register(
                 "capaldi",
                 () -> new ExteriorType((type, tardis) -> new TileExterior(
-                        type, tardis, ExteriorBlocks.CAPALDI_EXTERIOR_BLOCK.get().defaultBlockState())));
+                        type,
+                        tardis,
+                        ExteriorBlocks.CAPALDI_EXTERIOR_BLOCK.get().defaultBlockState())));
 
         HARTNELL112_EXTERIOR = EXTERIORS.register(
                 "hartnell112",

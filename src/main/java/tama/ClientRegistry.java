@@ -22,6 +22,7 @@ import tama.Client.Models.Consoles.BrackolinConsoleModel;
 import tama.Client.Models.Consoles.CopperConsoleModel;
 import tama.Client.Models.Consoles.HartnellConsoleModel;
 import tama.Client.Models.Consoles.TokamakConsoleModel;
+import tama.Client.Models.Consoles.ported.CoralConsoleModel;
 import tama.Client.Models.Consoles.ported.ToyotaConsoleModel;
 import tama.Client.Models.Exteriors.*;
 import tama.Client.Renderers.Consoles.*;
@@ -80,12 +81,6 @@ public class ClientRegistry {
                 new ResourceLocation(MODID, "textures/consoles/toyota.png")));
 
         SpecialItemRenderer.register(new ModelHolder<>(
-                (stack) -> stack.getItem()
-                        == ForgeRegistries.ITEMS.getValue(ConsoleBlocks.TOYOTA_CONSOLE_BLOCK_VIOLET.getId()),
-                (modelSet) -> new ToyotaConsoleModel<>(modelSet.bakeLayer(ToyotaConsoleModel.LAYER_LOCATION)),
-                new ResourceLocation(MODID, "textures/consoles/toyota_violet.png")));
-
-        SpecialItemRenderer.register(new ModelHolder<>(
                 (stack) ->
                         stack.getItem() == ForgeRegistries.ITEMS.getValue(ConsoleBlocks.HARTNELL_CONSOLE_BLOCK.getId()),
                 (modelSet) -> new HartnellConsoleModel<>(modelSet.bakeLayer(HartnellConsoleModel.LAYER_LOCATION)),
@@ -96,6 +91,11 @@ public class ClientRegistry {
                         stack.getItem() == ForgeRegistries.ITEMS.getValue(ConsoleBlocks.TOKAMAK_CONSOLE_BLOCK.getId()),
                 (modelSet) -> new TokamakConsoleModel<>(modelSet.bakeLayer(TokamakConsoleModel.LAYER_LOCATION)),
                 new ResourceLocation(MODID, "textures/consoles/tokamak.png")));
+
+        SpecialItemRenderer.register(new ModelHolder<>(
+                (stack) -> stack.getItem() == ForgeRegistries.ITEMS.getValue(ConsoleBlocks.CORAL_CONSOLE_BLOCK.getId()),
+                (modelSet) -> new CoralConsoleModel<>(modelSet.bakeLayer(CoralConsoleModel.LAYER_LOCATION)),
+                new ResourceLocation(MODID, "textures/consoles/coral.png")));
     }
 
     public static void registerDoors() {
@@ -171,6 +171,7 @@ public class ClientRegistry {
     public static void registerConsoleModels(EntityRenderersEvent.RegisterLayerDefinitions event) {
         event.registerLayerDefinition(CopperConsoleModel.LAYER_LOCATION, CopperConsoleModel::createBodyLayer);
         event.registerLayerDefinition(ToyotaConsoleModel.LAYER_LOCATION, ToyotaConsoleModel::createBodyLayer);
+        event.registerLayerDefinition(CoralConsoleModel.LAYER_LOCATION, CoralConsoleModel::createBodyLayer);
         event.registerLayerDefinition(BrackolinConsoleModel.LAYER_LOCATION, BrackolinConsoleModel::createBodyLayer);
         event.registerLayerDefinition(HartnellConsoleModel.LAYER_LOCATION, HartnellConsoleModel::createBodyLayer);
         event.registerLayerDefinition(TokamakConsoleModel.LAYER_LOCATION, TokamakConsoleModel::createBodyLayer);
@@ -193,11 +194,11 @@ public class ClientRegistry {
                         new ResourceLocation(MODID, "textures/consoles/toyota.png")));
 
         event.registerBlockEntityRenderer(
-                TileRegistry.TOYOTA_CONSOLE_TILE_VIOLET.get(),
-                context -> new ToyotaConsoleRenderer(
+                TileRegistry.CORAL_CONSOLE_TILE.get(),
+                context -> new CoralConsoleRenderer(
                         context,
-                        new ToyotaConsoleModel<>(context.bakeLayer(ToyotaConsoleModel.LAYER_LOCATION)),
-                        new ResourceLocation(MODID, "textures/consoles/toyota_violet.png")));
+                        new CoralConsoleModel<>(context.bakeLayer(CoralConsoleModel.LAYER_LOCATION)),
+                        new ResourceLocation(MODID, "textures/consoles/coral.png")));
 
         event.registerBlockEntityRenderer(
                 TileRegistry.BRACKOLIN_CONSOLE_TILE.get(),

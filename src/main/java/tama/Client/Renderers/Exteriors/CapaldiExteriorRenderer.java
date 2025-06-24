@@ -17,8 +17,7 @@ import tama.aseoha;
 public class CapaldiExteriorRenderer<T extends ExteriorTile, M extends BaseTileHierarchicalModel<T> & IExteriorModel<T>>
         extends ExteriorRenderer<T, M> {
 
-    public static final ResourceLocation TEXTURE =
-            new ResourceLocation(aseoha.MODID, "textures/exteriors/capaldi.png");
+    public static final ResourceLocation TEXTURE = new ResourceLocation(aseoha.MODID, "textures/exteriors/capaldi.png");
 
     public CapaldiExteriorRenderer(BlockEntityRendererProvider.Context context) {
         super(context);

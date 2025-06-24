@@ -27,8 +27,8 @@ public class TileRegistry {
     public static final RegistryObject<BlockEntityType<RTD9ExteriorTile>> RTD_9_EXTERIOR_TILE = TYPES.register(
             "exterior/rtd_9", () -> create(RTD9ExteriorTile::new, ExteriorBlocks.RTD_9_EXTERIOR_BLOCK.get()));
 
-    public static final RegistryObject<BlockEntityType<CapaldiExteriorTile>> CAPALDI_EXTERIOR_TILE =
-            TYPES.register("exterior/capaldi", () -> create(CapaldiExteriorTile::new, ExteriorBlocks.CAPALDI_EXTERIOR_BLOCK.get()));
+    public static final RegistryObject<BlockEntityType<CapaldiExteriorTile>> CAPALDI_EXTERIOR_TILE = TYPES.register(
+            "exterior/capaldi", () -> create(CapaldiExteriorTile::new, ExteriorBlocks.CAPALDI_EXTERIOR_BLOCK.get()));
 
     public static final RegistryObject<BlockEntityType<Hartnell112ExteriorTile>> HARTNELL112_EXTERIOR_TILE =
             TYPES.register(
@@ -42,11 +42,6 @@ public class TileRegistry {
     public static final RegistryObject<BlockEntityType<ToyotaConsoleTile>> TOYOTA_CONSOLE_TILE = TYPES.register(
             "console/toyota", () -> create(ToyotaConsoleTile::new, ConsoleBlocks.TOYOTA_CONSOLE_BLOCK.get()));
 
-    public static final RegistryObject<BlockEntityType<ToyotaConsoleVioletTile>> TOYOTA_CONSOLE_TILE_VIOLET =
-            TYPES.register(
-                    "console/toyota_violet",
-                    () -> create(ToyotaConsoleVioletTile::new, ConsoleBlocks.TOYOTA_CONSOLE_BLOCK_VIOLET.get()));
-
     public static final RegistryObject<BlockEntityType<BrackolinConsoleTile>> BRACKOLIN_CONSOLE_TILE = TYPES.register(
             "console/brackolin", () -> create(BrackolinConsoleTile::new, ConsoleBlocks.BRACKOLIN_CONSOLE_BLOCK.get()));
 
@@ -55,6 +50,9 @@ public class TileRegistry {
 
     public static final RegistryObject<BlockEntityType<HartnellConsoleTile>> HARTNELL_CONSOLE_TILE = TYPES.register(
             "console/hartnell", () -> create(HartnellConsoleTile::new, ConsoleBlocks.HARTNELL_CONSOLE_BLOCK.get()));
+
+    public static final RegistryObject<BlockEntityType<CoralConsoleTile>> CORAL_CONSOLE_TILE = TYPES.register(
+            "console/coral", () -> create(CoralConsoleTile::new, ConsoleBlocks.CORAL_CONSOLE_BLOCK.get()));
 
     @Contract("_, _ -> new")
     public static <T extends BlockEntity> @NotNull BlockEntityType<T> create(

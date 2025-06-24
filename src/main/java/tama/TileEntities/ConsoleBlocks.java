@@ -25,14 +25,14 @@ public class ConsoleBlocks {
             registerWithItemSpecial("console/copper", () -> new ConsoleBlock(TileRegistry.COPPER_CONSOLE_TILE));
     public static final RegistryObject<ConsoleBlock> TOYOTA_CONSOLE_BLOCK =
             registerWithItemSpecial("console/toyota", () -> new ConsoleBlock(TileRegistry.TOYOTA_CONSOLE_TILE));
-    public static final RegistryObject<ConsoleBlock> TOYOTA_CONSOLE_BLOCK_VIOLET = registerWithItemSpecial(
-            "console/toyota_violet", () -> new ConsoleBlock(TileRegistry.TOYOTA_CONSOLE_TILE_VIOLET));
     public static final RegistryObject<ConsoleBlock> BRACKOLIN_CONSOLE_BLOCK =
             registerWithItemSpecial("console/brackolin", () -> new ConsoleBlock(TileRegistry.BRACKOLIN_CONSOLE_TILE));
     public static final RegistryObject<ConsoleBlock> TOKAMAK_CONSOLE_BLOCK =
             registerWithItemSpecial("console/tokamak", () -> new ConsoleBlock(TileRegistry.TOKAMAK_CONSOLE_TILE));
     public static final RegistryObject<ConsoleBlock> HARTNELL_CONSOLE_BLOCK =
             registerWithItemSpecial("console/hartnell", () -> new ConsoleBlock(TileRegistry.HARTNELL_CONSOLE_TILE));
+    public static final RegistryObject<ConsoleBlock> CORAL_CONSOLE_BLOCK =
+            registerWithItemSpecial("console/coral", () -> new ConsoleBlock(TileRegistry.CORAL_CONSOLE_TILE));
 
     public static <T extends Block> RegistryObject<T> registerWithItemSpecial(String name, final Supplier<T> block) {
 
