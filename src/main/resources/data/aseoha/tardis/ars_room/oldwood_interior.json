@@ -1,0 +1,8 @@
+{
+  "canBeRemoved" : true,
+  "extra_unlocks" : [ ],
+  "generates_naturally" : false,
+  "roomLocation" : "aseoha:rooms/console/oldwood_interior",
+  "type" : "room",
+  "y_offset" : -8
+}

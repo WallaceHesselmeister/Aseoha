@@ -1,0 +1,9 @@
+{
+  "canBeRemoved" : true,
+  "extra_unlocks" : [ ],
+  "generates_naturally" : true,
+  "parent" : "aseoha:oldwood_interior",
+  "roomLocation" : "aseoha:rooms/ruined/console/oldwood_interior",
+  "type" : "room",
+  "y_offset" : -8
+}
