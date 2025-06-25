@@ -8,6 +8,7 @@ import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.entity.Entity;
 import net.tardis.mod.client.models.BaseTileHierarchicalModel;
 import org.jetbrains.annotations.NotNull;
 import tama.TileEntities.Console.TokamakConsoleTile;
@@ -4096,4 +4097,12 @@ public class TokamakConsoleModel<T extends TokamakConsoleTile> extends BaseTileH
 
     @Override
     public void setupAnimations(T t, float v) {}
+
+    @Override
+    public ModelPart root() {
+        return super.root();
+    }
+
+    @Override
+    public void setupAnim(Entity entity, float v, float v1, float v2, float v3, float v4) {}
 }

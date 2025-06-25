@@ -8,6 +8,7 @@ import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.entity.Entity;
 import net.tardis.mod.blockentities.exteriors.ExteriorTile;
 import net.tardis.mod.client.animations.exterior.PoliceBoxExteriorAnimation;
 import net.tardis.mod.client.models.BaseTileHierarchicalModel;
@@ -1438,4 +1439,12 @@ public class CapaldiExteriorModel<T extends ExteriorTile> extends BaseTileHierar
         modelRenderer.yRot = y;
         modelRenderer.zRot = z;
     }
+
+    @Override
+    public ModelPart root() {
+        return super.root();
+    }
+
+    @Override
+    public void setupAnim(Entity entity, float v, float v1, float v2, float v3, float v4) {}
 }

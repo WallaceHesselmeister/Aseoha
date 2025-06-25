@@ -13,6 +13,7 @@ import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.entity.Entity;
 import net.tardis.mod.cap.Capabilities;
 import net.tardis.mod.cap.level.ITardisLevel;
 import net.tardis.mod.client.animations.AnimationHelper;
@@ -2049,6 +2050,14 @@ public class BrackolinConsoleModel<T extends BrackolinConsoleTile> extends BaseT
         Controls.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
         bb_main.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
     }
+
+    @Override
+    public ModelPart root() {
+        return super.root();
+    }
+
+    @Override
+    public void setupAnim(Entity entity, float v, float v1, float v2, float v3, float v4) {}
 
     public static class BrackolinAnimation {
         public static final AnimationDefinition X = AnimationDefinition.Builder.withLength(0.3333F)

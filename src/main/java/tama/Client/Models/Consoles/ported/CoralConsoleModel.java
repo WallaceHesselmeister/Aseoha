@@ -15,6 +15,7 @@ import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.entity.Entity;
 import net.tardis.mod.cap.Capabilities;
 import net.tardis.mod.client.models.BaseTileHierarchicalModel;
 import net.tardis.mod.client.models.consoles.IAdditionalConsoleRenderData;
@@ -2372,6 +2373,14 @@ public class CoralConsoleModel<T extends CoralConsoleTile> extends BaseTileHiera
 
         return LayerDefinition.create(meshdefinition, 200, 200);
     }
+
+    @Override
+    public ModelPart root() {
+        return super.root();
+    }
+
+    @Override
+    public void setupAnim(Entity entity, float v, float v1, float v2, float v3, float v4) {}
 
     @Override
     public void renderToBuffer(

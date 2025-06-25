@@ -81,12 +81,18 @@ sourceSets.main.resources { srcDir 'src/generated/resources' }
 
 repositories {
 	maven { url "https://www.cursemaven.com" }
+
+	maven {
+		name "reposiliteRepository"
+		url "https://maven.tardismod.net/releases"
+	}
 }
 
 dependencies {
 	minecraft "net.minecraftforge:forge:${minecraft_version}-${forge_version}"
 
-	implementation fg.deobf("curse.maven:new-tardis-mod-290247:6649501")
+//	implementation "net.tardismod:TardisMod:${tardis_mod_version}"
+	implementation fg.deobf("curse.maven:new-tardis-mod-290247:6685059")
 	implementation fg.deobf("curse.maven:create-328085:6641603")
 	implementation fg.deobf("curse.maven:create-connected-947914:6650193")
 	implementation fg.deobf("curse.maven:embeddium-908741:5681725")
@@ -121,7 +127,8 @@ tasks.named('processResources', ProcessResources).configure {
 							forge_version       : forge_version, forge_version_range: forge_version_range,
 							loader_version_range: loader_version_range,
 							mod_id              : mod_id, mod_name: mod_name, mod_license: mod_license, mod_version: mod_version,
-							mod_authors         : mod_authors, mod_description: mod_description,]
+							mod_authors         : mod_authors, mod_description: mod_description,
+							tardis_mod_version : tardis_mod_version]
 
 	inputs.properties replaceProperties
 
