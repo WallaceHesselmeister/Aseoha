@@ -5,5 +5,5 @@
   "parent" : "aseoha:oldwood_interior",
   "roomLocation" : "aseoha:rooms/ruined/console/oldwood_interior",
   "type" : "room",
-  "y_offset" : -8
+  "y_offset" : -13
 }

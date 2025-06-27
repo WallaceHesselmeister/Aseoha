@@ -2,7 +2,7 @@
   "canBeRemoved" : true,
   "extra_unlocks" : [ ],
   "generates_naturally" : false,
-  "roomLocation" : "aseoha:rooms/console/oldwood_interior",
+  "roomLocation" : "aseoha:rooms/cavern_pool",
   "type" : "room",
-  "y_offset" : -13
+  "y_offset" : -8
 }
