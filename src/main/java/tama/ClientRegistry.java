@@ -1,6 +1,10 @@
 /* (C) TAMA Studios 2025 */
 package tama;
 
+import static tama.Items.ATabs.FOOD;
+import static tama.Items.ATabs.MAIN;
+import static tama.aseoha.MODID;
+
 import net.minecraft.resources.ResourceLocation;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
@@ -32,10 +36,6 @@ import tama.Registries.Entities;
 import tama.TileEntities.ConsoleBlocks;
 import tama.TileEntities.ExteriorRegistry;
 import tama.TileEntities.TileRegistry;
-
-import static tama.Items.ATabs.FOOD;
-import static tama.Items.ATabs.MAIN;
-import static tama.aseoha.MODID;
 
 @Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.MOD, value = Dist.CLIENT)
 public class ClientRegistry {

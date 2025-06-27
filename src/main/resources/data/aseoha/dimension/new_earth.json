@@ -1,0 +1,24 @@
+{
+  "type": "aseoha:new_earth_type",
+  "generator": {
+    "type": "minecraft:noise",
+    "settings": "aseoha:new_earth",
+    "biome_source": {
+      "type": "minecraft:multi_noise",
+      "biomes": [
+        {
+          "biome": "aseoha:new_earth",
+          "parameters": {
+            "temperature": 0.5,
+            "humidity": 0.3,
+            "continentalness": 0.1,
+            "erosion": 0,
+            "weirdness": 0,
+            "depth": 0,
+            "offset": 0
+          }
+        }
+      ]
+    }
+  }
+}

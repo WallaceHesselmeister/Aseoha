@@ -1,44 +1,48 @@
 {
-  "generator" : {
-    "biome_source" : {
-      "biomes" : [ {
-        "biome" : "minecraft:frozen_ocean",
-        "parameters" : {
-          "continentalness" : 0,
-          "depth" : 0,
-          "erosion" : 0.5,
-          "humidity" : 0.3,
-          "offset" : 0.2,
-          "temperature" : -1,
-          "weirdness" : 0
+  "type": "aseoha:klom_type",
+  "generator": {
+    "type": "minecraft:noise",
+    "settings": "minecraft:overworld",
+    "biome_source": {
+      "type": "minecraft:multi_noise",
+      "biomes": [
+        {
+          "biome": "minecraft:frozen_ocean",
+          "parameters": {
+            "temperature": -1,
+            "humidity": 0.3,
+            "continentalness": 0,
+            "erosion": 0.5,
+            "weirdness": 0,
+            "depth": 0,
+            "offset": 0.2
+          }
+        },
+        {
+          "biome": "minecraft:snowy_taiga",
+          "parameters": {
+            "temperature": -0.5,
+            "humidity": 0.1,
+            "continentalness": 0.5,
+            "erosion": 0.3,
+            "weirdness": 0,
+            "depth": 0,
+            "offset": 0
+          }
+        },
+        {
+          "biome": "minecraft:snowy_plains",
+          "parameters": {
+            "temperature": 0.6,
+            "humidity": 0.1,
+            "continentalness": 0.7,
+            "erosion": 0,
+            "weirdness": 0,
+            "depth": 0,
+            "offset": 0
+          }
         }
-      }, {
-        "biome" : "minecraft:snowy_taiga",
-        "parameters" : {
-          "continentalness" : 0.5,
-          "depth" : 0,
-          "erosion" : 0.3,
-          "humidity" : 0.1,
-          "offset" : 0,
-          "temperature" : -0.5,
-          "weirdness" : 0
-        }
-      }, {
-        "biome" : "minecraft:snowy_plains",
-        "parameters" : {
-          "continentalness" : 0.7,
-          "depth" : 0,
-          "erosion" : 0,
-          "humidity" : 0.1,
-          "offset" : 0,
-          "temperature" : 0.6,
-          "weirdness" : 0
-        }
-      } ],
-      "type" : "minecraft:multi_noise"
-    },
-    "settings" : "minecraft:overworld",
-    "type" : "minecraft:noise"
-  },
-  "type" : "aseoha:klom_type"
+      ]
+    }
+  }
 }

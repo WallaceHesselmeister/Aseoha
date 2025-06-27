@@ -31,8 +31,8 @@ public class AuthorizedControlDisc extends Item implements ISonicPortAction {
     BlockPos blockPos;
     Level level;
 
-    public AuthorizedControlDisc(Properties p_41383_) {
-        super(p_41383_.stacksTo(1));
+    public AuthorizedControlDisc(Properties properties) {
+        super(properties.stacksTo(1));
         this.controlDiscCap = () -> Capabilities.CONTROL_DISC;
     }
 

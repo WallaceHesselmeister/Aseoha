@@ -1,0 +1,7 @@
+{
+  "for" : {
+    "location" : "aseoha:exterior/wardrobe",
+    "registry" : "minecraft:block_entity_type"
+  },
+  "texture" : "aseoha:textures/exteriors/wardrobe/mangrove_exterior.png"
+}
