@@ -1,0 +1,15 @@
+{
+  "placement": {
+    "type": "minecraft:random_spread",
+    "spread_type": "linear",
+    "salt": 10387312,
+    "separation": 12,
+    "spacing": 13
+  },
+  "structures": [
+    {
+      "structure": "aseoha:road",
+      "weight": 1
+    }
+  ]
+}

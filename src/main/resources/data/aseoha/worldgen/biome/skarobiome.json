@@ -1,27 +1,29 @@
 {
-  "carvers" : {
-    "air" : [ "minecraft:cave" ]
+  "temperature": 0.8,
+  "downfall": 0.1,
+  "temperature_modifier": "none",
+  "effects": {
+    "sky_color": 12713984,
+    "fog_color": 10027008,
+    "water_color": 9123639,
+    "water_fog_color": 8669256,
+    "grass_color": 8388608,
+    "foliage_color": 8281883
   },
-  "downfall" : 0.1,
-  "effects" : {
-    "fog_color" : 10027008,
-    "foliage_color" : 8281883,
-    "grass_color" : 8388608,
-    "sky_color" : 12713984,
-    "water_color" : 9123639,
-    "water_fog_color" : 8669256
+  "spawners": {
+    "monster": [
+    ]
   },
-  "features" : [ [ "minecraft:trees_old_growth_spruce_taiga" ] ],
-  "has_precipitation" : false,
-  "spawn_costs" : { },
-  "spawners" : {
-    "monster" : [ {
-      "maxCount" : 50,
-      "minCount" : 15,
-      "type" : "tardis:dalek",
-      "weight" : 85
-    } ]
+  "spawn_costs": {},
+  "carvers": {
+    "air": [
+      "minecraft:cave"
+    ]
   },
-  "temperature" : 0.8,
-  "temperature_modifier" : "none"
+  "features": [
+    [
+      "minecraft:trees_old_growth_spruce_taiga"
+    ]
+  ],
+  "has_precipitation": false
 }

@@ -94,6 +94,11 @@ public class ABlocks {
             () -> new SandBlock(
                     14406560, BlockBehaviour.Properties.of().strength(0.5F).sound(SoundType.SAND)));
 
+    public static final RegistryObject<Block> FAT_BLOCK = registerBlock(
+            "fat_block",
+            () -> new Block(
+                    BlockBehaviour.Properties.of().sound(SoundType.SLIME_BLOCK).strength(0.3F)));
+
     public static final RegistryObject<Block> TRENZALORE_SAND = registerBlock(
             "trenzalore_sand",
             () -> new SandBlock(
