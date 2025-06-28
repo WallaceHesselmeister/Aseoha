@@ -1,0 +1,9 @@
+{
+  "canBeRemoved" : true,
+  "extra_unlocks" : [ ],
+  "generates_naturally" : true,
+  "parent" : "aseoha:cavern_water_library",
+  "roomLocation" : "aseoha:rooms/cavern_water_library_abandoned",
+  "type" : "room",
+  "y_offset" : -8
+}
