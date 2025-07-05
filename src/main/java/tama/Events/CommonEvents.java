@@ -3,6 +3,10 @@ package tama.Events;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.state.BlockState;
@@ -50,6 +54,12 @@ public class CommonEvents {
                             entity.createCommandSourceStack()
                                     .withPosition(touchingPos.getCenter())
                                     .withSuppressedOutput();
+                        }
+                    }
+
+                    if (event.level.dimension() == ResourceKey.create(Registries.DIMENSION, new ResourceLocation("aseoha:midnight"))) {
+                        if (entity instanceof LivingEntity livingEntity) {
+                            livingEntity.setSecondsOnFire(1);
                         }
                     }
                 }));
