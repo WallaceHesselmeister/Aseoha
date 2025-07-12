@@ -1,0 +1,34 @@
+{
+  "ingredient" : {
+    "item" : "tardis:exo_circuits"
+  },
+  "loops" : 2,
+  "results" : [ {
+    "item" : "tardis:data_crystal"
+  } ],
+  "sequence" : [ {
+    "ingredients" : [ {
+      "item" : "aseoha:unfinished_data_crystal"
+    }, {
+      "item" : "tardis:xion"
+    } ],
+    "results" : [ {
+      "item" : "aseoha:unfinished_data_crystal"
+    } ],
+    "type" : "create:deploying"
+  }, {
+    "ingredients" : [ {
+      "item" : "aseoha:unfinished_data_crystal"
+    }, {
+      "item" : "minecraft:gold_nugget"
+    } ],
+    "results" : [ {
+      "item" : "aseoha:unfinished_data_crystal"
+    } ],
+    "type" : "create:deploying"
+  } ],
+  "transitionalItem" : {
+    "item" : "aseoha:unfinished_data_crystal"
+  },
+  "type" : "create:sequenced_assembly"
+}

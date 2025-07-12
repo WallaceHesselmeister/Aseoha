@@ -1,0 +1,34 @@
+{
+  "ingredient" : {
+    "item" : "tardis:data_crystal"
+  },
+  "loops" : 2,
+  "results" : [ {
+    "item" : "tardis:data_matrix"
+  } ],
+  "sequence" : [ {
+    "ingredients" : [ {
+      "item" : "aseoha:unfinished_data_matrix"
+    }, {
+      "item" : "minecraft:redstone"
+    } ],
+    "results" : [ {
+      "item" : "aseoha:unfinished_data_matrix"
+    } ],
+    "type" : "create:deploying"
+  }, {
+    "ingredients" : [ {
+      "item" : "aseoha:unfinished_data_matrix"
+    }, {
+      "item" : "minecraft:diamond"
+    } ],
+    "results" : [ {
+      "item" : "aseoha:unfinished_data_matrix"
+    } ],
+    "type" : "create:deploying"
+  } ],
+  "transitionalItem" : {
+    "item" : "aseoha:unfinished_data_matrix"
+  },
+  "type" : "create:sequenced_assembly"
+}

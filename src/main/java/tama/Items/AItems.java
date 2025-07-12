@@ -1,6 +1,8 @@
 /* (C) TAMA Studios 2025 */
 package tama.Items;
 
+import static tama.aseoha.MODID;
+
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ArmorMaterials;
@@ -15,8 +17,6 @@ import tama.Items.Armor.MondasCybermanArmorItem;
 import tama.Items.Armor.ScarfItem;
 import tama.RoundelRemote;
 import tama.World.Dimensions;
-
-import static tama.aseoha.MODID;
 
 public class AItems {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, MODID);
@@ -102,6 +102,14 @@ public class AItems {
 
     public static final RegistryObject<Item> BLUE_CRYSTAL_SHARD = ITEMS.register(
             "blue_crystal_shard",
+            () -> new Item(new Item.Properties().rarity(Rarity.RARE).fireResistant()));
+
+    public static final RegistryObject<Item> UNFINISHED_DATA_MATRIX = ITEMS.register(
+            "unfinished_data_matrix",
+            () -> new Item(new Item.Properties().rarity(Rarity.RARE).fireResistant()));
+
+    public static final RegistryObject<Item> UNFINISHED_DATA_CRYSTAL = ITEMS.register(
+            "unfinished_data_crystal",
             () -> new Item(new Item.Properties().rarity(Rarity.RARE).fireResistant()));
 
     public static final RegistryObject<Item> BLUE_CRYSTAL_PILE = ITEMS.register(

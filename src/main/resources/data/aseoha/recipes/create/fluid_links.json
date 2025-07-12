@@ -1,0 +1,34 @@
+{
+  "ingredient" : {
+    "tag" : "forge:bottles/mercury"
+  },
+  "loops" : 2,
+  "results" : [ {
+    "item" : "tardis:components/fluid_links"
+  } ],
+  "sequence" : [ {
+    "ingredients" : [ {
+      "item" : "tardis:mercury_bottle"
+    }, {
+      "tag" : "forge:glass"
+    } ],
+    "results" : [ {
+      "item" : "tardis:mercury_bottle"
+    } ],
+    "type" : "create:deploying"
+  }, {
+    "ingredients" : [ {
+      "item" : "tardis:mercury_bottle"
+    }, {
+      "item" : "minecraft:iron_ingot"
+    } ],
+    "results" : [ {
+      "item" : "tardis:mercury_bottle"
+    } ],
+    "type" : "create:deploying"
+  } ],
+  "transitionalItem" : {
+    "item" : "tardis:mercury_bottle"
+  },
+  "type" : "create:sequenced_assembly"
+}

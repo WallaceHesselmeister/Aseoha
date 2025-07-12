@@ -1,0 +1,16 @@
+{
+  "heatRequirement" : "heated",
+  "ingredients" : [ {
+    "item" : "tardis:xion"
+  }, {
+    "item" : "tardis:xion"
+  }, {
+    "item" : "tardis:xion"
+  }, {
+    "item" : "tardis:xion"
+  } ],
+  "results" : [ {
+    "item" : "tardis:xion_block"
+  } ],
+  "type" : "create:compacting"
+}

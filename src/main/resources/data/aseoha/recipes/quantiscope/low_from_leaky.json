@@ -1,0 +1,20 @@
+{
+  "main_component" : {
+    "item" : "tardis:artron_capacitors/leaky"
+  },
+  "other_ingredients" : [ {
+    "item" : "tardis:exo_circuits"
+  }, {
+    "item" : "tardis:xion"
+  }, {
+    "item" : "tardis:xion_lens"
+  }, {
+    "tag" : "forge:ingots/iron"
+  }, {
+    "item" : "minecraft:iron_nugget"
+  } ],
+  "result" : {
+    "item" : "tardis:artron_capacitors/basic"
+  },
+  "type" : "tardis:quantiscope/crafting"
+}

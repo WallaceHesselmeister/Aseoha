@@ -1,0 +1,34 @@
+{
+  "ingredient" : {
+    "item" : "minecraft:lightning_rod"
+  },
+  "loops" : 2,
+  "results" : [ {
+    "item" : "tardis:components/interstitial_antenna"
+  } ],
+  "sequence" : [ {
+    "ingredients" : [ {
+      "item" : "minecraft:lightning_rod"
+    }, {
+      "item" : "tardis:exo_circuits"
+    } ],
+    "results" : [ {
+      "item" : "minecraft:lightning_rod"
+    } ],
+    "type" : "create:deploying"
+  }, {
+    "ingredients" : [ {
+      "item" : "minecraft:lightning_rod"
+    }, {
+      "item" : "minecraft:iron_ingot"
+    } ],
+    "results" : [ {
+      "item" : "minecraft:lightning_rod"
+    } ],
+    "type" : "create:deploying"
+  } ],
+  "transitionalItem" : {
+    "item" : "minecraft:lightning_rod"
+  },
+  "type" : "create:sequenced_assembly"
+}

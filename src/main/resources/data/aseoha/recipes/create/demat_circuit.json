@@ -1,0 +1,54 @@
+{
+  "ingredient" : {
+    "item" : "minecraft:ender_pearl"
+  },
+  "loops" : 1,
+  "results" : [ {
+    "item" : "tardis:components/demat_circuit"
+  } ],
+  "sequence" : [ {
+    "ingredients" : [ {
+      "item" : "minecraft:ender_pearl"
+    }, {
+      "item" : "tardis:exo_circuits"
+    } ],
+    "results" : [ {
+      "item" : "minecraft:ender_pearl"
+    } ],
+    "type" : "create:deploying"
+  }, {
+    "ingredients" : [ {
+      "item" : "minecraft:ender_pearl"
+    }, {
+      "item" : "minecraft:iron_ingot"
+    } ],
+    "results" : [ {
+      "item" : "minecraft:ender_pearl"
+    } ],
+    "type" : "create:deploying"
+  }, {
+    "ingredients" : [ {
+      "item" : "minecraft:ender_pearl"
+    }, {
+      "item" : "tardis:xion_lens"
+    } ],
+    "results" : [ {
+      "item" : "minecraft:ender_pearl"
+    } ],
+    "type" : "create:deploying"
+  }, {
+    "ingredients" : [ {
+      "item" : "minecraft:ender_pearl"
+    }, {
+      "item" : "minecraft:ender_pearl"
+    } ],
+    "results" : [ {
+      "item" : "minecraft:ender_pearl"
+    } ],
+    "type" : "create:pressing"
+  } ],
+  "transitionalItem" : {
+    "item" : "minecraft:ender_pearl"
+  },
+  "type" : "create:sequenced_assembly"
+}
