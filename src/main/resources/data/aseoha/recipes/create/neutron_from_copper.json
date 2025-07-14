@@ -1,0 +1,11 @@
+{
+  "ingredients" : [ {
+    "item" : "aseoha:console/copper"
+  }, {
+    "tag" : "forge:nuggets"
+  } ],
+  "results" : [ {
+    "item" : "tardis:neutron_console"
+  } ],
+  "type" : "create:item_application"
+}

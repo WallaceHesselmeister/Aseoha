@@ -1,0 +1,11 @@
+{
+  "ingredients" : [ {
+    "item" : "aseoha:console/hartnell"
+  }, {
+    "tag" : "forge:nuggets"
+  } ],
+  "results" : [ {
+    "item" : "aseoha:console/tokamak"
+  } ],
+  "type" : "create:item_application"
+}

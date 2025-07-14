@@ -1,0 +1,11 @@
+{
+  "ingredients" : [ {
+    "item" : "aseoha:console/coral"
+  }, {
+    "tag" : "forge:nuggets"
+  } ],
+  "results" : [ {
+    "item" : "aseoha:console/hartnell"
+  } ],
+  "type" : "create:item_application"
+}

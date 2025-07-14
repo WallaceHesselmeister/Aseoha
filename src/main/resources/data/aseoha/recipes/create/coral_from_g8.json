@@ -1,0 +1,11 @@
+{
+  "ingredients" : [ {
+    "item" : "tardis:g8_console"
+  }, {
+    "tag" : "forge:nuggets"
+  } ],
+  "results" : [ {
+    "item" : "aseoha:console/coral"
+  } ],
+  "type" : "create:item_application"
+}

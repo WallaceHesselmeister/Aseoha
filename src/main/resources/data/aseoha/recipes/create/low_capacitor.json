@@ -1,0 +1,54 @@
+{
+  "ingredient" : {
+    "item" : "tardis:xion_block"
+  },
+  "loops" : 1,
+  "results" : [ {
+    "item" : "tardis:artron_capacitors/basic"
+  } ],
+  "sequence" : [ {
+    "ingredients" : [ {
+      "item" : "tardis:xion_block"
+    }, {
+      "item" : "tardis:exo_circuits"
+    } ],
+    "results" : [ {
+      "item" : "tardis:xion_block"
+    } ],
+    "type" : "create:deploying"
+  }, {
+    "ingredients" : [ {
+      "item" : "tardis:xion_block"
+    }, {
+      "item" : "tardis:xion_lens"
+    } ],
+    "results" : [ {
+      "item" : "tardis:xion_block"
+    } ],
+    "type" : "create:deploying"
+  }, {
+    "ingredients" : [ {
+      "item" : "tardis:xion_block"
+    }, {
+      "tag" : "forge:ingots/iron"
+    } ],
+    "results" : [ {
+      "item" : "tardis:xion_block"
+    } ],
+    "type" : "create:deploying"
+  }, {
+    "ingredients" : [ {
+      "item" : "tardis:xion_block"
+    }, {
+      "item" : "tardis:xion_block"
+    } ],
+    "results" : [ {
+      "item" : "tardis:xion_block"
+    } ],
+    "type" : "create:pressing"
+  } ],
+  "transitionalItem" : {
+    "item" : "tardis:xion_block"
+  },
+  "type" : "create:sequenced_assembly"
+}

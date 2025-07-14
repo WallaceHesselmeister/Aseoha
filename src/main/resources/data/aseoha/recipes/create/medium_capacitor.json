@@ -1,0 +1,54 @@
+{
+  "ingredient" : {
+    "item" : "tardis:artron_capacitors/basic"
+  },
+  "loops" : 1,
+  "results" : [ {
+    "item" : "tardis:artron_capacitors/mid"
+  } ],
+  "sequence" : [ {
+    "ingredients" : [ {
+      "item" : "tardis:artron_capacitors/basic"
+    }, {
+      "tag" : "forge:rods/blaze"
+    } ],
+    "results" : [ {
+      "item" : "tardis:artron_capacitors/basic"
+    } ],
+    "type" : "create:deploying"
+  }, {
+    "ingredients" : [ {
+      "item" : "tardis:artron_capacitors/basic"
+    }, {
+      "tag" : "forge:ingots/iron"
+    } ],
+    "results" : [ {
+      "item" : "tardis:artron_capacitors/basic"
+    } ],
+    "type" : "create:deploying"
+  }, {
+    "ingredients" : [ {
+      "item" : "tardis:artron_capacitors/basic"
+    }, {
+      "item" : "tardis:xion"
+    } ],
+    "results" : [ {
+      "item" : "tardis:artron_capacitors/basic"
+    } ],
+    "type" : "create:deploying"
+  }, {
+    "ingredients" : [ {
+      "item" : "tardis:artron_capacitors/basic"
+    }, {
+      "item" : "tardis:artron_capacitors/basic"
+    } ],
+    "results" : [ {
+      "item" : "tardis:artron_capacitors/basic"
+    } ],
+    "type" : "create:pressing"
+  } ],
+  "transitionalItem" : {
+    "item" : "tardis:artron_capacitors/basic"
+  },
+  "type" : "create:sequenced_assembly"
+}

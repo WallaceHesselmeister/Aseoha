@@ -1,0 +1,54 @@
+{
+  "ingredient" : {
+    "item" : "tardis:xion_lens"
+  },
+  "loops" : 1,
+  "results" : [ {
+    "item" : "tardis:waypoint_banks"
+  } ],
+  "sequence" : [ {
+    "ingredients" : [ {
+      "item" : "tardis:xion_lens"
+    }, {
+      "item" : "tardis:data_crystal"
+    } ],
+    "results" : [ {
+      "item" : "tardis:xion_lens"
+    } ],
+    "type" : "create:deploying"
+  }, {
+    "ingredients" : [ {
+      "item" : "tardis:xion_lens"
+    }, {
+      "item" : "tardis:data_matrix"
+    } ],
+    "results" : [ {
+      "item" : "tardis:xion_lens"
+    } ],
+    "type" : "create:deploying"
+  }, {
+    "ingredients" : [ {
+      "item" : "tardis:xion_lens"
+    }, {
+      "tag" : "forge:ingots/iron"
+    } ],
+    "results" : [ {
+      "item" : "tardis:xion_lens"
+    } ],
+    "type" : "create:deploying"
+  }, {
+    "ingredients" : [ {
+      "item" : "tardis:xion_lens"
+    }, {
+      "item" : "tardis:xion_lens"
+    } ],
+    "results" : [ {
+      "item" : "tardis:xion_lens"
+    } ],
+    "type" : "create:pressing"
+  } ],
+  "transitionalItem" : {
+    "item" : "tardis:xion_lens"
+  },
+  "type" : "create:sequenced_assembly"
+}

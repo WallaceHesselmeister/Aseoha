@@ -1,0 +1,11 @@
+{
+  "ingredients" : [ {
+    "item" : "tardis:neutron_console"
+  }, {
+    "tag" : "forge:nuggets"
+  } ],
+  "results" : [ {
+    "item" : "tardis:nemo_console"
+  } ],
+  "type" : "create:item_application"
+}

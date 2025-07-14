@@ -1,0 +1,54 @@
+{
+  "ingredient" : {
+    "item" : "tardis:data_matrix"
+  },
+  "loops" : 1,
+  "results" : [ {
+    "item" : "tardis:components/temporal_grace"
+  } ],
+  "sequence" : [ {
+    "ingredients" : [ {
+      "item" : "tardis:data_matrix"
+    }, {
+      "item" : "tardis:exo_circuits"
+    } ],
+    "results" : [ {
+      "item" : "tardis:data_matrix"
+    } ],
+    "type" : "create:deploying"
+  }, {
+    "ingredients" : [ {
+      "item" : "tardis:data_matrix"
+    }, {
+      "item" : "minecraft:ghast_tear"
+    } ],
+    "results" : [ {
+      "item" : "tardis:data_matrix"
+    } ],
+    "type" : "create:deploying"
+  }, {
+    "ingredients" : [ {
+      "item" : "tardis:data_matrix"
+    }, {
+      "item" : "tardis:xion_lens"
+    } ],
+    "results" : [ {
+      "item" : "tardis:data_matrix"
+    } ],
+    "type" : "create:deploying"
+  }, {
+    "ingredients" : [ {
+      "item" : "tardis:data_matrix"
+    }, {
+      "item" : "tardis:data_matrix"
+    } ],
+    "results" : [ {
+      "item" : "tardis:data_matrix"
+    } ],
+    "type" : "create:pressing"
+  } ],
+  "transitionalItem" : {
+    "item" : "tardis:data_matrix"
+  },
+  "type" : "create:sequenced_assembly"
+}

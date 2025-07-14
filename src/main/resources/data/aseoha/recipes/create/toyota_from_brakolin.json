@@ -1,0 +1,11 @@
+{
+  "ingredients" : [ {
+    "item" : "aseoha:console/brackolin"
+  }, {
+    "tag" : "forge:nuggets"
+  } ],
+  "results" : [ {
+    "item" : "aseoha:console/toyota"
+  } ],
+  "type" : "create:item_application"
+}

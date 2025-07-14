@@ -1,0 +1,11 @@
+{
+  "ingredients" : [ {
+    "item" : "aseoha:console/toyota"
+  }, {
+    "tag" : "forge:nuggets"
+  } ],
+  "results" : [ {
+    "item" : "aseoha:console/copper"
+  } ],
+  "type" : "create:item_application"
+}

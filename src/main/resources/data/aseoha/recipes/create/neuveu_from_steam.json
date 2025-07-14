@@ -1,0 +1,11 @@
+{
+  "ingredients" : [ {
+    "item" : "tardis:steam_console"
+  }, {
+    "tag" : "forge:nuggets"
+  } ],
+  "results" : [ {
+    "item" : "tardis:neuveau_console"
+  } ],
+  "type" : "create:item_application"
+}

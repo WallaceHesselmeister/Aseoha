@@ -1,0 +1,54 @@
+{
+  "ingredient" : {
+    "item" : "tardis:components/demat_circuit"
+  },
+  "loops" : 1,
+  "results" : [ {
+    "item" : "tardis:scoop_vault"
+  } ],
+  "sequence" : [ {
+    "ingredients" : [ {
+      "item" : "tardis:components/demat_circuit"
+    }, {
+      "item" : "tardis:exo_circuits"
+    } ],
+    "results" : [ {
+      "item" : "tardis:components/demat_circuit"
+    } ],
+    "type" : "create:deploying"
+  }, {
+    "ingredients" : [ {
+      "item" : "tardis:components/demat_circuit"
+    }, {
+      "item" : "tardis:exo_circuits"
+    } ],
+    "results" : [ {
+      "item" : "tardis:components/demat_circuit"
+    } ],
+    "type" : "create:deploying"
+  }, {
+    "ingredients" : [ {
+      "item" : "tardis:components/demat_circuit"
+    }, {
+      "item" : "tardis:data_matrix"
+    } ],
+    "results" : [ {
+      "item" : "tardis:components/demat_circuit"
+    } ],
+    "type" : "create:deploying"
+  }, {
+    "ingredients" : [ {
+      "item" : "tardis:components/demat_circuit"
+    }, {
+      "item" : "tardis:components/demat_circuit"
+    } ],
+    "results" : [ {
+      "item" : "tardis:components/demat_circuit"
+    } ],
+    "type" : "create:pressing"
+  } ],
+  "transitionalItem" : {
+    "item" : "tardis:components/demat_circuit"
+  },
+  "type" : "create:sequenced_assembly"
+}

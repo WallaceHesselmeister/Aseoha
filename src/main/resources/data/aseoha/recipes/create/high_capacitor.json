@@ -1,0 +1,54 @@
+{
+  "ingredient" : {
+    "item" : "tardis:artron_capacitors/mid"
+  },
+  "loops" : 1,
+  "results" : [ {
+    "item" : "tardis:artron_capacitors/high"
+  } ],
+  "sequence" : [ {
+    "ingredients" : [ {
+      "item" : "tardis:artron_capacitors/mid"
+    }, {
+      "item" : "tardis:xion_block"
+    } ],
+    "results" : [ {
+      "item" : "tardis:artron_capacitors/mid"
+    } ],
+    "type" : "create:deploying"
+  }, {
+    "ingredients" : [ {
+      "item" : "tardis:artron_capacitors/mid"
+    }, {
+      "tag" : "forge:gems/amethyst"
+    } ],
+    "results" : [ {
+      "item" : "tardis:artron_capacitors/mid"
+    } ],
+    "type" : "create:deploying"
+  }, {
+    "ingredients" : [ {
+      "item" : "tardis:artron_capacitors/mid"
+    }, {
+      "item" : "tardis:data_matrix"
+    } ],
+    "results" : [ {
+      "item" : "tardis:artron_capacitors/mid"
+    } ],
+    "type" : "create:deploying"
+  }, {
+    "ingredients" : [ {
+      "item" : "tardis:artron_capacitors/mid"
+    }, {
+      "item" : "tardis:artron_capacitors/mid"
+    } ],
+    "results" : [ {
+      "item" : "tardis:artron_capacitors/mid"
+    } ],
+    "type" : "create:pressing"
+  } ],
+  "transitionalItem" : {
+    "item" : "tardis:artron_capacitors/mid"
+  },
+  "type" : "create:sequenced_assembly"
+}

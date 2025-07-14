@@ -1,0 +1,34 @@
+{
+  "ingredient" : {
+    "tag" : "forge:signs"
+  },
+  "loops" : 1,
+  "results" : [ {
+    "item" : "tardis:item_plaque"
+  } ],
+  "sequence" : [ {
+    "ingredients" : [ {
+      "item" : "minecraft:gold_nugget"
+    }, {
+      "tag" : "forge:nuggets/gold"
+    } ],
+    "results" : [ {
+      "item" : "minecraft:gold_nugget"
+    } ],
+    "type" : "create:deploying"
+  }, {
+    "ingredients" : [ {
+      "item" : "minecraft:gold_nugget"
+    }, {
+      "item" : "minecraft:gold_nugget"
+    } ],
+    "results" : [ {
+      "item" : "minecraft:gold_nugget"
+    } ],
+    "type" : "create:pressing"
+  } ],
+  "transitionalItem" : {
+    "item" : "minecraft:gold_nugget"
+  },
+  "type" : "create:sequenced_assembly"
+}

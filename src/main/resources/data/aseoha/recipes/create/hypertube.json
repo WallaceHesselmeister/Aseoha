@@ -1,0 +1,54 @@
+{
+  "ingredient" : {
+    "item" : "tardis:artron_capacitors/basic"
+  },
+  "loops" : 1,
+  "results" : [ {
+    "item" : "tardis:teleport_tube"
+  } ],
+  "sequence" : [ {
+    "ingredients" : [ {
+      "item" : "tardis:artron_capacitors/basic"
+    }, {
+      "tag" : "forge:glass"
+    } ],
+    "results" : [ {
+      "item" : "tardis:artron_capacitors/basic"
+    } ],
+    "type" : "create:deploying"
+  }, {
+    "ingredients" : [ {
+      "item" : "tardis:artron_capacitors/basic"
+    }, {
+      "item" : "tardis:data_crystal"
+    } ],
+    "results" : [ {
+      "item" : "tardis:artron_capacitors/basic"
+    } ],
+    "type" : "create:deploying"
+  }, {
+    "ingredients" : [ {
+      "item" : "tardis:artron_capacitors/basic"
+    }, {
+      "item" : "minecraft:dispenser"
+    } ],
+    "results" : [ {
+      "item" : "tardis:artron_capacitors/basic"
+    } ],
+    "type" : "create:deploying"
+  }, {
+    "ingredients" : [ {
+      "item" : "tardis:artron_capacitors/basic"
+    }, {
+      "item" : "tardis:artron_capacitors/basic"
+    } ],
+    "results" : [ {
+      "item" : "tardis:artron_capacitors/basic"
+    } ],
+    "type" : "create:pressing"
+  } ],
+  "transitionalItem" : {
+    "item" : "tardis:artron_capacitors/basic"
+  },
+  "type" : "create:sequenced_assembly"
+}

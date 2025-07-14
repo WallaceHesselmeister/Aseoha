@@ -1,0 +1,54 @@
+{
+  "ingredient" : {
+    "item" : "tardis:data_matrix"
+  },
+  "loops" : 1,
+  "results" : [ {
+    "item" : "tardis:components/chameleon_circuit"
+  } ],
+  "sequence" : [ {
+    "ingredients" : [ {
+      "item" : "tardis:data_matrix"
+    }, {
+      "tag" : "forge:dyes/red"
+    } ],
+    "results" : [ {
+      "item" : "tardis:data_matrix"
+    } ],
+    "type" : "create:deploying"
+  }, {
+    "ingredients" : [ {
+      "item" : "tardis:data_matrix"
+    }, {
+      "tag" : "forge:dyes/green"
+    } ],
+    "results" : [ {
+      "item" : "tardis:data_matrix"
+    } ],
+    "type" : "create:deploying"
+  }, {
+    "ingredients" : [ {
+      "item" : "tardis:data_matrix"
+    }, {
+      "tag" : "forge:dyes/blue"
+    } ],
+    "results" : [ {
+      "item" : "tardis:data_matrix"
+    } ],
+    "type" : "create:deploying"
+  }, {
+    "ingredients" : [ {
+      "item" : "tardis:data_matrix"
+    }, {
+      "item" : "tardis:data_matrix"
+    } ],
+    "results" : [ {
+      "item" : "tardis:data_matrix"
+    } ],
+    "type" : "create:pressing"
+  } ],
+  "transitionalItem" : {
+    "item" : "tardis:data_matrix"
+  },
+  "type" : "create:sequenced_assembly"
+}

@@ -1,0 +1,34 @@
+{
+  "ingredient" : {
+    "tag" : "forge:ingots/iron"
+  },
+  "loops" : 1,
+  "results" : [ {
+    "item" : "tardis:decoration/big_door"
+  } ],
+  "sequence" : [ {
+    "ingredients" : [ {
+      "item" : "minecraft:iron_ingot"
+    }, {
+      "item" : "tardis:exo_circuits"
+    } ],
+    "results" : [ {
+      "item" : "minecraft:iron_ingot"
+    } ],
+    "type" : "create:deploying"
+  }, {
+    "ingredients" : [ {
+      "item" : "minecraft:iron_ingot"
+    }, {
+      "item" : "minecraft:iron_ingot"
+    } ],
+    "results" : [ {
+      "item" : "minecraft:iron_ingot"
+    } ],
+    "type" : "create:pressing"
+  } ],
+  "transitionalItem" : {
+    "item" : "minecraft:iron_ingot"
+  },
+  "type" : "create:sequenced_assembly"
+}

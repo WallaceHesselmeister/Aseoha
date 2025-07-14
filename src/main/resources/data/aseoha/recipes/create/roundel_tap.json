@@ -1,0 +1,44 @@
+{
+  "ingredient" : {
+    "tag" : "forge:barrels"
+  },
+  "loops" : 2,
+  "results" : [ {
+    "item" : "tardis:roundel_tap"
+  } ],
+  "sequence" : [ {
+    "ingredients" : [ {
+      "item" : "minecraft:barrel"
+    }, {
+      "item" : "minecraft:lightning_rod"
+    } ],
+    "results" : [ {
+      "item" : "minecraft:barrel"
+    } ],
+    "type" : "create:deploying"
+  }, {
+    "ingredients" : [ {
+      "item" : "minecraft:barrel"
+    }, {
+      "item" : "tardis:xion_lens"
+    } ],
+    "results" : [ {
+      "item" : "minecraft:barrel"
+    } ],
+    "type" : "create:deploying"
+  }, {
+    "ingredients" : [ {
+      "item" : "minecraft:barrel"
+    }, {
+      "item" : "minecraft:barrel"
+    } ],
+    "results" : [ {
+      "item" : "minecraft:barrel"
+    } ],
+    "type" : "create:pressing"
+  } ],
+  "transitionalItem" : {
+    "item" : "minecraft:barrel"
+  },
+  "type" : "create:sequenced_assembly"
+}
