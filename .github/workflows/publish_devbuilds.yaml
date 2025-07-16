@@ -27,7 +27,7 @@ jobs:
         run: chmod +x ./gradlew
 
       - name: Run data generation
-        run: ./gradlew runDatagen
+        run: ./gradlew runData
 
       - name: Build
         run: ./gradlew build
