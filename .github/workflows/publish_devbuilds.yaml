@@ -1,17 +1,8 @@
 name: Automated donator builds
 
 on:
-  workflow_dispatch:
   push:
-    paths:
-      - 'src/**'
-      - 'build.gradle'
-      - 'gradle.properties'
-      - 'settings.gradle'
-      - 'gradle/**'
-      - 'gradlew'
-      - 'gradlew.bat'
-      - 'versioning.gradle'
+    branches: [ "feat/devbuilds" ]
 
 jobs:
   build:
@@ -30,26 +21,29 @@ jobs:
           distribution: 'temurin'
 
       - name: Setup Gradle
-        uses: gradle/actions/setup-gradle@v3
+        uses: gradle/actions/setup-gradle@417ae3ccd767c252f5661f1ace9f835f9654f2b5 # v3.1.0
+
+      - name: Grant Execute Permissions for Gradlew
+        run: chmod +x ./gradlew
 
       - name: Run data generation
         run: ./gradlew runDatagen
 
-      - name: Build with Gradle
+      - name: Build
         run: ./gradlew build
         # env:
         #   BETA: 1 # exclude assets if it's a beta dev build
 
-      - name: Publish artifacts to Discord (test mode)
+      - name: Publish artifacts
         uses: DrTheodor/discord-webhook-upload-action@v1.2
         with:
           # this url is gonna be removed in the next few hours so dont even try to use it
           # ${{ secrets.DEV_BUILDS }}
           url: https://discord.com/api/webhooks/1394828486807523530/Ys21olBf04jJHTgORj_H3C_fkeYkvbWXU3K-SvTXhrC0UsnZolWcd2BmA9IVDuB8mu-J
           file: 'build/libs/*'
-          username: 'George Washington'
-          avatar: 'https://i.imgur.com/uiFqrQh.png'
-          commit: '> :sparkles: [%MESSAGE%](<%LINK%>) by [%AUTHOR%](<%AUTHOR_LINK%>)'
+          username: TAMAman
+          avatar: 'https://media.forgecdn.net/avatars/thumbnails/983/766/256/256/638492366759883163.png'
+          commit: '> :sparkles: [%MESSAGE%](<%LINK%>) by [%AUTHOR%](<%AUTHOR_LINK%>) '
           message: |
-            <:new1:1253371736510959636><:new2:1253371805734015006> New `All Seeing Eye Of Harmony Additions` dev build `#${{ github.run_number }}`:
+            <:new1:1253371736510959636><:new2:1253371805734015006> New `Aseoha` dev build `#${{ github.run_number }}`:
             %COMMITS%
