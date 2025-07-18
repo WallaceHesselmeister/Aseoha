@@ -2,7 +2,7 @@ name: Automated donator builds
 
 on:
   push:
-    branches: [ "feat/devbuilds" ]
+    branches: [ "main" ]
 
 jobs:
   build:
@@ -37,9 +37,7 @@ jobs:
       - name: Publish artifacts
         uses: DrTheodor/discord-webhook-upload-action@v1.2
         with:
-          # this url is gonna be removed in the next few hours so dont even try to use it
-          # ${{ secrets.DEV_BUILDS }}
-          url: https://discord.com/api/webhooks/1394828486807523530/Ys21olBf04jJHTgORj_H3C_fkeYkvbWXU3K-SvTXhrC0UsnZolWcd2BmA9IVDuB8mu-J
+          url: ${{ secrets.DEV_BUILDS }}
           file: 'build/libs/*'
           username: TAMAman
           avatar: 'https://media.forgecdn.net/avatars/thumbnails/983/766/256/256/638492366759883163.png'
