@@ -1,0 +1,8 @@
+{
+	"parent":"block/cube_bottom_top",
+	"textures":{
+		"top":"aseoha:block/antigrav/top_off",
+		"side":"aseoha:block/antigrav/side_off",
+		"bottom":"aseoha:block/antigrav/bottom"
+	}
+}

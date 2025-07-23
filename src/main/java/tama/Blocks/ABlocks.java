@@ -1,6 +1,11 @@
 /* (C) TAMA Studios 2025 */
 package tama.Blocks;
 
+import static net.tardis.mod.registry.BlockRegistry.TUNGSTEN_PATTERN;
+import static tama.aseoha.MODID;
+
+import java.util.function.Supplier;
+import java.util.function.ToIntFunction;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
@@ -12,11 +17,6 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import tama.Items.AItems;
-
-import java.util.function.Supplier;
-import java.util.function.ToIntFunction;
-
-import static tama.aseoha.MODID;
 
 public class ABlocks {
 
@@ -158,6 +158,26 @@ public class ABlocks {
 
     public static final RegistryObject<Block> HELLBENT_WALLSILVER = registerBlock(
             "hb_wallsilver", () -> new Block(BlockBehaviour.Properties.of().strength(1.25F, 5.25F)));
+
+    public static final RegistryObject<Block> ANTIGRAV = registerBlock(
+            "antigrav", () -> new Block(BlockBehaviour.Properties.of().strength(1.25F, 5.25F)));
+
+    public static final RegistryObject<Block> ANTIGRAV_OFF = registerBlock(
+            "antigrav_off", () -> new Block(BlockBehaviour.Properties.of().strength(1.25F, 5.25F)));
+
+    public static final RegistryObject<SlabBlock> TUNGSTEN_PATTERN_SLAB = registerBlock(
+            "tungsten_pattern_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.of().strength(1.25F, 5.25F)));
+
+    public static final RegistryObject<SlabBlock> TUNGSTEN_PIPES_SLAB = registerBlock(
+            "tungsten_pipes_slab",
+            () -> new SlabBlock(BlockBehaviour.Properties.of().strength(1.25F, 5.25F)));
+
+    public static final RegistryObject<StairBlock> TUNGSTEN_PATTERN_STAIR = registerBlock(
+            "tungsten_pattern_stair",
+            () -> new StairBlock(
+                    () -> TUNGSTEN_PATTERN.get().defaultBlockState(),
+                    BlockBehaviour.Properties.of().strength(1.25F, 5.25F)));
 
     /************************ CONSOLES **********************/
 

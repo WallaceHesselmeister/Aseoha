@@ -1,0 +1,22 @@
+{
+  "variants": {
+    "type=bottom,waterlogged=false": {
+      "model": "aseoha:block/tungsten/tungsten_pipes_slab"
+    },
+    "type=bottom,waterlogged=true": {
+      "model": "aseoha:block/tungsten/tungsten_pipes_slab"
+    },
+    "type=double,waterlogged=false": {
+      "model": "aseoha:block/tungsten/tungsten_pipes_slab_double"
+    },
+    "type=double,waterlogged=true": {
+      "model": "aseoha:block/tungsten/tungsten_pipes_slab_double"
+    },
+    "type=top,waterlogged=false": {
+      "model": "aseoha:block/tungsten/tungsten_pipes_slab_top"
+    },
+    "type=top,waterlogged=true": {
+      "model": "aseoha:block/tungsten/tungsten_pipes_slab_top"
+    }
+  }
+}

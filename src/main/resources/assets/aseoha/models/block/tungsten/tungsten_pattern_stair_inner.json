@@ -1,0 +1,8 @@
+{
+    "parent": "block/inner_stairs",
+    "textures": {
+        "bottom": "aseoha:block/tungsten/tungsten_pattern",
+        "top": "aseoha:block/tungsten/tungsten_pattern",
+        "side": "aseoha:block/tungsten/tungsten_pattern"
+    }
+}

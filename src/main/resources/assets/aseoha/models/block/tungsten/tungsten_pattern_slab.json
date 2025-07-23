@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:block/slab",
+  "render_type": "minecraft:solid",
+  "textures": {
+    "bottom": "aseoha:block/tungsten/tungsten_pattern",
+    "side": "aseoha:block/tungsten/tungsten_pattern",
+    "top": "aseoha:block/tungsten/tungsten_pattern"
+  }
+}
