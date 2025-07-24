@@ -33,13 +33,13 @@ public abstract class EntityMixin extends net.minecraftforge.common.capabilities
         super(baseClass, isLazy);
     }
 
-    @Inject(method = "save(Lnet/minecraft/nbt/CompoundNBT;)Z", at = @At("HEAD"))
+    @Inject(method = "Lnet/minecraft/entity/Entity;save(Lnet/minecraft/nbt/CompoundNBT;)Z", at = @At("HEAD"), remap=false)
     public void Aseoha$Save(CompoundNBT nbt, CallbackInfoReturnable<Boolean> cir) {
         nbt.putFloat("aseoha_size", this.Aseoha$EntityScale);
     }
 
 
-    @Inject(method = "load", at = @At("HEAD"))
+    @Inject(method = "Lnet/minecraft/entity/Entity;load(Lnet/minecraft/nbt/CompoundNBT;)V", at = @At("HEAD"), remap=false)
     public void Aseoha$Load(CompoundNBT nbt, CallbackInfo ci) {
         this.Aseoha$EntityScale = nbt.getFloat("aseoha_size");
     }
