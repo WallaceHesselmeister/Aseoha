@@ -22,6 +22,7 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.tardis.mod.constants.TardisConstants;
 import net.tardis.mod.entity.TEntities;
+import net.tardis.mod.items.ArtronCapacitorItem;
 import net.tardis.mod.items.SonicItem;
 import net.tardis.mod.items.TardisPartItem;
 
@@ -33,6 +34,10 @@ public class AseohaItems {
 
     public static final DeferredRegister<Item> ARMOR_ITEMS =
             DeferredRegister.create(ForgeRegistries.ITEMS, MODID);
+
+    public static final RegistryObject<Item> HARMONIC_CAPACITOR = ITEMS.register("harmonic_capacitor", () -> createItem(new ArtronCapacitorItem(2048, 2.5f)));
+
+    public static final RegistryObject<Item> APOLLYON_CAPACITOR = ITEMS.register("apollyon_capacitor", () -> createItem(new ArtronCapacitorItem(128, 25)));
 
     public static final RegistryObject<Item> PRYDONIAN_HELM = ITEMS.register("prydonian_robes_helm", () -> createItem(new PrydonianRobes(EquipmentSlotType.HEAD)));
 

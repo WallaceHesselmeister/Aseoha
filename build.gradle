@@ -162,7 +162,6 @@ repositories {
     maven { url "https://dvs1.progwml6.com/files/maven/" } // JEI Maven
 }
 
-
 //dependencies {}
 def var = dependencies {
     // Specify the version of Minecraft to use, If this is any group other then 'net.minecraft' it is assumed
