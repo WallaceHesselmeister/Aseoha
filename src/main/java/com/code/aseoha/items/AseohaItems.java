@@ -238,6 +238,30 @@ public class AseohaItems {
     public static final RegistryObject<Item> IDIOT_BOX_DISC = ITEMS.register("idiot_box_disc",
             () -> new MusicDiscItem(1, Sounds.IDIOT_BOX, new Item.Properties().stacksTo(1).tab(AseohaItemGroups.ASEOHA_GROUP)));
 
+    public static final RegistryObject<Item> THIS_IS_GALLIFREY_DISC = ITEMS.register("this_is_gallifrey_disc",
+            () -> new MusicDiscItem(1, Sounds.THIS_IS_GALLIFREY, new Item.Properties().stacksTo(1).tab(AseohaItemGroups.ASEOHA_GROUP)));
+
+    public static final RegistryObject<Item> MAD_MAN_MUSIC_BOX_DISC = ITEMS.register("mad_man_music_box_disc",
+            () -> new MusicDiscItem(1, Sounds.MADMANMUSICBOX, new Item.Properties().stacksTo(1).tab(AseohaItemGroups.ASEOHA_GROUP)));
+
+    public static final RegistryObject<Item> WORDS_WIN_WARS_DISC = ITEMS.register("words_win_wars_disc",
+            () -> new MusicDiscItem(1, Sounds.WORDS_WIN_WARS, new Item.Properties().stacksTo(1).tab(AseohaItemGroups.ASEOHA_GROUP)));
+
+    public static final RegistryObject<Item> WESTMINSTER_DISC = ITEMS.register("westminster_disc",
+            () -> new MusicDiscItem(1, Sounds.WESTMINSTER, new Item.Properties().stacksTo(1).tab(AseohaItemGroups.ASEOHA_GROUP)));
+
+    public static final RegistryObject<Item> THE_MAD_MAN_DISC = ITEMS.register("the_mad_man_disc",
+            () -> new MusicDiscItem(1, Sounds.THEMADMAN, new Item.Properties().stacksTo(1).tab(AseohaItemGroups.ASEOHA_GROUP)));
+
+    public static final RegistryObject<Item> STRANGE_CREATURES_DISC = ITEMS.register("strange_creatures_disc",
+            () -> new MusicDiscItem(1, Sounds.STRANGECREATURE, new Item.Properties().stacksTo(1).tab(AseohaItemGroups.ASEOHA_GROUP)));
+
+    public static final RegistryObject<Item> SHEPHERDS_BOY_DISC = ITEMS.register("shepherds_boy_disc",
+            () -> new MusicDiscItem(1, Sounds.SHEPHERDS_BOY, new Item.Properties().stacksTo(1).tab(AseohaItemGroups.ASEOHA_GROUP)));
+
+    public static final RegistryObject<Item> I_AM_THE_DOCTOR_DISC = ITEMS.register("i_am_the_doctor_disc",
+            () -> new MusicDiscItem(1, Sounds.IAMTHEDOCTOR, new Item.Properties().stacksTo(1).tab(AseohaItemGroups.ASEOHA_GROUP)));
+
     public static final RegistryObject<Item> HAMMER = ITEMS.register("hammer",
             ()-> new Item(new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP).stacksTo(1).rarity(Rarity.RARE).fireResistant()));
 

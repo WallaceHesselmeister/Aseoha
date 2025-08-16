@@ -71,6 +71,70 @@
       }
     ]
   },
+  "thisisgallifrey": {
+    "sounds": [
+      {
+          "name": "aseoha:aseoha/thisisgallifrey",
+          "stream": true
+      }
+    ]
+  },
+  "wordswinwars": {
+    "sounds": [
+      {
+          "name": "aseoha:aseoha/wordswinwars",
+          "stream": true
+      }
+    ]
+  },
+  "madmanmusicbox": {
+    "sounds": [
+      {
+          "name": "aseoha:aseoha/themadmanwithaboxmusicboxversion",
+          "stream": true
+      }
+    ]
+  },
+  "themadman": {
+    "sounds": [
+      {
+          "name": "aseoha:aseoha/themadmanwithabox",
+          "stream": true
+      }
+    ]
+  },
+  "iamthedoctor": {
+    "sounds": [
+      {
+          "name": "aseoha:aseoha/iamthedoctor",
+          "stream": true
+      }
+    ]
+  },
+  "westminster": {
+    "sounds": [
+      {
+          "name": "aseoha:aseoha/westminster",
+          "stream": true
+      }
+    ]
+  },
+  "strangecreatures": {
+    "sounds": [
+      {
+          "name": "aseoha:aseoha/strangecreatures",
+          "stream": true
+      }
+    ]
+  },
+  "shepherdsboy": {
+    "sounds": [
+      {
+          "name": "aseoha:aseoha/shepherdsboy",
+          "stream": true
+      }
+    ]
+  },
     "idiot_box": {
       "sounds": [
         {

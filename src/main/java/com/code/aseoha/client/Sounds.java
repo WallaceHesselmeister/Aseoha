@@ -76,6 +76,39 @@ public class Sounds {
         return setupSound("idiot_box");
     });
 
+    public static final RegistryObject<SoundEvent> THIS_IS_GALLIFREY = SOUNDS.register("this_is_gallifrey", () -> {
+        return setupSound("thisisgallifrey");
+    });
+
+    public static final RegistryObject<SoundEvent> WORDS_WIN_WARS = SOUNDS.register("words_win_wars", () -> {
+        return setupSound("wordswinwars");
+    });
+
+    public static final RegistryObject<SoundEvent> STRANGECREATURE = SOUNDS.register("strangecreature", () -> {
+        return setupSound("strangecreatures");
+    });
+
+    public static final RegistryObject<SoundEvent> SHEPHERDS_BOY = SOUNDS.register("shepherds_boy", () -> {
+        return setupSound("shepherdsboy");
+    });
+
+    public static final RegistryObject<SoundEvent> WESTMINSTER = SOUNDS.register("westminster", () -> {
+        return setupSound("westminster");
+    });
+
+    public static final RegistryObject<SoundEvent> IAMTHEDOCTOR = SOUNDS.register("iamthedoctor", () -> {
+        return setupSound("iamthedoctor");
+    });
+
+    public static final RegistryObject<SoundEvent> THEMADMAN = SOUNDS.register("themadman", () -> {
+        return setupSound("themadman");
+    });
+
+    public static final RegistryObject<SoundEvent> MADMANMUSICBOX = SOUNDS.register("madmanmusicbox", () -> {
+        return setupSound("madmanmusicbox");
+    });
+
+
     public static final RegistryObject<SoundEvent> AFFIRMATIVE_MASTER = SOUNDS.register("affirmative_master", () -> {
         return setupSound("affirmative_master");
     });
