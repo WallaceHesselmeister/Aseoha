@@ -1,6 +1,8 @@
 /* (C) TAMA Studios 2025 */
 package tama.Entities;
 
+import java.util.ArrayList;
+import java.util.List;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.Entity;
@@ -17,9 +19,6 @@ import net.tardis.mod.misc.IDoor;
 import net.tardis.mod.misc.IHaveMatterState;
 import net.tardis.mod.misc.ITeleportEntities;
 import org.jetbrains.annotations.Nullable;
-
-import java.util.ArrayList;
-import java.util.List;
 
 public class DeloreanExteriorEntity extends CarExteriorEntity
         implements IDrivable,

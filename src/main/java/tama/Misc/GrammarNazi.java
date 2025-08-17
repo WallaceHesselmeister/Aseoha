@@ -1,11 +1,11 @@
 /* (C) TAMA Studios 2025 */
 package tama.Misc;
 
+import static tama.aseoha.MODID;
+
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
-
-import static tama.aseoha.MODID;
 
 /**
  * This is for functions related to string manipulation

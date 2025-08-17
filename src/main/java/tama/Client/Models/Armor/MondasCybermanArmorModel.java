@@ -1,6 +1,8 @@
 /* (C) TAMA Studios 2025 */
 package tama.Client.Models.Armor;
 
+import static tama.aseoha.MODID;
+
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.client.model.EntityModel;
@@ -11,8 +13,6 @@ import net.minecraft.client.model.geom.builders.*;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.LivingEntity;
 import org.jetbrains.annotations.NotNull;
-
-import static tama.aseoha.MODID;
 
 public class MondasCybermanArmorModel extends EntityModel<LivingEntity> {
     // This layer location should be baked with EntityRendererProvider.Context in

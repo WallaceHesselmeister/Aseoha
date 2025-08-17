@@ -1,3 +1,4 @@
+/* (C) TAMA Studios 2025 */
 package tama.mixin.client;
 
 import net.minecraft.client.gui.Font;
@@ -13,9 +14,18 @@ import org.spongepowered.asm.mixin.Shadow;
 @Mixin(TextOption.class)
 public abstract class TextOptionMixin extends Button {
 
-    @Shadow(remap = false) @Final private Font font;
+    @Shadow(remap = false)
+    @Final
+    private Font font;
 
-    protected TextOptionMixin(int p_259075_, int p_259271_, int p_260232_, int p_260028_, Component p_259351_, OnPress p_260152_, CreateNarration p_259552_) {
+    protected TextOptionMixin(
+            int p_259075_,
+            int p_259271_,
+            int p_260232_,
+            int p_260028_,
+            Component p_259351_,
+            OnPress p_260152_,
+            CreateNarration p_259552_) {
         super(p_259075_, p_259271_, p_260232_, p_260028_, p_259351_, p_260152_, p_259552_);
     }
 

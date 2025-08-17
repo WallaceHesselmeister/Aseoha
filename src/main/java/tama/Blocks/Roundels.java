@@ -1,6 +1,8 @@
 /* (C) TAMA Studios 2025 */
 package tama.Blocks;
 
+import static tama.aseoha.MODID;
+
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.SoundType;
@@ -11,8 +13,6 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.tardis.mod.block.RoundelBlock;
 import org.jetbrains.annotations.NotNull;
-
-import static tama.aseoha.MODID;
 
 public class Roundels {
     public static final DeferredRegister<Block> ROUNDELS = DeferredRegister.create(ForgeRegistries.BLOCKS, MODID);

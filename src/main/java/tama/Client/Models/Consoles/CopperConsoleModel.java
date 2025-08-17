@@ -3,6 +3,7 @@ package tama.Client.Models.Consoles;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
+import java.util.Optional;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.animation.AnimationChannel;
 import net.minecraft.client.animation.AnimationDefinition;
@@ -27,8 +28,6 @@ import org.jetbrains.annotations.NotNull;
 import org.joml.Vector3f;
 import tama.TileEntities.Console.CopperConsoleTile;
 import tama.aseoha;
-
-import java.util.Optional;
 
 public class CopperConsoleModel<T extends CopperConsoleTile> extends BaseTileHierarchicalModel<T>
         implements IAdditionalConsoleRenderData {
@@ -3927,16 +3926,38 @@ public class CopperConsoleModel<T extends CopperConsoleTile> extends BaseTileHie
                 .build();
 
         public static final AnimationDefinition ROTOR = AnimationDefinition.Builder.withLength(4.0F)
-                .addAnimation("rotortop", new AnimationChannel(AnimationChannel.Targets.POSITION,
-                        new Keyframe(0.0F, KeyframeAnimations.posVec(0.0F, 0.0F, 0.0F), AnimationChannel.Interpolations.CATMULLROM),
-                        new Keyframe(2.0F, KeyframeAnimations.posVec(0.0F, 8.0F, 0.0F), AnimationChannel.Interpolations.CATMULLROM),
-                        new Keyframe(4.0F, KeyframeAnimations.posVec(0.0F, 0.0F, 0.0F), AnimationChannel.Interpolations.CATMULLROM)
-                ))
-                .addAnimation("rotorbottom", new AnimationChannel(AnimationChannel.Targets.POSITION,
-                        new Keyframe(0.0F, KeyframeAnimations.posVec(0.0F, 0.0F, 0.0F), AnimationChannel.Interpolations.CATMULLROM),
-                        new Keyframe(2.0F, KeyframeAnimations.posVec(0.0F, -8.0F, 0.0F), AnimationChannel.Interpolations.CATMULLROM),
-                        new Keyframe(4.0F, KeyframeAnimations.posVec(0.0F, 0.0F, 0.0F), AnimationChannel.Interpolations.CATMULLROM)
-                ))
+                .addAnimation(
+                        "rotortop",
+                        new AnimationChannel(
+                                AnimationChannel.Targets.POSITION,
+                                new Keyframe(
+                                        0.0F,
+                                        KeyframeAnimations.posVec(0.0F, 0.0F, 0.0F),
+                                        AnimationChannel.Interpolations.CATMULLROM),
+                                new Keyframe(
+                                        2.0F,
+                                        KeyframeAnimations.posVec(0.0F, 8.0F, 0.0F),
+                                        AnimationChannel.Interpolations.CATMULLROM),
+                                new Keyframe(
+                                        4.0F,
+                                        KeyframeAnimations.posVec(0.0F, 0.0F, 0.0F),
+                                        AnimationChannel.Interpolations.CATMULLROM)))
+                .addAnimation(
+                        "rotorbottom",
+                        new AnimationChannel(
+                                AnimationChannel.Targets.POSITION,
+                                new Keyframe(
+                                        0.0F,
+                                        KeyframeAnimations.posVec(0.0F, 0.0F, 0.0F),
+                                        AnimationChannel.Interpolations.CATMULLROM),
+                                new Keyframe(
+                                        2.0F,
+                                        KeyframeAnimations.posVec(0.0F, -8.0F, 0.0F),
+                                        AnimationChannel.Interpolations.CATMULLROM),
+                                new Keyframe(
+                                        4.0F,
+                                        KeyframeAnimations.posVec(0.0F, 0.0F, 0.0F),
+                                        AnimationChannel.Interpolations.CATMULLROM)))
                 .build();
 
         public static void animateConditional(ITardisLevel tardis, CopperConsoleModel<?> model, float ageInTicks) {

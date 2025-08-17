@@ -1,6 +1,10 @@
+/* (C) TAMA Studios 2025 */
 package tama.Misc;
 
 import com.mojang.datafixers.util.Pair;
+import java.util.List;
+import java.util.Optional;
+import java.util.stream.Collectors;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
 import net.minecraft.core.HolderSet;
@@ -11,15 +15,12 @@ import net.minecraft.world.level.levelgen.structure.BuiltinStructureSets;
 import net.minecraft.world.level.levelgen.structure.Structure;
 import net.minecraft.world.level.levelgen.structure.StructureSet;
 
-import java.util.List;
-import java.util.Optional;
-import java.util.stream.Collectors;
-
 public class WorldHelper {
 
-
-    public static Optional<BlockPos> findClosestStructure(ServerLevel level, BlockPos blockPos, ResourceKey<StructureSet> structureSetKey) {
-        Optional<Holder.Reference<StructureSet>> structureSetHolder = level.registryAccess().registryOrThrow(Registries.STRUCTURE_SET).getHolder(structureSetKey);
+    public static Optional<BlockPos> findClosestStructure(
+            ServerLevel level, BlockPos blockPos, ResourceKey<StructureSet> structureSetKey) {
+        Optional<Holder.Reference<StructureSet>> structureSetHolder =
+                level.registryAccess().registryOrThrow(Registries.STRUCTURE_SET).getHolder(structureSetKey);
         if (structureSetHolder.isEmpty()) {
             return Optional.empty();
         }
@@ -29,13 +30,9 @@ public class WorldHelper {
 
         HolderSet<Structure> structuresToSearch = HolderSet.direct(structuresInSet);
 
-        Optional<Pair<BlockPos, Holder<Structure>>> result = Optional.ofNullable(level.getChunkSource().getGenerator().findNearestMapStructure(
-                level,
-                structuresToSearch,
-                blockPos,
-                100,
-                false
-        ));
+        Optional<Pair<BlockPos, Holder<Structure>>> result = Optional.ofNullable(level.getChunkSource()
+                .getGenerator()
+                .findNearestMapStructure(level, structuresToSearch, blockPos, 100, false));
 
         return result.map(Pair::getFirst);
     }
@@ -51,15 +48,10 @@ public class WorldHelper {
 
         HolderSet<Structure> structuresToSearch = HolderSet.direct(allStructures);
 
-        Optional<Pair<BlockPos, Holder<Structure>>> result = Optional.ofNullable(level.getChunkSource().getGenerator().findNearestMapStructure(
-                level,
-                structuresToSearch,
-                blockPos,
-                100,
-                false
-        ));
+        Optional<Pair<BlockPos, Holder<Structure>>> result = Optional.ofNullable(level.getChunkSource()
+                .getGenerator()
+                .findNearestMapStructure(level, structuresToSearch, blockPos, 100, false));
         return result.map(Pair::getFirst);
-
     }
 
     public static Optional<BlockPos> findNearestVillage(ServerLevel level, BlockPos blockPos) {

@@ -5,6 +5,7 @@ package tama.Client.Models.Consoles.ported; // Made with Blockbench 4.12.5
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
+import java.util.Optional;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.animation.AnimationChannel;
 import net.minecraft.client.animation.AnimationDefinition;
@@ -21,14 +22,8 @@ import net.tardis.mod.client.models.BaseTileHierarchicalModel;
 import net.tardis.mod.client.models.consoles.IAdditionalConsoleRenderData;
 import net.tardis.mod.control.ControlType;
 import net.tardis.mod.control.IncrementControl;
-import net.tardis.mod.control.ThrottleControl;
-import net.tardis.mod.helpers.WorldHelper;
 import net.tardis.mod.registry.ControlRegistry;
 import tama.TileEntities.Console.CoralConsoleTile;
-
-import java.util.Optional;
-
-import static net.tardis.mod.block.ExteriorBlock.FACING;
 
 public class CoralConsoleModel<T extends CoralConsoleTile> extends BaseTileHierarchicalModel<T>
         implements IAdditionalConsoleRenderData {
@@ -2417,19 +2412,39 @@ public class CoralConsoleModel<T extends CoralConsoleTile> extends BaseTileHiera
         Capabilities.getCap(Capabilities.TARDIS, Minecraft.getInstance().level).ifPresent(tardis -> {
             this.animate(t.rotorAnimationState, CoralConsoleModelAnimation.ROTOR, ageInTicks);
 
-                this.lever3.xRot = (float) Math.toRadians(100 - (float) 75 * tardis.getControlDataOrCreate(ControlRegistry.THROTTLE.get()).get() - 75);
+            this.lever3.xRot = (float) Math.toRadians(100
+                    - (float) 75
+                            * tardis.getControlDataOrCreate(ControlRegistry.THROTTLE.get())
+                                    .get()
+                    - 75);
 
-                this.lever4.xRot = (float)Math.toRadians(tardis.getControlDataOrCreate(ControlRegistry.HANDBRAKE.get()).get() ? 45 : -45);
-                this.lever5.xRot = (float)Math.toRadians(tardis.getControlDataOrCreate(ControlRegistry.HANDBRAKE.get()).get() ? 45 : -45);
+            this.lever4.xRot = (float) Math.toRadians(
+                    tardis.getControlDataOrCreate(ControlRegistry.HANDBRAKE.get())
+                                    .get()
+                            ? 45
+                            : -45);
+            this.lever5.xRot = (float) Math.toRadians(
+                    tardis.getControlDataOrCreate(ControlRegistry.HANDBRAKE.get())
+                                    .get()
+                            ? 45
+                            : -45);
 
+            //        	 lever2.rotateAngleZ = (float)Math.toRadians(inc.getAnimationTicks() * 30);
+            lever2.zRot = -120.5F
+                    * (tardis.getControlDataOrCreate(ControlRegistry.INCREMENT.get())
+                                    .get()
+                            / (float) IncrementControl.VALUES.length);
 
-//        	 lever2.rotateAngleZ = (float)Math.toRadians(inc.getAnimationTicks() * 30);
-                lever2.zRot = -120.5F * (tardis.getControlDataOrCreate(ControlRegistry.INCREMENT.get()).get() / (float) IncrementControl.VALUES.length);
+            //                this.facing_control.yRot = (float)
+            // Math.toRadians(tardis.getDestination().getDirection().getAxis().ordinal() * 90);
+            //                this.facing_control.x = 0f;
 
-//                this.facing_control.yRot = (float) Math.toRadians(tardis.getDestination().getDirection().getAxis().ordinal() * 90);
-//                this.facing_control.x = 0f;
-
-                this.randomiser.yRot = (float) Math.toRadians((tardis.getControlDataOrCreate(ControlRegistry.RANDOMIZER.get()).getUseAnimationState().getAccumulatedTime() / 10.0) * 360);
+            this.randomiser.yRot = (float)
+                    Math.toRadians((tardis.getControlDataOrCreate(ControlRegistry.RANDOMIZER.get())
+                                            .getUseAnimationState()
+                                            .getAccumulatedTime()
+                                    / 10.0)
+                            * 360);
         });
         poseStack.popPose();
     }

@@ -17,7 +17,6 @@ import net.tardis.mod.item.tools.SonicItem;
 import net.tardis.mod.registry.SubsystemRegistry;
 import tama.Items.Armor.MondasCybermanArmorItem;
 import tama.Items.Armor.ScarfItem;
-import tama.Registries.SubsystemsRegistry;
 import tama.RoundelRemote;
 import tama.World.Dimensions;
 
@@ -44,7 +43,8 @@ public class AItems {
                             .build())
                     .rarity(Rarity.UNCOMMON)));
 
-    public static final RegistryObject<Item> TYPE_40_NAV_COM = ITEMS.register("components/type_40_nav_com", SubsystemItem.create(SubsystemRegistry.NAV_COM));
+    public static final RegistryObject<Item> TYPE_40_NAV_COM =
+            ITEMS.register("components/type_40_nav_com", SubsystemItem.create(SubsystemRegistry.NAV_COM));
 
     public static final RegistryObject<Item> AUTHORIZED_CONTROL_DISC = ITEMS.register(
             "authorized_control_disc", () -> new AuthorizedControlDisc((new Item.Properties()).rarity(Rarity.COMMON)));

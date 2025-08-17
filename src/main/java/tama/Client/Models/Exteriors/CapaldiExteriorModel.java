@@ -1,6 +1,8 @@
 /* (C) TAMA Studios 2025 */
 package tama.Client.Models.Exteriors;
 
+import static tama.aseoha.MODID;
+
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.client.model.geom.ModelLayerLocation;
@@ -13,8 +15,6 @@ import net.tardis.mod.blockentities.exteriors.ExteriorTile;
 import net.tardis.mod.client.animations.exterior.PoliceBoxExteriorAnimation;
 import net.tardis.mod.client.models.BaseTileHierarchicalModel;
 import net.tardis.mod.client.models.exteriors.IExteriorModel;
-
-import static tama.aseoha.MODID;
 
 public class CapaldiExteriorModel<T extends ExteriorTile> extends BaseTileHierarchicalModel<T>
         implements IExteriorModel<T> {

@@ -1,6 +1,8 @@
 /* (C) TAMA Studios 2025 */
 package tama.Items.Armor;
 
+import static tama.aseoha.MODID;
+
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
@@ -10,8 +12,6 @@ import net.minecraft.world.item.ItemStack;
 import org.jetbrains.annotations.Nullable;
 import tama.Client.Models.Armor.ScarfModel;
 import tama.Client.Renderers.Armor.ScarfRenderer;
-
-import static tama.aseoha.MODID;
 
 public class ScarfItem extends ModdedArmorItem {
     public ScarfItem(ArmorMaterial pMaterial, Type pType, Properties pProperties) {

@@ -1,6 +1,12 @@
 /* (C) TAMA Studios 2025 */
 package tama;
 
+import static tama.Blocks.ABlocks.BLOCKS;
+import static tama.Items.AItems.FOOD_ITEMS;
+import static tama.Items.AItems.ITEMS;
+import static tama.Items.ATabs.TABS;
+import static tama.Registries.ControlRegistry.CONTROLS;
+
 import com.mojang.logging.LogUtils;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -17,12 +23,6 @@ import tama.TileEntities.ConsoleBlocks;
 import tama.TileEntities.ExteriorBlocks;
 import tama.TileEntities.ExteriorRegistry;
 import tama.TileEntities.TileRegistry;
-
-import static tama.Blocks.ABlocks.BLOCKS;
-import static tama.Items.AItems.FOOD_ITEMS;
-import static tama.Items.AItems.ITEMS;
-import static tama.Items.ATabs.TABS;
-import static tama.Registries.ControlRegistry.CONTROLS;
 
 @Mod(aseoha.MODID)
 @SuppressWarnings("removal")
@@ -51,7 +51,7 @@ public class aseoha {
         modEventBus.addListener(this::commonSetup);
     }
 
-    public void commonSetup(FMLCommonSetupEvent event){
+    public void commonSetup(FMLCommonSetupEvent event) {
         SubsystemsRegistry.registerSubsystems();
     }
 }

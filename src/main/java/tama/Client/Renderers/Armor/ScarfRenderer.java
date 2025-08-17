@@ -1,17 +1,16 @@
 /* (C) TAMA Studios 2025 */
 package tama.Client.Renderers.Armor;
 
+import java.util.Collections;
+import java.util.Map;
+import java.util.function.Function;
+import java.util.function.Supplier;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.builders.LayerDefinition;
 import net.minecraft.world.entity.EquipmentSlot;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import tama.Client.Models.Armor.ScarfModel;
-
-import java.util.Collections;
-import java.util.Map;
-import java.util.function.Function;
-import java.util.function.Supplier;
 
 /** the armor renderer for the {@link ScarfModel} */
 public class ScarfRenderer<T extends ScarfModel> {

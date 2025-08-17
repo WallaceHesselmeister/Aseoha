@@ -1,144 +1,132 @@
 {
-  "type": "aseoha:gallifrey",
-  "generator": {
-    "type": "minecraft:noise",
-    "settings": "aseoha:gallifrey",
-    "biome_source": {
-      "type": "minecraft:multi_noise",
-      "biomes": [
-        {
-          "biome": "aseoha:redlands_cliffs",
-          "parameters": {
-            "temperature": 0.82,
-            "humidity": 0.1,
-            "continentalness": 0.9,
-            "erosion": 0,
-            "weirdness": 0,
-            "depth": 0,
-            "offset": 0
-          }
-        },
-        {
-          "biome": "aseoha:redlands",
-          "parameters": {
-            "temperature": 0.6,
-            "humidity": 0.4,
-            "continentalness": 0.3,
-            "erosion": 0,
-            "weirdness": 0,
-            "depth": 0,
-            "offset": 0
-          }
-        },
-        {
-          "biome": "aseoha:redlands",
-          "parameters": {
-            "temperature": 0.612,
-            "humidity": 0.3,
-            "continentalness": 0.2,
-            "erosion": 0,
-            "weirdness": 0,
-            "depth": 0,
-            "offset": 0
-          }
-        },
-        {
-          "biome": "aseoha:death_zone",
-          "parameters": {
-            "temperature": 0.9,
-            "humidity": 0.2,
-            "continentalness": 0.4,
-            "erosion": 0,
-            "weirdness": 0,
-            "depth": 0,
-            "offset": 0
-          }
-        },
-        {
-          "biome": "aseoha:redlands_gravelly_mountains",
-          "parameters": {
-            "temperature": 0.9,
-            "humidity": 0.2,
-            "continentalness": 0.8,
-            "erosion": 0,
-            "weirdness": 0,
-            "depth": 0,
-            "offset": 0
-          }
-        },
-        {
-          "biome": "aseoha:redlands_modified_gravelly_mountains",
-          "parameters": {
-            "temperature": 0.8,
-            "humidity": 0.2,
-            "continentalness": 0.7,
-            "erosion": 0,
-            "weirdness": 0,
-            "depth": 0,
-            "offset": 0
-          }
-        },
-        {
-          "biome": "aseoha:redlands_mountains",
-          "parameters": {
-            "temperature": 0.8,
-            "humidity": 0.4,
-            "continentalness": 0.6,
-            "erosion": 0,
-            "weirdness": 0,
-            "depth": 0,
-            "offset": 0
-          }
-        },
-        {
-          "biome": "aseoha:redlands_wooded_mountains",
-          "parameters": {
-            "temperature": 0.8,
-            "humidity": 0.4,
-            "continentalness": 0.6,
-            "erosion": 0,
-            "weirdness": 0,
-            "depth": 0,
-            "offset": 0
-          }
-        },
-        {
-          "biome": "aseoha:redlands_river",
-          "parameters": {
-            "temperature": 0.9,
-            "humidity": 1,
-            "continentalness": 0,
-            "erosion": 0,
-            "weirdness": 0,
-            "depth": 0,
-            "offset": 0
-          }
-        },
-        {
-          "biome": "aseoha:gallifrey_desert",
-          "parameters": {
-            "temperature": 0.612,
-            "humidity": 0.2,
-            "continentalness": 0.35,
-            "erosion": 0,
-            "weirdness": 0,
-            "depth": 0,
-            "offset": 0
-          }
-        },
-        {
-          "biome": "aseoha:gallifrey_desert",
-          "parameters": {
-            "temperature": 0.6,
-            "humidity": 0.25,
-            "continentalness": 0.39,
-            "erosion": 0,
-            "weirdness": 0,
-            "depth": 0,
-            "offset": 0
-          }
+  "generator" : {
+    "biome_source" : {
+      "biomes" : [ {
+        "biome" : "aseoha:redlands_cliffs",
+        "parameters" : {
+          "continentalness" : 0.9,
+          "depth" : 0,
+          "erosion" : 0,
+          "humidity" : 0.1,
+          "offset" : 0,
+          "temperature" : 0.82,
+          "weirdness" : 0
         }
-      ]
-    }
-  }
+      }, {
+        "biome" : "aseoha:redlands",
+        "parameters" : {
+          "continentalness" : 0.3,
+          "depth" : 0,
+          "erosion" : 0,
+          "humidity" : 0.4,
+          "offset" : 0,
+          "temperature" : 0.6,
+          "weirdness" : 0
+        }
+      }, {
+        "biome" : "aseoha:redlands",
+        "parameters" : {
+          "continentalness" : 0.2,
+          "depth" : 0,
+          "erosion" : 0,
+          "humidity" : 0.3,
+          "offset" : 0,
+          "temperature" : 0.612,
+          "weirdness" : 0
+        }
+      }, {
+        "biome" : "aseoha:death_zone",
+        "parameters" : {
+          "continentalness" : 0.4,
+          "depth" : 0,
+          "erosion" : 0,
+          "humidity" : 0.2,
+          "offset" : 0,
+          "temperature" : 0.9,
+          "weirdness" : 0
+        }
+      }, {
+        "biome" : "aseoha:redlands_gravelly_mountains",
+        "parameters" : {
+          "continentalness" : 0.8,
+          "depth" : 0,
+          "erosion" : 0,
+          "humidity" : 0.2,
+          "offset" : 0,
+          "temperature" : 0.9,
+          "weirdness" : 0
+        }
+      }, {
+        "biome" : "aseoha:redlands_modified_gravelly_mountains",
+        "parameters" : {
+          "continentalness" : 0.7,
+          "depth" : 0,
+          "erosion" : 0,
+          "humidity" : 0.2,
+          "offset" : 0,
+          "temperature" : 0.8,
+          "weirdness" : 0
+        }
+      }, {
+        "biome" : "aseoha:redlands_mountains",
+        "parameters" : {
+          "continentalness" : 0.6,
+          "depth" : 0,
+          "erosion" : 0,
+          "humidity" : 0.4,
+          "offset" : 0,
+          "temperature" : 0.8,
+          "weirdness" : 0
+        }
+      }, {
+        "biome" : "aseoha:redlands_wooded_mountains",
+        "parameters" : {
+          "continentalness" : 0.6,
+          "depth" : 0,
+          "erosion" : 0,
+          "humidity" : 0.4,
+          "offset" : 0,
+          "temperature" : 0.8,
+          "weirdness" : 0
+        }
+      }, {
+        "biome" : "aseoha:redlands_river",
+        "parameters" : {
+          "continentalness" : 0,
+          "depth" : 0,
+          "erosion" : 0,
+          "humidity" : 1,
+          "offset" : 0,
+          "temperature" : 0.9,
+          "weirdness" : 0
+        }
+      }, {
+        "biome" : "aseoha:gallifrey_desert",
+        "parameters" : {
+          "continentalness" : 0.35,
+          "depth" : 0,
+          "erosion" : 0,
+          "humidity" : 0.2,
+          "offset" : 0,
+          "temperature" : 0.612,
+          "weirdness" : 0
+        }
+      }, {
+        "biome" : "aseoha:gallifrey_desert",
+        "parameters" : {
+          "continentalness" : 0.39,
+          "depth" : 0,
+          "erosion" : 0,
+          "humidity" : 0.25,
+          "offset" : 0,
+          "temperature" : 0.6,
+          "weirdness" : 0
+        }
+      } ],
+      "type" : "minecraft:multi_noise"
+    },
+    "settings" : "aseoha:gallifrey",
+    "type" : "minecraft:noise"
+  },
+  "type" : "aseoha:gallifrey"
 }

@@ -1,6 +1,8 @@
 /* (C) TAMA Studios 2025 */
 package tama.Items;
 
+import java.util.List;
+import java.util.function.Supplier;
 import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.network.chat.Component;
@@ -22,9 +24,6 @@ import tama.Capabilities.Capabilities;
 import tama.Capabilities.ControlDiscProvider;
 import tama.Capabilities.Interfaces.IControlDiscCapability;
 import tama.Misc.GrammarNazi;
-
-import java.util.List;
-import java.util.function.Supplier;
 
 public class AuthorizedControlDisc extends Item implements ISonicPortAction {
     private final Supplier<Capability<IControlDiscCapability>> controlDiscCap;

@@ -1,14 +1,14 @@
 /* (C) TAMA Studios 2025 */
 package tama.Capabilities;
 
+import static tama.aseoha.MODID;
+
 import net.minecraftforge.common.capabilities.*;
 import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import tama.Capabilities.Interfaces.IControlDiscCapability;
 import tama.aseoha;
-
-import static tama.aseoha.MODID;
 
 @Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class Capabilities {

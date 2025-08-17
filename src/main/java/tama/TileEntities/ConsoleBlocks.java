@@ -1,6 +1,10 @@
 /* (C) TAMA Studios 2025 */
 package tama.TileEntities;
 
+import static tama.Items.AItems.ITEMS;
+import static tama.aseoha.MODID;
+
+import java.util.function.Supplier;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -9,11 +13,6 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.tardis.mod.block.ConsoleBlock;
 import net.tardis.mod.item.SpecialBlockItem;
-
-import java.util.function.Supplier;
-
-import static tama.Items.AItems.ITEMS;
-import static tama.aseoha.MODID;
 
 public class ConsoleBlocks {
     /**

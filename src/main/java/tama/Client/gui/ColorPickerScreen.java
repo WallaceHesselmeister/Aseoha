@@ -1,10 +1,11 @@
+/* (C) TAMA Studios 2025 */
 package tama.Client.gui;
 
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
+import net.minecraft.client.gui.components.AbstractSliderButton;
 import net.minecraft.client.gui.components.Button;
 import net.minecraft.client.gui.components.EditBox;
-import net.minecraft.client.gui.components.AbstractSliderButton;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
 
@@ -51,41 +52,64 @@ public class ColorPickerScreen extends Screen {
         int gap = 8;
 
         // Sliders
-        this.rSlider = addRenderableWidget(new ColorSlider(centerX - sliderWidth / 2, top, sliderWidth, sliderHeight,
-                Component.literal("R"), r, val -> {
-            r = val;
-            syncHexFromRGB();
-        }));
-        this.gSlider = addRenderableWidget(new ColorSlider(centerX - sliderWidth / 2, top + (sliderHeight + gap), sliderWidth, sliderHeight,
-                Component.literal("G"), g, val -> {
-            g = val;
-            syncHexFromRGB();
-        }));
-        this.bSlider = addRenderableWidget(new ColorSlider(centerX - sliderWidth / 2, top + 2 * (sliderHeight + gap), sliderWidth, sliderHeight,
-                Component.literal("B"), b, val -> {
-            b = val;
-            syncHexFromRGB();
-        }));
+        this.rSlider = addRenderableWidget(new ColorSlider(
+                centerX - sliderWidth / 2, top, sliderWidth, sliderHeight, Component.literal("R"), r, val -> {
+                    r = val;
+                    syncHexFromRGB();
+                }));
+        this.gSlider = addRenderableWidget(new ColorSlider(
+                centerX - sliderWidth / 2,
+                top + (sliderHeight + gap),
+                sliderWidth,
+                sliderHeight,
+                Component.literal("G"),
+                g,
+                val -> {
+                    g = val;
+                    syncHexFromRGB();
+                }));
+        this.bSlider = addRenderableWidget(new ColorSlider(
+                centerX - sliderWidth / 2,
+                top + 2 * (sliderHeight + gap),
+                sliderWidth,
+                sliderHeight,
+                Component.literal("B"),
+                b,
+                val -> {
+                    b = val;
+                    syncHexFromRGB();
+                }));
 
         // Hex field
         int fieldW = 140;
-        this.hexField = new EditBox(this.font, centerX - fieldW / 2, top + 3 * (sliderHeight + gap) + 6, fieldW, 20, Component.literal("#RRGGBB"));
+        this.hexField = new EditBox(
+                this.font,
+                centerX - fieldW / 2,
+                top + 3 * (sliderHeight + gap) + 6,
+                fieldW,
+                20,
+                Component.literal("#RRGGBB"));
         this.hexField.setMaxLength(7);
         addRenderableWidget(this.hexField);
         syncHexFromRGB();
 
         // Done/Cancel
         this.doneBtn = addRenderableWidget(Button.builder(Component.translatable("gui.done"), b -> {
-            try {
-                if (callback != null) callback.onPicked(currentColor());
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-            onClose();
-        }).size(98, 20).pos(centerX - 100, top + 3 * (sliderHeight + gap) + 36).build());
+                    try {
+                        if (callback != null) callback.onPicked(currentColor());
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                    }
+                    onClose();
+                })
+                .size(98, 20)
+                .pos(centerX - 100, top + 3 * (sliderHeight + gap) + 36)
+                .build());
 
         this.cancelBtn = addRenderableWidget(Button.builder(Component.translatable("gui.cancel"), b -> onClose())
-                .size(98, 20).pos(centerX + 2, top + 3 * (sliderHeight + gap) + 36).build());
+                .size(98, 20)
+                .pos(centerX + 2, top + 3 * (sliderHeight + gap) + 36)
+                .build());
 
         setInitialFocus(this.hexField);
 
@@ -118,7 +142,8 @@ public class ColorPickerScreen extends Screen {
                 if (rSlider != null) rSlider.setFromValue(r);
                 if (gSlider != null) gSlider.setFromValue(g);
                 if (bSlider != null) bSlider.setFromValue(b);
-            } catch (NumberFormatException ignored) {}
+            } catch (NumberFormatException ignored) {
+            }
         }
         syncing = false;
     }
@@ -187,7 +212,9 @@ public class ColorPickerScreen extends Screen {
         }
 
         @FunctionalInterface
-        interface IntConsumer { void accept(int v); }
+        interface IntConsumer {
+            void accept(int v);
+        }
     }
 
     public static void open(int initialARGB, ColorPicked cb) {

@@ -1,6 +1,8 @@
 /* (C) TAMA Studios 2025 */
 package tama.Events;
 
+import static tama.aseoha.MODID;
+
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.registries.Registries;
@@ -17,11 +19,7 @@ import net.tardis.mod.block.ExteriorBlock;
 import net.tardis.mod.cap.Capabilities;
 import net.tardis.mod.misc.SpaceTimeCoord;
 import net.tardis.mod.registry.SubsystemRegistry;
-import tama.Registries.SubsystemsRegistry;
 import tama.World.Dimensions;
-import tama.subsystems.Type40NavCom;
-
-import static tama.aseoha.MODID;
 
 @Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class CommonEvents {
@@ -56,27 +54,28 @@ public class CommonEvents {
                         BlockState touching = event.level.getBlockState(touchingPos);
                         if (touching.getBlock() instanceof ExteriorBlock) {
                             if (!entity.level().isClientSide) {
-                                entity.getServer().getCommands().performPrefixedCommand(
-                                        entity.getServer().createCommandSourceStack()
-                                                .withEntity(entity)
-                                                .withPosition(entity.position())
-                                                .withSuppressedOutput(),
-                                        "function aseoha:shield/animate"
-                                );
+                                entity.getServer()
+                                        .getCommands()
+                                        .performPrefixedCommand(
+                                                entity.getServer()
+                                                        .createCommandSourceStack()
+                                                        .withEntity(entity)
+                                                        .withPosition(entity.position())
+                                                        .withSuppressedOutput(),
+                                                "function aseoha:shield/animate");
                             }
-
                         }
                     }
 
-                    if (event.level.dimension() == ResourceKey.create(Registries.DIMENSION, new ResourceLocation("aseoha:midnight"))) {
+                    if (event.level.dimension()
+                            == ResourceKey.create(Registries.DIMENSION, new ResourceLocation("aseoha:midnight"))) {
                         if (entity instanceof LivingEntity livingEntity) {
                             livingEntity.setSecondsOnFire(1);
                         }
                     }
                 }));
         event.level.getCapability(Capabilities.TARDIS).ifPresent(cap -> {
-            cap.getSubsystem(SubsystemRegistry.NAV_COM.get()).ifPresent(navcom -> {
-            });
+            cap.getSubsystem(SubsystemRegistry.NAV_COM.get()).ifPresent(navcom -> {});
         });
     }
 }
