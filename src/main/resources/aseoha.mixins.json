@@ -5,10 +5,12 @@
   "refmap": "aseoha.refmap.json",
   "mixins": [
     "MonitorMixin",
-    "SonicPortMixin"
+    "SonicPortMixin",
+    "client.DoorRendererMixin"
   ],
   "client": [
-    "client.ControlEntityRendererMixin"
+    "client.ControlEntityRendererMixin",
+    "client.TextOptionMixin"
   ],
   "minVersion": "0.8"
 }

@@ -15,6 +15,7 @@ import tama.aseoha;
 public class ControlRegistry {
     public static DeferredRegister<ControlType<?>> CONTROLS =
             DeferredRegister.create(new ResourceLocation("tardis", "control"), aseoha.MODID);
+
     public static final RegistryObject<ControlType<ControlDataBool>> LIGHT_SWITCH =
             CONTROLS.register("light_switch", () -> new ControlType<>(LightSwitchControl::new, ControlDataBool::new));
 

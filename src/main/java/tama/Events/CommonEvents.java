@@ -14,8 +14,12 @@ import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.tardis.mod.block.ExteriorBlock;
+import net.tardis.mod.cap.Capabilities;
 import net.tardis.mod.misc.SpaceTimeCoord;
+import net.tardis.mod.registry.SubsystemRegistry;
+import tama.Registries.SubsystemsRegistry;
 import tama.World.Dimensions;
+import tama.subsystems.Type40NavCom;
 
 import static tama.aseoha.MODID;
 
@@ -51,9 +55,16 @@ public class CommonEvents {
                         BlockPos touchingPos = projectile.blockPosition().relative(projectile.getDirection(), 1);
                         BlockState touching = event.level.getBlockState(touchingPos);
                         if (touching.getBlock() instanceof ExteriorBlock) {
-                            entity.createCommandSourceStack()
-                                    .withPosition(touchingPos.getCenter())
-                                    .withSuppressedOutput();
+                            if (!entity.level().isClientSide) {
+                                entity.getServer().getCommands().performPrefixedCommand(
+                                        entity.getServer().createCommandSourceStack()
+                                                .withEntity(entity)
+                                                .withPosition(entity.position())
+                                                .withSuppressedOutput(),
+                                        "function aseoha:shield/animate"
+                                );
+                            }
+
                         }
                     }
 
@@ -63,5 +74,9 @@ public class CommonEvents {
                         }
                     }
                 }));
+        event.level.getCapability(Capabilities.TARDIS).ifPresent(cap -> {
+            cap.getSubsystem(SubsystemRegistry.NAV_COM.get()).ifPresent(navcom -> {
+            });
+        });
     }
 }
