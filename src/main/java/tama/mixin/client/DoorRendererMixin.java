@@ -33,7 +33,7 @@ public abstract class DoorRendererMixin {
         pose.pushPose();
 
         // Center on block
-        pose.translate(0, 0, 0);
+        pose.translate(0, -2, 0);
 
         // ========== STEP 1: Write quad into stencil ==========
         GL11.glEnable(GL11.GL_STENCIL_TEST);
@@ -61,6 +61,8 @@ public abstract class DoorRendererMixin {
     }
 
     private void drawQuad(PoseStack poseStack, float width, float height) {
+        height *= 16;
+        width *= 16;
         BufferBuilder builder = Tesselator.getInstance().getBuilder();
         builder.begin(VertexFormat.Mode.QUADS, DefaultVertexFormat.POSITION);
         var matrix = poseStack.last().pose();
