@@ -17,6 +17,7 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
 import tama.Blocks.Roundels;
 import tama.Registries.Entities;
+import tama.Registries.FlightEventRegistry;
 import tama.Registries.MonitorFunctionRegistry;
 import tama.Registries.SubsystemsRegistry;
 import tama.TileEntities.ConsoleBlocks;
@@ -49,6 +50,7 @@ public class aseoha {
         SubsystemsRegistry.register(modEventBus);
         TABS.register(modEventBus);
         modEventBus.addListener(this::commonSetup);
+        FlightEventRegistry.FLIGHT_EVENTS.register(modEventBus);
     }
 
     public void commonSetup(FMLCommonSetupEvent event) {
