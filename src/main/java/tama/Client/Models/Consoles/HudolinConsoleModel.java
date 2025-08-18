@@ -1,4 +1,5 @@
-package tama.Client.Models.Consoles;/* (C) TAMA Studios 2025 */
+/* (C) TAMA Studios 2025 */
+package tama.Client.Models.Consoles; /* (C) TAMA Studios 2025 */
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
@@ -13,7 +14,6 @@ import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.Entity;
-import net.minecraft.world.phys.Vec3;
 import net.tardis.mod.blockentities.consoles.ConsoleTile;
 import net.tardis.mod.client.models.IAnimatableTileModel;
 import org.jetbrains.annotations.NotNull;
@@ -2401,5 +2401,4 @@ public class HudolinConsoleModel<T extends ConsoleTile> extends HierarchicalMode
                                         AnimationChannel.Interpolations.CATMULLROM)))
                 .build();
     }
-
 }
