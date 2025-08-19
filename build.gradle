@@ -12,6 +12,7 @@ buildscript {
 plugins {
 	id 'eclipse'
 	id 'idea'
+	id "io.freefair.lombok" version "8.12.2.1"
 	id("com.diffplug.spotless") version "7.0.4"
 	id 'net.minecraftforge.gradle' version '6.0+'
 	id 'org.spongepowered.mixin' version '0.7.+'
@@ -117,6 +118,10 @@ dependencies {
 
 	annotationProcessor "org.spongepowered:mixin:${mixin_version}:processor"
 	compileOnly(annotationProcessor("io.github.llamalad7:mixinextras-common:0.5.0"))
+
+	compileOnly 'org.projectlombok:lombok:1.18.32'
+	annotationProcessor 'org.projectlombok:lombok:1.18.32'
+
 	implementation(jarJar("io.github.llamalad7:mixinextras-forge:0.5.0")) {
 		jarJar.ranged(it, "[0.5.0,)")
 	}
