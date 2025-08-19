@@ -2,6 +2,7 @@
 package tama.Blocks;
 
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
@@ -35,11 +36,16 @@ public class QuantiscopeBlock extends Block {
             return super.use(blockState, level, blockPos, player, interactionHand, blockHitResult);
 
         for (DataQuantiscopeRecipe recipe : DataQuantiscopeList.getStructureList()) {
-            if (player.getMainHandItem()
-                    .getItem()
-                    .asItem()
-                    .toString()
-                    .equals(recipe.item().toString())) {
+
+            System.out.println(BuiltInRegistries.ITEM
+                    .getKey(player.getMainHandItem().getItem()));
+
+            System.out.println(recipe.item());
+
+
+            if (BuiltInRegistries.ITEM
+                    .getKey(player.getMainHandItem().getItem())
+                    .equals(recipe.item())) {
                 ResourceKey<ARSRoom> TYPE = ResourceKey.create(JsonRegistries.ARS_ROOM_REGISTRY, recipe.structure());
 
                 level.getCapability(Capabilities.TARDIS)

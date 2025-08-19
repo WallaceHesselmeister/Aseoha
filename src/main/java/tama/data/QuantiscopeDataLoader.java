@@ -67,7 +67,7 @@ public class QuantiscopeDataLoader implements ResourceManagerReloadListener {
 
                             // Create Data recipes and add em to the list
                             DataQuantiscopeRecipe Structure =
-                                    new DataQuantiscopeRecipe(structureLocation, itemLocation);
+                                    new DataQuantiscopeRecipe(itemLocation, structureLocation);
                             dataRecipe.add(Structure);
 
                             LOGGER.info("Loaded recipe from {}: {}", location, Structure);

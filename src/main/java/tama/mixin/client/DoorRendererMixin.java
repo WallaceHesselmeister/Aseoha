@@ -12,6 +12,7 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+import tama.Misc.HalfBOTI;
 
 @Mixin(InteriorDoorRender.class)
 public abstract class DoorRendererMixin {
@@ -30,61 +31,6 @@ public abstract class DoorRendererMixin {
             int packedLight,
             int packedOverlay,
             CallbackInfo ci) {
-        pose.pushPose();
-
-        // Center on block
-        pose.translate(0, -2, 0);
-
-        // ========== STEP 1: Write quad into stencil ==========
-        GL11.glEnable(GL11.GL_STENCIL_TEST);
-
-        GL11.glClear(GL11.GL_STENCIL_BUFFER_BIT);
-        GL11.glStencilFunc(GL11.GL_ALWAYS, 1, 0xFF);
-        GL11.glStencilOp(GL11.GL_KEEP, GL11.GL_KEEP, GL11.GL_REPLACE);
-
-        drawQuad(pose, 1, 2); // width=1, height=2
-
-        // ========== STEP 2: Render only where stencil == 1 ==========
-        RenderSystem.stencilFunc(GL11.GL_EQUAL, 1, 0xFF);
-        RenderSystem.stencilOp(GL11.GL_KEEP, GL11.GL_KEEP, GL11.GL_KEEP);
-
-        RenderSystem.disableDepthTest();
-
-        // Example "see through" effect: colored quad
-        drawColoredQuad(pose, 1, 2, 0.0f, 0.8f, 1.0f, 0.5f); // cyan tinted
-
-        RenderSystem.enableDepthTest();
-
-        GL11.glDisable(GL11.GL_STENCIL_TEST);
-
-        pose.popPose();
-    }
-
-    private void drawQuad(PoseStack poseStack, float width, float height) {
-        height *= 16;
-        width *= 16;
-        BufferBuilder builder = Tesselator.getInstance().getBuilder();
-        builder.begin(VertexFormat.Mode.QUADS, DefaultVertexFormat.POSITION);
-        var matrix = poseStack.last().pose();
-
-        builder.vertex(matrix, 0, 0, 0).endVertex();
-        builder.vertex(matrix, 0, height, 0).endVertex();
-        builder.vertex(matrix, width, height, 0).endVertex();
-        builder.vertex(matrix, width, 0, 0).endVertex();
-
-        Tesselator.getInstance().end();
-    }
-
-    private void drawColoredQuad(PoseStack poseStack, float width, float height, float r, float g, float b, float a) {
-        BufferBuilder builder = Tesselator.getInstance().getBuilder();
-        builder.begin(VertexFormat.Mode.QUADS, DefaultVertexFormat.POSITION_COLOR);
-        var matrix = poseStack.last().pose();
-
-        builder.vertex(matrix, 0, 0, 0).color(r, g, b, a).endVertex();
-        builder.vertex(matrix, 0, height, 0).color(r, g, b, a).endVertex();
-        builder.vertex(matrix, width, height, 0).color(r, g, b, a).endVertex();
-        builder.vertex(matrix, width, 0, 0).color(r, g, b, a).endVertex();
-
-        Tesselator.getInstance().end();
+        HalfBOTI.render(tardis, tile, pose, buffer, ageInTicks, packedLight, packedOverlay, ci);
     }
 }
