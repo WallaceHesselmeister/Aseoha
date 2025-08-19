@@ -13,6 +13,7 @@ import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.AddReloadListenerEvent;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -27,9 +28,15 @@ import net.tardis.mod.registry.SubsystemRegistry;
 import net.tardis.mod.upgrade.Upgrade;
 import net.tardis.mod.upgrade.tardis.BaseTardisUpgrade;
 import tama.World.Dimensions;
+import tama.data.QuantiscopeDataLoader;
 
 @Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class CommonEvents {
+
+    @SubscribeEvent
+    public static void onAddReloadListeners(AddReloadListenerEvent event) {
+        event.addListener(new QuantiscopeDataLoader());
+    }
 
     @SubscribeEvent
     public static void OnSonicInsert(ControlEvent.SonicInsertEvent event) {
