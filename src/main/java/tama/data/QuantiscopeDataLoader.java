@@ -4,6 +4,11 @@ package tama.data;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.mojang.logging.LogUtils;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 import lombok.Getter;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.packs.resources.Resource;
@@ -11,12 +16,6 @@ import net.minecraft.server.packs.resources.ResourceManager;
 import net.minecraft.server.packs.resources.ResourceManagerReloadListener;
 import net.minecraft.util.GsonHelper;
 import org.slf4j.Logger;
-
-import java.io.IOException;
-import java.io.InputStreamReader;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
 
 @Getter
 public class QuantiscopeDataLoader implements ResourceManagerReloadListener {
@@ -67,7 +66,8 @@ public class QuantiscopeDataLoader implements ResourceManagerReloadListener {
                             ResourceLocation itemLocation = new ResourceLocation(item);
 
                             // Create Data recipes and add em to the list
-                            DataQuantiscopeRecipe Structure = new DataQuantiscopeRecipe(structureLocation, itemLocation);
+                            DataQuantiscopeRecipe Structure =
+                                    new DataQuantiscopeRecipe(structureLocation, itemLocation);
                             dataRecipe.add(Structure);
 
                             LOGGER.info("Loaded recipe from {}: {}", location, Structure);
