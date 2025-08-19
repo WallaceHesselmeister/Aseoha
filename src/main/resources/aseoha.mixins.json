@@ -4,6 +4,7 @@
   "compatibilityLevel": "JAVA_17",
   "refmap": "aseoha.refmap.json",
   "mixins": [
+    "FuelHandlerMixin",
     "MonitorMixin",
     "SonicPortMixin",
     "client.DoorRendererMixin"

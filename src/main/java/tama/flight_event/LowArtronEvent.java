@@ -25,14 +25,22 @@ public class LowArtronEvent extends SingleControlEvent {
             sys.damage(3 + tardis.getLevel().random.nextInt(5));
         });
 
-        if(this.tardis.getLevel().random.nextInt(100) >= 2) { // 2% chance
+        if (this.tardis.getLevel().random.nextInt(100) >= 2) { // 2% chance
             for (int i = 0; i < 8; i++) { // Check for a capacitor
-                if (tardis.getEngine().getInventoryFor(TardisEngine.EngineSide.CAPACITORS).getStackInSlot(i).getItem() instanceof ArtronCapacitorItem) {
-                    tardis.getEngine().getInventoryFor(TardisEngine.EngineSide.CAPACITORS).setStackInSlot(i, ItemRegistry.ARTRON_CAP_LEAKY.get().getDefaultInstance()); // Turn it leaky
+                if (tardis.getEngine()
+                                .getInventoryFor(TardisEngine.EngineSide.CAPACITORS)
+                                .getStackInSlot(i)
+                                .getItem()
+                        instanceof ArtronCapacitorItem) {
+                    tardis.getEngine()
+                            .getInventoryFor(TardisEngine.EngineSide.CAPACITORS)
+                            .setStackInSlot(
+                                    i, ItemRegistry.ARTRON_CAP_LEAKY.get().getDefaultInstance()); // Turn it leaky
                     break;
                 }
             }
         }
-        tardis.getFuelHandler().takeArtron(5 + tardis.getLevel().random.nextInt(5), false); // Send your artron to Detroit
+        tardis.getFuelHandler()
+                .takeArtron(5 + tardis.getLevel().random.nextInt(5), false); // Send your artron to Detroit
     }
 }

@@ -21,8 +21,8 @@ public class FlightEventRegistry {
     public static final RegistryObject<FlightEventType> EXTERIOR_BULKHEAD =
             FLIGHT_EVENTS.register("exterior_bulkhead", () -> new FlightEventType(0.6F, ExteriorBulkheadEvent::new));
 
-    public static final RegistryObject<FlightEventType> VERTICAL_DISPLACEMENT =
-            FLIGHT_EVENTS.register("vertical_displacement", () -> new FlightEventType(0.8F, VerticalDisplacementEvent::new));
+    public static final RegistryObject<FlightEventType> VERTICAL_DISPLACEMENT = FLIGHT_EVENTS.register(
+            "vertical_displacement", () -> new FlightEventType(0.8F, VerticalDisplacementEvent::new));
 
     public static final RegistryObject<FlightEventType> DIMENSIONAL_DRIFT =
             FLIGHT_EVENTS.register("dimensional_drift", () -> new FlightEventType(0.6F, DimensionalDriftEvent::new));

@@ -125,7 +125,7 @@
       } ],
       "type" : "minecraft:multi_noise"
     },
-    "settings" : "aseoha:gallifrey",
+    "settings" : "aseoha:gallifrey_noise",
     "type" : "minecraft:noise"
   },
   "type" : "aseoha:gallifrey"

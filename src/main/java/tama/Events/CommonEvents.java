@@ -12,13 +12,20 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+import net.tardis.api.events.TardisEvent;
 import net.tardis.mod.block.ExteriorBlock;
 import net.tardis.mod.cap.Capabilities;
+import net.tardis.mod.cap.level.ITardisLevel;
+import net.tardis.mod.config.Config;
 import net.tardis.mod.misc.SpaceTimeCoord;
+import net.tardis.mod.registry.ControlRegistry;
 import net.tardis.mod.registry.SubsystemRegistry;
+import net.tardis.mod.upgrade.Upgrade;
+import net.tardis.mod.upgrade.tardis.BaseTardisUpgrade;
 import tama.World.Dimensions;
 
 @Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.FORGE)
@@ -76,6 +83,22 @@ public class CommonEvents {
                 }));
         event.level.getCapability(Capabilities.TARDIS).ifPresent(cap -> {
             cap.getSubsystem(SubsystemRegistry.NAV_COM.get()).ifPresent(navcom -> {});
+            cap.getFuelHandler().flightTick(calcTravelSpeed(cap));
         });
+    }
+
+    public static float calcTravelSpeed(ITardisLevel cap) {
+        float base = Config.Server.TARDIS_BASE_SPEED.get()
+                * cap.getControlDataOrCreate(ControlRegistry.THROTTLE.get()).get();
+
+        final TardisEvent.TardisSpeedCalcEvent event = new TardisEvent.TardisSpeedCalcEvent(cap, base);
+        MinecraftForge.EVENT_BUS.post(event);
+
+        float speed = event.getSpeed();
+        for (Upgrade<?> upgrade : cap.getUpgrades()) {
+            if (upgrade instanceof BaseTardisUpgrade upgrade1) speed *= upgrade1.speedMod();
+        }
+
+        return speed;
     }
 }

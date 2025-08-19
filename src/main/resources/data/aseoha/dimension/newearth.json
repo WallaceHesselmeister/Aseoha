@@ -2,7 +2,7 @@
   "generator" : {
     "biome_source" : {
       "biomes" : [ {
-        "biome" : "aseoha:new_earth",
+        "biome" : "aseoha:newearth",
         "parameters" : {
           "continentalness" : 0.1,
           "depth" : 0,
