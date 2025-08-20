@@ -1,5 +1,5 @@
 #Particles Generated with: Cloud Wolf's Particle Grapher
 scoreboard objectives add cw_particleplot dummy
-function aseoha:shield/l0/l0_0
-scoreboard players add @s cw_particleplot 1
-execute if score @s cw_particleplot matches 1.. run scoreboard players set @s cw_particleplot 0
+function aseoha:shield/l1/l1_0
+scoreboard players add $15594 cw_particleplot 1
+execute if score $15594 cw_particleplot matches 14.. run scoreboard players set $15594 cw_particleplot 0

@@ -5,7 +5,9 @@ import static tama.Items.ATabs.FOOD;
 import static tama.Items.ATabs.MAIN;
 import static tama.aseoha.MODID;
 
+import net.minecraft.client.Minecraft;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.client.event.EntityRenderersEvent;
@@ -226,5 +228,7 @@ public class ClientRegistry {
     public static void addTabItemsEvent(BuildCreativeModeTabContentsEvent event) {
         if (event.getTab() == MAIN.get()) AItems.ITEMS.getEntries().forEach(event::accept);
         else if (event.getTab() == FOOD.get()) AItems.FOOD_ITEMS.getEntries().forEach(event::accept);
+        if (Minecraft.getInstance().options.operatorItemsTab().get())
+            if (event.getTabKey() == CreativeModeTabs.OP_BLOCKS) event.accept(AItems.ASEOHA_MANUAL.get());
     }
 }

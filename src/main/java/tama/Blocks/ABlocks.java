@@ -53,6 +53,13 @@ public class ABlocks {
     // 5.25F).lightLevel(BlockState
     // -> 2).noOcclusion())));
 
+    public static final RegistryObject<Block> QUANTISCOPE = registerBlock(
+            "quantiscope",
+            () -> new QuantiscopeBlock(BlockBehaviour.Properties.of()
+                    .noOcclusion()
+                    .sound(SoundType.STONE)
+                    .strength(1.25F, 4.2F)));
+
     public static final RegistryObject<Block> FAULTLOCATOR = registerBlock(
             "faultlocator",
             () -> new Block(BlockBehaviour.Properties.of()

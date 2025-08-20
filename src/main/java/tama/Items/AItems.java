@@ -12,7 +12,9 @@ import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.tardis.mod.item.ManualItem;
+import net.tardis.mod.item.components.SubsystemItem;
 import net.tardis.mod.item.tools.SonicItem;
+import net.tardis.mod.registry.SubsystemRegistry;
 import tama.Items.Armor.MondasCybermanArmorItem;
 import tama.Items.Armor.ScarfItem;
 import tama.RoundelRemote;
@@ -31,6 +33,18 @@ public class AItems {
                             .saturationMod(0.7F)
                             .build())
                     .rarity(Rarity.UNCOMMON)));
+
+    public static final RegistryObject<Item> EXOTIC_BUTTERS = FOOD_ITEMS.register(
+            "exotic_butters",
+            () -> new Item((new Item.Properties())
+                    .food(new FoodProperties.Builder()
+                            .nutrition(2)
+                            .saturationMod(1)
+                            .build())
+                    .rarity(Rarity.UNCOMMON)));
+
+    public static final RegistryObject<Item> TYPE_40_NAV_COM =
+            ITEMS.register("components/type_40_nav_com", SubsystemItem.create(SubsystemRegistry.NAV_COM));
 
     public static final RegistryObject<Item> AUTHORIZED_CONTROL_DISC = ITEMS.register(
             "authorized_control_disc", () -> new AuthorizedControlDisc((new Item.Properties()).rarity(Rarity.COMMON)));

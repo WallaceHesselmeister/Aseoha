@@ -1,14 +1,14 @@
 /* (C) TAMA Studios 2025 */
 package tama.TileEntities;
 
+import static tama.TileEntities.TileRegistry.RTD_9_EXTERIOR_TILE;
+import static tama.aseoha.MODID;
+
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
 import net.tardis.mod.block.ExteriorBlock;
-
-import static tama.TileEntities.TileRegistry.RTD_9_EXTERIOR_TILE;
-import static tama.aseoha.MODID;
 
 public class ExteriorBlocks {
     /** Block deferred register for exteriors */

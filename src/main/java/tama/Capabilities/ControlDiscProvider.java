@@ -1,6 +1,7 @@
 /* (C) TAMA Studios 2025 */
 package tama.Capabilities;
 
+import javax.annotation.Nullable;
 import net.minecraft.core.Direction;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.item.ItemStack;
@@ -10,8 +11,6 @@ import net.minecraftforge.common.util.INBTSerializable;
 import net.minecraftforge.common.util.LazyOptional;
 import org.jetbrains.annotations.NotNull;
 import tama.Capabilities.Interfaces.IControlDiscCapability;
-
-import javax.annotation.Nullable;
 
 public class ControlDiscProvider implements ICapabilityProvider, INBTSerializable<CompoundTag> {
     private final IControlDiscCapability capability;

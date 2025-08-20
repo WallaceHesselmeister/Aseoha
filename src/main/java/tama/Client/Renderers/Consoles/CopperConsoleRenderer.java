@@ -35,15 +35,7 @@ public class CopperConsoleRenderer extends ConsoleRenderer<CopperConsoleTile, Co
             MultiBufferSource source,
             int packedLight,
             int packedOverlay,
-            IAdditionalConsoleRenderData data) {
-        // pose.pushPose();
-        // pose.translate(0.35, 0.3, -0.19);
-        // super.renderAdditionalData(tardis, console, partialTicks, pose, source,
-        // packedLight,
-        // packedOverlay,
-        // data);
-        // pose.popPose();
-    }
+            IAdditionalConsoleRenderData data) {}
 
     @Override
     public void renderExtra(
@@ -60,9 +52,9 @@ public class CopperConsoleRenderer extends ConsoleRenderer<CopperConsoleTile, Co
         model.root().translateAndRotate(pose);
         AnimationHelper.translateToCenter(
                 pose, AnimationHelper.translateTo(pose, model.root(), "base/monitor/bone140_r1/screen"));
-        // pose.mulPose(Axis.XN.rotationDegrees(6));
-        pose.scale(0.6f, 0.6f, 0.6f);
-        pose.translate(-(text.width / 2), -(text.height / 2), 0.01);
+        pose.scale(3.5f, 3.5f, 3.5f);
+        pose.translate((-text.width / 4) + 0.01f, (-text.height / 4), 0.003);
+        //        pose.translate(-text.width / 4, 0, 0);
         text.renderText(BaseMonitorTile.gatherWorldText(level), pose, source);
         pose.popPose();
     }

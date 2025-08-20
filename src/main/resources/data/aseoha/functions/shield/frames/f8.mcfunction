@@ -1,9 +1,9 @@
 
-particle dragon_breath ^0.973 ^12.800 ^0.232 0 0 0 0 1 force @a
-particle dragon_breath ^0.907 ^13.000 ^0.420 0 0 0 0 1 force @a
-particle dragon_breath ^0.806 ^13.200 ^0.592 0 0 0 0 1 force @a
-particle dragon_breath ^0.672 ^13.400 ^0.740 0 0 0 0 1 force @a
-particle dragon_breath ^0.512 ^13.600 ^0.859 0 0 0 0 1 force @a
-particle dragon_breath ^0.331 ^13.800 ^0.944 0 0 0 0 1 force @a
-particle dragon_breath ^0.137 ^14.000 ^0.991 0 0 0 0 1 force @a
-particle dragon_breath ^-0.063 ^14.200 ^0.998 0 0 0 0 1 force @a
+particle witch ^-0.550 ^0.375 ^-0.747 0 0 0 0 1 force @a
+particle witch ^-0.597 ^-0.093 ^-0.797 0 0 0 0 1 force @a
+particle witch ^-0.643 ^-0.492 ^-0.587 0 0 0 0 1 force @a
+particle witch ^-0.686 ^-0.697 ^-0.209 0 0 0 0 1 force @a
+particle witch ^-0.727 ^-0.657 ^0.197 0 0 0 0 1 force @a
+particle witch ^-0.766 ^-0.413 ^0.492 0 0 0 0 1 force @a
+particle witch ^-0.802 ^-0.069 ^0.593 0 0 0 0 1 force @a
+particle witch ^-0.835 ^0.247 ^0.491 0 0 0 0 1 force @a

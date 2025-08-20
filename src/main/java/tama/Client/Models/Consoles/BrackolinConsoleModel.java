@@ -3,6 +3,7 @@ package tama.Client.Models.Consoles;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
+import java.util.Optional;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.animation.AnimationChannel;
 import net.minecraft.client.animation.AnimationDefinition;
@@ -27,8 +28,6 @@ import org.jetbrains.annotations.NotNull;
 import org.joml.Vector3f;
 import tama.TileEntities.Console.BrackolinConsoleTile;
 import tama.aseoha;
-
-import java.util.Optional;
 
 public class BrackolinConsoleModel<T extends BrackolinConsoleTile> extends BaseTileHierarchicalModel<T>
         implements IAdditionalConsoleRenderData {

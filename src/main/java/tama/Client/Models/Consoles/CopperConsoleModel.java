@@ -3,6 +3,7 @@ package tama.Client.Models.Consoles;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
+import java.util.Optional;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.animation.AnimationChannel;
 import net.minecraft.client.animation.AnimationDefinition;
@@ -27,8 +28,6 @@ import org.jetbrains.annotations.NotNull;
 import org.joml.Vector3f;
 import tama.TileEntities.Console.CopperConsoleTile;
 import tama.aseoha;
-
-import java.util.Optional;
 
 public class CopperConsoleModel<T extends CopperConsoleTile> extends BaseTileHierarchicalModel<T>
         implements IAdditionalConsoleRenderData {
@@ -3926,40 +3925,23 @@ public class CopperConsoleModel<T extends CopperConsoleTile> extends BaseTileHie
                                         AnimationChannel.Interpolations.LINEAR)))
                 .build();
 
-        public static final AnimationDefinition ROTOR = AnimationDefinition.Builder.withLength(0.75F)
-                .looping()
+        public static final AnimationDefinition ROTOR = AnimationDefinition.Builder.withLength(4.0F)
                 .addAnimation(
                         "rotortop",
                         new AnimationChannel(
                                 AnimationChannel.Targets.POSITION,
                                 new Keyframe(
                                         0.0F,
-                                        KeyframeAnimations.posVec(0.0F, -1.25F, 0.0F),
-                                        AnimationChannel.Interpolations.LINEAR),
+                                        KeyframeAnimations.posVec(0.0F, 0.0F, 0.0F),
+                                        AnimationChannel.Interpolations.CATMULLROM),
                                 new Keyframe(
-                                        0.0833F,
-                                        KeyframeAnimations.posVec(0.0F, -0.5F, 0.0F),
-                                        AnimationChannel.Interpolations.LINEAR),
+                                        2.0F,
+                                        KeyframeAnimations.posVec(0.0F, 8.0F, 0.0F),
+                                        AnimationChannel.Interpolations.CATMULLROM),
                                 new Keyframe(
-                                        0.25F,
-                                        KeyframeAnimations.posVec(0.0F, 2.5F, 0.0F),
-                                        AnimationChannel.Interpolations.LINEAR),
-                                new Keyframe(
-                                        0.375F,
-                                        KeyframeAnimations.posVec(0.0F, 3.38F, 0.0F),
-                                        AnimationChannel.Interpolations.LINEAR),
-                                new Keyframe(
-                                        0.5F,
-                                        KeyframeAnimations.posVec(0.0F, 2.5F, 0.0F),
-                                        AnimationChannel.Interpolations.LINEAR),
-                                new Keyframe(
-                                        0.6667F,
-                                        KeyframeAnimations.posVec(0.0F, 0.5F, 0.0F),
-                                        AnimationChannel.Interpolations.LINEAR),
-                                new Keyframe(
-                                        0.75F,
-                                        KeyframeAnimations.posVec(0.0F, -1.25F, 0.0F),
-                                        AnimationChannel.Interpolations.LINEAR)))
+                                        4.0F,
+                                        KeyframeAnimations.posVec(0.0F, 0.0F, 0.0F),
+                                        AnimationChannel.Interpolations.CATMULLROM)))
                 .addAnimation(
                         "rotorbottom",
                         new AnimationChannel(
@@ -3967,31 +3949,15 @@ public class CopperConsoleModel<T extends CopperConsoleTile> extends BaseTileHie
                                 new Keyframe(
                                         0.0F,
                                         KeyframeAnimations.posVec(0.0F, 0.0F, 0.0F),
-                                        AnimationChannel.Interpolations.LINEAR),
+                                        AnimationChannel.Interpolations.CATMULLROM),
                                 new Keyframe(
-                                        0.0833F,
-                                        KeyframeAnimations.posVec(0.0F, -0.5F, 0.0F),
-                                        AnimationChannel.Interpolations.LINEAR),
+                                        2.0F,
+                                        KeyframeAnimations.posVec(0.0F, -8.0F, 0.0F),
+                                        AnimationChannel.Interpolations.CATMULLROM),
                                 new Keyframe(
-                                        0.25F,
-                                        KeyframeAnimations.posVec(0.0F, -3.0F, 0.0F),
-                                        AnimationChannel.Interpolations.LINEAR),
-                                new Keyframe(
-                                        0.375F,
-                                        KeyframeAnimations.posVec(0.0F, -4.5F, 0.0F),
-                                        AnimationChannel.Interpolations.LINEAR),
-                                new Keyframe(
-                                        0.5F,
-                                        KeyframeAnimations.posVec(0.0F, -3.0F, 0.0F),
-                                        AnimationChannel.Interpolations.LINEAR),
-                                new Keyframe(
-                                        0.6667F,
-                                        KeyframeAnimations.posVec(0.0F, -1.5F, 0.0F),
-                                        AnimationChannel.Interpolations.LINEAR),
-                                new Keyframe(
-                                        0.75F,
+                                        4.0F,
                                         KeyframeAnimations.posVec(0.0F, 0.0F, 0.0F),
-                                        AnimationChannel.Interpolations.LINEAR)))
+                                        AnimationChannel.Interpolations.CATMULLROM)))
                 .build();
 
         public static void animateConditional(ITardisLevel tardis, CopperConsoleModel<?> model, float ageInTicks) {

@@ -1,8 +1,11 @@
 /* (C) TAMA Studios 2025 */
 package tama.Client.Models.Consoles;
 
+import static tama.aseoha.MODID;
+
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
+import java.util.Optional;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.animation.AnimationChannel;
 import net.minecraft.client.animation.AnimationDefinition;
@@ -26,10 +29,6 @@ import net.tardis.mod.registry.ControlRegistry;
 import org.jetbrains.annotations.NotNull;
 import org.joml.Vector3f;
 import tama.TileEntities.Console.HartnellConsoleTile;
-
-import java.util.Optional;
-
-import static tama.aseoha.MODID;
 
 public class HartnellConsoleModel<T extends HartnellConsoleTile> extends BaseTileHierarchicalModel<T>
         implements IAdditionalConsoleRenderData {
