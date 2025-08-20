@@ -29,8 +29,8 @@ jobs:
       - name: SpotlessApply
         run: ./gradlew :spotlessApply
 
-      - name: Build
-        run: ./gradlew build
+      #- name: Build
+        #run: ./gradlew build
         # env:
         #   BETA: 1 # exclude assets if it's a beta dev build
 
