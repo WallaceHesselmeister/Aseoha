@@ -29,6 +29,9 @@ jobs:
       #- name: Run data generation
       #  run: ./gradlew runData
 
+      - name: spotlessApply
+        run: ./gradlew spotlessApply
+
       - name: Build
         run: ./gradlew build
         # env:
