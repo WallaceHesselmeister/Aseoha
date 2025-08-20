@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "minecraft:blue_ice"
+    },
+    {
+      "item": "aseoha:empty_unlocker"
+    }
+  ],
+  "result": {
+    "item": "aseoha:mondas_unlocker",
+    "count": 1
+  }
+}

@@ -7,12 +7,15 @@ import com.mojang.blaze3d.systems.RenderSystem;
 import com.mojang.blaze3d.vertex.*;
 import com.mojang.datafixers.util.Pair;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.multiplayer.ClientLevel;
 import net.minecraft.client.renderer.*;
+import net.minecraft.util.FastColor;
 import net.tardis.mod.blockentities.InteriorDoorTile;
 import net.tardis.mod.cap.Capabilities;
 import net.tardis.mod.cap.level.ITardisLevel;
 import net.tardis.mod.client.TardisRenderTypes;
+import org.joml.Matrix4f;
 import org.joml.Vector3f;
 import org.lwjgl.opengl.GL11;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
@@ -28,29 +31,36 @@ public class HalfBOTI {
             int packedOverlay,
             CallbackInfo ci) {
 
+        // If I just do "return" it'll throw unreachable
+        if(true) return; // TODO: Make this werk (better than it does right now), vortex needs to render on top of EVERYTHING, look into a mask or framebuffers or smth
+
         RenderSystem.assertOnRenderThread();
         Minecraft mc = Minecraft.getInstance();
+
 
         mc.getMainRenderTarget().enableStencil();
 
         GL11.glEnable(GL11.GL_STENCIL_TEST);
-
-        RenderSystem.colorMask(false, false, false, false);
-        RenderSystem.depthMask(true);
-
         GL11.glStencilMask(0xFF);
         GL11.glClear(GL11.GL_STENCIL_BUFFER_BIT);
         GL11.glStencilFunc(GL11.GL_ALWAYS, 1, 0xFF);
         GL11.glStencilOp(GL11.GL_KEEP, GL11.GL_KEEP, GL11.GL_REPLACE);
-
+        RenderSystem.depthMask(true);
+        
         pose.pushPose();
 
+        RenderSystem.disableDepthTest();
+
         drawFrame(pose, 1, 2); // draws the "frame"
+
 
         pose.popPose();
 
         RenderSystem.colorMask(true, true, true, true);
         RenderSystem.depthMask(true);
+
+
+        GL11.glClear(GL11.GL_DEPTH_BUFFER_BIT);
 
         GL11.glStencilMask(0x00);
         GL11.glStencilFunc(GL11.GL_EQUAL, 1, 0xFF);
@@ -58,20 +68,13 @@ public class HalfBOTI {
         pose.pushPose();
         pose.translate(0, 0, 10);
 
-        RenderSystem.disableBlend();
-        RenderSystem.enableDepthTest();
-
         renderVortex(mc.level, 1, mc.getPartialTick(), pose); // Render vortex
-
-        RenderSystem.disableDepthTest();
-        RenderSystem.enableBlend();
+        RenderSystem.enableDepthTest();
 
         pose.popPose();
 
 
-
         GL11.glDisable(GL11.GL_STENCIL_TEST);
-
 
     }
 

@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "X": {
+      "item": "aseoha:steel_ingot"
+    }
+  },
+  "pattern": [
+    "XXX",
+    "X X",
+    "   "
+  ],
+  "result": {
+    "item": "aseoha:mondas_cyberman_helmet"
+  },
+  "show_notification": true
+}

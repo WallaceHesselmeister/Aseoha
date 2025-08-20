@@ -82,7 +82,7 @@ public class AItems {
                             .build())
                     .rarity(Rarity.UNCOMMON)));
 
-    public static final RegistryObject<Item> sonic_fourteenth =
+    public static final RegistryObject<Item> SONIC_FOURTEENTH =
             ITEMS.register("sonic_fourteenth", () -> new SonicItem(new Item.Properties()));
 
     public static final RegistryObject<Item> SONIC_WIIMOTE =
@@ -90,6 +90,9 @@ public class AItems {
 
     public static final RegistryObject<Item> SONIC_SCREWDRIVER =
             ITEMS.register("sonic_screwdriver", () -> new SonicItem(new Item.Properties()));
+
+    public static final RegistryObject<Item> EMPTY_UNLOCKER = ITEMS.register(
+            "empty_unlocker", () -> new Item(new Item.Properties()));
 
     public static final RegistryObject<Item> GALLIFREY_UNLOCKER = ITEMS.register(
             "gallifrey_unlocker", () -> new DimensionUnlocker(new Item.Properties(), Dimensions.GALLIFREY_TYPE));
@@ -137,6 +140,10 @@ public class AItems {
     public static final RegistryObject<Item> BLUE_CRYSTAL_INGOT = ITEMS.register(
             "blue_crystal_ingot",
             () -> new Item(new Item.Properties().rarity(Rarity.RARE).fireResistant()));
+
+    public static final RegistryObject<Item> STEEL_INGOT = ITEMS.register(
+            "steel_ingot",
+            () -> new Item(new Item.Properties().rarity(Rarity.RARE)));
 
     public static final RegistryObject<Item> CONTROL_MOLD = ITEMS.register(
             "control_mold", () -> new Item(new Item.Properties().stacksTo(1).rarity(Rarity.UNCOMMON)));
