@@ -26,6 +26,9 @@ jobs:
       - name: Grant Execute Permissions for Gradlew
         run: chmod +x ./gradlew
 
+      - name: SpotlessApply
+        run: ./gradlew :spotlessApply
+
       - name: Build
         run: ./gradlew build
         # env:
