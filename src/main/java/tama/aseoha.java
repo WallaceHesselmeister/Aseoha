@@ -8,7 +8,9 @@ import static tama.Items.ATabs.TABS;
 import static tama.Registries.ControlRegistry.CONTROLS;
 
 import com.mojang.logging.LogUtils;
+import net.minecraft.world.entity.Entity;
 import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.DistExecutor;
 import net.minecraftforge.fml.common.Mod;
@@ -16,6 +18,7 @@ import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
 import tama.Blocks.Roundels;
+import tama.Capabilities.Capabilities;
 import tama.Registries.Entities;
 import tama.Registries.FlightEventRegistry;
 import tama.Registries.MonitorFunctionRegistry;
@@ -24,10 +27,12 @@ import tama.TileEntities.ConsoleBlocks;
 import tama.TileEntities.ExteriorBlocks;
 import tama.TileEntities.ExteriorRegistry;
 import tama.TileEntities.TileRegistry;
+import tama.networking.Networking;
 
 @Mod(aseoha.MODID)
 @SuppressWarnings("removal")
 public class aseoha {
+    public static boolean EntityTickRateLimit = false;
 
     public static final String MODID = "aseoha";
 
@@ -51,6 +56,8 @@ public class aseoha {
         TABS.register(modEventBus);
         modEventBus.addListener(this::commonSetup);
         FlightEventRegistry.FLIGHT_EVENTS.register(modEventBus);
+        Networking.registerMessages();
+        MinecraftForge.EVENT_BUS.addGenericListener(Entity.class, Capabilities::attachEntityCapability);
     }
 
     public void commonSetup(FMLCommonSetupEvent event) {

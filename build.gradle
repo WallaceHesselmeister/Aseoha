@@ -121,7 +121,6 @@ dependencies {
 
 	compileOnly 'org.projectlombok:lombok:1.18.32'
 	annotationProcessor 'org.projectlombok:lombok:1.18.32'
-
 	implementation(jarJar("io.github.llamalad7:mixinextras-forge:0.5.0")) {
 		jarJar.ranged(it, "[0.5.0,)")
 	}

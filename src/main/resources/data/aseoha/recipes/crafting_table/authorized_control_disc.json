@@ -1,22 +1,18 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "category": "misc",
-  "pattern": [
-    " G ",
-    "GAG",
-    " G "
-  ],
-  "key": {
-    "G": {
-      "item": "minecraft:glass_pane"
+  "category" : "misc",
+  "key" : {
+    "A" : {
+      "item" : "tardis:components/interstitial_antenna"
     },
-    "A": {
-      "item": "tardis:components/interstitial_antenna"
+    "G" : {
+      "item" : "minecraft:glass_pane"
     }
   },
-  "result": {
-    "item": "aseoha:authorized_control_disc",
-    "count": 1
+  "pattern" : [ " G ", "GAG", " G " ],
+  "result" : {
+    "count" : 1,
+    "item" : "aseoha:authorized_control_disc"
   },
-  "show_notification": false
+  "show_notification" : false,
+  "type" : "minecraft:crafting_shaped"
 }

@@ -1,38 +1,31 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "category": "misc",
-  "ingredients": [
-    {
-      "item": "minecraft:red_sand"
+  "category" : "misc",
+  "ingredients" : [ {
+    "item" : "minecraft:red_sand"
+  }, {
+    "item" : "aseoha:empty_unlocker"
+  } ],
+  "key" : {
+    "A" : {
+      "item" : "tardis:components/interstitial_antenna"
     },
-    {
-      "item": "aseoha:empty_unlocker"
-    }
-  ],
-  "pattern": [
-    "BS",
-    "CGC",
-    " A"
-  ],
-  "key": {
-    "S": {
-      "item": "aseoha:steel_ingot"
+    "B" : {
+      "tag" : "minecraft:buttons"
     },
-    "G": {
-      "item": "minecraft:glass_bottle"
+    "C" : {
+      "item" : "minecraft:copper_ingot"
     },
-    "A": {
-      "item": "tardis:components/interstitial_antenna"
+    "G" : {
+      "item" : "minecraft:glass_bottle"
     },
-    "C": {
-      "item": "minecraft:copper_ingot"
-    },
-    "B": {
-      "tag": "minecraft:buttons"
+    "S" : {
+      "item" : "aseoha:steel_ingot"
     }
   },
-  "result": {
-    "item": "aseoha:empty_unlocker",
-    "count": 1
-  }
+  "pattern" : [ "BS", "CGC", " A" ],
+  "result" : {
+    "count" : 1,
+    "item" : "aseoha:empty_unlocker"
+  },
+  "type" : "minecraft:crafting_shaped"
 }

@@ -1,16 +1,13 @@
 {
-  "type": "minecraft:crafting_shapeless",
-  "category": "misc",
-  "ingredients": [
-    {
-      "item": "minecraft:red_sand"
-    },
-    {
-      "item": "aseoha:empty_unlocker"
-    }
-  ],
-  "result": {
-    "item": "aseoha:gallifrey_unlocker",
-    "count": 1
-  }
+  "category" : "misc",
+  "ingredients" : [ {
+    "item" : "minecraft:red_sand"
+  }, {
+    "item" : "aseoha:empty_unlocker"
+  } ],
+  "result" : {
+    "count" : 1,
+    "item" : "aseoha:gallifrey_unlocker"
+  },
+  "type" : "minecraft:crafting_shapeless"
 }

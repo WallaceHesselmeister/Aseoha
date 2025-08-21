@@ -22,13 +22,14 @@ public class DimensionUnlocker extends Item {
 
     @Override
     public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand interactionHand) {
-        if(interactionHand.equals(InteractionHand.OFF_HAND))
-            return super.use(level, player, interactionHand);
+        if (interactionHand.equals(InteractionHand.OFF_HAND)) return super.use(level, player, interactionHand);
 
         Capabilities.getCap(Capabilities.TARDIS, level)
                 .ifPresent(iTardisLevel -> iTardisLevel.getUnlockHandler().unlock(this.DimensionType));
 
-        player.setItemSlot(this.getEquipmentSlot(player.getMainHandItem()), AItems.EMPTY_UNLOCKER.get().getDefaultInstance());
+        player.setItemSlot(
+                this.getEquipmentSlot(player.getMainHandItem()),
+                AItems.EMPTY_UNLOCKER.get().getDefaultInstance());
 
         return super.use(level, player, interactionHand);
     }

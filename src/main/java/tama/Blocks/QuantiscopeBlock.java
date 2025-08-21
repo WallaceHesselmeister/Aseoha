@@ -37,11 +37,10 @@ public class QuantiscopeBlock extends Block {
 
         for (DataQuantiscopeRecipe recipe : DataQuantiscopeList.getStructureList()) {
 
-            System.out.println(BuiltInRegistries.ITEM
-                    .getKey(player.getMainHandItem().getItem()));
+            System.out.println(
+                    BuiltInRegistries.ITEM.getKey(player.getMainHandItem().getItem()));
 
             System.out.println(recipe.item());
-
 
             if (BuiltInRegistries.ITEM
                     .getKey(player.getMainHandItem().getItem())

@@ -8,18 +8,22 @@ import net.minecraft.core.Direction;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.AddReloadListenerEvent;
+import net.minecraftforge.event.ServerChatEvent;
 import net.minecraftforge.event.TickEvent;
+import net.minecraftforge.event.entity.EntityJoinLevelEvent;
+import net.minecraftforge.event.level.LevelEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.tardis.api.events.TardisEvent;
 import net.tardis.mod.block.ExteriorBlock;
-import net.tardis.mod.cap.Capabilities;
 import net.tardis.mod.cap.level.ITardisLevel;
 import net.tardis.mod.config.Config;
 import net.tardis.mod.misc.SpaceTimeCoord;
@@ -27,11 +31,20 @@ import net.tardis.mod.registry.ControlRegistry;
 import net.tardis.mod.registry.SubsystemRegistry;
 import net.tardis.mod.upgrade.Upgrade;
 import net.tardis.mod.upgrade.tardis.BaseTardisUpgrade;
+import tama.Capabilities.Capabilities;
+import tama.Misc.TickrateManager;
 import tama.World.Dimensions;
+import tama.World.TickrateSavedData;
 import tama.data.QuantiscopeDataLoader;
+import tama.networking.Networking;
+import tama.networking.s2c.UpdateAreaTickratePacket;
+import tama.networking.s2c.UpdateDimensionTickratePacket;
+import tama.networking.s2c.UpdateTickratePacket;
 
 @Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class CommonEvents {
+    @SubscribeEvent
+    public static void chatEvent(ServerChatEvent event) {}
 
     @SubscribeEvent
     public static void onAddReloadListeners(AddReloadListenerEvent event) {
@@ -88,7 +101,7 @@ public class CommonEvents {
                         }
                     }
                 }));
-        event.level.getCapability(Capabilities.TARDIS).ifPresent(cap -> {
+        event.level.getCapability(net.tardis.mod.cap.Capabilities.TARDIS).ifPresent(cap -> {
             cap.getSubsystem(SubsystemRegistry.NAV_COM.get()).ifPresent(navcom -> {});
             cap.getFuelHandler().flightTick(calcTravelSpeed(cap));
         });
@@ -107,5 +120,24 @@ public class CommonEvents {
         }
 
         return speed;
+    }
+
+    @SubscribeEvent
+    public static void onLevelLoadEvent(LevelEvent.Load event) {
+        ResourceKey<Level> dimension = ((Level) event.getLevel()).dimension();
+        TickrateSavedData data = TickrateSavedData.get(dimension);
+        if (data != null) {
+            Networking.sendToAll(new UpdateDimensionTickratePacket(dimension, data.getTimer().tickrate));
+            data.getTickrateAreas().forEach(t -> {
+                Networking.sendToAll(new UpdateAreaTickratePacket(t.getLeft(), t.getRight()));
+            });
+        }
+    }
+
+    @SubscribeEvent
+    public static void onEntityJoinLevel(EntityJoinLevelEvent event) {
+        Entity entity = event.getEntity();
+        TickrateManager.ENTITY_MAP.put(entity.getClass().hashCode(), entity);
+        TickrateManager.ENTITY_MAP2.put(entity.getClass().getSuperclass().hashCode(), entity);
     }
 }

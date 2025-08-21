@@ -60,6 +60,13 @@ public class ABlocks {
                     .sound(SoundType.STONE)
                     .strength(1.25F, 4.2F)));
 
+    public static final RegistryObject<Block> LOCALIZED_TIME_FIELD_GENERATOR = registerBlock(
+            "localized_time_field_generator",
+            () -> new LocalizedTimeFieldGeneratorBlock(BlockBehaviour.Properties.of()
+                    .noOcclusion()
+                    .sound(SoundType.STONE)
+                    .strength(1.25F, 4.2F)));
+
     public static final RegistryObject<Block> FAULTLOCATOR = registerBlock(
             "faultlocator",
             () -> new Block(BlockBehaviour.Properties.of()

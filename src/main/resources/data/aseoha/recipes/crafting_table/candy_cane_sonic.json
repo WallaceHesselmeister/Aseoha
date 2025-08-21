@@ -1,22 +1,18 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "category": "misc",
-  "pattern": [
-    "SRS",
-    "R",
-    "S"
-  ],
-  "key": {
-    "S": {
-      "item": "minecraft:sugar_cane"
+  "category" : "misc",
+  "key" : {
+    "R" : {
+      "item" : "minecraft:red_dye"
     },
-    "R": {
-      "item": "minecraft:red_dye"
+    "S" : {
+      "item" : "minecraft:sugar_cane"
     }
   },
-  "result": {
-    "item": "aseoha:candy_cane_sonic",
-    "count": 1
+  "pattern" : [ "SRS", "R", "S" ],
+  "result" : {
+    "count" : 1,
+    "item" : "aseoha:candy_cane_sonic"
   },
-  "show_notification": false
+  "show_notification" : false,
+  "type" : "minecraft:crafting_shaped"
 }

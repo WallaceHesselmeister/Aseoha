@@ -1,14 +1,12 @@
 {
-  "type": "tardis:quantiscope/crafting",
-  "main_component": {
-    "item": "tardis:components/interstitial_antenna"
+  "main_component" : {
+    "item" : "tardis:components/interstitial_antenna"
   },
-  "other_ingredients": [
-    {
-      "item": "tardis:xion_lens"
-    }
-  ],
-  "result": {
-    "item": "aseoha:components/type_40_nav_com"
-  }
+  "other_ingredients" : [ {
+    "item" : "tardis:xion_lens"
+  } ],
+  "result" : {
+    "item" : "aseoha:components/type_40_nav_com"
+  },
+  "type" : "tardis:quantiscope/crafting"
 }

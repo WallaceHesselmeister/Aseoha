@@ -1,18 +1,14 @@
 {
-  "type": "minecraft:crafting_shaped",
-  "category": "equipment",
-  "key": {
-    "X": {
-      "item": "aseoha:steel_ingot"
+  "category" : "equipment",
+  "key" : {
+    "X" : {
+      "item" : "aseoha:steel_ingot"
     }
   },
-  "pattern": [
-    "X X",
-    "XXX",
-    "XXX"
-  ],
-  "result": {
-    "item": "aseoha:mondas_cyberman_chest"
+  "pattern" : [ "X X", "XXX", "XXX" ],
+  "result" : {
+    "item" : "aseoha:mondas_cyberman_chest"
   },
-  "show_notification": true
+  "show_notification" : true,
+  "type" : "minecraft:crafting_shaped"
 }

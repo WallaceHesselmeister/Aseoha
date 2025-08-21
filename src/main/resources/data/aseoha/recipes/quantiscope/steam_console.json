@@ -1,13 +1,13 @@
 {
   "main_component" : {
-    "item" : "minecraft:copper_nugget"
+    "item" : "minecraft:copper_ingot"
   },
   "other_ingredients" : [ {
     "item" : "tardis:exo_circuits"
   }, {
-    "item" : "minecraft:copper_nugget"
+    "item" : "minecraft:copper_ingot"
   }, {
-    "item" : "minecraft:copper_nugget"
+    "item" : "minecraft:copper_ingot"
   } ],
   "result" : {
     "item" : "tardis:steam_console"
