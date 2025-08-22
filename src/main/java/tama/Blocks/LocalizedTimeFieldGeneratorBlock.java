@@ -24,10 +24,11 @@ import tama.Misc.TickrateManager;
 
 public class LocalizedTimeFieldGeneratorBlock extends Block {
     int rate = 20;
-    public static final BooleanProperty POWERED = BlockStateProperties.POWERED;
+//    public static final BooleanProperty POWERED = BlockStateProperties.POWERED;
 
     public LocalizedTimeFieldGeneratorBlock(Properties p_49795_) {
         super(p_49795_);
+//        this.registerDefaultState(this.stateDefinition.any().setValue(POWERED, false));
     }
 
     @Override
@@ -77,7 +78,7 @@ public class LocalizedTimeFieldGeneratorBlock extends Block {
     public void onRemove(
             @NotNull BlockState blockState,
             Level level,
-            BlockPos blockPos,
+            @NotNull BlockPos blockPos,
             @NotNull BlockState blockState1,
             boolean b) {
         if (!level.isClientSide) {
@@ -98,37 +99,48 @@ public class LocalizedTimeFieldGeneratorBlock extends Block {
 
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
-        builder.add(POWERED);
+//        builder.add(POWERED);
     }
 
     @Override
+    @SuppressWarnings("deprecation")
     public void neighborChanged(
-            BlockState state, Level level, BlockPos blockPos, Block blockIn, BlockPos fromPos, boolean isMoving) {
+            @NotNull BlockState state,
+            Level level,
+            @NotNull BlockPos blockPos,
+            @NotNull Block blockIn,
+            @NotNull BlockPos fromPos,
+            boolean isMoving) {
         if (!level.isClientSide) {
             boolean hasSignal = level.hasNeighborSignal(blockPos);
-            if (hasSignal && !state.getValue(POWERED)) {
+//            if (hasSignal && !state.getValue(POWERED)) {
+            if(hasSignal) {
                 // The block just received power
-                level.setBlockAndUpdate(blockPos, state.setValue(POWERED, true));
+//                level.setBlockAndUpdate(blockPos, state.setValue(POWERED, true));
 
                 AABB aabb = new AABB(
-                        new BlockPos(blockPos.getX() - 4, blockPos.getY() - 4, blockPos.getZ() - 4),
-                        new BlockPos(blockPos.getX() + 4, blockPos.getY() + 4, blockPos.getZ() + 4));
+                        new BlockPos(blockPos.getX() - 3, blockPos.getY() - 3, blockPos.getZ() - 3),
+                        new BlockPos(blockPos.getX() + 3, blockPos.getY() + 3, blockPos.getZ() + 3));
 
                 level.getEntitiesOfClass(Entity.class, aabb).forEach(ent -> ent.getCapability(Capabilities.TICK_RATE)
-                        .ifPresent(cap -> {
-                            cap.setTickrate(0);
-                        }));
+                        .ifPresent(cap -> cap.setTickrate(0)));
 
                 level.scheduleTick(blockPos, state.getBlock(), 3000, TickPriority.EXTREMELY_HIGH);
-            } else if (!hasSignal && state.getValue(POWERED)) {
+                }
+//            } else if (!hasSignal && state.getValue(POWERED)) {
                 // The block just lost power
-                level.setBlockAndUpdate(blockPos, state.setValue(POWERED, false));
-            }
+//                level.setBlockAndUpdate(blockPos, state.setValue(POWERED, false));
+//            }
         }
     }
 
     @Override
-    public void tick(BlockState blockState, ServerLevel serverLevel, BlockPos blockPos, RandomSource randomSource) {
+    @SuppressWarnings("deprecation")
+    public void tick(
+            @NotNull BlockState blockState,
+            @NotNull ServerLevel serverLevel,
+            @NotNull BlockPos blockPos,
+            @NotNull RandomSource randomSource) {
         super.tick(blockState, serverLevel, blockPos, randomSource);
 
         AABB aabb = new AABB(
