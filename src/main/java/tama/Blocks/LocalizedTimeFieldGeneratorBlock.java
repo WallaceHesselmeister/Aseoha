@@ -3,6 +3,8 @@ package tama.Blocks;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.Entity;
@@ -10,26 +12,33 @@ import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.StateDefinition;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.BlockHitResult;
+import net.minecraft.world.ticks.TickPriority;
+import org.jetbrains.annotations.NotNull;
 import tama.Capabilities.Capabilities;
 import tama.Misc.TickrateManager;
 
 public class LocalizedTimeFieldGeneratorBlock extends Block {
     int rate = 20;
+    public static final BooleanProperty POWERED = BlockStateProperties.POWERED;
 
     public LocalizedTimeFieldGeneratorBlock(Properties p_49795_) {
         super(p_49795_);
     }
 
     @Override
-    public InteractionResult use(
-            BlockState blockState,
+    @SuppressWarnings("deprecation")
+    public @NotNull InteractionResult use(
+            @NotNull BlockState blockState,
             Level level,
-            BlockPos blockPos,
-            Player player,
-            InteractionHand interactionHand,
-            BlockHitResult blockHitResult) {
+            @NotNull BlockPos blockPos,
+            @NotNull Player player,
+            @NotNull InteractionHand interactionHand,
+            @NotNull BlockHitResult blockHitResult) {
         if (level.isClientSide || interactionHand.equals(InteractionHand.OFF_HAND))
             return super.use(blockState, level, blockPos, player, interactionHand, blockHitResult);
 
@@ -42,24 +51,93 @@ public class LocalizedTimeFieldGeneratorBlock extends Block {
                 case 20 -> 40;
                 case 40 -> 80;
                 default -> 0;};
-            player.sendSystemMessage(Component.literal(String.valueOf(rate)));
+            player.sendSystemMessage(
+                    Component.literal(String.format("Tickrate set to %s %s", rate, "Ticks per second")));
             return super.use(blockState, level, blockPos, player, interactionHand, blockHitResult);
         }
 
         AABB aabb = new AABB(
-                new BlockPos(blockPos.getX() - 20, blockPos.getY() - 20, blockPos.getZ() - 20),
-                new BlockPos(blockPos.getX() + 20, blockPos.getY() + 20, blockPos.getZ() + 20));
+                new BlockPos(blockPos.getX() - 10, blockPos.getY() - 10, blockPos.getZ() - 10),
+                new BlockPos(blockPos.getX() + 10, blockPos.getY() + 10, blockPos.getZ() + 10));
 
         TickrateManager.excludeEntity(player);
         TickrateManager.addTickrateArea(level.dimension(), aabb, rate);
 
-        if(rate == 20) {
-            level.getEntitiesOfClass(Entity.class, aabb).forEach(ent ->
-                    ent.getCapability(Capabilities.TICK_RATE).ifPresent(cap -> {
-                        if(!cap.isExcluded()) cap.setTickrate(rate);
+        if (rate != 0) {
+            level.getEntitiesOfClass(Entity.class, aabb)
+                    .forEach(ent -> ent.getCapability(Capabilities.TICK_RATE).ifPresent(cap -> {
+                        if (!cap.isExcluded() && cap.getTickrate() == 0) cap.setTickrate(rate);
                     }));
         }
-
         return super.use(blockState, level, blockPos, player, interactionHand, blockHitResult);
+    }
+
+    @Override
+    @SuppressWarnings("deprecation")
+    public void onRemove(
+            @NotNull BlockState blockState,
+            Level level,
+            BlockPos blockPos,
+            @NotNull BlockState blockState1,
+            boolean b) {
+        if (!level.isClientSide) {
+            AABB aabb = new AABB(
+                    new BlockPos(blockPos.getX() - 10, blockPos.getY() - 10, blockPos.getZ() - 10),
+                    new BlockPos(blockPos.getX() + 10, blockPos.getY() + 10, blockPos.getZ() + 10));
+
+            TickrateManager.addTickrateArea(level.dimension(), aabb, rate);
+
+            level.getEntitiesOfClass(Entity.class, aabb)
+                    .forEach(ent -> ent.getCapability(Capabilities.TICK_RATE).ifPresent(cap -> {
+                        if (!cap.isExcluded()) cap.setTickrate(rate);
+                        if (rate == 20) cap.exclude(false);
+                    }));
+        }
+        super.onRemove(blockState, level, blockPos, blockState1, b);
+    }
+
+    @Override
+    protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
+        builder.add(POWERED);
+    }
+
+    @Override
+    public void neighborChanged(
+            BlockState state, Level level, BlockPos blockPos, Block blockIn, BlockPos fromPos, boolean isMoving) {
+        if (!level.isClientSide) {
+            boolean hasSignal = level.hasNeighborSignal(blockPos);
+            if (hasSignal && !state.getValue(POWERED)) {
+                // The block just received power
+                level.setBlockAndUpdate(blockPos, state.setValue(POWERED, true));
+
+                AABB aabb = new AABB(
+                        new BlockPos(blockPos.getX() - 4, blockPos.getY() - 4, blockPos.getZ() - 4),
+                        new BlockPos(blockPos.getX() + 4, blockPos.getY() + 4, blockPos.getZ() + 4));
+
+                level.getEntitiesOfClass(Entity.class, aabb).forEach(ent -> ent.getCapability(Capabilities.TICK_RATE)
+                        .ifPresent(cap -> {
+                            cap.setTickrate(0);
+                        }));
+
+                level.scheduleTick(blockPos, state.getBlock(), 3000, TickPriority.EXTREMELY_HIGH);
+            } else if (!hasSignal && state.getValue(POWERED)) {
+                // The block just lost power
+                level.setBlockAndUpdate(blockPos, state.setValue(POWERED, false));
+            }
+        }
+    }
+
+    @Override
+    public void tick(BlockState blockState, ServerLevel serverLevel, BlockPos blockPos, RandomSource randomSource) {
+        super.tick(blockState, serverLevel, blockPos, randomSource);
+
+        AABB aabb = new AABB(
+                new BlockPos(blockPos.getX() - 4, blockPos.getY() - 4, blockPos.getZ() - 4),
+                new BlockPos(blockPos.getX() + 4, blockPos.getY() + 4, blockPos.getZ() + 4));
+
+        serverLevel.getEntitiesOfClass(Entity.class, aabb).forEach(ent -> ent.getCapability(Capabilities.TICK_RATE)
+                .ifPresent(cap -> {
+                    if (!cap.isExcluded()) cap.setTickrate(20);
+                }));
     }
 }

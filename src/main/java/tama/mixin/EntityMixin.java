@@ -21,8 +21,9 @@ public class EntityMixin {
         Pair<Boolean, Float> pair = TickrateManager.getArea(entity.level().dimension(), entity.getBoundingBox());
         if (pair.getLeft()) {
             if (entity.getCapability(tama.Capabilities.Capabilities.TICK_RATE).isPresent()) {
-                if (!entity.getCapability(Capabilities.TICK_RATE).orElseGet(null).isExcluded())
-                    TickrateManager.setTickrate(entity, pair.getRight());
+                if (!entity.getCapability(Capabilities.TICK_RATE)
+                        .orElseGet(null)
+                        .isExcluded()) TickrateManager.setTickrate(entity, pair.getRight());
             } else TickrateManager.setTickrate(entity, pair.getRight());
         }
     }

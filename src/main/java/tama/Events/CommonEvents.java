@@ -31,7 +31,6 @@ import net.tardis.mod.registry.ControlRegistry;
 import net.tardis.mod.registry.SubsystemRegistry;
 import net.tardis.mod.upgrade.Upgrade;
 import net.tardis.mod.upgrade.tardis.BaseTardisUpgrade;
-import tama.Capabilities.Capabilities;
 import tama.Misc.TickrateManager;
 import tama.World.Dimensions;
 import tama.World.TickrateSavedData;
@@ -39,7 +38,6 @@ import tama.data.QuantiscopeDataLoader;
 import tama.networking.Networking;
 import tama.networking.s2c.UpdateAreaTickratePacket;
 import tama.networking.s2c.UpdateDimensionTickratePacket;
-import tama.networking.s2c.UpdateTickratePacket;
 
 @Mod.EventBusSubscriber(modid = MODID, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class CommonEvents {

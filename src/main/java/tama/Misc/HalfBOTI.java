@@ -30,7 +30,8 @@ public class HalfBOTI {
             CallbackInfo ci) {
 
         // If I just do "return" it'll throw unreachable
-//        if (true) return; // TODO: Make this werk (better than it does right now), vortex needs to render on top of
+        //        if (true) return; // TODO: Make this werk (better than it does right now), vortex needs to render on
+        // top of
         // EVERYTHING, look into a mask or framebuffers or smth
 
         RenderSystem.assertOnRenderThread();
