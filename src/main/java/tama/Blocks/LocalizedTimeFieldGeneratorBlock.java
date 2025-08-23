@@ -22,11 +22,11 @@ import tama.Misc.TickrateManager;
 
 public class LocalizedTimeFieldGeneratorBlock extends Block {
     int rate = 20;
-//    public static final BooleanProperty POWERED = BlockStateProperties.POWERED;
+    //    public static final BooleanProperty POWERED = BlockStateProperties.POWERED;
 
     public LocalizedTimeFieldGeneratorBlock(Properties p_49795_) {
         super(p_49795_);
-//        this.registerDefaultState(this.stateDefinition.any().setValue(POWERED, false));
+        //        this.registerDefaultState(this.stateDefinition.any().setValue(POWERED, false));
     }
 
     @Override
@@ -97,7 +97,7 @@ public class LocalizedTimeFieldGeneratorBlock extends Block {
 
     @Override
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
-//        builder.add(POWERED);
+        //        builder.add(POWERED);
     }
 
     @Override
@@ -111,10 +111,10 @@ public class LocalizedTimeFieldGeneratorBlock extends Block {
             boolean isMoving) {
         if (!level.isClientSide) {
             boolean hasSignal = level.hasNeighborSignal(blockPos);
-//            if (hasSignal && !state.getValue(POWERED)) {
-            if(hasSignal) {
+            //            if (hasSignal && !state.getValue(POWERED)) {
+            if (hasSignal) {
                 // The block just received power
-//                level.setBlockAndUpdate(blockPos, state.setValue(POWERED, true));
+                //                level.setBlockAndUpdate(blockPos, state.setValue(POWERED, true));
 
                 AABB aabb = new AABB(
                         new BlockPos(blockPos.getX() - 3, blockPos.getY() - 3, blockPos.getZ() - 3),
@@ -124,11 +124,11 @@ public class LocalizedTimeFieldGeneratorBlock extends Block {
                         .ifPresent(cap -> cap.setTickrate(0)));
 
                 level.scheduleTick(blockPos, state.getBlock(), 3000, TickPriority.EXTREMELY_HIGH);
-                }
-//            } else if (!hasSignal && state.getValue(POWERED)) {
-                // The block just lost power
-//                level.setBlockAndUpdate(blockPos, state.setValue(POWERED, false));
-//            }
+            }
+            //            } else if (!hasSignal && state.getValue(POWERED)) {
+            // The block just lost power
+            //                level.setBlockAndUpdate(blockPos, state.setValue(POWERED, false));
+            //            }
         }
     }
 

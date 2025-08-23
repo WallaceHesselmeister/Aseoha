@@ -26,7 +26,8 @@ public class MinecraftMixin {
     @Shadow
     public LocalPlayer player;
 
-    @Shadow private volatile boolean pause;
+    @Shadow
+    private volatile boolean pause;
 
     @Inject(at = @At("HEAD"), method = "getFrameTime", cancellable = true)
     private void getFrameTime(CallbackInfoReturnable<Float> cir) {

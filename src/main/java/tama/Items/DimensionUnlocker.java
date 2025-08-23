@@ -27,8 +27,8 @@ public class DimensionUnlocker extends Item {
         Capabilities.getCap(Capabilities.TARDIS, level)
                 .ifPresent(iTardisLevel -> iTardisLevel.getUnlockHandler().unlock(this.DimensionType));
 
-        player.setItemSlot(
-                this.getEquipmentSlot(player.getMainHandItem()),
+        player.setItemInHand(
+                interactionHand,
                 AItems.EMPTY_UNLOCKER.get().getDefaultInstance());
 
         return super.use(level, player, interactionHand);
