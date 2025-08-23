@@ -45,6 +45,6 @@ jobs:
           username: TAMAman
           avatar: 'https://media.forgecdn.net/avatars/thumbnails/983/766/256/256/638492366759883163.png'
           commit: '> :sparkles: [%MESSAGE%](<%LINK%>) by [%AUTHOR%](<%AUTHOR_LINK%>) '
-          message: |
+          message_header: |
             <:new1:1253371736510959636><:new2:1253371805734015006> New `Aseoha` dev build `#${{ github.run_number }}`:
             %COMMITS%
