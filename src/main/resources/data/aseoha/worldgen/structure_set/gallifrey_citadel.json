@@ -1,0 +1,11 @@
+{
+  "structures": [
+    { "structure": "aseoha:citadel", "weight": 1 }
+  ],
+  "placement": {
+    "type": "minecraft:concentric_rings",
+    "distance": 0,
+    "count": 1,
+    "preferred_biomes": "aseoha:redlands"
+  }
+}
