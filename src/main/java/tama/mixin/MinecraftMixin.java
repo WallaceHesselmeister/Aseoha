@@ -6,7 +6,6 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.Timer;
 import net.minecraft.client.player.LocalPlayer;
 import net.minecraftforge.event.ForgeEventFactory;
-import org.spongepowered.asm.mixin.Final;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
@@ -19,8 +18,6 @@ import tama.Misc.TickrateManager;
 
 @Mixin(Minecraft.class)
 public class MinecraftMixin {
-    @Shadow
-    private volatile boolean pause;
 
     @Shadow
     private float pausePartialTick;
@@ -29,9 +26,7 @@ public class MinecraftMixin {
     @Shadow
     public LocalPlayer player;
 
-    @Final
-    @Shadow
-    private Timer timer;
+    @Shadow private volatile boolean pause;
 
     @Inject(at = @At("HEAD"), method = "getFrameTime", cancellable = true)
     private void getFrameTime(CallbackInfoReturnable<Float> cir) {
