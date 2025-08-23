@@ -1,0 +1,10 @@
+{
+  "display_name": "TARDIS Controls",
+  "pages": [
+    "aseoha:controls/controls_intro",
+    "aseoha:controls/handbrake",
+    "aseoha:controls/coffeepot",
+    "aseoha:controls/wibbly_lever",
+    "aseoha:controls/sonic_port"
+  ]
+}

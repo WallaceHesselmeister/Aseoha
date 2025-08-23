@@ -1,0 +1,5 @@
+{
+  "replace": "true",
+  "type":"normal",
+  "text":"Atrium Module. An Upgrade to the Chameleon circuit. The Atrium Module allows you to build an exterior atrium for your time-ship that travels with it. The Atrium area must be a maximum size no larger than 11 blocks across, centered on the time-ship's door (5 Blocks in any direction with the time-ship in the middle). The area is defined using Atrium Blocks to build a baseplate platform under the structure. The Atrium Baseplate must be exactly one block underneath the time-ship, so that the block under the time-ship is an Atrium Block."
+}

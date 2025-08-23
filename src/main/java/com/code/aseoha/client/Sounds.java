@@ -113,6 +113,10 @@ public class Sounds {
         return setupSound("affirmative_master");
     });
 
+        public static final RegistryObject<SoundEvent> LAVA_CHICKEN = SOUNDS.register("lava_chicken", () -> {
+            return setupSound("lava_chicken");
+        });
+
 //    public static final SoundType AZALEA = new SoundType(1.0F, 1.0F, AZALEA_BREAK.get(), AZALEA_STEP.get(), AZALEA_PLACE.get(), AZALEA_HIT.get(), AZALEA_FALL.get());
 //
 

@@ -1,0 +1,13 @@
+{
+  "type": "tardis:quantiscope",
+  "repair":false,
+  "ingredients":[
+    {"item":"minecraft:rabbit_foot"},
+    {"item":"minecraft:netherite_scrap"},
+    {"item":"tardis:subsystem/dematerialisation_circuit"},
+    {"item":"tardis:blank_upgrade"}
+  ],
+  "result":{
+    "item":"aseoha:upgrades/engine_booster"
+  }
+}

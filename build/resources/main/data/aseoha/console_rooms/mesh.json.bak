@@ -1,0 +1,10 @@
+{
+  "structure_resource_location":"plasticstraw:mesh",
+  "display_name":"Mesh Interior [Ptolemy]",
+  "x_offset":18,
+  "y_offset":6,
+  "z_offset":18,
+  "using_remote_image":false,
+  "remote_image_url":"https://imgur.com/8k5IYvG.png",
+  "image_resource_location":"tardis:textures/gui/interiors/generic_preview.png"
+}

@@ -1,0 +1,15 @@
+com/code/aseoha/mixin/client/EntityRendererMixin model field_77045_g
+com/code/aseoha/mixin/client/EntityRendererMixin layers field_177097_h
+com/code/aseoha/mixin/client/AtriumBlockMixin appendHoverText (Lnet/minecraft/item/ItemStack;Lnet/minecraft/world/IBlockReader;Ljava/util/List;Lnet/minecraft/client/util/ITooltipFlag;)V func_190948_a
+com/code/aseoha/mixin/client/BOTIWorldMixin getBlockState (Lnet/minecraft/util/math/BlockPos;)Lnet/minecraft/block/BlockState; func_180495_p
+com/code/aseoha/mixin/client/EntityRendererMixin getAttackAnim (Lnet/minecraft/entity/LivingEntity;F)F func_77040_d
+com/code/aseoha/mixin/client/EntityRendererMixin getBob (Lnet/minecraft/entity/LivingEntity;F)F func_77044_a
+com/code/aseoha/mixin/client/EntityRendererMixin setupRotations (Lnet/minecraft/entity/LivingEntity;Lcom/mojang/blaze3d/matrix/MatrixStack;FFF)V func_225621_a_
+com/code/aseoha/mixin/client/EntityRendererMixin scale (Lnet/minecraft/entity/LivingEntity;Lcom/mojang/blaze3d/matrix/MatrixStack;F)V func_225620_a_
+com/code/aseoha/mixin/client/EntityRendererMixin isBodyVisible (Lnet/minecraft/entity/LivingEntity;)Z func_225622_a_
+com/code/aseoha/mixin/client/EntityRendererMixin getRenderType (Lnet/minecraft/entity/LivingEntity;ZZZ)Lnet/minecraft/client/renderer/RenderType; func_230496_a_
+com/code/aseoha/mixin/client/EntityRendererMixin getOverlayCoords (Lnet/minecraft/entity/LivingEntity;F)I func_229117_c_
+com/code/aseoha/mixin/client/EntityRendererMixin getWhiteOverlayProgress (Lnet/minecraft/entity/LivingEntity;F)F func_225625_b_
+com/code/aseoha/mixin/client/EntityRendererMixin render (Lnet/minecraft/entity/LivingEntity;FFLcom/mojang/blaze3d/matrix/MatrixStack;Lnet/minecraft/client/renderer/IRenderTypeBuffer;I)V func_225623_a_
+com/code/aseoha/mixin/client/MonitorScreenMixin render (Lcom/mojang/blaze3d/matrix/MatrixStack;IIF)V func_230430_a_
+com/code/aseoha/mixin/ControlMixin isPushable ()Z func_70104_M

@@ -1,0 +1,9 @@
+execute as @e[type=minecraft:arrow] at @s rotated 90 0 align xyz positioned ~0.5 ~-1 ~1.5 if block ~ ~ ~ tardis:bottom_exterior run function aseoha:shield/animate
+execute as @e[type=minecraft:arrow] at @s rotated 90 0 align xyz positioned ~1.5 ~-1 ~0.5 if block ~ ~ ~ tardis:bottom_exterior run function aseoha:shield/animate
+execute as @e[type=minecraft:arrow] at @s rotated 90 0 align xyz positioned ~-0.5 ~-1 ~0.5 if block ~ ~ ~ tardis:bottom_exterior run function aseoha:shield/animate
+execute as @e[type=minecraft:arrow] at @s rotated 90 0 align xyz positioned ~0.5 ~ ~1.5 if block ~ ~ ~ tardis:bottom_exterior run function aseoha:shield/animate
+execute as @e[type=minecraft:arrow] at @s rotated 90 0 align xyz positioned ~-0.5 ~ ~0.5 if block ~ ~ ~ tardis:bottom_exterior run function aseoha:shield/animate
+execute as @e[type=minecraft:arrow] at @s rotated 90 0 align xyz positioned ~0.5 ~-1 ~-0.5 if block ~ ~ ~ tardis:bottom_exterior run function aseoha:shield/animate
+execute as @e[type=minecraft:arrow] at @s rotated 90 0 align xyz positioned ~1.5 ~ ~0.5 if block ~ ~ ~ tardis:bottom_exterior run function aseoha:shield/animate
+execute as @e[type=minecraft:arrow] at @s rotated 90 0 align xyz positioned ~0.5 ~ ~-.5 if block ~ ~ ~ tardis:bottom_exterior run function aseoha:shield/animate
+execute as @e[type=minecraft:arrow] at @s rotated 90 0 align xyz positioned ~.5 ~-2 ~.5 if block ~ ~ ~ tardis:bottom_exterior run function aseoha:shield/animate

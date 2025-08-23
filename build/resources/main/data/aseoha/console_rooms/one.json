@@ -1,0 +1,10 @@
+{
+  "structure_resource_location":"aseoha:one",
+  "display_name":"1.12 Hellbent/One",
+  "x_offset":10,
+  "y_offset":1,
+  "z_offset":9,
+  "using_remote_image":false,
+  "remote_image_url":"",
+  "image_resource_location":"aseoha:preview_0.png"
+}

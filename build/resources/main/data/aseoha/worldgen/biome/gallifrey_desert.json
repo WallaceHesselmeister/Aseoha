@@ -1,0 +1,52 @@
+{
+  "surface_builder": "aseoha:gallifrey_desert",
+  "depth": 0.125,
+  "scale": 0.05,
+  "temperature": 0.8,
+  "downfall": 0.4,
+  "precipitation": "snow",
+  "category": "desert",
+  "player_spawn_friendly": true,
+  "effects": {
+    "sky_color": 14854265,
+    "fog_color": 14854265,
+    "water_color": 15645605,
+    "water_fog_color": 15967105,
+    "foliage_color": 14538698,
+    "grass_color": 10634503
+  },
+  "starts": [
+    "aseoha:barn_one",
+    "aseoha:citadel"
+  ],
+  "spawners": {},
+  "spawn_costs": {},
+  "carvers": {},
+  "features": [],
+  "carvers": {
+    "air": [
+      "minecraft:cave",
+      "minecraft:canyon"
+    ]
+  },
+  "features": [
+    [],
+    [],
+    [],
+    [],
+    [],
+    [],
+    [
+      "minecraft:ore_coal",
+      "minecraft:ore_iron",
+      "minecraft:ore_gold",
+      "minecraft:ore_diamond"
+    ],
+    [
+    ],
+    [
+    ],
+    [
+    ]
+  ]
+}

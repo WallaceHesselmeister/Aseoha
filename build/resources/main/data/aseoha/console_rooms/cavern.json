@@ -1,0 +1,10 @@
+{
+  "structure_resource_location":"aseoha:cavern",
+  "display_name":"\u00A79[LordAret] \u00A7dCavern",
+  "x_offset":21,
+  "y_offset":13,
+  "z_offset":29,
+  "using_remote_image":false,
+  "remote_image_url":"https://media.discordapp.net/attachments/1022388065991409757/1051944709863522485/236.png?width=1191&height=670",
+  "image_resource_location":"aseoha:cavern.png"
+}

@@ -1,0 +1,14 @@
+{
+  "type": "tardis:quantiscope",
+  "repair":false,
+  "ingredients":[
+    {"item":"aseoha:metalert_ingot"},
+    {"item":"tardis:artron_battery_high"},
+    {"item":"aseoha:netherite_reinforced_circuits"},
+    {"item":"tardis:artron_battery_high"},
+    {"item":"aseoha:metalert_ingot"}
+  ],
+  "result":{
+    "item":"aseoha:phaser_power_cell"
+  }
+}

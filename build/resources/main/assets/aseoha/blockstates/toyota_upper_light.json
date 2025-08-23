@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "lit=false": {
+      "model": "aseoha:block/toyota_upper_light_off"
+    },
+    "lit=true": {
+      "model": "aseoha:block/toyota_upper_light_on"
+    }
+  }
+}

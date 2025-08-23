@@ -1,0 +1,12 @@
+{
+  "chapters": [
+    "aseoha:main",
+    "aseoha:machinery",
+    "aseoha:upgrades",
+    "aseoha:flight_events",
+    "aseoha:storage",
+    "aseoha:dimensions",
+    "aseoha:monitor_functions",
+    "aseoha:controls"
+  ]
+}

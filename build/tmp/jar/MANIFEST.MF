@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Specification-Title: aseoha
+Specification-Vendor: tamaaseoha
+Specification-Version: 1
+Implementation-Title: Aseoha
+Implementation-Version: 6.3-1.16.5-forge
+Implementation-Vendor: TAMA
+Implementation-Timestamp: 2025-08-22T19:51:18-0500
+TweakClass: org.spongepowered.asm.launch.MixinTweaker
+TweakOrder: 0
+MixinConfigs: aseoha.mixins.json,aseoha.tacompat.mixins.json
+

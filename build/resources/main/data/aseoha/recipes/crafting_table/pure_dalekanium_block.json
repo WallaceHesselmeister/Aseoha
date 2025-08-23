@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "xxx",
+    "xxx",
+    "xxx"
+  ],
+  "key": {
+    "x": {
+      "item": "aseoha:pure_dalekanium_ingot"
+    }
+  },
+  "result": {
+    "item": "aseoha:pure_dalekanium_block",
+    "count": 1
+  }
+}

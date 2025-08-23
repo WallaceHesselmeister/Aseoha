@@ -1,0 +1,15 @@
+{
+  "name": "aseoha:clean_cyberconversion_ship",
+  "fallback": "empty",
+  "elements": [
+    {
+      "weight": 1,
+      "element": {
+        "element_type": "minecraft:single_pool_element",
+        "projection": "rigid",
+        "location": "aseoha:clean_cyberconversion_ship",
+        "processors": "empty"
+      }
+    }
+  ]
+}

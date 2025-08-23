@@ -1,0 +1,8 @@
+{
+  "display_name": "Storage",
+  "pages": [
+    "aseoha:storage/storage_intro",
+    "aseoha:storage/k9",
+    "aseoha:storage/hammerspace"
+  ]
+}

@@ -1,0 +1,9 @@
+{
+	"type": "tardis:spectrometer",
+	"processing_ticks": 200,
+	"download_ticks": 200,
+	"ingredient": {
+		"item": "minecraft:cookie"
+	},
+	"result": "aseoha:interiors/4th_secondary_interior"
+}

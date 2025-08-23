@@ -1,0 +1,22 @@
+{
+  "display": {
+    "icon": {
+      "item": "aseoha:trenzalore_sand"
+    },
+    "title": "We need a new destination.",
+    "description": "Enter Trenzalore for the first time!",
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "aseoha:aseoha",
+  "criteria": {
+    "trenzalorefirstentry": {
+      "trigger": "minecraft:changed_dimension",
+      "conditions": {
+        "to": "aseoha:trenzalore"
+      }
+    }
+  }
+}

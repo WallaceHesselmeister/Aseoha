@@ -1,0 +1,14 @@
+{
+  "type": "tardis:quantiscope",
+  "repair":false,
+  "ingredients":[
+    {"item":"minecraft:redstone_block"},
+    {"item":"tardis:subsystem/interstitial_antenna"},
+    {"item":"minecraft:diamond_block"},
+    {"item":"tardis:circuits"},
+    {"item":"minecraft:redstone_block"}
+  ],
+  "result":{
+    "item":"aseoha:hammer_space_pouch"
+  }
+}

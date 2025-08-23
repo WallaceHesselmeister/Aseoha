@@ -1,0 +1,49 @@
+{
+  "client": [
+    "client.AtriumBlockMixin",
+    "client.BOTIRendererMixin",
+    "client.BOTIWorldMixin",
+    "client.CommunicatorControlMixin",
+    "client.ExtRenderMixin",
+    "client.MonitorControlMixin",
+    "client.MonitorScreenMixin",
+    "client.PlayerRendererMixin",
+    "client.ServerWorldInfoMixin",
+    "client.TardisSkyPropertyMixin",
+    "client.TelepathicCircuitMixin",
+    "client.VortexSkyRendererMixin"
+  ],
+  "compatibilityLevel": "JAVA_8",
+  "injectors": {
+    "defaultRequire": 1,
+    "maxShiftBy": 5
+  },
+  "minVersion": "0.8",
+  "mixins": [
+    "BrokenExteriorMixin",
+    "BrokenExteriorTypeMixin",
+    "ConsoleChangeMessageMixin",
+    "ConsoleMixin",
+    "ConsoleTextureVariants",
+    "ControlMixin",
+    "ExteriorTile",
+    "HandbrakeMixin",
+    "HelperMixin",
+    "KeyMixin",
+    "MonitorMixin",
+    "NameTagMixin",
+    "SonicTardisDestinationInteractionMixin",
+    "SucceedFlightEventTriggerMixin",
+    "TakeoffTardisTriggerMixin",
+    "TardisBottomBlockMixin",
+    "TardisEntityMixin",
+    "TardisTopBlockMixin",
+    "TardisWorldCapabilityMixin",
+    "TeleportUtilMixin",
+    "TTExterior",
+    "TwoBlockBasicExteriorMixin"
+  ],
+  "package": "com.code.aseoha.mixin",
+  "refmap": "aseoha.refmap.json",
+  "required": true
+}

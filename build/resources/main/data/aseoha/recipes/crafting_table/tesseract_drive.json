@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "xzx",
+    "cvc",
+    "xzx"
+  ],
+  "key": {
+    "x": {
+      "item": "tardis:artron_battery_high"
+    },
+    "z": {
+      "item": "tardis:artron_capacitor_high"
+    },
+    "v": {
+      "item": "aseoha:netherite_reinforced_circuits"
+    },
+    "c": {
+      "item": "minecraft:diamond_block"
+    }
+  },
+  "result": {
+    "item": "aseoha:upgrades/tesseract_drive",
+    "count": 1
+  }
+}

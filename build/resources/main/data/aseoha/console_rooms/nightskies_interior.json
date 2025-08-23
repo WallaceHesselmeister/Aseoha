@@ -1,0 +1,10 @@
+{
+  "structure_resource_location":"aseoha:nightskies_interior",
+  "display_name":"Nightskies",
+  "x_offset":25,
+  "y_offset":10,
+  "z_offset":32,
+  "using_remote_image":false,
+  "remote_image_url":"https://cdn.discordapp.com/attachments/950508569055330334/1025423277792972932/2022-09-30_09.30.45.png",
+  "image_resource_location":"aseoha:nightskies.png"
+}

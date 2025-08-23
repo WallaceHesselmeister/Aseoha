@@ -1,0 +1,12 @@
+{
+  "type": "tardis:quantiscope",
+  "repair":false,
+  "ingredients":[
+    {"item":"minecraft:redstone"},
+    {"item":"aseoha:control_mold"},
+    {"item":"minecraft:chorus_fruit"}
+  ],
+  "result":{
+    "item":"aseoha:dimensional_button"
+  }
+}

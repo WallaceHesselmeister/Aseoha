@@ -1,0 +1,105 @@
+{
+  "name": "aseoha:newnew",
+  "fallback": "aseoha:newnew",
+  "elements": [
+    {
+      "weight": 22,
+      "element": {
+        "location": "aseoha:road",
+        "processors": "aseoha:new_earth_road",
+        "projection": "rigid",
+        "element_type": "minecraft:legacy_single_pool_element"
+      }
+    },
+    {
+      "weight": 11,
+      "element": {
+        "location": "aseoha:road1",
+        "processors": "aseoha:new_earth_road",
+        "projection": "rigid",
+        "element_type": "minecraft:legacy_single_pool_element"
+      }
+    },
+    {
+      "weight": 9,
+      "element": {
+        "location": "aseoha:road_curve",
+        "processors": "aseoha:new_earth_road",
+        "projection": "rigid",
+        "element_type": "minecraft:legacy_single_pool_element"
+      }
+    },
+    {
+      "weight": 10,
+      "element": {
+        "location": "aseoha:road_intersection",
+        "processors": "aseoha:new_earth_road",
+        "projection": "rigid",
+        "element_type": "minecraft:legacy_single_pool_element"
+      }
+    },
+    {
+      "weight": 40,
+      "element": {
+        "location": "aseoha:trade1",
+        "processors": "aseoha:new_earth_road",
+        "projection": "rigid",
+        "element_type": "minecraft:legacy_single_pool_element"
+      }
+    },
+      {
+      "weight": 1,
+      "element": {
+        "location": "aseoha:needle",
+        "processors": "aseoha:new_earth_road",
+        "projection": "rigid",
+        "element_type": "minecraft:legacy_single_pool_element"
+      }
+    },
+    {
+      "weight": 45,
+      "element": {
+        "location": "aseoha:stand",
+        "processors": "aseoha:new_earth_road",
+        "projection": "rigid",
+        "element_type": "minecraft:legacy_single_pool_element"
+      }
+    },
+    {
+      "weight": 27,
+      "element": {
+        "location": "aseoha:caps",
+        "processors": "aseoha:new_earth_road",
+        "projection": "rigid",
+        "element_type": "minecraft:legacy_single_pool_element"
+      }
+    },
+    {
+      "weight": 26,
+      "element": {
+        "location": "aseoha:mechanic",
+        "processors": "aseoha:new_earth_road",
+        "projection": "rigid",
+        "element_type": "minecraft:legacy_single_pool_element"
+      }
+    },
+    {
+      "weight": 30,
+      "element": {
+        "location": "aseoha:hotel",
+        "processors": "aseoha:new_earth_road",
+        "projection": "rigid",
+        "element_type": "minecraft:legacy_single_pool_element"
+      }
+    },
+    {
+      "weight": 5,
+      "element": {
+        "location": "aseoha:observatory1",
+        "processors": "aseoha:new_earth_road",
+        "projection": "rigid",
+        "element_type": "minecraft:legacy_single_pool_element"
+      }
+    }
+  ]
+}

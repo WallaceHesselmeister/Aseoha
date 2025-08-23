@@ -1,0 +1,26 @@
+{
+  "display": {
+    "icon": {
+      "item": "aseoha:upgrades/warp_drive"
+    },
+    "title": "Ultimate speeds",
+    "description": "Obtain a warp drive upgrade to traverse the time vortex in the blink of an eye",
+    "frame": "challenge",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "parent": "aseoha:aseoha",
+  "criteria": {
+    "requirement": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "aseoha:upgrades/warp_drive"
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:default",
+  "config": {
+    "top_material": {
+      "Name": "aseoha:fat_block",
+      "Properties": {
+        "snowy": "false"
+      }
+    },
+    "under_material": {
+      "Name": "aseoha:fat_block"
+    },
+    "underwater_material": {
+      "Name": "aseoha:fat_block"
+    }
+  }
+}

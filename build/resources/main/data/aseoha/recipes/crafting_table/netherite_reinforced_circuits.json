@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "xxz",
+    "xvz",
+    "xxz"
+  ],
+  "key": {
+    "x": {
+      "item": "tardis:circuit_paste"
+    },
+    "z": {
+      "item": "minecraft:netherite_scrap"
+    },
+    "v": {
+      "item": "tardis:xion_crystal"
+    }
+  },
+  "result": {
+    "item": "aseoha:netherite_reinforced_circuits",
+    "count": 1
+  }
+}

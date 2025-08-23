@@ -1,0 +1,14 @@
+{
+  "type": "tardis:quantiscope",
+  "repair":false,
+  "ingredients":[
+    {"item":"minecraft:iron_block"},
+    {"item":"minecraft:redstone_torch"},
+    {"item":"tardis:circuits"},
+    {"item":"tardis:subsystem/shield_generator"},
+    {"item":"minecraft:iron_block"}
+  ],
+  "result":{
+    "item":"aseoha:tribophysical_waveform_macro_kinetic_extrapolator"
+  }
+}

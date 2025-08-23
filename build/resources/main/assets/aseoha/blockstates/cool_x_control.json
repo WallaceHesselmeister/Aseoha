@@ -1,0 +1,110 @@
+{
+  "variants": {
+    "face=ceiling,facing=east,powered=false": {
+      "model": "aseoha:block/controls/xyz",
+      "y": 270,
+      "x": 180
+    },
+    "face=ceiling,facing=east,powered=true": {
+      "model": "aseoha:block/controls/xyz_powered",
+      "y": 270,
+      "x": 180
+    },
+    "face=ceiling,facing=north,powered=false": {
+      "model": "aseoha:block/controls/xyz",
+      "y": 180,
+      "x": 180
+    },
+    "face=ceiling,facing=north,powered=true": {
+      "model": "aseoha:block/controls/xyz_powered",
+      "y": 180,
+      "x": 180
+    },
+    "face=ceiling,facing=south,powered=false": {
+      "model": "aseoha:block/controls/xyz",
+      "x": 180
+    },
+    "face=ceiling,facing=south,powered=true": {
+      "model": "aseoha:block/controls/xyz_powered",
+      "x": 180
+    },
+    "face=ceiling,facing=west,powered=false": {
+      "model": "aseoha:block/controls/xyz",
+      "y": 90,
+      "x": 180
+    },
+    "face=ceiling,facing=west,powered=true": {
+      "model": "aseoha:block/controls/xyz_powered",
+      "y": 90,
+      "x": 180
+    },
+    "face=floor,facing=east,powered=false": {
+      "model": "aseoha:block/controls/xyz",
+      "y": 90
+    },
+    "face=floor,facing=east,powered=true": {
+      "model": "aseoha:block/controls/xyz_powered",
+      "y": 90
+    },
+    "face=floor,facing=north,powered=false": {
+      "model": "aseoha:block/controls/xyz"
+    },
+    "face=floor,facing=north,powered=true": {
+      "model": "aseoha:block/controls/xyz_powered"
+    },
+    "face=floor,facing=south,powered=false": {
+      "model": "aseoha:block/controls/xyz",
+      "y": 180
+    },
+    "face=floor,facing=south,powered=true": {
+      "model": "aseoha:block/controls/xyz_powered",
+      "y": 180
+    },
+    "face=floor,facing=west,powered=false": {
+      "model": "aseoha:block/controls/xyz",
+      "y": 270
+    },
+    "face=floor,facing=west,powered=true": {
+      "model": "aseoha:block/controls/xyz_powered",
+      "y": 270
+    },
+    "face=wall,facing=east,powered=false": {
+      "model": "aseoha:block/controls/xyz",
+      "y": 90,
+      "x": 90
+    },
+    "face=wall,facing=east,powered=true": {
+      "model": "aseoha:block/controls/xyz_powered",
+      "y": 90,
+      "x": 90
+    },
+    "face=wall,facing=north,powered=false": {
+      "model": "aseoha:block/controls/xyz",
+      "x": 90
+    },
+    "face=wall,facing=north,powered=true": {
+      "model": "aseoha:block/controls/xyz_powered",
+      "x": 90
+    },
+    "face=wall,facing=south,powered=false": {
+      "model": "aseoha:block/controls/xyz",
+      "y": 180,
+      "x": 90
+    },
+    "face=wall,facing=south,powered=true": {
+      "model": "aseoha:block/controls/xyz_powered",
+      "y": 180,
+      "x": 90
+    },
+    "face=wall,facing=west,powered=false": {
+      "model": "aseoha:block/controls/xyz",
+      "y": 270,
+      "x": 90
+    },
+    "face=wall,facing=west,powered=true": {
+      "model": "aseoha:block/controls/xyz_powered",
+      "y": 270,
+      "x": 90
+    }
+  }
+}

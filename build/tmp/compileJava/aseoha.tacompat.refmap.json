@@ -1,0 +1,78 @@
+{
+  "mappings": {
+    "com/code/aseoha/mixin/client/PlayerRendererMixin": {
+      "Lnet/minecraft/client/renderer/entity/PlayerRenderer;setModelProperties(Lnet/minecraft/client/entity/player/AbstractClientPlayerEntity;)V": "Lnet/minecraft/client/renderer/entity/PlayerRenderer;func_177137_d(Lnet/minecraft/client/entity/player/AbstractClientPlayerEntity;)V"
+    },
+    "com/code/aseoha/mixin/client/ServerWorldInfoMixin": {
+      "worldGenSettingsLifecycle": "Lnet/minecraft/world/storage/ServerWorldInfo;func_230401_A_()Lcom/mojang/serialization/Lifecycle;"
+    },
+    "com/code/aseoha/mixin/ControlMixin": {
+      "interactAt(Lnet/minecraft/entity/player/PlayerEntity;Lnet/minecraft/util/math/vector/Vector3d;Lnet/minecraft/util/Hand;)Lnet/minecraft/util/ActionResultType;": "Lnet/tardis/mod/entity/ControlEntity;func_184199_a(Lnet/minecraft/entity/player/PlayerEntity;Lnet/minecraft/util/math/vector/Vector3d;Lnet/minecraft/util/Hand;)Lnet/minecraft/util/ActionResultType;"
+    },
+    "com/code/aseoha/mixin/TardisEntityMixin": {
+      "rideTick()V": "Lnet/tardis/mod/entity/TardisEntity;func_70098_U()V",
+      "Lnet/minecraft/entity/Entity;tick()V": "Lnet/minecraft/entity/Entity;func_70071_h_()V",
+      "tick()V": "Lnet/tardis/mod/entity/TardisEntity;func_70071_h_()V",
+      "interact(Lnet/minecraft/entity/player/PlayerEntity;Lnet/minecraft/util/Hand;)Lnet/minecraft/util/ActionResultType;": "Lnet/tardis/mod/entity/TardisEntity;func_184230_a(Lnet/minecraft/entity/player/PlayerEntity;Lnet/minecraft/util/Hand;)Lnet/minecraft/util/ActionResultType;"
+    },
+    "com/code/aseoha/mixin/ConsoleMixin": {
+      "save(Lnet/minecraft/nbt/CompoundNBT;)Lnet/minecraft/nbt/CompoundNBT;": "Lnet/tardis/mod/tileentities/ConsoleTile;func_189515_b(Lnet/minecraft/nbt/CompoundNBT;)Lnet/minecraft/nbt/CompoundNBT;",
+      "tick()V": "Lnet/tardis/mod/tileentities/ConsoleTile;func_73660_a()V",
+      "load(Lnet/minecraft/block/BlockState;Lnet/minecraft/nbt/CompoundNBT;)V": "Lnet/tardis/mod/tileentities/ConsoleTile;func_230337_a_(Lnet/minecraft/block/BlockState;Lnet/minecraft/nbt/CompoundNBT;)V"
+    },
+    "com/code/aseoha/mixin/ExteriorTile": {
+      "save(Lnet/minecraft/nbt/CompoundNBT;)Lnet/minecraft/nbt/CompoundNBT;": "Lnet/tardis/mod/tileentities/exteriors/ExteriorTile;func_189515_b(Lnet/minecraft/nbt/CompoundNBT;)Lnet/minecraft/nbt/CompoundNBT;",
+      "load(Lnet/minecraft/block/BlockState;Lnet/minecraft/nbt/CompoundNBT;)V": "Lnet/tardis/mod/tileentities/exteriors/ExteriorTile;func_230337_a_(Lnet/minecraft/block/BlockState;Lnet/minecraft/nbt/CompoundNBT;)V"
+    },
+    "com/code/aseoha/mixin/AbstractBlockMixin": {
+      "getDestroyProgress(Lnet/minecraft/block/BlockState;Lnet/minecraft/entity/player/PlayerEntity;Lnet/minecraft/world/IBlockReader;Lnet/minecraft/util/math/BlockPos;)F": "Lnet/minecraft/block/AbstractBlock;func_180647_a(Lnet/minecraft/block/BlockState;Lnet/minecraft/entity/player/PlayerEntity;Lnet/minecraft/world/IBlockReader;Lnet/minecraft/util/math/BlockPos;)F",
+      "Lnet/minecraft/block/BlockState;getDestroySpeed(Lnet/minecraft/world/IBlockReader;Lnet/minecraft/util/math/BlockPos;)F": "Lnet/minecraft/block/BlockState;func_185887_b(Lnet/minecraft/world/IBlockReader;Lnet/minecraft/util/math/BlockPos;)F"
+    },
+    "com/code/aseoha/mixin/EntityMixin": {
+      "Lnet/minecraft/entity/Entity;load(Lnet/minecraft/nbt/CompoundNBT;)V": "Lnet/minecraft/entity/Entity;func_70020_e(Lnet/minecraft/nbt/CompoundNBT;)V",
+      "Lnet/minecraft/entity/Entity;save(Lnet/minecraft/nbt/CompoundNBT;)Z": "Lnet/minecraft/entity/Entity;func_70039_c(Lnet/minecraft/nbt/CompoundNBT;)Z"
+    },
+    "com/code/aseoha/mixin/KeyMixin": {
+      "use": "Lnet/tardis/mod/items/KeyItem;func_77659_a(Lnet/minecraft/world/World;Lnet/minecraft/entity/player/PlayerEntity;Lnet/minecraft/util/Hand;)Lnet/minecraft/util/ActionResult;"
+    }
+  },
+  "data": {
+    "searge": {
+      "com/code/aseoha/mixin/client/PlayerRendererMixin": {
+        "Lnet/minecraft/client/renderer/entity/PlayerRenderer;setModelProperties(Lnet/minecraft/client/entity/player/AbstractClientPlayerEntity;)V": "Lnet/minecraft/client/renderer/entity/PlayerRenderer;func_177137_d(Lnet/minecraft/client/entity/player/AbstractClientPlayerEntity;)V"
+      },
+      "com/code/aseoha/mixin/client/ServerWorldInfoMixin": {
+        "worldGenSettingsLifecycle": "Lnet/minecraft/world/storage/ServerWorldInfo;func_230401_A_()Lcom/mojang/serialization/Lifecycle;"
+      },
+      "com/code/aseoha/mixin/ControlMixin": {
+        "interactAt(Lnet/minecraft/entity/player/PlayerEntity;Lnet/minecraft/util/math/vector/Vector3d;Lnet/minecraft/util/Hand;)Lnet/minecraft/util/ActionResultType;": "Lnet/tardis/mod/entity/ControlEntity;func_184199_a(Lnet/minecraft/entity/player/PlayerEntity;Lnet/minecraft/util/math/vector/Vector3d;Lnet/minecraft/util/Hand;)Lnet/minecraft/util/ActionResultType;"
+      },
+      "com/code/aseoha/mixin/TardisEntityMixin": {
+        "rideTick()V": "Lnet/tardis/mod/entity/TardisEntity;func_70098_U()V",
+        "Lnet/minecraft/entity/Entity;tick()V": "Lnet/minecraft/entity/Entity;func_70071_h_()V",
+        "tick()V": "Lnet/tardis/mod/entity/TardisEntity;func_70071_h_()V",
+        "interact(Lnet/minecraft/entity/player/PlayerEntity;Lnet/minecraft/util/Hand;)Lnet/minecraft/util/ActionResultType;": "Lnet/tardis/mod/entity/TardisEntity;func_184230_a(Lnet/minecraft/entity/player/PlayerEntity;Lnet/minecraft/util/Hand;)Lnet/minecraft/util/ActionResultType;"
+      },
+      "com/code/aseoha/mixin/ConsoleMixin": {
+        "save(Lnet/minecraft/nbt/CompoundNBT;)Lnet/minecraft/nbt/CompoundNBT;": "Lnet/tardis/mod/tileentities/ConsoleTile;func_189515_b(Lnet/minecraft/nbt/CompoundNBT;)Lnet/minecraft/nbt/CompoundNBT;",
+        "tick()V": "Lnet/tardis/mod/tileentities/ConsoleTile;func_73660_a()V",
+        "load(Lnet/minecraft/block/BlockState;Lnet/minecraft/nbt/CompoundNBT;)V": "Lnet/tardis/mod/tileentities/ConsoleTile;func_230337_a_(Lnet/minecraft/block/BlockState;Lnet/minecraft/nbt/CompoundNBT;)V"
+      },
+      "com/code/aseoha/mixin/ExteriorTile": {
+        "save(Lnet/minecraft/nbt/CompoundNBT;)Lnet/minecraft/nbt/CompoundNBT;": "Lnet/tardis/mod/tileentities/exteriors/ExteriorTile;func_189515_b(Lnet/minecraft/nbt/CompoundNBT;)Lnet/minecraft/nbt/CompoundNBT;",
+        "load(Lnet/minecraft/block/BlockState;Lnet/minecraft/nbt/CompoundNBT;)V": "Lnet/tardis/mod/tileentities/exteriors/ExteriorTile;func_230337_a_(Lnet/minecraft/block/BlockState;Lnet/minecraft/nbt/CompoundNBT;)V"
+      },
+      "com/code/aseoha/mixin/AbstractBlockMixin": {
+        "getDestroyProgress(Lnet/minecraft/block/BlockState;Lnet/minecraft/entity/player/PlayerEntity;Lnet/minecraft/world/IBlockReader;Lnet/minecraft/util/math/BlockPos;)F": "Lnet/minecraft/block/AbstractBlock;func_180647_a(Lnet/minecraft/block/BlockState;Lnet/minecraft/entity/player/PlayerEntity;Lnet/minecraft/world/IBlockReader;Lnet/minecraft/util/math/BlockPos;)F",
+        "Lnet/minecraft/block/BlockState;getDestroySpeed(Lnet/minecraft/world/IBlockReader;Lnet/minecraft/util/math/BlockPos;)F": "Lnet/minecraft/block/BlockState;func_185887_b(Lnet/minecraft/world/IBlockReader;Lnet/minecraft/util/math/BlockPos;)F"
+      },
+      "com/code/aseoha/mixin/EntityMixin": {
+        "Lnet/minecraft/entity/Entity;load(Lnet/minecraft/nbt/CompoundNBT;)V": "Lnet/minecraft/entity/Entity;func_70020_e(Lnet/minecraft/nbt/CompoundNBT;)V",
+        "Lnet/minecraft/entity/Entity;save(Lnet/minecraft/nbt/CompoundNBT;)Z": "Lnet/minecraft/entity/Entity;func_70039_c(Lnet/minecraft/nbt/CompoundNBT;)Z"
+      },
+      "com/code/aseoha/mixin/KeyMixin": {
+        "use": "Lnet/tardis/mod/items/KeyItem;func_77659_a(Lnet/minecraft/world/World;Lnet/minecraft/entity/player/PlayerEntity;Lnet/minecraft/util/Hand;)Lnet/minecraft/util/ActionResult;"
+      }
+    }
+  }
+}

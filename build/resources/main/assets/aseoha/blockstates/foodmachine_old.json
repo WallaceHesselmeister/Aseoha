@@ -1,0 +1,19 @@
+{
+  "variants": {
+    "facing=east": {
+      "model": "aseoha:block/foodmachine_old",
+      "y": 90
+    },
+    "facing=north": {
+      "model": "aseoha:block/foodmachine_old"
+    },
+    "facing=south": {
+      "model": "aseoha:block/foodmachine_old",
+      "y": 180
+    },
+    "facing=west": {
+      "model": "aseoha:block/foodmachine_old",
+      "y": 270
+    }
+  }
+}

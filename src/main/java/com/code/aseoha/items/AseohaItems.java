@@ -481,6 +481,10 @@ public class AseohaItems {
     public static final RegistryObject<Item> SONIC_LASER = ITEMS.register("sonic_laser",
             LaserSonic::new);
 
+        public static final RegistryObject<Item> LAVA_CHICKEN_DISC = ITEMS.register("lava_chicken_disc",
+                () -> new LavaChickenDiscItem(15, com.code.aseoha.client.Sounds.LAVA_CHICKEN.get(),
+                        new Item.Properties().tab(AseohaItemGroups.ASEOHA_GROUP).stacksTo(1).rarity(Rarity.RARE)));
+
     public static <T extends Item> T createItem(T item) {
         return item;
     }

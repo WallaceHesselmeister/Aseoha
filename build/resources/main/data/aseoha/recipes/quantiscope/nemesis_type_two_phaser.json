@@ -1,0 +1,14 @@
+{
+  "type": "tardis:quantiscope",
+  "repair":false,
+  "ingredients":[
+    {"item":"aseoha:phaser_power_cell"},
+    {"item":"aseoha:steel_ingot"},
+    {"item":"tardis:circuits"},
+    {"item":"minecraft:blaze_rod"},
+    {"item":"aseoha:phaser_power_cell"}
+  ],
+  "result":{
+    "item":"aseoha:nemesis_type_2_phaser"
+  }
+}

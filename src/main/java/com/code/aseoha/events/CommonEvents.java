@@ -65,6 +65,19 @@ import static com.code.aseoha.Helpers.IHelpWithMonitor.Aseoha$MonitorGetRot;
 @Mod.EventBusSubscriber(modid = aseoha.MODID, bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class CommonEvents {
 
+    @SubscribeEvent
+    public static void onLivingDeath(net.minecraftforge.event.entity.living.LivingDeathEvent event) {
+        if (!(event.getEntity() instanceof net.minecraft.entity.monster.ZombieEntity)) return;
+        net.minecraft.entity.monster.ZombieEntity zombie = (net.minecraft.entity.monster.ZombieEntity) event.getEntity();
+        if (!zombie.isBaby()) return;
+        if (zombie.getVehicle() instanceof net.minecraft.entity.passive.ChickenEntity) {
+            if (event.getSource().getEntity() instanceof net.minecraft.entity.player.PlayerEntity) {
+                net.minecraft.entity.player.PlayerEntity player = (net.minecraft.entity.player.PlayerEntity) event.getSource().getEntity();
+                player.addItem(com.code.aseoha.items.AseohaItems.LAVA_CHICKEN_DISC.get().getDefaultInstance());
+            }
+        }
+    }
+
 
     @SubscribeEvent
     public static void attachCapabilities(AttachCapabilitiesEvent<World> event) {

@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "xzx",
+    "cvc",
+    "xzx"
+  ],
+  "key": {
+    "x": {
+      "item": "aseoha:phaser_power_cell"
+    },
+    "z": {
+      "item": "tardis:artron_capacitor_high"
+    },
+    "v": {
+      "item": "aseoha:warp_core"
+    },
+    "c": {
+      "item": "minecraft:netherite_ingot"
+    }
+  },
+  "result": {
+    "item": "aseoha:upgrades/warp_drive",
+    "count": 1
+  }
+}
