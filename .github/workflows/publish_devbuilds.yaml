@@ -38,13 +38,14 @@ jobs:
         #   BETA: 1 # exclude assets if it's a beta dev build
 
       - name: Publish artifacts
-        uses: DrTheodor/discord-webhook-upload-action@v0.2
+        uses: TheDJGamerYT/discord-webhook-upload-action@v0.1.1
         with:
           url: ${{ secrets.DEV_BUILDS }}
           file: 'build/libs/*'
           username: TAMAman
           avatar: 'https://media.forgecdn.net/avatars/thumbnails/983/766/256/256/638492366759883163.png'
-          commit: '> :sparkles: [%MESSAGE%](<%LINK%>) by [%AUTHOR%](<%AUTHOR_LINK%>) '
-          message: |
+          message_commit: '> :sparkles: [%MESSAGE%](<%LINK%>) by [%AUTHOR%](<%AUTHOR_LINK%>) '
+          message_header: |
             <:new1:1253371736510959636><:new2:1253371805734015006> New `Aseoha` dev build `#${{ github.run_number }}`:
             %COMMITS%
+            
