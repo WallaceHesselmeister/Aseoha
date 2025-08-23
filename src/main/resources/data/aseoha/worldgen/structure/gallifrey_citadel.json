@@ -7,7 +7,7 @@
   "start_height" : {
     "absolute" : 0
   },
-  "start_pool" : "aseoha:citadel",
+  "start_pool" : "aseoha:gallifrey_citadel",
   "step" : "surface_structures",
   "terrain_adaptation" : "beard_thin",
   "type" : "minecraft:jigsaw",

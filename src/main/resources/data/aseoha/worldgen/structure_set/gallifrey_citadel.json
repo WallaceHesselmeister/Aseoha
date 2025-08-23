@@ -1,11 +1,16 @@
 {
   "structures": [
-    { "structure": "aseoha:citadel", "weight": 1 }
+    {
+      "structure": "aseoha:gallifrey_citadel",
+      "weight": 1
+    }
   ],
   "placement": {
     "type": "minecraft:concentric_rings",
     "distance": 0,
+    "spread": 0,
     "count": 1,
-    "preferred_biomes": "aseoha:redlands"
+    "preferred_biomes": "aseoha:redlands",
+    "salt": 0
   }
 }
