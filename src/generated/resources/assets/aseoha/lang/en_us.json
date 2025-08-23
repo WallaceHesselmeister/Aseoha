@@ -267,6 +267,8 @@
   "item.aseoha.cybermen_disc.desc": "The Cybermen - Murray Gold",
   "item.aseoha.cyber_army_disc.desc": "Cyber Army - Murray Gold",
   "item.aseoha.idiot_box_disc.desc": "The Majestic Tale (Of An Idiot In A Box) - Murray Gold",
+  "item.aseoha.lava_chicken_disc": "Music Disc - Lava Chicken",
+  "item.aseoha.lava_chicken_disc.desc": "Lava Chicken - Hyper Potions/Jack Black",
   "item.aseoha.sonic_fourteenth": "Fourteenth Doctor's Sonic",
   "item.aseoha.sonic_screwdriver": "Sonic Screwdriver",
   "item.aseoha.sonic_wiimote": "Sonic Wiimote",
@@ -576,7 +578,5 @@
   "tooltip.part.upgrades/tesseract_drive.description": "Allows the tardis to land instantly, anywhere in a 200 block radius",
   "tooltip.part.upgrades/lightspeed_drive.description": "Greatly increases the speed at which the tardis flies",
   "tooltip.aseoha.ac.purpose": "Allows conversion from tardis mod artron units, to the universal forge energy",
-  "tooltip.aseoha.acfeau.purpose": "Allows conversion from forge energy, to tardis mod artron units",
-  "item.aseoha.lava_chicken_disc": "Music Disc - Lava Chicken",
-  "item.music_disc.lava_chicken": "Lava Chicken"
+  "tooltip.aseoha.acfeau.purpose": "Allows conversion from forge energy, to tardis mod artron units"
 }
