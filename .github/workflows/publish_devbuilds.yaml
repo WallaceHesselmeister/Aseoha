@@ -27,21 +27,28 @@ jobs:
         run: chmod +x ./gradlew
 
       #1 name: SpotlessApply
-        #run: ./gradlew :spotlessApply
+      #  run: ./gradlew :spotlessApply
 
       - name: Build
         run: ./gradlew build
         # env:
         #   BETA: 1 # exclude assets if it's a beta dev build
 
+      - name: Rename artifacts with run number and branch
+        run: |
+          for f in build/libs/*.jar; do
+            base=$(basename "$f" .jar)
+            mv "$f" "build/libs/${base}-b${{ github.run_number }}-${{ github.ref_name }}.jar"
+          done
+
       - name: Publish artifacts
-        uses: DrTheodor/discord-webhook-upload-action@v0.2
+        uses: TheDJGamerYt/discord-webhook-upload-action@v0.1.2
         with:
           url: ${{ secrets.DEV_BUILDS }}
-          file: 'build/libs/*'
+          file: 'build/libs/*.jar'
           username: TAMAman
           avatar: 'https://media.forgecdn.net/avatars/thumbnails/983/766/256/256/638492366759883163.png'
           message_commit: '> :sparkles: [%MESSAGE%](<%LINK%>) by [%AUTHOR%](<%AUTHOR_LINK%>) '
           message_header: |
-            <:new1:1253371736510959636><:new2:1253371805734015006> New `Aseoha` dev build `#${{ github.run_number }}`:
+            <:new1:1253371736510959636><:new2:1253371805734015006> New `Aseoha` dev build `#${{ github.run_number }}` on branch `${{ github.ref_name }}`:
             %COMMITS%
