@@ -14,6 +14,7 @@ import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.Entity;
+import net.royawesome.jlibnoise.MathHelper;
 import net.tardis.mod.blockentities.consoles.ConsoleTile;
 import net.tardis.mod.cap.Capabilities;
 import net.tardis.mod.client.models.IAnimatableTileModel;
@@ -1688,6 +1689,7 @@ public class ModelSteamConsole<T extends ConsoleTile> extends HierarchicalModel<
 
     @Override
     public void setupAnimations(SteamConsoleTile tile, float ageInTicks) {
+        this.root().getAllParts().forEach(ModelPart::resetPose);
         Capabilities.getCap(Capabilities.TARDIS, Minecraft.getInstance().level).ifPresent(cap -> {
             this.lever_f1_rotate_z.zRot = (float)Math.toRadians(cap.getControlDataOrCreate(ControlRegistry.HANDBRAKE.get()).get() ? 20 : 170);
 
@@ -1695,13 +1697,13 @@ public class ModelSteamConsole<T extends ConsoleTile> extends HierarchicalModel<
 
             float facingRot = cap.getControlDataOrCreate(ControlRegistry.FACING.get()).get().toYRot();
             facingRot -= 360.0F * (cap.getControlDataOrCreate(ControlRegistry.FACING.get()).get().toYRot());
-            this.rotation_crank_rotate_y.zRot = (float)Math.toRadians(facingRot);
+            this.rotation_crank_rotate_y.yRot = (float)Math.toRadians(facingRot);
 
             float doorRot = cap.getInteriorManager().getDoorHandler().getDoorState() == DoorState.CLOSED ? 0 : 180;
-            doorRot += 180 * (cap.getLevel().getGameTime() - cap.getControlDataOrCreate(ControlRegistry.DOOR.get()).animationStartTime);
-            this.door_crank_rotate_y.zRot = (float)Math.toRadians(doorRot);
+            doorRot += 180;
+            this.door_crank_rotate_y.yRot = (float)Math.toRadians(doorRot);
 
-            this.needle_a1_rotate_y.zRot = (float)Math.toRadians(cap.getSubsystem(SubsystemRegistry.STABILIZERS.get()).get().isActivated() ? 45 : -45);
+            this.needle_a1_rotate_y.yRot = (float)Math.toRadians(cap.getSubsystem(SubsystemRegistry.STABILIZERS.get()).get().isActivated() ? 45 : -45);
 
             float throttleAmount = cap.getControlDataOrCreate(ControlRegistry.THROTTLE.get()).get();
             this.leaver_b1_rotate_z.zRot = (float)Math.toRadians(80 - (throttleAmount * 150));
@@ -1729,11 +1731,23 @@ public class ModelSteamConsole<T extends ConsoleTile> extends HierarchicalModel<
             this.sliderknob_c3_slide_x.x = this.sliderknob_c1_slide_x.x = (float)Math.toRadians(landTypeRotSide);
             this.sliderknob_c2_slide_x.x = (float)Math.toRadians(landTypeRotMiddle);
 
-            this.refuler.y = cap.getControlDataOrCreate(ControlRegistry.REFUELER.get()).get() ? (float) 0.75 : 0;
+            this.refuler.y = cap.getControlDataOrCreate(ControlRegistry.REFUELER.get()).get() ? (float) 0.0 : (float) 0.0;
 
             this.radio_needle.zRot = (float)Math.toRadians(11.5 - Math.cos(cap.getControlDataOrCreate(ControlRegistry.COMMUNICATOR.get()).animationStartTime * 0.1) * 15);
 
             this.scrying_glass.yRot = (float)Math.toRadians(-80 + Math.cos(cap.getControlDataOrCreate(ControlRegistry.TELEPATHICS.get()).animationStartTime * 0.5) * -20);
+
+            float timeToRotate = 10;
+            float loopTime = 60;
+            float rotTime = Minecraft.getInstance().level.getGameTime() % loopTime;
+            float threshold = loopTime - timeToRotate;
+            if(rotTime >= threshold) {
+
+                float angle = ((threshold - rotTime) / timeToRotate) * 180;
+
+                this.hourflip_rotate_x.xRot = (float)Math.toRadians(angle);
+            }
+
         });
 
     }
