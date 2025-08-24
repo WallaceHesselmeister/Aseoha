@@ -166,10 +166,12 @@ public class AItems {
     public static final RegistryObject<ArmorItem> SCARF = ITEMS.register(
             "scarf", () -> new ScarfItem(ArmorMaterials.LEATHER, ArmorItem.Type.CHESTPLATE, new Item.Properties()));
 
-    // public static final RegistryObject<Item> MAJESTIC_TALE_DISC =
-    // ITEMS.register("majestic_tale_disc",
-    // () -> new Music(1, () -> Sounds.MAJESTIC_TALE.get(), new
-    // Item.Properties().stacksTo(1)));
+        public static final RegistryObject<Item> LAVA_CHICKEN_DISC = ITEMS.register(
+                "disc_lava_chicken",
+                () -> new LavaChickenDiscItem(
+                        1,
+                        main.java.tama.Items.Sounds.LAVA_CHICKEN.get(),
+                        new Item.Properties().stacksTo(1).rarity(Rarity.RARE)));
 
     public static final RegistryObject<Item> HAMMER = ITEMS.register(
             "hammer",
