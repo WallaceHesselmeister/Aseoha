@@ -168,10 +168,7 @@ public class AItems {
 
         public static final RegistryObject<Item> LAVA_CHICKEN_DISC = ITEMS.register(
                 "disc_lava_chicken",
-                () -> new LavaChickenDiscItem(
-                        1,
-                        main.java.tama.Items.Sounds.LAVA_CHICKEN.get(),
-                        new Item.Properties().stacksTo(1).rarity(Rarity.RARE)));
+                () -> new LavaChickenDiscItem());
 
     public static final RegistryObject<Item> HAMMER = ITEMS.register(
             "hammer",

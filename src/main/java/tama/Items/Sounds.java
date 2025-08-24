@@ -1,4 +1,4 @@
-package main.java.tama.Items;
+package tama.Items;
 
 import net.minecraft.sounds.SoundEvent;
 import net.minecraftforge.registries.DeferredRegister;

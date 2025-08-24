@@ -1694,7 +1694,7 @@ public class ModelSteamConsole<T extends ConsoleTile> extends HierarchicalModel<
             this.globe_rotate_y.zRot = (float)Math.toRadians((cap.getControlDataOrCreate(ControlRegistry.RANDOMIZER.get()).animationStartTime * 720) + 45);
 
             float facingRot = cap.getControlDataOrCreate(ControlRegistry.FACING.get()).get().toYRot();
-            facingRot -= 360.0F * (cap.getLevel().getGameTime() - cap.getControlDataOrCreate(ControlRegistry.FACING.get()).animationStartTime);
+            facingRot -= 360.0F * (cap.getControlDataOrCreate(ControlRegistry.FACING.get()).get().toYRot());
             this.rotation_crank_rotate_y.zRot = (float)Math.toRadians(facingRot);
 
             float doorRot = cap.getInteriorManager().getDoorHandler().getDoorState() == DoorState.CLOSED ? 0 : 180;
