@@ -331,5 +331,11 @@
       }
     ],
     "subtitle": "subtitles.block.generic.footsteps"
+  },
+  "lava_chicken": {
+    "subtitle": "aseoha.music.lava_chicken",
+    "sounds": [
+      "aseoha:lava_chicken"
+    ]
   }
 }

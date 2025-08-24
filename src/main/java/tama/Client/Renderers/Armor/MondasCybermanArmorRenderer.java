@@ -42,9 +42,9 @@ public class MondasCybermanArmorRenderer<T extends MondasCybermanArmorModel> {
                         "left_arm",
                         slot == EquipmentSlot.CHEST ? checkNonNull(model.LeftArm) : EMPTY_PART,
                         "right_leg",
-                        slot == EquipmentSlot.FEET ? checkNonNull(model.RightLeg) : EMPTY_PART,
+                        slot == EquipmentSlot.FEET ? checkNonNull(model.LeftLeg) : EMPTY_PART,
                         "left_leg",
-                        slot == EquipmentSlot.FEET ? checkNonNull(model.LeftLeg) : EMPTY_PART));
+                        slot == EquipmentSlot.FEET ? checkNonNull(model.RightLeg) : EMPTY_PART));
     }
 
     private static @NotNull ModelPart checkNonNull(@Nullable ModelPart part) {

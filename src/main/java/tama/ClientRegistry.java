@@ -17,6 +17,8 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.tardis.mod.client.ModelHolder;
+import net.tardis.mod.client.models.consoles.SteamConsoleModel;
+import net.tardis.mod.client.models.exteriors.SteamExteriorModel;
 import net.tardis.mod.client.models.exteriors.interior_door.TTCapsuleInteriorDoorModel;
 import net.tardis.mod.client.renderers.SpecialItemRenderer;
 import net.tardis.mod.client.renderers.tiles.BrokenExteriorRenderer;
@@ -24,10 +26,8 @@ import net.tardis.mod.client.renderers.tiles.ChameleonInteriorDoorRenderer;
 import net.tardis.mod.client.renderers.tiles.InteriorDoorRender;
 import net.tardis.mod.helpers.Helper;
 import org.jetbrains.annotations.NotNull;
-import tama.Client.Models.Consoles.BrackolinConsoleModel;
-import tama.Client.Models.Consoles.CopperConsoleModel;
-import tama.Client.Models.Consoles.HartnellConsoleModel;
-import tama.Client.Models.Consoles.TokamakConsoleModel;
+import tama.Client.Models.Armor.MondasCybermanArmorModel;
+import tama.Client.Models.Consoles.*;
 import tama.Client.Models.Consoles.ported.CoralConsoleModel;
 import tama.Client.Models.Consoles.ported.ToyotaConsoleModel;
 import tama.Client.Models.Exteriors.*;
@@ -64,11 +64,26 @@ public class ClientRegistry {
 
     @OnlyIn(Dist.CLIENT)
     public static void registerSpecialItemModels() {
+//        SpecialItemRenderer.register(new ModelHolder<>(
+//                (stack) -> stack.getItem()
+//                        == ForgeRegistries.ITEMS.getValue(AItems.MONDAS_CYBERMAN_BOOTS.getId()),
+//                (modelSet) -> new MondasCybermanArmorModel(modelSet.bakeLayer(MondasCybermanArmorModel.LAYER_LOCATION)),
+//                new ResourceLocation(MODID, "textures/armor/mondas_cyber_man.png")));
+
+
+
+
         SpecialItemRenderer.register(new ModelHolder<>(
                 (stack) -> stack.getItem()
                         == ForgeRegistries.ITEMS.getValue(ConsoleBlocks.BRACKOLIN_CONSOLE_BLOCK.getId()),
                 (modelSet) -> new BrackolinConsoleModel<>(modelSet.bakeLayer(BrackolinConsoleModel.LAYER_LOCATION)),
                 new ResourceLocation(MODID, "textures/consoles/brackolin.png")));
+
+        SpecialItemRenderer.register(new ModelHolder<>(
+                (stack) -> stack.getItem()
+                        == ForgeRegistries.ITEMS.getValue(ConsoleBlocks.STEAM_CONSOLE_BLOCK.getId()),
+                (modelSet) -> new ModelSteamConsole<>(modelSet.bakeLayer(ModelSteamConsole.LAYER_LOCATION)),
+                new ResourceLocation(MODID, "textures/consoles/steam.png")));
 
         SpecialItemRenderer.register(new ModelHolder<>(
                 (stack) ->
@@ -172,6 +187,7 @@ public class ClientRegistry {
     @OnlyIn(Dist.CLIENT)
     public static void registerConsoleModels(EntityRenderersEvent.RegisterLayerDefinitions event) {
         event.registerLayerDefinition(CopperConsoleModel.LAYER_LOCATION, CopperConsoleModel::createBodyLayer);
+        event.registerLayerDefinition(ModelSteamConsole.LAYER_LOCATION, ModelSteamConsole::createBodyLayer);
         event.registerLayerDefinition(ToyotaConsoleModel.LAYER_LOCATION, ToyotaConsoleModel::createBodyLayer);
         event.registerLayerDefinition(CoralConsoleModel.LAYER_LOCATION, CoralConsoleModel::createBodyLayer);
         event.registerLayerDefinition(BrackolinConsoleModel.LAYER_LOCATION, BrackolinConsoleModel::createBodyLayer);
@@ -222,6 +238,13 @@ public class ClientRegistry {
                         context,
                         new TokamakConsoleModel<>(context.bakeLayer(TokamakConsoleModel.LAYER_LOCATION)),
                         new ResourceLocation(MODID, "textures/consoles/tokamak.png")));
+
+        event.registerBlockEntityRenderer(
+                TileRegistry.STEAM_CONSOLE_TILE.get(),
+                context -> new SteamConsoleRenderer(
+                        context,
+                        new ModelSteamConsole<>(context.bakeLayer(ModelSteamConsole.LAYER_LOCATION)),
+                        new ResourceLocation(MODID, "textures/consoles/steam.png")));
     }
 
     @SubscribeEvent

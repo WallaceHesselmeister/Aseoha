@@ -19,6 +19,7 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 import org.slf4j.Logger;
 import tama.Blocks.Roundels;
 import tama.Capabilities.Capabilities;
+import tama.Items.Sounds;
 import tama.Registries.Entities;
 import tama.Registries.FlightEventRegistry;
 import tama.Registries.MonitorFunctionRegistry;
@@ -40,7 +41,8 @@ public class aseoha {
 
     public aseoha() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
-        FOOD_ITEMS.register(modEventBus);
+    FOOD_ITEMS.register(modEventBus);
+    Sounds.SOUND_EVENTS.register(modEventBus);
         BLOCKS.register(modEventBus);
         Roundels.register(modEventBus);
         Entities.TYPES.register(modEventBus);

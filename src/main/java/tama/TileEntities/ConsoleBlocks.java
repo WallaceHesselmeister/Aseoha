@@ -22,6 +22,8 @@ public class ConsoleBlocks {
 
     public static final RegistryObject<ConsoleBlock> COPPER_CONSOLE_BLOCK =
             registerWithItemSpecial("console/copper", () -> new ConsoleBlock(TileRegistry.COPPER_CONSOLE_TILE));
+    public static final RegistryObject<ConsoleBlock> STEAM_CONSOLE_BLOCK =
+            registerWithItemSpecial("console/steam", () -> new ConsoleBlock(TileRegistry.STEAM_CONSOLE_TILE));
     public static final RegistryObject<ConsoleBlock> TOYOTA_CONSOLE_BLOCK =
             registerWithItemSpecial("console/toyota", () -> new ConsoleBlock(TileRegistry.TOYOTA_CONSOLE_TILE));
     public static final RegistryObject<ConsoleBlock> BRACKOLIN_CONSOLE_BLOCK =

@@ -94,8 +94,8 @@ public class AItems {
     public static final RegistryObject<Item> EMPTY_UNLOCKER =
             ITEMS.register("empty_unlocker", () -> new Item(new Item.Properties()));
 
-    public static final RegistryObject<Item> GALLIFREY_UNLOCKER = ITEMS.register(
-            "gallifrey_unlocker", () -> new DimensionUnlocker(new Item.Properties(), Dimensions.GALLIFREY_TYPE));
+    public static final RegistryObject<Item> GALLIFREYAN_UNLOCKER = ITEMS.register(
+            "gallifreyan_unlocker", () -> new DimensionUnlocker(new Item.Properties(), Dimensions.GALLIFREY_TYPE));
 
     public static final RegistryObject<Item> MONDAS_UNLOCKER = ITEMS.register(
             "mondas_unlocker", () -> new DimensionUnlocker(new Item.Properties(), Dimensions.MONDAS_TYPE));
@@ -152,24 +152,23 @@ public class AItems {
 
     public static final RegistryObject<ArmorItem> MONDAS_CYBERMAN_HELMET = ITEMS.register(
             "mondas_cyberman_helmet",
-            () -> new MondasCybermanArmorItem(ArmorMaterials.CHAIN, ArmorItem.Type.HELMET, new Item.Properties()));
+            () -> new MondasCybermanArmorItem(ArmorMaterials.IRON, ArmorItem.Type.HELMET, new Item.Properties()));
     public static final RegistryObject<ArmorItem> MONDAS_CYBERMAN_CHEST = ITEMS.register(
             "mondas_cyberman_chest",
-            () -> new MondasCybermanArmorItem(ArmorMaterials.CHAIN, ArmorItem.Type.CHESTPLATE, new Item.Properties()));
+            () -> new MondasCybermanArmorItem(ArmorMaterials.IRON, ArmorItem.Type.CHESTPLATE, new Item.Properties()));
     public static final RegistryObject<ArmorItem> MONDAS_CYBERMAN_LEGS = ITEMS.register(
             "mondas_cyberman_legs",
-            () -> new MondasCybermanArmorItem(ArmorMaterials.CHAIN, ArmorItem.Type.LEGGINGS, new Item.Properties()));
+            () -> new MondasCybermanArmorItem(ArmorMaterials.IRON, ArmorItem.Type.LEGGINGS, new Item.Properties()));
     public static final RegistryObject<ArmorItem> MONDAS_CYBERMAN_BOOTS = ITEMS.register(
             "mondas_cyberman_boots",
-            () -> new MondasCybermanArmorItem(ArmorMaterials.CHAIN, ArmorItem.Type.BOOTS, new Item.Properties()));
+            () -> new MondasCybermanArmorItem(ArmorMaterials.IRON, ArmorItem.Type.BOOTS, new Item.Properties()));
 
     public static final RegistryObject<ArmorItem> SCARF = ITEMS.register(
             "scarf", () -> new ScarfItem(ArmorMaterials.LEATHER, ArmorItem.Type.CHESTPLATE, new Item.Properties()));
 
-    // public static final RegistryObject<Item> MAJESTIC_TALE_DISC =
-    // ITEMS.register("majestic_tale_disc",
-    // () -> new Music(1, () -> Sounds.MAJESTIC_TALE.get(), new
-    // Item.Properties().stacksTo(1)));
+        public static final RegistryObject<Item> LAVA_CHICKEN_DISC = ITEMS.register(
+                "disc_lava_chicken",
+                () -> new LavaChickenDiscItem());
 
     public static final RegistryObject<Item> HAMMER = ITEMS.register(
             "hammer",
