@@ -1,4 +1,3 @@
-/* (C) TAMA Studios 2025 */
 package tama.Items;
 
 import static tama.aseoha.MODID;
@@ -19,6 +18,7 @@ import tama.Items.Armor.MondasCybermanArmorItem;
 import tama.Items.Armor.ScarfItem;
 import tama.RoundelRemote;
 import tama.World.Dimensions;
+import tama.Items.Sounds;
 
 public class AItems {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, MODID);
@@ -166,12 +166,12 @@ public class AItems {
     public static final RegistryObject<ArmorItem> SCARF = ITEMS.register(
             "scarf", () -> new ScarfItem(ArmorMaterials.LEATHER, ArmorItem.Type.CHESTPLATE, new Item.Properties()));
 
-        public static final RegistryObject<Item> LAVA_CHICKEN_DISC = ITEMS.register(
-                "disc_lava_chicken",
-                () -> new LavaChickenDiscItem(
-                        1,
-                        main.java.tama.Items.Sounds.LAVA_CHICKEN.get(),
-                        new Item.Properties().stacksTo(1).rarity(Rarity.RARE)));
+    public static final RegistryObject<Item> LAVA_CHICKEN_DISC = ITEMS.register(
+            "disc_lava_chicken",
+            () -> new LavaChickenDiscItem(
+                    1,
+                    Sounds.LAVA_CHICKEN.get(),
+                    new Item.Properties().stacksTo(1).rarity(Rarity.RARE)));
 
     public static final RegistryObject<Item> HAMMER = ITEMS.register(
             "hammer",
