@@ -94,8 +94,8 @@ public class AItems {
     public static final RegistryObject<Item> EMPTY_UNLOCKER =
             ITEMS.register("empty_unlocker", () -> new Item(new Item.Properties()));
 
-    public static final RegistryObject<Item> GALLIFREY_UNLOCKER = ITEMS.register(
-            "gallifrey_unlocker", () -> new DimensionUnlocker(new Item.Properties(), Dimensions.GALLIFREY_TYPE));
+    public static final RegistryObject<Item> GALLIFREYAN_UNLOCKER = ITEMS.register(
+            "gallifreyan_unlocker", () -> new DimensionUnlocker(new Item.Properties(), Dimensions.GALLIFREY_TYPE));
 
     public static final RegistryObject<Item> MONDAS_UNLOCKER = ITEMS.register(
             "mondas_unlocker", () -> new DimensionUnlocker(new Item.Properties(), Dimensions.MONDAS_TYPE));
