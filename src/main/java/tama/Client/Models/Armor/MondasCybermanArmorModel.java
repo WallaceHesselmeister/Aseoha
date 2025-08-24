@@ -499,7 +499,8 @@ public class MondasCybermanArmorModel extends EntityModel<LivingEntity> {
             float p_102620_,
             float p_102621_,
             float p_102622_,
-            float p_102623_) {}
+            float p_102623_) {
+    }
 
     public void makeInvisible(boolean invisible) {
         Head.visible = !invisible;

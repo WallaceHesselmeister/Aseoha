@@ -1,5 +1,15 @@
 {
   "values": [
-    "aseoha:redlands"
+    "aseoha:death_zone",
+    "aseoha:gallifrey_desert",
+    "aseoha:gallifreybiome",
+    "aseoha:redlands",
+    "aseoha:redlands_cliffs",
+    "aseoha:redlands_cold_ocean",
+    "aseoha:redlands_gravelly_mountains",
+    "aseoha:redlands_modified_gravelly_mountains",
+    "aseoha:redlands_mountains",
+    "aseoha:redlands_river",
+    "aseoha:redlands_wooded_mountains"
   ]
 }
