@@ -15,11 +15,11 @@ import tama.Items.AItems;
 public class LavaChickenDropHandler {
     @SubscribeEvent
     public static void onLivingDrops(LivingDropsEvent event) {
-        LivingEntity entity = event.getEntityLiving();
+        LivingEntity entity = event.getEntity();
         if (entity instanceof Zombie) {
             Zombie zombie = (Zombie) entity;
             if (zombie.isBaby() && zombie.getVehicle() instanceof Chicken) {
-                Level world = zombie.level;
+                Level world = zombie.level();
                 ItemStack dropStack = new ItemStack(AItems.LAVA_CHICKEN_DISC.get());
                 ItemEntity itemEntity = new ItemEntity(world, zombie.getX(), zombie.getY(), zombie.getZ(), dropStack);
                 event.getDrops().add(itemEntity);
