@@ -152,16 +152,16 @@ public class AItems {
 
     public static final RegistryObject<ArmorItem> MONDAS_CYBERMAN_HELMET = ITEMS.register(
             "mondas_cyberman_helmet",
-            () -> new MondasCybermanArmorItem(ArmorMaterials.CHAIN, ArmorItem.Type.HELMET, new Item.Properties()));
+            () -> new MondasCybermanArmorItem(ArmorMaterials.IRON, ArmorItem.Type.HELMET, new Item.Properties()));
     public static final RegistryObject<ArmorItem> MONDAS_CYBERMAN_CHEST = ITEMS.register(
             "mondas_cyberman_chest",
-            () -> new MondasCybermanArmorItem(ArmorMaterials.CHAIN, ArmorItem.Type.CHESTPLATE, new Item.Properties()));
+            () -> new MondasCybermanArmorItem(ArmorMaterials.IRON, ArmorItem.Type.CHESTPLATE, new Item.Properties()));
     public static final RegistryObject<ArmorItem> MONDAS_CYBERMAN_LEGS = ITEMS.register(
             "mondas_cyberman_legs",
-            () -> new MondasCybermanArmorItem(ArmorMaterials.CHAIN, ArmorItem.Type.LEGGINGS, new Item.Properties()));
+            () -> new MondasCybermanArmorItem(ArmorMaterials.IRON, ArmorItem.Type.LEGGINGS, new Item.Properties()));
     public static final RegistryObject<ArmorItem> MONDAS_CYBERMAN_BOOTS = ITEMS.register(
             "mondas_cyberman_boots",
-            () -> new MondasCybermanArmorItem(ArmorMaterials.CHAIN, ArmorItem.Type.BOOTS, new Item.Properties()));
+            () -> new MondasCybermanArmorItem(ArmorMaterials.IRON, ArmorItem.Type.BOOTS, new Item.Properties()));
 
     public static final RegistryObject<ArmorItem> SCARF = ITEMS.register(
             "scarf", () -> new ScarfItem(ArmorMaterials.LEATHER, ArmorItem.Type.CHESTPLATE, new Item.Properties()));
