@@ -1,7 +1,5 @@
 package tama.Items;
 
-import static tama.aseoha.MODID;
-
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ArmorMaterials;
@@ -16,9 +14,11 @@ import net.tardis.mod.item.tools.SonicItem;
 import net.tardis.mod.registry.SubsystemRegistry;
 import tama.Items.Armor.MondasCybermanArmorItem;
 import tama.Items.Armor.ScarfItem;
+import tama.Items.Sounds;
 import tama.RoundelRemote;
 import tama.World.Dimensions;
-import tama.Items.Sounds;
+
+import static tama.aseoha.MODID;
 
 public class AItems {
     public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(ForgeRegistries.ITEMS, MODID);

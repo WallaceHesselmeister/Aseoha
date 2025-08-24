@@ -7,8 +7,8 @@ import net.minecraft.world.entity.monster.Zombie;
 import net.minecraft.world.entity.animal.Chicken;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.entity.item.ItemEntity;
+import net.minecraft.world.item.ItemStack;
 import tama.Items.AItems;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.FORGE)

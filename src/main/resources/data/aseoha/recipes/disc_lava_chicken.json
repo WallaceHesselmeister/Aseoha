@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "ingredients": [
+    { "item": "minecraft:chicken" },
+    { "item": "minecraft:lava_bucket" }
+  ],
+  "result": { "item": "aseoha:disc_lava_chicken" },
+  "container": "minecraft:bucket"
+}

@@ -1,4 +1,4 @@
-package main.java.tama.Items;
+package tama.Items;
 
 import static tama.aseoha.MODID;
 
