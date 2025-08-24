@@ -8,7 +8,7 @@
       "item" : "minecraft:sugar_cane"
     }
   },
-  "pattern" : [ "SRS", "R  ", "S  " ],
+  "pattern" : [ "SRS", "  R", "  S" ],
   "result" : {
     "count" : 1,
     "item" : "aseoha:candy_cane_sonic"
