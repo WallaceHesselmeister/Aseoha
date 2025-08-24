@@ -40,7 +40,8 @@ public class aseoha {
 
     public aseoha() {
         IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
-        FOOD_ITEMS.register(modEventBus);
+    FOOD_ITEMS.register(modEventBus);
+    tama.Items.Sounds.SOUND_EVENTS.register(modEventBus);
         BLOCKS.register(modEventBus);
         Roundels.register(modEventBus);
         Entities.TYPES.register(modEventBus);
