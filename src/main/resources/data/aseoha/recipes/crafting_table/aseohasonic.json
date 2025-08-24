@@ -1,0 +1,10 @@
+{
+  "ingredients" : [ {
+    "item" : "aseoha:sonic_fourteenth"
+  } ],
+  "result" : {
+    "count" : 1,
+    "item" : "aseoha:sonic_screwdriver"
+  },
+  "type" : "minecraft:crafting_shapeless"
+}

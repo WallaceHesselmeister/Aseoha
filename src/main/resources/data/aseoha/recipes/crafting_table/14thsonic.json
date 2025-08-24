@@ -1,0 +1,10 @@
+{
+  "ingredients" : [ {
+    "item" : "tardis:tools/sonic"
+  } ],
+  "result" : {
+    "count" : 1,
+    "item" : "aseoha:sonic_fourteenth"
+  },
+  "type" : "minecraft:crafting_shapeless"
+}

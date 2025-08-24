@@ -1,0 +1,10 @@
+{
+  "ingredients" : [ {
+    "item" : "aseoha:sonic_screwdriver"
+  } ],
+  "result" : {
+    "count" : 1,
+    "item" : "aseoha:sonic_wiimote"
+  },
+  "type" : "minecraft:crafting_shapeless"
+}
