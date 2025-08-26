@@ -39,8 +39,11 @@ public class TileRegistry {
     public static final RegistryObject<BlockEntityType<CopperConsoleTile>> COPPER_CONSOLE_TILE = TYPES.register(
             "console/copper", () -> create(CopperConsoleTile::new, ConsoleBlocks.COPPER_CONSOLE_BLOCK.get()));
 
-    public static final RegistryObject<BlockEntityType<SteamConsoleTile>> STEAM_CONSOLE_TILE = TYPES.register(
-            "console/steam", () -> create(SteamConsoleTile::new, ConsoleBlocks.STEAM_CONSOLE_BLOCK.get()));
+    public static final RegistryObject<BlockEntityType<SteamConsoleTile<?>>> STEAM_FOURTEEN_CONSOLE_TILE = TYPES.register(
+            "console/steam_fourteen", () -> create((pos, state) -> new SteamConsoleTile<>(pos, state, TileRegistry.STEAM_FOURTEEN_CONSOLE_TILE), ConsoleBlocks.STEAM_CONSOLE_BLOCK_FOURTEEN.get()));
+
+    public static final RegistryObject<BlockEntityType<SteamConsoleTile<?>>> STEAM_SIXTEEN_CONSOLE_TILE = TYPES.register(
+            "console/steam_sixteen", () -> create((pos, state) -> new SteamConsoleTile<>(pos, state, TileRegistry.STEAM_SIXTEEN_CONSOLE_TILE), ConsoleBlocks.STEAM_CONSOLE_BLOCK_SIXTEEN.get()));
 
     public static final RegistryObject<BlockEntityType<ToyotaConsoleTile>> TOYOTA_CONSOLE_TILE = TYPES.register(
             "console/toyota", () -> create(ToyotaConsoleTile::new, ConsoleBlocks.TOYOTA_CONSOLE_BLOCK.get()));

@@ -1,12 +1,8 @@
-package tama.Client.Models.Consoles;
+package tama.Client.Models.Consoles.ported;
 
 import com.mojang.blaze3d.vertex.PoseStack;
 import com.mojang.blaze3d.vertex.VertexConsumer;
 import net.minecraft.client.Minecraft;
-import net.minecraft.client.animation.AnimationChannel;
-import net.minecraft.client.animation.AnimationDefinition;
-import net.minecraft.client.animation.Keyframe;
-import net.minecraft.client.animation.KeyframeAnimations;
 import net.minecraft.client.model.HierarchicalModel;
 import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.geom.ModelPart;
@@ -14,7 +10,6 @@ import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.Entity;
-import net.royawesome.jlibnoise.MathHelper;
 import net.tardis.mod.blockentities.consoles.ConsoleTile;
 import net.tardis.mod.cap.Capabilities;
 import net.tardis.mod.client.models.IAnimatableTileModel;
@@ -24,9 +19,8 @@ import net.tardis.mod.misc.enums.LandingType;
 import net.tardis.mod.registry.ControlRegistry;
 import net.tardis.mod.registry.SubsystemRegistry;
 import org.jetbrains.annotations.NotNull;
-import tama.TileEntities.Console.SteamConsoleTile;
 
-public class ModelSteamConsole<T extends ConsoleTile> extends HierarchicalModel<Entity> implements IAnimatableTileModel<SteamConsoleTile> {
+public class SteamConsoleModelFourteen<T extends ConsoleTile> extends HierarchicalModel<Entity> implements IAnimatableTileModel<ConsoleTile> {
     // This layer location should be baked with EntityRendererProvider.Context in the entity renderer and passed into this model's constructor
     public static final ModelLayerLocation LAYER_LOCATION = new ModelLayerLocation(new ResourceLocation("modid", "modelsteamconsole"), "main");
     private final ModelPart root;
@@ -309,7 +303,7 @@ public class ModelSteamConsole<T extends ConsoleTile> extends HierarchicalModel<
     private final ModelPart rotor_gasket6;
     private final ModelPart floor_trim6;
 
-    public ModelSteamConsole(ModelPart root) {
+    public SteamConsoleModelFourteen(ModelPart root) {
         this.root = root;
         this.glow = root.getChild("glow");
         this.glow_meterglass_a1 = this.glow.getChild("glow_meterglass_a1");
@@ -1674,7 +1668,7 @@ public class ModelSteamConsole<T extends ConsoleTile> extends HierarchicalModel<
     public void renderToBuffer(@NotNull PoseStack poseStack, @NotNull VertexConsumer vertexConsumer, int packedLight, int packedOverlay, float red, float green, float blue, float alpha) {
         poseStack.pushPose();
         poseStack.translate(0, 1, 0);
-        poseStack.scale(0.28f, 0.28f, 0.28f);
+        poseStack.scale(0.3f, 0.3f, 0.3f);
         glow.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
         rotor.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
         controls.render(poseStack, vertexConsumer, packedLight, packedOverlay, red, green, blue, alpha);
@@ -1688,7 +1682,7 @@ public class ModelSteamConsole<T extends ConsoleTile> extends HierarchicalModel<
     }
 
     @Override
-    public void setupAnimations(SteamConsoleTile tile, float ageInTicks) {
+    public void setupAnimations(ConsoleTile tile, float ageInTicks) {
         this.root().getAllParts().forEach(ModelPart::resetPose);
         Capabilities.getCap(Capabilities.TARDIS, Minecraft.getInstance().level).ifPresent(cap -> {
             this.lever_f1_rotate_z.zRot = (float)Math.toRadians(cap.getControlDataOrCreate(ControlRegistry.HANDBRAKE.get()).get() ? 20 : 170);
@@ -1707,21 +1701,6 @@ public class ModelSteamConsole<T extends ConsoleTile> extends HierarchicalModel<
 
             float throttleAmount = cap.getControlDataOrCreate(ControlRegistry.THROTTLE.get()).get();
             this.leaver_b1_rotate_z.zRot = (float)Math.toRadians(80 - (throttleAmount * 150));
-//            if (throttleAmount < 0.5F) {
-//                this.glow_red_throttle.setBright(1F);
-//                this.glow_yellow_throttle.setBright(0F);
-//                this.glow_green_throttle.setBright(0F);
-//            }
-//            if (throttleAmount >= 0.5F) {
-//                this.glow_red_throttle.setBright(1F);
-//                this.glow_yellow_throttle.setBright(1F);
-//                this.glow_green_throttle.setBright(0F);
-//            }
-//            if (throttleAmount == 1F) {
-//                this.glow_red_throttle.setBright(1F);
-//                this.glow_yellow_throttle.setBright(1F);
-//                this.glow_green_throttle.setBright(1F);
-//            }
 
             this.cord_slider_slide_x.x = (float)Math.toRadians(4 + (-9 * (cap.getControlDataOrCreate(ControlRegistry.INCREMENT.get()).get() / (float) IncrementControl.VALUES.length)));
 
@@ -1731,7 +1710,7 @@ public class ModelSteamConsole<T extends ConsoleTile> extends HierarchicalModel<
             this.sliderknob_c3_slide_x.x = this.sliderknob_c1_slide_x.x = (float)Math.toRadians(landTypeRotSide);
             this.sliderknob_c2_slide_x.x = (float)Math.toRadians(landTypeRotMiddle);
 
-            this.refuler.y = cap.getControlDataOrCreate(ControlRegistry.REFUELER.get()).get() ? (float) 0.0 : (float) 0.0;
+            this.refuler.y = cap.getControlDataOrCreate(ControlRegistry.REFUELER.get()).get() ? 0.0f : (float) 0.0;
 
             this.radio_needle.zRot = (float)Math.toRadians(11.5 - Math.cos(cap.getControlDataOrCreate(ControlRegistry.COMMUNICATOR.get()).animationStartTime * 0.1) * 15);
 

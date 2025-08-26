@@ -17,8 +17,6 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.tardis.mod.client.ModelHolder;
-import net.tardis.mod.client.models.consoles.SteamConsoleModel;
-import net.tardis.mod.client.models.exteriors.SteamExteriorModel;
 import net.tardis.mod.client.models.exteriors.interior_door.TTCapsuleInteriorDoorModel;
 import net.tardis.mod.client.renderers.SpecialItemRenderer;
 import net.tardis.mod.client.renderers.tiles.BrokenExteriorRenderer;
@@ -26,15 +24,14 @@ import net.tardis.mod.client.renderers.tiles.ChameleonInteriorDoorRenderer;
 import net.tardis.mod.client.renderers.tiles.InteriorDoorRender;
 import net.tardis.mod.helpers.Helper;
 import org.jetbrains.annotations.NotNull;
-import tama.Client.Models.Armor.MondasCybermanArmorModel;
 import tama.Client.Models.Consoles.*;
-import tama.Client.Models.Consoles.ported.CoralConsoleModel;
-import tama.Client.Models.Consoles.ported.ToyotaConsoleModel;
+import tama.Client.Models.Consoles.ported.*;
 import tama.Client.Models.Exteriors.*;
 import tama.Client.Renderers.Consoles.*;
 import tama.Client.Renderers.Exteriors.*;
 import tama.Items.AItems;
 import tama.Registries.Entities;
+import tama.TileEntities.Console.SteamConsoleTile;
 import tama.TileEntities.ConsoleBlocks;
 import tama.TileEntities.ExteriorRegistry;
 import tama.TileEntities.TileRegistry;
@@ -81,8 +78,14 @@ public class ClientRegistry {
 
         SpecialItemRenderer.register(new ModelHolder<>(
                 (stack) -> stack.getItem()
-                        == ForgeRegistries.ITEMS.getValue(ConsoleBlocks.STEAM_CONSOLE_BLOCK.getId()),
-                (modelSet) -> new ModelSteamConsole<>(modelSet.bakeLayer(ModelSteamConsole.LAYER_LOCATION)),
+                        == ForgeRegistries.ITEMS.getValue(ConsoleBlocks.STEAM_CONSOLE_BLOCK_FOURTEEN.getId()),
+                (modelSet) -> new SteamConsoleModelFourteen<>(modelSet.bakeLayer(SteamConsoleModelFourteen.LAYER_LOCATION)),
+                new ResourceLocation(MODID, "textures/consoles/steam.png")));
+
+        SpecialItemRenderer.register(new ModelHolder<>(
+                (stack) -> stack.getItem()
+                        == ForgeRegistries.ITEMS.getValue(ConsoleBlocks.STEAM_CONSOLE_BLOCK_SIXTEEN.getId()),
+                (modelSet) -> new SteamConsoleModelSixteen<>(modelSet.bakeLayer(SteamConsoleModelSixteen.LAYER_LOCATION)),
                 new ResourceLocation(MODID, "textures/consoles/steam.png")));
 
         SpecialItemRenderer.register(new ModelHolder<>(
@@ -187,7 +190,8 @@ public class ClientRegistry {
     @OnlyIn(Dist.CLIENT)
     public static void registerConsoleModels(EntityRenderersEvent.RegisterLayerDefinitions event) {
         event.registerLayerDefinition(CopperConsoleModel.LAYER_LOCATION, CopperConsoleModel::createBodyLayer);
-        event.registerLayerDefinition(ModelSteamConsole.LAYER_LOCATION, ModelSteamConsole::createBodyLayer);
+        event.registerLayerDefinition(SteamConsoleModelSixteen.LAYER_LOCATION, SteamConsoleModelSixteen::createBodyLayer);
+        event.registerLayerDefinition(SteamConsoleModelFourteen.LAYER_LOCATION, SteamConsoleModelFourteen::createBodyLayer);
         event.registerLayerDefinition(ToyotaConsoleModel.LAYER_LOCATION, ToyotaConsoleModel::createBodyLayer);
         event.registerLayerDefinition(CoralConsoleModel.LAYER_LOCATION, CoralConsoleModel::createBodyLayer);
         event.registerLayerDefinition(BrackolinConsoleModel.LAYER_LOCATION, BrackolinConsoleModel::createBodyLayer);
@@ -240,10 +244,17 @@ public class ClientRegistry {
                         new ResourceLocation(MODID, "textures/consoles/tokamak.png")));
 
         event.registerBlockEntityRenderer(
-                TileRegistry.STEAM_CONSOLE_TILE.get(),
-                context -> new SteamConsoleRenderer(
+                TileRegistry.STEAM_FOURTEEN_CONSOLE_TILE.get(),
+                context -> new BasicConsoleRenderer<SteamConsoleModelFourteen<SteamConsoleTile>>(
                         context,
-                        new ModelSteamConsole<>(context.bakeLayer(ModelSteamConsole.LAYER_LOCATION)),
+                        new SteamConsoleModelFourteen<>(context.bakeLayer(SteamConsoleModelFourteen.LAYER_LOCATION)),
+                        new ResourceLocation(MODID, "textures/consoles/steam.png")));
+
+        event.registerBlockEntityRenderer(
+                TileRegistry.STEAM_SIXTEEN_CONSOLE_TILE.get(),
+                context -> new BasicConsoleRenderer<SteamConsoleModelSixteen<SteamConsoleTile>>(
+                        context,
+                        new SteamConsoleModelSixteen<>(context.bakeLayer(SteamConsoleModelSixteen.LAYER_LOCATION)),
                         new ResourceLocation(MODID, "textures/consoles/steam.png")));
     }
 
