@@ -1897,7 +1897,6 @@ public class SteamConsoleModelSixteen<T extends ConsoleTile> extends Hierarchica
             this.sliderknob_c3_rotate_z.zRot = this.sliderknob_c1_rotate_z.zRot = (float)Math.toRadians(rotSide);
             this.sliderknob_c2_rotate_z.zRot = (float) Math.toRadians(rotMiddle);
 
-
             this.refueler_button_rotate_z.zRot = cap.getControlDataOrCreate(ControlRegistry.REFUELER.get()).get() ? 0.0f : (float) 0.0;
 
             this.radio_needle_rotate_y.zRot = (float)Math.toRadians(11.5 - Math.cos(cap.getControlDataOrCreate(ControlRegistry.COMMUNICATOR.get()).animationStartTime * 0.1) * 15);
