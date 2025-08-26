@@ -1,0 +1,10 @@
+{
+  "ingredients" : [ {
+    "item" : "alexscaves:candy_cane"
+  } ],
+  "result" : {
+    "count" : 1,
+    "item" : "aseoha:candy_cane_sonic"
+  },
+  "type" : "minecraft:crafting_shapeless"
+}
