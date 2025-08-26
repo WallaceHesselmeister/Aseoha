@@ -1,5 +1,5 @@
 /* (C) TAMA Studios 2025 */
-package tama.mixin;
+package tama.mixin.client;
 
 import javax.annotation.Nullable;
 import net.minecraft.client.Minecraft;
@@ -19,7 +19,7 @@ import tama.Misc.TickrateManager;
 @Mixin(Minecraft.class)
 public class MinecraftMixin {
 
-    @Shadow
+    @Shadow(remap = false)
     private float pausePartialTick;
 
     @Nullable

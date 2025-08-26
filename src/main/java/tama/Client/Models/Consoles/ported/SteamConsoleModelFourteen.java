@@ -16,6 +16,7 @@ import net.tardis.mod.client.animations.AnimationHelper;
 import net.tardis.mod.client.models.IAnimatableTileModel;
 import net.tardis.mod.control.IncrementControl;
 import net.tardis.mod.control.datas.ControlData;
+import net.tardis.mod.control.datas.ControlDataBool;
 import net.tardis.mod.control.datas.ControlDataNone;
 import net.tardis.mod.misc.enums.DoorState;
 import net.tardis.mod.misc.enums.LandingType;
@@ -1690,9 +1691,10 @@ public class SteamConsoleModelFourteen<T extends ConsoleTile> extends Hierarchic
         Capabilities.getCap(Capabilities.TARDIS, Minecraft.getInstance().level).ifPresent(cap -> {
             ControlDataNone randomizer = cap.getControlDataOrCreate(ControlRegistry.RANDOMIZER.get());
             ControlData<?> door = cap.getControlDataOrCreate(ControlRegistry.DOOR.get());
+            ControlDataBool handBrake = cap.getControlDataOrCreate(ControlRegistry.HANDBRAKE.get());
             boolean Door = cap.getInteriorManager().getDoorHandler().getDoorState() == DoorState.CLOSED;
 
-            this.lever_f1_rotate_z.zRot = (float)Math.toRadians(cap.getControlDataOrCreate(ControlRegistry.HANDBRAKE.get()).get() ? 20 : 170);
+            this.lever_f1_rotate_z.zRot = (float)Math.toRadians(handBrake.get() ? 20 : 170);
 
 //            this.globe_rotate_y.yRot = (float)Math.toRadians((randomizer.getAnimationPercent(randomizer.animationStartTime, 20) * 720) + 45);
             this.globe_rotate_y.yRot = AnimationHelper.getRotationBaseOnState(randomizer, 0, 720, ageInTicks, 20, false);

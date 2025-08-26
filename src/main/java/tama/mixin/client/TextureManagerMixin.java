@@ -1,5 +1,5 @@
 /* (C) TAMA Studios 2025 */
-package tama.mixin;
+package tama.mixin.client;
 
 import static tama.aseoha.EntityTickRateLimit;
 

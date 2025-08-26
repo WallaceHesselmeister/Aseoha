@@ -11,9 +11,9 @@
     "SonicPortMixin"
   ],
   "client": [
-    "LevelRendererMixin",
-    "MinecraftMixin",
-    "TextureManagerMixin",
+    "client.LevelRendererMixin",
+    "client.MinecraftMixin",
+    "client.TextureManagerMixin",
     "client.DoorRendererMixin",
     "client.ControlEntityRendererMixin",
     "client.ClientLevelMixin",
