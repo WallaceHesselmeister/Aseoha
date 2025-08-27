@@ -8,12 +8,15 @@ import net.minecraft.client.model.geom.ModelLayerLocation;
 import net.minecraft.client.model.geom.ModelPart;
 import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
+import net.minecraft.core.Direction;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.Entity;
 import net.tardis.mod.blockentities.consoles.ConsoleTile;
 import net.tardis.mod.cap.Capabilities;
+import net.tardis.mod.client.animations.AnimationHelper;
 import net.tardis.mod.client.models.IAnimatableTileModel;
 import net.tardis.mod.control.IncrementControl;
+import net.tardis.mod.control.datas.*;
 import net.tardis.mod.misc.enums.DoorState;
 import net.tardis.mod.misc.enums.LandingType;
 import net.tardis.mod.registry.ControlRegistry;
@@ -1872,36 +1875,48 @@ public class SteamConsoleModelSixteen<T extends ConsoleTile> extends Hierarchica
     public void setupAnimations(ConsoleTile tile, float ageInTicks) {
         this.root().getAllParts().forEach(ModelPart::resetPose);
         Capabilities.getCap(Capabilities.TARDIS, Minecraft.getInstance().level).ifPresent(cap -> {
-            this.lever_f1_rotate_z.zRot = (float)Math.toRadians(cap.getControlDataOrCreate(ControlRegistry.HANDBRAKE.get()).get() ? 20 : 170);
+            ControlDataNone randomizer = cap.getControlDataOrCreate(ControlRegistry.RANDOMIZER.get());
+            ControlData<?> door = cap.getControlDataOrCreate(ControlRegistry.DOOR.get());
+            ControlDataBool handBrake = cap.getControlDataOrCreate(ControlRegistry.HANDBRAKE.get());
+            ControlDataEnum<Direction> facing = cap.getControlDataOrCreate(ControlRegistry.FACING.get());
+            ControlDataFloat throttle = cap.getControlDataOrCreate(ControlRegistry.THROTTLE.get());
+            ControlData<?> telepathics = cap.getControlDataOrCreate(ControlRegistry.TELEPATHICS.get());
+            ControlData<?> comms = cap.getControlDataOrCreate(ControlRegistry.COMMUNICATOR.get());
+            ControlDataEnum<LandingType> verticalLandingType = cap.getControlDataOrCreate(ControlRegistry.LANDING_TYPE.get());
+            ControlDataInt incMod = cap.getControlDataOrCreate(ControlRegistry.INCREMENT.get());
 
-            this.globe_rotate_y.zRot = (float)Math.toRadians((cap.getControlDataOrCreate(ControlRegistry.RANDOMIZER.get()).animationStartTime * 720) + 45);
+            this.lever_f1_rotate_z.zRot = (float)Math.toRadians(handBrake.get() ? 20 : 170);
 
-            float facingRot = cap.getControlDataOrCreate(ControlRegistry.FACING.get()).get().toYRot();
-            facingRot -= 360.0F * (cap.getControlDataOrCreate(ControlRegistry.FACING.get()).get().toYRot());
+//            this.globe_rotate_y.yRot = (float)Math.toRadians((randomizer.getAnimationPercent(randomizer.animationStartTime, 20) * 720) + 45);
+            this.globe_rotate_y.yRot = AnimationHelper.getRotationBaseOnState(randomizer, 0, 720, ageInTicks, 20, false);
+
+            float facingRot = facing.get().toYRot();
+            facingRot -= 360.0F * (facingRot);
             this.rotation_crank_rotate_y.yRot = (float)Math.toRadians(facingRot);
 
-            float doorRot = cap.getInteriorManager().getDoorHandler().getDoorState() == DoorState.CLOSED ? 0 : 180;
-            doorRot += 180;
-            this.door_crank_rotate_y.yRot = (float)Math.toRadians(doorRot);
+            this.door_crank_rotate_y.yRot = AnimationHelper.getRotationBaseOnState(door, 0, 720, ageInTicks, 20, false);
 
-            this.needle_a1_rotate_y.yRot = (float)Math.toRadians(cap.getSubsystem(SubsystemRegistry.STABILIZERS.get()).get().isActivated() ? 45 : -45);
+//            this.door_crank_rotate_y.yRot = (float)Math.toRadians(doorRot);
 
-            float throttleAmount = cap.getControlDataOrCreate(ControlRegistry.THROTTLE.get()).get();
-            this.leaver_b1_rotate_z.zRot = (float)Math.toRadians(80 - (throttleAmount * 150));
+            cap.getSubsystem(SubsystemRegistry.STABILIZERS.get()).ifPresent(stabs ->
+                    this.needle_a1_rotate_y.yRot = (float)Math.toRadians(stabs.isActivated() ? 45 : -45)
+            );
 
-            this.cord_slider_rotate_z.zRot = (float) Math.toRadians(4 + (-9 * (cap.getControlDataOrCreate(ControlRegistry.INCREMENT.get()).get() / (float)IncrementControl.VALUES.length)));
+            this.leaver_b1_rotate_z.zRot = (float)Math.toRadians(80 - (throttle.get() * 150));
 
-            float rotMiddle = cap.getControlDataOrCreate(ControlRegistry.LANDING_TYPE.get()).get() == LandingType.UP ? -1 : 10;
-            float rotSide = cap.getControlDataOrCreate(ControlRegistry.LANDING_TYPE.get()).get() == LandingType.UP ? 10 : -1;
+            this.cord_slider_rotate_z.zRot = (float)Math.toRadians(4 + (-9 * (incMod.get() / (float) IncrementControl.VALUES.length)));
 
-            this.sliderknob_c3_rotate_z.zRot = this.sliderknob_c1_rotate_z.zRot = (float)Math.toRadians(rotSide);
-            this.sliderknob_c2_rotate_z.zRot = (float) Math.toRadians(rotMiddle);
+            float landTypeRotMiddle = verticalLandingType.get() == LandingType.UP ? -1 : 10;
+            float landTypeRotSide = verticalLandingType.get() == LandingType.UP ? 10 : -1;
 
-            this.refueler_button_rotate_z.zRot = cap.getControlDataOrCreate(ControlRegistry.REFUELER.get()).get() ? 0.0f : (float) 0.0;
+            this.sliderknob_c3_rotate_z.zRot = this.sliderknob_c1_rotate_z.x = (float)Math.toRadians(landTypeRotSide);
+            this.sliderknob_c2_rotate_z.zRot = (float)Math.toRadians(landTypeRotMiddle);
 
-            this.radio_needle_rotate_y.zRot = (float)Math.toRadians(11.5 - Math.cos(cap.getControlDataOrCreate(ControlRegistry.COMMUNICATOR.get()).animationStartTime * 0.1) * 15);
+            this.refuler.zRot = cap.getControlDataOrCreate(ControlRegistry.REFUELER.get()).get() ? 0.0f : (float) 0.0;
 
-            this.scrying_glass_frame_e1.yRot = (float)Math.toRadians(-80 + Math.cos(cap.getControlDataOrCreate(ControlRegistry.TELEPATHICS.get()).animationStartTime * 0.5) * -20);
+            this.radio_needle_rotate_y.yRot = (float)Math.toRadians(11.5 - Math.cos(comms.animationStartTime * 0.1) * 15);
+
+//            this.scrying_glass.yRot = (float)Math.toRadians(-80 + Math.cos(telepathics.animationStartTime * 0.5) * -20);
 
             float timeToRotate = 10;
             float loopTime = 60;
@@ -1913,7 +1928,6 @@ public class SteamConsoleModelSixteen<T extends ConsoleTile> extends Hierarchica
 
                 this.hourflip_rotate_x.xRot = (float)Math.toRadians(angle);
             }
-
         });
 
     }
