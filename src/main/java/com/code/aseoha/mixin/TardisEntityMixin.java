@@ -16,6 +16,7 @@ import net.minecraft.network.play.server.SEntityVelocityPacket;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ActionResultType;
 import net.minecraft.util.Hand;
+import net.minecraft.util.RegistryKey;
 import net.minecraft.util.concurrent.TickDelayedTask;
 import net.minecraft.util.math.vector.Vector3d;
 import net.minecraft.world.World;
@@ -118,11 +119,25 @@ public abstract class TardisEntityMixin extends Entity implements IHelpWithTardi
             player.level.getServer().tell(new TickDelayedTask(1, () -> {
                 double x = 0, y = TardisHelper.TARDIS_POS.getY(), z = 0;
                 ConsoleTile console = this.getConsole();
-                
-                // Get interior dimension from console
                 ServerWorld ws = null;
+                
+                // Get interior dimension from console using proper method
                 if (console != null) {
-                    ws = ((IHelpWithConsole) console).Aseoha$GetInteriorDimension().getServer().getLevel(((IHelpWithConsole) console).Aseoha$GetInteriorDimension().dimension());
+                    // Get the interior dimension key if available
+                    if (console instanceof IHelpWithConsole) {
+                        RegistryKey<World> dimensionKey = ((IHelpWithConsole) console).Aseoha$GetInteriorDimensionKey();
+                        if (dimensionKey != null) {
+                            ws = this.level.getServer().getLevel(dimensionKey);
+                        }
+                    }
+                    
+                    // Fallback: get interior dimension directly if key not available
+                    if (ws == null) {
+                        World interiorWorld = ((IHelpWithConsole) console).Aseoha$GetInteriorDimension();
+                        if (interiorWorld instanceof ServerWorld) {
+                            ws = (ServerWorld) interiorWorld;
+                        }
+                    }
                 }
                 
                 //Get Console from interior dimension if not already available
