@@ -1,6 +1,7 @@
 /* (C) TAMA Studios 2025 */
 package tama;
 
+import lombok.Getter;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;
@@ -11,6 +12,7 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.state.BlockState;
 import net.tardis.mod.block.RoundelBlock;
+import org.jetbrains.annotations.NotNull;
 
 public class RoundelRemote extends Item {
     Range range = Range.SHORT;
@@ -21,7 +23,7 @@ public class RoundelRemote extends Item {
     }
 
     @Override
-    public InteractionResultHolder<ItemStack> use(Level level, Player player, InteractionHand p_41434_) {
+    public @NotNull InteractionResultHolder<ItemStack> use(@NotNull Level level, @NotNull Player player, InteractionHand p_41434_) {
         if (p_41434_.equals(InteractionHand.OFF_HAND) || level.isClientSide)
             return InteractionResultHolder.pass(player.getItemInHand(p_41434_));
         if (player.isCrouching()) {
@@ -67,6 +69,7 @@ public class RoundelRemote extends Item {
         };
     }
 
+    @Getter
     public enum Range {
         SHORT(10),
         MEDIUM(20),
@@ -78,10 +81,6 @@ public class RoundelRemote extends Item {
 
         Range(int range) {
             this.range = range;
-        }
-
-        public int getRange() {
-            return range;
         }
     }
 }

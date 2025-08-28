@@ -2,7 +2,7 @@
 package tama.Misc;
 
 public interface IHelpWithTime {
-    public int getTime();
+    public int aseoha$getTime();
 
-    public void setTime(int time);
+    public void aseoha$setTime(int time);
 }

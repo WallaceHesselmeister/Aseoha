@@ -16,6 +16,7 @@ import net.tardis.mod.client.renderers.exteriors.ExteriorRenderer;
 import net.tardis.mod.entity.CarExteriorEntity;
 import net.tardis.mod.misc.enums.MatterState;
 import org.jetbrains.annotations.NotNull;
+import tama.Misc.CommonRotations;
 import tama.aseoha;
 
 @OnlyIn(Dist.CLIENT)
@@ -41,7 +42,7 @@ public class DeLoreanExteriorRenderer<T extends CarExteriorEntity, M extends Hie
             @NotNull MultiBufferSource pBuffer,
             int pPackedLight) {
         pose.pushPose();
-        pose.mulPose(Axis.XP.rotationDegrees(180.0F));
+        pose.mulPose(Axis.XP.rotationDegrees(0xB4)); // Rot 180
         pose.scale(1.3f, 1.3f, 1.3f);
         pose.mulPose(Axis.YP.rotationDegrees(pEntityYaw));
         pose.translate(0.0, 0, -1);

@@ -30,10 +30,13 @@ import tama.Misc.TimerIMPL;
 
 @Mixin(ClientLevel.class)
 public abstract class ClientLevelMixin extends Level implements IHelpWithTime {
-    private int time;
-    private int normalTime;
+    @Unique
+    private int aseoha$time;
+    @Unique
+    private int aseoha$normalTime;
 
-    private final TimerIMPL dimensionTimer = new TimerIMPL(20.0F, 0L);
+    @Unique
+    private final TimerIMPL aseoha$dimensionTimer = new TimerIMPL(20.0F, 0L);
 
     protected ClientLevelMixin(
             WritableLevelData p_220352_,
@@ -50,39 +53,42 @@ public abstract class ClientLevelMixin extends Level implements IHelpWithTime {
 
     @Inject(at = @At("TAIL"), method = "tick", cancellable = true)
     private void tick(BooleanSupplier supplier, CallbackInfo ci) {
-        if (TickrateManager.hasDimensionTimer(this.dimension())
-                && TickrateManager.isExcluded(Minecraft.getInstance().player)) {
-            TimerIMPL timer = TickrateManager.getDimensionTimer(this.dimension());
-            this.time = timer.advanceTime(Util.getMillis());
+        if (TickrateManager.hasDimensionTimer(this.dimension())) {
+            assert Minecraft.getInstance().player != null;
+            if (TickrateManager.isExcluded(Minecraft.getInstance().player)) {
+                TimerIMPL timer = TickrateManager.getDimensionTimer(this.dimension());
+                this.aseoha$time = timer.advanceTime(Util.getMillis());
+            }
         }
-        this.normalTime = this.dimensionTimer.advanceTime(Util.getMillis());
+        this.aseoha$normalTime = this.aseoha$dimensionTimer.advanceTime(Util.getMillis());
     }
 
     @Inject(at = @At("HEAD"), method = "tickNonPassenger", cancellable = true)
-    private void tickNonPassenger(Entity p_104640_, CallbackInfo ci) {
-        if (p_104640_ instanceof Player) return;
+    private void tickNonPassenger(Entity entity, CallbackInfo ci) {
+        if (entity instanceof Player) return;
         Minecraft mc = Minecraft.getInstance();
-        if (TickrateManager.hasTimer(p_104640_)) {
+        if (TickrateManager.hasTimer(entity)) {
             ci.cancel();
-            TimerIMPL timer = TickrateManager.getTimer(p_104640_);
+            TimerIMPL timer = TickrateManager.getTimer(entity);
             int j = timer.advanceTime(Util.getMillis());
-            for (int k = 0; k < Math.min(EntityTickRateLimit ? 500 : 10, j); ++k) {
-                this.tickEntities(p_104640_);
+            for (int k = 0; k < Math.min(EntityTickRateLimit ? 0x1F4 : 0xA, j); ++k) {
+                this.aseoha$tickEntities(entity);
             }
         } else if (TickrateManager.hasDimensionTimer(this.dimension())) {
-            if (!TickrateManager.isExcluded(p_104640_)) {
+            if (!TickrateManager.isExcluded(entity)) {
+                assert mc.player != null;
                 if (TickrateManager.isExcluded(mc.player)) {
                     ci.cancel();
-                    int j = this.time;
-                    for (int k = 0; k < Math.min(EntityTickRateLimit ? 500 : 10, j); ++k) {
-                        this.tickEntities(p_104640_);
+                    int j = this.aseoha$time;
+                    for (int k = 0; k < Math.min(EntityTickRateLimit ? 0x1F4 : 0xA, j); ++k) {
+                        this.aseoha$tickEntities(entity);
                     }
                 }
             } else {
                 ci.cancel();
-                int j = this.normalTime;
-                for (int k = 0; k < Math.min(EntityTickRateLimit ? 500 : 10, j); ++k) {
-                    this.tickEntities(p_104640_);
+                int j = this.aseoha$normalTime;
+                for (int k = 0; k < Math.min(EntityTickRateLimit ? 0x1F4 : 0xA, j); ++k) {
+                    this.aseoha$tickEntities(entity);
                 }
             }
         }
@@ -90,31 +96,29 @@ public abstract class ClientLevelMixin extends Level implements IHelpWithTime {
 
     @SuppressWarnings("deprecation")
     @Unique
-    private void tickEntities(Entity p_104640_) {
-        p_104640_.setOldPosAndRot();
-        ++p_104640_.tickCount;
-        this.getProfiler().push(() -> {
-            return BuiltInRegistries.ENTITY_TYPE.getKey(p_104640_.getType()).toString();
-        });
-        if (p_104640_.canUpdate()) {
-            p_104640_.tick();
+    private void aseoha$tickEntities(Entity entity) {
+        entity.setOldPosAndRot();
+        ++entity.tickCount;
+        this.getProfiler().push(() -> BuiltInRegistries.ENTITY_TYPE.getKey(entity.getType()).toString());
+        if (entity.canUpdate()) {
+            entity.tick();
         }
         this.getProfiler().pop();
-        for (Entity entity : p_104640_.getPassengers()) {
-            this.tickPassenger(p_104640_, entity);
+        for (Entity entity1 : entity.getPassengers()) {
+            this.tickPassenger(entity, entity1);
         }
     }
 
     @Shadow
-    private void tickPassenger(Entity p_104642_, Entity p_104643_) {}
+    private void tickPassenger(Entity entity, Entity entity1) {}
 
     @Override
-    public int getTime() {
-        return this.time;
+    public int aseoha$getTime() {
+        return this.aseoha$time;
     }
 
     @Override
-    public void setTime(int time) {
-        this.time = time;
+    public void aseoha$setTime(int time) {
+        this.aseoha$time = time;
     }
 }

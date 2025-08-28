@@ -60,8 +60,8 @@ public class ParticleEngineMixin {
         if (TickrateManager.hasDimensionTimer(this.level.dimension())
                 && TickrateManager.isExcluded(Minecraft.getInstance().player)) {
             ci.cancel();
-            int j = ((IHelpWithTime) this.level).getTime();
-            for (int k = 0; k < Math.min(EntityTickRateLimit ? 500 : 10, j); ++k) {
+            int j = ((IHelpWithTime) this.level).aseoha$getTime();
+            for (int k = 0; k < Math.min(EntityTickRateLimit ? 0x1F4 : 0xA, j); ++k) {
                 this.particles.forEach((p_288249_, p_288250_) -> {
                     this.level.getProfiler().push(p_288249_.toString());
                     this.tickParticleList(p_288250_);
@@ -102,7 +102,7 @@ public class ParticleEngineMixin {
                     ci.cancel();
                     this.aseoha$timer.setTickrate(pair.getRight());
                     int j = this.aseoha$timer.advanceTime(Util.getMillis());
-                    for (int k = 0; k < Math.min(EntityTickRateLimit ? 500 : 10, j); ++k) {
+                    for (int k = 0; k < Math.min(EntityTickRateLimit ? 0x1F4 : 0xA, j); ++k) {
                         this.tickParticle(particle);
                     }
                     if (!particle.isAlive()) {

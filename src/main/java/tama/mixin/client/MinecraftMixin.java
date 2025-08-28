@@ -19,7 +19,7 @@ import tama.Misc.TickrateManager;
 @Mixin(Minecraft.class)
 public class MinecraftMixin {
 
-    @Shadow(remap = false)
+    @Shadow
     private float pausePartialTick;
 
     @Nullable
@@ -64,7 +64,7 @@ public class MinecraftMixin {
                     && !TickrateManager.isExcluded(this.player)) {
                 int j = TickrateManager.getDimensionTimer(this.player.level().dimension())
                         .advanceTime(l);
-                ((IHelpWithTime) this.player.level()).setTime(j);
+                ((IHelpWithTime) this.player.level()).aseoha$setTime(j);
                 return j;
             } else {
                 return instance.advanceTime(l);

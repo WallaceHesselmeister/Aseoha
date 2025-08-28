@@ -74,14 +74,15 @@ public abstract class ServerLevelMixin extends Level {
         }
     }
 
-    @Inject(at = @At("HEAD"), method = "tick", cancellable = true)
+    @Inject(at = @At("HEAD"), method = "tick")
     private void tick(BooleanSupplier supplier, CallbackInfo ci) {
         if (TickrateManager.hasDimensionTimer(this.dimension())) {
             this.aseoha$tickDimensionTimer();
         }
     }
 
-    public void tickEntityTimer(TimerIMPL timer, Entity entity) {
+    @Unique
+    public void aseoha$tickEntityTimer(TimerIMPL timer, Entity entity) {
         float tickrate = timer.tickrate;
         if (tickrate < 0.0F) {
             tickrate = 0.0F;
@@ -120,7 +121,7 @@ public abstract class ServerLevelMixin extends Level {
         if (TickrateManager.hasTimer(p_8648_)) {
             ci.cancel();
             TimerIMPL timer = TickrateManager.getTimer(p_8648_);
-            this.tickEntityTimer(timer, p_8648_);
+            this.aseoha$tickEntityTimer(timer, p_8648_);
             if (timer.canTick) {
                 int tick = timer.pendingTicks;
                 for (int i = 0; i < tick; i++) {
@@ -145,9 +146,7 @@ public abstract class ServerLevelMixin extends Level {
         p_8648_.setOldPosAndRot();
         ProfilerFiller profilerfiller = this.getProfiler();
         ++p_8648_.tickCount;
-        this.getProfiler().push(() -> {
-            return BuiltInRegistries.ENTITY_TYPE.getKey(p_8648_.getType()).toString();
-        });
+        this.getProfiler().push(() -> BuiltInRegistries.ENTITY_TYPE.getKey(p_8648_.getType()).toString());
         profilerfiller.incrementCounter("tickNonPassenger");
         p_8648_.tick();
         this.getProfiler().pop();

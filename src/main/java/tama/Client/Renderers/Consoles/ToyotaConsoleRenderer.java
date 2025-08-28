@@ -51,8 +51,8 @@ public class ToyotaConsoleRenderer extends ConsoleRenderer<ConsoleTile, ToyotaCo
         model.root().translateAndRotate(pose);
         AnimationHelper.translateToCenter(
                 pose, AnimationHelper.translateTo(pose, model.root(), "components/north_east/bone180/monitor_glow"));
-        pose.mulPose(Axis.YN.rotationDegrees(180));
-        pose.mulPose(Axis.XN.rotationDegrees(90));
+        pose.mulPose(Axis.YN.rotationDegrees(0xB4)); // Rot 180
+        pose.mulPose(Axis.XN.rotationDegrees(0x5A)); // Rot 90
         pose.scale(2f, 2f, 2f);
         pose.translate(-(text.width / 2), -(text.height / 2), 0);
         pose.translate(0.05, -0.05, 0.476);

@@ -1,6 +1,7 @@
 /* (C) TAMA Studios 2025 */
 package tama.Events;
 
+import lombok.Getter;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.item.ItemStack;
 import net.minecraftforge.eventbus.api.Cancelable;
@@ -22,6 +23,7 @@ public class ControlEvent extends Event {
     @Cancelable
     public static class SonicInsertEvent extends ControlEvent {
 
+        @Getter
         public final Entity entity;
 
         public final ItemStack inserted;
@@ -36,8 +38,5 @@ public class ControlEvent extends Event {
             return this.inserted;
         }
 
-        public Entity getEntity() {
-            return this.entity;
-        }
     }
 }

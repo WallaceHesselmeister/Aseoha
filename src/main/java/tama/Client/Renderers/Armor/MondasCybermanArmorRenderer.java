@@ -28,6 +28,11 @@ public class MondasCybermanArmorRenderer<T extends MondasCybermanArmorModel> {
     private static final ModelPart EMPTY_PART = new ModelPart(Collections.emptyList(), Collections.emptyMap());
 
     public ModelPart makeArmorParts(EquipmentSlot slot) {
+        float left = model.LeftLeg.xRot;
+        float right = model.RightLeg.xRot;
+        model.LeftLeg.xRot = 90;
+        model.RightLeg.xRot = left;
+
         return new ModelPart(
                 Collections.emptyList(),
                 Map.of(

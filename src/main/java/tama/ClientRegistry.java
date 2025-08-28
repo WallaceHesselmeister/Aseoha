@@ -245,14 +245,14 @@ public class ClientRegistry {
 
         event.registerBlockEntityRenderer(
                 TileRegistry.STEAM_FOURTEEN_CONSOLE_TILE.get(),
-                context -> new BasicConsoleRenderer<SteamConsoleModelFourteen<SteamConsoleTile>>(
+                context -> new BasicConsoleRenderer<SteamConsoleModelFourteen<SteamConsoleTile<?>>>(
                         context,
                         new SteamConsoleModelFourteen<>(context.bakeLayer(SteamConsoleModelFourteen.LAYER_LOCATION)),
                         new ResourceLocation(MODID, "textures/consoles/steam.png")));
 
         event.registerBlockEntityRenderer(
                 TileRegistry.STEAM_SIXTEEN_CONSOLE_TILE.get(),
-                context -> new BasicConsoleRenderer<SteamConsoleModelSixteen<SteamConsoleTile>>(
+                context -> new BasicConsoleRenderer<SteamConsoleModelSixteen<SteamConsoleTile<?>>>(
                         context,
                         new SteamConsoleModelSixteen<>(context.bakeLayer(SteamConsoleModelSixteen.LAYER_LOCATION)),
                         new ResourceLocation(MODID, "textures/consoles/steam.png")));

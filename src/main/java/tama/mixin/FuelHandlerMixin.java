@@ -18,7 +18,7 @@ public abstract class FuelHandlerMixin {
 
     @Shadow(remap = false)
     @Final
-    private ITardisLevel tardis;
+    ITardisLevel tardis;
 
     @Shadow(remap = false)
     public abstract float calculateMPG();
@@ -27,7 +27,7 @@ public abstract class FuelHandlerMixin {
     public abstract float takeArtron(float artronToRecieve, boolean simulate);
 
     @Shadow(remap = false)
-    private float artron;
+    float artron;
 
     @Shadow(remap = false)
     public abstract float getMaxArtron();

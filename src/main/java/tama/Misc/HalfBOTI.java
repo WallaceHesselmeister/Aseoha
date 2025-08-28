@@ -33,6 +33,8 @@ public class HalfBOTI {
             int packedOverlay,
             CallbackInfo ci) {
 
+        if(true) return;
+
         RenderSystem.assertOnRenderThread();
         Minecraft mc = Minecraft.getInstance();
         Window window = mc.getWindow();
@@ -43,6 +45,7 @@ public class HalfBOTI {
         fb.clear(Minecraft.ON_OSX); // clears color + depth (+ stencil if present)
 
         PoseStack vortexPose = new PoseStack();
+        assert mc.player != null;
         renderVortexOffscreen(mc.level, mc.player.tickCount, mc.getPartialTick(), vortexPose);
 
         // Back to main framebuffer (world is already rendered at this point)

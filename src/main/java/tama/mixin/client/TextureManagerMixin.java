@@ -27,8 +27,8 @@ public class TextureManagerMixin {
         Minecraft mc = Minecraft.getInstance();
         if (TickrateManager.hasDimensionTimer(mc.level.dimension()) && TickrateManager.isExcluded(mc.player)) {
             ci.cancel();
-            int j = ((IHelpWithTime) mc.level).getTime();
-            for (int k = 0; k < Math.min(EntityTickRateLimit ? 500 : 10, j); ++k) {
+            int j = ((IHelpWithTime) mc.level).aseoha$getTime();
+            for (int k = 0; k < Math.min(EntityTickRateLimit ? 0x1F4 : 0xA, j); ++k) {
                 for (Tickable tickable : this.tickableTextures) {
                     tickable.tick();
                 }

@@ -65,7 +65,7 @@ public class BrackolinConsoleRenderer
                 AnimationHelper.translateTo(
                         pose, model.root(), "Console/BaseConsole/PanelBase/P5/PanelBaseSlant5/Monitor"));
         pose.translate(-text.width / 2, -text.height / 2 + 0.05, .07);
-        pose.mulPose(Axis.XN.rotationDegrees(90));
+        pose.mulPose(Axis.XN.rotationDegrees(0x5A)); // Rot 90
         text.renderText(BaseMonitorTile.gatherWorldText(level), pose, source);
         pose.popPose();
     }
