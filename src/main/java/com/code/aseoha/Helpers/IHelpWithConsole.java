@@ -2,10 +2,13 @@ package com.code.aseoha.Helpers;
 
 import com.code.aseoha.tileentities.blocks.EOHLinkTile;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.util.RegistryKey;
 import net.minecraft.world.World;
 import net.tardis.mod.entity.TardisEntity;
 import net.tardis.mod.tileentities.ConsoleTile;
 import net.tardis.mod.tileentities.exteriors.ExteriorTile;
+
+import java.util.UUID;
 
 public interface IHelpWithConsole {
     //    List<RegistryKey<World>> getAvailable();
@@ -72,4 +75,17 @@ public interface IHelpWithConsole {
     void Aseoha$SetPilot(PlayerEntity player);
 
     PlayerEntity Aseoha$GetPilot();
+    
+    // Console/Exterior ID management
+    UUID Aseoha$GetConsoleId();
+    
+    void Aseoha$SetConsoleId(UUID consoleId);
+    
+    UUID Aseoha$GetExteriorId();
+    
+    void Aseoha$SetExteriorId(UUID exteriorId);
+    
+    RegistryKey<World> Aseoha$GetInteriorDimensionKey();
+    
+    void Aseoha$SetInteriorDimensionKey(RegistryKey<World> dimensionKey);
 }

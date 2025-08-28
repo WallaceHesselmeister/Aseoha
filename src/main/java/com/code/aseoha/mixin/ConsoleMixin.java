@@ -18,11 +18,13 @@ import net.minecraft.tileentity.ITickableTileEntity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.tileentity.TileEntityType;
 import net.minecraft.util.RegistryKey;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.SoundEvent;
 import net.minecraft.util.SoundEvents;
 import net.minecraft.util.concurrent.TickDelayedTask;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.registry.Registry;
 import net.minecraft.world.World;
 import net.minecraft.world.server.ServerWorld;
 import net.minecraftforge.common.util.LazyOptional;
@@ -56,6 +58,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import java.util.Optional;
+import java.util.UUID;
 
 @Mixin(value = ConsoleTile.class)
 public abstract class ConsoleMixin extends TileEntity implements ITickableTileEntity, IHelpWithConsole {
@@ -184,6 +187,15 @@ public abstract class ConsoleMixin extends TileEntity implements ITickableTileEn
 
     @Unique
     private PlayerEntity Aseoha$Pilot;
+    
+    @Unique
+    private UUID Aseoha$ConsoleId;
+    
+    @Unique
+    private UUID Aseoha$ExteriorId;
+    
+    @Unique
+    private RegistryKey<World> Aseoha$InteriorDimensionKey;
 
     @Override
     public void Aseoha$SetPilot(PlayerEntity player) {
@@ -209,6 +221,14 @@ public abstract class ConsoleMixin extends TileEntity implements ITickableTileEn
             this.Aseoha$Maintenance = compound.getBoolean("maintenance");
         if (compound.contains("isomorphicShielding"))
             this.Aseoha$Isomorphic = compound.getBoolean("isomorphicShielding");
+            
+        // ID and dimension tracking
+        if (compound.contains("aseoha_console_id"))
+            this.Aseoha$ConsoleId = compound.getUUID("aseoha_console_id");
+        if (compound.contains("aseoha_exterior_id"))
+            this.Aseoha$ExteriorId = compound.getUUID("aseoha_exterior_id");
+        if (compound.contains("aseoha_interior_dimension_key"))
+            this.Aseoha$InteriorDimensionKey = RegistryKey.create(Registry.DIMENSION_REGISTRY, new ResourceLocation(compound.getString("aseoha_interior_dimension_key")));
 
         //Old versions of ASEOHA used an integer for the scale (I planned on variable size), check if this is a boolean, if not, convert the int to a bool
         if (compound.contains("exterior_size_scale")) {
@@ -233,6 +253,14 @@ public abstract class ConsoleMixin extends TileEntity implements ITickableTileEn
         compound.putBoolean("maintenance", this.Aseoha$Maintenance);
         compound.putBoolean("exterior_size_scale", this.Aseoha$ExteriorSize);
         compound.putBoolean("isomorphicShielding", this.Aseoha$Isomorphic);
+        
+        // Save ID and dimension tracking
+        if (this.Aseoha$ConsoleId != null)
+            compound.putUUID("aseoha_console_id", this.Aseoha$ConsoleId);
+        if (this.Aseoha$ExteriorId != null)
+            compound.putUUID("aseoha_exterior_id", this.Aseoha$ExteriorId);
+        if (this.Aseoha$InteriorDimensionKey != null)
+            compound.putString("aseoha_interior_dimension_key", this.Aseoha$InteriorDimensionKey.location().toString());
 //        if (this.Aseoha$Pilot == null) return;
 //        compound.putUUID("Aseoha$Pilot_UUID", this.Aseoha$Pilot.getUUID());
     }
@@ -573,6 +601,40 @@ public abstract class ConsoleMixin extends TileEntity implements ITickableTileEn
     @Override
     public void Aseoha$SetRealWorldFlight(boolean rwf) {
         this.Aseoha$RealWorldFlight = rwf;
+    }
+
+    // Console/Exterior ID management implementation
+    @Override
+    public UUID Aseoha$GetConsoleId() {
+        if (this.Aseoha$ConsoleId == null) {
+            this.Aseoha$ConsoleId = UUID.randomUUID();
+        }
+        return this.Aseoha$ConsoleId;
+    }
+
+    @Override
+    public void Aseoha$SetConsoleId(UUID consoleId) {
+        this.Aseoha$ConsoleId = consoleId;
+    }
+
+    @Override
+    public UUID Aseoha$GetExteriorId() {
+        return this.Aseoha$ExteriorId;
+    }
+
+    @Override
+    public void Aseoha$SetExteriorId(UUID exteriorId) {
+        this.Aseoha$ExteriorId = exteriorId;
+    }
+
+    @Override
+    public RegistryKey<World> Aseoha$GetInteriorDimensionKey() {
+        return this.Aseoha$InteriorDimensionKey;
+    }
+
+    @Override
+    public void Aseoha$SetInteriorDimensionKey(RegistryKey<World> dimensionKey) {
+        this.Aseoha$InteriorDimensionKey = dimensionKey;
     }
 
 //    private void setConsole(ConsoleTile console){

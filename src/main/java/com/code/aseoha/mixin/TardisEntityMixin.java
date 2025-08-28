@@ -117,43 +117,52 @@ public abstract class TardisEntityMixin extends Entity implements IHelpWithTardi
         if (!player.level.isClientSide) {
             player.level.getServer().tell(new TickDelayedTask(1, () -> {
                 double x = 0, y = TardisHelper.TARDIS_POS.getY(), z = 0;
-                ConsoleTile console = null;
-//                ServerWorld ws = Objects.requireNonNull(this.level.getServer()).getLevel(Objects.requireNonNull(Objects.requireNonNull(Objects.requireNonNull(this.getConsole().getLevel()).getServer()).getLevel(this.getConsole().getLevel().dimension())).dimension());
-
-                ServerWorld ws = ((IHelpWithConsole) console).Aseoha$GetInteriorDimension().getServer().getLevel(((IHelpWithConsole) console).Aseoha$GetInteriorDimension().dimension());//this.level.getServer().getLevel(((IHelpWithConsole) this.getConsole()).getInteriorDimension().dimension());
-                //Get Console
-                if (ws != null) {
+                ConsoleTile console = this.getConsole();
+                
+                // Get interior dimension from console
+                ServerWorld ws = null;
+                if (console != null) {
+                    ws = ((IHelpWithConsole) console).Aseoha$GetInteriorDimension().getServer().getLevel(((IHelpWithConsole) console).Aseoha$GetInteriorDimension().dimension());
+                }
+                
+                //Get Console from interior dimension if not already available
+                if (ws != null && console == null) {
                     TileEntity te = ws.getBlockEntity(TardisHelper.TARDIS_POS);
                     if (te instanceof ConsoleTile)
                         console = (ConsoleTile) te;
                 }
 
-                //If an interior door exists, put the player near it
-                DoorEntity door = console != null ? console.getDoor().orElse(null) : null;
+                // Only proceed if we have a valid console and world
+                if (console != null && ws != null) {
+                    //If an interior door exists, put the player near it
+                    DoorEntity door = console.getDoor().orElse(null);
 
-                float rotationYaw = door != null ? door.yRot : player.yRot;
+                    float rotationYaw = door != null ? door.yRot : player.yRot;
 
-                aseoha.LOGGER.info("test {}", player);
+                    aseoha.LOGGER.info("Teleporting player {} to TARDIS interior", player);
 
-                if (door != null)
-                    door.addEntityToTeleportImmuneList(player.getUUID());
+                    if (door != null)
+                        door.addEntityToTeleportImmuneList(player.getUUID());
 
-                WorldHelper.teleportEntities(player, ws, x, y, z, rotationYaw, player.xRot);
+                    WorldHelper.teleportEntities(player, ws, x, y, z, rotationYaw, player.xRot);
 
-                //Motion
+                    //Motion
+                    Vector3d oldMotion = player.getDeltaMovement();
+                    if (door != null) {
+                        Vector3d setMot = oldMotion.yRot(-(float) Math.toRadians(door.yRot));
 
-                Vector3d oldMotion = player.getDeltaMovement();
-                assert door != null;
-                Vector3d setMot = oldMotion.yRot(-(float) Math.toRadians(door.yRot));
-
-                this.level.getServer().tell(new TickDelayedTask(1, () -> {
-                    Entity ent = ws.getEntity(player.getUUID());
-                    if (ent != null)
-                        ent.moveTo(setMot);
-                    if (ent instanceof ServerPlayerEntity) {
-                        ((ServerPlayerEntity) ent).connection.send(new SEntityVelocityPacket(ent));
+                        this.level.getServer().tell(new TickDelayedTask(1, () -> {
+                            Entity ent = ws.getEntity(player.getUUID());
+                            if (ent != null)
+                                ent.moveTo(setMot);
+                            if (ent instanceof ServerPlayerEntity) {
+                                ((ServerPlayerEntity) ent).connection.send(new SEntityVelocityPacket(ent));
+                            }
+                        }));
                     }
-                }));
+                } else {
+                    aseoha.LOGGER.warn("Failed to teleport player to TARDIS interior - console: {}, world: {}", console, ws);
+                }
             }));
         }
         cir.setReturnValue(ActionResultType.FAIL);

@@ -25,6 +25,7 @@ import net.tardis.mod.tileentities.exteriors.ExteriorTile;
 import javax.annotation.Nonnull;
 import java.util.Iterator;
 import java.util.Objects;
+import java.util.UUID;
 
 public class TARDISHelper {
 //    public static void engineBooster(ConsoleTile consoleTile, EngineBoost engineBoost){
@@ -120,8 +121,26 @@ public class TARDISHelper {
                 tile.setCurrentLocation(world.dimension(), createPosition);
                 tile.setDestination(world.dimension(), createPosition);
                 tile.getExteriorType().place(tile, world.dimension(), placedPos);
-                tile.getExteriorType().getExteriorTile(tile).setInteriorDimensionKey(interiorDimension);
-                tile.getExteriorType().getExteriorTile(tile).setDoorState(EnumDoorState.CLOSED);
+                
+                // Fix dimensional logic and link console/exterior IDs
+                ExteriorTile exteriorTile = tile.getExteriorType().getExteriorTile(tile);
+                if (exteriorTile != null) {
+                    exteriorTile.setInteriorDimensionKey(interiorDimension);
+                    exteriorTile.setDoorState(EnumDoorState.CLOSED);
+                    
+                    // Link console and exterior with unique IDs
+                    if (tile instanceof IHelpWithConsole && exteriorTile instanceof IHelpWithExterior) {
+                        UUID consoleId = ((IHelpWithConsole) tile).Aseoha$GetConsoleId();
+                        UUID exteriorId = java.util.UUID.randomUUID();
+                        
+                        ((IHelpWithConsole) tile).Aseoha$SetExteriorId(exteriorId);
+                        ((IHelpWithConsole) tile).Aseoha$SetInteriorDimensionKey(interiorDimension.dimension());
+                        
+                        ((IHelpWithExterior) exteriorTile).Aseoha$SetExteriorId(exteriorId);
+                        ((IHelpWithExterior) exteriorTile).Aseoha$SetConsoleId(consoleId);
+                        ((IHelpWithExterior) exteriorTile).Aseoha$SetInteriorDimensionKey(interiorDimension.dimension());
+                    }
+                }
 
             });}
     }
@@ -164,5 +183,38 @@ public class TARDISHelper {
                 }
         }
         return ActionResult.fail(stack);
+    }
+    
+    /**
+     * Helper method to get console tile by ID for better dimensional linking
+     */
+    public static ConsoleTile getConsoleById(ServerWorld world, UUID consoleId) {
+        if (world == null || consoleId == null) return null;
+        
+        return TardisHelper.getConsoleInWorld(world).map(console -> {
+            if (console instanceof IHelpWithConsole) {
+                UUID tileConsoleId = ((IHelpWithConsole) console).Aseoha$GetConsoleId();
+                if (consoleId.equals(tileConsoleId)) {
+                    return console;
+                }
+            }
+            return null;
+        }).orElse(null);
+    }
+    
+    /**
+     * Helper method to get exterior tile by console ID for better dimensional linking  
+     */
+    public static ExteriorTile getExteriorByConsoleId(ConsoleTile console, UUID consoleId) {
+        if (console == null || consoleId == null) return null;
+        
+        ExteriorTile exterior = getExteriorTile(console);
+        if (exterior instanceof IHelpWithExterior) {
+            UUID exteriorConsoleId = ((IHelpWithExterior) exterior).Aseoha$GetConsoleId();
+            if (consoleId.equals(exteriorConsoleId)) {
+                return exterior;
+            }
+        }
+        return null;
     }
 }
