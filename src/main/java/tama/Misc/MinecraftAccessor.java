@@ -1,3 +1,4 @@
+/* (C) TAMA Studios 2025 */
 package tama.Misc;
 
 import net.minecraft.client.Minecraft;

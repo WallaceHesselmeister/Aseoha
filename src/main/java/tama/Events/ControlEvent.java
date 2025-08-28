@@ -37,6 +37,5 @@ public class ControlEvent extends Event {
         public ItemStack getItem() {
             return this.inserted;
         }
-
     }
 }

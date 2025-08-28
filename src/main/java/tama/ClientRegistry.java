@@ -31,7 +31,7 @@ import tama.Client.Renderers.Consoles.*;
 import tama.Client.Renderers.Exteriors.*;
 import tama.Items.AItems;
 import tama.Registries.Entities;
-import tama.TileEntities.Console.SteamConsoleTile;
+import tama.TileEntities.Console.BaseConsoleTile;
 import tama.TileEntities.ConsoleBlocks;
 import tama.TileEntities.ExteriorRegistry;
 import tama.TileEntities.TileRegistry;
@@ -61,14 +61,12 @@ public class ClientRegistry {
 
     @OnlyIn(Dist.CLIENT)
     public static void registerSpecialItemModels() {
-//        SpecialItemRenderer.register(new ModelHolder<>(
-//                (stack) -> stack.getItem()
-//                        == ForgeRegistries.ITEMS.getValue(AItems.MONDAS_CYBERMAN_BOOTS.getId()),
-//                (modelSet) -> new MondasCybermanArmorModel(modelSet.bakeLayer(MondasCybermanArmorModel.LAYER_LOCATION)),
-//                new ResourceLocation(MODID, "textures/armor/mondas_cyber_man.png")));
-
-
-
+        //        SpecialItemRenderer.register(new ModelHolder<>(
+        //                (stack) -> stack.getItem()
+        //                        == ForgeRegistries.ITEMS.getValue(AItems.MONDAS_CYBERMAN_BOOTS.getId()),
+        //                (modelSet) -> new
+        // MondasCybermanArmorModel(modelSet.bakeLayer(MondasCybermanArmorModel.LAYER_LOCATION)),
+        //                new ResourceLocation(MODID, "textures/armor/mondas_cyber_man.png")));
 
         SpecialItemRenderer.register(new ModelHolder<>(
                 (stack) -> stack.getItem()
@@ -79,13 +77,15 @@ public class ClientRegistry {
         SpecialItemRenderer.register(new ModelHolder<>(
                 (stack) -> stack.getItem()
                         == ForgeRegistries.ITEMS.getValue(ConsoleBlocks.STEAM_CONSOLE_BLOCK_FOURTEEN.getId()),
-                (modelSet) -> new SteamConsoleModelFourteen<>(modelSet.bakeLayer(SteamConsoleModelFourteen.LAYER_LOCATION)),
+                (modelSet) ->
+                        new SteamConsoleModelFourteen<>(modelSet.bakeLayer(SteamConsoleModelFourteen.LAYER_LOCATION)),
                 new ResourceLocation(MODID, "textures/consoles/steam.png")));
 
         SpecialItemRenderer.register(new ModelHolder<>(
                 (stack) -> stack.getItem()
                         == ForgeRegistries.ITEMS.getValue(ConsoleBlocks.STEAM_CONSOLE_BLOCK_SIXTEEN.getId()),
-                (modelSet) -> new SteamConsoleModelSixteen<>(modelSet.bakeLayer(SteamConsoleModelSixteen.LAYER_LOCATION)),
+                (modelSet) ->
+                        new SteamConsoleModelSixteen<>(modelSet.bakeLayer(SteamConsoleModelSixteen.LAYER_LOCATION)),
                 new ResourceLocation(MODID, "textures/consoles/steam.png")));
 
         SpecialItemRenderer.register(new ModelHolder<>(
@@ -192,6 +192,7 @@ public class ClientRegistry {
         event.registerLayerDefinition(CopperConsoleModel.LAYER_LOCATION, CopperConsoleModel::createBodyLayer);
         event.registerLayerDefinition(SteamConsoleModelSixteen.LAYER_LOCATION, SteamConsoleModelSixteen::createBodyLayer);
         event.registerLayerDefinition(SteamConsoleModelFourteen.LAYER_LOCATION, SteamConsoleModelFourteen::createBodyLayer);
+        event.registerLayerDefinition(BattleConsoleModel.LAYER_LOCATION, BattleConsoleModel::createBodyLayer);
         event.registerLayerDefinition(ToyotaConsoleModel.LAYER_LOCATION, ToyotaConsoleModel::createBodyLayer);
         event.registerLayerDefinition(CoralConsoleModel.LAYER_LOCATION, CoralConsoleModel::createBodyLayer);
         event.registerLayerDefinition(BrackolinConsoleModel.LAYER_LOCATION, BrackolinConsoleModel::createBodyLayer);
@@ -231,7 +232,7 @@ public class ClientRegistry {
 
         event.registerBlockEntityRenderer(
                 TileRegistry.HARTNELL_CONSOLE_TILE.get(),
-                context -> new HartnellConsoleRenderer(
+                context -> new BasicConsoleRenderer<HartnellConsoleModel<BaseConsoleTile<?>>>(
                         context,
                         new HartnellConsoleModel<>(context.bakeLayer(HartnellConsoleModel.LAYER_LOCATION)),
                         new ResourceLocation(MODID, "textures/consoles/hartnell.png")));
@@ -245,17 +246,24 @@ public class ClientRegistry {
 
         event.registerBlockEntityRenderer(
                 TileRegistry.STEAM_FOURTEEN_CONSOLE_TILE.get(),
-                context -> new BasicConsoleRenderer<SteamConsoleModelFourteen<SteamConsoleTile<?>>>(
+                context -> new BasicConsoleRenderer<SteamConsoleModelFourteen<BaseConsoleTile<?>>>(
                         context,
                         new SteamConsoleModelFourteen<>(context.bakeLayer(SteamConsoleModelFourteen.LAYER_LOCATION)),
                         new ResourceLocation(MODID, "textures/consoles/steam.png")));
 
         event.registerBlockEntityRenderer(
                 TileRegistry.STEAM_SIXTEEN_CONSOLE_TILE.get(),
-                context -> new BasicConsoleRenderer<SteamConsoleModelSixteen<SteamConsoleTile<?>>>(
+                context -> new BasicConsoleRenderer<SteamConsoleModelSixteen<BaseConsoleTile<?>>>(
                         context,
                         new SteamConsoleModelSixteen<>(context.bakeLayer(SteamConsoleModelSixteen.LAYER_LOCATION)),
                         new ResourceLocation(MODID, "textures/consoles/steam.png")));
+
+        event.registerBlockEntityRenderer(
+                TileRegistry.BATTLE_CONSOLE_TILE.get(),
+                context -> new BasicConsoleRenderer<BattleConsoleModel<BaseConsoleTile<?>>>(
+                        context,
+                        new BattleConsoleModel<>(context.bakeLayer(BattleConsoleModel.LAYER_LOCATION)),
+                        new ResourceLocation(MODID, "textures/consoles/battle.png")));
     }
 
     @SubscribeEvent

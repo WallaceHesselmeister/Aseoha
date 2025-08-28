@@ -1,3 +1,4 @@
+/* (C) TAMA Studios 2025 */
 package tama.Misc;
 
 import com.mojang.blaze3d.pipeline.RenderTarget;
@@ -33,7 +34,7 @@ public class HalfBOTI {
             int packedOverlay,
             CallbackInfo ci) {
 
-        if(true) return;
+        if (true) return;
 
         RenderSystem.assertOnRenderThread();
         Minecraft mc = Minecraft.getInstance();
@@ -75,7 +76,6 @@ public class HalfBOTI {
         GL11.glDisable(GL11.GL_STENCIL_TEST);
     }
 
-
     // ------------------------------
     // RENDER VORTEX OFFSCREEN
     // ------------------------------
@@ -103,28 +103,22 @@ public class HalfBOTI {
         if (positions == null || positions.length != segments) {
             positions = new Pair[segments];
             for (int i = 0; i < segments; ++i) {
-                positions[i] = new Pair<>(
-                        (float)(level.random.nextInt(12) - 6),
-                        (float)(level.random.nextInt(12) - 6)
-                );
+                positions[i] =
+                        new Pair<>((float) (level.random.nextInt(12) - 6), (float) (level.random.nextInt(12) - 6));
             }
         }
 
         for (int i = 0; i < positions.length; ++i) {
             positions[i] = new Pair<>(
-                    (float)Math.sin((Minecraft.getInstance().player.tickCount + partialTick) * 0.001 * i) * 10.0F,
-                    (float)Math.cos((Minecraft.getInstance().player.tickCount + partialTick) * 0.001 * i) * 10.0F
-            );
+                    (float) Math.sin((Minecraft.getInstance().player.tickCount + partialTick) * 0.001 * i) * 10.0F,
+                    (float) Math.cos((Minecraft.getInstance().player.tickCount + partialTick) * 0.001 * i) * 10.0F);
         }
 
         float lastX = 0f, lastY = 0f;
         int index = 0;
         for (int i = -(segments / 2); i < segments / 2; ++i) {
             Pair<Float, Float> offs = positions[index++];
-            renderCylinder(poseStack, builder, 30, 10,
-                    lastX, lastY,
-                    offs.getFirst(), offs.getSecond(),
-                    20 * i);
+            renderCylinder(poseStack, builder, 30, 10, lastX, lastY, offs.getFirst(), offs.getSecond(), 20 * i);
             lastX = offs.getFirst();
             lastY = offs.getSecond();
         }
@@ -135,28 +129,30 @@ public class HalfBOTI {
         BufferUploader.drawWithShader(builder.end());
     }
 
-
     // ------------------------------
     // RENDER CYLINDER (POSITION + TEX ONLY)
     // ------------------------------
-    public static void renderCylinder(PoseStack pose, BufferBuilder buffer,
-                                      int faces, int length,
-                                      float startX, float startY,
-                                      float endOffsetX, float endOffsetY,
-                                      int offsetZ) {
+    public static void renderCylinder(
+            PoseStack pose,
+            BufferBuilder buffer,
+            int faces,
+            int length,
+            float startX,
+            float startY,
+            float endOffsetX,
+            float endOffsetY,
+            int offsetZ) {
         float leg = 15F;
-        final float angle = 360.0F / (float)faces;
+        final float angle = 360.0F / (float) faces;
         Matrix4f mat = pose.last().pose();
 
         for (int f = 0; f < faces; ++f) {
-            final float rad = (float)Math.toRadians(angle * f);
-            final float endRad = (float)Math.toRadians((angle * f) + angle);
+            final float rad = (float) Math.toRadians(angle * f);
+            final float endRad = (float) Math.toRadians((angle * f) + angle);
 
-            final float x = (float)Math.sin(rad) * leg,
-                    y = (float)Math.cos(rad) * leg;
+            final float x = (float) Math.sin(rad) * leg, y = (float) Math.cos(rad) * leg;
 
-            final float endX = (float)Math.sin(endRad) * leg,
-                    endY = (float)Math.cos(endRad) * leg;
+            final float endX = (float) Math.sin(endRad) * leg, endY = (float) Math.cos(endRad) * leg;
 
             // write position + uv only (matching POSITION_TEX)
             buffer.vertex(mat, endOffsetX + x, endOffsetY + y, 10 + offsetZ)
@@ -168,15 +164,14 @@ public class HalfBOTI {
                     .endVertex();
 
             buffer.vertex(mat, endX + startX, endY + startY, -10 + offsetZ)
-                    .uv((float)Math.sin(Math.toRadians(angle)) * f, 1.0F)
+                    .uv((float) Math.sin(Math.toRadians(angle)) * f, 1.0F)
                     .endVertex();
 
             buffer.vertex(mat, endOffsetX + endX, endOffsetY + endY, 10 + offsetZ)
-                    .uv((float)Math.sin(Math.toRadians(angle)) * f, 0.0F)
+                    .uv((float) Math.sin(Math.toRadians(angle)) * f, 0.0F)
                     .endVertex();
         }
     }
-
 
     // ------------------------------
     // DRAW MASK FRAME
@@ -217,9 +212,9 @@ public class HalfBOTI {
 
         // Note: texture coordinates (0,0)-(1,1). If you see vertical flip, swap the V coords.
         b.vertex(-1.0F, -1.0F, 0.0F).uv(0.0F, 1.0F).endVertex();
-        b.vertex( 1.0F, -1.0F, 0.0F).uv(1.0F, 1.0F).endVertex();
-        b.vertex( 1.0F,  1.0F, 0.0F).uv(1.0F, 0.0F).endVertex();
-        b.vertex(-1.0F,  1.0F, 0.0F).uv(0.0F, 0.0F).endVertex();
+        b.vertex(1.0F, -1.0F, 0.0F).uv(1.0F, 1.0F).endVertex();
+        b.vertex(1.0F, 1.0F, 0.0F).uv(1.0F, 0.0F).endVertex();
+        b.vertex(-1.0F, 1.0F, 0.0F).uv(0.0F, 0.0F).endVertex();
 
         Tesselator.getInstance().end();
 
@@ -227,7 +222,6 @@ public class HalfBOTI {
         RenderSystem.disableBlend();
         RenderSystem.enableDepthTest();
     }
-
 
     // ------------------------------
     // GET / RESIZE OFFSCREEN TARGET

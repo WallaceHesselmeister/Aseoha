@@ -23,7 +23,8 @@ public class RoundelRemote extends Item {
     }
 
     @Override
-    public @NotNull InteractionResultHolder<ItemStack> use(@NotNull Level level, @NotNull Player player, InteractionHand p_41434_) {
+    public @NotNull InteractionResultHolder<ItemStack> use(
+            @NotNull Level level, @NotNull Player player, InteractionHand p_41434_) {
         if (p_41434_.equals(InteractionHand.OFF_HAND) || level.isClientSide)
             return InteractionResultHolder.pass(player.getItemInHand(p_41434_));
         if (player.isCrouching()) {

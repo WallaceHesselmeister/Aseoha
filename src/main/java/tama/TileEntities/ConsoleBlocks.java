@@ -22,10 +22,12 @@ public class ConsoleBlocks {
 
     public static final RegistryObject<ConsoleBlock> COPPER_CONSOLE_BLOCK =
             registerWithItemSpecial("console/copper", () -> new ConsoleBlock(TileRegistry.COPPER_CONSOLE_TILE));
-    public static final RegistryObject<ConsoleBlock> STEAM_CONSOLE_BLOCK_FOURTEEN =
-            registerWithItemSpecial("console/steam_fourteen", () -> new ConsoleBlock(TileRegistry.STEAM_FOURTEEN_CONSOLE_TILE));
-    public static final RegistryObject<ConsoleBlock> STEAM_CONSOLE_BLOCK_SIXTEEN =
-            registerWithItemSpecial("console/steam_sixteen", () -> new ConsoleBlock(TileRegistry.STEAM_SIXTEEN_CONSOLE_TILE));
+    public static final RegistryObject<ConsoleBlock> STEAM_CONSOLE_BLOCK_FOURTEEN = registerWithItemSpecial(
+            "console/steam_fourteen", () -> new ConsoleBlock(TileRegistry.STEAM_FOURTEEN_CONSOLE_TILE));
+    public static final RegistryObject<ConsoleBlock> STEAM_CONSOLE_BLOCK_SIXTEEN = registerWithItemSpecial(
+            "console/steam_sixteen", () -> new ConsoleBlock(TileRegistry.STEAM_SIXTEEN_CONSOLE_TILE));
+    public static final RegistryObject<ConsoleBlock> BATTLE_CONSOLE_BLOCK =
+            registerWithItemSpecial("console/battle", () -> new ConsoleBlock(TileRegistry.BATTLE_CONSOLE_TILE));
     public static final RegistryObject<ConsoleBlock> TOYOTA_CONSOLE_BLOCK =
             registerWithItemSpecial("console/toyota", () -> new ConsoleBlock(TileRegistry.TOYOTA_CONSOLE_TILE));
     public static final RegistryObject<ConsoleBlock> BRACKOLIN_CONSOLE_BLOCK =

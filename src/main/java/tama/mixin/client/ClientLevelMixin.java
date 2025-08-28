@@ -32,6 +32,7 @@ import tama.Misc.TimerIMPL;
 public abstract class ClientLevelMixin extends Level implements IHelpWithTime {
     @Unique
     private int aseoha$time;
+
     @Unique
     private int aseoha$normalTime;
 
@@ -99,7 +100,9 @@ public abstract class ClientLevelMixin extends Level implements IHelpWithTime {
     private void aseoha$tickEntities(Entity entity) {
         entity.setOldPosAndRot();
         ++entity.tickCount;
-        this.getProfiler().push(() -> BuiltInRegistries.ENTITY_TYPE.getKey(entity.getType()).toString());
+        this.getProfiler()
+                .push(() ->
+                        BuiltInRegistries.ENTITY_TYPE.getKey(entity.getType()).toString());
         if (entity.canUpdate()) {
             entity.tick();
         }

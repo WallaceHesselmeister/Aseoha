@@ -16,7 +16,6 @@ import net.tardis.mod.client.renderers.exteriors.ExteriorRenderer;
 import net.tardis.mod.entity.CarExteriorEntity;
 import net.tardis.mod.misc.enums.MatterState;
 import org.jetbrains.annotations.NotNull;
-import tama.Misc.CommonRotations;
 import tama.aseoha;
 
 @OnlyIn(Dist.CLIENT)

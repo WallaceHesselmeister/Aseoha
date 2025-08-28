@@ -166,9 +166,8 @@ public class AItems {
     public static final RegistryObject<ArmorItem> SCARF = ITEMS.register(
             "scarf", () -> new ScarfItem(ArmorMaterials.LEATHER, ArmorItem.Type.CHESTPLATE, new Item.Properties()));
 
-        public static final RegistryObject<Item> LAVA_CHICKEN_DISC = ITEMS.register(
-                "disc_lava_chicken",
-                () -> new LavaChickenDiscItem());
+    public static final RegistryObject<Item> LAVA_CHICKEN_DISC =
+            ITEMS.register("disc_lava_chicken", () -> new LavaChickenDiscItem());
 
     public static final RegistryObject<Item> HAMMER = ITEMS.register(
             "hammer",

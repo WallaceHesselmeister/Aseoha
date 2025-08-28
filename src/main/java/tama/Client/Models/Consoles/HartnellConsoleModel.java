@@ -17,10 +17,12 @@ import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.Entity;
+import net.tardis.mod.blockentities.consoles.ConsoleTile;
 import net.tardis.mod.cap.Capabilities;
 import net.tardis.mod.cap.level.ITardisLevel;
 import net.tardis.mod.client.animations.AnimationHelper;
 import net.tardis.mod.client.models.BaseTileHierarchicalModel;
+import net.tardis.mod.client.models.IAnimatableTileModel;
 import net.tardis.mod.client.models.consoles.IAdditionalConsoleRenderData;
 import net.tardis.mod.control.ControlType;
 import net.tardis.mod.control.datas.ControlDataBool;
@@ -30,7 +32,7 @@ import org.jetbrains.annotations.NotNull;
 import org.joml.Vector3f;
 import tama.TileEntities.Console.HartnellConsoleTile;
 
-public class HartnellConsoleModel<T extends HartnellConsoleTile> extends BaseTileHierarchicalModel<T>
+public class HartnellConsoleModel<T extends ConsoleTile> extends BaseTileHierarchicalModel<ConsoleTile>
         implements IAdditionalConsoleRenderData {
     // This layer location should be baked with EntityRendererProvider.Context in
     // the entity renderer
@@ -1773,7 +1775,7 @@ public class HartnellConsoleModel<T extends HartnellConsoleTile> extends BaseTil
     }
 
     @Override
-    public void setupAnimations(T t, float ageInTicks) {
+    public void setupAnimations(ConsoleTile t, float ageInTicks) {
         this.root().getAllParts().forEach(ModelPart::resetPose);
         Capabilities.getCap(Capabilities.TARDIS, Minecraft.getInstance().level).ifPresent(tardis -> {
             this.animate(t.rotorAnimationState, HartnellModelAnimation.ROTOR, ageInTicks);

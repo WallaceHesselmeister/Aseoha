@@ -146,7 +146,9 @@ public abstract class ServerLevelMixin extends Level {
         p_8648_.setOldPosAndRot();
         ProfilerFiller profilerfiller = this.getProfiler();
         ++p_8648_.tickCount;
-        this.getProfiler().push(() -> BuiltInRegistries.ENTITY_TYPE.getKey(p_8648_.getType()).toString());
+        this.getProfiler()
+                .push(() ->
+                        BuiltInRegistries.ENTITY_TYPE.getKey(p_8648_.getType()).toString());
         profilerfiller.incrementCounter("tickNonPassenger");
         p_8648_.tick();
         this.getProfiler().pop();

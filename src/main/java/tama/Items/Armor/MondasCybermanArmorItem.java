@@ -21,7 +21,7 @@ public class MondasCybermanArmorItem extends ModdedArmorItem {
     @Override
     protected ModelPart getRenderer(LivingEntity living, ItemStack stack, EquipmentSlot slot) {
         ModelPart renderer = new MondasCybermanArmorRenderer<>(
-                MondasCybermanArmorModel::createBodyLayer, MondasCybermanArmorModel::new)
+                        MondasCybermanArmorModel::createBodyLayer, MondasCybermanArmorModel::new)
                 .makeArmorParts(slot);
 
         return renderer;

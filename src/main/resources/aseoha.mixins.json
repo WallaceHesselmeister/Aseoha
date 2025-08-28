@@ -4,21 +4,22 @@
   "compatibilityLevel": "JAVA_17",
   "refmap": "aseoha.refmap.json",
   "mixins": [
-    "FuelHandlerMixin",
+    "ConsoleTileMixin",
     "EntityMixin",
-    "ServerLevelMixin",
+    "FuelHandlerMixin",
     "MonitorMixin",
+    "ServerLevelMixin",
     "SonicPortMixin"
   ],
   "client": [
+    "client.ClientLevelMixin",
+    "client.ControlEntityRendererMixin",
+    "client.DoorRendererMixin",
     "client.LevelRendererMixin",
     "client.MinecraftMixin",
-    "client.TextureManagerMixin",
-    "client.DoorRendererMixin",
-    "client.ControlEntityRendererMixin",
-    "client.ClientLevelMixin",
     "client.ParticleEngineMixin",
-    "client.TextOptionMixin"
+    "client.TextOptionMixin",
+    "client.TextureManagerMixin"
   ],
   "minVersion": "0.8"
 }
