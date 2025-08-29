@@ -19,6 +19,7 @@ import net.tardis.mod.cap.Capabilities;
 import net.tardis.mod.client.models.BaseTileHierarchicalModel;
 import net.tardis.mod.client.models.consoles.IAdditionalConsoleRenderData;
 import net.tardis.mod.control.ControlType;
+import net.tardis.mod.registry.ControlRegistry;
 import tama.Misc.IHelpWithConsole;
 import tama.aseoha;
 
@@ -898,6 +899,12 @@ public class BattleConsoleModel<T extends ConsoleTile> extends BaseTileHierarchi
         this.animate(tile.rotorAnimationState, BattleConsoleAnimations.FLIGHT, ageInTicks);
 //        ((IHelpWithConsole) tile).getAseoha$idleAnimationState().animateWhen(true, (int) tile.getLevel().getCapability(Capabilities.TARDIS).orElse(null).getAnimationTicks());
         this.animate(((IHelpWithConsole) tile).getAseoha$idleAnimationState(), BattleConsoleAnimations.IDLE, ageInTicks);
+
+        tile.getCapability(Capabilities.TARDIS).ifPresent(cap -> {
+            float Throt = cap.getControlDataOrCreate(ControlRegistry.THROTTLE.get()).get();
+            this.ThottleSlider.z = (float) Math.toRadians(320 + Throt * 240); //100.0F - 75.0F
+            this.ThottleSlider.y = (float) Math.toRadians(-(97 + Throt * 100)); //100.0F - 75.0F
+        });
     }
 
     @Override
