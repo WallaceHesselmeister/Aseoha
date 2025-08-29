@@ -83,6 +83,13 @@ public class ClientRegistry {
 
         SpecialItemRenderer.register(new ModelHolder<>(
                 (stack) -> stack.getItem()
+                        == ForgeRegistries.ITEMS.getValue(ConsoleBlocks.BATTLE_CONSOLE_BLOCK.getId()),
+                (modelSet) ->
+                        new BattleConsoleModel<>(modelSet.bakeLayer(BattleConsoleModel.LAYER_LOCATION)),
+                new ResourceLocation(MODID, "textures/consoles/battle.png")));
+
+        SpecialItemRenderer.register(new ModelHolder<>(
+                (stack) -> stack.getItem()
                         == ForgeRegistries.ITEMS.getValue(ConsoleBlocks.STEAM_CONSOLE_BLOCK_SIXTEEN.getId()),
                 (modelSet) ->
                         new SteamConsoleModelSixteen<>(modelSet.bakeLayer(SteamConsoleModelSixteen.LAYER_LOCATION)),
