@@ -954,7 +954,7 @@ public class BattleConsoleModel<T extends ConsoleTile> extends BaseTileHierarchi
                 ))
                 .build();
 
-        public static final AnimationDefinition IDLE = AnimationDefinition.Builder.withLength(64.375F)
+        public static final AnimationDefinition IDLE = AnimationDefinition.Builder.withLength(64.375F).looping()
                 .addAnimation("DimensionCube", new AnimationChannel(AnimationChannel.Targets.ROTATION,
                         new Keyframe(0.0F, KeyframeAnimations.degreeVec(0.0F, 0.0F, 0.0F), AnimationChannel.Interpolations.LINEAR),
                         new Keyframe(64.375F, KeyframeAnimations.degreeVec(0.0F, 360.0F, 0.0F), AnimationChannel.Interpolations.LINEAR)

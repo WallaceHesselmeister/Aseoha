@@ -34,8 +34,8 @@ public class ConsoleBlocks {
             registerWithItemSpecial("console/brackolin", () -> new ConsoleBlock(TileRegistry.BRACKOLIN_CONSOLE_TILE));
     public static final RegistryObject<ConsoleBlock> TOKAMAK_CONSOLE_BLOCK =
             registerWithItemSpecial("console/tokamak", () -> new ConsoleBlock(TileRegistry.TOKAMAK_CONSOLE_TILE));
-    public static final RegistryObject<ConsoleBlock> HARTNELL_CONSOLE_BLOCK =
-            registerWithItemSpecial("console/hartnell", () -> new ConsoleBlock(TileRegistry.HARTNELL_CONSOLE_TILE));
+//    public static final RegistryObject<ConsoleBlock> HARTNELL_CONSOLE_BLOCK =
+//            registerWithItemSpecial("console/hartnell", () -> new ConsoleBlock(TileRegistry.HARTNELL_CONSOLE_TILE));
     public static final RegistryObject<ConsoleBlock> CORAL_CONSOLE_BLOCK =
             registerWithItemSpecial("console/coral", () -> new ConsoleBlock(TileRegistry.CORAL_CONSOLE_TILE));
 

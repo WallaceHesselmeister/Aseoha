@@ -24,6 +24,7 @@ import net.tardis.mod.client.renderers.tiles.ChameleonInteriorDoorRenderer;
 import net.tardis.mod.client.renderers.tiles.InteriorDoorRender;
 import net.tardis.mod.helpers.Helper;
 import org.jetbrains.annotations.NotNull;
+import tama.Client.Models.Armor.MondasCybermanArmorModel;
 import tama.Client.Models.Consoles.*;
 import tama.Client.Models.Consoles.ported.*;
 import tama.Client.Models.Exteriors.*;
@@ -61,12 +62,33 @@ public class ClientRegistry {
 
     @OnlyIn(Dist.CLIENT)
     public static void registerSpecialItemModels() {
-        //        SpecialItemRenderer.register(new ModelHolder<>(
-        //                (stack) -> stack.getItem()
-        //                        == ForgeRegistries.ITEMS.getValue(AItems.MONDAS_CYBERMAN_BOOTS.getId()),
-        //                (modelSet) -> new
-        // MondasCybermanArmorModel(modelSet.bakeLayer(MondasCybermanArmorModel.LAYER_LOCATION)),
-        //                new ResourceLocation(MODID, "textures/armor/mondas_cyber_man.png")));
+        SpecialItemRenderer.register(new ModelHolder<>(
+                (stack) -> stack.getItem()
+                        == ForgeRegistries.ITEMS.getValue(AItems.MONDAS_CYBERMAN_BOOTS.getId()),
+                (modelSet) -> new
+                        MondasCybermanArmorModel(modelSet.bakeLayer(MondasCybermanArmorModel.LAYER_LOCATION)),
+                new ResourceLocation(MODID, "textures/armor/mondas_cyber_man.png")));
+
+        SpecialItemRenderer.register(new ModelHolder<>(
+                (stack) -> stack.getItem()
+                        == ForgeRegistries.ITEMS.getValue(AItems.MONDAS_CYBERMAN_CHEST.getId()),
+                (modelSet) -> new
+                        MondasCybermanArmorModel(modelSet.bakeLayer(MondasCybermanArmorModel.LAYER_LOCATION)),
+                new ResourceLocation(MODID, "textures/armor/mondas_cyber_man.png")));
+
+        SpecialItemRenderer.register(new ModelHolder<>(
+                (stack) -> stack.getItem()
+                        == ForgeRegistries.ITEMS.getValue(AItems.MONDAS_CYBERMAN_HELMET.getId()),
+                (modelSet) -> new
+                        MondasCybermanArmorModel(modelSet.bakeLayer(MondasCybermanArmorModel.LAYER_LOCATION)),
+                new ResourceLocation(MODID, "textures/armor/mondas_cyber_man.png")));
+
+        SpecialItemRenderer.register(new ModelHolder<>(
+                (stack) -> stack.getItem()
+                        == ForgeRegistries.ITEMS.getValue(AItems.MONDAS_CYBERMAN_LEGS.getId()),
+                (modelSet) -> new
+                        MondasCybermanArmorModel(modelSet.bakeLayer(MondasCybermanArmorModel.LAYER_LOCATION)),
+                new ResourceLocation(MODID, "textures/armor/mondas_cyber_man.png")));
 
         SpecialItemRenderer.register(new ModelHolder<>(
                 (stack) -> stack.getItem()
@@ -107,11 +129,11 @@ public class ClientRegistry {
                 (modelSet) -> new ToyotaConsoleModel<>(modelSet.bakeLayer(ToyotaConsoleModel.LAYER_LOCATION)),
                 new ResourceLocation(MODID, "textures/consoles/toyota.png")));
 
-        SpecialItemRenderer.register(new ModelHolder<>(
-                (stack) ->
-                        stack.getItem() == ForgeRegistries.ITEMS.getValue(ConsoleBlocks.HARTNELL_CONSOLE_BLOCK.getId()),
-                (modelSet) -> new HartnellConsoleModel<>(modelSet.bakeLayer(HartnellConsoleModel.LAYER_LOCATION)),
-                new ResourceLocation(MODID, "textures/consoles/hartnell.png")));
+//        SpecialItemRenderer.register(new ModelHolder<>(
+//                (stack) ->
+//                        stack.getItem() == ForgeRegistries.ITEMS.getValue(ConsoleBlocks.HARTNELL_CONSOLE_BLOCK.getId()),
+//                (modelSet) -> new HartnellConsoleModel<>(modelSet.bakeLayer(HartnellConsoleModel.LAYER_LOCATION)),
+//                new ResourceLocation(MODID, "textures/consoles/hartnell.png")));
 
         SpecialItemRenderer.register(new ModelHolder<>(
                 (stack) ->
@@ -237,12 +259,12 @@ public class ClientRegistry {
                         new BrackolinConsoleModel<>(context.bakeLayer(BrackolinConsoleModel.LAYER_LOCATION)),
                         new ResourceLocation(MODID, "textures/consoles/brackolin.png")));
 
-        event.registerBlockEntityRenderer(
-                TileRegistry.HARTNELL_CONSOLE_TILE.get(),
-                context -> new BasicConsoleRenderer<HartnellConsoleModel<BaseConsoleTile<?>>>(
-                        context,
-                        new HartnellConsoleModel<>(context.bakeLayer(HartnellConsoleModel.LAYER_LOCATION)),
-                        new ResourceLocation(MODID, "textures/consoles/hartnell.png")));
+//        event.registerBlockEntityRenderer(
+//                TileRegistry.HARTNELL_CONSOLE_TILE.get(),
+//                context -> new BasicConsoleRenderer<HartnellConsoleModel<BaseConsoleTile<?>>>(
+//                        context,
+//                        new HartnellConsoleModel<>(context.bakeLayer(HartnellConsoleModel.LAYER_LOCATION)),
+//                        new ResourceLocation(MODID, "textures/consoles/hartnell.png")));
 
         event.registerBlockEntityRenderer(
                 TileRegistry.TOKAMAK_CONSOLE_TILE.get(),

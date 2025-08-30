@@ -67,11 +67,11 @@ public class TileRegistry {
     public static final RegistryObject<BlockEntityType<TokamakConsoleTile>> TOKAMAK_CONSOLE_TILE = TYPES.register(
             "console/tokamak", () -> create(TokamakConsoleTile::new, ConsoleBlocks.TOKAMAK_CONSOLE_BLOCK.get()));
 
-    public static final RegistryObject<BlockEntityType<BaseConsoleTile<?>>> HARTNELL_CONSOLE_TILE = TYPES.register(
-            "console/hartnell",
-            () -> create(
-                    (pos, state) -> new BaseConsoleTile<>(pos, state, TileRegistry.HARTNELL_CONSOLE_TILE),
-                    ConsoleBlocks.HARTNELL_CONSOLE_BLOCK.get()));
+//    public static final RegistryObject<BlockEntityType<BaseConsoleTile<?>>> HARTNELL_CONSOLE_TILE = TYPES.register(
+//            "console/hartnell",
+//            () -> create(
+//                    (pos, state) -> new BaseConsoleTile<>(pos, state, TileRegistry.HARTNELL_CONSOLE_TILE),
+//                    ConsoleBlocks.HARTNELL_CONSOLE_BLOCK.get()));
 
     public static final RegistryObject<BlockEntityType<CoralConsoleTile>> CORAL_CONSOLE_TILE = TYPES.register(
             "console/coral", () -> create(CoralConsoleTile::new, ConsoleBlocks.CORAL_CONSOLE_BLOCK.get()));
